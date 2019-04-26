@@ -4,6 +4,7 @@ https://ashki23.github.io/tutorials.html
 https://ashki23.github.io/research.html
 https://ashki23.github.io/about.html
 https://ashki23.github.io/contact.html
+https://ashki23.github.io/git.html
 https://ashki23.github.io/shell.html
 https://ashki23.github.io/ubuntu.html
 https://ashki23.github.io/r_python.html
