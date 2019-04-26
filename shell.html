@@ -600,6 +600,8 @@ h4.author {
 <span class="ex">cut</span>: cut sections from each line of files
 <span class="fu">cut</span> -f <span class="op">&lt;</span>field number<span class="op">&gt;</span> -d <span class="op">&lt;</span>delimiter<span class="op">&gt;</span>: cut field number <span class="co"># based on the &lt;delimiter&gt; from each line</span>
 <span class="ex">grep</span>: print lines matching a pattern (<span class="st">&quot;global/regular expression/print&quot;</span>)
+<span class="fu">grep</span> -o: print only the matched parts
+<span class="fu">grep</span> -P: Interpret the pattern as a Perl-compatible regular expression (PCRE)
 <span class="ex">wc</span>: word count<span class="kw">;</span> <span class="ex">it</span> counts the number of lines, words, and characters in files 
 <span class="fu">wc</span> -l: show number of lines
 <span class="ex">nl</span>: number lines of files
@@ -657,7 +659,7 @@ h4.author {
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">grep</span> D names.txt</code></pre></div>
 <pre><code>## Dori
 ## Dori</code></pre>
-<p>There are several options that we can use for <code>grep</code> command. For example, <code>grep -w</code> is searching for the exact word, <code>-n</code> option shows numbers the lines that match, <code>-i</code> flag makes our search case-insensitive, or <code>-v</code> inverts our search to the lines that do not contain the pattern, and <code>-E</code> flag for using <a href="https://v4.software-carpentry.org/regexp/index.html">regular expression</a>. To see all the option use <code>man grep</code>. Lets’ try to find lines which do not contain letter “d” or “D”:</p>
+<p>There are several options that we can use for <code>grep</code> command. For example, <code>grep -w</code> is searching for the exact word, <code>-n</code> option shows numbers the lines that match, <code>-i</code> flag makes our search case-insensitive, or <code>-v</code> inverts our search to the lines that do not contain the pattern, or <code>-o</code> print only the matched parts, and <code>-P</code> flag for using Perl-compatible <a href="https://docs.python.org/3/library/re.html#re-syntax">regular expression</a>. To see all the option use <code>man grep</code>. Lets’ try to find lines which do not contain letter “d” or “D”:</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">grep</span> -inv d names.txt</code></pre></div>
 <pre><code>## 2:Ari
 ## 3:Ashi
