@@ -814,7 +814,7 @@ h4.author {
 <div id="shell-script" class="section level2">
 <h2>Shell script</h2>
 <p>Now, we can make Shell script to crate a small program including Bash commands and other programs that we want. Let’s make a program to shows rows 3 to 5 of a file in Shell scripts. Use <code>nano script.sh</code> to open <code>nano</code> text editor to make <code>script.sh</code> and insert the following lines:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co">#!/user/bin/bash</span>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co">#!/bin/bash</span>
 <span class="fu">sort</span> names.txt <span class="kw">|</span> <span class="fu">head</span> -n 5 <span class="kw">|</span> <span class="fu">tail</span> -n 3</code></pre></div>
 <p>The first line shows the language of the program which is Bash in here. To run the program use:</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">bash</span> script.sh</code></pre></div>
@@ -822,7 +822,7 @@ h4.author {
 ## Dori
 ## Jackie</code></pre>
 <p>You may use the following program to show rows 3 to 5 of a given file. Use <code>nano script_1.sh</code> and insert the following lines:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co">#!/user/bin/bash</span>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co">#!/bin/bash</span>
 <span class="fu">sort</span> <span class="st">&quot;</span><span class="va">$1</span><span class="st">&quot;</span> <span class="kw">|</span> <span class="fu">head</span> -n 5 <span class="kw">|</span> <span class="fu">tail</span> -n 3</code></pre></div>
 <p>To run the code use:</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">bash</span> script_1.sh names.txt</code></pre></div>
@@ -830,7 +830,7 @@ h4.author {
 ## Dori
 ## Jackie</code></pre>
 <p>Also we can write a program that works for any given files. Use <code>nano script_all.sh</code> and insert the following lines:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co">#!/user/bin/bash</span>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co">#!/bin/bash</span>
 <span class="kw">for</span> <span class="ex">line</span> in <span class="st">&quot;</span><span class="va">$@</span><span class="st">&quot;</span><span class="kw">;</span> <span class="kw">do</span> <span class="fu">sort</span> <span class="va">$line</span> <span class="kw">|</span> <span class="fu">head</span> -n 5 <span class="kw">|</span> <span class="fu">tail</span> -n 3<span class="kw">;</span> <span class="kw">done</span></code></pre></div>
 <p>To run the code use:</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">bash</span> script_all.sh names.txt grade.txt</code></pre></div>
@@ -841,7 +841,7 @@ h4.author {
 ## B
 ## B+</code></pre>
 <p>For another example let write a program to find a certain pattern within some files in <code>bash_test</code> directory. Use <code>nano name_select.sh</code> and insert:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co">#!/user/bin/bash</span>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co">#!/bin/bash</span>
 <span class="fu">grep</span> -w <span class="va">$1</span> -r <span class="va">$2</span> <span class="kw">|</span> <span class="fu">cut</span> -d : -f 2 <span class="op">&gt;</span> <span class="va">$1</span>.txt</code></pre></div>
 <p>To find name <code>Dori</code> among all files in the current directory (<code>.</code>) use:</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">bash</span> name_select.sh Dori .</code></pre></div>
