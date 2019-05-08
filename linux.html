@@ -12,7 +12,7 @@
 <meta name="author" content="Ashkan Mirzaee" />
 
 
-<title>Ubuntu: start from scratch</title>
+<title>Linux: start from scratch</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -518,7 +518,7 @@ $(document).on('click',function() {
 
 
 
-<h1 class="title toc-ignore">Ubuntu: start from scratch</h1>
+<h1 class="title toc-ignore">Linux: start from scratch</h1>
 <h4 class="author">Ashkan Mirzaee</h4>
 
 </div>
@@ -529,11 +529,11 @@ h4.author {
   display: none;
 }
 </style>
-<p>Ubuntu is a free and open source Linux distribution based on Debian. The article shows how to install and update Ubuntu and provides a quick reference of helpful shortcuts, applications, and tips to install software.</p>
+<p>Linux is a family of open source Unix-like operating systems based on the Linux kernel, an operating system kernel first released on September 17, 1991 by Linus Torvalds (<a href="https://en.wikipedia.org/wiki/Linux">Wiki</a>). Linux is typically packaged in Linux distributions (see <a href="https://en.wikipedia.org/wiki/Linux_distribution">here</a>) which include the Linux kernel and supporting system software and libraries. Ubuntu is an open source and popular Linux distribution based on Debian. This article shows how to install and update Ubuntu distribution and provides a quick reference of helpful shortcuts, applications, and tips for software installation.</p>
 <hr />
 <div id="running-ubuntu" class="section level2">
 <h2>Running Ubuntu</h2>
-<p>The <a href="https://www.ubuntu.com/desktop">Ubuntu desktop</a> is easy to use, easy to install and includes everything you need to run your organisation, school, home or enterprise. It’s also open source, secure, accessible and free to download.</p>
+<p>The <a href="https://www.ubuntu.com/desktop">Ubuntu desktop</a> is easy to use, easy to install and includes everything you need to run your organisation, school, home or enterprise. It’s also open source, secure, accessible and free to download Linux distro.</p>
 <div id="create-a-bootable-usb-stick" class="section level3">
 <h3>Create a bootable USB stick</h3>
 <p>You may test out the Ubuntu desktop experience without touching your PC configuration, by installing Ubuntu on a 4 GB or larger flash drive. To create a bootable USB stick from Windows follow the instruction in <a href="https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-windows#0">here</a> and from Apple macOS follow the steps in <a href="https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-macos#0">here</a>.</p>
@@ -605,7 +605,6 @@ h4.author {
 <li>Skype</li>
 <li>Tweaks</li>
 <li>Evolution</li>
-<li>GitKraken</li>
 <li>GNU Octave</li>
 <li>Sublime Text</li>
 <li>Synaptic Package Manager</li>
@@ -622,7 +621,8 @@ h4.author {
 </div>
 <div id="remote-connections" class="section level3">
 <h3>Remote connections</h3>
-<p>Remmina is the default remote desktop client in Ubuntu that supports Remote Desktop Protocol (RDP) and Virtual Network Computing (VNC) to access other Windows and Linux computers with graphical interfaces. For a SSH connection you may easily use this command at a terminal prompt (use your own user name and remote host address):</p>
+<p>Remmina is the default remote desktop client in Ubuntu that supports Remote Desktop Protocol (RDP) and Virtual Network Computing (VNC) to access other Windows and Linux computers with graphical interfaces. <a href="https://www.realvnc.com/en/connect/">RealVNC</a> also is a good alternative for VNC remote access that you might look.</p>
+<p>For a SSH connection you may easily use this command at a terminal prompt (use your own user name and remote host address):</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">ssh</span> username@remotehost</code></pre></div>
 <p>You might use the IP address instead of the remote host address in the above command. To find the host IP address, use <code>ip a | grep inet</code> at a terminal prompt of the host computer.</p>
 <p>If you are going to connect to another Linux computer through SSH, make sure OpenSSH Server client is installed on the host computer. To install the OpenSSH client, use this command at a terminal prompt of the host computer:</p>
@@ -681,7 +681,7 @@ h4.author {
 <p>Most of the software that are available for Windows and macOS are available for Linux. Also, usually there is a great alternative for software that are not available. For example, sf package in R is a great alternative for ArcGIS Desktop that is not available for Linux. The following provides helpful tips to install some software in Ubuntu.</p>
 <div id="chrome" class="section level3">
 <h3>Chrome</h3>
-<p>Chrome is available <a href="https://www.google.com/chrome/">here</a> for download. Useful Chrome keyboard shortcuts are listed in below.</p>
+<p>Ubuntu by default has Firefox is installed. But if you like Chrome more, it is available <a href="https://www.google.com/chrome/">here</a> to download and install. Useful Chrome keyboard shortcuts are listed in below.</p>
 <ul>
 <li>New tab: <code>ctrl + t</code></li>
 <li>Close tab: <code>ctrl + w</code></li>
@@ -695,13 +695,7 @@ h4.author {
 <h3>Git</h3>
 <p>To install Git, use:</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> apt install git</code></pre></div>
-<p>You may find tutorials about Git at <a href="https://git-scm.com/book/en/v2">Pro Git</a> book and <a href="http://swcarpentry.github.io/git-novice/">software carpentry</a>. Also, for a quick reference guides look at the GitHub <a href="https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf">Cheat Sheet</a>.</p>
-<p>To connect to your GitLab or GitHub account through SSH, you need to generate a public SSH key and add to your GitLab or GitHub account <code>Settings &gt; SSH Keys</code>. To generate a SSH key use:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">cd</span> ~
-<span class="fu">ssh-keygen</span></code></pre></div>
-<p>Make sure to create a strong passphrase and remember it for connecting to your account. To show the public key:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">cat</span> .ssh/id_rsa.pub</code></pre></div>
-<p>Copy the public key, <code>ctrl + shift + c</code>, and add your public ssh-key to your account.</p>
+<p>You may learn more about Git <a href="https://ashki23.github.io/git.html">here</a>.</p>
 </div>
 <div id="r" class="section level3">
 <h3>R</h3>
@@ -737,7 +731,7 @@ h4.author {
 <div id="anaconda" class="section level3">
 <h3>Anaconda</h3>
 <p><a href="https://www.anaconda.com/what-is-anaconda/">Anaconda</a> is one of the most popular distributions for Python that includes more than thousand popular data-science packages. Anaconda includes, two popular Python IDEs, Spyder and Jupyter Notebook as well.</p>
-<p>Anaconda is available <a href="https://www.anaconda.com/download/#linux">here</a> for download. Select Python 3.7 version installer based on your operating system. After downloading the installer, enter the following command at a terminal prompt to install Anaconda.</p>
+<p>Anaconda is available <a href="https://www.anaconda.com/download/#linux">here</a> to download. Select Python 3.7 version installer based on your operating system. After downloading the installer, enter the following command at a terminal prompt to install Anaconda.</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">bash</span> ~/Downloads/Anaconda3-x.x.x-Linux-x86_64.sh</code></pre></div>
 <p>Include the bash command regardless of whether or not you are using Bash shell. Follow the instruction to complete the installation. You may find more details <a href="http://docs.continuum.io/anaconda/install/linux/">here</a>.</p>
 <p>After installation, use the following commands in a terminal prompt to open Anaconda Navigator, Jupyter Notebook, and Spyder.</p>
@@ -831,7 +825,7 @@ h4.author {
 <span class="ex">gurobi_cl</span> --version
 <span class="ex">gurobi_cl</span> --license</code></pre></div>
 <p><strong>For Python (Anaconda)</strong></p>
-<p>From a terminal prompt issue the following commands to add the Gurobi channel to your default search list and install the gurobi package:</p>
+<p>From a terminal prompt issue the following commands to add the Gurobi channel to your default search list and install the Gurobi package:</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">conda</span> config --add channels http://conda.anaconda.org/gurobi
 <span class="ex">conda</span> install gurobi</code></pre></div>
 <p>You can remove the Gurobi package at any time by:</p>

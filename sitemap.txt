@@ -9,7 +9,7 @@ https://ashki23.github.io/contact.html
 https://ashki23.github.io/hpc.html
 https://ashki23.github.io/git.html
 https://ashki23.github.io/shell.html
-https://ashki23.github.io/ubuntu.html
+https://ashki23.github.io/linux.html
 https://ashki23.github.io/r_python.html
 https://ashki23.github.io/plots.html
 https://ashki23.github.io/functions.html
