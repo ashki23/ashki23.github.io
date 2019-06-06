@@ -564,11 +564,13 @@ git checkout my_work # switch to &quot;my_work&quot; branch</code></pre>
 <div id="summary" class="section level3">
 <h3>Summary</h3>
 <p>The following Git commands are used in this article:</p>
-<pre><code>git init: create an empty Git repository or reinitialize an existing one
+<pre><code>man git &lt;command&gt;: show the manual of the command
+git init: create an empty Git repository or reinitialize an existing one
 git status: show the working tree status
 git add: add file contents to the index
 git mv: move or rename a file, a directory
-git rm: remove files from the working tree and from the index
+git rm: remove files from the working tree (local) and from the index (remote)
+git rm --cached: Use this option to unstage and remove paths only from the index (remote)
 git commit: record changes to the repository 
 git log: show commit logs
 git log &lt;file_name&gt;: show commit logs for the file
@@ -591,8 +593,7 @@ git push &lt;origin&gt; &lt;branch&gt;: update remote refs along with associated
 git branch: list branches
 git branch &lt;new branch name&gt;: create a new branch
 git branch -d &lt;branch name&gt;: delete a branch
-git merge: join two or more development histories together
-man git &lt;command&gt;: show the manual of the command</code></pre>
+git merge: join two or more development histories together</code></pre>
 </div>
 
 
