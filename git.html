@@ -576,19 +576,19 @@ git log: show commit logs
 git log &lt;file_name&gt;: show commit logs for the file
 git log --patch &lt;file_name&gt;: combine both `git log` and `git diff` comments
 git diff: show changes between commits, commit and working tree, etc
-git diff --staged: show changes between commit and working tree after `git add`
-git diff HEAD: show changes between working tree and the most recent commit of the working directory (same as git diff). We can use commit ID instead of HEAD.
-git diff HEAD~1 ... HEAD~n: show changes between working tree and the nth most recent commit of the working directory 
-git diff HEAD &lt;file_name&gt;: show changes between the current file and the most recent commit of the file
+git diff --staged: show changes between commit and working tree after add
+git diff HEAD: show changes between working tree and the most recent commit
+git diff HEAD~n: show changes between working tree and the nth most recent commit 
+git diff HEAD &lt;file_name&gt;: show changes between the current file and the most recent commit
 git show HEAD &lt;file_name&gt;: show the most recent commit of a file
-git show HEAD~1 ... HEAD~n &lt;file_name&gt;: show the nth most recent commit of a file
+git show HEAD~n &lt;file_name&gt;: show the nth most recent commit of a file
 git checkout: restore working tree files or switch branches
 git checkout HEAD &lt;file_name&gt;: recover the version of the file recorded in HEAD
 git revert &lt;commit ID&gt;: revert some existing commits
 git remote add origin &lt;SSH_add&gt;: add remote repository to the local repo 
 git remote -v: show the remote repository
 git clone: clone a repository into a new directory
-git pull &lt;origin&gt; &lt;branch&gt;: fetch from and integrate with another repository or a local branch
+git pull &lt;origin&gt; &lt;branch&gt;: fetch from and integrate with another repository or branch
 git push &lt;origin&gt; &lt;branch&gt;: update remote refs along with associated objects
 git branch: list branches
 git branch &lt;new branch name&gt;: create a new branch
