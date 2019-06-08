@@ -475,13 +475,14 @@ h4.author {
 <h2>Scheduling jobs</h2>
 <p>On an HPC system, we need a scheduler to manage how jobs running on a cluster. One of the most common schedulers is SLURM. The following are some the most helpful SLURM commands:</p>
 <pre><code>sinfo: shows info about the nodes
+sacctmgr show qos normal: show max number of jobs that user can run in parallel 
 sjstat: display statistics of jobs under control of SLURM
 sbatch: submit a job to the scheduler
 srun: run parallel jobs
 squeue: check on the jobs status
 squeue -u &lt;username&gt;: check on a user&#39;s job status
 watch -n 60 squeue -u yourUsername: check on the user status every 60 sec, ctrl + c to stop
-sacct: displays accounting data for all jobs and job steps in the Slurm job accounting log or Slurm database
+sacct: displays accounting data for all jobs and job steps in the SLURM job accounting database
 scancel JOBID: cancel the job with JOBID
 scancel -u &lt;username&gt;: cancel all the user jobs</code></pre>
 <p>To see more details about these commands use <code>&lt;command&gt; --help</code>.</p>
