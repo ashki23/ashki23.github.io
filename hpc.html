@@ -568,18 +568,17 @@ scancel -u &lt;username&gt;: cancel all the user jobs</code></pre>
 <p>To run a single command, we can use <code>srun</code>. For instance, <code>srun -c 2 echo &quot;This job will use 2 CPUs.&quot;</code> submits a job and allocates 2 CPUs. Also, we can use <code>srun</code> to open a program in an interaction mode. For example, <code>srun --pty bash</code> will open a Bash shell in a computation node.</p>
 <p><strong>Note</strong>: in general, when we connect to a cluster we will go to a node, called <strong>login node</strong>, which is not meant to do heavy computational tasks. So, to do your computations in a proper way, you should always use either <strong><code>sbatch</code></strong> or <strong><code>srun</code></strong>.</p>
 <p>Usually there are many <strong>modules</strong> available on the clusters. To find and load these modules use:</p>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">module</span> avail: shows all avaliable madules (programs) <span class="kw">in</span> <span class="ex">the</span> cluster
-<span class="ex">module</span> load <span class="op">&lt;</span>name<span class="op">&gt;</span>: to load a module ex. module load R or python
-<span class="ex">module</span> list: shows list of the loaded modules
-<span class="ex">module</span> unload <span class="op">&lt;</span>name<span class="op">&gt;</span>: to unload a module
-<span class="ex">module</span> purge: to unload all modules</code></pre></div>
+<pre class="txt"><code>module avail: shows all avaliable madules (programs) in the cluster
+module load &lt;name&gt;: to load a module ex. module load R or python
+module list: shows list of the loaded modules
+module unload &lt;name&gt;: to unload a module
+module purge: to unload all modules</code></pre>
 <p>To create a template <code>sbatch</code> job file, use the following steps:</p>
 <ol style="list-style-type: decimal">
 <li>Generate a file including all codes that you want to run in the cluster</li>
 <li>Generate a Bash file including all modules that are required for your job (<code>environment.sh</code>)</li>
-<li>Generate a Bash file to call steps 1 and 2 (<code>run_file.sh</code>)</li>
-<li>Generate a Bash file to <code>srun</code> the codes in step 3 including all <code>#SBATCH</code> options (<code>job_file.sh</code>)</li>
-<li>Use <code>sbatch</code>to run the generated file in step 4</li>
+<li>Generate a Bash file to call steps 1 and 2 including all <code>#SBATCH</code> options (<code>job_file.sh</code>)</li>
+<li>Use <code>sbatch</code>to run the generated file in step 3</li>
 </ol>
 <p>For example let’s run a python code, run <code>nano test-hello.py</code> and copy the following:</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co">#!/usr/bin/python3</span>
