@@ -65,6 +65,71 @@
 <link rel="icon" href="images/AM.jpg">
 
 
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' || rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
 
 
 <style type="text/css">
@@ -475,96 +540,96 @@ h4.author {
 <h3>Installation</h3>
 <p>Depends on the operating system that you are using you might need to install Git first. You can find Git for download from <a href="https://git-scm.com/downloads">here</a>. Computers with Windows operating systems do not automatically have a Unix Shell program installed. So for Windows users, it would be better to install <a href="https://gitforwindows.org/">Git for Windows</a>, which gives you access to both Bash shell commands and Git simultaneously.</p>
 <p>When we use Git for the first time, you can configure your name and email address by:</p>
-<pre><code>$ git config --global user.name &quot;your name&quot;
-$ git config --global user.email &quot;your@email&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">git</span> config --global user.name <span class="st">&quot;your name&quot;</span>
+$ <span class="fu">git</span> config --global user.email <span class="st">&quot;your@email&quot;</span></code></pre></div>
 <p>This will set your name and email address to all activities associated with Git. You may find the list of adjusted configurations by <code>git config --list</code> and to see more helps by <code>git config --help</code>.</p>
 </div>
 <div id="git-commands" class="section level3">
 <h3>Git commands</h3>
 <p>As a prerequisite, first you need to learn about the <a href="shell.html">Unix Shell</a> and basic Bash commands.</p>
 <p>Let’s start working with Git on your local computer with an example. First, we will make a directory and then initiate a Git repository in the directory, and then start to add a text file and edit the file. Open a terminal prompt and run the following commands one by one, read the comments after hash to see what they do.</p>
-<pre><code>cd ~ # change directory to home/
-mkdir first_repo # create a new directory called &quot;first_repo&quot;
-cd first_repo # change directory to home/first_repo
-git init # create an empty Git repository (after that Git could track all changes in this directory)
-git status # show the working tree status which tells &quot;nothing to commit&quot;
-nano file.txt # nano text editor will create &quot;file.txt&quot; and open the file. Let&#39;s add the following:
-&gt;Hi! this is the first line in my new repository. # press ctrl+o to save and ctrl+x to exit
-git status # say &quot;nothing to commit but untracked files present&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">cd</span> ~ <span class="co"># change directory to home/</span>
+<span class="fu">mkdir</span> first_repo <span class="co"># create a new directory called &quot;first_repo&quot;</span>
+<span class="bu">cd</span> first_repo <span class="co"># change directory to home/first_repo</span>
+<span class="fu">git</span> init <span class="co"># create an empty Git repository (after that Git could track all changes in this directory)</span>
+<span class="fu">git</span> status <span class="co"># show the working tree status which tells &quot;nothing to commit&quot;</span>
+<span class="fu">nano</span> file.txt <span class="co"># nano text editor will create &quot;file.txt&quot; and open the file. Let&#39;s add the following:</span>
+<span class="op">&gt;</span><span class="ex">Hi</span>! this is the first line in my new repository. <span class="co"># press ctrl+o to save and ctrl+x to exit</span>
+<span class="fu">git</span> status <span class="co"># say &quot;nothing to commit but untracked files present&quot;</span></code></pre></div>
 <p>To record all changes by Git, we need to:</p>
 <ul>
 <li>Add file contents to the index by <code>git add</code></li>
 <li>Record changes to the repository by <code>git commit</code></li>
 </ul>
 <p>Use the following commands for the above steps:</p>
-<pre><code>git add file.text # add file contents to the index
-git status # show &quot;changes to be committed&quot;
-git commit -m &quot;Add file.txt and write the first line&quot; # record changes to the repository, -m option add message
-git show file.txt # show the most recent commit of &quot;file.txt&quot; 
-git log # show the commit logs</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> add file.text <span class="co"># add file contents to the index</span>
+<span class="fu">git</span> status <span class="co"># show &quot;changes to be committed&quot;</span>
+<span class="fu">git</span> commit -m <span class="st">&quot;Add file.txt and write the first line&quot;</span> <span class="co"># record changes to the repository, -m option add message</span>
+<span class="fu">git</span> show file.txt <span class="co"># show the most recent commit of &quot;file.txt&quot; </span>
+<span class="fu">git</span> log <span class="co"># show the commit logs</span></code></pre></div>
 <p>Let’s make some changes in the <code>first_repo</code> directory to see how Git records changes:</p>
-<pre><code>nano file.txt # nano will open &quot;file.txt&quot;
-&gt;Hi! this is the first line in my new repository. 
-&gt;Changes in this file will record by Git. # press ctrl+o to save and ctrl+x to exit
-git status # show &quot;changes not staged for commit&quot;
-git diff file.txt # show changes between most recent commit and the current &quot;file.txt&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">nano</span> file.txt <span class="co"># nano will open &quot;file.txt&quot;</span>
+<span class="op">&gt;</span><span class="ex">Hi</span>! this is the first line in my new repository. 
+<span class="op">&gt;</span><span class="ex">Changes</span> in this file will record by Git. <span class="co"># press ctrl+o to save and ctrl+x to exit</span>
+<span class="fu">git</span> status <span class="co"># show &quot;changes not staged for commit&quot;</span>
+<span class="fu">git</span> diff file.txt <span class="co"># show changes between most recent commit and the current &quot;file.txt&quot;</span></code></pre></div>
 <p>To record the new changes by Git:</p>
-<pre><code>git add file.txt
-git commit -m &quot;Add the second line&quot;
-git show file.txt # show the most recent commit of &quot;file.txt&quot; 
-git show HEAD~1 file.txt # show the previous commit of &quot;file.txt&quot; </code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> add file.txt
+<span class="fu">git</span> commit -m <span class="st">&quot;Add the second line&quot;</span>
+<span class="fu">git</span> show file.txt <span class="co"># show the most recent commit of &quot;file.txt&quot; </span>
+<span class="fu">git</span> show HEAD~1 file.txt <span class="co"># show the previous commit of &quot;file.txt&quot; </span></code></pre></div>
 <p>Also, we can compare changes between the current version with the previous versions. Let’s make some more changes on the <code>file.txt</code> to see how we can compare all versions:</p>
-<pre><code>nano file.txt # nano will open &quot;file.txt&quot;
-&gt;Hi! this is the first line in my new repository. 
-&gt;Changes in this file will record by Git. 
-&gt;This changes are new. # press ctrl+o to save and ctrl+x to exit
-git diff file.txt # show changes between the most recent commit and the current &quot;file.txt&quot;
-git diff HEAD~1 file.txt # show changes between the previous commit and the current &quot;file.txt&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">nano</span> file.txt <span class="co"># nano will open &quot;file.txt&quot;</span>
+<span class="op">&gt;</span><span class="ex">Hi</span>! this is the first line in my new repository. 
+<span class="op">&gt;</span><span class="ex">Changes</span> in this file will record by Git. 
+<span class="op">&gt;</span><span class="ex">This</span> changes are new. <span class="co"># press ctrl+o to save and ctrl+x to exit</span>
+<span class="fu">git</span> diff file.txt <span class="co"># show changes between the most recent commit and the current &quot;file.txt&quot;</span>
+<span class="fu">git</span> diff HEAD~1 file.txt <span class="co"># show changes between the previous commit and the current &quot;file.txt&quot;</span></code></pre></div>
 <p>To record the new changes by Git:</p>
-<pre><code>git add file.txt
-git commit -m &quot;Add the third line&quot;
-git show file.txt # show the most recent commit of &quot;file.txt&quot; 
-git show HEAD~1 file.txt # show the previous commit of &quot;file.txt&quot; 
-git show HEAD~2 file.txt # show the previous previous commit of &quot;file.txt&quot; </code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> add file.txt
+<span class="fu">git</span> commit -m <span class="st">&quot;Add the third line&quot;</span>
+<span class="fu">git</span> show file.txt <span class="co"># show the most recent commit of &quot;file.txt&quot; </span>
+<span class="fu">git</span> show HEAD~1 file.txt <span class="co"># show the previous commit of &quot;file.txt&quot; </span>
+<span class="fu">git</span> show HEAD~2 file.txt <span class="co"># show the previous previous commit of &quot;file.txt&quot; </span></code></pre></div>
 <p>We always can restore previous versions of our work. Let assume that we want to restore the previous version of <code>file.txt</code>:</p>
-<pre><code>cat file.txt # show the content of the file 
-git show HEAD~1 file.txt # show the previous commit (we want to restore this version)
-git checkout HEAD~1 file.txt # restore the previous version
-cat file.txt # show the content of the file</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">cat</span> file.txt <span class="co"># show the content of the file </span>
+<span class="fu">git</span> show HEAD~1 file.txt <span class="co"># show the previous commit (we want to restore this version)</span>
+<span class="fu">git</span> checkout HEAD~1 file.txt <span class="co"># restore the previous version</span>
+<span class="fu">cat</span> file.txt <span class="co"># show the content of the file</span></code></pre></div>
 <p>To record the new changes by Git</p>
-<pre><code>git add file.txt
-git commit -m &quot;restore the previous version&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> add file.txt
+<span class="fu">git</span> commit -m <span class="st">&quot;restore the previous version&quot;</span></code></pre></div>
 <p>Your local computer might be one side of your mechanism to control and store your file versions. <a href="https://github.com/">GitHub</a> and <a href="https://about.gitlab.com/">GitLab</a> are providing an infrastructure to keep track of our files in somewhere outside the local computers. Let’s connect to GitHub through SSH and add <code>first_repo</code> repository to it.</p>
 <p>To connect your GitHub (or GitLab) account through SSH, you should generate a public SSH key on your local computer and add it to your GitHub account at <code>Settings &gt; SSH Keys</code>. To do that open a terminal prompt in your computer and issue:</p>
-<pre><code>cd ~
-ssh-keygen</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">cd</span> ~
+<span class="fu">ssh-keygen</span></code></pre></div>
 <p>Make sure to create a strong passphrase and remember it for connecting to your account. To show the public key, use the following in the terminal prompt:</p>
-<pre><code>cat .ssh/id_rsa.pub</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">cat</span> .ssh/id_rsa.pub</code></pre></div>
 <p>Copy the the public ssh-key by <code>ctrl+shift+c</code> and add it to <code>Settings &gt; SSH Keys</code> on your GitHub account.</p>
 <p>Now, click on “+” next to your avatar on GitHub to generate a new repository, name it <code>first_repo</code> and do not initialize it. For next steps, copy the SSH address of your remote repository from GitHub that should be like <code>git@github.com:user/first_repo.git</code> - later you may find the address under “Clone or download” tab on your repository.</p>
 <p>To add the remote repository, open a terminal prompt on your computer and issue:</p>
-<pre><code>cd ~/first_repo
-git remote add origin git@github.com:user/first_repo.git # add the remote repo
-git remote -v # show the remote repository </code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">cd</span> ~/first_repo
+<span class="fu">git</span> remote add origin git@github.com:user/first_repo.git <span class="co"># add the remote repo</span>
+<span class="fu">git</span> remote -v <span class="co"># show the remote repository </span></code></pre></div>
 <p>Finally, to upload your local repository to GitHub use:</p>
-<pre><code>git push -u origin master</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> push -u origin master</code></pre></div>
 <p>You can always generate and initialize a new repository on your remote i.e. GitHub and clone to your local computer. Click on “+” next to your avatar on GitHub to generate a new repository, call it <code>second_repo</code> and make sure to be initialized. To clone the remote repository on your local system with SSH, click on “Clone or download” and copy the SSH address. Open a terminal prompt on your local computer and issue:</p>
-<pre><code>cd ~
-mkdir second_repo 
-cd second_repo
-git clone git@github.com:YourUserName/second_repo.git</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">cd</span> ~
+<span class="fu">mkdir</span> second_repo 
+<span class="bu">cd</span> second_repo
+<span class="fu">git</span> clone git@github.com:YourUserName/second_repo.git</code></pre></div>
 <p>Any changes in the <code>second_repo</code> directory will record by Git and you can use <code>git push origin</code> to update the remote.</p>
 <p>Another important asset of Git is collaboration with others at the same time. One of the most effective way to collaborate without conflict, is making new branches in addition to the “master” branch. Use the following Git commands to make a new branch and switch between branches :</p>
-<pre><code>git branch # show all branches
-git branch my_work # create &quot;my_work&quot; branch
-git checkout my_work # switch to &quot;my_work&quot; branch</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> branch <span class="co"># show all branches</span>
+<span class="fu">git</span> branch my_work <span class="co"># create &quot;my_work&quot; branch</span>
+<span class="fu">git</span> checkout my_work <span class="co"># switch to &quot;my_work&quot; branch</span></code></pre></div>
 <p>Now if we keep working on the directory, all changes will be stored at “my_work” branch instead of “master” branch. That will prevent the conflict between your work and others. When you finish your tasks you can merge “my_work” branch to the “master” by:</p>
-<pre><code>git merge &quot;my_work&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> merge <span class="st">&quot;my_work&quot;</span></code></pre></div>
 </div>
 <div id="summary" class="section level3">
 <h3>Summary</h3>
 <p>The following Git commands are used in this article:</p>
-<pre><code>man git &lt;command&gt;: show the manual of the command
+<pre class="txt"><code>man git &lt;command&gt;: show the manual of the command
 git init: create an empty Git repository or reinitialize an existing one
 git status: show the working tree status
 git add: add file contents to the index
