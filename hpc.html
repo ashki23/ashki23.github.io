@@ -482,7 +482,7 @@ srun: run parallel jobs
 squeue: check on the jobs status
 squeue -u &lt;username&gt;: check on a user&#39;s job status
 watch -n 60 squeue -u yourUsername: check on the user status every 60 sec, ctrl + c to stop
-sacct: displays accounting data for all jobs and job steps in the SLURM job accounting database
+sacct: displays accounting data for all jobs and job steps in the SLURM job accounting log
 scancel JOBID: cancel the job with JOBID
 scancel -u &lt;username&gt;: cancel all the user jobs</code></pre>
 <p>To see more details about these commands use <code>&lt;command&gt; --help</code>.</p>
@@ -499,7 +499,7 @@ scancel -u &lt;username&gt;: cancel all the user jobs</code></pre>
 echo &#39;This script is running on:&#39;
 hostname
 sleep 120</code></pre>
-<p>Special <code>#!</code> (hash bang) comment at the beginning of scripts specifies what program should be use (typically <code>/bin/bash</code>). SLURM uses <code>#SBATCH</code> special comment to denote special scheduler-specific options. There are several options that you may find by <code>sbatch --help</code>. For example, the above file uses 1 nodes, 2 CPUs, 4 gigabytes of memory, 5 minutes of walltime, gives a new name to the job, and let you know when it is ended. Now we can submit the job file by <code>sbatch example-job.sh</code>. You may use <code>squeue -u USER</code> or <code>sacct -u USER</code> to check the job file status, and use <code>scancel JOBID</code> to cancel the job.</p>
+<p>Special characters <code>#!</code> (shebang) at the beginning of scripts specifies what program should be used (i.e. <code>/bin/bash</code> or <code>/usr/bin/python3</code>). SLURM uses <code>#SBATCH</code> special comment to denote special scheduler-specific options. There are several options that you may find by <code>sbatch --help</code>. For example, the above file uses 1 nodes, 2 CPUs, 4 gigabytes of memory, 5 minutes of walltime, gives a new name to the job, and let you know when it is ended. Now we can submit the job file by <code>sbatch example-job.sh</code>. You may use <code>squeue -u USER</code> or <code>sacct -u USER</code> to check the job file status, and use <code>scancel JOBID</code> to cancel the job.</p>
 <p>To run a single command, we can use <code>srun</code>. For instance, <code>srun -c 2 echo &quot;This job will use 2 CPUs.&quot;</code> submits a job and allocates 2 CPUs. Also, we can use <code>srun</code> to open a program in an interaction mode. For example, <code>srun --pty bash</code> will open a Bash shell in a computation node.</p>
 <p><strong>Note</strong>: in general, when we connect to a cluster we will go to a node, called <strong>login node</strong>, which is not meant to do heavy computational tasks. So, to do your computations in a proper way, you should always use either <strong><code>sbatch</code></strong> or <strong><code>srun</code></strong>.</p>
 <p>Usually there are many <strong>modules</strong> available on the clusters. To find and load these modules use:</p>
