@@ -65,6 +65,71 @@
 <link rel="icon" href="images/AM.jpg">
 
 
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' || rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
 
 
 <style type="text/css">
@@ -474,7 +539,7 @@ h4.author {
 <div id="scheduling-jobs" class="section level2">
 <h2>Scheduling jobs</h2>
 <p>On an HPC system, we need a scheduler to manage how jobs running on a cluster. One of the most common schedulers is SLURM. The following are some the most helpful SLURM commands:</p>
-<pre><code>sinfo: shows info about the nodes
+<pre class="txt"><code>sinfo: shows info about the nodes
 sacctmgr show qos normal: show max number of jobs that user can run in parallel 
 sjstat: display statistics of jobs under control of SLURM
 sbatch: submit a job to the scheduler
@@ -487,27 +552,27 @@ scancel JOBID: cancel the job with JOBID
 scancel -u &lt;username&gt;: cancel all the user jobs</code></pre>
 <p>To see more details about these commands use <code>&lt;command&gt; --help</code>.</p>
 <p>Let’s connect to the cluster through <code>ssh user@server</code>, and do some practices. For example, use <code>nano example-job.sh</code> to make a job file including:</p>
-<pre><code>#!/bin/bash
-#SBATCH --nodes=1
-#SBATCH --cpus=2 
-#SBATCH --mem=4g 
-#SBATCH --time 0:5:00 
-#SBATCH --job-name=NewJobName
-#SBATCH --mail-user=your@email.com
-#SBATCH --mail-type=END
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co">#!/bin/bash</span>
+<span class="co">#SBATCH --nodes=1</span>
+<span class="co">#SBATCH --cpus=2 </span>
+<span class="co">#SBATCH --mem=4g </span>
+<span class="co">#SBATCH --time 0:5:00 </span>
+<span class="co">#SBATCH --job-name=NewJobName</span>
+<span class="co">#SBATCH --mail-user=your@email.com</span>
+<span class="co">#SBATCH --mail-type=</span><span class="re">END</span>
 
-echo &#39;This script is running on:&#39;
-hostname
-sleep 120</code></pre>
+<span class="bu">echo</span> <span class="st">&#39;This script is running on:&#39;</span>
+<span class="fu">hostname</span>
+<span class="fu">sleep</span> 120</code></pre></div>
 <p>Special characters <code>#!</code> (shebang) at the beginning of scripts specifies what program should be used (i.e. <code>/bin/bash</code> or <code>/usr/bin/python3</code>). SLURM uses <code>#SBATCH</code> special comment to denote special scheduler-specific options. There are several options that you may find by <code>sbatch --help</code>. For example, the above file uses 1 nodes, 2 CPUs, 4 gigabytes of memory, 5 minutes of walltime, gives a new name to the job, and let you know when it is ended. Now we can submit the job file by <code>sbatch example-job.sh</code>. You may use <code>squeue -u USER</code> or <code>sacct -u USER</code> to check the job file status, and use <code>scancel JOBID</code> to cancel the job.</p>
 <p>To run a single command, we can use <code>srun</code>. For instance, <code>srun -c 2 echo &quot;This job will use 2 CPUs.&quot;</code> submits a job and allocates 2 CPUs. Also, we can use <code>srun</code> to open a program in an interaction mode. For example, <code>srun --pty bash</code> will open a Bash shell in a computation node.</p>
 <p><strong>Note</strong>: in general, when we connect to a cluster we will go to a node, called <strong>login node</strong>, which is not meant to do heavy computational tasks. So, to do your computations in a proper way, you should always use either <strong><code>sbatch</code></strong> or <strong><code>srun</code></strong>.</p>
 <p>Usually there are many <strong>modules</strong> available on the clusters. To find and load these modules use:</p>
-<pre><code>module avail: shows all avaliable madules (programs) in the cluster
-module load &lt;name&gt;: to load a module ex. module load R or python
-module list: shows list of the loaded modules
-module unload &lt;name&gt;: to unload a module
-module purge: to unload all modules</code></pre>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">module</span> avail: shows all avaliable madules (programs) <span class="kw">in</span> <span class="ex">the</span> cluster
+<span class="ex">module</span> load <span class="op">&lt;</span>name<span class="op">&gt;</span>: to load a module ex. module load R or python
+<span class="ex">module</span> list: shows list of the loaded modules
+<span class="ex">module</span> unload <span class="op">&lt;</span>name<span class="op">&gt;</span>: to unload a module
+<span class="ex">module</span> purge: to unload all modules</code></pre></div>
 <p>To create a template <code>sbatch</code> job file, use the following steps:</p>
 <ol style="list-style-type: decimal">
 <li>Generate a file including all codes that you want to run in the cluster</li>
@@ -517,57 +582,52 @@ module purge: to unload all modules</code></pre>
 <li>Use <code>sbatch</code>to run the generated file in step 4</li>
 </ol>
 <p>For example let’s run a python code, run <code>nano test-hello.py</code> and copy the following:</p>
-<pre><code>#!/usr/bin/python3
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co">#!/usr/bin/python3</span>
 
-print(&quot;Hello world&quot;)</code></pre>
+<span class="ex">print</span>(<span class="st">&quot;Hello world&quot;</span>)</code></pre></div>
 <p>Then use <code>nano environment.sh</code> to create the environment file including:</p>
-<pre><code>#!/bin/bash
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co">#!/bin/bash</span>
 
-module load python/python-3.5.2</code></pre>
-<p>Then use <code>nano run-test-hello.sh</code> to make the run file by:</p>
-<pre><code>#!/bin/bash
+<span class="ex">module</span> load miniconda3</code></pre></div>
+<p>Then use <code>nano job-test-hello.sh</code> to make the job file by:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co">#!/bin/bash</span>
 
-. ./envrionment.sh
+<span class="co">#SBATCH --job-name=TestHello</span>
+<span class="co">#SBATCH --nodes=1</span>
+<span class="co">#SBATCH --partition hpc0</span>
+<span class="co">#SBATCH --mem 1g</span>
 
-module list
+<span class="bu">source</span> ./envrionment.sh
 
-echo === $(hostname) $(date)
+<span class="co">## List of loaded modules</span>
+<span class="ex">module</span> list
 
-python3 ./test-hello.py
+<span class="bu">echo</span> === <span class="va">$(</span><span class="fu">hostname</span><span class="va">)</span> <span class="va">$(</span><span class="fu">date</span><span class="va">)</span>
 
-echo === $(date)</code></pre>
-<p>Note that the <code>.</code> before <code>./envrionment.sh</code> is same as the <code>source</code>. And finally make the job file, <code>nano job-test-hello.sh</code>:</p>
-<pre><code>#!/bin/bash
+<span class="ex">srun</span> python3 ./test-hello.py
 
-#SBATCH --job-name=TestHello
-#SBATCH --nodes=1
-#SBATCH --partition hpc0
-#SBATCH --mem 1g
-
-# ==== jobfile
-
-srun bash ./run-test-hello.sh</code></pre>
+<span class="bu">echo</span> === <span class="va">$(</span><span class="fu">date</span><span class="va">)</span></code></pre></div>
 <p>Now, use <code>sbatch job-test-hello.sh</code> to send the job for running.</p>
 </div>
 <div id="transferring-files" class="section level2">
 <h2>Transferring files</h2>
 <p><strong>Secure copy (scp)</strong></p>
 <p>We can use secure copy or <code>scp</code> to transfer files from your local computer to the cluster and vice versa. For example, let’s transfer <code>code_example.py</code> from <code>temp/</code> directory on the <code>clark.edu</code> cluster to <code>Documents/</code> directory in your local computer when we are using the local computer. For this we can use:</p>
-<pre><code>cd ~/Documents
-scp user@clark.edu:/temp/code_example.py .</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">cd</span> ~/Documents
+<span class="fu">scp</span> user@clark.edu:/temp/code_example.py .</code></pre></div>
 <p>The <code>.</code> at the end of the code says, paste with the same name of the source file. To do the reverse task with:</p>
-<pre><code>cd ~/Documents
-scp code_example.py user@clark.edu:/temp/.</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">cd</span> ~/Documents
+<span class="fu">scp</span> code_example.py user@clark.edu:/temp/.</code></pre></div>
 <p>To recursively copy a directory (with all files in the directory), we just need to add the -r (recursive) flag. For example to download temp folder use:</p>
-<pre><code>cd ~/Documents
-scp -r user@clark.edu:/temp .</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">cd</span> ~/Documents
+<span class="fu">scp</span> -r user@clark.edu:/temp .</code></pre></div>
 <p><strong>SSH file transfer protocol (sftp)</strong></p>
 <p>The other method to transfer data between your local machine and a cluster is using SSH file transfer protocol or <code>sftp</code>. In <code>sftp</code> we can use tab completion for finding files very easily. You may connect to a cluster through <code>sftp</code> very similar to <code>ssh</code> by running <code>sftp username@server</code>.</p>
-<p>You can use most of the Bash commands when using <code>sftp</code> and at the same time access to both cluster and local computer. Usually you can apply the bash commands in you local system by adding <code>l</code> to the beginning of the commands. Let’s try below commands to see the differences:</p>
-<pre><code>pwd # print working directory on the cluster
-lpwd # print working directtory on the local computer
-cd # chnage directory on the cluster
-lcd # change directtory on the local computer</code></pre>
+<p>You can use most of the Bash commands when using <code>sftp</code> and at the same time access to both cluster and local computer. Usually you can apply the bash commands in you local system by adding <code>l</code> to the beginning of the commands. For example:</p>
+<pre class="txt"><code>pwd: print working directory on the cluster
+lpwd: print working directtory on the local computer
+cd: chnage directory on the cluster
+lcd: change directtory on the local computer</code></pre>
 <p>Use <strong><code>put</code></strong> to upload and <strong><code>get</code></strong> to download a file.</p>
 <p><strong>Wget</strong></p>
 <p>To get data from web, also, you can use <code>wget</code> command to download whatever you want on the cluster.</p>
