@@ -689,10 +689,10 @@ exit (ctrl+d): to exit</code></pre>
 <div id="pipes-and-filters" class="section level2">
 <h2>Pipes and Filters</h2>
 <p>Now that we know a few basic commands, we can combine the programs and commands in new ways. The following commands let us to use output of a command as an input for another command or store the outputs of commands in a separate file.</p>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">first</span> <span class="kw">|</span> <span class="ex">second</span>: is a pipeline<span class="kw">;</span> <span class="ex">the</span> output of the first command is used as the input to the second 
-<span class="bu">command</span> <span class="op">&gt;</span> file: redirects a command’s output to a file (overwriting any existing content)
-<span class="bu">command</span> <span class="op">&gt;&gt;</span> file: appends a command’s output to a file
-<span class="op">&lt;</span><span class="bu">:</span> operator redirects input to a command</code></pre></div>
+<pre class="txt"><code>first | second: is a pipeline; the output of the first command is used as the input to the second 
+command &gt; file: redirects a command’s output to a file (overwriting any existing content)
+command &gt;&gt; file: appends a command’s output to a file
+&lt;: operator redirects input to a command</code></pre>
 <p>For example let’s remove the duplicated names in the <code>names.txt</code>:</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sort</span> names.txt <span class="kw">|</span> <span class="fu">uniq</span> 
 <span class="bu">echo</span> --- To count number of occurrences ---
