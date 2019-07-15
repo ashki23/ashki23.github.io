@@ -7,6 +7,7 @@
 <meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 <meta name="author" content="Ashkan Mirzaee" />
@@ -143,7 +144,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
       var style = rule.style.cssText;
       // check if color or background-color is set
-      if (rule.style.color === '' || rule.style.backgroundColor === '') continue;
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
       // replace div.sourceCode by a pre.sourceCode rule
       sheets[i].deleteRule(j);
       sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
@@ -362,48 +363,9 @@ $(document).ready(function () {
 }
 </style>
 
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
 <!-- code folding -->
 
 
-
-<script>
-$(document).ready(function ()  {
-
-    // move toc-ignore selectors from section div to header
-    $('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "h1,h2,h3",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
-    };
-    options.showAndHide = true;
-    options.smoothScroll = true;
-
-    // tocify
-    var toc = $("#TOC").tocify(options).data("toc-tocify");
-});
-</script>
 
 <style type="text/css">
 
@@ -662,8 +624,8 @@ lcd: change directtory on the local computer</code></pre>
 <p>Note that you can find the location of software by loading a module and using <code>which</code> command, for example, <code>module load miniconda3</code> and then run <code>which python3</code>. For instance, a directory in the root directory could include <code>software</code> and <code>spack</code> directories for allocating software. Many clusters use <a href="https://spack.readthedocs.io/en/latest/">Spack</a> to built required environments and install software but some software are not in the Spack inventory that should be installed manually (in our example <code>software</code> directory includes them).</p>
 <p>As a user of a cluster you have several ways to build your own system and install and update software that you need:</p>
 <ol style="list-style-type: decimal">
-<li><p><strong>Python</strong>: If you only need several Python packages probably the easiest way is making a virtual environment by <code>venv</code> module in Python3. After that you will be able to use <code>pip</code> package manager to install packages that you want. See <a href="">here</a> to learn more.</p></li>
-<li><p><strong>Miniconda</strong>: Miniconda, a light version of Anaconda, let you install many software including Python, R and their packages. You can try <code>module load anaconda3</code> to load the module and then use <code>conda</code> to create a virtual environment and install software and packages. See <a href="">here</a> to learn more. Note that if your cluster does not include <code>miniconda3</code> you may use the third option to install it and the use <code>conda</code>.</p></li>
+<li><p><strong>Python</strong>: If you only need several Python packages probably the easiest way is making a virtual environment by <code>venv</code> module in Python3. After that you will be able to use <code>pip</code> package manager to install packages that you want.</p></li>
+<li><p><strong>Miniconda</strong>: Miniconda, a light version of Anaconda, let you install many software including Python, R and their packages. You can try <code>module load anaconda3</code> to load the module and then use <code>conda</code> to create a virtual environment and install software and packages. Note that if the cluster does not include <code>miniconda3</code> you may use the third option to install it.</p></li>
 <li><p><strong>Spack</strong>: it gives you more freedom to install software and packages that are available in Spack (see <a href="https://spack.readthedocs.io/en/latest/package_list.html#gurobi">here</a>. To use Spack you need to install Spack first on you local directories (which is above <code>cd ~</code>) and then use <code>spack</code> to install and load packages. You may learn more about Spack <a href="">here</a>. Note that this way might take long time to install Spack and the modules, so, first make sure the second option could not install your requirements.</p></li>
 <li><p><strong>Manually</strong>: Still there are many software that are not in Conda or Spack. You should follow the software instruction to install them. Make sure see (if exist) the ReadMe file, <code>cat ReadMe</code>, and configure options, <code>./configure --help</code>, in the installation directory. Since you are not using root directory, make sure use the right directory that all the dependencies already installed (i.e <code>./configure --prefix=${LOCAL}</code> (define LOCAL first)). This method could be the hardest way, so, first make sure Conda and Spack could not help you. Note that software names might be slightly different in Conda or Spack so have a look on all the names that are close.</p></li>
 </ol>
@@ -709,6 +671,49 @@ $(document).ready(function () {
 });
 
 
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
 </script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
