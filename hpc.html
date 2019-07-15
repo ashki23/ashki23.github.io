@@ -67,41 +67,67 @@
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css" data-origin="pandoc">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 
 </style>
 <script>
@@ -426,8 +452,6 @@ div.tocify {
 
 .tocify-subheader .tocify-item {
   font-size: 0.90em;
-  padding-left: 25px;
-  text-indent: 0;
 }
 
 .tocify .list-group-item {
@@ -529,12 +553,13 @@ h4.author {
   display: none;
 }
 </style>
-<p>When the task to solve become more heavy on computations, the operations are typically out-sourced from the local laptop or desktop to elsewhere. You may turn runs on a HPC system (a cluster or super computer) which is much powerful than a local computer in terms of speed, volume, efficiency and cost. Using HPC systems often involves the use of a Shell through a command line interface which is necessary for this lesson (see <a href="shell.html">here</a>). The following are some great workshops about HPC:</p>
+<p>Computation is all about the limitation. If we have enough time and resources we might find the answer. But the problem arise when time or resources are limited. A supercomputer or cluster with high level of performance could let us to tackle the problem. The following are some great workshops about HPC:</p>
 <ul>
 <li><a href="https://hpc-carpentry.github.io/hpc-intro/">Introduction to High-Performance Computing</a></li>
 <li><a href="https://hpc-carpentry.github.io/hpc-shell/">Introduction to using the shell in a High-Performance Computing context</a></li>
 </ul>
-<p>This tutorial provides a list of basic scheduling commands, a template for submitting jobs to a cluster, and some methods for transferring files between local computers and clusters.</p>
+<p>Using HPC systems often involves the use of a Shell through a command line interface which is necessary for this topic (see <a href="shell.html">here</a>).</p>
+<p>This tutorial provides a list of basic scheduling commands, submitting jobs, methods of transferring files from local computers, and installing software on clusters.</p>
 <hr />
 <div id="scheduling-jobs" class="section level2">
 <h2>Scheduling jobs</h2>
@@ -552,18 +577,18 @@ scancel JOBID: cancel the job with JOBID
 scancel -u &lt;username&gt;: cancel all the user jobs</code></pre>
 <p>To see more details about these commands use <code>&lt;command&gt; --help</code>.</p>
 <p>Let’s connect to the cluster through <code>ssh user@server</code>, and do some practices. For example, use <code>nano example-job.sh</code> to make a job file including:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co">#!/bin/bash</span>
-<span class="co">#SBATCH --nodes=1</span>
-<span class="co">#SBATCH --cpus=2 </span>
-<span class="co">#SBATCH --mem=4g </span>
-<span class="co">#SBATCH --time 0:5:00 </span>
-<span class="co">#SBATCH --job-name=NewJobName</span>
-<span class="co">#SBATCH --mail-user=your@email.com</span>
-<span class="co">#SBATCH --mail-type=</span><span class="re">END</span>
-
-<span class="bu">echo</span> <span class="st">&#39;This script is running on:&#39;</span>
-<span class="fu">hostname</span>
-<span class="fu">sleep</span> 120</code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="co">#!/bin/bash</span></a>
+<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="co">#SBATCH --nodes=1</span></a>
+<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="co">#SBATCH --cpus=2 </span></a>
+<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="co">#SBATCH --mem=4g </span></a>
+<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="co">#SBATCH --time 0:5:00 </span></a>
+<a class="sourceLine" id="cb2-6" data-line-number="6"><span class="co">#SBATCH --job-name=NewJobName</span></a>
+<a class="sourceLine" id="cb2-7" data-line-number="7"><span class="co">#SBATCH --mail-user=your@email.com</span></a>
+<a class="sourceLine" id="cb2-8" data-line-number="8"><span class="co">#SBATCH --mail-type=</span><span class="re">END</span></a>
+<a class="sourceLine" id="cb2-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb2-10" data-line-number="10"><span class="bu">echo</span> <span class="st">&#39;This script is running on:&#39;</span></a>
+<a class="sourceLine" id="cb2-11" data-line-number="11"><span class="fu">hostname</span></a>
+<a class="sourceLine" id="cb2-12" data-line-number="12"><span class="fu">sleep</span> 120</a></code></pre></div>
 <p>Special characters <code>#!</code> (shebang) at the beginning of scripts specifies what program should be used (i.e. <code>/bin/bash</code> or <code>/usr/bin/python3</code>). SLURM uses <code>#SBATCH</code> special comment to denote special scheduler-specific options. There are several options that you may find by <code>sbatch --help</code>. For example, the above file uses 1 nodes, 2 CPUs, 4 gigabytes of memory, 5 minutes of walltime, gives a new name to the job, and let you know when it is ended. Now we can submit the job file by <code>sbatch example-job.sh</code>. You may use <code>squeue -u USER</code> or <code>sacct -u USER</code> to check the job file status, and use <code>scancel JOBID</code> to cancel the job.</p>
 <p>To run a single command, we can use <code>srun</code>. For instance, <code>srun -c 2 echo &quot;This job will use 2 CPUs.&quot;</code> submits a job and allocates 2 CPUs. Also, we can use <code>srun</code> to open a program in an interaction mode. For example, <code>srun --pty bash</code> will open a Bash shell in a computation node.</p>
 <p><strong>Note</strong>: in general, when we connect to a cluster we will go to a node, called <strong>login node</strong>, which is not meant to do heavy computational tasks. So, to do your computations in a proper way, you should always use either <strong><code>sbatch</code></strong> or <strong><code>srun</code></strong>.</p>
@@ -575,51 +600,51 @@ module unload &lt;name&gt;: to unload a module
 module purge: to unload all modules</code></pre>
 <p>To create a template <code>sbatch</code> job file, use the following steps:</p>
 <ol style="list-style-type: decimal">
-<li>Generate a file including all codes that you want to run in the cluster</li>
-<li>Generate a Bash file including all modules that are required for your job (<code>environment.sh</code>)</li>
-<li>Generate a Bash file to call steps 1 and 2 including all <code>#SBATCH</code> options (<code>job_file.sh</code>)</li>
-<li>Use <code>sbatch</code>to run the generated file in step 3</li>
+<li>generate a file including all codes that you want to run in the cluster</li>
+<li>generate a Bash file including all modules that are required for your job (<code>environment.sh</code>)</li>
+<li>generate a Bash file to call steps 1 and 2 including all <code>#SBATCH</code> options (<code>job_file.sh</code>)</li>
+<li>use <code>sbatch</code>to run the generated file in step 3</li>
 </ol>
 <p>For example let’s run a python code, run <code>nano test-hello.py</code> and copy the following:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co">#!/usr/bin/python3</span>
-
-<span class="ex">print</span>(<span class="st">&quot;Hello world&quot;</span>)</code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="co">#!/usr/bin/python3</span></a>
+<a class="sourceLine" id="cb4-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="ex">print</span>(<span class="st">&quot;Hello world&quot;</span>)</a></code></pre></div>
 <p>Then use <code>nano environment.sh</code> to create the environment file including:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co">#!/bin/bash</span>
-
-<span class="ex">module</span> load miniconda3</code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="co">#!/bin/bash</span></a>
+<a class="sourceLine" id="cb5-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="ex">module</span> load miniconda3</a></code></pre></div>
 <p>Then use <code>nano job-test-hello.sh</code> to make the job file by:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co">#!/bin/bash</span>
-
-<span class="co">#SBATCH --job-name=TestHello</span>
-<span class="co">#SBATCH --nodes=1</span>
-<span class="co">#SBATCH --partition hpc0</span>
-<span class="co">#SBATCH --mem 1g</span>
-
-<span class="bu">source</span> ./envrionment.sh
-
-<span class="co">## List of loaded modules</span>
-<span class="ex">module</span> list
-
-<span class="bu">echo</span> === <span class="va">$(</span><span class="fu">hostname</span><span class="va">)</span> <span class="va">$(</span><span class="fu">date</span><span class="va">)</span>
-
-<span class="ex">srun</span> python3 ./test-hello.py
-
-<span class="bu">echo</span> === <span class="va">$(</span><span class="fu">date</span><span class="va">)</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="co">#!/bin/bash</span></a>
+<a class="sourceLine" id="cb6-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb6-3" data-line-number="3"><span class="co">#SBATCH --job-name=TestHello</span></a>
+<a class="sourceLine" id="cb6-4" data-line-number="4"><span class="co">#SBATCH --nodes=1</span></a>
+<a class="sourceLine" id="cb6-5" data-line-number="5"><span class="co">#SBATCH --partition hpc0</span></a>
+<a class="sourceLine" id="cb6-6" data-line-number="6"><span class="co">#SBATCH --mem 1g</span></a>
+<a class="sourceLine" id="cb6-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb6-8" data-line-number="8"><span class="bu">source</span> ./envrionment.sh</a>
+<a class="sourceLine" id="cb6-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb6-10" data-line-number="10"><span class="co">## List of loaded modules</span></a>
+<a class="sourceLine" id="cb6-11" data-line-number="11"><span class="ex">module</span> list</a>
+<a class="sourceLine" id="cb6-12" data-line-number="12"></a>
+<a class="sourceLine" id="cb6-13" data-line-number="13"><span class="bu">echo</span> === <span class="va">$(</span><span class="fu">hostname</span><span class="va">)</span> <span class="va">$(</span><span class="fu">date</span><span class="va">)</span></a>
+<a class="sourceLine" id="cb6-14" data-line-number="14"></a>
+<a class="sourceLine" id="cb6-15" data-line-number="15"><span class="ex">srun</span> python3 ./test-hello.py</a>
+<a class="sourceLine" id="cb6-16" data-line-number="16"></a>
+<a class="sourceLine" id="cb6-17" data-line-number="17"><span class="bu">echo</span> === <span class="va">$(</span><span class="fu">date</span><span class="va">)</span></a></code></pre></div>
 <p>Now, use <code>sbatch job-test-hello.sh</code> to send the job for running.</p>
 </div>
 <div id="transferring-files" class="section level2">
 <h2>Transferring files</h2>
 <p><strong>Secure copy (scp)</strong></p>
 <p>We can use secure copy or <code>scp</code> to transfer files from your local computer to the cluster and vice versa. For example, let’s transfer <code>code_example.py</code> from <code>temp/</code> directory on the <code>clark.edu</code> cluster to <code>Documents/</code> directory in your local computer when we are using the local computer. For this we can use:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">cd</span> ~/Documents
-<span class="fu">scp</span> user@clark.edu:/temp/code_example.py .</code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="bu">cd</span> ~/Documents</a>
+<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="fu">scp</span> user@clark.edu:/temp/code_example.py .</a></code></pre></div>
 <p>The <code>.</code> at the end of the code says, paste with the same name of the source file. To do the reverse task with:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">cd</span> ~/Documents
-<span class="fu">scp</span> code_example.py user@clark.edu:/temp/.</code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="bu">cd</span> ~/Documents</a>
+<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="fu">scp</span> code_example.py user@clark.edu:/temp/.</a></code></pre></div>
 <p>To recursively copy a directory (with all files in the directory), we just need to add the -r (recursive) flag. For example to download temp folder use:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">cd</span> ~/Documents
-<span class="fu">scp</span> -r user@clark.edu:/temp .</code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="bu">cd</span> ~/Documents</a>
+<a class="sourceLine" id="cb9-2" data-line-number="2"><span class="fu">scp</span> -r user@clark.edu:/temp .</a></code></pre></div>
 <p><strong>SSH file transfer protocol (sftp)</strong></p>
 <p>The other method to transfer data between your local machine and a cluster is using SSH file transfer protocol or <code>sftp</code>. In <code>sftp</code> we can use tab completion for finding files very easily. You may connect to a cluster through <code>sftp</code> very similar to <code>ssh</code> by running <code>sftp username@server</code>.</p>
 <p>You can use most of the Bash commands when using <code>sftp</code> and at the same time access to both cluster and local computer. Usually you can apply the bash commands in you local system by adding <code>l</code> to the beginning of the commands. For example:</p>
@@ -630,6 +655,18 @@ lcd: change directtory on the local computer</code></pre>
 <p>Use <strong><code>put</code></strong> to upload and <strong><code>get</code></strong> to download a file.</p>
 <p><strong>Wget</strong></p>
 <p>To get data from web, also, you can use <code>wget</code> command to download whatever you want on the cluster.</p>
+</div>
+<div id="software-installation" class="section level2">
+<h2>Software installation</h2>
+<p>When you login to a cluster as a user you will only have permission to change user level files (home directory <code>cd ~</code> and higher). So, in this case you never be able to install/update software that are located in the root directory (<code>cd /</code>).</p>
+<p>Note that you can find the location of software by loading a module and using <code>which</code> command, for example, <code>module load miniconda3</code> and then run <code>which python3</code>. For instance, a directory in the root directory could include <code>software</code> and <code>spack</code> directories for allocating software. Many clusters use <a href="https://spack.readthedocs.io/en/latest/">Spack</a> to built required environments and install software but some software are not in the Spack inventory that should be installed manually (in our example <code>software</code> directory includes them).</p>
+<p>As a user of a cluster you have several ways to build your own system and install and update software that you need:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Python</strong>: If you only need several Python packages probably the easiest way is making a virtual environment by <code>venv</code> module in Python3. After that you will be able to use <code>pip</code> package manager to install packages that you want. See <a href="">here</a> to learn more.</p></li>
+<li><p><strong>Miniconda</strong>: Miniconda, a light version of Anaconda, let you install many software including Python, R and their packages. You can try <code>module load anaconda3</code> to load the module and then use <code>conda</code> to create a virtual environment and install software and packages. See <a href="">here</a> to learn more. Note that if your cluster does not include <code>miniconda3</code> you may use the third option to install it and the use <code>conda</code>.</p></li>
+<li><p><strong>Spack</strong>: it gives you more freedom to install software and packages that are available in Spack (see <a href="https://spack.readthedocs.io/en/latest/package_list.html#gurobi">here</a>. To use Spack you need to install Spack first on you local directories (which is above <code>cd ~</code>) and then use <code>spack</code> to install and load packages. You may learn more about Spack <a href="">here</a>. Note that this way might take long time to install Spack and the modules, so, first make sure the second option could not install your requirements.</p></li>
+<li><p><strong>Manually</strong>: Still there are many software that are not in Conda or Spack. You should follow the software instruction to install them. Make sure see (if exist) the ReadMe file, <code>cat ReadMe</code>, and configure options, <code>./configure --help</code>, in the installation directory. Since you are not using root directory, make sure use the right directory that all the dependencies already installed (i.e <code>./configure --prefix=${LOCAL}</code> (define LOCAL first)). This method could be the hardest way, so, first make sure Conda and Spack could not help you. Note that software names might be slightly different in Conda or Spack so have a look on all the names that are close.</p></li>
+</ol>
 </div>
 
 
