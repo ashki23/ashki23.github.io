@@ -10,6 +10,9 @@ body {
   background-color: #fff;
   color: #333;
 }
+code {
+  white-space : pre-wrap !important;
+}
 h1 {
   font-size: 32px;
 }
