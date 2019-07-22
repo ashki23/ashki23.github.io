@@ -529,8 +529,9 @@ h4.author {
 <pre class="txt"><code>sinfo: shows info about the nodes
 sacctmgr show qos normal: show max number of jobs that user can run in parallel 
 sjstat: display statistics of jobs under control of SLURM
-sbatch: submit a job to the scheduler
 srun: run parallel jobs
+sbatch: submit a job to the scheduler
+sbatch --dependency=afterok:JOB_IDs: submit a job file after finishing other jobs
 squeue: check on the jobs status
 squeue -u &lt;username&gt;: check on a user&#39;s job status
 watch -n 60 squeue -u yourUsername: check on the user status every 60 sec, ctrl + c to stop
@@ -583,21 +584,25 @@ module purge: to unload all modules</code></pre>
 <a class="sourceLine" id="cb6-5" data-line-number="5"><span class="co">#SBATCH --partition hpc0</span></a>
 <a class="sourceLine" id="cb6-6" data-line-number="6"><span class="co">#SBATCH --mem 1g</span></a>
 <a class="sourceLine" id="cb6-7" data-line-number="7"></a>
-<a class="sourceLine" id="cb6-8" data-line-number="8"><span class="bu">source</span> ./envrionment.sh</a>
+<a class="sourceLine" id="cb6-8" data-line-number="8"><span class="bu">echo</span> <span class="st">&quot;</span><span class="va">$SLURM_JOB_ID</span><span class="st">&quot;</span> <span class="op">&gt;</span> job_id.log</a>
 <a class="sourceLine" id="cb6-9" data-line-number="9"></a>
-<a class="sourceLine" id="cb6-10" data-line-number="10"><span class="co">## List of loaded modules</span></a>
-<a class="sourceLine" id="cb6-11" data-line-number="11"><span class="ex">module</span> list</a>
-<a class="sourceLine" id="cb6-12" data-line-number="12"></a>
-<a class="sourceLine" id="cb6-13" data-line-number="13"><span class="bu">echo</span> === <span class="va">$(</span><span class="fu">hostname</span><span class="va">)</span> <span class="va">$(</span><span class="fu">date</span><span class="va">)</span></a>
+<a class="sourceLine" id="cb6-10" data-line-number="10"><span class="bu">source</span> ./envrionment.sh</a>
+<a class="sourceLine" id="cb6-11" data-line-number="11"></a>
+<a class="sourceLine" id="cb6-12" data-line-number="12"><span class="co">## List of loaded modules</span></a>
+<a class="sourceLine" id="cb6-13" data-line-number="13"><span class="ex">module</span> list</a>
 <a class="sourceLine" id="cb6-14" data-line-number="14"></a>
-<a class="sourceLine" id="cb6-15" data-line-number="15"><span class="ex">srun</span> python3 ./test-hello.py</a>
+<a class="sourceLine" id="cb6-15" data-line-number="15"><span class="bu">echo</span> === <span class="va">$(</span><span class="fu">hostname</span><span class="va">)</span> <span class="va">$(</span><span class="fu">date</span><span class="va">)</span></a>
 <a class="sourceLine" id="cb6-16" data-line-number="16"></a>
-<a class="sourceLine" id="cb6-17" data-line-number="17"><span class="bu">echo</span> === <span class="va">$(</span><span class="fu">date</span><span class="va">)</span></a></code></pre></div>
-<p>Now, use <code>sbatch job-test-hello.sh</code> to send the job for running.</p>
+<a class="sourceLine" id="cb6-17" data-line-number="17"><span class="ex">srun</span> python3 ./test-hello.py</a>
+<a class="sourceLine" id="cb6-18" data-line-number="18"></a>
+<a class="sourceLine" id="cb6-19" data-line-number="19"><span class="bu">echo</span> === <span class="va">$(</span><span class="fu">date</span><span class="va">)</span></a></code></pre></div>
+<p>Now, use <code>sbatch job-test-hello.sh</code> to send the job for running. Note <code>$SLURM_JOB_ID</code> shows the job ID of the submitted job. We can use <code>job_id.log</code> to meet the dependencies of job sequences.</p>
+<hr />
 </div>
 <div id="transferring-files" class="section level2">
 <h2>Transferring files</h2>
-<p><strong>Secure copy (scp)</strong></p>
+<div id="secure-copy-scp" class="section level3">
+<h3>Secure copy (scp)</h3>
 <p>We can use secure copy or <code>scp</code> to transfer files from your local computer to the cluster and vice versa. For example, let’s transfer <code>code_example.py</code> from <code>temp/</code> directory on the <code>clark.edu</code> cluster to <code>Documents/</code> directory in your local computer when we are using the local computer. For this we can use:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="bu">cd</span> ~/Documents</a>
 <a class="sourceLine" id="cb7-2" data-line-number="2"><span class="fu">scp</span> user@clark.edu:/temp/code_example.py .</a></code></pre></div>
@@ -607,7 +612,9 @@ module purge: to unload all modules</code></pre>
 <p>To recursively copy a directory (with all files in the directory), we just need to add the -r (recursive) flag. For example to download temp folder use:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="bu">cd</span> ~/Documents</a>
 <a class="sourceLine" id="cb9-2" data-line-number="2"><span class="fu">scp</span> -r user@clark.edu:/temp .</a></code></pre></div>
-<p><strong>SSH file transfer protocol (sftp)</strong></p>
+</div>
+<div id="ssh-file-transfer-protocol-sftp" class="section level3">
+<h3>SSH file transfer protocol (sftp)</h3>
 <p>The other method to transfer data between your local machine and a cluster is using SSH file transfer protocol or <code>sftp</code>. In <code>sftp</code> we can use tab completion for finding files very easily. You may connect to a cluster through <code>sftp</code> very similar to <code>ssh</code> by running <code>sftp username@server</code>.</p>
 <p>You can use most of the Bash commands when using <code>sftp</code> and at the same time access to both cluster and local computer. Usually you can apply the bash commands in you local system by adding <code>l</code> to the beginning of the commands. For example:</p>
 <pre class="txt"><code>pwd: print working directory on the cluster
@@ -615,8 +622,12 @@ lpwd: print working directtory on the local computer
 cd: chnage directory on the cluster
 lcd: change directtory on the local computer</code></pre>
 <p>Use <strong><code>put</code></strong> to upload and <strong><code>get</code></strong> to download a file.</p>
-<p><strong>Wget</strong></p>
+</div>
+<div id="wget" class="section level3">
+<h3>Wget</h3>
 <p>To get data from web, also, you can use <code>wget</code> command to download whatever you want on the cluster.</p>
+<hr />
+</div>
 </div>
 <div id="software-installation" class="section level2">
 <h2>Software installation</h2>
