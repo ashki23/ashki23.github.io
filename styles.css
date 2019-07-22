@@ -2,54 +2,35 @@ html {
   position: relative;
   min-height: 100%;
 }
+
 body {
   font: 20px/1.8 "Palatino Linotype", "Book Antiqua", Palatino, serif;
   color: #555;
   text-rendering: optimizeLegibility;
-  
 }
+
+h1, h2, h3, h4, h5, h6, h7 {
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
 code {
   white-space: pre-wrap !important;
 }
-h1 {
-  font: 35px/1.8 "Palatino Linotype", "Book Antiqua", Palatino, serif;
-  font-weight: normal;
-}
-h1.title {
-  font: 36px/1.8 "Palatino Linotype", "Book Antiqua", Palatino, serif;
-  font-weight: normal;
-}
-h2 {
-  font: 30px/1.8 "Palatino Linotype", "Book Antiqua", Palatino, serif;
-  font-weight: normal;
-}
-h3 {
-  font: 25px/1.8 "Palatino Linotype", "Book Antiqua", Palatino, serif;
-  font-weight: normal;
-}
-h4 {
-  font: 18px/1.8 "Palatino Linotype", "Book Antiqua", Palatino, serif;
-  font-weight: normal;
-  opacity: 0.80;
-}
-h4.author {
-  font-style: italic;
-}
-h5 {
-  font: 14px/1.8 "Palatino Linotype", "Book Antiqua", Palatino, serif;
-  font-weight: normal;
-}
+
 blockquote {
   font-size: 24px;
   border-left: 1px solid #ccc;
 }
+
 img {
   display: block;
   margin: auto;
 }
+
 img-circle {
-    border-radius: 50%;
+  border-radius: 50%;
 }
+
 .footer {
   position: relative;
   padding-top: 16px;
@@ -63,6 +44,7 @@ img-circle {
   background-color: transparent;
   color: #333;
 }
+
 .footer_sticky {
   position: absolute;
   padding: 16px;
@@ -76,184 +58,39 @@ img-circle {
   background-color: transparent;
   color: #333;
 }
-.fb-comments, .fb-comments iframe[style] {
-  width: 100% !important;
-}
+
 .tocify-extend-page {
   height: 0 !important;
 }
+
 .tocify-subheader, .tocify-item {
   font-size: 140%;
 }
+
 .pager {
   font-size: 24px;
   font-style: normal;
   line-height: 1.8;
 }
+
 .pager .next a:hover {
     background-color: transparent;
     border-color: transparent;
     text-decoration: underline;
 }
+
 .pager .previous a:hover {
     background-color: transparent;
     border-color: transparent;
     text-decoration: underline;
 }
-.navbar-default {
-  background-color: #2d2d2d;
-  border-color: #2d2d2d;
-  opacity: 0.98;
-}
-.navbar-default .navbar-brand {
-  color: #ffffff;
-  font-size: 28px;
-  font-style: normal;
-  line-height: 0.95;
-}
-.navbar-default .navbar-brand:hover,
-.navbar-default .navbar-brand:focus {
-  color: #ffffff;
-  font-size: 28px;
-  font-style: normal;
-  line-height: 0.95;
-}
-.navbar-default .navbar-text {
-  color: #ffffff;
-  font-size: 16px;
-  font-style: normal;
-  line-height: 2;
-}
-.navbar-default .navbar-nav > li > a {
-  color: #ffffff;
-  font-size: 16px;
-  font-style: normal;
-  line-height: 2;
-}
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus {
-  color: #a6a6a6;
-  background-color: transparent;
-  font-size: 16px;
-  font-style: normal;
-  line-height: 2;
-}
-.navbar-default .navbar-nav > .active > a,
-.navbar-default .navbar-nav > .active > a:hover,
-.navbar-default .navbar-nav > .active > a:focus {
-  color: #a6a6a6;
-  background-color: transparent;
-  font-size: 16px;
-  font-style: normal;
-  line-height: 2;
-}
-.navbar-default .navbar-nav > .open > a,
-.navbar-default .navbar-nav > .open > a:hover,
-.navbar-default .navbar-nav > .open > a:focus {
-  color: #a6a6a6;
-  background-color: transparent;
-  font-size: 16px;
-  font-style: normal;
-  line-height: 2;
-}
-.navbar-default .navbar-toggle {
-  border-color: transparent;
-}
-.navbar-default .navbar-toggle:hover,
-.navbar-default .navbar-toggle:focus {
-  background-color: transparent;
-}
-.navbar-default .navbar-toggle .icon-bar {
-  background-color: #ffffff !important;
-}
-.navbar-default .navbar-collapse {
-  border-color: #424242;
-}
-.navbar-default .navbar-form {
-  border-color: #424242;
-}
-.navbar-default .navbar-link {
-  color: #ffffff;
-}
-.navbar-default .navbar-link:hover {
-  color: #a6a6a6;
+.fb-comments, .fb-comments iframe[style] {
+  width: 100% !important;
 }
 
-@media (max-width: 767px) {
-  body {
-    font-size: 18px;
-    line-height: 1.6;
-  }
-  h1 {
-    font-size: 32px;
-    line-height: 1.6;
-  }
-  h1.title {
-    font-size: 32px;
-    line-height: 1.6;
-  }
-  h2 {
-    font-size: 28px;
-    line-height: 1.6;
-  }
-  blockquote {
-    font-size: 20px;
-  }
-  .tocify-subheader, .tocify-item {
-    font-size: 125%;
-  }
-  .navbar-default {
-    opacity: 1;
-  }
-  .navbar-default .navbar-brand {
-  color: #ffffff;
-  font-size: 21px;
-  font-style: normal;
-  line-height: 1;
-  }
-  .navbar-default .navbar-brand:hover,
-  .navbar-default .navbar-brand:focus {
-    color: #ffffff;
-    font-size: 21px;
-    font-style: normal;
-    line-height: 1;
-  }
-  .navbar-default .navbar-text {
-    color: #ffffff;
-    font-size: 16px;
-    font-style: normal;
-    line-height: 1.6;
-  }
-  .navbar-default .navbar-nav > li > a {
-    color: #ffffff;
-    font-size: 16px;
-    font-style: normal;
-    line-height: 1.6;
-  }
-  .navbar-default .navbar-nav > li > a:hover,
-  .navbar-default .navbar-nav > li > a:focus {
-    color: #a6a6a6;
-    background-color: transparent;
-    font-size: 16px;
-    font-style: normal;
-    line-height: 1.6;
-  }
-  .navbar-default .navbar-nav > .active > a,
-  .navbar-default .navbar-nav > .active > a:hover,
-  .navbar-default .navbar-nav > .active > a:focus {
-    color: #a6a6a6;
-    background-color: transparent;
-    font-size: 16px;
-    font-style: normal;
-    line-height: 1.6;
-  }
-  .navbar-default .navbar-nav > .open > a,
-  .navbar-default .navbar-nav > .open > a:hover,
-  .navbar-default .navbar-nav > .open > a:focus {
-    color: #a6a6a6;
-    background-color: transparent;
-    font-size: 16px;
-    font-style: normal;
-    line-height: 1.6;
-  }
+.navbar-default .navbar-brand {
+  font-size: 22px;
+}
+.navbar-default .navbar-nav {
+  font-size: 14px;
 }
