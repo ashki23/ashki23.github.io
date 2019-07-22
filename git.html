@@ -7,6 +7,7 @@
 <meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 <meta name="author" content="Ashkan Mirzaee" />
@@ -67,41 +68,67 @@
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css" data-origin="pandoc">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 
 </style>
 <script>
@@ -117,7 +144,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
       var style = rule.style.cssText;
       // check if color or background-color is set
-      if (rule.style.color === '' || rule.style.backgroundColor === '') continue;
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
       // replace div.sourceCode by a pre.sourceCode rule
       sheets[i].deleteRule(j);
       sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
@@ -336,48 +363,9 @@ $(document).ready(function () {
 }
 </style>
 
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
 <!-- code folding -->
 
 
-
-<script>
-$(document).ready(function ()  {
-
-    // move toc-ignore selectors from section div to header
-    $('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "h1,h2,h3",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
-    };
-    options.showAndHide = true;
-    options.smoothScroll = true;
-
-    // tocify
-    var toc = $("#TOC").tocify(options).data("toc-tocify");
-});
-</script>
 
 <style type="text/css">
 
@@ -426,8 +414,6 @@ div.tocify {
 
 .tocify-subheader .tocify-item {
   font-size: 0.90em;
-  padding-left: 25px;
-  text-indent: 0;
 }
 
 .tocify .list-group-item {
@@ -536,98 +522,100 @@ h4.author {
 <li><a href="https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf">GitHub cheat sheet</a></li>
 </ul>
 <hr />
-<div id="installation" class="section level3">
-<h3>Installation</h3>
+<div id="installation" class="section level2">
+<h2>Installation</h2>
 <p>Depends on the operating system that you are using you might need to install Git first. You can find Git for download from <a href="https://git-scm.com/downloads">here</a>. Computers with Windows operating systems do not automatically have a Unix Shell program installed. So for Windows users, it would be better to install <a href="https://gitforwindows.org/">Git for Windows</a>, which gives you access to both Bash shell commands and Git simultaneously.</p>
 <p>When we use Git for the first time, you can configure your name and email address by:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">git</span> config --global user.name <span class="st">&quot;your name&quot;</span>
-$ <span class="fu">git</span> config --global user.email <span class="st">&quot;your@email&quot;</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1">$ <span class="fu">git</span> config --global user.name <span class="st">&quot;your name&quot;</span></a>
+<a class="sourceLine" id="cb1-2" data-line-number="2">$ <span class="fu">git</span> config --global user.email <span class="st">&quot;your@email&quot;</span></a></code></pre></div>
 <p>This will set your name and email address to all activities associated with Git. You may find the list of adjusted configurations by <code>git config --list</code> and to see more helps by <code>git config --help</code>.</p>
+<hr />
 </div>
-<div id="git-commands" class="section level3">
-<h3>Git commands</h3>
+<div id="git-commands" class="section level2">
+<h2>Git commands</h2>
 <p>As a prerequisite, first you need to learn about the <a href="shell.html">Unix Shell</a> and basic Bash commands.</p>
 <p>Let’s start working with Git on your local computer with an example. First, we will make a directory and then initiate a Git repository in the directory, and then start to add a text file and edit the file. Open a terminal prompt and run the following commands one by one, read the comments after hash to see what they do.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">cd</span> ~ <span class="co"># change directory to home/</span>
-<span class="fu">mkdir</span> first_repo <span class="co"># create a new directory called &quot;first_repo&quot;</span>
-<span class="bu">cd</span> first_repo <span class="co"># change directory to home/first_repo</span>
-<span class="fu">git</span> init <span class="co"># create an empty Git repository (after that Git could track all changes in this directory)</span>
-<span class="fu">git</span> status <span class="co"># show the working tree status which tells &quot;nothing to commit&quot;</span>
-<span class="fu">nano</span> file.txt <span class="co"># nano text editor will create &quot;file.txt&quot; and open the file. Let&#39;s add the following:</span>
-<span class="op">&gt;</span><span class="ex">Hi</span>! this is the first line in my new repository. <span class="co"># press ctrl+o to save and ctrl+x to exit</span>
-<span class="fu">git</span> status <span class="co"># say &quot;nothing to commit but untracked files present&quot;</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="bu">cd</span> ~ <span class="co"># change directory to home/</span></a>
+<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="fu">mkdir</span> first_repo <span class="co"># create a new directory called &quot;first_repo&quot;</span></a>
+<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="bu">cd</span> first_repo <span class="co"># change directory to home/first_repo</span></a>
+<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="fu">git</span> init <span class="co"># create an empty Git repository (after that Git could track all changes in this directory)</span></a>
+<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="fu">git</span> status <span class="co"># show the working tree status which tells &quot;nothing to commit&quot;</span></a>
+<a class="sourceLine" id="cb2-6" data-line-number="6"><span class="fu">nano</span> file.txt <span class="co"># nano text editor will create &quot;file.txt&quot; and open the file. Let&#39;s add the following:</span></a>
+<a class="sourceLine" id="cb2-7" data-line-number="7"><span class="op">&gt;</span><span class="ex">Hi</span>! this is the first line in my new repository. <span class="co"># press ctrl+o to save and ctrl+x to exit</span></a>
+<a class="sourceLine" id="cb2-8" data-line-number="8"><span class="fu">git</span> status <span class="co"># say &quot;nothing to commit but untracked files present&quot;</span></a></code></pre></div>
 <p>To record all changes by Git, we need to:</p>
 <ul>
 <li>Add file contents to the index by <code>git add</code></li>
 <li>Record changes to the repository by <code>git commit</code></li>
 </ul>
 <p>Use the following commands for the above steps:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> add file.text <span class="co"># add file contents to the index</span>
-<span class="fu">git</span> status <span class="co"># show &quot;changes to be committed&quot;</span>
-<span class="fu">git</span> commit -m <span class="st">&quot;Add file.txt and write the first line&quot;</span> <span class="co"># record changes to the repository, -m option add message</span>
-<span class="fu">git</span> show file.txt <span class="co"># show the most recent commit of &quot;file.txt&quot; </span>
-<span class="fu">git</span> log <span class="co"># show the commit logs</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="fu">git</span> add file.text <span class="co"># add file contents to the index</span></a>
+<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="fu">git</span> status <span class="co"># show &quot;changes to be committed&quot;</span></a>
+<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="fu">git</span> commit -m <span class="st">&quot;Add file.txt and write the first line&quot;</span> <span class="co"># record changes to the repository, -m option add message</span></a>
+<a class="sourceLine" id="cb3-4" data-line-number="4"><span class="fu">git</span> show file.txt <span class="co"># show the most recent commit of &quot;file.txt&quot; </span></a>
+<a class="sourceLine" id="cb3-5" data-line-number="5"><span class="fu">git</span> log <span class="co"># show the commit logs</span></a></code></pre></div>
 <p>Let’s make some changes in the <code>first_repo</code> directory to see how Git records changes:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">nano</span> file.txt <span class="co"># nano will open &quot;file.txt&quot;</span>
-<span class="op">&gt;</span><span class="ex">Hi</span>! this is the first line in my new repository. 
-<span class="op">&gt;</span><span class="ex">Changes</span> in this file will record by Git. <span class="co"># press ctrl+o to save and ctrl+x to exit</span>
-<span class="fu">git</span> status <span class="co"># show &quot;changes not staged for commit&quot;</span>
-<span class="fu">git</span> diff file.txt <span class="co"># show changes between most recent commit and the current &quot;file.txt&quot;</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="fu">nano</span> file.txt <span class="co"># nano will open &quot;file.txt&quot;</span></a>
+<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="op">&gt;</span><span class="ex">Hi</span>! this is the first line in my new repository. </a>
+<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="op">&gt;</span><span class="ex">Changes</span> in this file will record by Git. <span class="co"># press ctrl+o to save and ctrl+x to exit</span></a>
+<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="fu">git</span> status <span class="co"># show &quot;changes not staged for commit&quot;</span></a>
+<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="fu">git</span> diff file.txt <span class="co"># show changes between most recent commit and the current &quot;file.txt&quot;</span></a></code></pre></div>
 <p>To record the new changes by Git:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> add file.txt
-<span class="fu">git</span> commit -m <span class="st">&quot;Add the second line&quot;</span>
-<span class="fu">git</span> show file.txt <span class="co"># show the most recent commit of &quot;file.txt&quot; </span>
-<span class="fu">git</span> show HEAD~1 file.txt <span class="co"># show the previous commit of &quot;file.txt&quot; </span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="fu">git</span> add file.txt</a>
+<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="fu">git</span> commit -m <span class="st">&quot;Add the second line&quot;</span></a>
+<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="fu">git</span> show file.txt <span class="co"># show the most recent commit of &quot;file.txt&quot; </span></a>
+<a class="sourceLine" id="cb5-4" data-line-number="4"><span class="fu">git</span> show HEAD~1 file.txt <span class="co"># show the previous commit of &quot;file.txt&quot; </span></a></code></pre></div>
 <p>Also, we can compare changes between the current version with the previous versions. Let’s make some more changes on the <code>file.txt</code> to see how we can compare all versions:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">nano</span> file.txt <span class="co"># nano will open &quot;file.txt&quot;</span>
-<span class="op">&gt;</span><span class="ex">Hi</span>! this is the first line in my new repository. 
-<span class="op">&gt;</span><span class="ex">Changes</span> in this file will record by Git. 
-<span class="op">&gt;</span><span class="ex">This</span> changes are new. <span class="co"># press ctrl+o to save and ctrl+x to exit</span>
-<span class="fu">git</span> diff file.txt <span class="co"># show changes between the most recent commit and the current &quot;file.txt&quot;</span>
-<span class="fu">git</span> diff HEAD~1 file.txt <span class="co"># show changes between the previous commit and the current &quot;file.txt&quot;</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="fu">nano</span> file.txt <span class="co"># nano will open &quot;file.txt&quot;</span></a>
+<a class="sourceLine" id="cb6-2" data-line-number="2"><span class="op">&gt;</span><span class="ex">Hi</span>! this is the first line in my new repository. </a>
+<a class="sourceLine" id="cb6-3" data-line-number="3"><span class="op">&gt;</span><span class="ex">Changes</span> in this file will record by Git. </a>
+<a class="sourceLine" id="cb6-4" data-line-number="4"><span class="op">&gt;</span><span class="ex">This</span> changes are new. <span class="co"># press ctrl+o to save and ctrl+x to exit</span></a>
+<a class="sourceLine" id="cb6-5" data-line-number="5"><span class="fu">git</span> diff file.txt <span class="co"># show changes between the most recent commit and the current &quot;file.txt&quot;</span></a>
+<a class="sourceLine" id="cb6-6" data-line-number="6"><span class="fu">git</span> diff HEAD~1 file.txt <span class="co"># show changes between the previous commit and the current &quot;file.txt&quot;</span></a></code></pre></div>
 <p>To record the new changes by Git:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> add file.txt
-<span class="fu">git</span> commit -m <span class="st">&quot;Add the third line&quot;</span>
-<span class="fu">git</span> show file.txt <span class="co"># show the most recent commit of &quot;file.txt&quot; </span>
-<span class="fu">git</span> show HEAD~1 file.txt <span class="co"># show the previous commit of &quot;file.txt&quot; </span>
-<span class="fu">git</span> show HEAD~2 file.txt <span class="co"># show the previous previous commit of &quot;file.txt&quot; </span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="fu">git</span> add file.txt</a>
+<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="fu">git</span> commit -m <span class="st">&quot;Add the third line&quot;</span></a>
+<a class="sourceLine" id="cb7-3" data-line-number="3"><span class="fu">git</span> show file.txt <span class="co"># show the most recent commit of &quot;file.txt&quot; </span></a>
+<a class="sourceLine" id="cb7-4" data-line-number="4"><span class="fu">git</span> show HEAD~1 file.txt <span class="co"># show the previous commit of &quot;file.txt&quot; </span></a>
+<a class="sourceLine" id="cb7-5" data-line-number="5"><span class="fu">git</span> show HEAD~2 file.txt <span class="co"># show the previous previous commit of &quot;file.txt&quot; </span></a></code></pre></div>
 <p>We always can restore previous versions of our work. Let assume that we want to restore the previous version of <code>file.txt</code>:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">cat</span> file.txt <span class="co"># show the content of the file </span>
-<span class="fu">git</span> show HEAD~1 file.txt <span class="co"># show the previous commit (we want to restore this version)</span>
-<span class="fu">git</span> checkout HEAD~1 file.txt <span class="co"># restore the previous version</span>
-<span class="fu">cat</span> file.txt <span class="co"># show the content of the file</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="fu">cat</span> file.txt <span class="co"># show the content of the file </span></a>
+<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="fu">git</span> show HEAD~1 file.txt <span class="co"># show the previous commit (we want to restore this version)</span></a>
+<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="fu">git</span> checkout HEAD~1 file.txt <span class="co"># restore the previous version</span></a>
+<a class="sourceLine" id="cb8-4" data-line-number="4"><span class="fu">cat</span> file.txt <span class="co"># show the content of the file</span></a></code></pre></div>
 <p>To record the new changes by Git</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> add file.txt
-<span class="fu">git</span> commit -m <span class="st">&quot;restore the previous version&quot;</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="fu">git</span> add file.txt</a>
+<a class="sourceLine" id="cb9-2" data-line-number="2"><span class="fu">git</span> commit -m <span class="st">&quot;restore the previous version&quot;</span></a></code></pre></div>
 <p>Your local computer might be one side of your mechanism to control and store your file versions. <a href="https://github.com/">GitHub</a> and <a href="https://about.gitlab.com/">GitLab</a> are providing an infrastructure to keep track of our files in somewhere outside the local computers. Let’s connect to GitHub through SSH and add <code>first_repo</code> repository to it.</p>
 <p>To connect your GitHub (or GitLab) account through SSH, you should generate a public SSH key on your local computer and add it to your GitHub account at <code>Settings &gt; SSH Keys</code>. To do that open a terminal prompt in your computer and issue:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">cd</span> ~
-<span class="fu">ssh-keygen</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="bu">cd</span> ~</a>
+<a class="sourceLine" id="cb10-2" data-line-number="2"><span class="fu">ssh-keygen</span></a></code></pre></div>
 <p>Make sure to create a strong passphrase and remember it for connecting to your account. To show the public key, use the following in the terminal prompt:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">cat</span> .ssh/id_rsa.pub</code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="fu">cat</span> .ssh/id_rsa.pub</a></code></pre></div>
 <p>Copy the the public ssh-key by <code>ctrl+shift+c</code> and add it to <code>Settings &gt; SSH Keys</code> on your GitHub account.</p>
 <p>Now, click on “+” next to your avatar on GitHub to generate a new repository, name it <code>first_repo</code> and do not initialize it. For next steps, copy the SSH address of your remote repository from GitHub that should be like <code>git@github.com:user/first_repo.git</code> - later you may find the address under “Clone or download” tab on your repository.</p>
 <p>To add the remote repository, open a terminal prompt on your computer and issue:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">cd</span> ~/first_repo
-<span class="fu">git</span> remote add origin git@github.com:user/first_repo.git <span class="co"># add the remote repo</span>
-<span class="fu">git</span> remote -v <span class="co"># show the remote repository </span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="bu">cd</span> ~/first_repo</a>
+<a class="sourceLine" id="cb12-2" data-line-number="2"><span class="fu">git</span> remote add origin git@github.com:user/first_repo.git <span class="co"># add the remote repo</span></a>
+<a class="sourceLine" id="cb12-3" data-line-number="3"><span class="fu">git</span> remote -v <span class="co"># show the remote repository </span></a></code></pre></div>
 <p>Finally, to upload your local repository to GitHub use:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> push -u origin master</code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="fu">git</span> push -u origin master</a></code></pre></div>
 <p>You can always generate and initialize a new repository on your remote i.e. GitHub and clone to your local computer. Click on “+” next to your avatar on GitHub to generate a new repository, call it <code>second_repo</code> and make sure to be initialized. To clone the remote repository on your local system with SSH, click on “Clone or download” and copy the SSH address. Open a terminal prompt on your local computer and issue:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">cd</span> ~
-<span class="fu">mkdir</span> second_repo 
-<span class="bu">cd</span> second_repo
-<span class="fu">git</span> clone git@github.com:YourUserName/second_repo.git</code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb14-1" data-line-number="1"><span class="bu">cd</span> ~</a>
+<a class="sourceLine" id="cb14-2" data-line-number="2"><span class="fu">mkdir</span> second_repo </a>
+<a class="sourceLine" id="cb14-3" data-line-number="3"><span class="bu">cd</span> second_repo</a>
+<a class="sourceLine" id="cb14-4" data-line-number="4"><span class="fu">git</span> clone git@github.com:YourUserName/second_repo.git</a></code></pre></div>
 <p>Any changes in the <code>second_repo</code> directory will record by Git and you can use <code>git push origin</code> to update the remote.</p>
 <p>Another important asset of Git is collaboration with others at the same time. One of the most effective way to collaborate without conflict, is making new branches in addition to the “master” branch. Use the following Git commands to make a new branch and switch between branches :</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> branch <span class="co"># show all branches</span>
-<span class="fu">git</span> branch my_work <span class="co"># create &quot;my_work&quot; branch</span>
-<span class="fu">git</span> checkout my_work <span class="co"># switch to &quot;my_work&quot; branch</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb15-1" data-line-number="1"><span class="fu">git</span> branch <span class="co"># show all branches</span></a>
+<a class="sourceLine" id="cb15-2" data-line-number="2"><span class="fu">git</span> branch my_work <span class="co"># create &quot;my_work&quot; branch</span></a>
+<a class="sourceLine" id="cb15-3" data-line-number="3"><span class="fu">git</span> checkout my_work <span class="co"># switch to &quot;my_work&quot; branch</span></a></code></pre></div>
 <p>Now if we keep working on the directory, all changes will be stored at “my_work” branch instead of “master” branch. That will prevent the conflict between your work and others. When you finish your tasks you can merge “my_work” branch to the “master” by:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> merge <span class="st">&quot;my_work&quot;</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb16-1" data-line-number="1"><span class="fu">git</span> merge <span class="st">&quot;my_work&quot;</span></a></code></pre></div>
+<hr />
 </div>
-<div id="summary" class="section level3">
-<h3>Summary</h3>
+<div id="summary" class="section level2">
+<h2>Summary</h2>
 <p>The following Git commands are used in this article:</p>
 <pre class="txt"><code>man git &lt;command&gt;: show the manual of the command
 git init: create an empty Git repository or reinitialize an existing one
@@ -635,8 +623,9 @@ git status: show the working tree status
 git add: add file contents to the index
 git mv: move or rename a file, a directory
 git rm: remove files from the working tree (local) and from the index (remote)
-git rm --cached: Use this option to unstage and remove paths only from the index (remote)
-git commit: record changes to the repository 
+git rm --cached: unstage and remove paths only from the index (remote)
+git commit: record changes to the repository
+git commit --amend: edit the commit comment before push (i to insert and esc-:wq to exit)
 git log: show commit logs
 git log &lt;file_name&gt;: show commit logs for the file
 git log --patch &lt;file_name&gt;: combine both `git log` and `git diff` comments
@@ -649,6 +638,7 @@ git show HEAD &lt;file_name&gt;: show the most recent commit of a file
 git show HEAD~n &lt;file_name&gt;: show the nth most recent commit of a file
 git checkout: restore working tree files or switch branches
 git checkout HEAD &lt;file_name&gt;: recover the version of the file recorded in HEAD
+git reset &lt;file_name&gt;: reset (unstage/uncommit) current HEAD to the specified state
 git revert &lt;commit ID&gt;: revert some existing commits
 git remote add origin &lt;SSH_add&gt;: add remote repository to the local repo 
 git remote -v: show the remote repository
@@ -701,6 +691,49 @@ $(document).ready(function () {
 });
 
 
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
 </script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
