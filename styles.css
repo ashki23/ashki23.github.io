@@ -3,39 +3,44 @@ html {
   min-height: 100%;
 }
 body {
-  font-style: normal;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.47;
-  background-color: #fff;
-  color: #333;
+  font: 20px/1.8 "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  color: #555;
+  text-rendering: optimizeLegibility;
+  
 }
 code {
-  white-space : pre-wrap !important;
+  white-space: pre-wrap !important;
 }
 h1 {
-  font-size: 32px;
+  font: 35px/1.8 "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-weight: normal;
 }
 h1.title {
-  font-size: 36px;
+  font: 36px/1.8 "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-weight: normal;
 }
 h2 {
-  font-size: 28px;
+  font: 30px/1.8 "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-weight: normal;
 }
 h3 {
-  font-size: 22px;
+  font: 25px/1.8 "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-weight: normal;
 }
 h4 {
-  font-size: 16px;
+  font: 18px/1.8 "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-weight: normal;
+  opacity: 0.80;
+}
+h4.author {
+  font-style: italic;
 }
 h5 {
-  font-size: 14px;
-}
-h6 {
-  font-size: 12px;
+  font: 14px/1.8 "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-weight: normal;
 }
 blockquote {
-  font-size: 18.5px;
+  font-size: 24px;
   border-left: 1px solid #ccc;
 }
 img {
@@ -53,9 +58,8 @@ img-circle {
   left: 0;
   text-align: center;
   font-style: normal;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 1.47;
+  font-size: 15px;
+  line-height: 1.6;
   background-color: transparent;
   color: #333;
 }
@@ -67,9 +71,8 @@ img-circle {
   left: 0;
   text-align: center;
   font-style: normal;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 1.47;
+  font-size: 15px;
+  line-height: 1.6;
   background-color: transparent;
   color: #333;
 }
@@ -80,14 +83,12 @@ img-circle {
   height: 0 !important;
 }
 .tocify-subheader, .tocify-item {
-  font-size: 120%;
-  font-weight: 400;
+  font-size: 140%;
 }
 .pager {
-  font-size: 18px;
+  font-size: 24px;
   font-style: normal;
-  line-height: 1.47;
-  font-weight: 400;
+  line-height: 1.8;
 }
 .pager .next a:hover {
     background-color: transparent;
@@ -106,36 +107,54 @@ img-circle {
 }
 .navbar-default .navbar-brand {
   color: #ffffff;
-  font-weight: 400;
+  font-size: 28px;
+  font-style: normal;
+  line-height: 0.95;
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
   color: #ffffff;
+  font-size: 28px;
+  font-style: normal;
+  line-height: 0.95;
 }
 .navbar-default .navbar-text {
   color: #ffffff;
-  font-weight: 400;
+  font-size: 16px;
+  font-style: normal;
+  line-height: 2;
 }
 .navbar-default .navbar-nav > li > a {
   color: #ffffff;
-  font-weight: 400;
+  font-size: 16px;
+  font-style: normal;
+  line-height: 2;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
   color: #a6a6a6;
   background-color: transparent;
+  font-size: 16px;
+  font-style: normal;
+  line-height: 2;
 }
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
   color: #a6a6a6;
   background-color: transparent;
+  font-size: 16px;
+  font-style: normal;
+  line-height: 2;
 }
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
   color: #a6a6a6;
   background-color: transparent;
+  font-size: 16px;
+  font-style: normal;
+  line-height: 2;
 }
 .navbar-default .navbar-toggle {
   border-color: transparent;
@@ -162,24 +181,79 @@ img-circle {
 
 @media (max-width: 767px) {
   body {
-    font-size: 15px;
+    font-size: 18px;
+    line-height: 1.6;
   }
   h1 {
-  font-size: 30px;
+    font-size: 32px;
+    line-height: 1.6;
   }
   h1.title {
-  font-size: 34px;
+    font-size: 32px;
+    line-height: 1.6;
   }
   h2 {
-  font-size: 26px;
+    font-size: 28px;
+    line-height: 1.6;
   }
   blockquote {
-  font-size: 17.5px;
+    font-size: 20px;
   }
   .tocify-subheader, .tocify-item {
-    font-size: 115%;
+    font-size: 125%;
   }
   .navbar-default {
     opacity: 1;
+  }
+  .navbar-default .navbar-brand {
+  color: #ffffff;
+  font-size: 21px;
+  font-style: normal;
+  line-height: 1;
+  }
+  .navbar-default .navbar-brand:hover,
+  .navbar-default .navbar-brand:focus {
+    color: #ffffff;
+    font-size: 21px;
+    font-style: normal;
+    line-height: 1;
+  }
+  .navbar-default .navbar-text {
+    color: #ffffff;
+    font-size: 16px;
+    font-style: normal;
+    line-height: 1.6;
+  }
+  .navbar-default .navbar-nav > li > a {
+    color: #ffffff;
+    font-size: 16px;
+    font-style: normal;
+    line-height: 1.6;
+  }
+  .navbar-default .navbar-nav > li > a:hover,
+  .navbar-default .navbar-nav > li > a:focus {
+    color: #a6a6a6;
+    background-color: transparent;
+    font-size: 16px;
+    font-style: normal;
+    line-height: 1.6;
+  }
+  .navbar-default .navbar-nav > .active > a,
+  .navbar-default .navbar-nav > .active > a:hover,
+  .navbar-default .navbar-nav > .active > a:focus {
+    color: #a6a6a6;
+    background-color: transparent;
+    font-size: 16px;
+    font-style: normal;
+    line-height: 1.6;
+  }
+  .navbar-default .navbar-nav > .open > a,
+  .navbar-default .navbar-nav > .open > a:hover,
+  .navbar-default .navbar-nav > .open > a:focus {
+    color: #a6a6a6;
+    background-color: transparent;
+    font-size: 16px;
+    font-style: normal;
+    line-height: 1.6;
   }
 }
