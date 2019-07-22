@@ -7,6 +7,7 @@
 <meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 <meta name="author" content="Ashkan Mirzaee" />
@@ -67,41 +68,67 @@
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css" data-origin="pandoc">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 
 </style>
 <script>
@@ -117,7 +144,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
       var style = rule.style.cssText;
       // check if color or background-color is set
-      if (rule.style.color === '' || rule.style.backgroundColor === '') continue;
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
       // replace div.sourceCode by a pre.sourceCode rule
       sheets[i].deleteRule(j);
       sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
@@ -336,48 +363,9 @@ $(document).ready(function () {
 }
 </style>
 
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
 <!-- code folding -->
 
 
-
-<script>
-$(document).ready(function ()  {
-
-    // move toc-ignore selectors from section div to header
-    $('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "h1,h2,h3",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
-    };
-    options.showAndHide = true;
-    options.smoothScroll = true;
-
-    // tocify
-    var toc = $("#TOC").tocify(options).data("toc-tocify");
-});
-</script>
 
 <style type="text/css">
 
@@ -426,8 +414,6 @@ div.tocify {
 
 .tocify-subheader .tocify-item {
   font-size: 0.90em;
-  padding-left: 25px;
-  text-indent: 0;
 }
 
 .tocify .list-group-item {
@@ -540,11 +526,11 @@ h4.author {
 <div id="operators" class="section level2">
 <h2>Operators</h2>
 <p>R arithmetic operators are <code>+</code> <code>-</code> <code>*</code> <code>/</code> <code>^</code> <code>% any %</code>. For example:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">a <span class="op">%/%</span><span class="st"> </span>b  <span class="co"># Intiger division</span>
-a <span class="op">%%</span><span class="st"> </span>a   <span class="co"># Remainder</span>
-A <span class="op">%*%</span><span class="st"> </span>B  <span class="co"># Matrix multiplication</span>
-a <span class="op">^</span><span class="st"> </span>n    <span class="co"># nth power </span>
-a <span class="op">^</span><span class="st"> </span><span class="dv">1</span><span class="op">/</span>n  <span class="co"># nth root</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">a <span class="op">%/%</span><span class="st"> </span>b  <span class="co"># Intiger division</span></a>
+<a class="sourceLine" id="cb1-2" data-line-number="2">a <span class="op">%%</span><span class="st"> </span>a   <span class="co"># Remainder</span></a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">A <span class="op">%*%</span><span class="st"> </span>B  <span class="co"># Matrix multiplication</span></a>
+<a class="sourceLine" id="cb1-4" data-line-number="4">a <span class="op">^</span><span class="st"> </span>n    <span class="co"># nth power </span></a>
+<a class="sourceLine" id="cb1-5" data-line-number="5">a <span class="op">^</span><span class="st"> </span><span class="dv">1</span><span class="op">/</span>n  <span class="co"># nth root</span></a></code></pre></div>
 <p>The other operators include:</p>
 <ul>
 <li>Negation: <code>!</code></li>
@@ -556,6 +542,7 @@ a <span class="op">^</span><span class="st"> </span><span class="dv">1</span><sp
 <li>Assignment: <code>=</code> <code>&lt;-</code> <code>-&gt;</code></li>
 <li>Ordering and comparison: <code>&lt;</code> <code>&gt;</code> <code>&lt;=</code> <code>&gt;=</code> <code>==</code> <code>!=</code></li>
 </ul>
+<hr />
 </div>
 <div id="data-structures" class="section level2">
 <h2>Data structures</h2>
@@ -570,48 +557,48 @@ a <span class="op">^</span><span class="st"> </span><span class="dv">1</span><sp
 <p><code>c</code> combines values into a vector. <code>cbind (rbind)</code> takes a sequence of vector, matrix or data-frame arguments and combine by columns (rows), respectively. This function keeps all array with a same type (e.g all int or char). <code>matrix</code> creates a matrix from the given set of values. <strong>In matrix we can use <code>[ , ]</code> to call columns and rows.</strong></p>
 <p><code>data.frame</code> creates data frames, store each column separately as a different variable with different observations (n obs. of m variables). When we read a csv file it saves as a dataframe. <strong>In data frames we can use <code>$</code> to call columns and <code>[ , ]</code> for calling a certain index.</strong></p>
 <p><code>list</code> makes a data structure that each row is not necessarily equal. For example if you have a loop that do not generate same amount of results at each iteration then you can store them in a list format. <strong>In lists we can use <code>$</code> or <code>[[ ]]</code> to call components and <code>[ ]</code> to call members of each component.</strong></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">7</span>, <span class="dv">23</span>)</code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">7</span>, <span class="dv">23</span>)</a></code></pre></div>
 <pre><code>## [1]  1  2  3  4  5  6  7 23</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>))</code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">class</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>))</a></code></pre></div>
 <pre><code>## [1] &quot;numeric&quot;</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">typeof</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>))</code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw">typeof</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>))</a></code></pre></div>
 <pre><code>## [1] &quot;double&quot;</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">c</span>(letters[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>])</code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw">c</span>(letters[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>])</a></code></pre></div>
 <pre><code>## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot;</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(<span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>))</code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="kw">class</span>(<span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>))</a></code></pre></div>
 <pre><code>## [1] &quot;character&quot;</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">typeof</span>(<span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>))</code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="kw">typeof</span>(<span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>))</a></code></pre></div>
 <pre><code>## [1] &quot;character&quot;</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cbind</span>(<span class="dt">col1 =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">col2 =</span> <span class="dv">21</span><span class="op">:</span><span class="dv">25</span>, <span class="dt">col3 =</span> <span class="dv">31</span><span class="op">:</span><span class="dv">35</span>)</code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1"><span class="kw">cbind</span>(<span class="dt">col1 =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">col2 =</span> <span class="dv">21</span><span class="op">:</span><span class="dv">25</span>, <span class="dt">col3 =</span> <span class="dv">31</span><span class="op">:</span><span class="dv">35</span>)</a></code></pre></div>
 <pre><code>##      col1 col2 col3
 ## [1,]    1   21   31
 ## [2,]    2   22   32
 ## [3,]    3   23   33
 ## [4,]    4   24   34
 ## [5,]    5   25   35</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(<span class="kw">cbind</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>))</code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1"><span class="kw">class</span>(<span class="kw">cbind</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>))</a></code></pre></div>
 <pre><code>## [1] &quot;matrix&quot;</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">typeof</span>(<span class="kw">cbind</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>))</code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1"><span class="kw">typeof</span>(<span class="kw">cbind</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>))</a></code></pre></div>
 <pre><code>## [1] &quot;double&quot;</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>,<span class="dv">21</span><span class="op">:</span><span class="dv">25</span>,<span class="dv">31</span><span class="op">:</span><span class="dv">35</span>), <span class="dv">5</span>, <span class="dv">3</span>)</code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1"><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>,<span class="dv">21</span><span class="op">:</span><span class="dv">25</span>,<span class="dv">31</span><span class="op">:</span><span class="dv">35</span>), <span class="dv">5</span>, <span class="dv">3</span>)</a></code></pre></div>
 <pre><code>##      [,1] [,2] [,3]
 ## [1,]    1   21   31
 ## [2,]    2   22   32
 ## [3,]    3   23   33
 ## [4,]    4   24   34
 ## [5,]    5   25   35</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data.frame</span>(<span class="dt">col1 =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">col2 =</span> letters[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>], <span class="dt">col3 =</span> <span class="dv">31</span><span class="op">:</span><span class="dv">35</span>)</code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" data-line-number="1"><span class="kw">data.frame</span>(<span class="dt">col1 =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">col2 =</span> letters[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>], <span class="dt">col3 =</span> <span class="dv">31</span><span class="op">:</span><span class="dv">35</span>)</a></code></pre></div>
 <pre><code>##   col1 col2 col3
 ## 1    1    a   31
 ## 2    2    b   32
 ## 3    3    c   33
 ## 4    4    d   34
 ## 5    5    e   35</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(<span class="kw">data.frame</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>))</code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" data-line-number="1"><span class="kw">class</span>(<span class="kw">data.frame</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>))</a></code></pre></div>
 <pre><code>## [1] &quot;data.frame&quot;</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">typeof</span>(<span class="kw">data.frame</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>))</code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" data-line-number="1"><span class="kw">typeof</span>(<span class="kw">data.frame</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>))</a></code></pre></div>
 <pre><code>## [1] &quot;list&quot;</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">expand.grid</span>(<span class="dt">type =</span> <span class="kw">c</span>(<span class="st">&quot;type 1&quot;</span>, <span class="st">&quot;type 2&quot;</span>), <span class="dt">food =</span> <span class="kw">c</span>(<span class="st">&#39;burger&#39;</span>, <span class="st">&#39;steak&#39;</span>, <span class="st">&#39;pizza&#39;</span>))</code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" data-line-number="1"><span class="kw">expand.grid</span>(<span class="dt">type =</span> <span class="kw">c</span>(<span class="st">&quot;type 1&quot;</span>, <span class="st">&quot;type 2&quot;</span>), <span class="dt">food =</span> <span class="kw">c</span>(<span class="st">&#39;burger&#39;</span>, <span class="st">&#39;steak&#39;</span>, <span class="st">&#39;pizza&#39;</span>))</a></code></pre></div>
 <pre><code>##     type   food
 ## 1 type 1 burger
 ## 2 type 2 burger
@@ -619,234 +606,240 @@ a <span class="op">^</span><span class="st"> </span><span class="dv">1</span><sp
 ## 4 type 2  steak
 ## 5 type 1  pizza
 ## 6 type 2  pizza</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">list</span>(<span class="dt">x =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">y =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">7</span>)</code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" data-line-number="1"><span class="kw">list</span>(<span class="dt">x =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">y =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">7</span>)</a></code></pre></div>
 <pre><code>## $x
 ## [1] 1 2 3 4 5
 ## 
 ## $y
 ## [1] 1 2 3 4 5 6 7</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">empty_list &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;list&quot;</span>, <span class="dv">5</span>) <span class="co"># make an empty list</span>
-<span class="kw">names</span>(empty_list) &lt;-<span class="st"> </span><span class="kw">paste</span>(<span class="kw">rep</span>(<span class="st">&quot;list&quot;</span>, <span class="dv">5</span>), <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">sep =</span> <span class="st">&quot; &quot;</span>) <span class="co"># rename the list</span>
-<span class="kw">class</span>(empty_list)</code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" data-line-number="1">empty_list &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;list&quot;</span>, <span class="dv">5</span>) <span class="co"># make an empty list</span></a>
+<a class="sourceLine" id="cb32-2" data-line-number="2"><span class="kw">names</span>(empty_list) &lt;-<span class="st"> </span><span class="kw">paste</span>(<span class="kw">rep</span>(<span class="st">&quot;list&quot;</span>, <span class="dv">5</span>), <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">sep =</span> <span class="st">&quot; &quot;</span>) <span class="co"># rename the list</span></a>
+<a class="sourceLine" id="cb32-3" data-line-number="3"><span class="kw">class</span>(empty_list)</a></code></pre></div>
 <pre><code>## [1] &quot;list&quot;</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">typeof</span>(empty_list)</code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb34-1" data-line-number="1"><span class="kw">typeof</span>(empty_list)</a></code></pre></div>
 <pre><code>## [1] &quot;list&quot;</code></pre>
 <p>Note: <code>expand.grid</code> create a data frame from all combinations of factor variables and <code>ts</code> function is used to create a vector or matrix of time-series objects.</p>
+<hr />
 </div>
 <div id="date-and-time" class="section level2">
 <h2>Date and time</h2>
 <p>There are several functions to work with date and time classes, following are some examples of these functions.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">Sys.Date</span>()</code></pre></div>
-<pre><code>## [1] &quot;2019-05-08&quot;</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">weekdays</span>(<span class="kw">Sys.Date</span>())</code></pre></div>
-<pre><code>## [1] &quot;Wednesday&quot;</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">months</span>(<span class="kw">Sys.Date</span>())</code></pre></div>
-<pre><code>## [1] &quot;May&quot;</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">quarters</span>(<span class="kw">Sys.Date</span>())</code></pre></div>
-<pre><code>## [1] &quot;Q2&quot;</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">Sys.time</span>()</code></pre></div>
-<pre><code>## [1] &quot;2019-05-08 15:23:55 CDT&quot;</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">timestamp</span>()</code></pre></div>
-<pre><code>## ##------ Wed May  8 15:23:55 2019 ------##</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">format</span>(<span class="kw">Sys.time</span>(), <span class="st">&quot;%a %b %d %Y %X&quot;</span>) <span class="co"># To see more options for format enter `help(strftime)`</span></code></pre></div>
-<pre><code>## [1] &quot;Wed May 08 2019 03:23:55 PM&quot;</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">format</span>(<span class="kw">Sys.time</span>(), <span class="st">&quot;%Y-%m-%d&quot;</span>)</code></pre></div>
-<pre><code>## [1] &quot;2019-05-08&quot;</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">format</span>(<span class="kw">Sys.time</span>(), <span class="st">&quot;%H:%M:%S&quot;</span>)</code></pre></div>
-<pre><code>## [1] &quot;15:23:55&quot;</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">weeks &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="kw">Sys.Date</span>(), <span class="dt">length.out =</span> <span class="dv">3</span>, <span class="dt">by =</span> <span class="st">&quot;1 week&quot;</span>) <span class="co"># Next ten weeks</span>
-weeks</code></pre></div>
-<pre><code>## [1] &quot;2019-05-08&quot; &quot;2019-05-15&quot; &quot;2019-05-22&quot;</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(weeks)</code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb36-1" data-line-number="1"><span class="kw">Sys.Date</span>()</a></code></pre></div>
+<pre><code>## [1] &quot;2019-07-21&quot;</code></pre>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb38-1" data-line-number="1"><span class="kw">weekdays</span>(<span class="kw">Sys.Date</span>())</a></code></pre></div>
+<pre><code>## [1] &quot;Sunday&quot;</code></pre>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb40-1" data-line-number="1"><span class="kw">months</span>(<span class="kw">Sys.Date</span>())</a></code></pre></div>
+<pre><code>## [1] &quot;July&quot;</code></pre>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb42-1" data-line-number="1"><span class="kw">quarters</span>(<span class="kw">Sys.Date</span>())</a></code></pre></div>
+<pre><code>## [1] &quot;Q3&quot;</code></pre>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb44-1" data-line-number="1"><span class="kw">Sys.time</span>()</a></code></pre></div>
+<pre><code>## [1] &quot;2019-07-21 14:07:48 EDT&quot;</code></pre>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb46-1" data-line-number="1"><span class="kw">timestamp</span>()</a></code></pre></div>
+<pre><code>## ##------ Sun Jul 21 14:07:48 2019 ------##</code></pre>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb48-1" data-line-number="1"><span class="kw">format</span>(<span class="kw">Sys.time</span>(), <span class="st">&quot;%a %b %d %Y %X&quot;</span>) <span class="co"># To see more options for format enter `help(strftime)`</span></a></code></pre></div>
+<pre><code>## [1] &quot;Sun Jul 21 2019 02:07:48 PM&quot;</code></pre>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb50-1" data-line-number="1"><span class="kw">format</span>(<span class="kw">Sys.time</span>(), <span class="st">&quot;%Y-%m-%d&quot;</span>)</a></code></pre></div>
+<pre><code>## [1] &quot;2019-07-21&quot;</code></pre>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb52-1" data-line-number="1"><span class="kw">format</span>(<span class="kw">Sys.time</span>(), <span class="st">&quot;%H:%M:%S&quot;</span>)</a></code></pre></div>
+<pre><code>## [1] &quot;14:07:48&quot;</code></pre>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb54-1" data-line-number="1">weeks &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="kw">Sys.Date</span>(), <span class="dt">length.out =</span> <span class="dv">3</span>, <span class="dt">by =</span> <span class="st">&quot;1 week&quot;</span>) <span class="co"># Next ten weeks</span></a>
+<a class="sourceLine" id="cb54-2" data-line-number="2">weeks</a></code></pre></div>
+<pre><code>## [1] &quot;2019-07-21&quot; &quot;2019-07-28&quot; &quot;2019-08-04&quot;</code></pre>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb56-1" data-line-number="1"><span class="kw">class</span>(weeks)</a></code></pre></div>
 <pre><code>## [1] &quot;Date&quot;</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">typeof</span>(weeks)</code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb58-1" data-line-number="1"><span class="kw">typeof</span>(weeks)</a></code></pre></div>
 <pre><code>## [1] &quot;integer&quot;</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">difftime</span>(weeks[<span class="dv">2</span>], weeks[<span class="dv">1</span>], <span class="dt">units =</span> <span class="st">&quot;auto&quot;</span>)</code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb60-1" data-line-number="1"><span class="kw">difftime</span>(weeks[<span class="dv">2</span>], weeks[<span class="dv">1</span>], <span class="dt">units =</span> <span class="st">&quot;auto&quot;</span>)</a></code></pre></div>
 <pre><code>## Time difference of 7 days</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Date-time conversion</span>
-<span class="kw">strftime</span>(<span class="kw">Sys.time</span>(), <span class="dt">format =</span> <span class="st">&quot;%a %d %b %Y %H:%M:%S&quot;</span>) <span class="co"># convert time-date objects to character</span></code></pre></div>
-<pre><code>## [1] &quot;Wed 08 May 2019 15:23:55&quot;</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">strptime</span>(<span class="st">&quot;20/2/06 11:16:16.683&quot;</span>, <span class="dt">format =</span> <span class="st">&quot;%d/%m/%y %H:%M:%OS&quot;</span>) <span class="co"># convert character to time-date objects</span></code></pre></div>
-<pre><code>## [1] &quot;2006-02-20 11:16:16 CST&quot;</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Time series</span>
-<span class="kw">ts</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">12</span>, <span class="dt">start =</span> <span class="kw">c</span>(<span class="dv">1956</span>, <span class="dv">3</span>), <span class="dt">frequency =</span> <span class="dv">12</span>) <span class="co"># for season: frequency = 4</span></code></pre></div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb62-1" data-line-number="1"><span class="co"># Date-time conversion</span></a>
+<a class="sourceLine" id="cb62-2" data-line-number="2"><span class="kw">strftime</span>(<span class="kw">Sys.time</span>(), <span class="dt">format =</span> <span class="st">&quot;%a %d %b %Y %H:%M:%S&quot;</span>) <span class="co"># convert time-date objects to character</span></a></code></pre></div>
+<pre><code>## [1] &quot;Sun 21 Jul 2019 14:07:48&quot;</code></pre>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb64-1" data-line-number="1"><span class="kw">strptime</span>(<span class="st">&quot;20/2/06 11:16:16.683&quot;</span>, <span class="dt">format =</span> <span class="st">&quot;%d/%m/%y %H:%M:%OS&quot;</span>) <span class="co"># convert character to time-date objects</span></a></code></pre></div>
+<pre><code>## [1] &quot;2006-02-20 11:16:16 EST&quot;</code></pre>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb66-1" data-line-number="1"><span class="co"># Time series</span></a>
+<a class="sourceLine" id="cb66-2" data-line-number="2"><span class="kw">ts</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">12</span>, <span class="dt">start =</span> <span class="kw">c</span>(<span class="dv">1956</span>, <span class="dv">3</span>), <span class="dt">frequency =</span> <span class="dv">12</span>) <span class="co"># for season: frequency = 4</span></a></code></pre></div>
 <pre><code>##      Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec
 ## 1956           1   2   3   4   5   6   7   8   9  10
 ## 1957  11  12</code></pre>
+<hr />
 </div>
 <div id="data-mining" class="section level2">
 <h2>Data mining</h2>
 <p>R provides a set of operators to manipulating the data including select, exclude, add or remove.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mydata &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">Student =</span> <span class="kw">sort</span>(<span class="kw">rep</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>,<span class="dv">2</span>)), <span class="dt">Test =</span> <span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;SAT&quot;</span>,<span class="st">&quot;GRE&quot;</span>),<span class="dv">3</span>), <span class="dt">Grade =</span> <span class="kw">sample</span>(<span class="dv">75</span><span class="op">:</span><span class="dv">100</span>,<span class="dv">6</span>), <span class="dt">Grade_2 =</span> <span class="kw">sample</span>(<span class="dv">75</span><span class="op">:</span><span class="dv">100</span>,<span class="dv">6</span>))
-mydata</code></pre></div>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb68-1" data-line-number="1">mydata &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">Student =</span> <span class="kw">sort</span>(<span class="kw">rep</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>,<span class="dv">2</span>)), <span class="dt">Test =</span> <span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;SAT&quot;</span>,<span class="st">&quot;GRE&quot;</span>),<span class="dv">3</span>), <span class="dt">Grade =</span> <span class="kw">sample</span>(<span class="dv">75</span><span class="op">:</span><span class="dv">100</span>,<span class="dv">6</span>), <span class="dt">Grade_2 =</span> <span class="kw">sample</span>(<span class="dv">75</span><span class="op">:</span><span class="dv">100</span>,<span class="dv">6</span>))</a>
+<a class="sourceLine" id="cb68-2" data-line-number="2">mydata</a></code></pre></div>
 <pre><code>##   Student Test Grade Grade_2
-## 1       1  SAT    99      90
-## 2       1  GRE    82      80
-## 3       2  SAT    93      96
-## 4       2  GRE    88      81
-## 5       3  SAT    86      89
-## 6       3  GRE    97      99</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mydata[<span class="kw">which</span>(<span class="op">!</span>(mydata[,<span class="dv">1</span>] <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">3</span>))),] <span class="co"># Excluding</span></code></pre></div>
+## 1       1  SAT    96      97
+## 2       1  GRE    89      76
+## 3       2  SAT    93      75
+## 4       2  GRE    95      79
+## 5       3  SAT    90      94
+## 6       3  GRE    99      88</code></pre>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb70-1" data-line-number="1">mydata[<span class="kw">which</span>(<span class="op">!</span>(mydata[,<span class="dv">1</span>] <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">3</span>))),] <span class="co"># Excluding</span></a></code></pre></div>
 <pre><code>##   Student Test Grade Grade_2
-## 1       1  SAT    99      90
-## 2       1  GRE    82      80</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mydata[<span class="kw">which</span>(mydata[,<span class="dv">1</span>] <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">3</span>)),]  <span class="co"># Selecting</span></code></pre></div>
+## 1       1  SAT    96      97
+## 2       1  GRE    89      76</code></pre>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb72-1" data-line-number="1">mydata[<span class="kw">which</span>(mydata[,<span class="dv">1</span>] <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">3</span>)),]  <span class="co"># Selecting</span></a></code></pre></div>
 <pre><code>##   Student Test Grade Grade_2
-## 3       2  SAT    93      96
-## 4       2  GRE    88      81
-## 5       3  SAT    86      89
-## 6       3  GRE    97      99</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mydata[<span class="kw">which</span>(mydata[,<span class="dv">3</span>] <span class="op">&gt;</span><span class="st"> </span><span class="dv">95</span>),] <span class="co"># Selecting Grade greater than 95</span></code></pre></div>
+## 3       2  SAT    93      75
+## 4       2  GRE    95      79
+## 5       3  SAT    90      94
+## 6       3  GRE    99      88</code></pre>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb74-1" data-line-number="1">mydata[<span class="kw">which</span>(mydata[,<span class="dv">3</span>] <span class="op">&gt;</span><span class="st"> </span><span class="dv">95</span>),] <span class="co"># Selecting Grade greater than 95</span></a></code></pre></div>
 <pre><code>##   Student Test Grade Grade_2
-## 1       1  SAT    99      90
-## 6       3  GRE    97      99</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mydata[<span class="kw">which</span>(mydata[,<span class="dv">3</span>] <span class="op">&gt;</span><span class="st"> </span>mydata[,<span class="dv">4</span>]),] <span class="co"># Rows with Grade greater than Grade_2</span></code></pre></div>
+## 1       1  SAT    96      97
+## 6       3  GRE    99      88</code></pre>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb76-1" data-line-number="1">mydata[<span class="kw">which</span>(mydata[,<span class="dv">3</span>] <span class="op">&gt;</span><span class="st"> </span>mydata[,<span class="dv">4</span>]),] <span class="co"># Rows with Grade greater than Grade_2</span></a></code></pre></div>
 <pre><code>##   Student Test Grade Grade_2
-## 1       1  SAT    99      90
-## 2       1  GRE    82      80
-## 4       2  GRE    88      81</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mydata[<span class="kw">which</span>(mydata<span class="op">$</span>Grade_<span class="dv">2</span> <span class="op">&gt;</span><span class="st"> </span>mydata<span class="op">$</span>Grade <span class="op">&amp;</span><span class="st"> </span>mydata<span class="op">$</span>Test <span class="op">==</span><span class="st"> &quot;GRE&quot;</span>) ,] <span class="co"># AND</span></code></pre></div>
-<pre><code>##   Student Test Grade Grade_2
-## 6       3  GRE    97      99</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mydata[<span class="kw">which</span>(mydata[,<span class="dv">4</span>] <span class="op">&gt;</span><span class="st"> </span>mydata[,<span class="dv">3</span>] <span class="op">|</span><span class="st"> </span>mydata[,<span class="dv">3</span>] <span class="op">&gt;</span><span class="st"> </span><span class="dv">92</span>) ,] <span class="co"># OR</span></code></pre></div>
-<pre><code>##   Student Test Grade Grade_2
-## 1       1  SAT    99      90
-## 3       2  SAT    93      96
-## 5       3  SAT    86      89
-## 6       3  GRE    97      99</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mydata<span class="op">$</span>Grade[<span class="kw">which</span>(mydata<span class="op">$</span>Grade <span class="op">&gt;</span><span class="st"> </span><span class="dv">90</span>)] <span class="co"># Grade greater than 90</span></code></pre></div>
-<pre><code>## [1] 99 93 97</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">length</span>(<span class="kw">which</span>(mydata<span class="op">$</span>Grade <span class="op">&gt;</span><span class="st"> </span><span class="dv">90</span>))<span class="op">/</span><span class="kw">nrow</span>(mydata) <span class="co"># percentage of Grade greater than 90</span></code></pre></div>
-<pre><code>## [1] 0.5</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mydata<span class="op">$</span>new_column &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>) <span class="co"># Add a new column</span>
-mydata</code></pre></div>
-<pre><code>##   Student Test Grade Grade_2 new_column
-## 1       1  SAT    99      90          1
-## 2       1  GRE    82      80          2
-## 3       2  SAT    93      96          3
-## 4       2  GRE    88      81          4
-## 5       3  SAT    86      89          5
-## 6       3  GRE    97      99          6</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mydata &lt;-<span class="st"> </span>mydata[,<span class="op">-</span><span class="kw">ncol</span>(mydata)] <span class="co"># Removing last column</span>
-mydata</code></pre></div>
-<pre><code>##   Student Test Grade Grade_2
-## 1       1  SAT    99      90
-## 2       1  GRE    82      80
-## 3       2  SAT    93      96
-## 4       2  GRE    88      81
-## 5       3  SAT    86      89
-## 6       3  GRE    97      99</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mydata[<span class="op">-</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>),] <span class="co"># Removing 1st and 3rd rows</span></code></pre></div>
-<pre><code>##   Student Test Grade Grade_2
-## 2       1  GRE    82      80
-## 4       2  GRE    88      81
-## 5       3  SAT    86      89
-## 6       3  GRE    97      99</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mydata[<span class="ot">FALSE</span>,] <span class="co"># Removing all rows</span></code></pre></div>
+## 2       1  GRE    89      76
+## 3       2  SAT    93      75
+## 4       2  GRE    95      79
+## 6       3  GRE    99      88</code></pre>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb78-1" data-line-number="1">mydata[<span class="kw">which</span>(mydata<span class="op">$</span>Grade_<span class="dv">2</span> <span class="op">&gt;</span><span class="st"> </span>mydata<span class="op">$</span>Grade <span class="op">&amp;</span><span class="st"> </span>mydata<span class="op">$</span>Test <span class="op">==</span><span class="st"> &quot;GRE&quot;</span>) ,] <span class="co"># AND</span></a></code></pre></div>
 <pre><code>## [1] Student Test    Grade   Grade_2
 ## &lt;0 rows&gt; (or 0-length row.names)</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mydata[, <span class="dv">4</span>] &lt;-<span class="st"> </span><span class="kw">sample</span>(<span class="dv">85</span><span class="op">:</span><span class="dv">100</span>,<span class="dv">6</span>) <span class="co"># Substitute column Grade_2</span>
-mydata</code></pre></div>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb80-1" data-line-number="1">mydata[<span class="kw">which</span>(mydata[,<span class="dv">4</span>] <span class="op">&gt;</span><span class="st"> </span>mydata[,<span class="dv">3</span>] <span class="op">|</span><span class="st"> </span>mydata[,<span class="dv">3</span>] <span class="op">&gt;</span><span class="st"> </span><span class="dv">92</span>) ,] <span class="co"># OR</span></a></code></pre></div>
 <pre><code>##   Student Test Grade Grade_2
-## 1       1  SAT    99      88
-## 2       1  GRE    82      95
-## 3       2  SAT    93      99
-## 4       2  GRE    88     100
-## 5       3  SAT    86      90
-## 6       3  GRE    97      93</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mydata[<span class="kw">order</span>(mydata<span class="op">$</span>Grade),] <span class="co"># Order by Grade</span></code></pre></div>
+## 1       1  SAT    96      97
+## 3       2  SAT    93      75
+## 4       2  GRE    95      79
+## 5       3  SAT    90      94
+## 6       3  GRE    99      88</code></pre>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb82-1" data-line-number="1">mydata<span class="op">$</span>Grade[<span class="kw">which</span>(mydata<span class="op">$</span>Grade <span class="op">&gt;</span><span class="st"> </span><span class="dv">90</span>)] <span class="co"># Grade greater than 90</span></a></code></pre></div>
+<pre><code>## [1] 96 93 95 99</code></pre>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb84-1" data-line-number="1"><span class="kw">length</span>(<span class="kw">which</span>(mydata<span class="op">$</span>Grade <span class="op">&gt;</span><span class="st"> </span><span class="dv">90</span>))<span class="op">/</span><span class="kw">nrow</span>(mydata) <span class="co"># percentage of Grade greater than 90</span></a></code></pre></div>
+<pre><code>## [1] 0.6666667</code></pre>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb86-1" data-line-number="1">mydata<span class="op">$</span>new_column &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>) <span class="co"># Add a new column</span></a>
+<a class="sourceLine" id="cb86-2" data-line-number="2">mydata</a></code></pre></div>
+<pre><code>##   Student Test Grade Grade_2 new_column
+## 1       1  SAT    96      97          1
+## 2       1  GRE    89      76          2
+## 3       2  SAT    93      75          3
+## 4       2  GRE    95      79          4
+## 5       3  SAT    90      94          5
+## 6       3  GRE    99      88          6</code></pre>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb88-1" data-line-number="1">mydata &lt;-<span class="st"> </span>mydata[,<span class="op">-</span><span class="kw">ncol</span>(mydata)] <span class="co"># Removing last column</span></a>
+<a class="sourceLine" id="cb88-2" data-line-number="2">mydata</a></code></pre></div>
 <pre><code>##   Student Test Grade Grade_2
-## 2       1  GRE    82      95
-## 5       3  SAT    86      90
-## 4       2  GRE    88     100
-## 3       2  SAT    93      99
-## 6       3  GRE    97      93
-## 1       1  SAT    99      88</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mydata[<span class="kw">order</span>(mydata<span class="op">$</span>Grade, mydata<span class="op">$</span>Grade_<span class="dv">2</span>),] <span class="co"># Order by Grade and Grade_2</span></code></pre></div>
+## 1       1  SAT    96      97
+## 2       1  GRE    89      76
+## 3       2  SAT    93      75
+## 4       2  GRE    95      79
+## 5       3  SAT    90      94
+## 6       3  GRE    99      88</code></pre>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb90-1" data-line-number="1">mydata[<span class="op">-</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>),] <span class="co"># Removing 1st and 3rd rows</span></a></code></pre></div>
 <pre><code>##   Student Test Grade Grade_2
-## 2       1  GRE    82      95
-## 5       3  SAT    86      90
-## 4       2  GRE    88     100
-## 3       2  SAT    93      99
-## 6       3  GRE    97      93
-## 1       1  SAT    99      88</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mydata[<span class="kw">order</span>(mydata<span class="op">$</span>Student, mydata<span class="op">$</span>Grade), <span class="op">-</span><span class="dv">2</span>] <span class="co"># Order by Student and Grade</span></code></pre></div>
+## 2       1  GRE    89      76
+## 4       2  GRE    95      79
+## 5       3  SAT    90      94
+## 6       3  GRE    99      88</code></pre>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb92-1" data-line-number="1">mydata[<span class="ot">FALSE</span>,] <span class="co"># Removing all rows</span></a></code></pre></div>
+<pre><code>## [1] Student Test    Grade   Grade_2
+## &lt;0 rows&gt; (or 0-length row.names)</code></pre>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb94-1" data-line-number="1">mydata[, <span class="dv">4</span>] &lt;-<span class="st"> </span><span class="kw">sample</span>(<span class="dv">85</span><span class="op">:</span><span class="dv">100</span>,<span class="dv">6</span>) <span class="co"># Substitute column Grade_2</span></a>
+<a class="sourceLine" id="cb94-2" data-line-number="2">mydata</a></code></pre></div>
+<pre><code>##   Student Test Grade Grade_2
+## 1       1  SAT    96      87
+## 2       1  GRE    89      89
+## 3       2  SAT    93      88
+## 4       2  GRE    95     100
+## 5       3  SAT    90      86
+## 6       3  GRE    99      98</code></pre>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb96-1" data-line-number="1">mydata[<span class="kw">order</span>(mydata<span class="op">$</span>Grade),] <span class="co"># Order by Grade</span></a></code></pre></div>
+<pre><code>##   Student Test Grade Grade_2
+## 2       1  GRE    89      89
+## 5       3  SAT    90      86
+## 3       2  SAT    93      88
+## 4       2  GRE    95     100
+## 1       1  SAT    96      87
+## 6       3  GRE    99      98</code></pre>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb98-1" data-line-number="1">mydata[<span class="kw">order</span>(mydata<span class="op">$</span>Grade, mydata<span class="op">$</span>Grade_<span class="dv">2</span>),] <span class="co"># Order by Grade and Grade_2</span></a></code></pre></div>
+<pre><code>##   Student Test Grade Grade_2
+## 2       1  GRE    89      89
+## 5       3  SAT    90      86
+## 3       2  SAT    93      88
+## 4       2  GRE    95     100
+## 1       1  SAT    96      87
+## 6       3  GRE    99      98</code></pre>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb100-1" data-line-number="1">mydata[<span class="kw">order</span>(mydata<span class="op">$</span>Student, mydata<span class="op">$</span>Grade), <span class="dv">-2</span>] <span class="co"># Order by Student and Grade</span></a></code></pre></div>
 <pre><code>##   Student Grade Grade_2
-## 2       1    82      95
-## 1       1    99      88
-## 4       2    88     100
-## 3       2    93      99
-## 5       3    86      90
-## 6       3    97      93</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sort</span>(<span class="kw">unique</span>(mydata[,<span class="dv">1</span>]))</code></pre></div>
+## 2       1    89      89
+## 1       1    96      87
+## 3       2    93      88
+## 4       2    95     100
+## 5       3    90      86
+## 6       3    99      98</code></pre>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb102-1" data-line-number="1"><span class="kw">sort</span>(<span class="kw">unique</span>(mydata[,<span class="dv">1</span>]))</a></code></pre></div>
 <pre><code>## [1] 1 2 3</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Change Test column (GRE, SAT) to (1,2)</span>
-mydata<span class="op">$</span>Test &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(mydata<span class="op">$</span>Test) 
-mydata</code></pre></div>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb104-1" data-line-number="1"><span class="co"># Change Test column (GRE, SAT) to (1,2)</span></a>
+<a class="sourceLine" id="cb104-2" data-line-number="2">mydata<span class="op">$</span>Test &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(mydata<span class="op">$</span>Test) </a>
+<a class="sourceLine" id="cb104-3" data-line-number="3">mydata</a></code></pre></div>
 <pre><code>##   Student Test Grade Grade_2
-## 1       1    2    99      88
-## 2       1    1    82      95
-## 3       2    2    93      99
-## 4       2    1    88     100
-## 5       3    2    86      90
-## 6       3    1    97      93</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Change Test column to a binary variable (0,1)</span>
-mydata &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">Student =</span> <span class="kw">sort</span>(<span class="kw">rep</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="dv">2</span>)), <span class="dt">Test =</span> <span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;SAT&quot;</span>,<span class="st">&quot;GRE&quot;</span>), <span class="dv">3</span>), <span class="dt">Grade =</span> <span class="kw">sample</span>(<span class="dv">75</span><span class="op">:</span><span class="dv">100</span>, <span class="dv">6</span>), <span class="dt">Grade_2 =</span> <span class="kw">sample</span>(<span class="dv">75</span><span class="op">:</span><span class="dv">100</span>, <span class="dv">6</span>), <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)
-mydata<span class="op">$</span>Test[<span class="kw">which</span>(mydata<span class="op">$</span>Test <span class="op">==</span><span class="st"> &quot;SAT&quot;</span>)] &lt;-<span class="st"> </span><span class="dv">1</span> 
-mydata<span class="op">$</span>Test[<span class="kw">which</span>(mydata<span class="op">$</span>Test <span class="op">==</span><span class="st"> &quot;GRE&quot;</span>)] &lt;-<span class="st"> </span><span class="dv">0</span>
-mydata</code></pre></div>
+## 1       1    2    96      87
+## 2       1    1    89      89
+## 3       2    2    93      88
+## 4       2    1    95     100
+## 5       3    2    90      86
+## 6       3    1    99      98</code></pre>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb106-1" data-line-number="1"><span class="co"># Change Test column to a binary variable (0,1)</span></a>
+<a class="sourceLine" id="cb106-2" data-line-number="2">mydata &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">Student =</span> <span class="kw">sort</span>(<span class="kw">rep</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="dv">2</span>)), <span class="dt">Test =</span> <span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;SAT&quot;</span>,<span class="st">&quot;GRE&quot;</span>), <span class="dv">3</span>), <span class="dt">Grade =</span> <span class="kw">sample</span>(<span class="dv">75</span><span class="op">:</span><span class="dv">100</span>, <span class="dv">6</span>), <span class="dt">Grade_2 =</span> <span class="kw">sample</span>(<span class="dv">75</span><span class="op">:</span><span class="dv">100</span>, <span class="dv">6</span>), <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb106-3" data-line-number="3">mydata<span class="op">$</span>Test[<span class="kw">which</span>(mydata<span class="op">$</span>Test <span class="op">==</span><span class="st"> &quot;SAT&quot;</span>)] &lt;-<span class="st"> </span><span class="dv">1</span> </a>
+<a class="sourceLine" id="cb106-4" data-line-number="4">mydata<span class="op">$</span>Test[<span class="kw">which</span>(mydata<span class="op">$</span>Test <span class="op">==</span><span class="st"> &quot;GRE&quot;</span>)] &lt;-<span class="st"> </span><span class="dv">0</span></a>
+<a class="sourceLine" id="cb106-5" data-line-number="5">mydata</a></code></pre></div>
 <pre><code>##   Student Test Grade Grade_2
-## 1       1    1    85      93
-## 2       1    0    98      98
-## 3       2    1    80      90
-## 4       2    0    75      92
-## 5       3    1    79      88
-## 6       3    0    99      87</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Generate data by paste</span>
-<span class="kw">paste</span>(<span class="st">&quot;Var&quot;</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">7</span>)</code></pre></div>
+## 1       1    1    99      94
+## 2       1    0    78      86
+## 3       2    1    80      82
+## 4       2    0    79      90
+## 5       3    1    93      84
+## 6       3    0    76      85</code></pre>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb108-1" data-line-number="1"><span class="co"># Generate data by paste</span></a>
+<a class="sourceLine" id="cb108-2" data-line-number="2"><span class="kw">paste</span>(<span class="st">&quot;Var&quot;</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">7</span>)</a></code></pre></div>
 <pre><code>## [1] &quot;Var 1&quot; &quot;Var 2&quot; &quot;Var 3&quot; &quot;Var 4&quot; &quot;Var 5&quot; &quot;Var 6&quot; &quot;Var 7&quot;</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">paste</span>(<span class="st">&quot;Var&quot;</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">7</span>, <span class="dt">sep =</span> <span class="st">&quot;&quot;</span>, <span class="dt">collapse =</span> <span class="st">&quot;, &quot;</span>)</code></pre></div>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb110-1" data-line-number="1"><span class="kw">paste</span>(<span class="st">&quot;Var&quot;</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">7</span>, <span class="dt">sep =</span> <span class="st">&quot;&quot;</span>, <span class="dt">collapse =</span> <span class="st">&quot;, &quot;</span>)</a></code></pre></div>
 <pre><code>## [1] &quot;Var1, Var2, Var3, Var4, Var5, Var6, Var7&quot;</code></pre>
+<hr />
 </div>
 <div id="computational-functions" class="section level2">
 <h2>Computational functions</h2>
 <p>R provides an abundance of computational functions. The following are some examples of these functions.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Apply</span>
-<span class="kw">apply</span>(mydata[<span class="dv">3</span><span class="op">:</span><span class="dv">4</span>], <span class="dv">2</span>, quantile) <span class="co"># Calculate quantile for column 3 and 4. Margin = 1 indicates rows, 2 indicates columns</span></code></pre></div>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb112-1" data-line-number="1"><span class="co"># Apply</span></a>
+<a class="sourceLine" id="cb112-2" data-line-number="2"><span class="kw">apply</span>(mydata[<span class="dv">3</span><span class="op">:</span><span class="dv">4</span>], <span class="dv">2</span>, quantile) <span class="co"># Calculate quantile for column 3 and 4. Margin = 1 indicates rows, 2 indicates columns</span></a></code></pre></div>
 <pre><code>##      Grade Grade_2
-## 0%   75.00   87.00
-## 25%  79.25   88.50
-## 50%  82.50   91.00
-## 75%  94.75   92.75
-## 100% 99.00   98.00</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">apply</span>(mydata[<span class="dv">3</span><span class="op">:</span><span class="dv">4</span>], <span class="dv">2</span>, mean) <span class="co"># Calculate mean for column 3 and 4</span></code></pre></div>
+## 0%   76.00   82.00
+## 25%  78.25   84.25
+## 50%  79.50   85.50
+## 75%  89.75   89.00
+## 100% 99.00   94.00</code></pre>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb114-1" data-line-number="1"><span class="kw">apply</span>(mydata[<span class="dv">3</span><span class="op">:</span><span class="dv">4</span>], <span class="dv">2</span>, mean) <span class="co"># Calculate mean for column 3 and 4</span></a></code></pre></div>
 <pre><code>##    Grade  Grade_2 
-## 86.00000 91.33333</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">colMeans</span>(mydata[<span class="dv">3</span><span class="op">:</span><span class="dv">4</span>])</code></pre></div>
+## 84.16667 86.83333</code></pre>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb116-1" data-line-number="1"><span class="kw">colMeans</span>(mydata[<span class="dv">3</span><span class="op">:</span><span class="dv">4</span>])</a></code></pre></div>
 <pre><code>##    Grade  Grade_2 
-## 86.00000 91.33333</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Cumulative sums, products, and extremes</span>
-<span class="kw">cumsum</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>)</code></pre></div>
+## 84.16667 86.83333</code></pre>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb118-1" data-line-number="1"><span class="co"># Cumulative sums, products, and extremes</span></a>
+<a class="sourceLine" id="cb118-2" data-line-number="2"><span class="kw">cumsum</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>)</a></code></pre></div>
 <pre><code>## [1]  1  3  6 10 15 21</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cumprod</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>)</code></pre></div>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb120-1" data-line-number="1"><span class="kw">cumprod</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>)</a></code></pre></div>
 <pre><code>## [1]   1   2   6  24 120 720</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cummin</span>(<span class="kw">c</span>(<span class="dv">3</span><span class="op">:</span><span class="dv">1</span>, <span class="dv">2</span><span class="op">:</span><span class="dv">0</span>, <span class="dv">4</span><span class="op">:</span><span class="dv">2</span>))</code></pre></div>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb122-1" data-line-number="1"><span class="kw">cummin</span>(<span class="kw">c</span>(<span class="dv">3</span><span class="op">:</span><span class="dv">1</span>, <span class="dv">2</span><span class="op">:</span><span class="dv">0</span>, <span class="dv">4</span><span class="op">:</span><span class="dv">2</span>))</a></code></pre></div>
 <pre><code>## [1] 3 2 1 1 1 0 0 0 0</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cummax</span>(<span class="kw">c</span>(<span class="dv">3</span><span class="op">:</span><span class="dv">1</span>, <span class="dv">2</span><span class="op">:</span><span class="dv">0</span>, <span class="dv">4</span><span class="op">:</span><span class="dv">2</span>))</code></pre></div>
+<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb124-1" data-line-number="1"><span class="kw">cummax</span>(<span class="kw">c</span>(<span class="dv">3</span><span class="op">:</span><span class="dv">1</span>, <span class="dv">2</span><span class="op">:</span><span class="dv">0</span>, <span class="dv">4</span><span class="op">:</span><span class="dv">2</span>))</a></code></pre></div>
 <pre><code>## [1] 3 3 3 3 3 3 4 4 4</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Scale and sample</span>
-<span class="kw">scale</span>(mydata[<span class="op">-</span><span class="dv">2</span>])[<span class="dv">1</span>] <span class="co"># scale(x) = (x - mean(x)) / sd(x)</span></code></pre></div>
+<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb126-1" data-line-number="1"><span class="co"># Scale and sample</span></a>
+<a class="sourceLine" id="cb126-2" data-line-number="2"><span class="kw">scale</span>(mydata[<span class="op">-</span><span class="dv">2</span>])[<span class="dv">1</span>] <span class="co"># scale(x) = (x - mean(x)) / sd(x)</span></a></code></pre></div>
 <pre><code>## [1] -1.118034</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>, <span class="dv">10</span>) <span class="co"># A sample of size 10 from 1 to 100</span></code></pre></div>
-<pre><code>##  [1] 98 71 38 76 57 79 52 18 10 97</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dv">10</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>) <span class="co"># # A sample of size 10 from 1 to 5 with replacement </span></code></pre></div>
-<pre><code>##  [1] 3 5 4 4 5 1 4 3 2 4</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Eval</span>
-re &lt;-<span class="st"> </span><span class="cf">function</span>(x1, x2) <span class="kw">substitute</span>(<span class="dv">2</span><span class="op">*</span>x1<span class="op">^</span><span class="dv">2</span> <span class="op">+</span><span class="st"> </span><span class="dv">3</span><span class="op">*</span>x2<span class="op">^</span><span class="dv">2</span>)
-r &lt;-<span class="st"> </span><span class="kw">re</span>((<span class="dv">2</span><span class="op">-</span><span class="dv">3</span><span class="op">*</span>k), (<span class="dv">1</span><span class="op">-</span><span class="dv">4</span><span class="op">*</span>k)) <span class="co"># r = 2*(2-3*k)^2 + 3*(1-4*k)^2</span>
-y &lt;-<span class="st"> </span><span class="cf">function</span>(k) {<span class="kw">eval</span>(r)} <span class="co"># To evaluate an (unevaluated) expression</span>
-<span class="kw">y</span>(<span class="dv">2</span>)</code></pre></div>
+<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb128-1" data-line-number="1"><span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>, <span class="dv">10</span>) <span class="co"># A sample of size 10 from 1 to 100</span></a></code></pre></div>
+<pre><code>##  [1] 44 92 11 31 96 36 97  8  6 27</code></pre>
+<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb130-1" data-line-number="1"><span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dv">10</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>) <span class="co"># # A sample of size 10 from 1 to 5 with replacement </span></a></code></pre></div>
+<pre><code>##  [1] 3 5 3 1 2 4 1 3 5 5</code></pre>
+<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb132-1" data-line-number="1"><span class="co"># Eval</span></a>
+<a class="sourceLine" id="cb132-2" data-line-number="2">re &lt;-<span class="st"> </span><span class="cf">function</span>(x1, x2) <span class="kw">substitute</span>(<span class="dv">2</span><span class="op">*</span>x1<span class="op">^</span><span class="dv">2</span> <span class="op">+</span><span class="st"> </span><span class="dv">3</span><span class="op">*</span>x2<span class="op">^</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb132-3" data-line-number="3">r &lt;-<span class="st"> </span><span class="kw">re</span>((<span class="dv">2-3</span><span class="op">*</span>k), (<span class="dv">1-4</span><span class="op">*</span>k)) <span class="co"># r = 2*(2-3*k)^2 + 3*(1-4*k)^2</span></a>
+<a class="sourceLine" id="cb132-4" data-line-number="4">y &lt;-<span class="st"> </span><span class="cf">function</span>(k) {<span class="kw">eval</span>(r)} <span class="co"># To evaluate an (unevaluated) expression</span></a>
+<a class="sourceLine" id="cb132-5" data-line-number="5"><span class="kw">y</span>(<span class="dv">2</span>)</a></code></pre></div>
 <pre><code>## [1] 179</code></pre>
+<hr />
 </div>
 <div id="matrix-operations" class="section level2">
 <h2>Matrix operations</h2>
@@ -870,36 +863,36 @@ y &lt;-<span class="st"> </span><span class="cf">function</span>(k) {<span class
 <li>Spectral Decomposition of a Matrix: <code>eigen()</code></li>
 </ul>
 <p>The following are some examples of above functions.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">M &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">4</span>,<span class="op">-</span><span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">6</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">8</span>,<span class="dv">4</span>), <span class="dv">3</span>, <span class="dv">3</span>)
-N &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="op">-</span><span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>), <span class="dv">3</span>, <span class="dv">3</span>)
-b &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>))
-
-<span class="kw">dim</span>(M)</code></pre></div>
+<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb135-1" data-line-number="1">M &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">4</span>,<span class="op">-</span><span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">6</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">8</span>,<span class="dv">4</span>), <span class="dv">3</span>, <span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb135-2" data-line-number="2">N &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="op">-</span><span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>), <span class="dv">3</span>, <span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb135-3" data-line-number="3">b &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>))</a>
+<a class="sourceLine" id="cb135-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb135-5" data-line-number="5"><span class="kw">dim</span>(M)</a></code></pre></div>
 <pre><code>## [1] 3 3</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">diag</span>(M)</code></pre></div>
+<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb137-1" data-line-number="1"><span class="kw">diag</span>(M)</a></code></pre></div>
 <pre><code>## [1] 4 6 4</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">diag</span>(<span class="dv">3</span>)</code></pre></div>
+<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb139-1" data-line-number="1"><span class="kw">diag</span>(<span class="dv">3</span>)</a></code></pre></div>
 <pre><code>##      [,1] [,2] [,3]
 ## [1,]    1    0    0
 ## [2,]    0    1    0
 ## [3,]    0    0    1</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">isSymmetric</span>(M)</code></pre></div>
+<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb141-1" data-line-number="1"><span class="kw">isSymmetric</span>(M)</a></code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">M <span class="op">%*%</span><span class="st"> </span>N</code></pre></div>
+<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb143-1" data-line-number="1">M <span class="op">%*%</span><span class="st"> </span>N</a></code></pre></div>
 <pre><code>##      [,1] [,2] [,3]
 ## [1,]   18   -2   38
 ## [2,]   32  -10   94
 ## [3,]    2   -6   26</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">identical</span>(M, N)</code></pre></div>
+<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb145-1" data-line-number="1"><span class="kw">identical</span>(M, N)</a></code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t</span>(M)</code></pre></div>
+<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb147-1" data-line-number="1"><span class="kw">t</span>(M)</a></code></pre></div>
 <pre><code>##      [,1] [,2] [,3]
 ## [1,]    4    4   -2
 ## [2,]    2    6    2
 ## [3,]    2    8    4</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">det</span>(M)</code></pre></div>
+<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb149-1" data-line-number="1"><span class="kw">det</span>(M)</a></code></pre></div>
 <pre><code>## [1] 8</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qr</span>(M)</code></pre></div>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb151-1" data-line-number="1"><span class="kw">qr</span>(M)</a></code></pre></div>
 <pre><code>## $qr
 ##            [,1]       [,2]       [,3]
 ## [1,] -6.0000000 -4.6666667 -5.3333333
@@ -917,17 +910,17 @@ b &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">
 ## 
 ## attr(,&quot;class&quot;)
 ## [1] &quot;qr&quot;</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">solve</span>(M) <span class="co"># Inverse of M</span></code></pre></div>
+<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb153-1" data-line-number="1"><span class="kw">solve</span>(M) <span class="co"># Inverse of M</span></a></code></pre></div>
 <pre><code>##      [,1] [,2] [,3]
 ## [1,]  1.0 -0.5  0.5
 ## [2,] -4.0  2.5 -3.0
 ## [3,]  2.5 -1.5  2.0</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">solve</span>(M,b) <span class="co"># Solve a system</span></code></pre></div>
+<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb155-1" data-line-number="1"><span class="kw">solve</span>(M,b) <span class="co"># Solve a system</span></a></code></pre></div>
 <pre><code>##      [,1]
 ## [1,]  0.5
 ## [2,] -3.0
 ## [3,]  2.0</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">eigen</span>(M)</code></pre></div>
+<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb157-1" data-line-number="1"><span class="kw">eigen</span>(M)</a></code></pre></div>
 <pre><code>## eigen() decomposition
 ## $values
 ## [1] 9.4185507 4.3878731 0.1935761
@@ -937,11 +930,12 @@ b &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">
 ## [1,] 0.3994272 -0.6725085  0.1632537
 ## [2,] 0.8980978 -0.5844552 -0.8354557
 ## [3,] 0.1840605  0.4540313  0.5247494</code></pre>
+<hr />
 </div>
 <div id="summary-statistics-of-data-subsets" class="section level2">
 <h2>Summary statistics of data subsets</h2>
 <p><code>aggregate</code> function splits the data into subsets, computes summary statistics for each, and returns the result in a convenient form. <code>table</code> uses the cross-classifying factors to build a contingency table of the counts at each combination of factor levels.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(warpbreaks)</code></pre></div>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb159-1" data-line-number="1"><span class="kw">head</span>(warpbreaks)</a></code></pre></div>
 <pre><code>##   breaks wool tension
 ## 1     26    A       L
 ## 2     30    A       L
@@ -949,7 +943,7 @@ b &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">
 ## 4     25    A       L
 ## 5     70    A       L
 ## 6     52    A       L</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">aggregate</span>(breaks <span class="op">~</span><span class="st"> </span>wool <span class="op">+</span><span class="st"> </span>tension, <span class="dt">data =</span> warpbreaks, mean)</code></pre></div>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb161-1" data-line-number="1"><span class="kw">aggregate</span>(breaks <span class="op">~</span><span class="st"> </span>wool <span class="op">+</span><span class="st"> </span>tension, <span class="dt">data =</span> warpbreaks, mean)</a></code></pre></div>
 <pre><code>##   wool tension   breaks
 ## 1    A       L 44.55556
 ## 2    B       L 28.22222
@@ -957,11 +951,11 @@ b &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">
 ## 4    B       M 28.77778
 ## 5    A       H 24.55556
 ## 6    B       H 18.77778</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">aggregate</span>(. <span class="op">~</span><span class="st"> </span>wool, <span class="dt">data =</span> warpbreaks, mean)</code></pre></div>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb163-1" data-line-number="1"><span class="kw">aggregate</span>(. <span class="op">~</span><span class="st"> </span>wool, <span class="dt">data =</span> warpbreaks, mean)</a></code></pre></div>
 <pre><code>##   wool   breaks tension
 ## 1    A 31.03704       2
 ## 2    B 25.25926       2</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(airquality)</code></pre></div>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb165-1" data-line-number="1"><span class="kw">head</span>(airquality)</a></code></pre></div>
 <pre><code>##   Ozone Solar.R Wind Temp Month Day
 ## 1    41     190  7.4   67     5   1
 ## 2    36     118  8.0   72     5   2
@@ -969,28 +963,29 @@ b &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">
 ## 4    18     313 11.5   62     5   4
 ## 5    NA      NA 14.3   56     5   5
 ## 6    28      NA 14.9   66     5   6</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">aggregate</span>(<span class="kw">cbind</span>(Ozone, Temp) <span class="op">~</span><span class="st"> </span>Month, <span class="dt">data =</span> airquality, mean)</code></pre></div>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb167-1" data-line-number="1"><span class="kw">aggregate</span>(<span class="kw">cbind</span>(Ozone, Temp) <span class="op">~</span><span class="st"> </span>Month, <span class="dt">data =</span> airquality, mean)</a></code></pre></div>
 <pre><code>##   Month    Ozone     Temp
 ## 1     5 23.61538 66.73077
 ## 2     6 29.44444 78.22222
 ## 3     7 59.11538 83.88462
 ## 4     8 59.96154 83.96154
 ## 5     9 31.44828 76.89655</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Finding frequency</span>
-letter &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;d&#39;</span>,<span class="st">&#39;b&#39;</span>,<span class="st">&#39;c&#39;</span>,<span class="st">&#39;d&#39;</span>,<span class="st">&#39;a&#39;</span>,<span class="st">&#39;d&#39;</span>,<span class="st">&#39;a&#39;</span>, <span class="st">&#39;c&#39;</span>)
-fr &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="kw">table</span>(letter))
-fr</code></pre></div>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb169-1" data-line-number="1"><span class="co"># Finding frequency</span></a>
+<a class="sourceLine" id="cb169-2" data-line-number="2">letter &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;d&#39;</span>,<span class="st">&#39;b&#39;</span>,<span class="st">&#39;c&#39;</span>,<span class="st">&#39;d&#39;</span>,<span class="st">&#39;a&#39;</span>,<span class="st">&#39;d&#39;</span>,<span class="st">&#39;a&#39;</span>, <span class="st">&#39;c&#39;</span>)</a>
+<a class="sourceLine" id="cb169-3" data-line-number="3">fr &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="kw">table</span>(letter))</a>
+<a class="sourceLine" id="cb169-4" data-line-number="4">fr</a></code></pre></div>
 <pre><code>##   letter Freq
 ## 1      a    2
 ## 2      b    1
 ## 3      c    2
 ## 4      d    3</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">fr[<span class="kw">order</span>(fr<span class="op">$</span>Freq, <span class="dt">decreasing =</span> <span class="ot">TRUE</span>),]</code></pre></div>
+<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb171-1" data-line-number="1">fr[<span class="kw">order</span>(fr<span class="op">$</span>Freq, <span class="dt">decreasing =</span> <span class="ot">TRUE</span>),]</a></code></pre></div>
 <pre><code>##   letter Freq
 ## 4      d    3
 ## 1      a    2
 ## 3      c    2
 ## 2      b    1</code></pre>
+<hr />
 </div>
 <div id="split-and-merge-data" class="section level2">
 <h2>Split and merge data</h2>
@@ -1001,58 +996,58 @@ fr</code></pre></div>
 <li>Right join: <code>merge(x, y, by, all.y = T)</code></li>
 <li>Outer join: <code>merge(x, y, by, all = T)</code></li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">data &lt;-<span class="st"> </span><span class="kw">expand.grid</span>(<span class="dt">meat =</span> <span class="kw">c</span>(<span class="st">&quot;grade-1&quot;</span>,<span class="st">&quot;grade-2&quot;</span>,<span class="st">&quot;grade-3&quot;</span>), <span class="dt">food =</span> <span class="kw">c</span>(<span class="st">&quot;burger&quot;</span>, <span class="st">&quot;steak&quot;</span>, <span class="st">&quot;pizza&quot;</span>))
-data<span class="op">$</span>value &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">rnorm</span>(<span class="kw">nrow</span>(data)), <span class="dv">2</span>)
-data</code></pre></div>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb173-1" data-line-number="1">data &lt;-<span class="st"> </span><span class="kw">expand.grid</span>(<span class="dt">meat =</span> <span class="kw">c</span>(<span class="st">&quot;grade-1&quot;</span>,<span class="st">&quot;grade-2&quot;</span>,<span class="st">&quot;grade-3&quot;</span>), <span class="dt">food =</span> <span class="kw">c</span>(<span class="st">&quot;burger&quot;</span>, <span class="st">&quot;steak&quot;</span>, <span class="st">&quot;pizza&quot;</span>))</a>
+<a class="sourceLine" id="cb173-2" data-line-number="2">data<span class="op">$</span>value &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">rnorm</span>(<span class="kw">nrow</span>(data)), <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb173-3" data-line-number="3">data</a></code></pre></div>
 <pre><code>##      meat   food value
-## 1 grade-1 burger  1.56
-## 2 grade-2 burger -0.91
-## 3 grade-3 burger  0.36
-## 4 grade-1  steak -1.26
-## 5 grade-2  steak -0.81
-## 6 grade-3  steak  0.32
-## 7 grade-1  pizza -0.27
-## 8 grade-2  pizza  0.71
-## 9 grade-3  pizza -0.14</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">data_by_food &lt;-<span class="st"> </span><span class="kw">split</span>(data, data<span class="op">$</span>food)
-data_by_food</code></pre></div>
+## 1 grade-1 burger -1.39
+## 2 grade-2 burger  0.57
+## 3 grade-3 burger  0.41
+## 4 grade-1  steak  1.23
+## 5 grade-2  steak  1.29
+## 6 grade-3  steak -0.15
+## 7 grade-1  pizza -0.83
+## 8 grade-2  pizza -0.48
+## 9 grade-3  pizza  0.60</code></pre>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb175-1" data-line-number="1">data_by_food &lt;-<span class="st"> </span><span class="kw">split</span>(data, data<span class="op">$</span>food)</a>
+<a class="sourceLine" id="cb175-2" data-line-number="2">data_by_food</a></code></pre></div>
 <pre><code>## $burger
 ##      meat   food value
-## 1 grade-1 burger  1.56
-## 2 grade-2 burger -0.91
-## 3 grade-3 burger  0.36
+## 1 grade-1 burger -1.39
+## 2 grade-2 burger  0.57
+## 3 grade-3 burger  0.41
 ## 
 ## $steak
 ##      meat  food value
-## 4 grade-1 steak -1.26
-## 5 grade-2 steak -0.81
-## 6 grade-3 steak  0.32
+## 4 grade-1 steak  1.23
+## 5 grade-2 steak  1.29
+## 6 grade-3 steak -0.15
 ## 
 ## $pizza
 ##      meat  food value
-## 7 grade-1 pizza -0.27
-## 8 grade-2 pizza  0.71
-## 9 grade-3 pizza -0.14</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">result &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">meat =</span> <span class="kw">c</span>(<span class="st">&quot;grade-1&quot;</span>,<span class="st">&quot;grade-2&quot;</span>,<span class="st">&quot;grade-3&quot;</span>))
-<span class="cf">for</span>(i <span class="cf">in</span> <span class="kw">seq</span>(data_by_food)) {
-  result &lt;-<span class="st"> </span><span class="kw">merge</span>(result, data_by_food[[i]], <span class="dt">by =</span> <span class="st">&quot;meat&quot;</span>)
-}
-result &lt;-<span class="st"> </span>result[,<span class="op">-</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>)]
-<span class="kw">colnames</span>(result) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;meat&quot;</span>, <span class="st">&quot;burger&quot;</span>, <span class="st">&quot;steak&quot;</span>, <span class="st">&quot;pizza&quot;</span>)
-result</code></pre></div>
+## 7 grade-1 pizza -0.83
+## 8 grade-2 pizza -0.48
+## 9 grade-3 pizza  0.60</code></pre>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb177-1" data-line-number="1">result &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">meat =</span> <span class="kw">c</span>(<span class="st">&quot;grade-1&quot;</span>,<span class="st">&quot;grade-2&quot;</span>,<span class="st">&quot;grade-3&quot;</span>))</a>
+<a class="sourceLine" id="cb177-2" data-line-number="2"><span class="cf">for</span>(i <span class="cf">in</span> <span class="kw">seq</span>(data_by_food)) {</a>
+<a class="sourceLine" id="cb177-3" data-line-number="3">  result &lt;-<span class="st"> </span><span class="kw">merge</span>(result, data_by_food[[i]], <span class="dt">by =</span> <span class="st">&quot;meat&quot;</span>)</a>
+<a class="sourceLine" id="cb177-4" data-line-number="4">}</a>
+<a class="sourceLine" id="cb177-5" data-line-number="5">result &lt;-<span class="st"> </span>result[,<span class="op">-</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>)]</a>
+<a class="sourceLine" id="cb177-6" data-line-number="6"><span class="kw">colnames</span>(result) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;meat&quot;</span>, <span class="st">&quot;burger&quot;</span>, <span class="st">&quot;steak&quot;</span>, <span class="st">&quot;pizza&quot;</span>)</a>
+<a class="sourceLine" id="cb177-7" data-line-number="7">result</a></code></pre></div>
 <pre><code>##      meat burger steak pizza
-## 1 grade-1   1.56 -1.26 -0.27
-## 2 grade-2  -0.91 -0.81  0.71
-## 3 grade-3   0.36  0.32 -0.14</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">ID =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">6</span>, <span class="dt">Product =</span> <span class="kw">c</span>(<span class="kw">rep</span>(<span class="st">&quot;TV&quot;</span>, <span class="dv">3</span>), <span class="kw">rep</span>(<span class="st">&quot;Mobile&quot;</span>, <span class="dv">3</span>)))
-y &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">ID =</span> <span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>), <span class="dt">Made_in =</span> <span class="kw">c</span>(<span class="kw">rep</span>(<span class="st">&quot;Japan&quot;</span>, <span class="dv">2</span>), <span class="kw">rep</span>(<span class="st">&quot;China&quot;</span>, <span class="dv">1</span>)))
-
-<span class="kw">merge</span>(x, y, <span class="dt">by =</span> <span class="st">&quot;ID&quot;</span>) <span class="co"># Inner join</span></code></pre></div>
+## 1 grade-1  -1.39  1.23 -0.83
+## 2 grade-2   0.57  1.29 -0.48
+## 3 grade-3   0.41 -0.15  0.60</code></pre>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb179-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">ID =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">6</span>, <span class="dt">Product =</span> <span class="kw">c</span>(<span class="kw">rep</span>(<span class="st">&quot;TV&quot;</span>, <span class="dv">3</span>), <span class="kw">rep</span>(<span class="st">&quot;Mobile&quot;</span>, <span class="dv">3</span>)))</a>
+<a class="sourceLine" id="cb179-2" data-line-number="2">y &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">ID =</span> <span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>), <span class="dt">Made_in =</span> <span class="kw">c</span>(<span class="kw">rep</span>(<span class="st">&quot;Japan&quot;</span>, <span class="dv">2</span>), <span class="kw">rep</span>(<span class="st">&quot;China&quot;</span>, <span class="dv">1</span>)))</a>
+<a class="sourceLine" id="cb179-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb179-4" data-line-number="4"><span class="kw">merge</span>(x, y, <span class="dt">by =</span> <span class="st">&quot;ID&quot;</span>) <span class="co"># Inner join</span></a></code></pre></div>
 <pre><code>##   ID Product Made_in
 ## 1  2      TV   Japan
 ## 2  4  Mobile   Japan
 ## 3  6  Mobile   China</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">merge</span>(x, y, <span class="dt">by =</span> <span class="st">&quot;ID&quot;</span>, <span class="dt">all =</span> <span class="ot">TRUE</span>) <span class="co"># Full outer join</span></code></pre></div>
+<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb181-1" data-line-number="1"><span class="kw">merge</span>(x, y, <span class="dt">by =</span> <span class="st">&quot;ID&quot;</span>, <span class="dt">all =</span> <span class="ot">TRUE</span>) <span class="co"># Full outer join</span></a></code></pre></div>
 <pre><code>##   ID Product Made_in
 ## 1  1      TV    &lt;NA&gt;
 ## 2  2      TV   Japan
@@ -1060,32 +1055,34 @@ y &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="
 ## 4  4  Mobile   Japan
 ## 5  5  Mobile    &lt;NA&gt;
 ## 6  6  Mobile   China</code></pre>
+<hr />
 </div>
 <div id="regular-expressions" class="section level2">
 <h2>Regular expressions</h2>
 <p><a href="https://en.wikipedia.org/wiki/Regular_expression">Regular expressions</a> (regex) are a simple way to find patterns in text. The most common functions implementing regex in R are in the <strong>global regular expression print</strong> (<code>grep</code>) family. For more information see <code>help(&quot;regex&quot;)</code> and <code>help(grep)</code>. Also, You may learn more about regex functions in R at <a href="https://d-rug.github.io/blog/2015/regex.fick">D-RUG</a>. Following are some simple examples.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sub</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;#&quot;</span>, <span class="st">&quot;abcdfa&quot;</span>) <span class="co"># Substitution: substitue first &quot;a&quot; in the expression &quot;abcdfa&quot; with &quot;#&quot; </span></code></pre></div>
+<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb183-1" data-line-number="1"><span class="kw">sub</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;#&quot;</span>, <span class="st">&quot;abcdfa&quot;</span>) <span class="co"># Substitution: substitue first &quot;a&quot; in the expression &quot;abcdfa&quot; with &quot;#&quot; </span></a></code></pre></div>
 <pre><code>## [1] &quot;#bcdfa&quot;</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">gsub</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;#&quot;</span>, <span class="st">&quot;abcdfa&quot;</span>) <span class="co"># General substitution: substitue all &quot;a&quot; in the expression &quot;abcdfa&quot; with &quot;#&quot;  </span></code></pre></div>
+<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb185-1" data-line-number="1"><span class="kw">gsub</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;#&quot;</span>, <span class="st">&quot;abcdfa&quot;</span>) <span class="co"># General substitution: substitue all &quot;a&quot; in the expression &quot;abcdfa&quot; with &quot;#&quot;  </span></a></code></pre></div>
 <pre><code>## [1] &quot;#bcdf#&quot;</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">gsub</span>(<span class="st">&quot;//#&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;//#bcdf//#&quot;</span>) <span class="co"># For &quot;$&quot;,&quot;*&quot;,&quot;+&quot;,&quot;.&quot;,&quot;?&quot;,&quot;[&quot;,&quot;^&quot;,&quot;{&quot;,&quot;|&quot;,&quot;(&quot;, and &quot;\\&quot; need to add &quot;//&quot; before!</span></code></pre></div>
+<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb187-1" data-line-number="1"><span class="kw">gsub</span>(<span class="st">&quot;//#&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;//#bcdf//#&quot;</span>) <span class="co"># For &quot;$&quot;,&quot;*&quot;,&quot;+&quot;,&quot;.&quot;,&quot;?&quot;,&quot;[&quot;,&quot;^&quot;,&quot;{&quot;,&quot;|&quot;,&quot;(&quot;, and &quot;\\&quot; need to add &quot;//&quot; before!</span></a></code></pre></div>
 <pre><code>## [1] &quot;abcdfa&quot;</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">grep</span>(<span class="st">&quot;a&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;abc&quot;</span>, <span class="st">&quot;def&quot;</span>, <span class="st">&quot;cba a&quot;</span>, <span class="st">&quot;aa&quot;</span>), <span class="dt">perl =</span> <span class="ot">TRUE</span>, <span class="dt">value =</span> <span class="ot">FALSE</span>) <span class="co"># Shows arrays&#39; number that include &quot;a&quot;</span></code></pre></div>
+<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb189-1" data-line-number="1"><span class="kw">grep</span>(<span class="st">&quot;a&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;abc&quot;</span>, <span class="st">&quot;def&quot;</span>, <span class="st">&quot;cba a&quot;</span>, <span class="st">&quot;aa&quot;</span>), <span class="dt">perl =</span> <span class="ot">TRUE</span>, <span class="dt">value =</span> <span class="ot">FALSE</span>) <span class="co"># Shows arrays&#39; number that include &quot;a&quot;</span></a></code></pre></div>
 <pre><code>## [1] 1 3 4</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">grep</span>(<span class="st">&quot;a+&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;abc&quot;</span>, <span class="st">&quot;def&quot;</span>, <span class="st">&quot;cba a&quot;</span>, <span class="st">&quot;aa&quot;</span>), <span class="dt">perl =</span> <span class="ot">TRUE</span>, <span class="dt">value =</span> <span class="ot">TRUE</span>) <span class="co"># Shows expressions that include &quot;a&quot;</span></code></pre></div>
+<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb191-1" data-line-number="1"><span class="kw">grep</span>(<span class="st">&quot;a+&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;abc&quot;</span>, <span class="st">&quot;def&quot;</span>, <span class="st">&quot;cba a&quot;</span>, <span class="st">&quot;aa&quot;</span>), <span class="dt">perl =</span> <span class="ot">TRUE</span>, <span class="dt">value =</span> <span class="ot">TRUE</span>) <span class="co"># Shows expressions that include &quot;a&quot;</span></a></code></pre></div>
 <pre><code>## [1] &quot;abc&quot;   &quot;cba a&quot; &quot;aa&quot;</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">substr</span>(<span class="st">&quot;abcdef&quot;</span>, <span class="dv">1</span>, <span class="dv">3</span>) <span class="co"># substr(x, start, stop)</span></code></pre></div>
+<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb193-1" data-line-number="1"><span class="kw">substr</span>(<span class="st">&quot;abcdef&quot;</span>, <span class="dv">1</span>, <span class="dv">3</span>) <span class="co"># substr(x, start, stop)</span></a></code></pre></div>
 <pre><code>## [1] &quot;abc&quot;</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">substr</span>(<span class="st">&quot;abcdef&quot;</span>, <span class="dv">1</span>, <span class="kw">regexpr</span>(<span class="st">&quot;d&quot;</span>,<span class="st">&quot;abcdef&quot;</span>)[<span class="dv">1</span>]) <span class="co"># From first to &quot;d&quot;</span></code></pre></div>
+<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb195-1" data-line-number="1"><span class="kw">substr</span>(<span class="st">&quot;abcdef&quot;</span>, <span class="dv">1</span>, <span class="kw">regexpr</span>(<span class="st">&quot;d&quot;</span>,<span class="st">&quot;abcdef&quot;</span>)[<span class="dv">1</span>]) <span class="co"># From first to &quot;d&quot;</span></a></code></pre></div>
 <pre><code>## [1] &quot;abcd&quot;</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">substr</span>(<span class="st">&quot;abcdef&quot;</span>, <span class="kw">nchar</span>(<span class="st">&quot;abcdef&quot;</span>)<span class="op">+</span><span class="dv">1</span><span class="op">-</span><span class="dv">3</span>, <span class="kw">nchar</span>(<span class="st">&quot;abcdef&quot;</span>)) <span class="co"># First 3 caracters from right</span></code></pre></div>
+<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb197-1" data-line-number="1"><span class="kw">substr</span>(<span class="st">&quot;abcdef&quot;</span>, <span class="kw">nchar</span>(<span class="st">&quot;abcdef&quot;</span>)<span class="op">+</span><span class="dv">1-3</span>, <span class="kw">nchar</span>(<span class="st">&quot;abcdef&quot;</span>)) <span class="co"># First 3 caracters from right</span></a></code></pre></div>
 <pre><code>## [1] &quot;def&quot;</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pattern &lt;-<span class="st"> &quot;(</span><span class="ch">\\</span><span class="st">d{3})[-. )]*(</span><span class="ch">\\</span><span class="st">d{3})[-. ]*(</span><span class="ch">\\</span><span class="st">d{4})&quot;</span>
-t &lt;-<span class="st"> &quot;888-555-7766&quot;</span>
-r &lt;-<span class="st"> </span><span class="kw">regexec</span>(pattern, t)
-<span class="kw">regmatches</span>(t, r)</code></pre></div>
+<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb199-1" data-line-number="1">pattern &lt;-<span class="st"> &quot;(</span><span class="ch">\\</span><span class="st">d{3})[-. )]*(</span><span class="ch">\\</span><span class="st">d{3})[-. ]*(</span><span class="ch">\\</span><span class="st">d{4})&quot;</span></a>
+<a class="sourceLine" id="cb199-2" data-line-number="2">t &lt;-<span class="st"> &quot;888-555-7766&quot;</span></a>
+<a class="sourceLine" id="cb199-3" data-line-number="3">r &lt;-<span class="st"> </span><span class="kw">regexec</span>(pattern, t)</a>
+<a class="sourceLine" id="cb199-4" data-line-number="4"><span class="kw">regmatches</span>(t, r)</a></code></pre></div>
 <pre><code>## [[1]]
 ## [1] &quot;888-555-7766&quot; &quot;888&quot;          &quot;555&quot;          &quot;7766&quot;</code></pre>
+<hr />
 </div>
 <div id="control-flow-tools" class="section level2">
 <h2>Control flow tools</h2>
@@ -1099,78 +1096,79 @@ r &lt;-<span class="st"> </span><span class="kw">regexec</span>(pattern, t)
 <li>repeat</li>
 </ul>
 <p>The following are some simple examples of using these statements in R.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">n &lt;-<span class="st"> </span><span class="dv">10</span>
-<span class="cf">if</span> (n <span class="op">==</span><span class="st"> </span><span class="dv">7</span>) {
-  <span class="kw">print</span>(<span class="st">&quot;n is equal 7&quot;</span>)
-} <span class="cf">else</span> <span class="cf">if</span> (n <span class="op">&gt;</span><span class="st"> </span><span class="dv">7</span>) {
-  <span class="kw">print</span>(<span class="st">&quot;n is greater than 7&quot;</span>)
-} <span class="cf">else</span> {
-  <span class="kw">print</span>(<span class="st">&quot;n is smaller than 7&quot;</span>)
-}</code></pre></div>
+<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb201-1" data-line-number="1">n &lt;-<span class="st"> </span><span class="dv">10</span></a>
+<a class="sourceLine" id="cb201-2" data-line-number="2"><span class="cf">if</span> (n <span class="op">==</span><span class="st"> </span><span class="dv">7</span>) {</a>
+<a class="sourceLine" id="cb201-3" data-line-number="3">  <span class="kw">print</span>(<span class="st">&quot;n is equal 7&quot;</span>)</a>
+<a class="sourceLine" id="cb201-4" data-line-number="4">} <span class="cf">else</span> <span class="cf">if</span> (n <span class="op">&gt;</span><span class="st"> </span><span class="dv">7</span>) {</a>
+<a class="sourceLine" id="cb201-5" data-line-number="5">  <span class="kw">print</span>(<span class="st">&quot;n is greater than 7&quot;</span>)</a>
+<a class="sourceLine" id="cb201-6" data-line-number="6">} <span class="cf">else</span> {</a>
+<a class="sourceLine" id="cb201-7" data-line-number="7">  <span class="kw">print</span>(<span class="st">&quot;n is smaller than 7&quot;</span>)</a>
+<a class="sourceLine" id="cb201-8" data-line-number="8">}</a></code></pre></div>
 <pre><code>## [1] &quot;n is greater than 7&quot;</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">n &lt;-<span class="st"> </span><span class="dv">7</span>  
-<span class="cf">while</span> (n <span class="op">&lt;</span><span class="st"> </span><span class="dv">10</span>) {
-  <span class="kw">print</span>(n)
-  n &lt;-<span class="st"> </span>n <span class="op">+</span><span class="st"> </span><span class="dv">1</span> 
-}</code></pre></div>
+<div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb203-1" data-line-number="1">n &lt;-<span class="st"> </span><span class="dv">7</span>  </a>
+<a class="sourceLine" id="cb203-2" data-line-number="2"><span class="cf">while</span> (n <span class="op">&lt;</span><span class="st"> </span><span class="dv">10</span>) {</a>
+<a class="sourceLine" id="cb203-3" data-line-number="3">  <span class="kw">print</span>(n)</a>
+<a class="sourceLine" id="cb203-4" data-line-number="4">  n &lt;-<span class="st"> </span>n <span class="op">+</span><span class="st"> </span><span class="dv">1</span> </a>
+<a class="sourceLine" id="cb203-5" data-line-number="5">}</a></code></pre></div>
 <pre><code>## [1] 7
 ## [1] 8
 ## [1] 9</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mysum &lt;-<span class="st"> </span><span class="dv">0</span>
-<span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">c</span>(<span class="dv">10</span>,<span class="dv">20</span>,<span class="dv">30</span>)) {
-  mysum &lt;-<span class="st"> </span>mysum <span class="op">+</span><span class="st"> </span>i
-}
-<span class="kw">print</span>(mysum)</code></pre></div>
+<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb205-1" data-line-number="1">mysum &lt;-<span class="st"> </span><span class="dv">0</span></a>
+<a class="sourceLine" id="cb205-2" data-line-number="2"><span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">c</span>(<span class="dv">10</span>,<span class="dv">20</span>,<span class="dv">30</span>)) {</a>
+<a class="sourceLine" id="cb205-3" data-line-number="3">  mysum &lt;-<span class="st"> </span>mysum <span class="op">+</span><span class="st"> </span>i</a>
+<a class="sourceLine" id="cb205-4" data-line-number="4">}</a>
+<a class="sourceLine" id="cb205-5" data-line-number="5"><span class="kw">print</span>(mysum)</a></code></pre></div>
 <pre><code>## [1] 60</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mysum &lt;-<span class="st"> </span><span class="dv">0</span>
-<span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">100</span>) { 
-  mysum &lt;-<span class="st"> </span>mysum <span class="op">+</span><span class="st"> </span>i
-  <span class="cf">if</span> (mysum <span class="op">&gt;</span><span class="st"> </span><span class="dv">25</span>) {
-    <span class="cf">break</span>
-  }
-}
-<span class="kw">print</span>(mysum)</code></pre></div>
+<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb207-1" data-line-number="1">mysum &lt;-<span class="st"> </span><span class="dv">0</span></a>
+<a class="sourceLine" id="cb207-2" data-line-number="2"><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">100</span>) { </a>
+<a class="sourceLine" id="cb207-3" data-line-number="3">  mysum &lt;-<span class="st"> </span>mysum <span class="op">+</span><span class="st"> </span>i</a>
+<a class="sourceLine" id="cb207-4" data-line-number="4">  <span class="cf">if</span> (mysum <span class="op">&gt;</span><span class="st"> </span><span class="dv">25</span>) {</a>
+<a class="sourceLine" id="cb207-5" data-line-number="5">    <span class="cf">break</span></a>
+<a class="sourceLine" id="cb207-6" data-line-number="6">  }</a>
+<a class="sourceLine" id="cb207-7" data-line-number="7">}</a>
+<a class="sourceLine" id="cb207-8" data-line-number="8"><span class="kw">print</span>(mysum)</a></code></pre></div>
 <pre><code>## [1] 28</code></pre>
+<hr />
 </div>
 <div id="defining-functions" class="section level2">
 <h2>Defining functions</h2>
 <p>In R we can define any function that we need. It’s very useful since we need to do a certain calculation frequently. Defining functions, also, let us use recursive algorithm which is a powerful algorithm to solve the problems. The following show some examples.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Norm function</span>
-norm &lt;-<span class="st"> </span><span class="cf">function</span>(x) {
-  <span class="kw">sqrt</span>(x<span class="op">%*%</span>x)
-}
-<span class="kw">norm</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>)</code></pre></div>
+<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb209-1" data-line-number="1"><span class="co"># Norm function</span></a>
+<a class="sourceLine" id="cb209-2" data-line-number="2">norm &lt;-<span class="st"> </span><span class="cf">function</span>(x) {</a>
+<a class="sourceLine" id="cb209-3" data-line-number="3">  <span class="kw">sqrt</span>(x<span class="op">%*%</span>x)</a>
+<a class="sourceLine" id="cb209-4" data-line-number="4">}</a>
+<a class="sourceLine" id="cb209-5" data-line-number="5"><span class="kw">norm</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>)</a></code></pre></div>
 <pre><code>##          [,1]
 ## [1,] 5.477226</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Recersive function that compute n!</span>
-fact &lt;-<span class="st"> </span><span class="cf">function</span>(n) { 
-  <span class="cf">if</span> (n <span class="op">==</span><span class="st"> </span><span class="dv">1</span>) 
-    <span class="dv">1</span>
-  <span class="cf">else</span> 
-    n <span class="op">*</span><span class="st"> </span><span class="kw">fact</span>(n<span class="op">-</span><span class="dv">1</span>) <span class="co"># Recursive function</span>
-}
-<span class="kw">fact</span>(<span class="dv">8</span>)</code></pre></div>
+<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb211-1" data-line-number="1"><span class="co"># Recersive function that compute n!</span></a>
+<a class="sourceLine" id="cb211-2" data-line-number="2">fact &lt;-<span class="st"> </span><span class="cf">function</span>(n) { </a>
+<a class="sourceLine" id="cb211-3" data-line-number="3">  <span class="cf">if</span> (n <span class="op">==</span><span class="st"> </span><span class="dv">1</span>) </a>
+<a class="sourceLine" id="cb211-4" data-line-number="4">    <span class="dv">1</span></a>
+<a class="sourceLine" id="cb211-5" data-line-number="5">  <span class="cf">else</span> </a>
+<a class="sourceLine" id="cb211-6" data-line-number="6">    n <span class="op">*</span><span class="st"> </span><span class="kw">fact</span>(n<span class="dv">-1</span>) <span class="co"># Recursive function</span></a>
+<a class="sourceLine" id="cb211-7" data-line-number="7">}</a>
+<a class="sourceLine" id="cb211-8" data-line-number="8"><span class="kw">fact</span>(<span class="dv">8</span>)</a></code></pre></div>
 <pre><code>## [1] 40320</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Recersive function that compute matrix power</span>
-matrix.power &lt;-<span class="st"> </span><span class="cf">function</span>(p, n) { 
-  <span class="cf">if</span> (n <span class="op">==</span><span class="st"> </span><span class="dv">1</span>) 
-    p
-  <span class="cf">else</span> 
-    p <span class="op">%*%</span><span class="st"> </span><span class="kw">matrix.power</span>(p, n<span class="op">-</span><span class="dv">1</span>) <span class="co"># Recursive function</span>
-}
-<span class="kw">matrix.power</span>(<span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">4</span>), <span class="dv">2</span>, <span class="dv">2</span>), <span class="dv">3</span>)</code></pre></div>
+<div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb213-1" data-line-number="1"><span class="co"># Recersive function that compute matrix power</span></a>
+<a class="sourceLine" id="cb213-2" data-line-number="2">matrix.power &lt;-<span class="st"> </span><span class="cf">function</span>(p, n) { </a>
+<a class="sourceLine" id="cb213-3" data-line-number="3">  <span class="cf">if</span> (n <span class="op">==</span><span class="st"> </span><span class="dv">1</span>) </a>
+<a class="sourceLine" id="cb213-4" data-line-number="4">    p</a>
+<a class="sourceLine" id="cb213-5" data-line-number="5">  <span class="cf">else</span> </a>
+<a class="sourceLine" id="cb213-6" data-line-number="6">    p <span class="op">%*%</span><span class="st"> </span><span class="kw">matrix.power</span>(p, n<span class="dv">-1</span>) <span class="co"># Recursive function</span></a>
+<a class="sourceLine" id="cb213-7" data-line-number="7">}</a>
+<a class="sourceLine" id="cb213-8" data-line-number="8"><span class="kw">matrix.power</span>(<span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">4</span>), <span class="dv">2</span>, <span class="dv">2</span>), <span class="dv">3</span>)</a></code></pre></div>
 <pre><code>##      [,1] [,2]
 ## [1,]  112  104
 ## [2,]  104  112</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Matrix symmetric test</span>
-sym &lt;-<span class="st"> </span><span class="cf">function</span>(a) {
-  <span class="cf">if</span> (<span class="kw">is.matrix</span>(a) <span class="op">==</span><span class="st"> </span><span class="ot">TRUE</span>) {
-    <span class="cf">if</span> (<span class="kw">identical</span>(a, <span class="kw">t</span>(a)) <span class="op">==</span><span class="st"> </span><span class="ot">TRUE</span>) {
-      <span class="kw">print</span>(<span class="st">&quot;Matrix is symmetric&quot;</span>)
-    } <span class="cf">else</span> <span class="kw">print</span>(<span class="st">&quot;Matrix is not symmetric&quot;</span>)
-  } <span class="cf">else</span> <span class="kw">print</span>(<span class="st">&quot;Entery is not a Matrix&quot;</span>)
-}
-<span class="kw">sym</span>(<span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">4</span>), <span class="dv">2</span>, <span class="dv">2</span>))</code></pre></div>
+<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb215-1" data-line-number="1"><span class="co"># Matrix symmetric test</span></a>
+<a class="sourceLine" id="cb215-2" data-line-number="2">sym &lt;-<span class="st"> </span><span class="cf">function</span>(a) {</a>
+<a class="sourceLine" id="cb215-3" data-line-number="3">  <span class="cf">if</span> (<span class="kw">is.matrix</span>(a) <span class="op">==</span><span class="st"> </span><span class="ot">TRUE</span>) {</a>
+<a class="sourceLine" id="cb215-4" data-line-number="4">    <span class="cf">if</span> (<span class="kw">identical</span>(a, <span class="kw">t</span>(a)) <span class="op">==</span><span class="st"> </span><span class="ot">TRUE</span>) {</a>
+<a class="sourceLine" id="cb215-5" data-line-number="5">      <span class="kw">print</span>(<span class="st">&quot;Matrix is symmetric&quot;</span>)</a>
+<a class="sourceLine" id="cb215-6" data-line-number="6">    } <span class="cf">else</span> <span class="kw">print</span>(<span class="st">&quot;Matrix is not symmetric&quot;</span>)</a>
+<a class="sourceLine" id="cb215-7" data-line-number="7">  } <span class="cf">else</span> <span class="kw">print</span>(<span class="st">&quot;Entery is not a Matrix&quot;</span>)</a>
+<a class="sourceLine" id="cb215-8" data-line-number="8">}</a>
+<a class="sourceLine" id="cb215-9" data-line-number="9"><span class="kw">sym</span>(<span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">4</span>), <span class="dv">2</span>, <span class="dv">2</span>))</a></code></pre></div>
 <pre><code>## [1] &quot;Matrix is symmetric&quot;</code></pre>
 </div>
 
@@ -1214,6 +1212,49 @@ $(document).ready(function () {
 });
 
 
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
 </script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
