@@ -9,12 +9,13 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-h1, h2, h3, h4, h5, h6, h7 {
+h1, h2, h3, h4, h5, h6 {
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
 
 code {
   white-space: pre-wrap !important;
+  font-size: 16px !important;
 }
 
 blockquote {
@@ -23,8 +24,7 @@ blockquote {
 }
 
 img {
-  display: block;
-  margin: auto;
+  max-width: 100%;
 }
 
 img-circle {
@@ -68,7 +68,7 @@ img-circle {
 }
 
 .pager {
-  font-size: 24px;
+  font-size: 22px;
   font-style: normal;
   line-height: 1.8;
 }
@@ -84,13 +84,27 @@ img-circle {
     border-color: transparent;
     text-decoration: underline;
 }
+
+.navbar-default .navbar-brand {
+  font-size: 21px;
+}
+.navbar-default .navbar-nav {
+  font-size: 13px;
+}
+
 .fb-comments, .fb-comments iframe[style] {
   width: 100% !important;
 }
 
-.navbar-default .navbar-brand {
-  font-size: 22px;
-}
-.navbar-default .navbar-nav {
-  font-size: 14px;
+@media (max-width: 767px) {
+  body {
+    font-size: 18px;
+    line-height: 1.7;
+  }
+  h1 {
+    font-size: 33px;
+  }
+  blockquote {
+    font-size: 22px;
+  }
 }
