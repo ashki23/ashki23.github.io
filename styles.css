@@ -67,6 +67,10 @@ img-circle {
   font-size: 140%;
 }
 
+.toc-content {
+  padding: 0 0 0 25px !important;
+}
+
 .pager {
   font-size: 22px;
   font-style: normal;
@@ -106,5 +110,11 @@ img-circle {
   }
   blockquote {
     font-size: 22px;
+  }
+  .tocify {
+    display: none;
+  }
+  .toc-content {
+    padding: 0 !important;
   }
 }
