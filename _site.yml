@@ -25,7 +25,8 @@ output:
     theme: yeti # default, paper, lumen; cosmo, yeti, flatly, sandstone; darkly, cerulean, journal, readable
     highlight: pygments # default, pygments, haddock, kate, textmate, tango; monochrome, espresso, zenburn
     css: styles.css
+    #keep_md: TRUE
     include:
       in_header: header.html 
       after_body: footer.html
-      before_body: scripts.html
+      #before_body: scripts.html
