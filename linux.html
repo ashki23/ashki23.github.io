@@ -645,9 +645,9 @@ h4.author {
 </div>
 <div id="hide-icons" class="section level3">
 <h3>Hide icons</h3>
-<p>To hide an icon from the application menu, you need to add the following line to <code>/usr/share/applications/app_name.desktop</code>:</p>
+<p>To hide an icon from the application menu, you need to go <code>/usr/share/applications/</code> and add the following line to <code>app_name.desktop</code>:</p>
 <pre class="text"><code>NoDisplay=true</code></pre>
-<p>For example use <code>nano /usr/share/applications/R.desktop</code> to open the <code>R.desktop</code> file by nano and add the above line to hide R icon from the menu.</p>
+<p>For example use <code>sudo nano /usr/share/applications/R.desktop</code> to open the desktop file and add the above line to hide R icon from the menu.</p>
 <p>To hide Trash or Home from Desktop use:</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">gsettings</span> set org.gnome.nautilus.desktop trash-icon-visible false
 
