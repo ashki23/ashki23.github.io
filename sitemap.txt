@@ -1,10 +1,10 @@
 https://ashki23.github.io/
 https://ashki23.github.io/index.html
+https://ashki23.github.io/page1.html
 https://ashki23.github.io/page2.html
 https://ashki23.github.io/page3.html
 https://ashki23.github.io/tutorials.html
 https://ashki23.github.io/research.html
-https://ashki23.github.io/about.html
 https://ashki23.github.io/contact.html
 https://ashki23.github.io/hpc.html
 https://ashki23.github.io/git.html

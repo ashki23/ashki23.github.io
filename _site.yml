@@ -4,20 +4,20 @@ navbar:
   title: "Ashkan Mirzaee"
   type: default # default, inverse
   left:
-    - text: "Home"
-      href: index.html
+    - text: "Blog"
+      href: page1.html
     - text: "Tutorials"
       href: tutorials.html
     - text: "Research"
       href: research.html
-    - text: "About"
-      href: about.html
 
   right:
     - icon: fa-envelope fa-lg
       href: contact.html
     - icon: fa-github fa-lg
-      href: http://github.com/ashki23
+      href: https://github.com/ashki23
+    - icon: fa-gitlab fa-lg
+      href: https://gitlab.com/ashki23
     - icon: fa-linkedin fa-lg
       href: https://www.linkedin.com/in/ashkan-mirzaee/
 output:

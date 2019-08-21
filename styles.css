@@ -111,9 +111,11 @@ img-circle {
   blockquote {
     font-size: 22px;
   }
+  /*
   .tocify {
     display: none;
   }
+  */
   .toc-content {
     padding: 0 !important;
   }
