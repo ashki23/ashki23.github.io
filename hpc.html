@@ -540,7 +540,8 @@ sacctmgr show qos normal: show max number of jobs that user can run in parallel
 sjstat: display statistics of jobs under control of SLURM
 srun: run parallel jobs
 sbatch: submit a job to the scheduler
-sbatch --dependency=afterok:JOB_IDs: submit a job file after finishing other jobs
+JOB_ID=$(sbatch --parsable file.sh): keep the JOB ID right after reading the command
+sbatch --dependency=afterok:JOB_IDs file.sh: submit a job file after finishing other jobs
 squeue: check on the jobs status
 squeue -u &lt;username&gt;: check on a user&#39;s job status
 watch -n 60 squeue -u yourUsername: check on the user status every 60 sec, ctrl + c to stop
@@ -605,7 +606,7 @@ module purge: to unload all modules</code></pre>
 <span class="ex">srun</span> python3 ./test-hello.py
 
 <span class="bu">echo</span> === <span class="va">$(</span><span class="fu">date</span><span class="va">)</span></code></pre></div>
-<p>Now, use <code>sbatch job-test-hello.sh</code> to send the job for running. Note <code>$SLURM_JOB_ID</code> shows the job ID of the submitted job. We can use <code>job_id.log</code> to meet the dependencies of job sequences.</p>
+<p>Now, use <code>sbatch job-test-hello.sh</code> to send the job for running. Note <code>$SLURM_JOB_ID</code> shows the job ID of the submitted job. We can use <code>job_id.log</code> to keep JOB IDs right after running the job.</p>
 <hr />
 </div>
 <div id="transferring-files" class="section level2">
@@ -667,9 +668,9 @@ lcd: change directtory on the local computer</code></pre>
 <!-- footer -->
 <br />
 <div class="footer">
-  <span>Sourcecode licensed under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPL-3.0</a></span>
+  <span>Content is available under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a></span>
   <span>|</span>
-  <span>Documentation licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a></span>
+  <span>Sourcecode licensed under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPL-3.0</a></span>
   <br />
   <span>Copyright 2018-2019, Ashkan Mirzaee</span>
 </div>
