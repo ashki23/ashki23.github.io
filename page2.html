@@ -7,6 +7,7 @@
 <meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 <meta name="author" content="Ashkan Mirzaee" />
@@ -107,7 +108,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -268,18 +268,6 @@ $(document).ready(function () {
 }
 </style>
 
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
 <!-- code folding -->
 
 
@@ -366,9 +354,17 @@ h4.author {
 }
 </style>
 <p style="margin-top:25px;">
+<div id="a-comparison-between-r-and-python" class="section level1">
+<h1><a href="r_python.html">A comparison between R and Python</a></h1>
+<div id="december-2018" class="section level4">
+<h4><em>30 December 2018</em></h4>
+<p>R and Python are two different worlds but at the same time they are similar to each other to some extent. Both are very powerful programming languages with different advantages. In this article, we compare basic R and Python operations.</p>
+<hr />
+</div>
+</div>
 <div id="basic-graphics-in-r" class="section level1">
 <h1><a href="plots.html">Basic graphics in R</a></h1>
-<div id="december-2018" class="section level4">
+<div id="december-2018-1" class="section level4">
 <h4><em>27 December 2018</em></h4>
 <p>There are many graphics functions in R that can help us to draw better plots. In this tutorial, we are going to learn some basic graphics in R.</p>
 <hr />
@@ -376,7 +372,7 @@ h4.author {
 </div>
 <div id="helpful-functions-in-r" class="section level1">
 <h1><a href="functions.html">Helpful functions in R</a></h1>
-<div id="december-2018-1" class="section level4">
+<div id="december-2018-2" class="section level4">
 <h4><em>27 December 2018</em></h4>
 <p>There are numerous built in functions in R that can help us to write fast and efficient code. In this tutorial, we are going to familiar with some basic R functions.</p>
 <hr />
@@ -384,7 +380,7 @@ h4.author {
 </div>
 <div id="r-markdown-and-latex" class="section level1">
 <h1><a href="markdown_latex.html">R Markdown and LaTeX</a></h1>
-<div id="december-2018-2" class="section level4">
+<div id="december-2018-3" class="section level4">
 <h4><em>21 December 2018</em></h4>
 <p>Markdown is a lightweight markup language that makes writing very easy in R Studio. A basic knowledge about LaTeX, also, help us to write mathematical equations. This tutorial is a quick reference to use Markdown and LaTeX.</p>
 <hr />
@@ -395,14 +391,6 @@ h4.author {
 <div id="november-2018" class="section level4">
 <h4><em>6 November 2018</em></h4>
 <p>Energy derived from woody biomass is a major source of renewable energy in the U.S. Its use in biopower has experienced significant growth in recent decades. In this research, statistical analyses are performed to evaluate changes in forest attributes over time within wood procurement areas.</p>
-<hr />
-</div>
-</div>
-<div id="shortest-path-algorithm-in-the-presence-of-polyhedral-forbidden-regions" class="section level1">
-<h1><a href="shortest_path.html">Shortest path algorithm in the presence of polyhedral forbidden regions</a></h1>
-<div id="may-2017" class="section level4">
-<h4><em>23 May 2017</em></h4>
-<p>In this work we consider the problem of the shortest path in Euclidean space in the presence of convex polyhedral forbidden regions. A travel path is to be selected to minimize the travel distance where direct path is prohibited in the presence of forbidden or no-fly regions.</p>
 <hr />
 <ul class="pager">
 <li class="previous">
@@ -439,6 +427,23 @@ $(document).ready(function () {
 
 
 </script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

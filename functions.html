@@ -7,6 +7,7 @@
 <meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 <meta name="author" content="Ashkan Mirzaee" />
@@ -117,7 +118,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
       var style = rule.style.cssText;
       // check if color or background-color is set
-      if (rule.style.color === '' || rule.style.backgroundColor === '') continue;
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
       // replace div.sourceCode by a pre.sourceCode rule
       sheets[i].deleteRule(j);
       sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
@@ -175,7 +176,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -336,48 +336,9 @@ $(document).ready(function () {
 }
 </style>
 
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
 <!-- code folding -->
 
 
-
-<script>
-$(document).ready(function ()  {
-
-    // move toc-ignore selectors from section div to header
-    $('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "h1,h2,h3",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
-    };
-    options.showAndHide = true;
-    options.smoothScroll = true;
-
-    // tocify
-    var toc = $("#TOC").tocify(options).data("toc-tocify");
-});
-</script>
 
 <style type="text/css">
 
@@ -634,26 +595,26 @@ a <span class="op">^</span><span class="st"> </span><span class="dv">1</span><sp
 <h2>Date and time</h2>
 <p>There are several functions to work with date and time classes, following are some examples of these functions.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">Sys.Date</span>()</code></pre></div>
-<pre><code>## [1] &quot;2019-08-21&quot;</code></pre>
+<pre><code>## [1] &quot;2019-10-25&quot;</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">weekdays</span>(<span class="kw">Sys.Date</span>())</code></pre></div>
-<pre><code>## [1] &quot;Wednesday&quot;</code></pre>
+<pre><code>## [1] &quot;Friday&quot;</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">months</span>(<span class="kw">Sys.Date</span>())</code></pre></div>
-<pre><code>## [1] &quot;August&quot;</code></pre>
+<pre><code>## [1] &quot;October&quot;</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">quarters</span>(<span class="kw">Sys.Date</span>())</code></pre></div>
-<pre><code>## [1] &quot;Q3&quot;</code></pre>
+<pre><code>## [1] &quot;Q4&quot;</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">Sys.time</span>()</code></pre></div>
-<pre><code>## [1] &quot;2019-08-21 12:26:37 CDT&quot;</code></pre>
+<pre><code>## [1] &quot;2019-10-25 19:01:51 CDT&quot;</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">timestamp</span>()</code></pre></div>
-<pre><code>## ##------ Wed Aug 21 12:26:37 2019 ------##</code></pre>
+<pre><code>## ##------ Fri Oct 25 19:01:51 2019 ------##</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">format</span>(<span class="kw">Sys.time</span>(), <span class="st">&quot;%a %b %d %Y %X&quot;</span>) <span class="co"># To see more options for format enter `help(strftime)`</span></code></pre></div>
-<pre><code>## [1] &quot;Wed Aug 21 2019 12:26:37 PM&quot;</code></pre>
+<pre><code>## [1] &quot;Fri Oct 25 2019 07:01:51 PM&quot;</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">format</span>(<span class="kw">Sys.time</span>(), <span class="st">&quot;%Y-%m-%d&quot;</span>)</code></pre></div>
-<pre><code>## [1] &quot;2019-08-21&quot;</code></pre>
+<pre><code>## [1] &quot;2019-10-25&quot;</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">format</span>(<span class="kw">Sys.time</span>(), <span class="st">&quot;%H:%M:%S&quot;</span>)</code></pre></div>
-<pre><code>## [1] &quot;12:26:37&quot;</code></pre>
+<pre><code>## [1] &quot;19:01:51&quot;</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">weeks &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="kw">Sys.Date</span>(), <span class="dt">length.out =</span> <span class="dv">3</span>, <span class="dt">by =</span> <span class="st">&quot;1 week&quot;</span>) <span class="co"># Next ten weeks</span>
 weeks</code></pre></div>
-<pre><code>## [1] &quot;2019-08-21&quot; &quot;2019-08-28&quot; &quot;2019-09-04&quot;</code></pre>
+<pre><code>## [1] &quot;2019-10-25&quot; &quot;2019-11-01&quot; &quot;2019-11-08&quot;</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(weeks)</code></pre></div>
 <pre><code>## [1] &quot;Date&quot;</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">typeof</span>(weeks)</code></pre></div>
@@ -662,7 +623,7 @@ weeks</code></pre></div>
 <pre><code>## Time difference of 7 days</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Date-time conversion</span>
 <span class="kw">strftime</span>(<span class="kw">Sys.time</span>(), <span class="dt">format =</span> <span class="st">&quot;%a %d %b %Y %H:%M:%S&quot;</span>) <span class="co"># convert time-date objects to character</span></code></pre></div>
-<pre><code>## [1] &quot;Wed 21 Aug 2019 12:26:37&quot;</code></pre>
+<pre><code>## [1] &quot;Fri 25 Oct 2019 19:01:51&quot;</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">strptime</span>(<span class="st">&quot;20/2/06 11:16:16.683&quot;</span>, <span class="dt">format =</span> <span class="st">&quot;%d/%m/%y %H:%M:%OS&quot;</span>) <span class="co"># convert character to time-date objects</span></code></pre></div>
 <pre><code>## [1] &quot;2006-02-20 11:16:16 CST&quot;</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Time series</span>
@@ -678,128 +639,128 @@ weeks</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mydata &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">Student =</span> <span class="kw">sort</span>(<span class="kw">rep</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>,<span class="dv">2</span>)), <span class="dt">Test =</span> <span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;SAT&quot;</span>,<span class="st">&quot;GRE&quot;</span>),<span class="dv">3</span>), <span class="dt">Grade =</span> <span class="kw">sample</span>(<span class="dv">75</span><span class="op">:</span><span class="dv">100</span>,<span class="dv">6</span>), <span class="dt">Grade_2 =</span> <span class="kw">sample</span>(<span class="dv">75</span><span class="op">:</span><span class="dv">100</span>,<span class="dv">6</span>))
 mydata</code></pre></div>
 <pre><code>##   Student Test Grade Grade_2
-## 1       1  SAT    80      96
-## 2       1  GRE    97      91
-## 3       2  SAT    75      82
-## 4       2  GRE    79      80
-## 5       3  SAT    82      89
-## 6       3  GRE    78      94</code></pre>
+## 1       1  SAT    88      82
+## 2       1  GRE    77      79
+## 3       2  SAT    84      89
+## 4       2  GRE    95      90
+## 5       3  SAT    82      88
+## 6       3  GRE    90      97</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mydata[<span class="kw">which</span>(<span class="op">!</span>(mydata[,<span class="dv">1</span>] <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">3</span>))),] <span class="co"># Excluding</span></code></pre></div>
 <pre><code>##   Student Test Grade Grade_2
-## 1       1  SAT    80      96
-## 2       1  GRE    97      91</code></pre>
+## 1       1  SAT    88      82
+## 2       1  GRE    77      79</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mydata[<span class="kw">which</span>(mydata[,<span class="dv">1</span>] <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">3</span>)),]  <span class="co"># Selecting</span></code></pre></div>
 <pre><code>##   Student Test Grade Grade_2
-## 3       2  SAT    75      82
-## 4       2  GRE    79      80
-## 5       3  SAT    82      89
-## 6       3  GRE    78      94</code></pre>
+## 3       2  SAT    84      89
+## 4       2  GRE    95      90
+## 5       3  SAT    82      88
+## 6       3  GRE    90      97</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mydata[<span class="kw">which</span>(mydata[,<span class="dv">3</span>] <span class="op">&gt;</span><span class="st"> </span><span class="dv">95</span>),] <span class="co"># Selecting Grade greater than 95</span></code></pre></div>
-<pre><code>##   Student Test Grade Grade_2
-## 2       1  GRE    97      91</code></pre>
+<pre><code>## [1] Student Test    Grade   Grade_2
+## &lt;0 rows&gt; (or 0-length row.names)</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mydata[<span class="kw">which</span>(mydata[,<span class="dv">3</span>] <span class="op">&gt;</span><span class="st"> </span>mydata[,<span class="dv">4</span>]),] <span class="co"># Rows with Grade greater than Grade_2</span></code></pre></div>
 <pre><code>##   Student Test Grade Grade_2
-## 2       1  GRE    97      91</code></pre>
+## 1       1  SAT    88      82
+## 4       2  GRE    95      90</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mydata[<span class="kw">which</span>(mydata<span class="op">$</span>Grade_<span class="dv">2</span> <span class="op">&gt;</span><span class="st"> </span>mydata<span class="op">$</span>Grade <span class="op">&amp;</span><span class="st"> </span>mydata<span class="op">$</span>Test <span class="op">==</span><span class="st"> &quot;GRE&quot;</span>) ,] <span class="co"># AND</span></code></pre></div>
 <pre><code>##   Student Test Grade Grade_2
-## 4       2  GRE    79      80
-## 6       3  GRE    78      94</code></pre>
+## 2       1  GRE    77      79
+## 6       3  GRE    90      97</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mydata[<span class="kw">which</span>(mydata[,<span class="dv">4</span>] <span class="op">&gt;</span><span class="st"> </span>mydata[,<span class="dv">3</span>] <span class="op">|</span><span class="st"> </span>mydata[,<span class="dv">3</span>] <span class="op">&gt;</span><span class="st"> </span><span class="dv">92</span>) ,] <span class="co"># OR</span></code></pre></div>
 <pre><code>##   Student Test Grade Grade_2
-## 1       1  SAT    80      96
-## 2       1  GRE    97      91
-## 3       2  SAT    75      82
-## 4       2  GRE    79      80
-## 5       3  SAT    82      89
-## 6       3  GRE    78      94</code></pre>
+## 2       1  GRE    77      79
+## 3       2  SAT    84      89
+## 4       2  GRE    95      90
+## 5       3  SAT    82      88
+## 6       3  GRE    90      97</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mydata<span class="op">$</span>Grade[<span class="kw">which</span>(mydata<span class="op">$</span>Grade <span class="op">&gt;</span><span class="st"> </span><span class="dv">90</span>)] <span class="co"># Grade greater than 90</span></code></pre></div>
-<pre><code>## [1] 97</code></pre>
+<pre><code>## [1] 95</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">length</span>(<span class="kw">which</span>(mydata<span class="op">$</span>Grade <span class="op">&gt;</span><span class="st"> </span><span class="dv">90</span>))<span class="op">/</span><span class="kw">nrow</span>(mydata) <span class="co"># percentage of Grade greater than 90</span></code></pre></div>
 <pre><code>## [1] 0.1666667</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mydata<span class="op">$</span>new_column &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>) <span class="co"># Add a new column</span>
 mydata</code></pre></div>
 <pre><code>##   Student Test Grade Grade_2 new_column
-## 1       1  SAT    80      96          1
-## 2       1  GRE    97      91          2
-## 3       2  SAT    75      82          3
-## 4       2  GRE    79      80          4
-## 5       3  SAT    82      89          5
-## 6       3  GRE    78      94          6</code></pre>
+## 1       1  SAT    88      82          1
+## 2       1  GRE    77      79          2
+## 3       2  SAT    84      89          3
+## 4       2  GRE    95      90          4
+## 5       3  SAT    82      88          5
+## 6       3  GRE    90      97          6</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mydata &lt;-<span class="st"> </span>mydata[,<span class="op">-</span><span class="kw">ncol</span>(mydata)] <span class="co"># Removing last column</span>
 mydata</code></pre></div>
 <pre><code>##   Student Test Grade Grade_2
-## 1       1  SAT    80      96
-## 2       1  GRE    97      91
-## 3       2  SAT    75      82
-## 4       2  GRE    79      80
-## 5       3  SAT    82      89
-## 6       3  GRE    78      94</code></pre>
+## 1       1  SAT    88      82
+## 2       1  GRE    77      79
+## 3       2  SAT    84      89
+## 4       2  GRE    95      90
+## 5       3  SAT    82      88
+## 6       3  GRE    90      97</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mydata[<span class="op">-</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>),] <span class="co"># Removing 1st and 3rd rows</span></code></pre></div>
 <pre><code>##   Student Test Grade Grade_2
-## 2       1  GRE    97      91
-## 4       2  GRE    79      80
-## 5       3  SAT    82      89
-## 6       3  GRE    78      94</code></pre>
+## 2       1  GRE    77      79
+## 4       2  GRE    95      90
+## 5       3  SAT    82      88
+## 6       3  GRE    90      97</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mydata[<span class="ot">FALSE</span>,] <span class="co"># Removing all rows</span></code></pre></div>
 <pre><code>## [1] Student Test    Grade   Grade_2
 ## &lt;0 rows&gt; (or 0-length row.names)</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mydata[, <span class="dv">4</span>] &lt;-<span class="st"> </span><span class="kw">sample</span>(<span class="dv">85</span><span class="op">:</span><span class="dv">100</span>,<span class="dv">6</span>) <span class="co"># Substitute column Grade_2</span>
 mydata</code></pre></div>
 <pre><code>##   Student Test Grade Grade_2
-## 1       1  SAT    80      85
-## 2       1  GRE    97      94
-## 3       2  SAT    75      86
-## 4       2  GRE    79      92
-## 5       3  SAT    82     100
-## 6       3  GRE    78      93</code></pre>
+## 1       1  SAT    88      90
+## 2       1  GRE    77      99
+## 3       2  SAT    84      96
+## 4       2  GRE    95      88
+## 5       3  SAT    82      89
+## 6       3  GRE    90      98</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mydata[<span class="kw">order</span>(mydata<span class="op">$</span>Grade),] <span class="co"># Order by Grade</span></code></pre></div>
 <pre><code>##   Student Test Grade Grade_2
-## 3       2  SAT    75      86
-## 6       3  GRE    78      93
-## 4       2  GRE    79      92
-## 1       1  SAT    80      85
-## 5       3  SAT    82     100
-## 2       1  GRE    97      94</code></pre>
+## 2       1  GRE    77      99
+## 5       3  SAT    82      89
+## 3       2  SAT    84      96
+## 1       1  SAT    88      90
+## 6       3  GRE    90      98
+## 4       2  GRE    95      88</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mydata[<span class="kw">order</span>(mydata<span class="op">$</span>Grade, mydata<span class="op">$</span>Grade_<span class="dv">2</span>),] <span class="co"># Order by Grade and Grade_2</span></code></pre></div>
 <pre><code>##   Student Test Grade Grade_2
-## 3       2  SAT    75      86
-## 6       3  GRE    78      93
-## 4       2  GRE    79      92
-## 1       1  SAT    80      85
-## 5       3  SAT    82     100
-## 2       1  GRE    97      94</code></pre>
+## 2       1  GRE    77      99
+## 5       3  SAT    82      89
+## 3       2  SAT    84      96
+## 1       1  SAT    88      90
+## 6       3  GRE    90      98
+## 4       2  GRE    95      88</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mydata[<span class="kw">order</span>(mydata<span class="op">$</span>Student, mydata<span class="op">$</span>Grade), <span class="op">-</span><span class="dv">2</span>] <span class="co"># Order by Student and Grade</span></code></pre></div>
 <pre><code>##   Student Grade Grade_2
-## 1       1    80      85
-## 2       1    97      94
-## 3       2    75      86
-## 4       2    79      92
-## 6       3    78      93
-## 5       3    82     100</code></pre>
+## 2       1    77      99
+## 1       1    88      90
+## 3       2    84      96
+## 4       2    95      88
+## 5       3    82      89
+## 6       3    90      98</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sort</span>(<span class="kw">unique</span>(mydata[,<span class="dv">1</span>]))</code></pre></div>
 <pre><code>## [1] 1 2 3</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Change Test column (GRE, SAT) to (1,2)</span>
 mydata<span class="op">$</span>Test &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(mydata<span class="op">$</span>Test) 
 mydata</code></pre></div>
 <pre><code>##   Student Test Grade Grade_2
-## 1       1    2    80      85
-## 2       1    1    97      94
-## 3       2    2    75      86
-## 4       2    1    79      92
-## 5       3    2    82     100
-## 6       3    1    78      93</code></pre>
+## 1       1    2    88      90
+## 2       1    1    77      99
+## 3       2    2    84      96
+## 4       2    1    95      88
+## 5       3    2    82      89
+## 6       3    1    90      98</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Change Test column to a binary variable (0,1)</span>
 mydata &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">Student =</span> <span class="kw">sort</span>(<span class="kw">rep</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="dv">2</span>)), <span class="dt">Test =</span> <span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;SAT&quot;</span>,<span class="st">&quot;GRE&quot;</span>), <span class="dv">3</span>), <span class="dt">Grade =</span> <span class="kw">sample</span>(<span class="dv">75</span><span class="op">:</span><span class="dv">100</span>, <span class="dv">6</span>), <span class="dt">Grade_2 =</span> <span class="kw">sample</span>(<span class="dv">75</span><span class="op">:</span><span class="dv">100</span>, <span class="dv">6</span>), <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)
 mydata<span class="op">$</span>Test[<span class="kw">which</span>(mydata<span class="op">$</span>Test <span class="op">==</span><span class="st"> &quot;SAT&quot;</span>)] &lt;-<span class="st"> </span><span class="dv">1</span> 
 mydata<span class="op">$</span>Test[<span class="kw">which</span>(mydata<span class="op">$</span>Test <span class="op">==</span><span class="st"> &quot;GRE&quot;</span>)] &lt;-<span class="st"> </span><span class="dv">0</span>
 mydata</code></pre></div>
 <pre><code>##   Student Test Grade Grade_2
-## 1       1    1    83      90
-## 2       1    0   100      82
-## 3       2    1    79      85
-## 4       2    0    84      79
-## 5       3    1    81      84
-## 6       3    0    98      80</code></pre>
+## 1       1    1    97      96
+## 2       1    0    82      76
+## 3       2    1    95      85
+## 4       2    0    96      95
+## 5       3    1    80      80
+## 6       3    0    94      79</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Generate data by paste</span>
 <span class="kw">paste</span>(<span class="st">&quot;Var&quot;</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">7</span>)</code></pre></div>
 <pre><code>## [1] &quot;Var 1&quot; &quot;Var 2&quot; &quot;Var 3&quot; &quot;Var 4&quot; &quot;Var 5&quot; &quot;Var 6&quot; &quot;Var 7&quot;</code></pre>
@@ -813,17 +774,17 @@ mydata</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Apply</span>
 <span class="kw">apply</span>(mydata[<span class="dv">3</span><span class="op">:</span><span class="dv">4</span>], <span class="dv">2</span>, quantile) <span class="co"># Calculate quantile for column 3 and 4. Margin = 1 indicates rows, 2 indicates columns</span></code></pre></div>
 <pre><code>##      Grade Grade_2
-## 0%    79.0   79.00
-## 25%   81.5   80.50
-## 50%   83.5   83.00
-## 75%   94.5   84.75
-## 100% 100.0   90.00</code></pre>
+## 0%   80.00   76.00
+## 25%  85.00   79.25
+## 50%  94.50   82.50
+## 75%  95.75   92.50
+## 100% 97.00   96.00</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">apply</span>(mydata[<span class="dv">3</span><span class="op">:</span><span class="dv">4</span>], <span class="dv">2</span>, mean) <span class="co"># Calculate mean for column 3 and 4</span></code></pre></div>
 <pre><code>##    Grade  Grade_2 
-## 87.50000 83.33333</code></pre>
+## 90.66667 85.16667</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">colMeans</span>(mydata[<span class="dv">3</span><span class="op">:</span><span class="dv">4</span>])</code></pre></div>
 <pre><code>##    Grade  Grade_2 
-## 87.50000 83.33333</code></pre>
+## 90.66667 85.16667</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Cumulative sums, products, and extremes</span>
 <span class="kw">cumsum</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>)</code></pre></div>
 <pre><code>## [1]  1  3  6 10 15 21</code></pre>
@@ -837,9 +798,9 @@ mydata</code></pre></div>
 <span class="kw">scale</span>(mydata[<span class="op">-</span><span class="dv">2</span>])[<span class="dv">1</span>] <span class="co"># scale(x) = (x - mean(x)) / sd(x)</span></code></pre></div>
 <pre><code>## [1] -1.118034</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>, <span class="dv">10</span>) <span class="co"># A sample of size 10 from 1 to 100</span></code></pre></div>
-<pre><code>##  [1] 75 32 60 27 26 83 13 87 22 16</code></pre>
+<pre><code>##  [1] 43 30 15 55 32 12 11 61 82 85</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dv">10</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>) <span class="co"># # A sample of size 10 from 1 to 5 with replacement </span></code></pre></div>
-<pre><code>##  [1] 2 4 3 1 2 4 2 5 1 3</code></pre>
+<pre><code>##  [1] 1 5 5 5 5 4 5 3 3 2</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Eval</span>
 re &lt;-<span class="st"> </span><span class="cf">function</span>(x1, x2) <span class="kw">substitute</span>(<span class="dv">2</span><span class="op">*</span>x1<span class="op">^</span><span class="dv">2</span> <span class="op">+</span><span class="st"> </span><span class="dv">3</span><span class="op">*</span>x2<span class="op">^</span><span class="dv">2</span>)
 r &lt;-<span class="st"> </span><span class="kw">re</span>((<span class="dv">2</span><span class="op">-</span><span class="dv">3</span><span class="op">*</span>k), (<span class="dv">1</span><span class="op">-</span><span class="dv">4</span><span class="op">*</span>k)) <span class="co"># r = 2*(2-3*k)^2 + 3*(1-4*k)^2</span>
@@ -1007,34 +968,34 @@ fr</code></pre></div>
 data<span class="op">$</span>value &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">rnorm</span>(<span class="kw">nrow</span>(data)), <span class="dv">2</span>)
 data</code></pre></div>
 <pre><code>##      meat   food value
-## 1 grade-1 burger -1.05
-## 2 grade-2 burger  2.68
-## 3 grade-3 burger -0.30
-## 4 grade-1  steak  1.91
-## 5 grade-2  steak  0.52
-## 6 grade-3  steak -0.90
-## 7 grade-1  pizza -0.38
-## 8 grade-2  pizza  0.20
-## 9 grade-3  pizza  0.48</code></pre>
+## 1 grade-1 burger -0.03
+## 2 grade-2 burger  0.09
+## 3 grade-3 burger  0.37
+## 4 grade-1  steak  0.43
+## 5 grade-2  steak  0.59
+## 6 grade-3  steak -0.10
+## 7 grade-1  pizza  0.92
+## 8 grade-2  pizza -0.84
+## 9 grade-3  pizza  1.09</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">data_by_food &lt;-<span class="st"> </span><span class="kw">split</span>(data, data<span class="op">$</span>food)
 data_by_food</code></pre></div>
 <pre><code>## $burger
 ##      meat   food value
-## 1 grade-1 burger -1.05
-## 2 grade-2 burger  2.68
-## 3 grade-3 burger -0.30
+## 1 grade-1 burger -0.03
+## 2 grade-2 burger  0.09
+## 3 grade-3 burger  0.37
 ## 
 ## $steak
 ##      meat  food value
-## 4 grade-1 steak  1.91
-## 5 grade-2 steak  0.52
-## 6 grade-3 steak -0.90
+## 4 grade-1 steak  0.43
+## 5 grade-2 steak  0.59
+## 6 grade-3 steak -0.10
 ## 
 ## $pizza
 ##      meat  food value
-## 7 grade-1 pizza -0.38
-## 8 grade-2 pizza  0.20
-## 9 grade-3 pizza  0.48</code></pre>
+## 7 grade-1 pizza  0.92
+## 8 grade-2 pizza -0.84
+## 9 grade-3 pizza  1.09</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">result &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">meat =</span> <span class="kw">c</span>(<span class="st">&quot;grade-1&quot;</span>,<span class="st">&quot;grade-2&quot;</span>,<span class="st">&quot;grade-3&quot;</span>))
 <span class="cf">for</span>(i <span class="cf">in</span> <span class="kw">seq</span>(data_by_food)) {
   result &lt;-<span class="st"> </span><span class="kw">merge</span>(result, data_by_food[[i]], <span class="dt">by =</span> <span class="st">&quot;meat&quot;</span>)
@@ -1043,9 +1004,9 @@ result &lt;-<span class="st"> </span>result[,<span class="op">-</span><span clas
 <span class="kw">colnames</span>(result) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;meat&quot;</span>, <span class="st">&quot;burger&quot;</span>, <span class="st">&quot;steak&quot;</span>, <span class="st">&quot;pizza&quot;</span>)
 result</code></pre></div>
 <pre><code>##      meat burger steak pizza
-## 1 grade-1  -1.05  1.91 -0.38
-## 2 grade-2   2.68  0.52  0.20
-## 3 grade-3  -0.30 -0.90  0.48</code></pre>
+## 1 grade-1  -0.03  0.43  0.92
+## 2 grade-2   0.09  0.59 -0.84
+## 3 grade-3   0.37 -0.10  1.09</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">ID =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">6</span>, <span class="dt">Product =</span> <span class="kw">c</span>(<span class="kw">rep</span>(<span class="st">&quot;TV&quot;</span>, <span class="dv">3</span>), <span class="kw">rep</span>(<span class="st">&quot;Mobile&quot;</span>, <span class="dv">3</span>)))
 y &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">ID =</span> <span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>), <span class="dt">Made_in =</span> <span class="kw">c</span>(<span class="kw">rep</span>(<span class="st">&quot;Japan&quot;</span>, <span class="dv">2</span>), <span class="kw">rep</span>(<span class="st">&quot;China&quot;</span>, <span class="dv">1</span>)))
 
@@ -1073,22 +1034,33 @@ y &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="
 <pre><code>## [1] &quot;#bcdf#&quot;</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">gsub</span>(<span class="st">&quot;//#&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;//#bcdf//#&quot;</span>) <span class="co"># For &quot;$&quot;,&quot;*&quot;,&quot;+&quot;,&quot;.&quot;,&quot;?&quot;,&quot;[&quot;,&quot;^&quot;,&quot;{&quot;,&quot;|&quot;,&quot;(&quot;, and &quot;\\&quot; need to add &quot;//&quot; before!</span></code></pre></div>
 <pre><code>## [1] &quot;abcdfa&quot;</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">grep</span>(<span class="st">&quot;a&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;abc&quot;</span>, <span class="st">&quot;def&quot;</span>, <span class="st">&quot;cba a&quot;</span>, <span class="st">&quot;aa&quot;</span>), <span class="dt">perl =</span> <span class="ot">TRUE</span>, <span class="dt">value =</span> <span class="ot">FALSE</span>) <span class="co"># Shows arrays&#39; number that include &quot;a&quot;</span></code></pre></div>
-<pre><code>## [1] 1 3 4</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">grep</span>(<span class="st">&quot;a+&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;abc&quot;</span>, <span class="st">&quot;def&quot;</span>, <span class="st">&quot;cba a&quot;</span>, <span class="st">&quot;aa&quot;</span>), <span class="dt">perl =</span> <span class="ot">TRUE</span>, <span class="dt">value =</span> <span class="ot">TRUE</span>) <span class="co"># Shows expressions that include &quot;a&quot;</span></code></pre></div>
-<pre><code>## [1] &quot;abc&quot;   &quot;cba a&quot; &quot;aa&quot;</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">substr</span>(<span class="st">&quot;abcdef&quot;</span>, <span class="dv">1</span>, <span class="dv">3</span>) <span class="co"># substr(x, start, stop)</span></code></pre></div>
 <pre><code>## [1] &quot;abc&quot;</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">substr</span>(<span class="st">&quot;abcdef&quot;</span>, <span class="dv">1</span>, <span class="kw">regexpr</span>(<span class="st">&quot;d&quot;</span>,<span class="st">&quot;abcdef&quot;</span>)[<span class="dv">1</span>]) <span class="co"># From first to &quot;d&quot;</span></code></pre></div>
 <pre><code>## [1] &quot;abcd&quot;</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">substr</span>(<span class="st">&quot;abcdef&quot;</span>, <span class="kw">nchar</span>(<span class="st">&quot;abcdef&quot;</span>)<span class="op">+</span><span class="dv">1</span><span class="op">-</span><span class="dv">3</span>, <span class="kw">nchar</span>(<span class="st">&quot;abcdef&quot;</span>)) <span class="co"># First 3 caracters from right</span></code></pre></div>
 <pre><code>## [1] &quot;def&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">grep</span>(<span class="st">&quot;a&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;abc&quot;</span>, <span class="st">&quot;def&quot;</span>, <span class="st">&quot;cba a&quot;</span>, <span class="st">&quot;aa&quot;</span>), <span class="dt">value =</span> <span class="ot">FALSE</span>) <span class="co"># Shows arrays&#39; number that include &quot;a&quot;</span></code></pre></div>
+<pre><code>## [1] 1 3 4</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">grep</span>(<span class="st">&quot;a+&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;abc&quot;</span>, <span class="st">&quot;def&quot;</span>, <span class="st">&quot;cba a&quot;</span>, <span class="st">&quot;aa&quot;</span>), <span class="dt">value =</span> <span class="ot">TRUE</span>) <span class="co"># Shows expressions that include one or more &quot;a&quot;</span></code></pre></div>
+<pre><code>## [1] &quot;abc&quot;   &quot;cba a&quot; &quot;aa&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">grepl</span>(<span class="st">&quot;Ashkan&quot;</span>, <span class="st">&quot;my name is Ashkan&quot;</span>) <span class="co"># True if &quot;Ashkan&quot; is in the text</span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">grepl</span>(<span class="st">&quot;^Ashkan&quot;</span>, <span class="st">&quot;my name is Ashkan&quot;</span>) <span class="co"># True if &quot;Ashkan&quot; is at the begining of the text</span></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">grepl</span>(<span class="st">&quot;Ashkan$&quot;</span>, <span class="st">&quot;my name is Ashkan&quot;</span>) <span class="co"># True if &quot;Ashkan&quot; is at the end of the text</span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">grepl</span>(<span class="st">&quot;[A-a]shkan&quot;</span>, <span class="st">&quot;my name is ashkan&quot;</span>) <span class="co"># True if &quot;Ashkan&quot; or &quot;ashkan&quot; is in the text</span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pattern &lt;-<span class="st"> &quot;(</span><span class="ch">\\</span><span class="st">d{3})[-. )]*(</span><span class="ch">\\</span><span class="st">d{3})[-. ]*(</span><span class="ch">\\</span><span class="st">d{4})&quot;</span>
-t &lt;-<span class="st"> &quot;888-555-7766&quot;</span>
-r &lt;-<span class="st"> </span><span class="kw">regexec</span>(pattern, t)
-<span class="kw">regmatches</span>(t, r)</code></pre></div>
+<span class="kw">grep</span>(pattern, <span class="st">&quot;888-555-7766&quot;</span>, <span class="dt">value =</span> <span class="ot">TRUE</span>)</code></pre></div>
+<pre><code>## [1] &quot;888-555-7766&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">r &lt;-<span class="st"> </span><span class="kw">regexec</span>(pattern, <span class="st">&quot;888-555-7766&quot;</span>)
+<span class="kw">regmatches</span>(<span class="st">&quot;888-555-7766&quot;</span>, r)</code></pre></div>
 <pre><code>## [[1]]
 ## [1] &quot;888-555-7766&quot; &quot;888&quot;          &quot;555&quot;          &quot;7766&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">list.files</span>(<span class="dt">path =</span> <span class="st">&quot;./files&quot;</span>, <span class="dt">pattern =</span> <span class="st">&quot;*.pdf$&quot;</span>) <span class="co"># List of &quot;pdf&quot; files in a directory</span></code></pre></div>
+<pre><code>## [1] &quot;Ashkan_Mirzaee_CV_Fall2019.pdf&quot; &quot;CV_01_2019.pdf&quot;</code></pre>
 <hr />
 </div>
 <div id="control-flow-tools" class="section level2">
@@ -1219,6 +1191,49 @@ $(document).ready(function () {
 });
 
 
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
 </script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->

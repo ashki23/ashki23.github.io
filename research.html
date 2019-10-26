@@ -7,6 +7,7 @@
 <meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 <meta name="author" content="Ashkan Mirzaee" />
@@ -107,7 +108,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -268,18 +268,6 @@ $(document).ready(function () {
 }
 </style>
 
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
 <!-- code folding -->
 
 
@@ -367,12 +355,18 @@ h4.author {
 </style>
 <p style="margin-top:25px;">
 <div id="section" class="section level2">
+<h2>2019</h2>
+<blockquote>
+<p>10-22   <a href="biomass_conf2.html">GHG emissions reduction by identifying optimal level of co-firing biomass and natural gas in coal-burning power plants</a></p>
+</blockquote>
+</div>
+<div id="section-1" class="section level2">
 <h2>2018</h2>
 <blockquote>
 <p>06-11   <a href="biomass_conf.html">Woody biomass use for biopower and its impact on forest resources</a></p>
 </blockquote>
 </div>
-<div id="section-1" class="section level2">
+<div id="section-2" class="section level2">
 <h2>2017</h2>
 <blockquote>
 <p>05-23   <a href="shortest_path.html">Shortest path algorithm in the presence of polyhedral forbidden regions</a></p>
@@ -404,6 +398,23 @@ $(document).ready(function () {
 
 
 </script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
