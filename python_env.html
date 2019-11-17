@@ -520,12 +520,12 @@ h4.author {
 <p>&quot;Python applications will often use packages and modules that don’t come as part of the standard library. Applications will sometimes need a specific version of a library, because the application may require that a particular bug has been fixed or the application may be written using an obsolete version of the library’s interface.</p>
 <p>This means it may not be possible for one Python installation to meet the requirements of every application. If application A needs version 1.0 of a particular module but application B needs version 2.0, then the requirements are in conflict and installing either version 1.0 or 2.0 will leave one application unable to run.</p>
 <p>The solution for this problem is to create a virtual environment, a self-contained directory tree that contains a Python installation for a particular version of Python, plus a number of additional packages.&quot; - from <a href="https://docs.python.org/3/tutorial/venv.html">the Python Tutorial</a></p>
-<p>In this toturial we are discussing about two major methods to create and manage virtusal environments in Python.</p>
+<p>In this tutorial we are discussing about two major methods to create and manage virtual environments in Python.</p>
 <div id="venv" class="section level2">
 <h2>Venv</h2>
-<p>To create a virtual environment, run the venv module as a script with the directory path. For examle if use the following code you will create <code>tutorial-env</code> in the directory that you are in:</p>
+<p>To create a virtual environment, run the venv module as a script with the directory path. For example if use the following code you will create <code>tutorial-env</code> in the directory that you are in:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="ex">python3</span> -m venv tutorial-env</a></code></pre></div>
-<p>It also create directories containing a copy of the Python interpreter, the standard library, and various supporting files. Once you’ve created a virtual environment, you can activate it by:</p>
+<p>It also creates directories containing a copy of the Python interpreter, the standard library, and various supporting files. Once you’ve created a virtual environment, you can activate it by:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="bu">source</span> tutorial-env/bin/activate</a></code></pre></div>
 <p>After activating the environment with the above command we can use <code>pip</code> to install required packages for our application by using:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="ex">pip</span> install <span class="op">&lt;</span>package name<span class="op">&gt;</span></a></code></pre></div>
@@ -541,7 +541,7 @@ h4.author {
 <a class="sourceLine" id="cb4-9" data-line-number="9"><span class="ex">pip</span> install --upgrade pip</a>
 <a class="sourceLine" id="cb4-10" data-line-number="10"><span class="ex">pip</span> install redis</a>
 <a class="sourceLine" id="cb4-11" data-line-number="11"><span class="ex">pip</span> install gitpython</a></code></pre></div>
-<p>As a shortkey, you might use <code>.</code> instead of <code>source</code>. To exit from a virtual environment run <code>deactivate</code>.</p>
+<p>As a shortcut, you might use <code>.</code> instead of <code>source</code>. To exit from a virtual environment run <code>. deactivate</code>.</p>
 </div>
 <div id="miniconda" class="section level2">
 <h2>Miniconda</h2>
@@ -552,14 +552,14 @@ h4.author {
 <p>You might also use <code>conda info --envs</code> to see list of envs. To activate/deactivate an environment use the following:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="ex">conda</span> activate <span class="op">&lt;</span>env_name or env_path<span class="op">&gt;</span></a>
 <a class="sourceLine" id="cb7-2" data-line-number="2"><span class="ex">conda</span> deactivate</a></code></pre></div>
-<p>Note that, for conda versions prior to 4.6 you need to use <code>source</code> instead of <code>conda</code> in the above commands. Now, you can use the following to update <code>conda</code> and install new libraries and software:</p>
+<p>Note that, for Conda versions prior to 4.6 you need to use <code>source</code> instead of <code>conda</code> in the above commands. Now, you can use the following to update <code>conda</code> and install new libraries and software:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="ex">conda</span> update conda</a>
 <a class="sourceLine" id="cb8-2" data-line-number="2"><span class="ex">conda</span> install <span class="op">&lt;</span>pkg name<span class="op">&gt;</span></a></code></pre></div>
 <p>To remove a package you can use:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="ex">conda</span> remove <span class="op">&lt;</span>pkg name<span class="op">&gt;</span></a></code></pre></div>
 <p>And to remove cache files use:</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="ex">conda</span> clean --all</a></code></pre></div>
-<p><strong>Note</strong>: before removing packages or caches, make sure you are in the right virtual environment. You can use <code>conda info</code> and <code>conda env list</code> to find your current environment and use <code>source activate &lt;env name or path&gt;</code> or <code>source deactivate</code> to go to the rigth env.</p>
+<p><strong>Note</strong>: before removing packages or caches, make sure you are in the right virtual environment. You can use <code>conda info</code> and <code>conda env list</code> to find your current environment and use <code>source activate &lt;env name or path&gt;</code> or <code>source deactivate</code> to go to activate the env.</p>
 <p>To remove a virtual environment you can use:</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="ex">conda</span> env remove --name <span class="op">&lt;</span>env_name<span class="op">&gt;</span> or --prefix <span class="op">&lt;</span>env_path<span class="op">&gt;</span></a></code></pre></div>
 <p><strong>Note</strong>: you cannot remove an environment when it is activate. Note that sometime you should <code>deactivate</code> multiple times, if you <code>activate</code> more than once.</p>
@@ -574,7 +574,7 @@ h4.author {
 <a class="sourceLine" id="cb12-8" data-line-number="8"><span class="bu">source</span> activate ./yourlocal_env</a></code></pre></div>
 <p><strong>Note</strong>: To prevent dependencies crash, it is vital to install all the packages at the same time when you are creating the new environment (as you can see in the above code, all packages listed after env directory). Also, it is very important to use a unique channel for all required packages as much as possible. For example if one of the required packages is only available in <code>conda-forge</code> it is better to use <code>conda-forge</code> as the main channel by:</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="ex">conda</span> create --yes --channel conda-forge --prefix ./yourlocal_env <span class="op">&lt;</span>pkg name<span class="op">&gt;</span> <span class="op">&lt;</span>pkg name<span class="op">&gt;</span> <span class="op">&lt;</span>pkg name<span class="op">&gt;</span> ...</a></code></pre></div>
-<p>Also, it is important to keep using same channel for updateing the environment by:</p>
+<p>Also, it is important to keep using same channel for updating the environment by:</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb14-1" data-line-number="1"><span class="ex">conda</span> update --yes --channel conda-forge --prefix ./yourlocal_env <span class="op">&lt;</span>pkg name<span class="op">&gt;</span> <span class="op">&lt;</span>pkg name<span class="op">&gt;</span> ...</a></code></pre></div>
 </div>
 
