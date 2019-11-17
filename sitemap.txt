@@ -6,6 +6,7 @@ https://ashki23.github.io/page3.html
 https://ashki23.github.io/tutorials.html
 https://ashki23.github.io/research.html
 https://ashki23.github.io/contact.html
+https://ashki23.github.io/python_env.html
 https://ashki23.github.io/hpc.html
 https://ashki23.github.io/git.html
 https://ashki23.github.io/shell.html
@@ -17,4 +18,4 @@ https://ashki23.github.io/markdown_latex.html
 https://ashki23.github.io/biomass_conf.html
 https://ashki23.github.io/shortest_path.html
 https://ashki23.github.io/safety_stock.html
-https://ashki23.github.io/files/CV_01_2019.pdf
+https://ashki23.github.io/files/Ashkan_Mirzaee_CV_Fall2019.pdf
