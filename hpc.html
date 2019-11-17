@@ -584,10 +584,10 @@ module purge: to unload all modules</code></pre>
 <p>Then use <code>nano job-test-hello.sh</code> to make the job file by:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="co">#!/bin/bash</span></a>
 <a class="sourceLine" id="cb6-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb6-3" data-line-number="3"><span class="co">#SBATCH --job-name=TestHello</span></a>
-<a class="sourceLine" id="cb6-4" data-line-number="4"><span class="co">#SBATCH --nodes=1</span></a>
+<a class="sourceLine" id="cb6-3" data-line-number="3"><span class="co">#SBATCH --nodes=1</span></a>
+<a class="sourceLine" id="cb6-4" data-line-number="4"><span class="co">#SBATCH --mem 1G</span></a>
 <a class="sourceLine" id="cb6-5" data-line-number="5"><span class="co">#SBATCH --partition hpc0</span></a>
-<a class="sourceLine" id="cb6-6" data-line-number="6"><span class="co">#SBATCH --mem 1g</span></a>
+<a class="sourceLine" id="cb6-6" data-line-number="6"><span class="co">#SBATCH --job-name=TestHello</span></a>
 <a class="sourceLine" id="cb6-7" data-line-number="7"></a>
 <a class="sourceLine" id="cb6-8" data-line-number="8"><span class="bu">echo</span> <span class="st">&quot;</span><span class="va">$SLURM_JOB_ID</span><span class="st">&quot;</span> <span class="op">&gt;</span> job_id.log</a>
 <a class="sourceLine" id="cb6-9" data-line-number="9"></a>
