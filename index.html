@@ -7,6 +7,7 @@
 <meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 <meta name="author" content="Ashkan Mirzaee" />
@@ -107,7 +108,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -268,18 +268,6 @@ $(document).ready(function () {
 }
 </style>
 
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
 <!-- code folding -->
 
 
@@ -369,7 +357,7 @@ h4.author {
 <p><img src="images/image_1.jpg" alt = "my photo" align="left" style="width:30%; border:2.5px solid; margin-right:20px; margin-bottom:2.5px; margin-top:10px"></p>
 <p>My name is Ashkan Mirzaee [ash ka:n] [mir za: -ee]. It is a Persian name, natively written as اشکان میرزائی. I was born and grew up in Iran, and moved to U.S. in 2014.</p>
 <p>I like to analyze data to answer research questions. Currently, I am a PhD student at <a href="https://engineering.missouri.edu/academics/imse/">University of Missouri</a> and investigating questions related to Operations Research and Bioenergy in the department of Industrial Engineering and Natural Resources.</p>
-<p>I graduated from the University of Missouri with a MS in Industrial Engineering in 2017. At the same year I began working toward my PhD in Operations Research and Statistics, under the advisement of <a href="https://engineering.missouri.edu/faculty/ronald-mcgarvey/">Dr. Ronald McGarvey</a> at University of Missouri. I expect to graduate by the end of 2020.</p>
+<p>I graduated from the University of Missouri with a MS in Industrial Engineering in 2017. At the same year I began working toward my PhD in Operations Research and Statistics, under the advisement of <a href="https://engineering.missouri.edu/faculty/ronald-mcgarvey/">Dr. Ronald McGarvey</a> at University of Missouri. I expect to graduate by summer of 2021.</p>
 <p>My full CV is available <a href="files/Ashkan_Mirzaee_CV_Fall2019.pdf">here</a>.</p>
 </p>
 
@@ -396,6 +384,23 @@ $(document).ready(function () {
 
 
 </script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
