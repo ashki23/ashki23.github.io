@@ -7,6 +7,7 @@
 <meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 <meta name="author" content="Ashkan Mirzaee" />
@@ -117,7 +118,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
       var style = rule.style.cssText;
       // check if color or background-color is set
-      if (rule.style.color === '' || rule.style.backgroundColor === '') continue;
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
       // replace div.sourceCode by a pre.sourceCode rule
       sheets[i].deleteRule(j);
       sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
@@ -175,7 +176,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -336,48 +336,9 @@ $(document).ready(function () {
 }
 </style>
 
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
 <!-- code folding -->
 
 
-
-<script>
-$(document).ready(function ()  {
-
-    // move toc-ignore selectors from section div to header
-    $('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "h1,h2,h3",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
-    };
-    options.showAndHide = true;
-    options.smoothScroll = true;
-
-    // tocify
-    var toc = $("#TOC").tocify(options).data("toc-tocify");
-});
-</script>
 
 <style type="text/css">
 
@@ -725,8 +686,7 @@ mult &lt;-<span class="st"> </span><span class="cf">function</span>(a, b) {
 <h1>Python</h1>
 <p><img src="images/py.gif" alt="Python" align="left" style="width:30%; padding:1px; padding-top:9px; border-top:0 solid #fcdd55; border-bottom:0 solid #fcdd55; margin-right:20px; margin-bottom:5px;"></p>
 <p style="margin-top:-5px;">
-<p><a href="https://www.python.org/">Python</a> is an easy to learn, powerful programming language. It has efficient high-level data structures and a simple approach to object-oriented programming. <a href="https://www.anaconda.com/what-is-anaconda/">Anaconda</a> is one of the most popular distributions for Python that includes more than thousand popular data-science packages. Spyder, a popular Python IDE, is very similar to RStudio and provides a great platform for using Python.</p>
-<p>Python and Anaconda both are open source and free programs that are available online to download. Anaconda includes Python and Spyder, therefore, we do not need to install them separately.</p>
+<p><a href="https://www.python.org/">Python</a> is an easy to learn, powerful programming language. It has efficient high-level data structures and a simple approach to object-oriented programming. <a href="https://www.anaconda.com/what-is-anaconda/">Anaconda</a> is one of the most popular distributions for Python that includes more than thousand popular data-science packages, Spyder IDE, and <a href="https://jupyter.org/">Jupyter</a> that is a great platform for using Python interactively.</p>
 <p>In this article we will cover some basic syntax in Python 3 including operators, control flow commands, defining functions, reading and writing files, and importing packages. You may find more about plotting and programming in Python at:</p>
 <ul>
 <li><a href="http://swcarpentry.github.io/python-novice-inflammation/">Programming with Python</a></li>
@@ -759,12 +719,12 @@ a <span class="op">**</span> <span class="dv">1</span><span class="op">/</span>n
 <ul>
 <li>Lists: <code>list()</code> <code>[]</code></li>
 <li>Tuples: <code>tuple()</code> <code>()</code></li>
-<li>Sets: <code>set()</code></li>
-<li>Dictionaries: <code>dict()</code> <code>{}</code></li>
+<li>Sets: <code>set()</code> <code>{}</code></li>
+<li>Dictionaries: <code>dict()</code> <code>{key:value}</code></li>
 </ul>
 <p><strong>Lists</strong> are mutable, and their elements are usually homogeneous and are accessed by iterating over the list.</p>
 <p>A <strong>tuple</strong> consists of a number of values separated by commas. Though tuples may seem similar to lists, they are often used in different situations and for different purposes. Tuples are immutable, and usually contain a heterogeneous sequence of elements that are accessed via unpacking or indexing. Tuples may be input with or without surrounding parentheses.</p>
-<p>A <strong>set</strong> is an unordered collection with <strong>no duplicate elements</strong>. Basic uses include membership testing and eliminating duplicate entries. Set objects also support mathematical operations like union, intersection, difference, and symmetric difference.</p>
+<p>A <strong>set</strong> is an unordered collection with no duplicate elements. Basic uses include membership testing and eliminating duplicate entries. Set objects also support mathematical operations like union, intersection, difference, and symmetric difference.</p>
 <p>Unlike sequences (lists, and tuples), which are indexed by a range of numbers, <strong>dictionaries</strong> are indexed by keys, which can be any immutable type (e.g. strings and numbers). The main operations on a dictionary are storing a value with some key and extracting the value given the key.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Lists</span>
 a <span class="op">=</span> [<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>, <span class="fl">23.23</span>, <span class="op">-</span><span class="fl">7.23</span>]
@@ -781,10 +741,10 @@ t <span class="op">=</span> <span class="dv">12345</span>, <span class="dv">5432
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Sets</span>
 s <span class="op">=</span> <span class="bu">set</span>(<span class="st">&#39;python&#39;</span>)
 <span class="bu">print</span>(s) <span class="co"># Unique letters in s </span></code></pre></div>
-<pre><code>## {&#39;n&#39;, &#39;p&#39;, &#39;t&#39;, &#39;h&#39;, &#39;o&#39;, &#39;y&#39;}</code></pre>
+<pre><code>## {&#39;y&#39;, &#39;o&#39;, &#39;h&#39;, &#39;p&#39;, &#39;t&#39;, &#39;n&#39;}</code></pre>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">s2 <span class="op">=</span> {<span class="st">&#39;python&#39;</span>, <span class="st">&#39;anaconda&#39;</span>, <span class="st">&#39;python&#39;</span>}
 <span class="bu">print</span>(s2)</code></pre></div>
-<pre><code>## {&#39;python&#39;, &#39;anaconda&#39;}</code></pre>
+<pre><code>## {&#39;anaconda&#39;, &#39;python&#39;}</code></pre>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(<span class="bu">type</span>(s2))</code></pre></div>
 <pre><code>## &lt;class &#39;set&#39;&gt;</code></pre>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Dictionaries</span>
@@ -933,7 +893,7 @@ varB <span class="op">=</span> <span class="st">&quot;hi&quot;</span>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> math <span class="im">import</span> <span class="op">*</span> 
 <span class="bu">print</span>(factorial(<span class="dv">8</span>))</code></pre></div>
 <pre><code>## 40320</code></pre>
-<p>Some of the most popular packages in Python including:</p>
+<p>Some of the most popular packages in Python are:</p>
 <ul>
 <li>NumPy</li>
 <li>SciPy</li>
@@ -941,7 +901,6 @@ varB <span class="op">=</span> <span class="st">&quot;hi&quot;</span>
 <li>Matplotlib</li>
 <li>SciKit-Learn</li>
 <li>TensorFlow</li>
-<li>Scrapy</li>
 <li>Shapely</li>
 </ul>
 </div>
@@ -987,6 +946,49 @@ $(document).ready(function () {
 });
 
 
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
 </script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
