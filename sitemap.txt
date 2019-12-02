@@ -6,6 +6,7 @@ https://ashki23.github.io/page3.html
 https://ashki23.github.io/tutorials.html
 https://ashki23.github.io/research.html
 https://ashki23.github.io/contact.html
+https://ashki23.github.io/emacs.html
 https://ashki23.github.io/python_str.html
 https://ashki23.github.io/python_env.html
 https://ashki23.github.io/hpc.html
