@@ -485,7 +485,7 @@ h4.author {
   display: none;
 }
 </style>
-<p>Linux is a family of open source Unix-like operating systems based on the Linux kernel, an operating system kernel first released on September 17, 1991 by Linus Torvalds (<a href="https://en.wikipedia.org/wiki/Linux">Wiki</a>). Linux is typically packaged in Linux distributions (see <a href="https://en.wikipedia.org/wiki/Linux_distribution">here</a>) which include the Linux kernel and supporting system software and libraries. Ubuntu is an open source and popular Linux distribution based on Debian. This article shows how to install and update Ubuntu distribution and provides a quick reference of helpful shortcuts, applications, and tips for software installation.</p>
+<p>Linux is a family of open source Unix-like operating systems based on the Linux kernel, an operating system kernel first released on September 17, 1991 by Linus Torvalds (<a href="https://en.wikipedia.org/wiki/Linux">Wikipedia</a>). Linux is typically packaged in Linux distributions (see <a href="https://en.wikipedia.org/wiki/Linux_distribution">here</a>) which include the Linux kernel and supporting system software and libraries. Ubuntu is an open source and popular Linux distribution based on Debian. This article shows how to install and update Ubuntu distribution and provides a quick reference of helpful shortcuts, applications, and tips for software installation.</p>
 <hr />
 <div id="running-ubuntu" class="section level2">
 <h2>Running Ubuntu</h2>
@@ -522,7 +522,7 @@ h4.author {
 </div>
 <div id="useful-keyboard-shortcuts" class="section level3">
 <h3>Useful keyboard shortcuts</h3>
-<p>The following keyboard shortcuts can help you use your desktop and applications more efficiently.</p>
+<p>The following keyboard shortcuts can be very helpful to use your desktop and applications more efficiently.</p>
 <ul>
 <li>Activities: <code>super</code> (windows key)</li>
 <li>Change tabs: <code>super + tab</code></li>
@@ -544,11 +544,12 @@ h4.author {
 </div>
 <div id="ubuntu-software" class="section level3">
 <h3>Ubuntu Software</h3>
-<p>The following software are very useful and available in the Ubuntu Software for free.</p>
+<p>Ubuntu Software is an small App Store including many useful software and packages. Following are some popular software available in Ubuntu Software:</p>
 <ul>
 <li>Slack</li>
 <li>Skype</li>
 <li>Tweaks</li>
+<li>GParted</li>
 <li>GNU Octave</li>
 <li>Sublime Text</li>
 <li>Synaptic Package Manager</li>
@@ -619,7 +620,7 @@ h4.author {
 </div>
 <div id="grub-menu" class="section level3">
 <h3>GRUB menu</h3>
-<p>To see GRUB menu at boot-time open <code>/etc/default/grub</code> file and change <code>GRUB_TIMEOUT</code> from 0 seconds to 5 seconds. Save changes and run <code>sudo update-grub</code> to apply changes.</p>
+<p>To see GRUB menu at boot-time, open <code>/etc/default/grub</code> file and change <code>GRUB_TIMEOUT</code> from 0 seconds to 5 seconds. Save changes and run <code>sudo update-grub</code> to apply changes.</p>
 <hr />
 </div>
 </div>
@@ -648,6 +649,7 @@ h4.author {
 <h3>Emacs</h3>
 <p>Emacs is a powerful text editor. Use the following to install Emacs:</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> apt install emacs</code></pre></div>
+<p>You may learn more about Emacs <a href="https://ashki23.github.io/emacs.html">here</a>.</p>
 </div>
 <div id="python" class="section level3">
 <h3>Python</h3>
@@ -656,7 +658,7 @@ h4.author {
 <div id="conda" class="section level3">
 <h3>Conda</h3>
 <p><a href="https://docs.conda.io/projects/conda/en/latest/">Conda</a> is an open source package management system and environment management system. Conda quickly installs, runs and updates packages and their dependencies. Conda easily creates, saves, loads, and switches between environments on your local computer. It was created for Python programs but it can package and distribute software for any language.</p>
-<p>Download Miniconda from <a href="https://docs.conda.io/en/latest/miniconda.html">here</a> for using Conda. After downloading the installer, enter the following command at a terminal prompt to install Anaconda.</p>
+<p>Download Miniconda from <a href="https://docs.conda.io/en/latest/miniconda.html">here</a> for using Conda. After downloading the installer, enter the following command at a terminal prompt to install Miniconda.</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">bash</span> ~/Downloads/Miniconda3-latest-Linux-x86_64.sh</code></pre></div>
 <p>Follow the instruction to complete the installation. Run the following to prevent Conda to activate as base by default:</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">conda</span> config --set auto_activate_base false<span class="kw">`</span></code></pre></div>
@@ -666,7 +668,7 @@ h4.author {
 <p>To remove Miniconda, use:</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">rm</span> -rf ~/miniconda3
 <span class="fu">rm</span> -rf ~/.condarc ~/.conda ~/.continuum</code></pre></div>
-<p>Anaconda, the heavier version of Miniconda, which includes Conda many Python/R data science packages is available <a href="https://www.anaconda.com/distribution/#linux">here</a>. After download you can install Anaconda by:</p>
+<p>Anaconda, the heavier version of Miniconda which includes Conda and many other Python/R data science packages, is available <a href="https://www.anaconda.com/distribution/#linux">here</a>. After download you can install Anaconda by:</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">bash</span> ~/Downloads/Anaconda3-x.x.x-Linux-x86_64.sh</code></pre></div>
 <p>To update Anaconda use:</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">conda</span> update conda
@@ -675,6 +677,7 @@ h4.author {
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">conda</span> install anaconda-clean
 <span class="ex">anaconda-clean</span> --yes
 <span class="fu">rm</span> -rf ~/anaconda3</code></pre></div>
+<p>To learn more about managing environments by Conda see the instruction in <a href="https://ashki23.github.io/python_env.html#miniconda">here</a>.</p>
 </div>
 <div id="r" class="section level3">
 <h3>R</h3>
@@ -757,7 +760,7 @@ h4.author {
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">gurobi_cl</span> --help
 <span class="ex">gurobi_cl</span> --version
 <span class="ex">gurobi_cl</span> --license</code></pre></div>
-<p><strong>For Python (Anaconda)</strong></p>
+<p><strong>For Python (Conda)</strong></p>
 <p>From a terminal prompt issue the following commands to add the Gurobi channel to your default search list and install the Gurobi package:</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">conda</span> config --add channels http://conda.anaconda.org/gurobi
 <span class="ex">conda</span> install gurobi</code></pre></div>
