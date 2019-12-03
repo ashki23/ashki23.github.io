@@ -7,6 +7,7 @@
 <meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 <meta name="author" content="Ashkan Mirzaee" />
@@ -127,7 +128,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -288,48 +288,9 @@ $(document).ready(function () {
 }
 </style>
 
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
 <!-- code folding -->
 
 
-
-<script>
-$(document).ready(function ()  {
-
-    // move toc-ignore selectors from section div to header
-    $('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "h1,h2,h3",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
-    };
-    options.showAndHide = true;
-    options.smoothScroll = true;
-
-    // tocify
-    var toc = $("#TOC").tocify(options).data("toc-tocify");
-});
-</script>
 
 <style type="text/css">
 
@@ -343,6 +304,12 @@ $(document).ready(function ()  {
 }
 }
 
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
 
 .toc-content {
   padding-left: 30px;
@@ -476,10 +443,10 @@ h4.author {
   display: none;
 }
 </style>
-<p>R Markdown is a file format for making dynamic documents with R. An R Markdown document is written in markdown and contains chunks of embedded R code. A basic knowledge about LaTeX, also, could help us to make more sophisticated documents by R Markdown. This is a quick reference to use R Markdown.</p>
+<p>R Markdown is a file format for making dynamic HTML documents with R Studio. An R Markdown document is written in Markdown and could contain chunks of embedded source codes, LaTeX formula and graphics. A basic knowledge about Markdown and LaTeX is required to create documents by R Markdown. This tutorial provides a quick reference to use Markdown and LaTeX.</p>
 <hr />
-<div id="markdown-basics" class="section level1">
-<h1>Markdown Basics</h1>
+<div id="markdown" class="section level1">
+<h1>Markdown</h1>
 <p>The following provides quick references to the most commonly used R Markdown syntax.</p>
 <div id="headers" class="section level2">
 <h2>Headers</h2>
@@ -507,8 +474,17 @@ h4.author {
 <pre class="markdown"><code>~~Scratched Text~~</code></pre>
 <p>superscript<sup>2</sup></p>
 <pre class="markdown"><code>superscript^2^</code></pre>
-<p>Markdown doesn’t support underline. But you can using <u>HTML Text</u> for that. Also, <b>You</b> can <i>render</i> almost any <span style="color:red;">HTML</span> code that   you   <kbd>like</kbd>.</p>
-<pre class="markdown"><code>Markdown doesn&#39;t support underline. But you can using &lt;u&gt;HTML Text&lt;/u&gt; for that. Also, &lt;b&gt;You&lt;/b&gt; can &lt;i&gt;render&lt;/i&gt; almost any &lt;span style=&quot;color:red;&quot;&gt;HTML&lt;/span&gt; code that &amp;nbsp; you &amp;nbsp; &lt;kbd&gt;like&lt;/kbd&gt;.</code></pre>
+<p>Markdown doesn’t support underline, but we can use <u>HTML Text</u> instead. Also, <b>we</b> can <i>render</i> almost any <span style="color:red;">HTML</span> code that   we   <kbd>like</kbd>.</p>
+<pre class="markdown"><code>Markdown doesn&#39;t support underline, but we can use &lt;u&gt;HTML Text&lt;/u&gt; instead. Also, &lt;b&gt;we&lt;/b&gt; can &lt;i&gt;render&lt;/i&gt; almost any &lt;span style=&quot;color:red;&quot;&gt;HTML&lt;/span&gt; code that &amp;nbsp; we &amp;nbsp; &lt;kbd&gt;like&lt;/kbd&gt;.</code></pre>
+<p>For manual line or page breaks, we can use following HTML and CSS codes:</p>
+<ul>
+<li>Line breaks:</li>
+</ul>
+<pre class="html"><code>&lt;br /&gt;</code></pre>
+<ul>
+<li>Print breaks:</li>
+</ul>
+<pre class="css"><code>&lt;p style=&quot;page-break-after:always;&quot;&gt;&lt;/p&gt;</code></pre>
 </div>
 <div id="lists" class="section level2">
 <h2>Lists</h2>
@@ -574,8 +550,9 @@ h4.author {
 &gt;
 &gt; Albert Einstein</code></pre>
 </div>
-<div id="horizontal-lines" class="section level2">
-<h2>Horizontal Lines</h2>
+<div id="hlines" class="section level2">
+<h2>Hlines</h2>
+<p>Use three dashes <code>---</code> to draw an horizontal line like:</p>
 <hr />
 <pre class="markdown"><code>---</code></pre>
 </div>
@@ -613,9 +590,30 @@ col 1 is|left-aligned|1
 col 2 is|center-aligned|2
 col 3 is|right-aligned|3</code></pre>
 </div>
+<div id="code-blocks" class="section level2">
+<h2>Code blocks</h2>
+<p>In Markdown, we can simply add plain code blocks to display (not evaluating) by inserting <code>```</code>. For example:</p>
+<pre><code>This text is displayed verbatim / preformatted</code></pre>
+<pre class="markdown"><code>` ``
+This text is displayed verbatim / preformatted
+` ``</code></pre>
+<p>For a plain R, or Python and other languages, we can use <code>```r</code> or <code>```python</code> and etc. For example:</p>
+<pre class="r"><code>norm &lt;- function(x) {
+  sqrt(x%*%x)
+}
+norm(1:4)</code></pre>
+<pre class="markdown"><code>` ``r
+norm &lt;- function(x) {
+  sqrt(x%*%x)
+}
+norm(1:4)
+` ``</code></pre>
+<p>For inline plain codes, for example, we defined the <code>add</code> function to compute the sum of two numbers.</p>
+<pre class="markdown"><code>we defined the `add` function to compute the sum of two numbers.</code></pre>
+</div>
 <div id="code-chunks" class="section level2">
-<h2>Code Chunks</h2>
-<p>R code will be evaluated and printed (<strong>insert <code>```</code> with no space</strong>).</p>
+<h2>Code chunks</h2>
+<p>In R Markdown, we can evaluate source codes such as R and Python. For example we can display and run the following R codes by inserting <code>```{program}</code>. For example:</p>
 <pre class="markdown"><code>` ``{r}
 summary(cars$dist)
 summary(cars$speed)
@@ -640,12 +638,15 @@ else:
 <li>Markdown</li>
 </ul>
 <p>You can find more details <a href="https://rmarkdown.rstudio.com/authoring_knitr_engines.html%23sql">here</a>.</p>
+<p>Also, we can evaluate inline codes for example:</p>
+<p>There were 50 cars studied.</p>
+<pre class="markdown"><code>There were `r nrow(cars)` cars studied.</code></pre>
 </div>
 <div id="chunk-options" class="section level2">
-<h2>Chunk Options</h2>
-<p>Chunk output can be customized with arguments set in the <code>{}</code> of a chunk header.</p>
+<h2>Chunk options</h2>
+<p>Chunk output can be customized in R Markdown with arguments set in the <code>{}</code> of a chunk header.</p>
 <div class="figure" style="text-align: center">
-<img src="markdown_latex_files/figure-html/unnamed-chunk-17-1.png" alt="Figure 1" width="672" />
+<img src="markdown_latex_files/figure-html/unnamed-chunk-21-1.png" alt="Figure 1" width="672" />
 <p class="caption">
 Figure 1
 </p>
@@ -669,36 +670,10 @@ plot(cars, main = &quot;Main Title&quot;)
 <li><code>out.width</code>: width and of the plot in the final output file (can be <code>&quot;100%&quot;</code> or less)</li>
 <li><code>fig.align</code>: one of <code>left, right</code> and <code>center</code></li>
 </ul>
-<p>You can find more about knitr options <a href="https://yihui.name/knitr/options/">here</a>.</p>
-</div>
-<div id="inline-code" class="section level2">
-<h2>Inline Code</h2>
-<p>There were 50 cars studied.</p>
-<pre class="markdown"><code>There were `r nrow(cars)` cars studied.</code></pre>
-</div>
-<div id="plain-code-blocks" class="section level2">
-<h2>Plain Code Blocks</h2>
-<p>Plain code blocks are displayed in a fixed-width font but not evaluated (<strong>insert <code>```</code> with no space</strong>).</p>
-<pre><code>This text is displayed verbatim / preformatted</code></pre>
-<pre class="markdown"><code>` ``
-This text is displayed verbatim / preformatted
-` ``</code></pre>
-<p>For a plain R, or Python and other languages, we can use <code>```r</code> or <code>```python</code> and etc. For example:</p>
-<pre class="r"><code>norm &lt;- function(x) {
-  sqrt(x%*%x)
-}
-norm(1:4)</code></pre>
-<pre class="markdown"><code>` ``r
-norm &lt;- function(x) {
-  sqrt(x%*%x)
-}
-norm(1:4)
-` ``</code></pre>
-<p>For inline plain codes, for example, we defined the <code>add</code> function to compute the sum of two numbers.</p>
-<pre class="markdown"><code>we defined the `add` function to compute the sum of two numbers.</code></pre>
+<p>You can learn more about knitr options <a href="https://yihui.name/knitr/options/">here</a>.</p>
 </div>
 <div id="yaml-header" class="section level2">
-<h2>YAML Header</h2>
+<h2>YAML header</h2>
 <p>At the top of the R Markdown document, we can insert the following to adjust the final output.</p>
 <pre class="markdown"><code>---
 title: &quot;Page Title&quot;
@@ -731,22 +706,15 @@ output:
     css: styles.css (your css file)
     keep_md: TRUE
 ---</code></pre>
-<p>Last line, <code>keep_md: TRUE</code>, keeps a Markdown (md) file including codes and outputs. You may use the md file in your GitHub or GitLab repositories. Another method is using <code>output: github_document</code> to keep the md file for your Git repositories. You may find more details about YAML header <a href="https://bookdown.org/yihui/rmarkdown/html-document.html">here</a>.</p>
-</div>
-<div id="manual-breaks" class="section level2">
-<h2>Manual Breaks</h2>
-<p>Line breaks:</p>
-<pre class="html"><code>&lt;br /&gt;</code></pre>
-<p>Print breaks:</p>
-<pre class="css"><code>&lt;p style=&quot;page-break-after:always;&quot;&gt;&lt;/p&gt;</code></pre>
+<p><code>keep_md: TRUE</code> in last line or add <code>github_document</code> to outputs keep a Markdown file to use in GitHub or GitLab repositories. You may learn more about YAML header <a href="https://bookdown.org/yihui/rmarkdown/html-document.html">here</a>.</p>
 <hr />
 </div>
 </div>
-<div id="latex-basics" class="section level1">
-<h1>LaTeX Basics</h1>
+<div id="latex" class="section level1">
+<h1>LaTeX</h1>
 <p>The following provides quick references to the most commonly used LaTeX syntax that we can use in R Markdown. You may find more extensive references about mathematical formulas at <a href="https://en.wikibooks.org/wiki/LaTeX/Mathematics">LaTeX Wikibooks</a>.</p>
 <div id="latex-equations" class="section level2">
-<h2>LaTeX Equations</h2>
+<h2>LaTeX equations</h2>
 <p>Inline equation: <span class="math inline">\(equation\)</span></p>
 <pre class="markdown"><code>Inline equation: $equation$</code></pre>
 <p>Display equation: <span class="math display">\[equation\]</span></p>
@@ -761,9 +729,9 @@ output:
 <li><span class="math inline">\(x \div y\)</span></li>
 <li><span class="math inline">\(x * y\)</span></li>
 <li><span class="math inline">\(x / y\)</span></li>
-<li><span class="math inline">\(^x / _y\)</span></li>
 <li><span class="math inline">\(\frac{x}{y}\)</span></li>
 <li><span class="math inline">\(\dfrac{x}{y}\)</span></li>
+<li><span class="math inline">\(\sqrt{x}\)</span></li>
 </ul>
 <pre class="markdown"><code>- $x + y$
 - $x - y$
@@ -771,9 +739,9 @@ output:
 - $x \div y$
 - $x * y$
 - $x / y$
-- $^x / _y$
 - $\frac{x}{y}$
-- $\dfrac{x}{y}$</code></pre>
+- $\dfrac{x}{y}$
+- $\sqrt{x}$</code></pre>
 </div>
 <div id="symbols" class="section level2">
 <h2>Symbols</h2>
@@ -868,7 +836,7 @@ output:
 </ul>
 </div>
 <div id="greek-alphabets" class="section level2">
-<h2>Greek Alphabets</h2>
+<h2>Greek alphabets</h2>
 <table>
 <thead>
 <tr class="header">
@@ -1203,6 +1171,49 @@ $(document).ready(function () {
 });
 
 
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
 </script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
