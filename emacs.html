@@ -287,6 +287,12 @@ $(document).ready(function () {
 }
 }
 
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
 
 .toc-content {
   padding-left: 30px;
@@ -420,7 +426,7 @@ h4.author {
   display: none;
 }
 </style>
-<p>A text editor provides an environment to write and edit plain text files such as source codes. Many would like to use IDEs to write and run source codes. That might be very useful for small programs, but as long as your projects being larger, writing and editing codes with IDEs become a very tedious task. <a href="https://www.gnu.org/software/emacs/">Emacs</a> is one of the best text editors that let us edit and write source codes faster and easier. It might be very challenging to start using any editors like Emacs, but it is definitely worth to spend some time to learn the first steps. This tutorial provides a list of commands, configurations and features that you might need to begin.</p>
+<p>A text editor provides an environment to write and edit plain text files such as source codes. Many would like to use IDEs to write and run source codes. That might be very useful for small programs, but as long as your projects being larger, writing and editing codes with IDEs become a very tedious task. <a href="https://www.gnu.org/software/emacs/">Emacs</a> is one of the best text editors that let us edit and write source codes faster and easier. It might be very challenging to start using any editors like Emacs, but it is definitely worth to spend some time to learn the first steps. This tutorial provides a list of commands, configurations and features that we need to begin.</p>
 <hr />
 <div id="installation" class="section level2">
 <h2>Installation</h2>
@@ -432,7 +438,7 @@ h4.author {
 </div>
 <div id="config-file" class="section level2">
 <h2>Config file</h2>
-<p>Use a text editor to create Emacs config file called <code>.emacs</code> in the home directory <code>cd ~</code> then insert the following to make your very preliminary configurations by:</p>
+<p>Use a text editor to create Emacs config file called <code>.emacs</code> in the home directory <code>cd ~</code> then insert the following to make our very preliminary configurations by:</p>
 <pre><code>;; Add MELPA
 (package-initialize)
 (add-to-list &#39;package-archives &#39;(&quot;melpa&quot; . &quot;http://melpa.org/packages/&quot;) t)
@@ -494,8 +500,8 @@ h4.author {
 </div>
 <div id="customize-faces" class="section level2">
 <h2>Customize faces</h2>
-<p>An easy way to change the appearance of Emacs is changing faces. <code>M-x list-faces-display</code> shows all of the faces that currently defined and you may modify them (use GUI Emacs to access them by clicking). To customize certain faces, use <code>M-x customize-face</code> and select the face that you want to change (press tab to see all options).</p>
-<p>Also, you are able to customize faces from Emacs config file. For instance by adding following to <code>.emacs</code> file you will change some faces in the Emacs terminal mode:</p>
+<p>An easy way to change the appearance of Emacs is changing faces. <code>M-x list-faces-display</code> shows current faces that can be modified (use GUI Emacs to access them by clicking). To customize certain faces, use <code>M-x customize-face</code> and select the face that you want to change (press tab to see all options).</p>
+<p>Also, we are able to customize faces from Emacs config file. For instance, adding the following to the <code>.emacs</code> file will change some faces in the Emacs terminal mode:</p>
 <pre><code>;; Customize faces
 (custom-set-faces
  &#39;(font-lock-builtin-face ((t (:foreground &quot;SkyBlue1&quot;))))
@@ -517,7 +523,7 @@ h4.author {
 </div>
 <div id="install-packages" class="section level2">
 <h2>Install packages</h2>
-<p>In Emacs you can install extra packages based on your needs. To install a new package, press <code>M-x</code> and type <code>package-refresh-contents</code> to fetch all packages and then use <code>M-x package-install</code> and enter the new package’s name. For example you can install Markdown-mode, htmlize and ESS (R-mode) packages with:</p>
+<p>In Emacs we can install extra packages based on our needs. To install a new package, press <code>M-x</code> and type <code>package-refresh-contents</code> to fetch all packages and then use <code>M-x package-install</code> and enter the new package’s name. For example we can install Markdown-mode, htmlize and ESS (R-mode) packages with:</p>
 <pre><code>M-x package-install markdown-mode
 M-x package-install htmlize
 M-x package-install ess</code></pre>
@@ -525,7 +531,7 @@ M-x package-install ess</code></pre>
 </div>
 <div id="org-mode" class="section level2">
 <h2>Org-mode</h2>
-<p><a href="https://orgmode.org">Org website</a> describes “Org mode is for keeping notes, maintaining TODO lists, planning projects, and authoring documents with a fast and effective plain-text system”. Org-mode in Emacs is very similar to Markdown they let you combine text and codes and evaluate codes and generate PDF or HTML outputs. Following are great resources to learn Org:</p>
+<p><a href="https://orgmode.org">Org website</a> describes “Org mode is for keeping notes, maintaining TODO lists, planning projects, and authoring documents with a fast and effective plain-text system”. Org-mode in Emacs is very similar to Markdown. They let us combine text and codes and evaluate codes and generate PDF or HTML outputs. Following are great resources to learn Org:</p>
 <ul>
 <li><a href="https://orgmode.org/worg/org-tutorials/org4beginners.html">Org mode beginning at the basics</a></li>
 <li><a href="https://orgmode.org/worg/org-tutorials/index.html">Org tutorials</a></li>
@@ -548,8 +554,10 @@ M-x package-install ess</code></pre>
 </ul></li>
 <li>create tables</li>
 <li>create TODO items</li>
-<li>save (<code>C-x C-s</code>), export (<code>C-c C-e</code>), and exit (<code>C-x C-c</code>)</li>
+<li>save (<code>C-x C-s</code>), export (<code>C-c C-e</code>), and exit (<code>C-x C-c</code>)
+<ul>
 <li>use <code>C-c C-e</code> and press <code>h</code> and then <code>o</code> to see HTML output</li>
+</ul></li>
 </ul>
 <p>To create above list in Org use:</p>
 <pre><code> ** Introduction
@@ -565,7 +573,7 @@ M-x package-install ess</code></pre>
  - create TODO items
  - save (=C-x C-s=), export (=C-c C-e=), and exit (=C-x C-c=)
    - use =C-c C-e= and press =h= and then =o= to see HTML output</code></pre>
-<p>Use <code>M-up/down</code> to see how easy you can move headlines and use <code>C-c C-e h o</code> to see the outputs in your browser.</p>
+<p>Use <code>M-up/down</code> to see how easy we can move headlines and use <code>C-c C-e h o</code> to see the outputs in the browser.</p>
 <p><strong>Note:</strong> <em>unordered</em> lists in Org start with <strong>-</strong> or <strong>+</strong> and <em>ordered</em> lists start with <strong>a number and a dot</strong> and descriptions use <strong>::</strong>.</p>
 <p><strong>For example</strong>, this is an <em>orderd</em> list:</p>
 <ol style="list-style-type: decimal">
@@ -639,10 +647,9 @@ M-x package-install ess</code></pre>
 <div id="latex" class="section level3">
 <h3>LaTeX</h3>
 <p>We can use LaTeX to write equations in Org. For example:</p>
-<span class="math display">\[\begin{equation}
+<p><span class="math display">\[\begin{equation}
 x=\sqrt{b}
-\end{equation}\]</span>
-<p>If <span class="math inline">\(a^2=b\)</span> and <span class="math inline">\(b=2\)</span>, then the solution must be either <span class="math display">\[a=+\sqrt{2}\]</span> or <span class="math display">\[a=-\sqrt{2}\]</span></p>
+\end{equation}\]</span> If <span class="math inline">\(a^2=b\)</span> and <span class="math inline">\(b=2\)</span>, then the solution must be either <span class="math display">\[a=+\sqrt{2}\]</span> or <span class="math display">\[a=-\sqrt{2}\]</span></p>
 <pre><code>#+BEGIN_SRC latex                
 \begin{equation}
 x=\sqrt{b}
