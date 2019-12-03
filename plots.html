@@ -517,7 +517,7 @@ h4.author {
   display: none;
 }
 </style>
-<p>Most graphics functions in R have many online documentations. R Studio, also, includes a great library of online resources and a user manual of R functions. You can always use the built in command <code>help(topic)</code> to find all the information about a certain command (for example try <code>help(par)</code>). The following is a list of some practical graphics functions that could help us to draw better plots in R.</p>
+<p><a href="https://www.r-project.org/">R</a> is a great tool for creating plots, maps and graphics. R includes many built-in graphics functions that would help to draw plots easily. R is a very self explanatory environment in terms of documentation. We can learn about any R commands only by using <code>help(command)</code>. The following is a list of the most practical graphics functions in R:</p>
 <ul>
 <li><code>plot</code>: Generic function for plotting of R objects</li>
 <li><code>lines</code>: A generic function taking coordinates and joining the corresponding points with line segments</li>
@@ -527,7 +527,7 @@ h4.author {
 <li><code>smoothScatter</code>: Produce a smoothed color density representation of a scatterplot,</li>
 <li><code>pairs</code>: Produce a matrix of scatter plots</li>
 <li><code>hist</code>: Computes a histogram of the given data values</li>
-<li><code>acf</code>: Computes (and by default plots) estimates of the autocovariance or autocorrelation function</li>
+<li><code>acf</code>: Computes (and by default plots) estimates of the autocorrelation function</li>
 <li><code>boxplot</code>: Produce box-and-whisker plot(s) of the given (grouped) values</li>
 <li><code>barplot</code>: Creates a bar plot with vertical or horizontal bars</li>
 <li><code>dotchart</code>: Draw a Cleveland dot plot</li>
@@ -535,7 +535,7 @@ h4.author {
 <li><code>polygon</code>: Polygon draws the polygons whose vertices are given in x and y</li>
 <li><code>symbols</code>: This function draws symbols on a plot</li>
 <li><code>arrows</code>: Add arrows to a plot</li>
-<li><code>axis</code>: Add an axix to a plot</li>
+<li><code>axis</code>: Add an axis to a plot</li>
 <li><code>stars</code>: Draw star (segment) plots and spider (radar) plots</li>
 <li><code>contour</code>: Create a contour plot, or add contour lines to an existing plot</li>
 <li><code>image</code>: Creates a grid of colored or gray-scale rectangles with colors corresponding to the values in z</li>
@@ -551,13 +551,13 @@ h4.author {
 <li><code>lty</code>: Lines types</li>
 <li><code>lwd</code>: Lines width</li>
 <li><code>main</code>: Plot main title</li>
-<li><code>mfrow</code>: Multi figures in row, it is a vector of the form <code>c(nr,nc)</code></li>
+<li><code>mfrow</code>: Multiple figures in rows, it is a vector of the form <code>c(nr,nc)</code></li>
 <li><code>pch</code>: Points character</li>
 <li><code>xaxt/yaxt</code>: X-axis/y-axis style, <code>xaxt = &quot;n&quot;</code> means no scale on x-axis</li>
 <li><code>xlab/ylab</code>: X-axis/y-axis label</li>
 <li><code>xlim/ylim</code>: X-axis/y-axis limit</li>
 </ul>
-<p>This tutorial shows how to apply above functions and parameters to draw desired graphs by R.</p>
+<p>This tutorial shows how to apply above functions and parameters to draw graphs by R.</p>
 <hr />
 <div id="scatter-plots-lines-and-points" class="section level2">
 <h2>Scatter plots, lines and points</h2>
@@ -725,7 +725,7 @@ h4.author {
 </div>
 <div id="layout" class="section level2">
 <h2>Layout</h2>
-<p>layout creates a layout for putting multiple plots together. Number of rows and columns are specified in matrix mat, with the column-widths and the row-heights specified in the respective arguments.</p>
+<p><code>layout</code> creates a layout for putting multiple plots together. Number of rows and columns are specified in a matrix, with the column-widths and the row-heights specified in the respective arguments.</p>
 <div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1">lay &lt;-<span class="st"> </span><span class="kw">layout</span>(<span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">0</span>),<span class="dv">3</span>,<span class="dv">2</span>,<span class="dt">byrow =</span> <span class="ot">TRUE</span>), <span class="dt">widths =</span> <span class="kw">c</span>(<span class="dv">4</span>,<span class="fl">1.5</span>), <span class="dt">heights =</span> <span class="kw">c</span>(<span class="fl">1.5</span>,<span class="dv">4</span>,<span class="dv">1</span>), <span class="dt">respect =</span> <span class="ot">TRUE</span>)</a>
 <a class="sourceLine" id="cb20-2" data-line-number="2"><span class="kw">layout.show</span>(lay)</a></code></pre></div>
 <p><img src="plots_files/figure-html/unnamed-chunk-17-1.png" width="672" style="display: block; margin: auto;" /></p>
