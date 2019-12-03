@@ -7,6 +7,7 @@
 <meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 <meta name="author" content="Ashkan Mirzaee" />
@@ -67,41 +68,67 @@
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css" data-origin="pandoc">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 
 </style>
 <script>
@@ -117,7 +144,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
       var style = rule.style.cssText;
       // check if color or background-color is set
-      if (rule.style.color === '' || rule.style.backgroundColor === '') continue;
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
       // replace div.sourceCode by a pre.sourceCode rule
       sheets[i].deleteRule(j);
       sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
@@ -175,7 +202,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -336,48 +362,9 @@ $(document).ready(function () {
 }
 </style>
 
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
 <!-- code folding -->
 
 
-
-<script>
-$(document).ready(function ()  {
-
-    // move toc-ignore selectors from section div to header
-    $('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "h1,h2,h3",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
-    };
-    options.showAndHide = true;
-    options.smoothScroll = true;
-
-    // tocify
-    var toc = $("#TOC").tocify(options).data("toc-tocify");
-});
-</script>
 
 <style type="text/css">
 
@@ -391,6 +378,12 @@ $(document).ready(function ()  {
 }
 }
 
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
 
 .toc-content {
   padding-left: 30px;
@@ -533,7 +526,7 @@ h4.author {
 <hr />
 <div id="tab-completion" class="section level2">
 <h2>Tab completion</h2>
-<p>In the Unix Shell we can use <strong>tab completion</strong> to type commands faster and easier. To do that press <code>tab</code> after typing the beginning of your command and let Bash complete the command. If there are more than one function or directory corresponded to the beginning that you typed, Bash will not return anything if your press <code>tab</code> once. In this case, if you press <code>tab</code> for the second time Bash will show all the options.</p>
+<p>In the Unix Shell we can use <strong>tab completion</strong> to type commands faster and easier. To do that press <code>tab</code> after typing the beginning of the command and let Bash complete the command. If there are more than one function or directory corresponded to the beginning the command, Bash does not return anything by pressing <code>tab</code> once. In this case, if we press <code>tab</code> for the second time Bash will show all the options.</p>
 </div>
 <div id="wildcards" class="section level2">
 <h2>Wildcards</h2>
@@ -553,7 +546,7 @@ h4.author {
 <h2>Shell Expansions</h2>
 <ul>
 <li>Brace expansion: is a mechanism by which arbitrary strings may be generated for example <code>echo 1{2,3}4</code> returns 124 and 134 or <code>echo {1..3}</code> returns 1,2, and 3</li>
-<li>Command substitution: it allows the output of a command to replace the command itself for example, <code>echo $(date)</code> returns the actual date. Note that for the environmental variables you cannot use <code>()</code>, for example <code>echo $HOME</code> or <code>echo ${HOME}</code> is the correct way</li>
+<li>Command substitution: it allows the output of a command to replace the command itself for example, <code>echo $(date)</code> returns the actual date. Note that for the environmental variables we cannot use <code>()</code>, for example <code>echo $HOME</code> or <code>echo ${HOME}</code> is the correct way</li>
 </ul>
 <hr />
 </div>
@@ -629,32 +622,32 @@ bc: Bash calculator language ex. echo &#39;3 + 4&#39; | bc
 clear (ctrl+l): clear terminal
 exit (ctrl+d): to exit</code></pre>
 <p>For practice, let’s create two text files including some names and grades by <code>cat</code> command in <code>bash_test</code> directory:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">mkdir</span> bash_test
-<span class="bu">cd</span> bash_text
-
-<span class="fu">cat</span> <span class="op">&gt;</span> names.txt
-<span class="ex">Dori</span>
-<span class="ex">Ari</span>
-<span class="ex">Ashi</span>
-<span class="ex">Jackie</span>
-<span class="ex">Dori</span>
-<span class="co"># press `ctrl+d` to exit</span>
-
-<span class="fu">cat</span> <span class="op">&gt;</span> grade.txt
-<span class="ex">A</span>
-<span class="ex">B+</span>
-<span class="ex">A-</span>
-<span class="ex">A</span>
-<span class="ex">B</span>
-<span class="co"># press `ctrl+d` to exit</span>
-
-<span class="fu">ls</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="fu">mkdir</span> bash_test</a>
+<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="bu">cd</span> bash_text</a>
+<a class="sourceLine" id="cb2-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="fu">cat</span> <span class="op">&gt;</span> names.txt</a>
+<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="ex">Dori</span></a>
+<a class="sourceLine" id="cb2-6" data-line-number="6"><span class="ex">Ari</span></a>
+<a class="sourceLine" id="cb2-7" data-line-number="7"><span class="ex">Ashi</span></a>
+<a class="sourceLine" id="cb2-8" data-line-number="8"><span class="ex">Jackie</span></a>
+<a class="sourceLine" id="cb2-9" data-line-number="9"><span class="ex">Dori</span></a>
+<a class="sourceLine" id="cb2-10" data-line-number="10"><span class="co"># press `ctrl+d` to exit</span></a>
+<a class="sourceLine" id="cb2-11" data-line-number="11"></a>
+<a class="sourceLine" id="cb2-12" data-line-number="12"><span class="fu">cat</span> <span class="op">&gt;</span> grade.txt</a>
+<a class="sourceLine" id="cb2-13" data-line-number="13"><span class="ex">A</span></a>
+<a class="sourceLine" id="cb2-14" data-line-number="14"><span class="ex">B+</span></a>
+<a class="sourceLine" id="cb2-15" data-line-number="15"><span class="ex">A-</span></a>
+<a class="sourceLine" id="cb2-16" data-line-number="16"><span class="ex">A</span></a>
+<a class="sourceLine" id="cb2-17" data-line-number="17"><span class="ex">B</span></a>
+<a class="sourceLine" id="cb2-18" data-line-number="18"><span class="co"># press `ctrl+d` to exit</span></a>
+<a class="sourceLine" id="cb2-19" data-line-number="19"></a>
+<a class="sourceLine" id="cb2-20" data-line-number="20"><span class="fu">ls</span></a></code></pre></div>
 <p><code>ls</code> command returns <code>grade.txt  names.txt</code> that shows we already made the files. Now, let’s see head, tail and number of lines in both files:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">head</span> -n 3 n*.txt
-<span class="bu">echo</span> ---
-<span class="fu">tail</span> -n 3 g*.txt
-<span class="bu">echo</span> ---
-<span class="fu">wc</span> -l [n,g]*.txt</code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="fu">head</span> -n 3 n*.txt</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="bu">echo</span> ---</a>
+<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="fu">tail</span> -n 3 g*.txt</a>
+<a class="sourceLine" id="cb3-4" data-line-number="4"><span class="bu">echo</span> ---</a>
+<a class="sourceLine" id="cb3-5" data-line-number="5"><span class="fu">wc</span> -l [n,g]*.txt</a></code></pre></div>
 <pre><code>## Dori
 ## Ari
 ## Ashi
@@ -663,27 +656,27 @@ exit (ctrl+d): to exit</code></pre>
 ## A
 ## B
 ## ---
-##  5 grade.txt
-##  5 names.txt
-## 10 total</code></pre>
+##        5 grade.txt
+##        5 names.txt
+##       10 total</code></pre>
 <p>For finding things we can use <code>grep</code> or “global/regular expression/print” command. For example, let’s find lines that contain the letter “D”:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">grep</span> D names.txt</code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="fu">grep</span> D names.txt</a></code></pre></div>
 <pre><code>## Dori
 ## Dori</code></pre>
 <p>There are several options that we can use for <code>grep</code> command. For example, <code>grep -w</code> is searching for the exact word, <code>-n</code> option shows numbers the lines that match, <code>-i</code> flag makes our search case-insensitive, or <code>-v</code> inverts our search to the lines that do not contain the pattern, or <code>-o</code> print only the matched parts, and <code>-P</code> flag for using Perl-compatible <a href="https://docs.python.org/3/library/re.html#re-syntax">regular expression</a>. To see all the option use <code>man grep</code>. Lets’ try to find lines which do not contain letter “d” or “D”:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">grep</span> -inv d names.txt</code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="fu">grep</span> -inv d names.txt</a></code></pre></div>
 <pre><code>## 2:Ari
 ## 3:Ashi
 ## 4:Jackie</code></pre>
 <p>While <code>grep</code> finds lines in files, the <code>find</code> command finds files themselves. For instance, in directory <code>bash_test</code> command <code>find .</code> will shows all files and directories within the current directory. The following command will return number of lines in <code>names.txt</code> and <code>grade.txt</code> files in the directory:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">wc</span> -l <span class="va">$(</span><span class="fu">find</span> . -name <span class="st">&#39;[n,g]*.txt&#39;</span><span class="va">)</span></code></pre></div>
-<pre><code>##  5 ./grade.txt
-##  5 ./names.txt
-## 10 total</code></pre>
-<p>For another example, you may use the command in below to print a divider, like <code>===</code>, followed by date and hostname:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">echo</span> === <span class="va">$(</span><span class="fu">hostname</span><span class="va">)</span> <span class="va">$(</span><span class="fu">date</span><span class="va">)</span>
-<span class="co"># Or</span>
-<span class="bu">echo</span> === <span class="va">$(</span><span class="fu">hostname</span><span class="va">)</span> <span class="st">&quot;date: </span><span class="va">$(</span><span class="fu">date</span><span class="va">)</span><span class="st">&quot;</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="fu">wc</span> -l <span class="va">$(</span><span class="fu">find</span> . -name <span class="st">&#39;[n,g]*.txt&#39;</span><span class="va">)</span></a></code></pre></div>
+<pre><code>##        5 ./grade.txt
+##        5 ./names.txt
+##       10 total</code></pre>
+<p>For another example, we can use the command in below to print a divider, like <code>===</code>, followed by date and hostname:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="bu">echo</span> === <span class="va">$(</span><span class="fu">hostname</span><span class="va">)</span> <span class="va">$(</span><span class="fu">date</span><span class="va">)</span></a>
+<a class="sourceLine" id="cb11-2" data-line-number="2"><span class="co"># Or</span></a>
+<a class="sourceLine" id="cb11-3" data-line-number="3"><span class="bu">echo</span> === <span class="va">$(</span><span class="fu">hostname</span><span class="va">)</span> <span class="st">&quot;date: </span><span class="va">$(</span><span class="fu">date</span><span class="va">)</span><span class="st">&quot;</span></a></code></pre></div>
 <hr />
 </div>
 <div id="pipes-and-filters" class="section level2">
@@ -694,44 +687,44 @@ command &gt; file: redirects a command’s output to a file (overwriting any exi
 command &gt;&gt; file: appends a command’s output to a file
 &lt;: operator redirects input to a command</code></pre>
 <p>For example let’s remove the duplicated names in the <code>names.txt</code>:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sort</span> names.txt <span class="kw">|</span> <span class="fu">uniq</span> 
-<span class="bu">echo</span> --- To count number of occurrences ---
-<span class="fu">sort</span> names.txt <span class="kw">|</span> <span class="fu">uniq</span> -c</code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="fu">sort</span> names.txt <span class="kw">|</span> <span class="fu">uniq</span> </a>
+<a class="sourceLine" id="cb13-2" data-line-number="2"><span class="bu">echo</span> --- To count number of occurrences ---</a>
+<a class="sourceLine" id="cb13-3" data-line-number="3"><span class="fu">sort</span> names.txt <span class="kw">|</span> <span class="fu">uniq</span> -c</a></code></pre></div>
 <pre><code>## Ari
 ## Ashi
 ## Dori
 ## Jackie
 ## --- To count number of occurrences ---
-##       1 Ari
-##       1 Ashi
-##       2 Dori
-##       1 Jackie</code></pre>
+##    1 Ari
+##    1 Ashi
+##    2 Dori
+##    1 Jackie</code></pre>
 <p>Or make a new file, <code>count.txt</code>, including number of lines, words, and characters in the text files:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">wc</span> [n,g]*.txt <span class="op">&gt;</span> count.txt</code></pre></div>
-<p>Use <code>cat count.txt</code> to see the file content. Also, you may use:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">cat</span> count.txt
-<span class="fu">wc</span> -l <span class="op">&lt;</span> count.txt</code></pre></div>
-<pre><code>##  5  5 12 grade.txt
-##  5  5 26 names.txt
-## 10 10 38 total
-## 3</code></pre>
-<p>To find number of lines in the <code>count.txt</code>. Note that you also can use <code>wc -l count.txt</code> to find the number of lines.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb15-1" data-line-number="1"><span class="fu">wc</span> [n,g]*.txt <span class="op">&gt;</span> count.txt</a></code></pre></div>
+<p>Use <code>cat count.txt</code> to see the file content. Also, we can use:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb16-1" data-line-number="1"><span class="fu">cat</span> count.txt</a>
+<a class="sourceLine" id="cb16-2" data-line-number="2"><span class="fu">wc</span> -l <span class="op">&lt;</span> count.txt</a></code></pre></div>
+<pre><code>##        5       5      12 grade.txt
+##        5       5      26 names.txt
+##       10      10      38 total
+##        3</code></pre>
+<p>To find number of lines in the <code>count.txt</code>. Note that we can also use <code>wc -l count.txt</code> to find the number of lines.</p>
 <hr />
 </div>
 <div id="loops-and-conditional-constructs" class="section level2">
 <h2>Loops and conditional constructs</h2>
 <p>Loops are key to productivity improvements through automation as they allow us to execute commands repeatedly. Similar to wildcards and tab completion, using loops also reduces the amount of typing and mistakes. The syntax is:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">for</span> <span class="ex">variable</span> in file1 file2 ...<span class="kw">;</span> <span class="kw">do</span> <span class="ex">command_1</span> <span class="va">$variable</span><span class="kw">;</span> <span class="ex">command_2</span><span class="kw">;</span> <span class="ex">...</span><span class="kw">;</span> <span class="kw">done</span>
-<span class="co"># Or</span>
-<span class="kw">for</span> <span class="ex">output</span> in <span class="va">$(</span><span class="bu">command</span><span class="va">)</span><span class="kw">;</span>  <span class="kw">do</span> <span class="ex">command_1</span> <span class="va">$output</span><span class="kw">;</span> <span class="ex">command_2</span><span class="kw">;</span> <span class="ex">...</span><span class="kw">;</span> <span class="kw">done</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb18-1" data-line-number="1"><span class="kw">for</span> <span class="ex">variable</span> in file1 file2 ...<span class="kw">;</span> <span class="kw">do</span> <span class="ex">command_1</span> <span class="va">$variable</span><span class="kw">;</span> <span class="ex">command_2</span><span class="kw">;</span> <span class="ex">...</span><span class="kw">;</span> <span class="kw">done</span></a>
+<a class="sourceLine" id="cb18-2" data-line-number="2"><span class="co"># Or</span></a>
+<a class="sourceLine" id="cb18-3" data-line-number="3"><span class="kw">for</span> <span class="ex">output</span> in <span class="va">$(</span><span class="bu">command</span><span class="va">)</span><span class="kw">;</span>  <span class="kw">do</span> <span class="ex">command_1</span> <span class="va">$output</span><span class="kw">;</span> <span class="ex">command_2</span><span class="kw">;</span> <span class="ex">...</span><span class="kw">;</span> <span class="kw">done</span></a></code></pre></div>
 <p>For instance, let’s make a copy of <code>grade.txt</code> and <code>names.txt</code>:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">for</span> <span class="ex">x</span> in [g,n]*.txt<span class="kw">;</span> <span class="kw">do</span> <span class="fu">cp</span> <span class="va">$x</span> copy-<span class="va">$x</span><span class="kw">;</span> <span class="bu">echo</span> copy-<span class="va">$x</span><span class="kw">;</span> <span class="kw">done</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb19-1" data-line-number="1"><span class="kw">for</span> <span class="ex">x</span> in [g,n]*.txt<span class="kw">;</span> <span class="kw">do</span> <span class="fu">cp</span> <span class="va">$x</span> copy-<span class="va">$x</span><span class="kw">;</span> <span class="bu">echo</span> copy-<span class="va">$x</span><span class="kw">;</span> <span class="kw">done</span></a></code></pre></div>
 <pre><code>## copy-grade.txt
 ## copy-names.txt</code></pre>
 <p>Use <code>ls</code> to see new files that start with <code>copy-</code> in your directory. Another example,</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">for</span> <span class="ex">y</span> in <span class="va">$(</span><span class="fu">seq</span> 1 3<span class="va">)</span><span class="kw">;</span> <span class="kw">do</span> <span class="bu">echo</span> <span class="st">&quot;The number is </span><span class="va">$y</span><span class="st">&quot;</span><span class="kw">;</span> <span class="kw">done</span>
-<span class="bu">echo</span> --- Same as ---
-<span class="kw">for</span> <span class="ex">y</span> in <span class="dt">{1..3}</span><span class="kw">;</span> <span class="kw">do</span> <span class="bu">echo</span> <span class="st">&quot;The number is </span><span class="va">$y</span><span class="st">&quot;</span><span class="kw">;</span> <span class="kw">done</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb21-1" data-line-number="1"><span class="kw">for</span> <span class="ex">y</span> in <span class="va">$(</span><span class="fu">seq</span> 1 3<span class="va">)</span><span class="kw">;</span> <span class="kw">do</span> <span class="bu">echo</span> <span class="st">&quot;The number is </span><span class="va">$y</span><span class="st">&quot;</span><span class="kw">;</span> <span class="kw">done</span></a>
+<a class="sourceLine" id="cb21-2" data-line-number="2"><span class="bu">echo</span> --- Same as ---</a>
+<a class="sourceLine" id="cb21-3" data-line-number="3"><span class="kw">for</span> <span class="ex">y</span> in <span class="dt">{1..3}</span><span class="kw">;</span> <span class="kw">do</span> <span class="bu">echo</span> <span class="st">&quot;The number is </span><span class="va">$y</span><span class="st">&quot;</span><span class="kw">;</span> <span class="kw">done</span></a></code></pre></div>
 <pre><code>## The number is 1
 ## The number is 2
 ## The number is 3
@@ -740,13 +733,13 @@ command &gt;&gt; file: appends a command’s output to a file
 ## The number is 2
 ## The number is 3</code></pre>
 <p>Conditional statements help us to write an <code>if</code> construction. In general we can write the test statement by <code>[ Expression ]</code>. The syntax is:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">if</span><span class="bu"> [</span> Expression<span class="bu"> ]</span>; <span class="kw">then</span> <span class="bu">command</span><span class="kw">;</span> <span class="kw">elif</span><span class="bu"> [</span> Expression<span class="bu"> ]</span>; <span class="kw">then</span> <span class="bu">command</span><span class="kw">;</span> <span class="ex">...</span><span class="kw">;</span> <span class="kw">else</span> <span class="bu">command</span><span class="kw">;</span> <span class="kw">fi</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb23-1" data-line-number="1"><span class="kw">if</span><span class="bu"> [</span> Expression<span class="bu"> ]</span>; <span class="kw">then</span> <span class="bu">command</span><span class="kw">;</span> <span class="kw">elif</span><span class="bu"> [</span> Expression<span class="bu"> ]</span>; <span class="kw">then</span> <span class="bu">command</span><span class="kw">;</span> <span class="ex">...</span><span class="kw">;</span> <span class="kw">else</span> <span class="bu">command</span><span class="kw">;</span> <span class="kw">fi</span></a></code></pre></div>
 <p>For example, let’s print “File exist” if <code>count.txt</code> is exist (note that there is a space after <code>[</code> and before <code>]</code>):</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">if</span><span class="bu"> [</span> <span class="ot">-e</span> count.txt<span class="bu"> ]</span>; <span class="kw">then</span> <span class="bu">echo</span> <span class="st">&quot;File exist&quot;</span><span class="kw">;</span> <span class="kw">else</span> <span class="bu">echo</span> <span class="st">&quot;File does not exist&quot;</span><span class="kw">;</span> <span class="kw">fi</span>
-<span class="bu">echo</span> --- Or ---
-<span class="kw">if</span><span class="bu"> [</span> <span class="ot">!</span> <span class="ot">-e</span> count.txt<span class="bu"> ]</span>; <span class="kw">then</span> <span class="bu">echo</span> <span class="st">&quot;File does not exist&quot;</span><span class="kw">;</span> <span class="kw">else</span> <span class="bu">echo</span> <span class="st">&quot;File exist&quot;</span><span class="kw">;</span> <span class="kw">fi</span>
-<span class="bu">echo</span> --- Or ---
-<span class="kw">if</span><span class="bu"> [</span> <span class="ot">!</span> <span class="ot">-e</span> count.txt<span class="bu"> ]</span>; <span class="kw">then</span> <span class="bu">echo</span> <span class="st">&quot;File does not exist&quot;</span><span class="kw">;</span> <span class="kw">elif</span><span class="bu"> [</span> <span class="ot">-e</span> count.txt<span class="bu"> ]</span>; <span class="kw">then</span>  <span class="bu">echo</span> <span class="st">&quot;File exist&quot;</span><span class="kw">;</span> <span class="kw">else</span> <span class="bu">echo</span> <span class="st">&quot;NA&quot;</span><span class="kw">;</span> <span class="kw">fi</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb24-1" data-line-number="1"><span class="kw">if</span><span class="bu"> [</span> <span class="ot">-e</span> count.txt<span class="bu"> ]</span>; <span class="kw">then</span> <span class="bu">echo</span> <span class="st">&quot;File exist&quot;</span><span class="kw">;</span> <span class="kw">else</span> <span class="bu">echo</span> <span class="st">&quot;File does not exist&quot;</span><span class="kw">;</span> <span class="kw">fi</span></a>
+<a class="sourceLine" id="cb24-2" data-line-number="2"><span class="bu">echo</span> --- Or ---</a>
+<a class="sourceLine" id="cb24-3" data-line-number="3"><span class="kw">if</span><span class="bu"> [</span> <span class="ot">!</span> <span class="ot">-e</span> count.txt<span class="bu"> ]</span>; <span class="kw">then</span> <span class="bu">echo</span> <span class="st">&quot;File does not exist&quot;</span><span class="kw">;</span> <span class="kw">else</span> <span class="bu">echo</span> <span class="st">&quot;File exist&quot;</span><span class="kw">;</span> <span class="kw">fi</span></a>
+<a class="sourceLine" id="cb24-4" data-line-number="4"><span class="bu">echo</span> --- Or ---</a>
+<a class="sourceLine" id="cb24-5" data-line-number="5"><span class="kw">if</span><span class="bu"> [</span> <span class="ot">!</span> <span class="ot">-e</span> count.txt<span class="bu"> ]</span>; <span class="kw">then</span> <span class="bu">echo</span> <span class="st">&quot;File does not exist&quot;</span><span class="kw">;</span> <span class="kw">elif</span><span class="bu"> [</span> <span class="ot">-e</span> count.txt<span class="bu"> ]</span>; <span class="kw">then</span>  <span class="bu">echo</span> <span class="st">&quot;File exist&quot;</span><span class="kw">;</span> <span class="kw">else</span> <span class="bu">echo</span> <span class="st">&quot;NA&quot;</span><span class="kw">;</span> <span class="kw">fi</span></a></code></pre></div>
 <pre><code>## File exist
 ## --- Or ---
 ## File exist
@@ -763,7 +756,7 @@ command &gt;&gt; file: appends a command’s output to a file
 <li>Nano</li>
 <li>Emacs</li>
 </ul>
-<p>To open the text editors simply run <code>vi</code>, <code>nano</code> or <code>emacs -nw</code>. You may use <code>ctrl+z</code> to suspend the editor and return to the Bash terminal and enter <code>fg</code> in the Bash terminal to return the editor. To exit, in Vi first press <code>esc</code> and then enter <code>:q!</code>, in Nano you may use <code>ctrl+x</code>, and in Emacs <code>ctrl+x ctrl+c</code>. Vi and Emacs have more futures in comparison to Nano but they are more difficult as well.</p>
+<p>To open the text editors simply run <code>vi</code>, <code>nano</code> or <code>emacs -nw</code>. We can use <code>ctrl+z</code> to suspend the editor and return to the Bash terminal and enter <code>fg</code> in the Bash terminal to return the editor. To exit from Vi first press <code>esc</code> and then enter <code>:q!</code>, from Nano use <code>ctrl+x</code>, and from Emacs press <code>ctrl+x ctrl+c</code>. Vi and Emacs have more futures in comparison to Nano but they are more difficult as well.</p>
 <p>The following are some important commands in Nano. Note that <code>^</code> is <code>ctrl</code> and <code>M-</code> is <code>alt</code>.</p>
 <ul>
 <li><code>^s</code>: save</li>
@@ -823,26 +816,26 @@ command &gt;&gt; file: appends a command’s output to a file
 <div id="shell-script" class="section level2">
 <h2>Shell script</h2>
 <p>Now, we can make Shell script to crate a small program including Bash commands and other programs that we want. Let’s make a program to shows rows 3 to 5 of a file in Shell scripts. Use <code>nano script.sh</code> to open <code>nano</code> text editor to make <code>script.sh</code> and insert the following lines:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co">#!/bin/bash</span>
-<span class="fu">sort</span> names.txt <span class="kw">|</span> <span class="fu">head</span> -n 5 <span class="kw">|</span> <span class="fu">tail</span> -n 3</code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb26-1" data-line-number="1"><span class="co">#!/bin/bash</span></a>
+<a class="sourceLine" id="cb26-2" data-line-number="2"><span class="fu">sort</span> names.txt <span class="kw">|</span> <span class="fu">head</span> -n 5 <span class="kw">|</span> <span class="fu">tail</span> -n 3</a></code></pre></div>
 <p>The first line shows the language of the program which is Bash in here. To run the program use:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">bash</span> script.sh</code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb27-1" data-line-number="1"><span class="fu">bash</span> script.sh</a></code></pre></div>
 <pre><code>## Dori
 ## Dori
 ## Jackie</code></pre>
-<p>You may use the following program to show rows 3 to 5 of a given file. Use <code>nano script_1.sh</code> and insert the following lines:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co">#!/bin/bash</span>
-<span class="fu">sort</span> <span class="st">&quot;</span><span class="va">$1</span><span class="st">&quot;</span> <span class="kw">|</span> <span class="fu">head</span> -n 5 <span class="kw">|</span> <span class="fu">tail</span> -n 3</code></pre></div>
+<p>We can use the following program to show rows 3 to 5 of a given file. Use <code>nano script_1.sh</code> and insert the following lines:</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb29-1" data-line-number="1"><span class="co">#!/bin/bash</span></a>
+<a class="sourceLine" id="cb29-2" data-line-number="2"><span class="fu">sort</span> <span class="st">&quot;</span><span class="va">$1</span><span class="st">&quot;</span> <span class="kw">|</span> <span class="fu">head</span> -n 5 <span class="kw">|</span> <span class="fu">tail</span> -n 3</a></code></pre></div>
 <p>To run the code use:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">bash</span> script_1.sh names.txt</code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb30-1" data-line-number="1"><span class="fu">bash</span> script_1.sh names.txt</a></code></pre></div>
 <pre><code>## Dori
 ## Dori
 ## Jackie</code></pre>
 <p>Also we can write a program that works for any given files. Use <code>nano script_all.sh</code> and insert the following lines:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co">#!/bin/bash</span>
-<span class="kw">for</span> <span class="ex">line</span> in <span class="st">&quot;</span><span class="va">$@</span><span class="st">&quot;</span><span class="kw">;</span> <span class="kw">do</span> <span class="fu">sort</span> <span class="va">$line</span> <span class="kw">|</span> <span class="fu">head</span> -n 5 <span class="kw">|</span> <span class="fu">tail</span> -n 3<span class="kw">;</span> <span class="kw">done</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb32-1" data-line-number="1"><span class="co">#!/bin/bash</span></a>
+<a class="sourceLine" id="cb32-2" data-line-number="2"><span class="kw">for</span> <span class="ex">line</span> in <span class="st">&quot;</span><span class="va">$@</span><span class="st">&quot;</span><span class="kw">;</span> <span class="kw">do</span> <span class="fu">sort</span> <span class="va">$line</span> <span class="kw">|</span> <span class="fu">head</span> -n 5 <span class="kw">|</span> <span class="fu">tail</span> -n 3<span class="kw">;</span> <span class="kw">done</span></a></code></pre></div>
 <p>To run the code use:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">bash</span> script_all.sh names.txt grade.txt</code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb33-1" data-line-number="1"><span class="fu">bash</span> script_all.sh names.txt grade.txt</a></code></pre></div>
 <pre><code>## Dori
 ## Dori
 ## Jackie
@@ -850,10 +843,10 @@ command &gt;&gt; file: appends a command’s output to a file
 ## B
 ## B+</code></pre>
 <p>For another example let write a program to find a certain pattern within some files in <code>bash_test</code> directory. Use <code>nano name_select.sh</code> and insert:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co">#!/bin/bash</span>
-<span class="fu">grep</span> -w <span class="va">$1</span> -r <span class="va">$2</span> <span class="kw">|</span> <span class="fu">cut</span> -d : -f 2 <span class="op">&gt;</span> <span class="va">$1</span>.txt</code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb35-1" data-line-number="1"><span class="co">#!/bin/bash</span></a>
+<a class="sourceLine" id="cb35-2" data-line-number="2"><span class="fu">grep</span> -w <span class="va">$1</span> -r <span class="va">$2</span> <span class="kw">|</span> <span class="fu">cut</span> -d : -f 2 <span class="op">&gt;</span> <span class="va">$1</span>.txt</a></code></pre></div>
 <p>To find name <code>Dori</code> among all files in the current directory (<code>.</code>) use:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">bash</span> name_select.sh Dori .</code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb36-1" data-line-number="1"><span class="fu">bash</span> name_select.sh Dori .</a></code></pre></div>
 <p>To see the output run <code>cat Dori.txt</code>.</p>
 </div>
 
@@ -897,6 +890,49 @@ $(document).ready(function () {
 });
 
 
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
 </script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
