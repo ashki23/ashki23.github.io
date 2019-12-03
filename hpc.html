@@ -557,9 +557,9 @@ scancel -u &lt;username&gt;: cancel all the user jobs</code></pre>
 <a class="sourceLine" id="cb2-11" data-line-number="11"><span class="bu">echo</span> <span class="st">&#39;This script is running on:&#39;</span></a>
 <a class="sourceLine" id="cb2-12" data-line-number="12"><span class="fu">hostname</span></a>
 <a class="sourceLine" id="cb2-13" data-line-number="13"><span class="fu">sleep</span> 120</a></code></pre></div>
-<p>Special characters <code>#!</code> (shebang) at the beginning of scripts specifies what program should be used (i.e. <code>/bin/bash</code> or <code>/usr/bin/python3</code>). SLURM uses <code>#SBATCH</code> special comment to denote special scheduler-specific options. There are several options that you may find by <code>sbatch --help</code>. For example, the above file uses 1 nodes, 4 gigabytes of memory, 10 CPUs per task, using partition <code>hpc0</code>, 2 days and 5 hours of walltime, gives a new name to the job, and email you when the job is ended. Now we can submit the job file by <code>sbatch example-job.sh</code>. You may use <code>squeue -u USER</code> or <code>sacct -u USER</code> to check the job file status, and use <code>scancel JOBID</code> to cancel the job. You may find more sbatch options <a href="https://slurm.schedmd.com/sbatch.html">here</a>.</p>
+<p>Special characters <code>#!</code> (shebang) at the beginning of scripts specifies what program should be used (i.e. <code>/bin/bash</code> or <code>/usr/bin/python3</code>). SLURM uses <code>#SBATCH</code> special comment to denote special scheduler-specific options. To see more options, use <code>sbatch --help</code>. For example, the above file uses 1 nodes, 4 gigabytes of memory, 10 CPUs per task, using partition <code>hpc0</code>, 2 days and 5 hours of walltime, gives a new name to the job, and email you when the job is ended. Now we can submit the job file by <code>sbatch example-job.sh</code>. We can use <code>squeue -u USER</code> or <code>sacct -u USER</code> to check the job file status, and use <code>scancel JOBID</code> to cancel the job. You may find more sbatch options <a href="https://slurm.schedmd.com/sbatch.html">here</a>.</p>
 <p>To run a single command, we can use <code>srun</code>. For instance, <code>srun -c 2 echo &quot;This job will use 2 CPUs.&quot;</code> submits a job and allocates 2 CPUs. Also, we can use <code>srun</code> to open a program in an interaction mode. For example, <code>srun --pty bash</code> will open a Bash shell in a computation node.</p>
-<p><strong>Note</strong>: in general, when we connect to a cluster we will go to a node, called <strong>login node</strong>, which is not meant to do heavy computational tasks. So, to do your computations in a proper way, you should always use either <strong><code>sbatch</code></strong> or <strong><code>srun</code></strong>.</p>
+<p><strong>Note</strong>: in general, when we connect to a cluster we will go to a node, called <strong>login node</strong>, which is not meant to do heavy computational tasks. So, to do our computations in a proper way, we should always use either <strong><code>sbatch</code></strong> or <strong><code>srun</code></strong>.</p>
 <p>Usually there are many <strong>modules</strong> available on the clusters. To find and load these modules use:</p>
 <pre class="txt"><code>module avail: shows all avaliable madules (programs) in the cluster
 module load &lt;name&gt;: to load a module ex. module load R or python
@@ -568,8 +568,8 @@ module unload &lt;name&gt;: to unload a module
 module purge: to unload all modules</code></pre>
 <p>To create a template <code>sbatch</code> job file, use the following steps:</p>
 <ol style="list-style-type: decimal">
-<li>generate a file including all codes that you want to run in the cluster</li>
-<li>generate a Bash file including all modules that are required for your job (<code>environment.sh</code>)</li>
+<li>generate a file including all codes that we want to run in the cluster</li>
+<li>generate a Bash file including all modules that are required for the sending job (<code>environment.sh</code>)</li>
 <li>generate a Bash file to call steps 1 and 2 including all <code>#SBATCH</code> options (<code>job_file.sh</code>)</li>
 <li>use <code>sbatch</code>to run the generated file in step 3</li>
 </ol>
@@ -608,7 +608,7 @@ module purge: to unload all modules</code></pre>
 <h2>Transferring files</h2>
 <div id="secure-copy-scp" class="section level3">
 <h3>Secure copy (scp)</h3>
-<p>We can use secure copy or <code>scp</code> to transfer files from your local computer to the cluster and vice versa. For example, let’s transfer <code>code_example.py</code> from <code>temp/</code> directory on the <code>clark.edu</code> cluster to <code>Documents/</code> directory in your local computer when we are using the local computer. For this we can use:</p>
+<p>We can use secure copy or <code>scp</code> to transfer files from a local computer to a cluster and vice versa. For example, let’s transfer <code>code_example.py</code> from <code>temp/</code> directory on the <code>clark.edu</code> cluster to <code>Documents/</code> directory in your local computer when we are using the local computer. For this we can use:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="bu">cd</span> ~/Documents</a>
 <a class="sourceLine" id="cb7-2" data-line-number="2"><span class="fu">scp</span> user@clark.edu:/temp/code_example.py .</a></code></pre></div>
 <p>The <code>.</code> at the end of the code says, paste with the same name of the source file. To do the reverse task with:</p>
@@ -620,8 +620,8 @@ module purge: to unload all modules</code></pre>
 </div>
 <div id="ssh-file-transfer-protocol-sftp" class="section level3">
 <h3>SSH file transfer protocol (sftp)</h3>
-<p>The other method to transfer data between your local machine and a cluster is using SSH file transfer protocol or <code>sftp</code>. In <code>sftp</code> we can use tab completion for finding files very easily. You may connect to a cluster through <code>sftp</code> very similar to <code>ssh</code> by running <code>sftp username@server</code>.</p>
-<p>You can use most of the Bash commands when using <code>sftp</code> and at the same time access to both cluster and local computer. Usually you can apply the bash commands in you local system by adding <code>l</code> to the beginning of the commands. For example:</p>
+<p>The other method to transfer data between the local machine and a cluster is using SSH file transfer protocol or <code>sftp</code>. In <code>sftp</code> we can use tab completion for finding files very easily. We can connect to a cluster through <code>sftp</code> very similar to <code>ssh</code> by running <code>sftp username@server</code>.</p>
+<p>We can also use most of the Bash commands when using <code>sftp</code> and at the same time access to both cluster and local computer. Usually we can apply the bash commands in the local system by adding <code>l</code> to the beginning of the commands. For example:</p>
 <pre class="txt"><code>pwd: print working directory on the cluster
 lpwd: print working directtory on the local computer
 cd: chnage directory on the cluster
@@ -630,20 +630,20 @@ lcd: change directtory on the local computer</code></pre>
 </div>
 <div id="wget" class="section level3">
 <h3>Wget</h3>
-<p>To get data from web, also, you can use <code>wget</code> command to download whatever you want on the cluster.</p>
+<p>To get data from web, also, we can use <code>wget</code> command to download files on the cluster.</p>
 <hr />
 </div>
 </div>
 <div id="software-installation" class="section level2">
 <h2>Software installation</h2>
-<p>When you login to a cluster as a user you will only have permission to change user level files (home directory <code>cd ~</code> and higher). So, in this case you never be able to install/update software that are located in the root directory (<code>cd /</code>).</p>
-<p>Note that you can find the location of software by loading a module and using <code>which</code> command, for example, <code>module load miniconda3</code> and then run <code>which python3</code>. For instance, a directory in the root directory could include <code>software</code> and <code>spack</code> directories for allocating software. Many clusters use <a href="https://spack.readthedocs.io/en/latest/">Spack</a> to built required environments and install software but some software are not in the Spack inventory that should be installed manually (in our example <code>software</code> directory includes them).</p>
-<p>As a user of a cluster you have several ways to build your own system and install and update software that you need:</p>
+<p>When we login to a cluster, as a user we will only have permission to change user level files (home directory <code>cd ~</code> and higher). So, in this case, we never be able to install/update software that are located in the root directory (<code>cd /</code>).</p>
+<p>Note that we can find the location of software by loading a module and using <code>which</code> command, for example, <code>module load miniconda3</code> and then run <code>which python3</code>. For instance, a directory in the root directory could include <code>software</code> and <code>spack</code> directories for allocating software. Many clusters use <a href="https://spack.readthedocs.io/en/latest/">Spack</a> to built required environments and install software but some software are not in the Spack inventory that should be installed manually (in our example <code>software</code> directory includes them).</p>
+<p>As a cluster user, we have several ways to build our own system and install and update software:</p>
 <ol style="list-style-type: decimal">
-<li><p><strong>Python</strong>: If you only need several Python packages probably the easiest way is making a virtual environment by <code>venv</code> module in Python3. After that you will be able to use <code>pip</code> package manager to install packages that you want.</p></li>
-<li><p><strong>Miniconda</strong>: Miniconda, a light version of Anaconda, let you install many software including Python, R and their packages. You can try <code>module load anaconda3</code> to load the module and then use <code>conda</code> to create a virtual environment and install software and packages. Note that if the cluster does not include <code>miniconda3</code> you may use the third option to install it.</p></li>
-<li><p><strong>Spack</strong>: it gives you more freedom to install software and packages that are available in Spack (see <a href="https://spack.readthedocs.io/en/latest/package_list.html#gurobi">here</a>. To use Spack you need to install Spack first on you local directories (which is above <code>cd ~</code>) and then use <code>spack</code> to install and load packages. You may learn more about Spack <a href="">here</a>. Note that this way might take long time to install Spack and the modules, so, first make sure the second option could not install your requirements.</p></li>
-<li><p><strong>Manually</strong>: Still there are many software that are not in Conda or Spack. You should follow the software instruction to install them. Make sure see (if exist) the ReadMe file, <code>cat ReadMe</code>, and configure options, <code>./configure --help</code>, in the installation directory. Since you are not using root directory, make sure use the right directory that all the dependencies already installed (i.e <code>./configure --prefix=${LOCAL}</code> (define LOCAL first)). This method could be the hardest way, so, first make sure Conda and Spack could not help you. Note that software names might be slightly different in Conda or Spack so have a look on all the names that are close.</p></li>
+<li><p><strong>Python</strong>: If we only need several Python packages probably the easiest way is making a virtual environment by <code>venv</code> module in Python3. After that we will be able to use <code>pip</code> package manager to install packages that you want.</p></li>
+<li><p><strong>Miniconda</strong>: Miniconda, a light version of Anaconda, let us install many software including Python, R and their packages. We can try <code>module load anaconda3</code> to load the module and then use <code>conda</code> to create a virtual environment and install software and packages. Note that if the cluster does not include <code>miniconda3</code>, then you may use the third option to install it.</p></li>
+<li><p><strong>Spack</strong>: it gives us more freedom to install software and packages that are available in Spack (see <a href="https://spack.readthedocs.io/en/latest/package_list.html#gurobi">here</a>. To use Spack, we need to install it on a local directories (which is above <code>cd ~</code>) and then use <code>spack</code> to install and load packages. Note this way might take a lot of time to install Spack and the modules, so, first make sure the second option could not install your requirements.</p></li>
+<li><p><strong>Manually</strong>: Still there are many software that are not in Conda or Spack. We should follow the software instruction to install them. Make sure review (if exist) the ReadMe file, <code>cat ReadMe</code>, and configure options, <code>./configure --help</code>, in the installation directory. Since, we are not using root directory, make sure to use the right directory that all the dependencies already installed (i.e <code>./configure --prefix=${LOCAL}</code> (define LOCAL first)). This method could be the hardest way, so, first make sure Conda and Spack could not help you. Note that software names might be slightly different in Conda or Spack so have a look on all the names that are close.</p></li>
 </ol>
 </div>
 
