@@ -68,67 +68,41 @@
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css" data-origin="pandoc">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {  }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 
 </style>
 <script>
@@ -378,12 +352,6 @@ $(document).ready(function () {
 }
 }
 
-@media print {
-.toc-content {
-  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
-  float: right;
-}
-}
 
 .toc-content {
   padding-left: 30px;
@@ -533,16 +501,16 @@ h4.author {
 <div id="advanced-packaging-toolkit" class="section level3">
 <h3>Advanced Packaging Toolkit</h3>
 <p>Advanced Packaging Toolkit (APT) is Debian package manager. To update packages we can use the following commands at a terminal prompt:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="fu">sudo</span> apt update</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="fu">sudo</span> apt upgrade</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> apt update
+<span class="fu">sudo</span> apt upgrade</code></pre></div>
 <p>To remove cache files:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="fu">sudo</span> apt autoremove</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="fu">sudo</span> apt autoclean</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> apt autoremove
+<span class="fu">sudo</span> apt autoclean</code></pre></div>
 <p>To install and remove a package:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="fu">sudo</span> apt install PackageName</a>
-<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="fu">sudo</span> apt remove PackageName</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> apt install PackageName
+<span class="fu">sudo</span> apt remove PackageName</code></pre></div>
 <p>If some Ubuntu desktop packages were accidentally removed, you may try installing them by:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="fu">sudo</span> apt install ubuntu-desktop</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> apt install ubuntu-desktop</code></pre></div>
 <p>The following is the list of options:</p>
 <ul>
 <li><code>-h, --help</code>: show a short help</li>
@@ -595,36 +563,36 @@ h4.author {
 <h3>Remote connections</h3>
 <p>Remmina is the default remote desktop client in Ubuntu that supports Remote Desktop Protocol (RDP) and Virtual Network Computing (VNC) to access other Windows and Linux computers with graphical interfaces. <a href="https://www.realvnc.com/en/connect/">RealVNC</a> also is a good alternative for VNC remote access that you might look.</p>
 <p>For a SSH connection we can easily use this command at a terminal prompt (use your own user name and remote host address):</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="fu">ssh</span> username@remotehost</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">ssh</span> username@remotehost</code></pre></div>
 <p>We can also use an IP address instead of the remote host address in the above command. To find the host IP address, use <code>ip a | grep inet</code> at a terminal prompt of the host computer.</p>
 <p>If you are going to connect to another Linux computer through SSH, make sure OpenSSH Server client is installed on the host computer. To install the OpenSSH client, use this command at a terminal prompt of the host computer:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="fu">sudo</span> apt install openssh-server</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> apt install openssh-server</code></pre></div>
 <p>We can use X server for remotely displaying applications through SSH. Use this command at a terminal prompt:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="fu">ssh</span> -X username@remotehost</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">ssh</span> -X username@remotehost</code></pre></div>
 <p>To display the application simply run it at the terminal prompt. For example:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="ex">xclock</span> <span class="co"># Display the server clock</span></a>
-<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="ex">xeyes</span> <span class="co"># Display a pair of eyes!</span></a>
-<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="ex">nautilus</span> <span class="co"># Display Files</span></a>
-<a class="sourceLine" id="cb8-4" data-line-number="4"><span class="ex">google-chrome</span> <span class="co"># Display Chrome browser (if installed)</span></a>
-<a class="sourceLine" id="cb8-5" data-line-number="5"><span class="ex">rstudio</span> <span class="co"># Display RStudio (if installed)</span></a>
-<a class="sourceLine" id="cb8-6" data-line-number="6"><span class="ex">spyder</span> <span class="co"># Display Spyder (if installed)</span></a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">xclock</span> <span class="co"># Display the server clock</span>
+<span class="ex">xeyes</span> <span class="co"># Display a pair of eyes!</span>
+<span class="ex">nautilus</span> <span class="co"># Display Files</span>
+<span class="ex">google-chrome</span> <span class="co"># Display Chrome browser (if installed)</span>
+<span class="ex">rstudio</span> <span class="co"># Display RStudio (if installed)</span>
+<span class="ex">spyder</span> <span class="co"># Display Spyder (if installed)</span></code></pre></div>
 <p>When using slower links the data can be compressed using the -C flag:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="fu">ssh</span> -X -C username@remotehost</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">ssh</span> -X -C username@remotehost</code></pre></div>
 </div>
 <div id="online-accounts" class="section level3">
 <h3>Online accounts</h3>
 <p>We can add online accounts such as Google, Microsoft, and MS Exchange accounts to <code>Settings &gt; Online Account</code>. For Microsoft Exchange account we need the following information:</p>
 <ul>
-<li>Email: <a href="mailto:user@mail.missouri.edu" class="email">user@mail.missouri.edu</a></li>
+<li>Email: <a href="mailto:user@mail.missouri.edu">user@mail.missouri.edu</a></li>
 <li>Password: user password</li>
-<li>Username: <a href="mailto:user@mail.missouri.edu" class="email">user@mail.missouri.edu</a></li>
+<li>Username: <a href="mailto:user@mail.missouri.edu">user@mail.missouri.edu</a></li>
 <li>Server: <strong>outlook.office365.com</strong></li>
 </ul>
 <p>To be able to see MS Exchange calender and emails, you may install Evolution which is an integrated mail, calendar, tasks and contact management application for Ubuntu. Use this command at a terminal prompt:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="fu">sudo</span> apt install evolution-ews</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> apt install evolution-ews</code></pre></div>
 <p>If you already have Evolution installed, you might need to kill and restart Evolution to see MS exchange mails and calender. Use these commands at a terminal prompt:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="fu">rm</span> -rf .config/evolution/ .cache/evolution/ .local/share/evolution/</a>
-<a class="sourceLine" id="cb11-2" data-line-number="2"><span class="ex">pkill</span> evolution</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">rm</span> -rf .config/evolution/ .cache/evolution/ .local/share/evolution/
+<span class="ex">pkill</span> evolution</code></pre></div>
 </div>
 <div id="local-mirror" class="section level3">
 <h3>Local mirror</h3>
@@ -633,9 +601,9 @@ h4.author {
 <div id="disable-screen-rotation" class="section level3">
 <h3>Disable screen rotation</h3>
 <p>We can disable screen rotation by using:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="fu">sudo</span> apt remove iio-sensor-proxy</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> apt remove iio-sensor-proxy</code></pre></div>
 <p>To re-enable the feature, simply run:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="fu">sudo</span> apt install iio-sensor-proxy</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> apt install iio-sensor-proxy</code></pre></div>
 </div>
 <div id="hide-icons" class="section level3">
 <h3>Hide icons</h3>
@@ -643,11 +611,11 @@ h4.author {
 <pre class="text"><code>NoDisplay=true</code></pre>
 <p>For example use <code>sudo nano /usr/share/applications/R.desktop</code> to open the desktop file and add the above line to hide R icon from the menu.</p>
 <p>To hide Trash or Home from Desktop use:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb15-1" data-line-number="1"><span class="ex">gsettings</span> set org.gnome.nautilus.desktop trash-icon-visible false</a>
-<a class="sourceLine" id="cb15-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb15-3" data-line-number="3"><span class="co"># In Ubuntu 19.04</span></a>
-<a class="sourceLine" id="cb15-4" data-line-number="4"><span class="ex">gsettings</span> set org.gnome.shell.extensions.desktop-icons show-trash false</a>
-<a class="sourceLine" id="cb15-5" data-line-number="5"><span class="ex">gsettings</span> set org.gnome.shell.extensions.desktop-icons show-home false</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">gsettings</span> set org.gnome.nautilus.desktop trash-icon-visible false
+
+<span class="co"># In Ubuntu 19.04</span>
+<span class="ex">gsettings</span> set org.gnome.shell.extensions.desktop-icons show-trash false
+<span class="ex">gsettings</span> set org.gnome.shell.extensions.desktop-icons show-home false</code></pre></div>
 <p>We can return Trash and Home back to Desktop by setting <code>true</code> for the above commands.</p>
 </div>
 <div id="grub-menu" class="section level3">
@@ -674,13 +642,13 @@ h4.author {
 <div id="git" class="section level3">
 <h3>Git</h3>
 <p>To install Git, use:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb16-1" data-line-number="1"><span class="fu">sudo</span> apt install git</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> apt install git</code></pre></div>
 <p>You may learn more about Git <a href="https://ashki23.github.io/git.html">here</a>.</p>
 </div>
 <div id="emacs" class="section level3">
 <h3>Emacs</h3>
 <p>Emacs is a powerful text editor. Use the following to install Emacs:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb17-1" data-line-number="1"><span class="fu">sudo</span> apt install emacs</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> apt install emacs</code></pre></div>
 <p>You may learn more about Emacs <a href="https://ashki23.github.io/emacs.html">here</a>.</p>
 </div>
 <div id="python" class="section level3">
@@ -691,116 +659,116 @@ h4.author {
 <h3>Conda</h3>
 <p><a href="https://docs.conda.io/projects/conda/en/latest/">Conda</a> is an open source package management system and environment management system. Conda quickly installs, runs and updates packages and their dependencies. Conda easily creates, saves, loads, and switches between environments on your local computer. It was created for Python programs but it can package and distribute software for any language.</p>
 <p>Download Miniconda from <a href="https://docs.conda.io/en/latest/miniconda.html">here</a> for using Conda. After downloading the installer, enter the following command at a terminal prompt to install Miniconda.</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb18-1" data-line-number="1"><span class="fu">bash</span> ~/Downloads/Miniconda3-latest-Linux-x86_64.sh</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">bash</span> ~/Downloads/Miniconda3-latest-Linux-x86_64.sh</code></pre></div>
 <p>Follow the instruction to complete the installation. Run the following to prevent Conda to activate as base by default:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb19-1" data-line-number="1"><span class="ex">conda</span> config --set auto_activate_base false<span class="kw">`</span></a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">conda</span> config --set auto_activate_base false<span class="kw">`</span></code></pre></div>
 <p>To update Conda and update/install/remove other packages use:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb20-1" data-line-number="1"><span class="ex">conda</span> update conda</a>
-<a class="sourceLine" id="cb20-2" data-line-number="2"><span class="ex">conda</span> update/install/remove <span class="op">&lt;</span>pkg_name<span class="op">&gt;</span> </a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">conda</span> update conda
+<span class="ex">conda</span> update/install/remove <span class="op">&lt;</span>pkg_name<span class="op">&gt;</span> </code></pre></div>
 <p>To remove Miniconda, use:</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb21-1" data-line-number="1"><span class="fu">rm</span> -rf ~/miniconda3</a>
-<a class="sourceLine" id="cb21-2" data-line-number="2"><span class="fu">rm</span> -rf ~/.condarc ~/.conda ~/.continuum</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">rm</span> -rf ~/miniconda3
+<span class="fu">rm</span> -rf ~/.condarc ~/.conda ~/.continuum</code></pre></div>
 <p>Anaconda, the heavier version of Miniconda which includes Conda and many other Python/R data science packages, is available <a href="https://www.anaconda.com/distribution/#linux">here</a>. After download, install Anaconda by:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb22-1" data-line-number="1"><span class="fu">bash</span> ~/Downloads/Anaconda3-x.x.x-Linux-x86_64.sh</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">bash</span> ~/Downloads/Anaconda3-x.x.x-Linux-x86_64.sh</code></pre></div>
 <p>To update Anaconda use:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb23-1" data-line-number="1"><span class="ex">conda</span> update conda</a>
-<a class="sourceLine" id="cb23-2" data-line-number="2"><span class="ex">conda</span> update anaconda </a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">conda</span> update conda
+<span class="ex">conda</span> update anaconda </code></pre></div>
 <p>And to remove Anaconda run:</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb24-1" data-line-number="1"><span class="ex">conda</span> install anaconda-clean</a>
-<a class="sourceLine" id="cb24-2" data-line-number="2"><span class="ex">anaconda-clean</span> --yes</a>
-<a class="sourceLine" id="cb24-3" data-line-number="3"><span class="fu">rm</span> -rf ~/anaconda3</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">conda</span> install anaconda-clean
+<span class="ex">anaconda-clean</span> --yes
+<span class="fu">rm</span> -rf ~/anaconda3</code></pre></div>
 <p>To learn more about managing environments by Conda see the instruction in <a href="https://ashki23.github.io/python_env.html#miniconda">here</a>.</p>
 </div>
 <div id="r" class="section level3">
 <h3>R</h3>
 <p>We can use APT package manger to download R by:</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb25-1" data-line-number="1"><span class="ex">apt</span> install r-base-core</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">apt</span> install r-base-core</code></pre></div>
 <p>Note that APT might has an old version of R. It is better to check R version before installing by <code>apt-cache policy r-base-core</code>. If R version is very outdated, then to obtain the latest R, follow the instruction at <a href="https://cran.r-project.org/bin/linux/ubuntu/">R website</a> or use Conda to create an R environment including latest R by:</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb26-1" data-line-number="1"><span class="ex">conda</span> create --name r_env r-base</a>
-<a class="sourceLine" id="cb26-2" data-line-number="2"><span class="ex">conda</span> activate r_env <span class="co"># Activate env</span></a>
-<a class="sourceLine" id="cb26-3" data-line-number="3"><span class="ex">conda</span> update r-base <span class="co"># To update R</span></a>
-<a class="sourceLine" id="cb26-4" data-line-number="4"><span class="ex">R</span> <span class="co"># To open R</span></a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">conda</span> create --name r_env r-base
+<span class="ex">conda</span> activate r_env <span class="co"># Activate env</span>
+<span class="ex">conda</span> update r-base <span class="co"># To update R</span>
+<span class="ex">R</span> <span class="co"># To open R</span></code></pre></div>
 <p>In order to install GEO packages (i.e. <code>sf</code>), you might need to install GDAL on your system. Use the following to download GADL:</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb27-1" data-line-number="1"><span class="fu">sudo</span> apt update</a>
-<a class="sourceLine" id="cb27-2" data-line-number="2"><span class="fu">sudo</span> apt install libudunits2-dev</a>
-<a class="sourceLine" id="cb27-3" data-line-number="3"><span class="fu">sudo</span> apt install libgdal-dev</a>
-<a class="sourceLine" id="cb27-4" data-line-number="4"><span class="fu">sudo</span> apt install gdal-bin</a>
-<a class="sourceLine" id="cb27-5" data-line-number="5"><span class="ex">gdalinfo</span> --version</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> apt update
+<span class="fu">sudo</span> apt install libudunits2-dev
+<span class="fu">sudo</span> apt install libgdal-dev
+<span class="fu">sudo</span> apt install gdal-bin
+<span class="ex">gdalinfo</span> --version</code></pre></div>
 <p>Note that if you are a Conda user, you can use Conda to install your GEO packages. Conda will install all dependencies.</p>
 <p>We can also download <strong>RStudio</strong> from <a href="https://www.rstudio.com/products/rstudio/download/">here</a>. To uninstall RStudio, use:</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb28-1" data-line-number="1"><span class="fu">sudo</span> apt remove rstudio</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> apt remove rstudio</code></pre></div>
 </div>
 <div id="octave" class="section level3">
 <h3>Octave</h3>
 <p>We can install GNU Octave from the Ubuntu Software or use the following command at a terminal prompt.</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb29-1" data-line-number="1"><span class="fu">sudo</span> apt install octave</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> apt install octave</code></pre></div>
 <p>To open Octave run <code>octave</code> in a terminal prompt or click on GNU Octave in the Application Overview. To use Octave in Jupyter Notebook, we need to add Octave kernel to Jupyter Notebook. We can run the following commands at a terminal prompt to add the kernel.</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb30-1" data-line-number="1"><span class="ex">conda</span> config --add channels conda-forge</a>
-<a class="sourceLine" id="cb30-2" data-line-number="2"><span class="ex">conda</span> install octave_kernel</a>
-<a class="sourceLine" id="cb30-3" data-line-number="3"><span class="ex">conda</span> install texinfo <span class="co"># For using inline documentation (shift-tab)</span></a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">conda</span> config --add channels conda-forge
+<span class="ex">conda</span> install octave_kernel
+<span class="ex">conda</span> install texinfo <span class="co"># For using inline documentation (shift-tab)</span></code></pre></div>
 </div>
 <div id="julia" class="section level3">
 <h3>Julia</h3>
 <p>Download Julia Generic Linux Binaries for x86 from <a href="https://julialang.org/downloads/index.html">Julia</a> download page. Then, extract the downloaded <code>.tar.gz</code> file to a folder on your computer (for e.g. <code>/home</code>). To make things easier lets rename the extracted folder to Julia. To run Julia, we can create a symbolic link (<code>ln -s</code>) from Julia located in <code>/home/Julia/julia-1.1.0/bin/julia</code> to a folder that is on the system PATH (for e.g. <code>/usr/local/bin/</code>). To do that run the following command at a terminal prompt.</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb31-1" data-line-number="1"><span class="fu">sudo</span> ln -s /home/Julia/julia-1.1.0/bin/julia /usr/local/bin/julia</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> ln -s /home/Julia/julia-1.1.0/bin/julia /usr/local/bin/julia</code></pre></div>
 <p>To open Julia, run <code>julia</code> in a terminal prompt. To update, run the following in Julia.</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb32-1" data-line-number="1"><span class="ex">using</span> Pkg</a>
-<a class="sourceLine" id="cb32-2" data-line-number="2"><span class="ex">Pkg.update</span>()</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">using</span> Pkg
+<span class="ex">Pkg.update</span>()</code></pre></div>
 <p>We can add the Julia kernel to Jupyter Notebook by adding <code>IJulia</code> by running the following in Julia.</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb33-1" data-line-number="1"><span class="ex">using</span> Pkg</a>
-<a class="sourceLine" id="cb33-2" data-line-number="2"><span class="ex">Pkg.add</span>(<span class="st">&quot;IJulia&quot;</span>)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">using</span> Pkg
+<span class="ex">Pkg.add</span>(<span class="st">&quot;IJulia&quot;</span>)</code></pre></div>
 <p>You can use <code>exit()</code> command to exit from Julia. To uninstall Julia, directly use:</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb34-1" data-line-number="1"><span class="fu">sudo</span> apt remove julia</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> apt remove julia</code></pre></div>
 </div>
 <div id="ruby" class="section level3">
 <h3>Ruby</h3>
 <p>To install Ruby, run the following:</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb35-1" data-line-number="1"><span class="fu">sudo</span> apt install ruby</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> apt install ruby</code></pre></div>
 <p><code>gem</code> is the package manger for Ruby. To update packages and remove old versions use the following commands at a terminal prompt.</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb36-1" data-line-number="1"><span class="fu">sudo</span> gem update --system <span class="co"># Update the RubyGems system software</span></a>
-<a class="sourceLine" id="cb36-2" data-line-number="2"><span class="fu">sudo</span> gem update</a>
-<a class="sourceLine" id="cb36-3" data-line-number="3"><span class="fu">sudo</span> gem cleanup</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> gem update --system <span class="co"># Update the RubyGems system software</span>
+<span class="fu">sudo</span> gem update
+<span class="fu">sudo</span> gem cleanup</code></pre></div>
 <p>To install/uninstall packages use:</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb37-1" data-line-number="1"><span class="fu">sudo</span> gem install pkg name</a>
-<a class="sourceLine" id="cb37-2" data-line-number="2"><span class="fu">sudo</span> gem uninstall pkg name</a>
-<a class="sourceLine" id="cb37-3" data-line-number="3"><span class="ex">gem</span> list <span class="co"># List of the installed packages</span></a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> gem install pkg name
+<span class="fu">sudo</span> gem uninstall pkg name
+<span class="ex">gem</span> list <span class="co"># List of the installed packages</span></code></pre></div>
 <p>To use Ruby, run <code>irb</code> in a terminal prompt. We can use <code>exit()</code> command to exit from Ruby. To write a long Ruby code, use a text editor and use terminal prompt to run your code. For example, let assume we are going to run <code>test.rb</code> in the Documents folder:</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb38-1" data-line-number="1"><span class="ex">ruby</span> ~/Documents/test.rb</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">ruby</span> ~/Documents/test.rb</code></pre></div>
 <p>To uninstall Ruby, directly use:</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb39-1" data-line-number="1"><span class="fu">sudo</span> apt remove ruby</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> apt remove ruby</code></pre></div>
 </div>
 <div id="gurobi" class="section level3">
 <h3>Gurobi</h3>
 <p>To install Gurobi Optimizer download the installer for 64-bit Linux from <a href="http://www.gurobi.com/downloads/gurobi-optimizer">Gurobi download center</a>. Gurobi recommend <code>/opt</code> directory to install the software. To install the <code>tar.gz</code> file in <code>/opt</code>, open the terminal and run the following commands one by one (assume the <code>tar.gz</code> file is in the <code>Downloads/</code>):</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb40-1" data-line-number="1"><span class="bu">cd</span> Downloads/</a>
-<a class="sourceLine" id="cb40-2" data-line-number="2"><span class="fu">sudo</span> mv gurobi8.1.0_linux64.tar.gz /opt</a>
-<a class="sourceLine" id="cb40-3" data-line-number="3"><span class="bu">cd</span> /opt/</a>
-<a class="sourceLine" id="cb40-4" data-line-number="4"><span class="fu">sudo</span> tar xvfz gurobi8.1.0_linux64.tar.gz</a>
-<a class="sourceLine" id="cb40-5" data-line-number="5"><span class="fu">sudo</span> rm gurobi8.1.0_linux64.tar.gz</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">cd</span> Downloads/
+<span class="fu">sudo</span> mv gurobi8.1.0_linux64.tar.gz /opt
+<span class="bu">cd</span> /opt/
+<span class="fu">sudo</span> tar xvfz gurobi8.1.0_linux64.tar.gz
+<span class="fu">sudo</span> rm gurobi8.1.0_linux64.tar.gz</code></pre></div>
 <p>We have to modify a few environment variables to allow Gurobi’s executable files to be found when needed. Use <code>nano ~/.bashrc</code> to open<code>.bashrc</code> file by nano text editor and add the following lines to the file:</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb41-1" data-line-number="1"><span class="bu">export</span> <span class="va">GUROBI_HOME=</span><span class="st">&quot;/opt/gurobi810/linux64&quot;</span></a>
-<a class="sourceLine" id="cb41-2" data-line-number="2"><span class="bu">export</span> <span class="va">PATH=</span><span class="st">&quot;</span><span class="va">${PATH}</span><span class="st">:</span><span class="va">${GUROBI_HOME}</span><span class="st">/bin&quot;</span></a>
-<a class="sourceLine" id="cb41-3" data-line-number="3"><span class="bu">export</span> <span class="va">LD_LIBRARY_PATH=</span><span class="st">&quot;</span><span class="va">${LD_LIBRARY_PATH}</span><span class="st">:</span><span class="va">${GUROBI_HOME}</span><span class="st">/lib&quot;</span></a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">export</span> <span class="va">GUROBI_HOME=</span><span class="st">&quot;/opt/gurobi810/linux64&quot;</span>
+<span class="bu">export</span> <span class="va">PATH=</span><span class="st">&quot;</span><span class="va">${PATH}</span><span class="st">:</span><span class="va">${GUROBI_HOME}</span><span class="st">/bin&quot;</span>
+<span class="bu">export</span> <span class="va">LD_LIBRARY_PATH=</span><span class="st">&quot;</span><span class="va">${LD_LIBRARY_PATH}</span><span class="st">:</span><span class="va">${GUROBI_HOME}</span><span class="st">/lib&quot;</span></code></pre></div>
 <p>Press <code>ctrl+o</code> to save changes and <code>ctrl+x</code> to exit from nano and then close the terminal to set up the changes.</p>
 <p>The next step is to install Gurobi license. To get an academic licence, we need to register in Gurobi website and request for a free academic licence. To obtain a Gurobi license key you will need to run the <code>grbgetkey</code> command to retrieve your Gurobi license key. By default your key will be stored in <code>/home/user</code> directory, we can move the key to <code>/opt/gurobi/</code> if by:</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb42-1" data-line-number="1"><span class="bu">cd</span> /opt/</a>
-<a class="sourceLine" id="cb42-2" data-line-number="2"><span class="fu">mkdir</span> gurobi</a>
-<a class="sourceLine" id="cb42-3" data-line-number="3"><span class="bu">cd</span> ~</a>
-<a class="sourceLine" id="cb42-4" data-line-number="4"><span class="fu">sudo</span> mv gurobi.lic /opt/gurobi</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">cd</span> /opt/
+<span class="fu">mkdir</span> gurobi
+<span class="bu">cd</span> ~
+<span class="fu">sudo</span> mv gurobi.lic /opt/gurobi</code></pre></div>
 <p>To get help, version information and the location of the current Gurobi license file use:</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb43-1" data-line-number="1"><span class="ex">gurobi_cl</span> --help</a>
-<a class="sourceLine" id="cb43-2" data-line-number="2"><span class="ex">gurobi_cl</span> --version</a>
-<a class="sourceLine" id="cb43-3" data-line-number="3"><span class="ex">gurobi_cl</span> --license</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">gurobi_cl</span> --help
+<span class="ex">gurobi_cl</span> --version
+<span class="ex">gurobi_cl</span> --license</code></pre></div>
 <p><strong>For Python (Conda)</strong></p>
 <p>From a terminal prompt issue the following commands to add the Gurobi channel to your default search list and install the Gurobi package:</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb44-1" data-line-number="1"><span class="ex">conda</span> config --add channels http://conda.anaconda.org/gurobi</a>
-<a class="sourceLine" id="cb44-2" data-line-number="2"><span class="ex">conda</span> install gurobi</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">conda</span> config --add channels http://conda.anaconda.org/gurobi
+<span class="ex">conda</span> install gurobi</code></pre></div>
 <p>We can remove the Gurobi package at any time by:</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb45-1" data-line-number="1"><span class="ex">conda</span> remove gurobi</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">conda</span> remove gurobi</code></pre></div>
 <p>You may find more details <a href="http://www.gurobi.com/documentation/8.1/quickstart_windows/installing_the_anaconda_py.html#section:Anaconda">here</a>.</p>
 <p><strong>For R</strong></p>
 <p>The R package file can be found in the <code>installerdir/R</code> directory of your Gurobi installation. For a default installation of Gurobi 8.1.0, use the following command in R:</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb46-1" data-line-number="1"><span class="ex">install.packages</span>(<span class="st">&#39;/opt/gurobi810/linux64/R/gurobi_8.1-0_R_ver.tar.gz&#39;</span>, repos=NULL)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">install.packages</span>(<span class="st">&#39;/opt/gurobi810/linux64/R/gurobi_8.1-0_R_ver.tar.gz&#39;</span>, repos=NULL)</code></pre></div>
 <p>We need to adjust the path to match your install directory and version. You may find more details <a href="http://www.gurobi.com/documentation/8.1/quickstart_linux/r_installing_the_r_package.html">here</a>.</p>
 <p><strong>Examples</strong></p>
 <p>There are several samples for R and Python in <code>/opt/gurobi810/linux64/examples</code>.</p>

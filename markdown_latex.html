@@ -304,12 +304,6 @@ $(document).ready(function () {
 }
 }
 
-@media print {
-.toc-content {
-  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
-  float: right;
-}
-}
 
 .toc-content {
   padding-left: 30px;
@@ -443,25 +437,30 @@ h4.author {
   display: none;
 }
 </style>
-<p>R Markdown is a file format for making dynamic HTML documents with R Studio. An R Markdown document is written in Markdown and could contain chunks of embedded source codes, LaTeX formula and graphics. A basic knowledge about Markdown and LaTeX is required to create documents by R Markdown. This tutorial provides a quick reference to use Markdown and LaTeX.</p>
+<p>R Markdown is a file format for making dynamic HTML documents with R Studio. An R Markdown document is written in Markdown and could contain chunks of embedded source codes, LaTeX formula and graphics. A basic knowledge about Markdown and LaTeX is required to create HTML documents by R Markdown. This tutorial provides a quick reference to use Markdown and LaTeX.</p>
 <hr />
 <div id="markdown" class="section level1">
 <h1>Markdown</h1>
 <p>The following provides quick references to the most commonly used R Markdown syntax.</p>
 <div id="headers" class="section level2">
 <h2>Headers</h2>
+<div id="h3" class="section level3">
+<h3>H3</h3>
 <div id="h4" class="section level4">
 <h4>H4</h4>
 <div id="h5" class="section level5">
 <h5>H5</h5>
 <div id="h6" class="section level6">
 <h6>H6</h6>
-<pre class="markdown"><code># H1
-## H2
+<pre class="markdown"><code># Markdown
+The following provides quick references to the most commonly used R Markdown syntax.
+
+## Headers
 ### H3
 #### H4
 ##### H5
 ###### H6</code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -474,17 +473,15 @@ h4.author {
 <pre class="markdown"><code>~~Scratched Text~~</code></pre>
 <p>superscript<sup>2</sup></p>
 <pre class="markdown"><code>superscript^2^</code></pre>
-<p>Markdown doesn’t support underline, but we can use <u>HTML Text</u> instead. Also, <b>we</b> can <i>render</i> almost any <span style="color:red;">HTML</span> code that   we   <kbd>like</kbd>.</p>
-<pre class="markdown"><code>Markdown doesn&#39;t support underline, but we can use &lt;u&gt;HTML Text&lt;/u&gt; instead. Also, &lt;b&gt;we&lt;/b&gt; can &lt;i&gt;render&lt;/i&gt; almost any &lt;span style=&quot;color:red;&quot;&gt;HTML&lt;/span&gt; code that &amp;nbsp; we &amp;nbsp; &lt;kbd&gt;like&lt;/kbd&gt;.</code></pre>
+<p>Markdown doesn’t support underline, but we can use <u>HTML Text</u> instead. Also, <b>we</b> can <i>render</i> almost any <span style="color:red;">HTML</span> code that we   <kbd>like</kbd>   such as superscript<sup>2</sup>.</p>
+<pre class="markdown"><code>Markdown doesn&#39;t support underline, but we can use &lt;u&gt;HTML Text&lt;/u&gt; instead. Also, &lt;b&gt;we&lt;/b&gt; can &lt;i&gt;render&lt;/i&gt; almost any &lt;span style=&quot;color:red;&quot;&gt;HTML&lt;/span&gt; code that we &amp;nbsp; &lt;kbd&gt;like&lt;/kbd&gt; &amp;nbsp; such as superscript&lt;sup&gt;2&lt;/sup&gt;.</code></pre>
 <p>For manual line or page breaks, we can use following HTML and CSS codes:</p>
 <ul>
-<li>Line breaks:</li>
+<li><p>Line breaks:</p>
+<pre class="html"><code>&lt;br /&gt;</code></pre></li>
+<li><p>Print breaks:</p>
+<pre class="css"><code>&lt;p style=&quot;page-break-after:always;&quot;&gt;&lt;/p&gt;</code></pre></li>
 </ul>
-<pre class="html"><code>&lt;br /&gt;</code></pre>
-<ul>
-<li>Print breaks:</li>
-</ul>
-<pre class="css"><code>&lt;p style=&quot;page-break-after:always;&quot;&gt;&lt;/p&gt;</code></pre>
 </div>
 <div id="lists" class="section level2">
 <h2>Lists</h2>
@@ -638,9 +635,8 @@ else:
 <li>Markdown</li>
 </ul>
 <p>You can find more details <a href="https://rmarkdown.rstudio.com/authoring_knitr_engines.html%23sql">here</a>.</p>
-<p>Also, we can evaluate inline codes for example:</p>
-<p>There were 50 cars studied.</p>
-<pre class="markdown"><code>There were `r nrow(cars)` cars studied.</code></pre>
+<p>Also, we can evaluate inline codes. For example, there were 50 cars in the study.</p>
+<pre class="markdown"><code>For example, there were `r nrow(cars)` cars in the study.</code></pre>
 </div>
 <div id="chunk-options" class="section level2">
 <h2>Chunk options</h2>

@@ -287,12 +287,6 @@ $(document).ready(function () {
 }
 }
 
-@media print {
-.toc-content {
-  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
-  float: right;
-}
-}
 
 .toc-content {
   padding-left: 30px;
@@ -554,10 +548,8 @@ M-x package-install ess</code></pre>
 </ul></li>
 <li>create tables</li>
 <li>create TODO items</li>
-<li>save (<code>C-x C-s</code>), export (<code>C-c C-e</code>), and exit (<code>C-x C-c</code>)
-<ul>
+<li>save (<code>C-x C-s</code>), export (<code>C-c C-e</code>), and exit (<code>C-x C-c</code>)</li>
 <li>use <code>C-c C-e</code> and press <code>h</code> and then <code>o</code> to see HTML output</li>
-</ul></li>
 </ul>
 <p>To create above list in Org use:</p>
 <pre><code> ** Introduction
@@ -595,7 +587,7 @@ M-x package-install ess</code></pre>
 <tr class="header">
 <th>Name</th>
 <th>key</th>
-<th>Abbreviation</th>
+<th>Abbr.</th>
 </tr>
 </thead>
 <tbody>
@@ -621,13 +613,13 @@ M-x package-install ess</code></pre>
 </tr>
 </tbody>
 </table>
-<pre><code> | Name    | key   | Abbriviation |
- |---------+-------+--------------|
- | Control | Ctrl  | C            |
- | Meta    | Alt   | M            |
- | Shift   | Shift | S            |
- | Return  | Enter | RET          |</code></pre>
-<p>To create above table in org, we only need to insert <code>|Name|Key|Abbreviation</code> and press <code>tab</code> to make new row and insert <code>-tab</code> (i.e. <code>dash tab</code>) to draw the hline and press <code>tab</code>. Also you can use (these might be different in different OS):</p>
+<pre><code>| Name    | key   | Abbr. |
+|---------+-------+-------|
+| Control | Ctrl  | C     |
+| Meta    | Alt   | M     |
+| Shift   | Shift | S     |
+| Return  | Enter | RET   |</code></pre>
+<p>To create above table in org, we only need to insert <code>|Name|Key|Abbr.</code> and press <code>tab</code> to make new row and insert <code>-tab</code> (i.e. <code>dash tab</code>) to draw the hline and press <code>tab</code>. Also you can use (these might be different in different OS):</p>
 <ul>
 <li><code>M-up/down</code> to move rows</li>
 <li><code>M-left/right</code> to move columns</li>
@@ -647,9 +639,10 @@ M-x package-install ess</code></pre>
 <div id="latex" class="section level3">
 <h3>LaTeX</h3>
 <p>We can use LaTeX to write equations in Org. For example:</p>
-<p><span class="math display">\[\begin{equation}
+<span class="math display">\[\begin{equation}
 x=\sqrt{b}
-\end{equation}\]</span> If <span class="math inline">\(a^2=b\)</span> and <span class="math inline">\(b=2\)</span>, then the solution must be either <span class="math display">\[a=+\sqrt{2}\]</span> or <span class="math display">\[a=-\sqrt{2}\]</span></p>
+\end{equation}\]</span>
+<p>If <span class="math inline">\(a^2=b\)</span> and <span class="math inline">\(b=2\)</span>, then the solution must be either <span class="math display">\[a=+\sqrt{2}\]</span> or <span class="math display">\[a=-\sqrt{2}\]</span></p>
 <pre><code>#+BEGIN_SRC latex                
 \begin{equation}
 x=\sqrt{b}

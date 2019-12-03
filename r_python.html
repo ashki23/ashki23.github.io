@@ -68,67 +68,41 @@
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css" data-origin="pandoc">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {  }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 
 </style>
 <script>
@@ -378,12 +352,6 @@ $(document).ready(function () {
 }
 }
 
-@media print {
-.toc-content {
-  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
-  float: right;
-}
-}
 
 .toc-content {
   padding-left: 30px;
@@ -537,11 +505,11 @@ h4.author {
 <div id="operators" class="section level2">
 <h2>Operators</h2>
 <p>R arithmetic operators are <code>+</code> <code>-</code> <code>*</code> <code>/</code> <code>^</code> <code>% any %</code>. For example:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">a <span class="op">%/%</span><span class="st"> </span>b  <span class="co"># Intiger division</span></a>
-<a class="sourceLine" id="cb1-2" data-line-number="2">a <span class="op">%%</span><span class="st"> </span>a   <span class="co"># Remainder</span></a>
-<a class="sourceLine" id="cb1-3" data-line-number="3">A <span class="op">%*%</span><span class="st"> </span>B  <span class="co"># Matrix multiplication</span></a>
-<a class="sourceLine" id="cb1-4" data-line-number="4">a <span class="op">^</span><span class="st"> </span>n    <span class="co"># nth power </span></a>
-<a class="sourceLine" id="cb1-5" data-line-number="5">a <span class="op">^</span><span class="st"> </span><span class="dv">1</span><span class="op">/</span>n  <span class="co"># nth root</span></a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">a <span class="op">%/%</span><span class="st"> </span>b  <span class="co"># Intiger division</span>
+a <span class="op">%%</span><span class="st"> </span>a   <span class="co"># Remainder</span>
+A <span class="op">%*%</span><span class="st"> </span>B  <span class="co"># Matrix multiplication</span>
+a <span class="op">^</span><span class="st"> </span>n    <span class="co"># nth power </span>
+a <span class="op">^</span><span class="st"> </span><span class="dv">1</span><span class="op">/</span>n  <span class="co"># nth root</span></code></pre></div>
 <p>The other operators include:</p>
 <ul>
 <li>Negation: <code>!</code></li>
@@ -566,30 +534,30 @@ h4.author {
 <p><code>c</code> combines values into a vector. <code>cbind (rbind)</code> takes a sequence of vector, matrix or data-frame arguments and combine by columns (rows), respectively. This function keeps all array with a same type (e.g all int or char). <code>matrix</code> creates a matrix from the given set of values.</p>
 <p><code>data.frame</code> creates data frames, store each column separately as a different variable with different observations (n obs. of m variables). When we read a csv file it saves as a dataframe.</p>
 <p><code>list</code> makes a data structure that each row is not necessarily equal. For example if you have a loop that do not generate same amount of results at each iteration then you can store them in a list format.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">7</span>, <span class="dv">23</span>)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">7</span>, <span class="dv">23</span>)</code></pre></div>
 <pre><code>## [1]  1  2  3  4  5  6  7 23</code></pre>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">cbind</span>(<span class="dt">col1 =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">col2 =</span> <span class="dv">21</span><span class="op">:</span><span class="dv">25</span>, <span class="dt">col3 =</span> <span class="dv">31</span><span class="op">:</span><span class="dv">35</span>)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cbind</span>(<span class="dt">col1 =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">col2 =</span> <span class="dv">21</span><span class="op">:</span><span class="dv">25</span>, <span class="dt">col3 =</span> <span class="dv">31</span><span class="op">:</span><span class="dv">35</span>)</code></pre></div>
 <pre><code>##      col1 col2 col3
 ## [1,]    1   21   31
 ## [2,]    2   22   32
 ## [3,]    3   23   33
 ## [4,]    4   24   34
 ## [5,]    5   25   35</code></pre>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>,<span class="dv">21</span><span class="op">:</span><span class="dv">25</span>,<span class="dv">31</span><span class="op">:</span><span class="dv">35</span>), <span class="dv">5</span>, <span class="dv">3</span>)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>,<span class="dv">21</span><span class="op">:</span><span class="dv">25</span>,<span class="dv">31</span><span class="op">:</span><span class="dv">35</span>), <span class="dv">5</span>, <span class="dv">3</span>)</code></pre></div>
 <pre><code>##      [,1] [,2] [,3]
 ## [1,]    1   21   31
 ## [2,]    2   22   32
 ## [3,]    3   23   33
 ## [4,]    4   24   34
 ## [5,]    5   25   35</code></pre>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw">data.frame</span>(<span class="dt">col1 =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">col2 =</span> letters[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>], <span class="dt">col3 =</span> <span class="dv">31</span><span class="op">:</span><span class="dv">35</span>)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data.frame</span>(<span class="dt">col1 =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">col2 =</span> letters[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>], <span class="dt">col3 =</span> <span class="dv">31</span><span class="op">:</span><span class="dv">35</span>)</code></pre></div>
 <pre><code>##   col1 col2 col3
 ## 1    1    a   31
 ## 2    2    b   32
 ## 3    3    c   33
 ## 4    4    d   34
 ## 5    5    e   35</code></pre>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="kw">list</span>(<span class="dt">x =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">y =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">7</span>)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">list</span>(<span class="dt">x =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">y =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">7</span>)</code></pre></div>
 <pre><code>## $x
 ## [1] 1 2 3 4 5
 ## 
@@ -608,105 +576,105 @@ h4.author {
 <li>repeat</li>
 </ul>
 <p>The following are some simple examples of using these statements in R.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1">n &lt;-<span class="st"> </span><span class="dv">10</span></a>
-<a class="sourceLine" id="cb12-2" data-line-number="2"><span class="cf">if</span> (n <span class="op">==</span><span class="st"> </span><span class="dv">7</span>) {</a>
-<a class="sourceLine" id="cb12-3" data-line-number="3">  <span class="kw">print</span>(<span class="st">&quot;n is equal 7&quot;</span>)</a>
-<a class="sourceLine" id="cb12-4" data-line-number="4">} <span class="cf">else</span> <span class="cf">if</span> (n <span class="op">&gt;</span><span class="st"> </span><span class="dv">7</span>) {</a>
-<a class="sourceLine" id="cb12-5" data-line-number="5">  <span class="kw">print</span>(<span class="st">&quot;n is greater than 7&quot;</span>)</a>
-<a class="sourceLine" id="cb12-6" data-line-number="6">} <span class="cf">else</span> {</a>
-<a class="sourceLine" id="cb12-7" data-line-number="7">  <span class="kw">print</span>(<span class="st">&quot;n is smaller than 7&quot;</span>)</a>
-<a class="sourceLine" id="cb12-8" data-line-number="8">}</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">n &lt;-<span class="st"> </span><span class="dv">10</span>
+<span class="cf">if</span> (n <span class="op">==</span><span class="st"> </span><span class="dv">7</span>) {
+  <span class="kw">print</span>(<span class="st">&quot;n is equal 7&quot;</span>)
+} <span class="cf">else</span> <span class="cf">if</span> (n <span class="op">&gt;</span><span class="st"> </span><span class="dv">7</span>) {
+  <span class="kw">print</span>(<span class="st">&quot;n is greater than 7&quot;</span>)
+} <span class="cf">else</span> {
+  <span class="kw">print</span>(<span class="st">&quot;n is smaller than 7&quot;</span>)
+}</code></pre></div>
 <pre><code>## [1] &quot;n is greater than 7&quot;</code></pre>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1">n &lt;-<span class="st"> </span><span class="dv">7</span>  </a>
-<a class="sourceLine" id="cb14-2" data-line-number="2"><span class="cf">while</span> (n <span class="op">&lt;</span><span class="st"> </span><span class="dv">10</span>) {</a>
-<a class="sourceLine" id="cb14-3" data-line-number="3">  <span class="kw">print</span>(n)</a>
-<a class="sourceLine" id="cb14-4" data-line-number="4">  n &lt;-<span class="st"> </span>n <span class="op">+</span><span class="st"> </span><span class="dv">1</span> </a>
-<a class="sourceLine" id="cb14-5" data-line-number="5">}</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">n &lt;-<span class="st"> </span><span class="dv">7</span>  
+<span class="cf">while</span> (n <span class="op">&lt;</span><span class="st"> </span><span class="dv">10</span>) {
+  <span class="kw">print</span>(n)
+  n &lt;-<span class="st"> </span>n <span class="op">+</span><span class="st"> </span><span class="dv">1</span> 
+}</code></pre></div>
 <pre><code>## [1] 7
 ## [1] 8
 ## [1] 9</code></pre>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1">mysum &lt;-<span class="st"> </span><span class="dv">0</span></a>
-<a class="sourceLine" id="cb16-2" data-line-number="2"><span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">c</span>(<span class="dv">10</span>,<span class="dv">20</span>,<span class="dv">30</span>)) {</a>
-<a class="sourceLine" id="cb16-3" data-line-number="3">  mysum &lt;-<span class="st"> </span>mysum <span class="op">+</span><span class="st"> </span>i</a>
-<a class="sourceLine" id="cb16-4" data-line-number="4">}</a>
-<a class="sourceLine" id="cb16-5" data-line-number="5"><span class="kw">print</span>(mysum)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mysum &lt;-<span class="st"> </span><span class="dv">0</span>
+<span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">c</span>(<span class="dv">10</span>,<span class="dv">20</span>,<span class="dv">30</span>)) {
+  mysum &lt;-<span class="st"> </span>mysum <span class="op">+</span><span class="st"> </span>i
+}
+<span class="kw">print</span>(mysum)</code></pre></div>
 <pre><code>## [1] 60</code></pre>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1">mysum &lt;-<span class="st"> </span><span class="dv">0</span></a>
-<a class="sourceLine" id="cb18-2" data-line-number="2"><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">100</span>) { </a>
-<a class="sourceLine" id="cb18-3" data-line-number="3">  mysum &lt;-<span class="st"> </span>mysum <span class="op">+</span><span class="st"> </span>i</a>
-<a class="sourceLine" id="cb18-4" data-line-number="4">  <span class="cf">if</span> (mysum <span class="op">&gt;</span><span class="st"> </span><span class="dv">25</span>) {</a>
-<a class="sourceLine" id="cb18-5" data-line-number="5">    <span class="cf">break</span></a>
-<a class="sourceLine" id="cb18-6" data-line-number="6">  }</a>
-<a class="sourceLine" id="cb18-7" data-line-number="7">}</a>
-<a class="sourceLine" id="cb18-8" data-line-number="8"><span class="kw">print</span>(mysum)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mysum &lt;-<span class="st"> </span><span class="dv">0</span>
+<span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">100</span>) { 
+  mysum &lt;-<span class="st"> </span>mysum <span class="op">+</span><span class="st"> </span>i
+  <span class="cf">if</span> (mysum <span class="op">&gt;</span><span class="st"> </span><span class="dv">25</span>) {
+    <span class="cf">break</span>
+  }
+}
+<span class="kw">print</span>(mysum)</code></pre></div>
 <pre><code>## [1] 28</code></pre>
 </div>
 <div id="defining-functions" class="section level2">
 <h2>Defining functions</h2>
 <p>By using <code>function</code> command we can define our own functions in R. Each function has a certain number of variables. For instance, function <span class="math inline">\(\Delta = b^2 - 4ac\)</span> needs three variables to compute the result. The following show some simple examples.</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1"><span class="co"># Delta</span></a>
-<a class="sourceLine" id="cb20-2" data-line-number="2">delta &lt;-<span class="st"> </span><span class="cf">function</span>(a, b, c) {</a>
-<a class="sourceLine" id="cb20-3" data-line-number="3">  b<span class="op">^</span><span class="dv">2</span> <span class="op">-</span><span class="st"> </span><span class="dv">4</span><span class="op">*</span>a<span class="op">*</span>c</a>
-<a class="sourceLine" id="cb20-4" data-line-number="4">}</a>
-<a class="sourceLine" id="cb20-5" data-line-number="5"><span class="kw">delta</span>(<span class="dt">a =</span> <span class="dv">2</span>, <span class="dt">b =</span> <span class="dv">3</span>, <span class="dt">c =</span> <span class="dv">4</span>)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Delta</span>
+delta &lt;-<span class="st"> </span><span class="cf">function</span>(a, b, c) {
+  b<span class="op">^</span><span class="dv">2</span> <span class="op">-</span><span class="st"> </span><span class="dv">4</span><span class="op">*</span>a<span class="op">*</span>c
+}
+<span class="kw">delta</span>(<span class="dt">a =</span> <span class="dv">2</span>, <span class="dt">b =</span> <span class="dv">3</span>, <span class="dt">c =</span> <span class="dv">4</span>)</code></pre></div>
 <pre><code>## [1] -23</code></pre>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" data-line-number="1"><span class="co"># Norm</span></a>
-<a class="sourceLine" id="cb22-2" data-line-number="2">norm &lt;-<span class="st"> </span><span class="cf">function</span>(x) <span class="kw">sqrt</span>(x <span class="op">%*%</span><span class="st"> </span>x)</a>
-<a class="sourceLine" id="cb22-3" data-line-number="3"><span class="kw">norm</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Norm</span>
+norm &lt;-<span class="st"> </span><span class="cf">function</span>(x) <span class="kw">sqrt</span>(x <span class="op">%*%</span><span class="st"> </span>x)
+<span class="kw">norm</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>)</code></pre></div>
 <pre><code>##          [,1]
 ## [1,] 5.477226</code></pre>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" data-line-number="1"><span class="co"># Square</span></a>
-<a class="sourceLine" id="cb24-2" data-line-number="2">square &lt;-<span class="st"> </span><span class="cf">function</span>(x) <span class="kw">return</span> (x <span class="op">*</span><span class="st"> </span>x)</a>
-<a class="sourceLine" id="cb24-3" data-line-number="3"><span class="kw">square</span>(<span class="dv">2</span>)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Square</span>
+square &lt;-<span class="st"> </span><span class="cf">function</span>(x) <span class="kw">return</span> (x <span class="op">*</span><span class="st"> </span>x)
+<span class="kw">square</span>(<span class="dv">2</span>)</code></pre></div>
 <pre><code>## [1] 4</code></pre>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" data-line-number="1"><span class="co"># Factorial</span></a>
-<a class="sourceLine" id="cb26-2" data-line-number="2">fact_iter &lt;-<span class="st"> </span><span class="cf">function</span>(n) {</a>
-<a class="sourceLine" id="cb26-3" data-line-number="3">  p &lt;-<span class="st"> </span><span class="dv">1</span></a>
-<a class="sourceLine" id="cb26-4" data-line-number="4">  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>n) {</a>
-<a class="sourceLine" id="cb26-5" data-line-number="5">     p &lt;-<span class="st"> </span>p <span class="op">*</span><span class="st"> </span>i <span class="co"># Not recursive </span></a>
-<a class="sourceLine" id="cb26-6" data-line-number="6">  }  </a>
-<a class="sourceLine" id="cb26-7" data-line-number="7">  <span class="kw">return</span>(p)</a>
-<a class="sourceLine" id="cb26-8" data-line-number="8">} </a>
-<a class="sourceLine" id="cb26-9" data-line-number="9"><span class="kw">fact_iter</span>(<span class="dv">8</span>)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Factorial</span>
+fact_iter &lt;-<span class="st"> </span><span class="cf">function</span>(n) {
+  p &lt;-<span class="st"> </span><span class="dv">1</span>
+  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>n) {
+     p &lt;-<span class="st"> </span>p <span class="op">*</span><span class="st"> </span>i <span class="co"># Not recursive </span>
+  }  
+  <span class="kw">return</span>(p)
+} 
+<span class="kw">fact_iter</span>(<span class="dv">8</span>)</code></pre></div>
 <pre><code>## [1] 40320</code></pre>
 <p>We can define recursive functions in R such that:</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" data-line-number="1"><span class="co"># Factorial</span></a>
-<a class="sourceLine" id="cb28-2" data-line-number="2">fact &lt;-<span class="st"> </span><span class="cf">function</span>(n) { </a>
-<a class="sourceLine" id="cb28-3" data-line-number="3">  <span class="cf">if</span> (n <span class="op">==</span><span class="st"> </span><span class="dv">1</span>) </a>
-<a class="sourceLine" id="cb28-4" data-line-number="4">    <span class="dv">1</span></a>
-<a class="sourceLine" id="cb28-5" data-line-number="5">  <span class="cf">else</span> </a>
-<a class="sourceLine" id="cb28-6" data-line-number="6">    n<span class="op">*</span><span class="kw">fact</span>(n<span class="dv">-1</span>) <span class="co"># Recursive function</span></a>
-<a class="sourceLine" id="cb28-7" data-line-number="7">}</a>
-<a class="sourceLine" id="cb28-8" data-line-number="8"><span class="kw">fact</span>(<span class="dv">8</span>)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Factorial</span>
+fact &lt;-<span class="st"> </span><span class="cf">function</span>(n) { 
+  <span class="cf">if</span> (n <span class="op">==</span><span class="st"> </span><span class="dv">1</span>) 
+    <span class="dv">1</span>
+  <span class="cf">else</span> 
+    n<span class="op">*</span><span class="kw">fact</span>(n<span class="op">-</span><span class="dv">1</span>) <span class="co"># Recursive function</span>
+}
+<span class="kw">fact</span>(<span class="dv">8</span>)</code></pre></div>
 <pre><code>## [1] 40320</code></pre>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" data-line-number="1"><span class="co"># a * b</span></a>
-<a class="sourceLine" id="cb30-2" data-line-number="2">mult &lt;-<span class="st"> </span><span class="cf">function</span>(a, b) {</a>
-<a class="sourceLine" id="cb30-3" data-line-number="3">  <span class="cf">if</span> (b <span class="op">==</span><span class="st"> </span><span class="dv">1</span>) {</a>
-<a class="sourceLine" id="cb30-4" data-line-number="4">  <span class="kw">return</span>(a)</a>
-<a class="sourceLine" id="cb30-5" data-line-number="5">  } <span class="cf">else</span> {</a>
-<a class="sourceLine" id="cb30-6" data-line-number="6">    <span class="kw">return</span>(a <span class="op">+</span><span class="st"> </span><span class="kw">mult</span>(a, b<span class="dv">-1</span>)) <span class="co"># Recursive function</span></a>
-<a class="sourceLine" id="cb30-7" data-line-number="7">  }</a>
-<a class="sourceLine" id="cb30-8" data-line-number="8">}</a>
-<a class="sourceLine" id="cb30-9" data-line-number="9"><span class="kw">mult</span>(<span class="dv">6</span>, <span class="dv">5</span>)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># a * b</span>
+mult &lt;-<span class="st"> </span><span class="cf">function</span>(a, b) {
+  <span class="cf">if</span> (b <span class="op">==</span><span class="st"> </span><span class="dv">1</span>) {
+  <span class="kw">return</span>(a)
+  } <span class="cf">else</span> {
+    <span class="kw">return</span>(a <span class="op">+</span><span class="st"> </span><span class="kw">mult</span>(a, b<span class="op">-</span><span class="dv">1</span>)) <span class="co"># Recursive function</span>
+  }
+}
+<span class="kw">mult</span>(<span class="dv">6</span>, <span class="dv">5</span>)</code></pre></div>
 <pre><code>## [1] 30</code></pre>
 </div>
 <div id="reading-and-writing" class="section level2">
 <h2>Reading and writing</h2>
 <p>In R we can use <code>read.</code> and <code>write.</code> to read and write the file types that we want.</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" data-line-number="1">gpa &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">name =</span> <span class="kw">c</span>(<span class="st">&quot;Ashki&quot;</span>, <span class="st">&quot;Ari&quot;</span>, <span class="st">&quot;Dori&quot;</span>, <span class="st">&quot;Pishi&quot;</span>), <span class="dt">gpa =</span> <span class="kw">c</span>(<span class="fl">3.4</span>,<span class="fl">3.7</span>,<span class="fl">3.9</span>,<span class="fl">3.5</span>))</a>
-<a class="sourceLine" id="cb32-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb32-3" data-line-number="3"><span class="co"># write</span></a>
-<a class="sourceLine" id="cb32-4" data-line-number="4"><span class="kw">write.table</span>(gpa, <span class="dt">file =</span> <span class="st">&quot;~/Documents/gpa.txt&quot;</span>, <span class="dt">sep =</span> <span class="st">&quot; &quot;</span>, <span class="dt">row.names =</span> <span class="ot">FALSE</span>, <span class="dt">col.names =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb32-5" data-line-number="5"></a>
-<a class="sourceLine" id="cb32-6" data-line-number="6"><span class="co"># add</span></a>
-<a class="sourceLine" id="cb32-7" data-line-number="7"><span class="kw">write.table</span>(<span class="kw">data.frame</span>(<span class="dt">name =</span> <span class="st">&quot;Ellie&quot;</span>, <span class="dt">gpa =</span> <span class="fl">3.3</span>), <span class="dt">file =</span> <span class="st">&quot;~/Documents/gpa.txt&quot;</span>, <span class="dt">append =</span> <span class="ot">TRUE</span>, <span class="dt">sep =</span> <span class="st">&quot; &quot;</span>, <span class="dt">row.names =</span> <span class="ot">FALSE</span>, <span class="dt">col.names =</span> <span class="ot">FALSE</span>)</a>
-<a class="sourceLine" id="cb32-8" data-line-number="8"></a>
-<a class="sourceLine" id="cb32-9" data-line-number="9"><span class="co"># read</span></a>
-<a class="sourceLine" id="cb32-10" data-line-number="10"><span class="kw">read.table</span>(<span class="st">&quot;~/Documents/gpa.txt&quot;</span>, <span class="dt">header =</span> T)</a>
-<a class="sourceLine" id="cb32-11" data-line-number="11"></a>
-<a class="sourceLine" id="cb32-12" data-line-number="12"><span class="co"># csv</span></a>
-<a class="sourceLine" id="cb32-13" data-line-number="13"><span class="kw">write.csv</span>(gpa, <span class="dt">file =</span> <span class="st">&quot;~/Documents/gpa.csv&quot;</span>, <span class="dt">row.names =</span> <span class="ot">FALSE</span>)</a>
-<a class="sourceLine" id="cb32-14" data-line-number="14"><span class="kw">read.csv</span>(<span class="st">&quot;~/Documents/gpa.csv&quot;</span>) <span class="co"># header is TRUE by default</span></a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">gpa &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">name =</span> <span class="kw">c</span>(<span class="st">&quot;Ashki&quot;</span>, <span class="st">&quot;Ari&quot;</span>, <span class="st">&quot;Dori&quot;</span>, <span class="st">&quot;Pishi&quot;</span>), <span class="dt">gpa =</span> <span class="kw">c</span>(<span class="fl">3.4</span>,<span class="fl">3.7</span>,<span class="fl">3.9</span>,<span class="fl">3.5</span>))
+
+<span class="co"># write</span>
+<span class="kw">write.table</span>(gpa, <span class="dt">file =</span> <span class="st">&quot;~/Documents/gpa.txt&quot;</span>, <span class="dt">sep =</span> <span class="st">&quot; &quot;</span>, <span class="dt">row.names =</span> <span class="ot">FALSE</span>, <span class="dt">col.names =</span> <span class="ot">TRUE</span>)
+
+<span class="co"># add</span>
+<span class="kw">write.table</span>(<span class="kw">data.frame</span>(<span class="dt">name =</span> <span class="st">&quot;Ellie&quot;</span>, <span class="dt">gpa =</span> <span class="fl">3.3</span>), <span class="dt">file =</span> <span class="st">&quot;~/Documents/gpa.txt&quot;</span>, <span class="dt">append =</span> <span class="ot">TRUE</span>, <span class="dt">sep =</span> <span class="st">&quot; &quot;</span>, <span class="dt">row.names =</span> <span class="ot">FALSE</span>, <span class="dt">col.names =</span> <span class="ot">FALSE</span>)
+
+<span class="co"># read</span>
+<span class="kw">read.table</span>(<span class="st">&quot;~/Documents/gpa.txt&quot;</span>, <span class="dt">header =</span> T)
+
+<span class="co"># csv</span>
+<span class="kw">write.csv</span>(gpa, <span class="dt">file =</span> <span class="st">&quot;~/Documents/gpa.csv&quot;</span>, <span class="dt">row.names =</span> <span class="ot">FALSE</span>)
+<span class="kw">read.csv</span>(<span class="st">&quot;~/Documents/gpa.csv&quot;</span>) <span class="co"># header is TRUE by default</span></code></pre></div>
 </div>
 <div id="packages" class="section level2">
 <h2>Packages</h2>
@@ -730,10 +698,10 @@ h4.author {
 <div id="operators-1" class="section level2">
 <h2>Operators</h2>
 <p>Python arithmetic operators are <code>+</code> <code>-</code> <code>*</code> <code>/</code> <code>**</code> <code>//</code> <code>%</code>. For example:</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb33-1" data-line-number="1">a <span class="op">//</span> b   <span class="co"># Intiger division</span></a>
-<a class="sourceLine" id="cb33-2" data-line-number="2">a <span class="op">%</span> b    <span class="co"># Remainder</span></a>
-<a class="sourceLine" id="cb33-3" data-line-number="3">a <span class="op">**</span> n   <span class="co"># nth power </span></a>
-<a class="sourceLine" id="cb33-4" data-line-number="4">a <span class="op">**</span> <span class="dv">1</span><span class="op">/</span>n <span class="co"># nth root</span></a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">a <span class="op">//</span> b   <span class="co"># Intiger division</span>
+a <span class="op">%</span> b    <span class="co"># Remainder</span>
+a <span class="op">**</span> n   <span class="co"># nth power </span>
+a <span class="op">**</span> <span class="dv">1</span><span class="op">/</span>n <span class="co"># nth root</span></code></pre></div>
 <p>The other operators include:</p>
 <ul>
 <li>Indexing: <code>[</code></li>
@@ -758,32 +726,32 @@ h4.author {
 <p>A <strong>tuple</strong> consists of a number of values separated by commas. Though tuples may seem similar to lists, they are often used in different situations and for different purposes. Tuples are immutable, and usually contain a heterogeneous sequence of elements that are accessed via unpacking or indexing. Tuples may be input with or without surrounding parentheses.</p>
 <p>A <strong>set</strong> is an unordered collection with no duplicate elements. Basic uses include membership testing and eliminating duplicate entries. Set objects also support mathematical operations like union, intersection, difference, and symmetric difference.</p>
 <p>Unlike sequences (lists, and tuples), which are indexed by a range of numbers, <strong>dictionaries</strong> are indexed by keys, which can be any immutable type (e.g. strings and numbers). The main operations on a dictionary are storing a value with some key and extracting the value given the key.</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb34-1" data-line-number="1"><span class="co"># Lists</span></a>
-<a class="sourceLine" id="cb34-2" data-line-number="2">a <span class="op">=</span> [<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>, <span class="fl">23.23</span>, <span class="fl">-7.23</span>]</a>
-<a class="sourceLine" id="cb34-3" data-line-number="3"><span class="bu">print</span>(<span class="bu">type</span>(a))</a></code></pre></div>
-<pre><code>## &lt;type &#39;list&#39;&gt;</code></pre>
-<div class="sourceCode" id="cb36"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb36-1" data-line-number="1"><span class="bu">print</span>(a[<span class="dv">0</span>])</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Lists</span>
+a <span class="op">=</span> [<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>, <span class="fl">23.23</span>, <span class="op">-</span><span class="fl">7.23</span>]
+<span class="bu">print</span>(<span class="bu">type</span>(a))</code></pre></div>
+<pre><code>## &lt;class &#39;list&#39;&gt;</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(a[<span class="dv">0</span>])</code></pre></div>
 <pre><code>## -1</code></pre>
-<div class="sourceCode" id="cb38"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb38-1" data-line-number="1"><span class="co"># Tuples</span></a>
-<a class="sourceLine" id="cb38-2" data-line-number="2">t <span class="op">=</span> <span class="dv">12345</span>, <span class="dv">54321</span>, <span class="st">&#39;hello!&#39;</span></a>
-<a class="sourceLine" id="cb38-3" data-line-number="3"><span class="bu">print</span>(<span class="bu">type</span>(t))</a></code></pre></div>
-<pre><code>## &lt;type &#39;tuple&#39;&gt;</code></pre>
-<div class="sourceCode" id="cb40"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb40-1" data-line-number="1"><span class="bu">print</span>(t[<span class="dv">0</span>])</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Tuples</span>
+t <span class="op">=</span> <span class="dv">12345</span>, <span class="dv">54321</span>, <span class="st">&#39;hello!&#39;</span>
+<span class="bu">print</span>(<span class="bu">type</span>(t))</code></pre></div>
+<pre><code>## &lt;class &#39;tuple&#39;&gt;</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(t[<span class="dv">0</span>])</code></pre></div>
 <pre><code>## 12345</code></pre>
-<div class="sourceCode" id="cb42"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb42-1" data-line-number="1"><span class="co"># Sets</span></a>
-<a class="sourceLine" id="cb42-2" data-line-number="2">s <span class="op">=</span> <span class="bu">set</span>(<span class="st">&#39;python&#39;</span>)</a>
-<a class="sourceLine" id="cb42-3" data-line-number="3"><span class="bu">print</span>(s) <span class="co"># Unique letters in s </span></a></code></pre></div>
-<pre><code>## set([&#39;h&#39;, &#39;o&#39;, &#39;n&#39;, &#39;p&#39;, &#39;t&#39;, &#39;y&#39;])</code></pre>
-<div class="sourceCode" id="cb44"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb44-1" data-line-number="1">s2 <span class="op">=</span> {<span class="st">&#39;python&#39;</span>, <span class="st">&#39;anaconda&#39;</span>, <span class="st">&#39;python&#39;</span>}</a>
-<a class="sourceLine" id="cb44-2" data-line-number="2"><span class="bu">print</span>(s2)</a></code></pre></div>
-<pre><code>## set([&#39;python&#39;, &#39;anaconda&#39;])</code></pre>
-<div class="sourceCode" id="cb46"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb46-1" data-line-number="1"><span class="bu">print</span>(<span class="bu">type</span>(s2))</a></code></pre></div>
-<pre><code>## &lt;type &#39;set&#39;&gt;</code></pre>
-<div class="sourceCode" id="cb48"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb48-1" data-line-number="1"><span class="co"># Dictionaries</span></a>
-<a class="sourceLine" id="cb48-2" data-line-number="2">grades <span class="op">=</span> {<span class="st">&#39;jack&#39;</span>: <span class="dv">60</span>, <span class="st">&#39;joe&#39;</span>: <span class="dv">70</span>}</a>
-<a class="sourceLine" id="cb48-3" data-line-number="3"><span class="bu">print</span>(<span class="bu">type</span>(grades))</a></code></pre></div>
-<pre><code>## &lt;type &#39;dict&#39;&gt;</code></pre>
-<div class="sourceCode" id="cb50"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb50-1" data-line-number="1"><span class="bu">print</span>(grades[<span class="st">&#39;jack&#39;</span>])</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Sets</span>
+s <span class="op">=</span> <span class="bu">set</span>(<span class="st">&#39;python&#39;</span>)
+<span class="bu">print</span>(s) <span class="co"># Unique letters in s </span></code></pre></div>
+<pre><code>## {&#39;y&#39;, &#39;t&#39;, &#39;h&#39;, &#39;o&#39;, &#39;p&#39;, &#39;n&#39;}</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">s2 <span class="op">=</span> {<span class="st">&#39;python&#39;</span>, <span class="st">&#39;anaconda&#39;</span>, <span class="st">&#39;python&#39;</span>}
+<span class="bu">print</span>(s2)</code></pre></div>
+<pre><code>## {&#39;python&#39;, &#39;anaconda&#39;}</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(<span class="bu">type</span>(s2))</code></pre></div>
+<pre><code>## &lt;class &#39;set&#39;&gt;</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Dictionaries</span>
+grades <span class="op">=</span> {<span class="st">&#39;jack&#39;</span>: <span class="dv">60</span>, <span class="st">&#39;joe&#39;</span>: <span class="dv">70</span>}
+<span class="bu">print</span>(<span class="bu">type</span>(grades))</code></pre></div>
+<pre><code>## &lt;class &#39;dict&#39;&gt;</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(grades[<span class="st">&#39;jack&#39;</span>])</code></pre></div>
 <pre><code>## 60</code></pre>
 <p>You will find more details about data structures in the <a href="https://docs.python.org/3/tutorial/datastructures.html#tuples-and-sequences">Python Tutorial</a>.</p>
 </div>
@@ -800,130 +768,130 @@ h4.author {
 <li>return</li>
 </ul>
 <p>The following are some simple examples of using these statements in Python.</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb52-1" data-line-number="1">n <span class="op">=</span> <span class="dv">10</span></a>
-<a class="sourceLine" id="cb52-2" data-line-number="2"><span class="cf">if</span> n <span class="op">==</span> <span class="dv">7</span>:</a>
-<a class="sourceLine" id="cb52-3" data-line-number="3">    <span class="bu">print</span>(<span class="st">&quot;n is equal 7&quot;</span>)</a>
-<a class="sourceLine" id="cb52-4" data-line-number="4"><span class="cf">elif</span> n <span class="op">&gt;</span> <span class="dv">7</span>:</a>
-<a class="sourceLine" id="cb52-5" data-line-number="5">    <span class="bu">print</span>(<span class="st">&quot;n is greater than 7&quot;</span>)</a>
-<a class="sourceLine" id="cb52-6" data-line-number="6"><span class="cf">else</span>:</a>
-<a class="sourceLine" id="cb52-7" data-line-number="7">    <span class="bu">print</span>(<span class="st">&quot;n is smaller than 7&quot;</span>)</a>
-<a class="sourceLine" id="cb52-8" data-line-number="8">    </a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">n <span class="op">=</span> <span class="dv">10</span>
+<span class="cf">if</span> n <span class="op">==</span> <span class="dv">7</span>:
+    <span class="bu">print</span>(<span class="st">&quot;n is equal 7&quot;</span>)
+<span class="cf">elif</span> n <span class="op">&gt;</span> <span class="dv">7</span>:
+    <span class="bu">print</span>(<span class="st">&quot;n is greater than 7&quot;</span>)
+<span class="cf">else</span>:
+    <span class="bu">print</span>(<span class="st">&quot;n is smaller than 7&quot;</span>)
+    </code></pre></div>
 <pre><code>## n is greater than 7</code></pre>
-<div class="sourceCode" id="cb54"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb54-1" data-line-number="1">varA <span class="op">=</span> <span class="dv">3</span></a>
-<a class="sourceLine" id="cb54-2" data-line-number="2">varB <span class="op">=</span> <span class="st">&quot;hi&quot;</span></a>
-<a class="sourceLine" id="cb54-3" data-line-number="3"><span class="cf">if</span> <span class="bu">type</span>(varA) <span class="op">==</span> <span class="bu">str</span>:</a>
-<a class="sourceLine" id="cb54-4" data-line-number="4">    <span class="bu">print</span>(<span class="st">&quot;string involved&quot;</span>)</a>
-<a class="sourceLine" id="cb54-5" data-line-number="5"><span class="cf">elif</span> <span class="bu">type</span>(varB) <span class="op">==</span> <span class="bu">str</span>:</a>
-<a class="sourceLine" id="cb54-6" data-line-number="6">    <span class="bu">print</span>(<span class="st">&quot;string involved&quot;</span>)</a>
-<a class="sourceLine" id="cb54-7" data-line-number="7"><span class="cf">elif</span> varA <span class="op">&gt;</span> varB:</a>
-<a class="sourceLine" id="cb54-8" data-line-number="8">    <span class="bu">print</span>(<span class="st">&quot;varA bigger&quot;</span>)</a>
-<a class="sourceLine" id="cb54-9" data-line-number="9"><span class="cf">elif</span> varA <span class="op">==</span> varB:</a>
-<a class="sourceLine" id="cb54-10" data-line-number="10">    <span class="bu">print</span>(<span class="st">&quot;equal&quot;</span>)</a>
-<a class="sourceLine" id="cb54-11" data-line-number="11"><span class="cf">else</span>:</a>
-<a class="sourceLine" id="cb54-12" data-line-number="12">    <span class="bu">print</span>(<span class="st">&quot;varA smaller&quot;</span>)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">varA <span class="op">=</span> <span class="dv">3</span>
+varB <span class="op">=</span> <span class="st">&quot;hi&quot;</span>
+<span class="cf">if</span> <span class="bu">type</span>(varA) <span class="op">==</span> <span class="bu">str</span>:
+    <span class="bu">print</span>(<span class="st">&quot;string involved&quot;</span>)
+<span class="cf">elif</span> <span class="bu">type</span>(varB) <span class="op">==</span> <span class="bu">str</span>:
+    <span class="bu">print</span>(<span class="st">&quot;string involved&quot;</span>)
+<span class="cf">elif</span> varA <span class="op">&gt;</span> varB:
+    <span class="bu">print</span>(<span class="st">&quot;varA bigger&quot;</span>)
+<span class="cf">elif</span> varA <span class="op">==</span> varB:
+    <span class="bu">print</span>(<span class="st">&quot;equal&quot;</span>)
+<span class="cf">else</span>:
+    <span class="bu">print</span>(<span class="st">&quot;varA smaller&quot;</span>)</code></pre></div>
 <pre><code>## string involved</code></pre>
-<div class="sourceCode" id="cb56"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb56-1" data-line-number="1">n <span class="op">=</span> <span class="dv">7</span>  </a>
-<a class="sourceLine" id="cb56-2" data-line-number="2"><span class="cf">while</span> n <span class="op">&lt;</span> <span class="dv">10</span>:</a>
-<a class="sourceLine" id="cb56-3" data-line-number="3">    <span class="bu">print</span>(n)</a>
-<a class="sourceLine" id="cb56-4" data-line-number="4">    n <span class="op">+=</span> <span class="dv">1</span></a>
-<a class="sourceLine" id="cb56-5" data-line-number="5"><span class="cf">else</span>:</a>
-<a class="sourceLine" id="cb56-6" data-line-number="6">    <span class="bu">print</span>(n)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">n <span class="op">=</span> <span class="dv">7</span>  
+<span class="cf">while</span> n <span class="op">&lt;</span> <span class="dv">10</span>:
+    <span class="bu">print</span>(n)
+    n <span class="op">+=</span> <span class="dv">1</span>
+<span class="cf">else</span>:
+    <span class="bu">print</span>(n)</code></pre></div>
 <pre><code>## 7
 ## 8
 ## 9
 ## 10</code></pre>
-<div class="sourceCode" id="cb58"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb58-1" data-line-number="1">mysum <span class="op">=</span> <span class="dv">0</span></a>
-<a class="sourceLine" id="cb58-2" data-line-number="2"><span class="cf">for</span> i <span class="kw">in</span> (<span class="dv">10</span>,<span class="dv">20</span>,<span class="dv">30</span>):</a>
-<a class="sourceLine" id="cb58-3" data-line-number="3">    mysum <span class="op">+=</span> i</a>
-<a class="sourceLine" id="cb58-4" data-line-number="4"><span class="bu">print</span>(mysum)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">mysum <span class="op">=</span> <span class="dv">0</span>
+<span class="cf">for</span> i <span class="kw">in</span> (<span class="dv">10</span>,<span class="dv">20</span>,<span class="dv">30</span>):
+    mysum <span class="op">+=</span> i
+<span class="bu">print</span>(mysum)</code></pre></div>
 <pre><code>## 60</code></pre>
-<div class="sourceCode" id="cb60"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb60-1" data-line-number="1">mymult <span class="op">=</span> <span class="dv">1</span></a>
-<a class="sourceLine" id="cb60-2" data-line-number="2"><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">101</span>):</a>
-<a class="sourceLine" id="cb60-3" data-line-number="3">    mymult <span class="op">*=</span> i</a>
-<a class="sourceLine" id="cb60-4" data-line-number="4">    <span class="cf">if</span> mymult <span class="op">&gt;</span> <span class="dv">100</span>:</a>
-<a class="sourceLine" id="cb60-5" data-line-number="5">        <span class="cf">break</span></a>
-<a class="sourceLine" id="cb60-6" data-line-number="6"><span class="bu">print</span>(mymult)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">mymult <span class="op">=</span> <span class="dv">1</span>
+<span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">101</span>):
+    mymult <span class="op">*=</span> i
+    <span class="cf">if</span> mymult <span class="op">&gt;</span> <span class="dv">100</span>:
+        <span class="cf">break</span>
+<span class="bu">print</span>(mymult)</code></pre></div>
 <pre><code>## 120</code></pre>
 <p>You can find more examples <a href="https://docs.python.org/release/3.7.1/tutorial/controlflow.html">here</a>.</p>
 </div>
 <div id="defining-a-functions" class="section level2">
 <h2>Defining a functions</h2>
 <p>We can create any function in Python. The following are some simple examples.</p>
-<div class="sourceCode" id="cb62"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb62-1" data-line-number="1"><span class="kw">def</span> delta(a, b, c): <span class="co"># Delta</span></a>
-<a class="sourceLine" id="cb62-2" data-line-number="2">  <span class="cf">return</span> b<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> <span class="dv">4</span><span class="op">*</span>a<span class="op">*</span>c</a>
-<a class="sourceLine" id="cb62-3" data-line-number="3"><span class="bu">print</span>(delta(a <span class="op">=</span> <span class="dv">2</span>, b <span class="op">=</span> <span class="dv">3</span>, c <span class="op">=</span> <span class="dv">4</span>))</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> delta(a, b, c): <span class="co"># Delta</span>
+  <span class="cf">return</span> b<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> <span class="dv">4</span><span class="op">*</span>a<span class="op">*</span>c
+<span class="bu">print</span>(delta(a <span class="op">=</span> <span class="dv">2</span>, b <span class="op">=</span> <span class="dv">3</span>, c <span class="op">=</span> <span class="dv">4</span>))</code></pre></div>
 <pre><code>## -23</code></pre>
-<div class="sourceCode" id="cb64"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb64-1" data-line-number="1"><span class="kw">def</span> norm(x): <span class="co"># Norm</span></a>
-<a class="sourceLine" id="cb64-2" data-line-number="2">  <span class="cf">return</span> (<span class="bu">sum</span>(i<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(x<span class="op">+</span><span class="dv">1</span>)))<span class="op">**</span><span class="fl">0.5</span></a>
-<a class="sourceLine" id="cb64-3" data-line-number="3"><span class="bu">print</span>(norm(<span class="dv">4</span>))</a></code></pre></div>
-<pre><code>## 5.47722557505</code></pre>
-<div class="sourceCode" id="cb66"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb66-1" data-line-number="1"><span class="kw">def</span> square(x): <span class="co"># Square</span></a>
-<a class="sourceLine" id="cb66-2" data-line-number="2">  <span class="cf">return</span> x <span class="op">*</span> x</a>
-<a class="sourceLine" id="cb66-3" data-line-number="3"><span class="bu">print</span>(square(<span class="dv">2</span>))</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> norm(x): <span class="co"># Norm</span>
+  <span class="cf">return</span> (<span class="bu">sum</span>(i<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(x<span class="op">+</span><span class="dv">1</span>)))<span class="op">**</span><span class="fl">0.5</span>
+<span class="bu">print</span>(norm(<span class="dv">4</span>))</code></pre></div>
+<pre><code>## 5.477225575051661</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> square(x): <span class="co"># Square</span>
+  <span class="cf">return</span> x <span class="op">*</span> x
+<span class="bu">print</span>(square(<span class="dv">2</span>))</code></pre></div>
 <pre><code>## 4</code></pre>
-<div class="sourceCode" id="cb68"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb68-1" data-line-number="1"><span class="kw">def</span> fact_iter(n): <span class="co"># Factorial</span></a>
-<a class="sourceLine" id="cb68-2" data-line-number="2">    p <span class="op">=</span> <span class="dv">1</span></a>
-<a class="sourceLine" id="cb68-3" data-line-number="3">    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, n<span class="op">+</span><span class="dv">1</span>):</a>
-<a class="sourceLine" id="cb68-4" data-line-number="4">        p <span class="op">*=</span> i <span class="co"># Not recursive </span></a>
-<a class="sourceLine" id="cb68-5" data-line-number="5">    <span class="cf">return</span> p </a>
-<a class="sourceLine" id="cb68-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb68-7" data-line-number="7"><span class="bu">print</span>(fact_iter(<span class="dv">8</span>))</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> fact_iter(n): <span class="co"># Factorial</span>
+    p <span class="op">=</span> <span class="dv">1</span>
+    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, n<span class="op">+</span><span class="dv">1</span>):
+        p <span class="op">*=</span> i <span class="co"># Not recursive </span>
+    <span class="cf">return</span> p 
+
+<span class="bu">print</span>(fact_iter(<span class="dv">8</span>))</code></pre></div>
 <pre><code>## 40320</code></pre>
 <p>We can, also, define recursive functions in Python such that:</p>
-<div class="sourceCode" id="cb70"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb70-1" data-line-number="1"><span class="kw">def</span> fact(n): <span class="co"># Factorial</span></a>
-<a class="sourceLine" id="cb70-2" data-line-number="2">    <span class="cf">if</span> n <span class="op">==</span> <span class="dv">1</span>:</a>
-<a class="sourceLine" id="cb70-3" data-line-number="3">        <span class="cf">return</span> <span class="dv">1</span></a>
-<a class="sourceLine" id="cb70-4" data-line-number="4">    <span class="cf">else</span>:</a>
-<a class="sourceLine" id="cb70-5" data-line-number="5">        <span class="cf">return</span> n<span class="op">*</span>fact(n<span class="dv">-1</span>) <span class="co"># Recursive function</span></a>
-<a class="sourceLine" id="cb70-6" data-line-number="6"><span class="bu">print</span>(fact(<span class="dv">8</span>))</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> fact(n): <span class="co"># Factorial</span>
+    <span class="cf">if</span> n <span class="op">==</span> <span class="dv">1</span>:
+        <span class="cf">return</span> <span class="dv">1</span>
+    <span class="cf">else</span>:
+        <span class="cf">return</span> n<span class="op">*</span>fact(n<span class="op">-</span><span class="dv">1</span>) <span class="co"># Recursive function</span>
+<span class="bu">print</span>(fact(<span class="dv">8</span>))</code></pre></div>
 <pre><code>## 40320</code></pre>
-<div class="sourceCode" id="cb72"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb72-1" data-line-number="1"><span class="kw">def</span> mult(a, b): <span class="co"># a * b</span></a>
-<a class="sourceLine" id="cb72-2" data-line-number="2">    <span class="cf">if</span> b <span class="op">==</span> <span class="dv">1</span>:</a>
-<a class="sourceLine" id="cb72-3" data-line-number="3">        <span class="cf">return</span> a</a>
-<a class="sourceLine" id="cb72-4" data-line-number="4">    <span class="cf">else</span>:</a>
-<a class="sourceLine" id="cb72-5" data-line-number="5">        <span class="cf">return</span> a <span class="op">+</span> mult(a, b<span class="dv">-1</span>) <span class="co"># Recursive function</span></a>
-<a class="sourceLine" id="cb72-6" data-line-number="6"><span class="bu">print</span>(mult(<span class="dv">6</span>, <span class="dv">5</span>))</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> mult(a, b): <span class="co"># a * b</span>
+    <span class="cf">if</span> b <span class="op">==</span> <span class="dv">1</span>:
+        <span class="cf">return</span> a
+    <span class="cf">else</span>:
+        <span class="cf">return</span> a <span class="op">+</span> mult(a, b<span class="op">-</span><span class="dv">1</span>) <span class="co"># Recursive function</span>
+<span class="bu">print</span>(mult(<span class="dv">6</span>, <span class="dv">5</span>))</code></pre></div>
 <pre><code>## 30</code></pre>
 </div>
 <div id="reading-and-writing-1" class="section level2">
 <h2>Reading and writing</h2>
 <p>In Python we can use <code>.read</code> and <code>.write</code> to read and write the files with the desired types.</p>
-<div class="sourceCode" id="cb74"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb74-1" data-line-number="1"><span class="co"># write</span></a>
-<a class="sourceLine" id="cb74-2" data-line-number="2"><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&#39;./names.txt&#39;</span>,<span class="st">&#39;w&#39;</span>) <span class="im">as</span> <span class="bu">file</span>:</a>
-<a class="sourceLine" id="cb74-3" data-line-number="3">  <span class="bu">file</span>.write(<span class="st">&#39;Ashki, Ari&#39;</span>)</a>
-<a class="sourceLine" id="cb74-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb74-5" data-line-number="5"><span class="co"># add </span></a>
-<a class="sourceLine" id="cb74-6" data-line-number="6"><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&#39;./names.txt&#39;</span>,<span class="st">&#39;a&#39;</span>) <span class="im">as</span> <span class="bu">file</span>:</a>
-<a class="sourceLine" id="cb74-7" data-line-number="7">  <span class="bu">file</span>.write(<span class="st">&#39;</span><span class="ch">\n</span><span class="st">Ellie, Joe&#39;</span>)</a>
-<a class="sourceLine" id="cb74-8" data-line-number="8"></a>
-<a class="sourceLine" id="cb74-9" data-line-number="9"><span class="co"># read</span></a>
-<a class="sourceLine" id="cb74-10" data-line-number="10"><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&#39;./names.txt&#39;</span>,<span class="st">&#39;r&#39;</span>) <span class="im">as</span> <span class="bu">file</span>:</a>
-<a class="sourceLine" id="cb74-11" data-line-number="11">  data <span class="op">=</span> <span class="bu">file</span>.readlines()</a>
-<a class="sourceLine" id="cb74-12" data-line-number="12"></a>
-<a class="sourceLine" id="cb74-13" data-line-number="13"><span class="co"># read CSV</span></a>
-<a class="sourceLine" id="cb74-14" data-line-number="14"><span class="im">import</span> csv</a>
-<a class="sourceLine" id="cb74-15" data-line-number="15"><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&#39;./file.csv&#39;</span>) <span class="im">as</span> <span class="bu">file</span>:</a>
-<a class="sourceLine" id="cb74-16" data-line-number="16">    data <span class="op">=</span> csv.reader(<span class="bu">file</span>)</a>
-<a class="sourceLine" id="cb74-17" data-line-number="17">    </a>
-<a class="sourceLine" id="cb74-18" data-line-number="18"><span class="co"># write CSV from a Dictionary</span></a>
-<a class="sourceLine" id="cb74-19" data-line-number="19"><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&#39;./file_new.csv&#39;</span>, <span class="st">&#39;w&#39;</span>) <span class="im">as</span> <span class="bu">file</span>:</a>
-<a class="sourceLine" id="cb74-20" data-line-number="20">    fcsv <span class="op">=</span> csv.writer(<span class="bu">file</span>)</a>
-<a class="sourceLine" id="cb74-21" data-line-number="21">    key <span class="op">=</span> <span class="bu">list</span>(dict_data.keys())</a>
-<a class="sourceLine" id="cb74-22" data-line-number="22">    fcsv.writerow(<span class="bu">list</span>(dict_data[key[<span class="dv">1</span>]].keys())) <span class="co"># header</span></a>
-<a class="sourceLine" id="cb74-23" data-line-number="23">    <span class="cf">for</span> k <span class="kw">in</span> key:</a>
-<a class="sourceLine" id="cb74-24" data-line-number="24">        row <span class="op">=</span> []</a>
-<a class="sourceLine" id="cb74-25" data-line-number="25">        <span class="cf">for</span> j <span class="kw">in</span> dict_data[k]:</a>
-<a class="sourceLine" id="cb74-26" data-line-number="26">            row.extend([dict_data[k][j]])</a>
-<a class="sourceLine" id="cb74-27" data-line-number="27">        fcsv.writerow(row)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># write</span>
+<span class="cf">with</span> <span class="bu">open</span>(<span class="st">&#39;./names.txt&#39;</span>,<span class="st">&#39;w&#39;</span>) <span class="im">as</span> <span class="bu">file</span>:
+  <span class="bu">file</span>.write(<span class="st">&#39;Ashki, Ari&#39;</span>)
+
+<span class="co"># add </span>
+<span class="cf">with</span> <span class="bu">open</span>(<span class="st">&#39;./names.txt&#39;</span>,<span class="st">&#39;a&#39;</span>) <span class="im">as</span> <span class="bu">file</span>:
+  <span class="bu">file</span>.write(<span class="st">&#39;</span><span class="ch">\n</span><span class="st">Ellie, Joe&#39;</span>)
+
+<span class="co"># read</span>
+<span class="cf">with</span> <span class="bu">open</span>(<span class="st">&#39;./names.txt&#39;</span>,<span class="st">&#39;r&#39;</span>) <span class="im">as</span> <span class="bu">file</span>:
+  data <span class="op">=</span> <span class="bu">file</span>.readlines()
+
+<span class="co"># read CSV</span>
+<span class="im">import</span> csv
+<span class="cf">with</span> <span class="bu">open</span>(<span class="st">&#39;./file.csv&#39;</span>) <span class="im">as</span> <span class="bu">file</span>:
+    data <span class="op">=</span> csv.reader(<span class="bu">file</span>)
+    
+<span class="co"># write CSV from a Dictionary</span>
+<span class="cf">with</span> <span class="bu">open</span>(<span class="st">&#39;./file_new.csv&#39;</span>, <span class="st">&#39;w&#39;</span>) <span class="im">as</span> <span class="bu">file</span>:
+    fcsv <span class="op">=</span> csv.writer(<span class="bu">file</span>)
+    key <span class="op">=</span> <span class="bu">list</span>(dict_data.keys())
+    fcsv.writerow(<span class="bu">list</span>(dict_data[key[<span class="dv">1</span>]].keys())) <span class="co"># header</span>
+    <span class="cf">for</span> k <span class="kw">in</span> key:
+        row <span class="op">=</span> []
+        <span class="cf">for</span> j <span class="kw">in</span> dict_data[k]:
+            row.extend([dict_data[k][j]])
+        fcsv.writerow(row)</code></pre></div>
 </div>
 <div id="packages-1" class="section level2">
 <h2>Packages</h2>
 <p>Packages are very important component of a programming language. Python distributions, such as Anaconda, usually provide most important packages. Also, Python has an extensive <a href="https://docs.python.org/3/library/">standard library</a> witch offering a wide range of facilities. The following example shows two main methods to import a package/library and using it’s function.</p>
-<div class="sourceCode" id="cb75"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb75-1" data-line-number="1"><span class="im">import</span> math</a>
-<a class="sourceLine" id="cb75-2" data-line-number="2"><span class="bu">print</span>(math.factorial(<span class="dv">8</span>))</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> math
+<span class="bu">print</span>(math.factorial(<span class="dv">8</span>))</code></pre></div>
 <pre><code>## 40320</code></pre>
-<div class="sourceCode" id="cb77"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb77-1" data-line-number="1"><span class="im">from</span> math <span class="im">import</span> <span class="op">*</span> </a>
-<a class="sourceLine" id="cb77-2" data-line-number="2"><span class="bu">print</span>(factorial(<span class="dv">8</span>))</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> math <span class="im">import</span> <span class="op">*</span> 
+<span class="bu">print</span>(factorial(<span class="dv">8</span>))</code></pre></div>
 <pre><code>## 40320</code></pre>
 <p>Some of the most popular packages in Python are:</p>
 <ul>
