@@ -526,16 +526,16 @@ h4.author {
 <hr />
 <div id="installation" class="section level2">
 <h2>Installation</h2>
-<p>Depends on the operating system that you are using you might need to install Git first. You can find Git for download from <a href="https://git-scm.com/downloads">here</a>. Computers with Windows operating systems do not automatically have a Unix Shell program installed. So for Windows users, it would be better to install <a href="https://gitforwindows.org/">Git for Windows</a>, which gives you access to both Bash shell commands and Git simultaneously.</p>
-<p>When we use Git for the first time, you can configure your name and email address by:</p>
+<p>Depends on the operating system, it might be needed to [install Git]((<a href="https://git-scm.com/downloads" class="uri">https://git-scm.com/downloads</a>) first. Computers with Windows operating systems do not automatically have a Unix Shell installed. So for Windows users, it would be better to install <a href="https://gitforwindows.org/">Git for Windows</a>, which gives us access to both Bash shell commands and Git simultaneously.</p>
+<p>When we use Git for the first time, its better to configure user name and email by:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1">$ <span class="fu">git</span> config --global user.name <span class="st">&quot;your name&quot;</span></a>
 <a class="sourceLine" id="cb1-2" data-line-number="2">$ <span class="fu">git</span> config --global user.email <span class="st">&quot;your@email&quot;</span></a></code></pre></div>
-<p>This will set your name and email address to all activities associated with Git. You may find the list of adjusted configurations by <code>git config --list</code> and to see more helps by <code>git config --help</code>.</p>
+<p>This will set your name and email address to all activities associated with Git. We can find the list of adjusted configurations by <code>git config --list</code> and to see more helps by <code>git config --help</code>.</p>
 <hr />
 </div>
 <div id="git-commands" class="section level2">
 <h2>Git commands</h2>
-<p>As a prerequisite, first you need to learn about the <a href="shell.html">Unix Shell</a> and basic Bash commands.</p>
+<p>As a prerequisite, first learn about the <a href="shell.html">Unix Shell</a> and basic Bash commands.</p>
 <p>Let’s start working with Git on your local computer with an example. First, we will make a directory and then initiate a Git repository in the directory, and then start to add a text file and edit the file. Open a terminal prompt and run the following commands one by one, read the comments after hash to see what they do.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="bu">cd</span> ~ <span class="co"># change directory to home/</span></a>
 <a class="sourceLine" id="cb2-2" data-line-number="2"><span class="fu">mkdir</span> first_repo <span class="co"># create a new directory called &quot;first_repo&quot;</span></a>
@@ -589,30 +589,30 @@ h4.author {
 <div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="fu">git</span> add file.txt</a>
 <a class="sourceLine" id="cb9-2" data-line-number="2"><span class="fu">git</span> commit -m <span class="st">&quot;restore the previous version&quot;</span></a></code></pre></div>
 <p>Your local computer might be one side of your mechanism to control and store your file versions. <a href="https://github.com/">GitHub</a> and <a href="https://about.gitlab.com/">GitLab</a> are providing an infrastructure to keep track of our files in somewhere outside the local computers. Let’s connect to GitHub through SSH and add <code>first_repo</code> repository to it.</p>
-<p>To connect your GitHub (or GitLab) account through SSH, you should generate a public SSH key on your local computer and add it to your GitHub account at <code>Settings &gt; SSH Keys</code>. To do that open a terminal prompt in your computer and issue:</p>
+<p>To connect GitHub (or GitLab) account through SSH, we should generate a public SSH key on the local computer and add it to the GitHub account at <code>Settings &gt; SSH Keys</code>. To do that open a terminal prompt in the local computer and issue:</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="bu">cd</span> ~</a>
 <a class="sourceLine" id="cb10-2" data-line-number="2"><span class="fu">ssh-keygen</span></a></code></pre></div>
-<p>Make sure to create a strong passphrase and remember it for connecting to your account. To show the public key, use the following in the terminal prompt:</p>
+<p>Create a strong passphrase and make sure to remember it for connecting to your account. To show the public key, use the following in the terminal prompt:</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="fu">cat</span> .ssh/id_rsa.pub</a></code></pre></div>
-<p>Copy the the public ssh-key by <code>ctrl+shift+c</code> and add it to <code>Settings &gt; SSH Keys</code> on your GitHub account.</p>
+<p>Copy the the public ssh-key by <code>ctrl+shift+c</code> and add it to <code>Settings &gt; SSH Keys</code> on the GitHub account.</p>
 <p>Now, click on “+” next to your avatar on GitHub to generate a new repository, name it <code>first_repo</code> and do not initialize it. For next steps, copy the SSH address of your remote repository from GitHub that should be like <code>git@github.com:user/first_repo.git</code> - later you may find the address under “Clone or download” tab on your repository.</p>
 <p>To add the remote repository, open a terminal prompt on your computer and issue:</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="bu">cd</span> ~/first_repo</a>
 <a class="sourceLine" id="cb12-2" data-line-number="2"><span class="fu">git</span> remote add origin git@github.com:user/first_repo.git <span class="co"># add the remote repo</span></a>
 <a class="sourceLine" id="cb12-3" data-line-number="3"><span class="fu">git</span> remote -v <span class="co"># show the remote repository </span></a></code></pre></div>
-<p>Finally, to upload your local repository to GitHub use:</p>
+<p>Finally, to upload your local repository on GitHub use:</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="fu">git</span> push -u origin master</a></code></pre></div>
-<p>You can always generate and initialize a new repository on your remote i.e. GitHub and clone to your local computer. Click on “+” next to your avatar on GitHub to generate a new repository, call it <code>second_repo</code> and make sure to be initialized. To clone the remote repository on your local system with SSH, click on “Clone or download” and copy the SSH address. Open a terminal prompt on your local computer and issue:</p>
+<p>We can always generate and initialize a new repository on the remote i.e. GitHub and clone to the local computer. Click on “+” next to your avatar on GitHub to generate a new repository, call it <code>second_repo</code> and make sure to be initialized. To clone the remote repository on the local system with SSH, click on “Clone or download” and copy the SSH address. Open a terminal prompt on the local computer and issue:</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb14-1" data-line-number="1"><span class="bu">cd</span> ~</a>
 <a class="sourceLine" id="cb14-2" data-line-number="2"><span class="fu">mkdir</span> second_repo </a>
 <a class="sourceLine" id="cb14-3" data-line-number="3"><span class="bu">cd</span> second_repo</a>
 <a class="sourceLine" id="cb14-4" data-line-number="4"><span class="fu">git</span> clone git@github.com:YourUserName/second_repo.git</a></code></pre></div>
-<p>Any changes in the <code>second_repo</code> directory will record by Git and you can use <code>git push origin</code> to update the remote.</p>
+<p>Any changes in the <code>second_repo</code> directory will record by Git. Use <code>git push origin</code> to update the remote.</p>
 <p>Another important asset of Git is collaboration with others at the same time. One of the most effective way to collaborate without conflict, is making new branches in addition to the “master” branch. Use the following Git commands to make a new branch and switch between branches :</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb15-1" data-line-number="1"><span class="fu">git</span> branch <span class="co"># show all branches</span></a>
 <a class="sourceLine" id="cb15-2" data-line-number="2"><span class="fu">git</span> branch my_work <span class="co"># create &quot;my_work&quot; branch</span></a>
 <a class="sourceLine" id="cb15-3" data-line-number="3"><span class="fu">git</span> checkout my_work <span class="co"># switch to &quot;my_work&quot; branch</span></a></code></pre></div>
-<p>Now if we keep working on the directory, all changes will be stored at “my_work” branch instead of “master” branch. That will prevent the conflict between your work and others. When you finish your tasks you can merge “my_work” branch to the “master” by:</p>
+<p>Now if we keep working on the directory, all changes will be stored at “my_work” branch instead of “master” branch. That will prevent the conflict between your work and others. When you finish your tasks, merge “my_work” branch to the “master” by:</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb16-1" data-line-number="1"><span class="fu">git</span> merge <span class="st">&quot;my_work&quot;</span></a></code></pre></div>
 <hr />
 </div>
