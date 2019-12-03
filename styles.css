@@ -63,8 +63,12 @@ img-circle {
   height: 0 !important;
 }
 
-.tocify-subheader, .tocify-item {
+.tocify-item {
   font-size: 140%;
+}
+
+.tocify-subheader {
+  font-size: 135%;
 }
 
 .toc-content {
