@@ -582,11 +582,11 @@ h4.author {
 <a class="sourceLine" id="cb4-11" data-line-number="11">mult_rec(<span class="dv">12</span>, <span class="dv">13</span>)</a>
 <a class="sourceLine" id="cb4-12" data-line-number="12"><span class="co">## 156</span></a></code></pre></div>
 <p>At each iteration, both iterative and recursive functions follow this pattern to find <code>12 * 13</code>:</p>
-<pre><code>12
-12 + 12
-12 + 12 + 12
-...
-12 + 12 + ... + 12 (13 times)</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="dv">12</span></a>
+<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="dv">12</span> <span class="op">+</span> <span class="dv">12</span></a>
+<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="dv">12</span> <span class="op">+</span> <span class="dv">12</span> <span class="op">+</span> <span class="dv">12</span></a>
+<a class="sourceLine" id="cb5-4" data-line-number="4">...</a>
+<a class="sourceLine" id="cb5-5" data-line-number="5"><span class="dv">12</span> <span class="op">+</span> <span class="dv">12</span> <span class="op">+</span> ... <span class="op">+</span> <span class="dv">12</span> (<span class="dv">13</span> times)</a></code></pre></div>
 <p>For another example let’s compute an integer factorial with all mentioned methods:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw">def</span> fact(n):</a>
 <a class="sourceLine" id="cb6-2" data-line-number="2">  <span class="co">&quot;Compute n factorial by using Python math library&quot;</span></a>
@@ -665,19 +665,19 @@ h4.author {
 <a class="sourceLine" id="cb7-40" data-line-number="40">[fib_rec(x) <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">12</span>)]</a>
 <a class="sourceLine" id="cb7-41" data-line-number="41"><span class="co">## [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]</span></a></code></pre></div>
 <p>Here, computative method provides an estimation (which is actually a very good estimation) of the Fibonacci number and recursive method requires a lot of time as <code>n</code> gets bigger since at each iteration it needs to compute two <code>fib_rec</code> such that (for <code>n = 5</code>):</p>
-<pre><code>              fib_rec(5)
-           _______|________
-          |                |
-      fib_rec(4)       fib_rec(3)
-       ___|___          ___|___
-      |       |        |       |
-   fib(3)  fib(2)   fib(2)     1
-    __|__    __|__   __|__ 
-   |     |  |     | |     |
- fib(2)  1  1     0 1     0
- __|__
-|     |
-1     0</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb8-1" data-line-number="1">              fib_rec(<span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb8-2" data-line-number="2">           _______<span class="op">|</span>________</a>
+<a class="sourceLine" id="cb8-3" data-line-number="3">          <span class="op">|</span>                <span class="op">|</span></a>
+<a class="sourceLine" id="cb8-4" data-line-number="4">      fib_rec(<span class="dv">4</span>)       fib_rec(<span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb8-5" data-line-number="5">       ___<span class="op">|</span>___          ___<span class="op">|</span>___</a>
+<a class="sourceLine" id="cb8-6" data-line-number="6">      <span class="op">|</span>       <span class="op">|</span>        <span class="op">|</span>       <span class="op">|</span></a>
+<a class="sourceLine" id="cb8-7" data-line-number="7">   fib(<span class="dv">3</span>)  fib(<span class="dv">2</span>)   fib(<span class="dv">2</span>)     <span class="dv">1</span></a>
+<a class="sourceLine" id="cb8-8" data-line-number="8">    __<span class="op">|</span>__    __<span class="op">|</span>__   __<span class="op">|</span>__ </a>
+<a class="sourceLine" id="cb8-9" data-line-number="9">   <span class="op">|</span>     <span class="op">|</span>  <span class="op">|</span>     <span class="op">|</span> <span class="op">|</span>     <span class="op">|</span></a>
+<a class="sourceLine" id="cb8-10" data-line-number="10"> fib(<span class="dv">2</span>)  <span class="dv">1</span>  <span class="dv">1</span>     <span class="dv">0</span> <span class="dv">1</span>     <span class="dv">0</span></a>
+<a class="sourceLine" id="cb8-11" data-line-number="11"> __<span class="op">|</span>__</a>
+<a class="sourceLine" id="cb8-12" data-line-number="12"><span class="op">|</span>     <span class="op">|</span></a>
+<a class="sourceLine" id="cb8-13" data-line-number="13"><span class="dv">1</span>     <span class="dv">0</span></a></code></pre></div>
 <p>Therefore, it is very important to always choose the right approach based on the function context.</p>
 <p>Python provides another method that let us to write functions in a very compact way that called <strong>lambda</strong> function.</p>
 </div>

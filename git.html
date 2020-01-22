@@ -627,8 +627,6 @@ git add: add file contents to the index
 git mv: move or rename a file, a directory
 git rm: remove files from the working tree (local) and from the index (remote)
 git rm --cached: unstage and remove paths only from the index (remote)
-git commit: record changes to the repository
-git commit --amend: edit the commit comment before push (i to insert and esc-:wq to exit)
 git log: show commit logs
 git log &lt;file_name&gt;: show commit logs for the file
 git log --patch &lt;file_name&gt;: combine both `git log` and `git diff` comments
@@ -642,6 +640,7 @@ git show HEAD~n &lt;file_name&gt;: show the nth most recent commit of a file
 git checkout: restore working tree files or switch branches
 git checkout HEAD &lt;file_name&gt;: recover the version of the file recorded in HEAD
 git reset &lt;file_name&gt;: reset (unstage/uncommit) current HEAD to the specified state
+git reset --hard HEAD~1: reset commited state to last HEAD 
 git revert &lt;commit ID&gt;: revert some existing commits
 git revert --no-commit HEAD: revert to last commit (no asking to commit at the moment)
 git revert --abort: abort the revert (return to before revert)
@@ -651,12 +650,15 @@ git remote remove &lt;remote_name&gt;: remove a remote repository
 git remote rename &lt;remote_name&gt; &lt;new_name&gt;: rename a remote repository
 git remote set-url origin &lt;url&gt;: set/change remote origin
 git clone: clone a repository into a new directory
-git pull &lt;origin&gt; &lt;branch&gt;: fetch from and integrate with another repository or branch
+git fetch: download all history from the remote tracking branches
+git merge: join two or more development histories together
+git pull &lt;origin&gt; &lt;branch&gt;: a combination of fetch and merge
 git push &lt;origin&gt; &lt;branch&gt;: update remote refs along with associated objects
+git commit: record changes to the repository
+git commit --amend: edit the commit comment before push (i to insert and esc-:wq to exit)
 git branch: list branches
 git branch &lt;new branch name&gt;: create a new branch
-git branch -d &lt;branch name&gt;: delete a branch
-git merge: join two or more development histories together</code></pre>
+git branch -d &lt;branch name&gt;: delete a branch</code></pre>
 </div>
 
 
