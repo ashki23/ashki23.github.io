@@ -551,7 +551,7 @@ h4.author {
 </ul>
 <p>Use the following commands for the above steps:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="fu">git</span> add file.text <span class="co"># add file contents to the index</span></a>
-<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="fu">git</span> status <span class="co"># show &quot;changes to be committed&quot;</span></a>
+<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="fu">git</span> status <span class="co"># show changes to be committed</span></a>
 <a class="sourceLine" id="cb3-3" data-line-number="3"><span class="fu">git</span> commit -m <span class="st">&quot;Add file.txt and write the first line&quot;</span> <span class="co"># record changes to the repository, -m option add message</span></a>
 <a class="sourceLine" id="cb3-4" data-line-number="4"><span class="fu">git</span> show file.txt <span class="co"># show the most recent commit of &quot;file.txt&quot; </span></a>
 <a class="sourceLine" id="cb3-5" data-line-number="5"><span class="fu">git</span> log <span class="co"># show the commit logs</span></a></code></pre></div>
@@ -559,7 +559,7 @@ h4.author {
 <div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="fu">nano</span> file.txt <span class="co"># nano will open &quot;file.txt&quot;</span></a>
 <a class="sourceLine" id="cb4-2" data-line-number="2"><span class="op">&gt;</span><span class="ex">Hi</span>! this is the first line in my new repository. </a>
 <a class="sourceLine" id="cb4-3" data-line-number="3"><span class="op">&gt;</span><span class="ex">Changes</span> in this file will record by Git. <span class="co"># press ctrl+o to save and ctrl+x to exit</span></a>
-<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="fu">git</span> status <span class="co"># show &quot;changes not staged for commit&quot;</span></a>
+<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="fu">git</span> status <span class="co"># show changes not staged for commit</span></a>
 <a class="sourceLine" id="cb4-5" data-line-number="5"><span class="fu">git</span> diff file.txt <span class="co"># show changes between most recent commit and the current &quot;file.txt&quot;</span></a></code></pre></div>
 <p>To record the new changes by Git:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="fu">git</span> add file.txt</a>
@@ -607,12 +607,19 @@ h4.author {
 <a class="sourceLine" id="cb14-3" data-line-number="3"><span class="bu">cd</span> second_repo</a>
 <a class="sourceLine" id="cb14-4" data-line-number="4"><span class="fu">git</span> clone git@github.com:YourUserName/second_repo.git</a></code></pre></div>
 <p>Any changes in the <code>second_repo</code> directory will record by Git and you can use <code>git push origin</code> to update the remote.</p>
-<p>Another important asset of Git is collaboration with others at the same time. One of the most effective way to collaborate without conflict, is making new branches in addition to the “master” branch. Use the following Git commands to make a new branch and switch between branches :</p>
+<p>Another important asset of Git is collaboration with others at the same time. One of the most effective way to collaborate without conflict, is making new branches in addition to the <code>master</code> branch. Use the following Git commands to make a new branch and switch between branches :</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb15-1" data-line-number="1"><span class="fu">git</span> branch <span class="co"># show all branches</span></a>
-<a class="sourceLine" id="cb15-2" data-line-number="2"><span class="fu">git</span> branch my_work <span class="co"># create &quot;my_work&quot; branch</span></a>
-<a class="sourceLine" id="cb15-3" data-line-number="3"><span class="fu">git</span> checkout my_work <span class="co"># switch to &quot;my_work&quot; branch</span></a></code></pre></div>
-<p>Now if we keep working on the directory, all changes will be stored at “my_work” branch instead of “master” branch. That will prevent the conflict between your work and others. When you finish your tasks you can merge “my_work” branch to the “master” by:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb16-1" data-line-number="1"><span class="fu">git</span> merge <span class="st">&quot;my_work&quot;</span></a></code></pre></div>
+<a class="sourceLine" id="cb15-2" data-line-number="2"><span class="fu">git</span> branch my_work <span class="co"># create my_work branch</span></a>
+<a class="sourceLine" id="cb15-3" data-line-number="3"><span class="fu">git</span> checkout my_work <span class="co"># switch to my_work branch</span></a></code></pre></div>
+<p>Now if we keep working on the directory, all changes will be stored at <code>my_work</code> branch instead of <code>master</code> branch. That will prevent the conflict between your work and others. When you finish your tasks you can merge <code>my_work</code> branch to the <code>master</code> by:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb16-1" data-line-number="1"><span class="fu">git</span> merge my_work</a></code></pre></div>
+<p>Also, we can add multiple remote to a repository. To add another remote (called <code>public</code>) to the current remote (<code>orign</code>) we can use:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb17-1" data-line-number="1"><span class="fu">git</span> remote add public SSH_adress </a></code></pre></div>
+<p>Where the <code>SSH address</code> is address of the new remote (for example another empty repo. in GitHub) - try <code>git remote -v</code> to see name and address of remotes.</p>
+<p>To update remotes separately, we can create a new branch and link it to the master branch of the new remote (<code>public</code>) by:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb18-1" data-line-number="1"><span class="fu">git</span> branch new_branch</a>
+<a class="sourceLine" id="cb18-2" data-line-number="2"><span class="fu">git</span> branch -u public/master new_branch</a></code></pre></div>
+<p>When the first line creates a <code>new-branch</code> and the second line is a set up for <code>new_branch</code> to track remote branch <code>master</code> from <code>public</code> remote. In that way we will be able to change the <code>public</code> branch without touching <code>master</code> and vice versa. Do not forget to change the branch before start editing (i.e. <code>git checkout public</code>).</p>
 <hr />
 </div>
 <div id="summary" class="section level2">
@@ -644,7 +651,7 @@ git reset --hard HEAD~1: reset commited state to last HEAD
 git revert &lt;commit ID&gt;: revert some existing commits
 git revert --no-commit HEAD: revert to last commit (no asking to commit at the moment)
 git revert --abort: abort the revert (return to before revert)
-git remote -v: show the remote repository
+git remote: show the remote repository (use -v floag for a verbose details)
 git remote add origin &lt;SSH_add&gt;: add remote repository to the local repo 
 git remote remove &lt;remote_name&gt;: remove a remote repository
 git remote rename &lt;remote_name&gt; &lt;new_name&gt;: rename a remote repository
