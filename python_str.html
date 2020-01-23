@@ -875,17 +875,28 @@ h4.author {
 <a class="sourceLine" id="cb19-15" data-line-number="15"><span class="co">## [&#39;first key&#39;, 2, &#39;third key&#39;]</span></a>
 <a class="sourceLine" id="cb19-16" data-line-number="16"></a>
 <a class="sourceLine" id="cb19-17" data-line-number="17"><span class="bu">list</span>(example.values())</a>
-<a class="sourceLine" id="cb19-18" data-line-number="18"><span class="co">## [&#39;value&#39;, &#39;two&#39;, 3]</span></a></code></pre></div>
+<a class="sourceLine" id="cb19-18" data-line-number="18"><span class="co">## [&#39;value&#39;, &#39;two&#39;, 3]</span></a>
+<a class="sourceLine" id="cb19-19" data-line-number="19"></a>
+<a class="sourceLine" id="cb19-20" data-line-number="20"><span class="bu">list</span>(example.items())</a>
+<a class="sourceLine" id="cb19-21" data-line-number="21"><span class="co">## [(&#39;first key&#39;, &#39;value&#39;), (2, &#39;two&#39;), (&#39;third key&#39;, 3)]</span></a>
+<a class="sourceLine" id="cb19-22" data-line-number="22"></a>
+<a class="sourceLine" id="cb19-23" data-line-number="23">example.get(<span class="st">&#39;third key&#39;</span>)</a>
+<a class="sourceLine" id="cb19-24" data-line-number="24"><span class="co">## 3</span></a>
+<a class="sourceLine" id="cb19-25" data-line-number="25"></a>
+<a class="sourceLine" id="cb19-26" data-line-number="26">example.update({<span class="dv">2</span>:<span class="st">&#39;update value&#39;</span>, <span class="st">&#39;new key&#39;</span>:<span class="dv">123</span> })</a>
+<a class="sourceLine" id="cb19-27" data-line-number="27">example</a>
+<a class="sourceLine" id="cb19-28" data-line-number="28"><span class="co">## {&#39;first key&#39;: &#39;value&#39;, 2: &#39;update value&#39;, &#39;third key&#39;: 3, &#39;new key&#39;: 123}</span></a></code></pre></div>
 <p>Here are some of dictionaries methods:</p>
 <ul>
-<li><code>dict.update()</code> updates/adds element</li>
-<li><code>dict.popitem()</code> removes arbitrary element</li>
-<li><code>dict.pop(k)</code> removes element k</li>
-<li><code>dict.keys()</code> returns keys</li>
-<li><code>dict.items()</code> returns items</li>
-<li><code>dict.get(k)</code> returns values for element k</li>
-<li><code>dict.copy()</code> copes dict</li>
-<li><code>dict.clear()</code> clears dict</li>
+<li><code>dict.update()</code> update/add items</li>
+<li><code>dict.popitem()</code> remove an item</li>
+<li><code>dict.pop(k)</code> remove item with key k</li>
+<li><code>dict.keys()</code> return keys</li>
+<li><code>dict.values()</code> return values</li>
+<li><code>dict.items()</code> return items</li>
+<li><code>dict.get(k)</code> return value for key k</li>
+<li><code>dict.copy()</code> copy dict</li>
+<li><code>dict.clear()</code> clear dict</li>
 </ul>
 <p>Iterating through dicts:</p>
 <div class="sourceCode" id="cb20"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb20-1" data-line-number="1"><span class="co">## Example 1: counting and sorting</span></a>
