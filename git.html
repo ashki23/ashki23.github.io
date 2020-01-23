@@ -621,10 +621,9 @@ h4.author {
 <p>Also, we can add multiple remote to a repository. To add another remote (called <code>public</code>) to the current remote (<code>origin</code>) we can use:</p>
 <div class="sourceCode" id="cb18"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb18-1" data-line-number="1"><span class="fu">git</span> remote add public SSH_adress </a></code></pre></div>
 <p>Where the <code>SSH address</code> is address of the new remote (for example another empty repo. in GitHub) - try <code>git remote -v</code> to see name and address of remotes.</p>
-<p>To update remotes separately, we can create a new branch and link it to the master branch of the new remote (<code>public</code>) by:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb19-1" data-line-number="1"><span class="fu">git</span> branch new_branch</a>
-<a class="sourceLine" id="cb19-2" data-line-number="2"><span class="fu">git</span> branch -u public/master new_branch</a></code></pre></div>
-<p>When the first line creates a <code>new-branch</code> and the second line is a set up for <code>new_branch</code> to track remote branch <code>master</code> from <code>public</code> remote. In that way we will be able to change the <code>public</code> branch without touching <code>master</code> and vice versa. Do not forget to change the branch before start editing (i.e. <code>git checkout public</code>).</p>
+<p>To push the repositort to <code>public</code> remote use:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb19-1" data-line-number="1"><span class="fu">git</span> push public master</a></code></pre></div>
+<p>Above commad will create a new branch called <code>master</code> in <code>public</code> remote and push entire repo to the new location. Note that now we have two remotes for the repo.</p>
 <hr />
 </div>
 <div id="summary" class="section level2">
