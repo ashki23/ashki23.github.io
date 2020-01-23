@@ -600,7 +600,7 @@ h4.author {
 <a class="sourceLine" id="cb5-7" data-line-number="7"></a>
 <a class="sourceLine" id="cb5-8" data-line-number="8">sw[::<span class="dv">2</span>]</a>
 <a class="sourceLine" id="cb5-9" data-line-number="9"><span class="co">## &#39;Pto&#39;</span></a></code></pre></div>
-<p>In general, subscript numbers in the square brackets could be one of:</p>
+<p>In general, numbers in the indexing square brackets can be in one of the following formats:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb6-1" data-line-number="1">[element]</a>
 <a class="sourceLine" id="cb6-2" data-line-number="2">[begin:end]</a>
 <a class="sourceLine" id="cb6-3" data-line-number="3">[begin:end:step]</a></code></pre></div>
@@ -616,6 +616,55 @@ h4.author {
 <a class="sourceLine" id="cb8-3" data-line-number="3"></a>
 <a class="sourceLine" id="cb8-4" data-line-number="4">sw[::]</a>
 <a class="sourceLine" id="cb8-5" data-line-number="5"><span class="co">## &#39;Python&#39;</span></a></code></pre></div>
+<p>As a summary review the following table:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Concatenate</th>
+<th>Subscriptable</th>
+<th>Mutable</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Number</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr class="even">
+<td>String</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr class="odd">
+<td>Tuple</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr class="even">
+<td>List</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>Dict</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>Set</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="conversion" class="section level3">
 <h3>Conversion</h3>
