@@ -854,38 +854,52 @@ h4.author {
 <li><code>tuple.count(x)</code> count number of times x repeated</li>
 <li><code>tuple.index(x)</code> find index of item x</li>
 </ul>
+<p>By tuples we can change the variables at the same time. Let assume we have two variables <code>a = 10</code> and <code>b = 20</code> and want <code>a = b = 20</code> and <code>b = a + b = 30</code>. For example:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb19-1" data-line-number="1">a <span class="op">=</span> <span class="dv">10</span></a>
+<a class="sourceLine" id="cb19-2" data-line-number="2">b <span class="op">=</span> <span class="dv">20</span></a>
+<a class="sourceLine" id="cb19-3" data-line-number="3">a <span class="op">=</span> b </a>
+<a class="sourceLine" id="cb19-4" data-line-number="4">b <span class="op">=</span> a <span class="op">+</span> b</a>
+<a class="sourceLine" id="cb19-5" data-line-number="5">(a,b)</a>
+<a class="sourceLine" id="cb19-6" data-line-number="6"><span class="co">## (20, 40) # we wanted (20, 30)</span></a>
+<a class="sourceLine" id="cb19-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb19-8" data-line-number="8"><span class="co">## Using tuple</span></a>
+<a class="sourceLine" id="cb19-9" data-line-number="9">a <span class="op">=</span> <span class="dv">10</span></a>
+<a class="sourceLine" id="cb19-10" data-line-number="10">b <span class="op">=</span> <span class="dv">20</span></a>
+<a class="sourceLine" id="cb19-11" data-line-number="11">a, b <span class="op">=</span> (b, a <span class="op">+</span> b) <span class="co"># or a, b = b, a + b</span></a>
+<a class="sourceLine" id="cb19-12" data-line-number="12">(a,b)</a>
+<a class="sourceLine" id="cb19-13" data-line-number="13"><span class="co">## (20, 30)</span></a></code></pre></div>
 </div>
 <div id="dictionaries" class="section level3">
 <h3>Dictionaries</h3>
-<p>Dictionaries (also called dicts) are another key data structure. Unlike sequences (lists, and tuples), which are indexed by a range of numbers, dictionaries are indexed by keys, which can be any immutable type (e.g. strings and numbers). The main operations on a dictionary are storing a value with some key and extracting value of the given key.</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb19-1" data-line-number="1">example <span class="op">=</span> {}</a>
-<a class="sourceLine" id="cb19-2" data-line-number="2"><span class="bu">type</span>(example)</a>
-<a class="sourceLine" id="cb19-3" data-line-number="3"><span class="co">## &lt;class &#39;dict&#39;&gt;</span></a>
-<a class="sourceLine" id="cb19-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb19-5" data-line-number="5">example[<span class="st">&#39;first key&#39;</span>] <span class="op">=</span> <span class="st">&#39;value&#39;</span></a>
-<a class="sourceLine" id="cb19-6" data-line-number="6">example[<span class="dv">2</span>] <span class="op">=</span> <span class="st">&#39;two&#39;</span></a>
-<a class="sourceLine" id="cb19-7" data-line-number="7">example[<span class="st">&#39;third key&#39;</span>] <span class="op">=</span> <span class="dv">3</span></a>
-<a class="sourceLine" id="cb19-8" data-line-number="8">example</a>
-<a class="sourceLine" id="cb19-9" data-line-number="9"><span class="co">## {&#39;first key&#39;: &#39;value&#39;, 2: &#39;two&#39;, &#39;third key&#39;: 3}</span></a>
-<a class="sourceLine" id="cb19-10" data-line-number="10"></a>
-<a class="sourceLine" id="cb19-11" data-line-number="11">example[<span class="st">&#39;first key&#39;</span>]</a>
-<a class="sourceLine" id="cb19-12" data-line-number="12"><span class="co">## &#39;value&#39;</span></a>
-<a class="sourceLine" id="cb19-13" data-line-number="13"></a>
-<a class="sourceLine" id="cb19-14" data-line-number="14"><span class="bu">list</span>(example.keys())</a>
-<a class="sourceLine" id="cb19-15" data-line-number="15"><span class="co">## [&#39;first key&#39;, 2, &#39;third key&#39;]</span></a>
-<a class="sourceLine" id="cb19-16" data-line-number="16"></a>
-<a class="sourceLine" id="cb19-17" data-line-number="17"><span class="bu">list</span>(example.values())</a>
-<a class="sourceLine" id="cb19-18" data-line-number="18"><span class="co">## [&#39;value&#39;, &#39;two&#39;, 3]</span></a>
-<a class="sourceLine" id="cb19-19" data-line-number="19"></a>
-<a class="sourceLine" id="cb19-20" data-line-number="20"><span class="bu">list</span>(example.items())</a>
-<a class="sourceLine" id="cb19-21" data-line-number="21"><span class="co">## [(&#39;first key&#39;, &#39;value&#39;), (2, &#39;two&#39;), (&#39;third key&#39;, 3)]</span></a>
-<a class="sourceLine" id="cb19-22" data-line-number="22"></a>
-<a class="sourceLine" id="cb19-23" data-line-number="23">example.get(<span class="st">&#39;third key&#39;</span>)</a>
-<a class="sourceLine" id="cb19-24" data-line-number="24"><span class="co">## 3</span></a>
-<a class="sourceLine" id="cb19-25" data-line-number="25"></a>
-<a class="sourceLine" id="cb19-26" data-line-number="26">example.update({<span class="dv">2</span>:<span class="st">&#39;update value&#39;</span>, <span class="st">&#39;new key&#39;</span>:<span class="dv">123</span> })</a>
-<a class="sourceLine" id="cb19-27" data-line-number="27">example</a>
-<a class="sourceLine" id="cb19-28" data-line-number="28"><span class="co">## {&#39;first key&#39;: &#39;value&#39;, 2: &#39;update value&#39;, &#39;third key&#39;: 3, &#39;new key&#39;: 123}</span></a></code></pre></div>
+<p>Dictionaries (also called dicts) are key data structure including a set of <em>keys</em> and <em>values</em>. Unlike sequences (e.g. lists and tuples) which are indexed by a range of numbers, dictionaries are indexed by <strong>unique</strong> and <strong>immutable</strong> <em>keys</em>. At the same time, <em>values</em> of the list could be <strong>any type</strong> (mutable or immutable) and duplicated. The main operations on a dictionary are storing a <em>value</em> with some <em>key</em> and extracting <em>value</em> by given <em>key</em>.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb20-1" data-line-number="1">example <span class="op">=</span> {}</a>
+<a class="sourceLine" id="cb20-2" data-line-number="2"><span class="bu">type</span>(example)</a>
+<a class="sourceLine" id="cb20-3" data-line-number="3"><span class="co">## &lt;class &#39;dict&#39;&gt;</span></a>
+<a class="sourceLine" id="cb20-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb20-5" data-line-number="5">example[<span class="st">&#39;first key&#39;</span>] <span class="op">=</span> <span class="st">&#39;value&#39;</span></a>
+<a class="sourceLine" id="cb20-6" data-line-number="6">example[<span class="dv">2</span>] <span class="op">=</span> <span class="st">&#39;two&#39;</span></a>
+<a class="sourceLine" id="cb20-7" data-line-number="7">example[<span class="st">&#39;third key&#39;</span>] <span class="op">=</span> <span class="dv">3</span></a>
+<a class="sourceLine" id="cb20-8" data-line-number="8">example</a>
+<a class="sourceLine" id="cb20-9" data-line-number="9"><span class="co">## {&#39;first key&#39;: &#39;value&#39;, 2: &#39;two&#39;, &#39;third key&#39;: 3}</span></a>
+<a class="sourceLine" id="cb20-10" data-line-number="10"></a>
+<a class="sourceLine" id="cb20-11" data-line-number="11">example[<span class="st">&#39;first key&#39;</span>]</a>
+<a class="sourceLine" id="cb20-12" data-line-number="12"><span class="co">## &#39;value&#39;</span></a>
+<a class="sourceLine" id="cb20-13" data-line-number="13"></a>
+<a class="sourceLine" id="cb20-14" data-line-number="14"><span class="bu">list</span>(example.keys())</a>
+<a class="sourceLine" id="cb20-15" data-line-number="15"><span class="co">## [&#39;first key&#39;, 2, &#39;third key&#39;]</span></a>
+<a class="sourceLine" id="cb20-16" data-line-number="16"></a>
+<a class="sourceLine" id="cb20-17" data-line-number="17"><span class="bu">list</span>(example.values())</a>
+<a class="sourceLine" id="cb20-18" data-line-number="18"><span class="co">## [&#39;value&#39;, &#39;two&#39;, 3]</span></a>
+<a class="sourceLine" id="cb20-19" data-line-number="19"></a>
+<a class="sourceLine" id="cb20-20" data-line-number="20"><span class="bu">list</span>(example.items())</a>
+<a class="sourceLine" id="cb20-21" data-line-number="21"><span class="co">## [(&#39;first key&#39;, &#39;value&#39;), (2, &#39;two&#39;), (&#39;third key&#39;, 3)]</span></a>
+<a class="sourceLine" id="cb20-22" data-line-number="22"></a>
+<a class="sourceLine" id="cb20-23" data-line-number="23">example.get(<span class="st">&#39;third key&#39;</span>)</a>
+<a class="sourceLine" id="cb20-24" data-line-number="24"><span class="co">## 3</span></a>
+<a class="sourceLine" id="cb20-25" data-line-number="25"></a>
+<a class="sourceLine" id="cb20-26" data-line-number="26">example.update({<span class="dv">2</span>:<span class="st">&#39;update value&#39;</span>, <span class="st">&#39;new key&#39;</span>:<span class="dv">123</span> })</a>
+<a class="sourceLine" id="cb20-27" data-line-number="27">example</a>
+<a class="sourceLine" id="cb20-28" data-line-number="28"><span class="co">## {&#39;first key&#39;: &#39;value&#39;, 2: &#39;update value&#39;, &#39;third key&#39;: 3, &#39;new key&#39;: 123}</span></a></code></pre></div>
 <p>Here are some of dictionaries methods:</p>
 <ul>
 <li><code>dict.update()</code> update/add items</li>
@@ -899,65 +913,65 @@ h4.author {
 <li><code>dict.clear()</code> clear dict</li>
 </ul>
 <p>Iterating through dicts:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb20-1" data-line-number="1"><span class="co">## Example 1: counting and sorting</span></a>
-<a class="sourceLine" id="cb20-2" data-line-number="2">color <span class="op">=</span> [<span class="st">&#39;blue&#39;</span>, <span class="st">&#39;red&#39;</span>, <span class="st">&#39;white&#39;</span>, <span class="st">&#39;green&#39;</span>, <span class="st">&#39;green&#39;</span>, <span class="st">&#39;red&#39;</span>, <span class="st">&#39;red&#39;</span>, <span class="st">&#39;white&#39;</span>, <span class="st">&#39;red&#39;</span>, <span class="st">&#39;green&#39;</span>]</a>
-<a class="sourceLine" id="cb20-3" data-line-number="3">col <span class="op">=</span> {x:color.count(x) <span class="cf">for</span> x <span class="kw">in</span> color}</a>
-<a class="sourceLine" id="cb20-4" data-line-number="4">col</a>
-<a class="sourceLine" id="cb20-5" data-line-number="5"><span class="co">## {&#39;blue&#39;: 1, &#39;red&#39;: 4, &#39;white&#39;: 2, &#39;green&#39;: 3}</span></a>
-<a class="sourceLine" id="cb20-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb20-7" data-line-number="7">c <span class="op">=</span> {k:col[k] <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">sorted</span>(col,key <span class="op">=</span> col.get,reverse <span class="op">=</span> <span class="va">True</span>)}</a>
-<a class="sourceLine" id="cb20-8" data-line-number="8">c</a>
-<a class="sourceLine" id="cb20-9" data-line-number="9"><span class="co">## {&#39;red&#39;: 4, &#39;green&#39;: 3, &#39;white&#39;: 2, &#39;blue&#39;: 1}</span></a>
-<a class="sourceLine" id="cb20-10" data-line-number="10"></a>
-<a class="sourceLine" id="cb20-11" data-line-number="11"><span class="co">## Example 2: make dict elements uppercase</span></a>
-<a class="sourceLine" id="cb20-12" data-line-number="12">{x.upper():y <span class="cf">for</span> x,y <span class="kw">in</span> c.items()}</a>
-<a class="sourceLine" id="cb20-13" data-line-number="13"><span class="co">## {&#39;RED&#39;: 4, &#39;GREEN&#39;: 3, &#39;WHITE&#39;: 2, &#39;BLUE&#39;: 1}</span></a></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb21-1" data-line-number="1"><span class="co">## Example 1: counting and sorting</span></a>
+<a class="sourceLine" id="cb21-2" data-line-number="2">color <span class="op">=</span> [<span class="st">&#39;blue&#39;</span>, <span class="st">&#39;red&#39;</span>, <span class="st">&#39;white&#39;</span>, <span class="st">&#39;green&#39;</span>, <span class="st">&#39;green&#39;</span>, <span class="st">&#39;red&#39;</span>, <span class="st">&#39;red&#39;</span>, <span class="st">&#39;white&#39;</span>, <span class="st">&#39;red&#39;</span>, <span class="st">&#39;green&#39;</span>]</a>
+<a class="sourceLine" id="cb21-3" data-line-number="3">col <span class="op">=</span> {x:color.count(x) <span class="cf">for</span> x <span class="kw">in</span> color}</a>
+<a class="sourceLine" id="cb21-4" data-line-number="4">col</a>
+<a class="sourceLine" id="cb21-5" data-line-number="5"><span class="co">## {&#39;blue&#39;: 1, &#39;red&#39;: 4, &#39;white&#39;: 2, &#39;green&#39;: 3}</span></a>
+<a class="sourceLine" id="cb21-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb21-7" data-line-number="7">c <span class="op">=</span> {k:col[k] <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">sorted</span>(col,key <span class="op">=</span> col.get,reverse <span class="op">=</span> <span class="va">True</span>)}</a>
+<a class="sourceLine" id="cb21-8" data-line-number="8">c</a>
+<a class="sourceLine" id="cb21-9" data-line-number="9"><span class="co">## {&#39;red&#39;: 4, &#39;green&#39;: 3, &#39;white&#39;: 2, &#39;blue&#39;: 1}</span></a>
+<a class="sourceLine" id="cb21-10" data-line-number="10"></a>
+<a class="sourceLine" id="cb21-11" data-line-number="11"><span class="co">## Example 2: make dict elements uppercase</span></a>
+<a class="sourceLine" id="cb21-12" data-line-number="12">{x.upper():y <span class="cf">for</span> x,y <span class="kw">in</span> c.items()}</a>
+<a class="sourceLine" id="cb21-13" data-line-number="13"><span class="co">## {&#39;RED&#39;: 4, &#39;GREEN&#39;: 3, &#39;WHITE&#39;: 2, &#39;BLUE&#39;: 1}</span></a></code></pre></div>
 <p>For another example, let’s consider a list of dictionaries including production rate of two products, id 23 and id 35, in years 2005 and 2010:</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb21-1" data-line-number="1">exmp <span class="op">=</span> [{<span class="st">&#39;id&#39;</span>:<span class="dv">23</span>,<span class="st">&#39;year&#39;</span>:<span class="dv">2005</span>,<span class="st">&#39;production&#39;</span>:<span class="dv">2305</span>},{<span class="st">&#39;id&#39;</span>:<span class="dv">35</span>,<span class="st">&#39;year&#39;</span>:<span class="dv">2005</span>,<span class="st">&#39;production&#39;</span>:<span class="dv">3505</span>},{<span class="st">&#39;id&#39;</span>:<span class="dv">23</span>,<span class="st">&#39;year&#39;</span>:<span class="dv">2010</span>,<span class="st">&#39;production&#39;</span>:<span class="dv">2310</span>},{<span class="st">&#39;id&#39;</span>:<span class="dv">35</span>,<span class="st">&#39;year&#39;</span>:<span class="dv">2010</span>,<span class="st">&#39;production&#39;</span>:<span class="dv">3510</span>}]</a></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb22-1" data-line-number="1">exmp <span class="op">=</span> [{<span class="st">&#39;id&#39;</span>:<span class="dv">23</span>,<span class="st">&#39;year&#39;</span>:<span class="dv">2005</span>,<span class="st">&#39;production&#39;</span>:<span class="dv">2305</span>},{<span class="st">&#39;id&#39;</span>:<span class="dv">35</span>,<span class="st">&#39;year&#39;</span>:<span class="dv">2005</span>,<span class="st">&#39;production&#39;</span>:<span class="dv">3505</span>},{<span class="st">&#39;id&#39;</span>:<span class="dv">23</span>,<span class="st">&#39;year&#39;</span>:<span class="dv">2010</span>,<span class="st">&#39;production&#39;</span>:<span class="dv">2310</span>},{<span class="st">&#39;id&#39;</span>:<span class="dv">35</span>,<span class="st">&#39;year&#39;</span>:<span class="dv">2010</span>,<span class="st">&#39;production&#39;</span>:<span class="dv">3510</span>}]</a></code></pre></div>
 <p>We can make a dictionary of production rates for each <code>id_year</code> combination such that:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb22-1" data-line-number="1">dict_ <span class="op">=</span> {}</a>
-<a class="sourceLine" id="cb22-2" data-line-number="2"><span class="cf">for</span> i <span class="kw">in</span> exmp:</a>
-<a class="sourceLine" id="cb22-3" data-line-number="3">  dict_[<span class="st">&#39;</span><span class="sc">%s</span><span class="st">_</span><span class="sc">%s</span><span class="st">&#39;</span> <span class="op">%</span> (i[<span class="st">&#39;id&#39;</span>],i[<span class="st">&#39;year&#39;</span>])] <span class="op">=</span> i[<span class="st">&#39;production&#39;</span>]</a>
-<a class="sourceLine" id="cb22-4" data-line-number="4">dict_</a>
-<a class="sourceLine" id="cb22-5" data-line-number="5"><span class="co">## {&#39;23_2005&#39;: 2305, &#39;35_2005&#39;: 3505, &#39;23_2010&#39;: 2310, &#39;35_2010&#39;: 3510}</span></a></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb23-1" data-line-number="1">dict_ <span class="op">=</span> {}</a>
+<a class="sourceLine" id="cb23-2" data-line-number="2"><span class="cf">for</span> i <span class="kw">in</span> exmp:</a>
+<a class="sourceLine" id="cb23-3" data-line-number="3">  dict_[<span class="st">&#39;</span><span class="sc">%s</span><span class="st">_</span><span class="sc">%s</span><span class="st">&#39;</span> <span class="op">%</span> (i[<span class="st">&#39;id&#39;</span>],i[<span class="st">&#39;year&#39;</span>])] <span class="op">=</span> i[<span class="st">&#39;production&#39;</span>]</a>
+<a class="sourceLine" id="cb23-4" data-line-number="4">dict_</a>
+<a class="sourceLine" id="cb23-5" data-line-number="5"><span class="co">## {&#39;23_2005&#39;: 2305, &#39;35_2005&#39;: 3505, &#39;23_2010&#39;: 2310, &#39;35_2010&#39;: 3510}</span></a></code></pre></div>
 <p>To make a dictionary of list of the production rates over years, we can use <code>collections</code> module. <code>defaultdict(list)</code> makes a default dictionary of lists such that:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb23-1" data-line-number="1"><span class="im">import</span> collections</a>
-<a class="sourceLine" id="cb23-2" data-line-number="2">dt_ <span class="op">=</span> collections.defaultdict(<span class="bu">list</span>)</a>
-<a class="sourceLine" id="cb23-3" data-line-number="3"><span class="cf">for</span> i <span class="kw">in</span> exmp:</a>
-<a class="sourceLine" id="cb23-4" data-line-number="4">  dt_[i[<span class="st">&#39;id&#39;</span>]].append(i[<span class="st">&#39;production&#39;</span>])</a>
-<a class="sourceLine" id="cb23-5" data-line-number="5"><span class="bu">dict</span>(dt_)</a>
-<a class="sourceLine" id="cb23-6" data-line-number="6"><span class="co">## {23: [2305, 2310], 35: [3505, 3510]}</span></a></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb24-1" data-line-number="1"><span class="im">import</span> collections</a>
+<a class="sourceLine" id="cb24-2" data-line-number="2">dt_ <span class="op">=</span> collections.defaultdict(<span class="bu">list</span>)</a>
+<a class="sourceLine" id="cb24-3" data-line-number="3"><span class="cf">for</span> i <span class="kw">in</span> exmp:</a>
+<a class="sourceLine" id="cb24-4" data-line-number="4">  dt_[i[<span class="st">&#39;id&#39;</span>]].append(i[<span class="st">&#39;production&#39;</span>])</a>
+<a class="sourceLine" id="cb24-5" data-line-number="5"><span class="bu">dict</span>(dt_)</a>
+<a class="sourceLine" id="cb24-6" data-line-number="6"><span class="co">## {23: [2305, 2310], 35: [3505, 3510]}</span></a></code></pre></div>
 <p>Now let’s find total production over years:</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb24-1" data-line-number="1"><span class="cf">for</span> i <span class="kw">in</span> dt_:</a>
-<a class="sourceLine" id="cb24-2" data-line-number="2">  dt_[i] <span class="op">=</span> <span class="bu">sum</span>(dt_[i])</a>
-<a class="sourceLine" id="cb24-3" data-line-number="3"><span class="bu">dict</span>(dt_)</a>
-<a class="sourceLine" id="cb24-4" data-line-number="4"><span class="co">## {23: 4615, 35: 7015}</span></a></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb25-1" data-line-number="1"><span class="cf">for</span> i <span class="kw">in</span> dt_:</a>
+<a class="sourceLine" id="cb25-2" data-line-number="2">  dt_[i] <span class="op">=</span> <span class="bu">sum</span>(dt_[i])</a>
+<a class="sourceLine" id="cb25-3" data-line-number="3"><span class="bu">dict</span>(dt_)</a>
+<a class="sourceLine" id="cb25-4" data-line-number="4"><span class="co">## {23: 4615, 35: 7015}</span></a></code></pre></div>
 <p>Also, the <code>dict()</code> constructor can accept an iterator that returns a finite stream of <code>(key, value)</code> tuples:</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb25-1" data-line-number="1">L <span class="op">=</span> [(<span class="st">&#39;Italy&#39;</span>, <span class="st">&#39;Rome&#39;</span>), (<span class="st">&#39;France&#39;</span>, <span class="st">&#39;Paris&#39;</span>), (<span class="st">&#39;US&#39;</span>, <span class="st">&#39;Washington DC&#39;</span>)]</a>
-<a class="sourceLine" id="cb25-2" data-line-number="2"><span class="bu">dict</span>(<span class="bu">iter</span>(L))</a>
-<a class="sourceLine" id="cb25-3" data-line-number="3">{<span class="st">&#39;Italy&#39;</span>: <span class="st">&#39;Rome&#39;</span>, <span class="st">&#39;France&#39;</span>: <span class="st">&#39;Paris&#39;</span>, <span class="st">&#39;US&#39;</span>: <span class="st">&#39;Washington DC&#39;</span>}</a></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb26-1" data-line-number="1">L <span class="op">=</span> [(<span class="st">&#39;Italy&#39;</span>, <span class="st">&#39;Rome&#39;</span>), (<span class="st">&#39;France&#39;</span>, <span class="st">&#39;Paris&#39;</span>), (<span class="st">&#39;US&#39;</span>, <span class="st">&#39;Washington DC&#39;</span>)]</a>
+<a class="sourceLine" id="cb26-2" data-line-number="2"><span class="bu">dict</span>(<span class="bu">iter</span>(L))</a>
+<a class="sourceLine" id="cb26-3" data-line-number="3">{<span class="st">&#39;Italy&#39;</span>: <span class="st">&#39;Rome&#39;</span>, <span class="st">&#39;France&#39;</span>: <span class="st">&#39;Paris&#39;</span>, <span class="st">&#39;US&#39;</span>: <span class="st">&#39;Washington DC&#39;</span>}</a></code></pre></div>
 </div>
 <div id="sets" class="section level3">
 <h3>Sets</h3>
 <p>A <strong>set</strong> is an <strong>unordered</strong> collection with <strong>no duplicate</strong> elements. Basic uses include membership testing and eliminating duplicate entries. Set objects also support mathematical operations like union, intersection, difference, and symmetric difference.</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb26-1" data-line-number="1">st <span class="op">=</span> {<span class="dv">12</span>,<span class="dv">13</span>,<span class="dv">13</span>,<span class="dv">15</span>,<span class="dv">12</span>,<span class="dv">15</span>}</a>
-<a class="sourceLine" id="cb26-2" data-line-number="2">st</a>
-<a class="sourceLine" id="cb26-3" data-line-number="3"><span class="co">## {12, 13, 15}</span></a>
-<a class="sourceLine" id="cb26-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb26-5" data-line-number="5">st[<span class="dv">1</span>]</a>
-<a class="sourceLine" id="cb26-6" data-line-number="6"><span class="co">## Traceback (most recent call last):</span></a>
-<a class="sourceLine" id="cb26-7" data-line-number="7"><span class="co">##   File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</span></a>
-<a class="sourceLine" id="cb26-8" data-line-number="8"><span class="co">## TypeError: &#39;set&#39; object does not support indexing</span></a></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb27-1" data-line-number="1">st <span class="op">=</span> {<span class="dv">12</span>,<span class="dv">13</span>,<span class="dv">13</span>,<span class="dv">15</span>,<span class="dv">12</span>,<span class="dv">15</span>}</a>
+<a class="sourceLine" id="cb27-2" data-line-number="2">st</a>
+<a class="sourceLine" id="cb27-3" data-line-number="3"><span class="co">## {12, 13, 15}</span></a>
+<a class="sourceLine" id="cb27-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb27-5" data-line-number="5">st[<span class="dv">1</span>]</a>
+<a class="sourceLine" id="cb27-6" data-line-number="6"><span class="co">## Traceback (most recent call last):</span></a>
+<a class="sourceLine" id="cb27-7" data-line-number="7"><span class="co">##   File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</span></a>
+<a class="sourceLine" id="cb27-8" data-line-number="8"><span class="co">## TypeError: &#39;set&#39; object does not support indexing</span></a></code></pre></div>
 <p><strong>Note</strong>: to create empty sets use <code>set()</code> because <code>{}</code> considered as empty dictionary in python.</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb27-1" data-line-number="1"><span class="cf">for</span> element <span class="kw">in</span> [[], (), {}]:</a>
-<a class="sourceLine" id="cb27-2" data-line-number="2">    <span class="bu">print</span>(<span class="bu">type</span>(element)) </a>
-<a class="sourceLine" id="cb27-3" data-line-number="3"><span class="co">## &lt;class &#39;list&#39;&gt;</span></a>
-<a class="sourceLine" id="cb27-4" data-line-number="4"><span class="co">## &lt;class &#39;tuple&#39;&gt;</span></a>
-<a class="sourceLine" id="cb27-5" data-line-number="5"><span class="co">## &lt;class &#39;dict&#39;&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb28-1" data-line-number="1"><span class="cf">for</span> element <span class="kw">in</span> [[], (), {}]:</a>
+<a class="sourceLine" id="cb28-2" data-line-number="2">    <span class="bu">print</span>(<span class="bu">type</span>(element)) </a>
+<a class="sourceLine" id="cb28-3" data-line-number="3"><span class="co">## &lt;class &#39;list&#39;&gt;</span></a>
+<a class="sourceLine" id="cb28-4" data-line-number="4"><span class="co">## &lt;class &#39;tuple&#39;&gt;</span></a>
+<a class="sourceLine" id="cb28-5" data-line-number="5"><span class="co">## &lt;class &#39;dict&#39;&gt;</span></a></code></pre></div>
 <p>Sets have several methods including set operations such as <code>union</code>, <code>intersection</code>, and <code>difference</code>.</p>
 <p>Iterating through sets:</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb28-1" data-line-number="1">{x<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> x <span class="kw">in</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">3</span>]}</a>
-<a class="sourceLine" id="cb28-2" data-line-number="2"><span class="co">## {1, 4, 9}</span></a></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb29-1" data-line-number="1">{x<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> x <span class="kw">in</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">3</span>]}</a>
+<a class="sourceLine" id="cb29-2" data-line-number="2"><span class="co">## {1, 4, 9}</span></a></code></pre></div>
 </div>
 </div>
 
