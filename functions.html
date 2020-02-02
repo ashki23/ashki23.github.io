@@ -467,6 +467,9 @@ div.tocify {
 <li>
   <a href="research.html">Research</a>
 </li>
+<li>
+  <a href="blogroll.html">Blogroll</a>
+</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
@@ -603,10 +606,10 @@ h4.author {
 <h2>Date and time</h2>
 <p>There are several functions to work with date and time classes, following are some examples of these functions.</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1"><span class="kw">Sys.time</span>()</a></code></pre></div>
-<pre><code>## [1] &quot;2020-01-29 15:49:54 EST&quot;</code></pre>
+<pre><code>## [1] &quot;2020-02-02 13:53:09 CST&quot;</code></pre>
 <div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" data-line-number="1">d &lt;-<span class="st"> </span><span class="kw">Sys.Date</span>()</a>
 <a class="sourceLine" id="cb19-2" data-line-number="2">d</a></code></pre></div>
-<pre><code>## [1] &quot;2020-01-29&quot;</code></pre>
+<pre><code>## [1] &quot;2020-02-02&quot;</code></pre>
 <div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" data-line-number="1">wd &lt;-<span class="st"> </span><span class="kw">weekdays</span>(d)</a>
 <a class="sourceLine" id="cb21-2" data-line-number="2">m &lt;-<span class="st"> </span><span class="kw">months</span>(d)</a>
 <a class="sourceLine" id="cb21-3" data-line-number="3">q &lt;-<span class="st"> </span><span class="kw">quarters</span>(d)</a>
@@ -614,31 +617,31 @@ h4.author {
 <a class="sourceLine" id="cb21-5" data-line-number="5">mm &lt;-<span class="st"> </span><span class="kw">format</span>(<span class="kw">Sys.time</span>(), <span class="st">&quot;%m&quot;</span>)</a>
 <a class="sourceLine" id="cb21-6" data-line-number="6">y &lt;-<span class="st"> </span><span class="kw">format</span>(<span class="kw">Sys.time</span>(), <span class="st">&quot;%Y&quot;</span>)</a>
 <a class="sourceLine" id="cb21-7" data-line-number="7"><span class="kw">data.frame</span>(<span class="dt">date =</span> <span class="kw">c</span>(<span class="st">&quot;day&quot;</span>,<span class="st">&quot;day number&quot;</span>,<span class="st">&quot;month&quot;</span>,<span class="st">&quot;month number&quot;</span>,<span class="st">&quot;year&quot;</span>,<span class="st">&quot;quarter&quot;</span>), <span class="dt">value =</span> <span class="kw">c</span>(wd,dm,m,mm,y,q))</a></code></pre></div>
-<pre><code>##           date     value
-## 1          day Wednesday
-## 2   day number        29
-## 3        month   January
-## 4 month number        01
-## 5         year      2020
-## 6      quarter        Q1</code></pre>
+<pre><code>##           date    value
+## 1          day   Sunday
+## 2   day number       02
+## 3        month February
+## 4 month number       02
+## 5         year     2020
+## 6      quarter       Q1</code></pre>
 <div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" data-line-number="1"><span class="kw">timestamp</span>()</a></code></pre></div>
-<pre><code>## ##------ Wed Jan 29 15:49:54 2020 ------##</code></pre>
+<pre><code>## ##------ Sun Feb  2 13:53:09 2020 ------##</code></pre>
 <div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" data-line-number="1"><span class="kw">format</span>(<span class="kw">Sys.time</span>(), <span class="st">&quot;%a %b %d %Y %X&quot;</span>) <span class="co"># To see more options for format enter `help(strftime)`</span></a></code></pre></div>
-<pre><code>## [1] &quot;Wed Jan 29 2020 15:49:54&quot;</code></pre>
+<pre><code>## [1] &quot;Sun Feb 02 2020 13:53:09&quot;</code></pre>
 <div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" data-line-number="1"><span class="kw">format</span>(<span class="kw">Sys.time</span>(), <span class="st">&quot;%Y-%m-%d&quot;</span>)</a></code></pre></div>
-<pre><code>## [1] &quot;2020-01-29&quot;</code></pre>
+<pre><code>## [1] &quot;2020-02-02&quot;</code></pre>
 <div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" data-line-number="1"><span class="kw">format</span>(<span class="kw">Sys.time</span>(), <span class="st">&quot;%H:%M:%S&quot;</span>)</a></code></pre></div>
-<pre><code>## [1] &quot;15:49:54&quot;</code></pre>
+<pre><code>## [1] &quot;13:53:09&quot;</code></pre>
 <div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" data-line-number="1">weeks &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="kw">Sys.Date</span>(), <span class="dt">length.out =</span> <span class="dv">3</span>, <span class="dt">by =</span> <span class="st">&quot;1 week&quot;</span>) <span class="co"># Next ten weeks</span></a>
 <a class="sourceLine" id="cb31-2" data-line-number="2">weeks</a></code></pre></div>
-<pre><code>## [1] &quot;2020-01-29&quot; &quot;2020-02-05&quot; &quot;2020-02-12&quot;</code></pre>
+<pre><code>## [1] &quot;2020-02-02&quot; &quot;2020-02-09&quot; &quot;2020-02-16&quot;</code></pre>
 <div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" data-line-number="1"><span class="kw">difftime</span>(weeks[<span class="dv">2</span>], weeks[<span class="dv">1</span>], <span class="dt">units =</span> <span class="st">&quot;auto&quot;</span>)</a></code></pre></div>
 <pre><code>## Time difference of 7 days</code></pre>
 <div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" data-line-number="1"><span class="co"># Date-time conversion</span></a>
 <a class="sourceLine" id="cb35-2" data-line-number="2"><span class="kw">strftime</span>(<span class="kw">Sys.time</span>(), <span class="dt">format =</span> <span class="st">&quot;%a %d %b %Y %H:%M:%S&quot;</span>) <span class="co"># convert time-date objects to character</span></a></code></pre></div>
-<pre><code>## [1] &quot;Wed 29 Jan 2020 15:49:54&quot;</code></pre>
+<pre><code>## [1] &quot;Sun 02 Feb 2020 13:53:09&quot;</code></pre>
 <div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" data-line-number="1"><span class="kw">strptime</span>(<span class="st">&quot;20/2/06 11:16:16.683&quot;</span>, <span class="dt">format =</span> <span class="st">&quot;%d/%m/%y %H:%M:%OS&quot;</span>) <span class="co"># convert character to time-date objects</span></a></code></pre></div>
-<pre><code>## [1] &quot;2006-02-20 11:16:16 EST&quot;</code></pre>
+<pre><code>## [1] &quot;2006-02-20 11:16:16 CST&quot;</code></pre>
 <p>Note: <code>ts</code> function can be used to create a vector or matrix of time-series objects.</p>
 <div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb39-1" data-line-number="1"><span class="kw">ts</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">12</span>, <span class="dt">start =</span> <span class="kw">c</span>(<span class="dv">1956</span>, <span class="dv">3</span>), <span class="dt">frequency =</span> <span class="dv">12</span>) <span class="co"># for season: frequency = 4</span></a></code></pre></div>
 <pre><code>##      Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec
@@ -666,40 +669,40 @@ h4.author {
 <a class="sourceLine" id="cb47-2" data-line-number="2">mydata &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">Student =</span> <span class="kw">sort</span>(<span class="kw">rep</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>,<span class="dv">2</span>)), <span class="dt">Test =</span> <span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;SAT&quot;</span>,<span class="st">&quot;GRE&quot;</span>),<span class="dv">3</span>), <span class="dt">Grade =</span> <span class="kw">sample</span>(<span class="dv">75</span><span class="op">:</span><span class="dv">100</span>,<span class="dv">6</span>), <span class="dt">Grade_2 =</span> <span class="kw">sample</span>(<span class="dv">75</span><span class="op">:</span><span class="dv">100</span>,<span class="dv">6</span>))</a>
 <a class="sourceLine" id="cb47-3" data-line-number="3">mydata</a></code></pre></div>
 <pre><code>##   Student Test Grade Grade_2
-## 1       1  SAT    84      86
-## 2       1  GRE    83      87
-## 3       2  SAT    95      78
-## 4       2  GRE    91      84
-## 5       3  SAT    76      97
-## 6       3  GRE    85      96</code></pre>
+## 1       1  SAT    95      85
+## 2       1  GRE    81      88
+## 3       2  SAT    83      84
+## 4       2  GRE    75      81
+## 5       3  SAT    88      80
+## 6       3  GRE    91      83</code></pre>
 <div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb49-1" data-line-number="1">mydata[<span class="op">!</span>(mydata<span class="op">$</span>Student <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">3</span>)),] <span class="co"># Excluding</span></a></code></pre></div>
 <pre><code>##   Student Test Grade Grade_2
-## 1       1  SAT    84      86
-## 2       1  GRE    83      87</code></pre>
+## 1       1  SAT    95      85
+## 2       1  GRE    81      88</code></pre>
 <div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb51-1" data-line-number="1">mydata[mydata<span class="op">$</span>Student <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">3</span>),]  <span class="co"># Selecting</span></a></code></pre></div>
 <pre><code>##   Student Test Grade Grade_2
-## 3       2  SAT    95      78
-## 4       2  GRE    91      84
-## 5       3  SAT    76      97
-## 6       3  GRE    85      96</code></pre>
+## 3       2  SAT    83      84
+## 4       2  GRE    75      81
+## 5       3  SAT    88      80
+## 6       3  GRE    91      83</code></pre>
 <div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb53-1" data-line-number="1">mydata[mydata<span class="op">$</span>Grade <span class="op">&gt;</span><span class="st"> </span><span class="dv">95</span>,] <span class="co"># Selecting Grade greater than 95</span></a></code></pre></div>
 <pre><code>## [1] Student Test    Grade   Grade_2
 ## &lt;0 rows&gt; (or 0-length row.names)</code></pre>
 <div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb55-1" data-line-number="1">mydata[mydata<span class="op">$</span>Grade <span class="op">&gt;</span><span class="st"> </span>mydata<span class="op">$</span>Grade_<span class="dv">2</span>,] <span class="co"># Rows with Grade greater than Grade_2</span></a></code></pre></div>
 <pre><code>##   Student Test Grade Grade_2
-## 3       2  SAT    95      78
-## 4       2  GRE    91      84</code></pre>
+## 1       1  SAT    95      85
+## 5       3  SAT    88      80
+## 6       3  GRE    91      83</code></pre>
 <div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb57-1" data-line-number="1">mydata[mydata<span class="op">$</span>Grade_<span class="dv">2</span> <span class="op">&gt;</span><span class="st"> </span>mydata<span class="op">$</span>Grade <span class="op">&amp;</span><span class="st"> </span>mydata<span class="op">$</span>Test <span class="op">==</span><span class="st"> &quot;GRE&quot;</span>,] <span class="co"># AND</span></a></code></pre></div>
 <pre><code>##   Student Test Grade Grade_2
-## 2       1  GRE    83      87
-## 6       3  GRE    85      96</code></pre>
+## 2       1  GRE    81      88
+## 4       2  GRE    75      81</code></pre>
 <div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb59-1" data-line-number="1">mydata[mydata<span class="op">$</span>Grade_<span class="dv">2</span> <span class="op">&gt;</span><span class="st"> </span>mydata<span class="op">$</span>Grade <span class="op">|</span><span class="st"> </span>mydata<span class="op">$</span>Grade <span class="op">&gt;</span><span class="st"> </span><span class="dv">92</span>,] <span class="co"># OR</span></a></code></pre></div>
 <pre><code>##   Student Test Grade Grade_2
-## 1       1  SAT    84      86
-## 2       1  GRE    83      87
-## 3       2  SAT    95      78
-## 5       3  SAT    76      97
-## 6       3  GRE    85      96</code></pre>
+## 1       1  SAT    95      85
+## 2       1  GRE    81      88
+## 3       2  SAT    83      84
+## 4       2  GRE    75      81</code></pre>
 <div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb61-1" data-line-number="1">mydata[mydata<span class="op">$</span>Grade <span class="op">&gt;</span><span class="st"> </span><span class="dv">90</span>, <span class="st">&quot;Grade&quot;</span>] <span class="co"># Grade greater than 90</span></a></code></pre></div>
 <pre><code>## [1] 95 91</code></pre>
 <div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb63-1" data-line-number="1"><span class="kw">length</span>(<span class="kw">which</span>(mydata<span class="op">$</span>Grade <span class="op">&gt;</span><span class="st"> </span><span class="dv">90</span>))<span class="op">/</span><span class="kw">nrow</span>(mydata) <span class="co"># percentage of Grade greater than 90</span></a></code></pre></div>
@@ -707,87 +710,87 @@ h4.author {
 <div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb65-1" data-line-number="1">mydata<span class="op">$</span>new_column &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>) <span class="co"># Add a new column</span></a>
 <a class="sourceLine" id="cb65-2" data-line-number="2">mydata</a></code></pre></div>
 <pre><code>##   Student Test Grade Grade_2 new_column
-## 1       1  SAT    84      86          1
-## 2       1  GRE    83      87          2
-## 3       2  SAT    95      78          3
-## 4       2  GRE    91      84          4
-## 5       3  SAT    76      97          5
-## 6       3  GRE    85      96          6</code></pre>
+## 1       1  SAT    95      85          1
+## 2       1  GRE    81      88          2
+## 3       2  SAT    83      84          3
+## 4       2  GRE    75      81          4
+## 5       3  SAT    88      80          5
+## 6       3  GRE    91      83          6</code></pre>
 <div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb67-1" data-line-number="1">mydata &lt;-<span class="st"> </span>mydata[,<span class="op">-</span><span class="kw">ncol</span>(mydata)] <span class="co"># Removing last column</span></a>
 <a class="sourceLine" id="cb67-2" data-line-number="2">mydata</a></code></pre></div>
 <pre><code>##   Student Test Grade Grade_2
-## 1       1  SAT    84      86
-## 2       1  GRE    83      87
-## 3       2  SAT    95      78
-## 4       2  GRE    91      84
-## 5       3  SAT    76      97
-## 6       3  GRE    85      96</code></pre>
+## 1       1  SAT    95      85
+## 2       1  GRE    81      88
+## 3       2  SAT    83      84
+## 4       2  GRE    75      81
+## 5       3  SAT    88      80
+## 6       3  GRE    91      83</code></pre>
 <div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb69-1" data-line-number="1">mydata[<span class="op">-</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>),] <span class="co"># Removing 1st and 3rd rows</span></a></code></pre></div>
 <pre><code>##   Student Test Grade Grade_2
-## 2       1  GRE    83      87
-## 4       2  GRE    91      84
-## 5       3  SAT    76      97
-## 6       3  GRE    85      96</code></pre>
+## 2       1  GRE    81      88
+## 4       2  GRE    75      81
+## 5       3  SAT    88      80
+## 6       3  GRE    91      83</code></pre>
 <div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb71-1" data-line-number="1">mydata[<span class="ot">FALSE</span>,] <span class="co"># Removing all rows</span></a></code></pre></div>
 <pre><code>## [1] Student Test    Grade   Grade_2
 ## &lt;0 rows&gt; (or 0-length row.names)</code></pre>
 <div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb73-1" data-line-number="1">mydata[,<span class="dv">4</span>] &lt;-<span class="st"> </span><span class="kw">sample</span>(<span class="dv">85</span><span class="op">:</span><span class="dv">100</span>,<span class="dv">6</span>) <span class="co"># Substitute column Grade_2</span></a>
 <a class="sourceLine" id="cb73-2" data-line-number="2">mydata</a></code></pre></div>
 <pre><code>##   Student Test Grade Grade_2
-## 1       1  SAT    84      90
-## 2       1  GRE    83      91
-## 3       2  SAT    95      88
-## 4       2  GRE    91      95
-## 5       3  SAT    76      86
-## 6       3  GRE    85      92</code></pre>
+## 1       1  SAT    95     100
+## 2       1  GRE    81      99
+## 3       2  SAT    83      97
+## 4       2  GRE    75      89
+## 5       3  SAT    88      86
+## 6       3  GRE    91      88</code></pre>
 <div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb75-1" data-line-number="1">mydata[<span class="kw">order</span>(mydata<span class="op">$</span>Grade),] <span class="co"># Order by Grade</span></a></code></pre></div>
 <pre><code>##   Student Test Grade Grade_2
-## 5       3  SAT    76      86
-## 2       1  GRE    83      91
-## 1       1  SAT    84      90
-## 6       3  GRE    85      92
-## 4       2  GRE    91      95
-## 3       2  SAT    95      88</code></pre>
+## 4       2  GRE    75      89
+## 2       1  GRE    81      99
+## 3       2  SAT    83      97
+## 5       3  SAT    88      86
+## 6       3  GRE    91      88
+## 1       1  SAT    95     100</code></pre>
 <div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb77-1" data-line-number="1">mydata[<span class="kw">order</span>(mydata<span class="op">$</span>Grade, mydata<span class="op">$</span>Grade_<span class="dv">2</span>),] <span class="co"># Order by Grade and Grade_2</span></a></code></pre></div>
 <pre><code>##   Student Test Grade Grade_2
-## 5       3  SAT    76      86
-## 2       1  GRE    83      91
-## 1       1  SAT    84      90
-## 6       3  GRE    85      92
-## 4       2  GRE    91      95
-## 3       2  SAT    95      88</code></pre>
+## 4       2  GRE    75      89
+## 2       1  GRE    81      99
+## 3       2  SAT    83      97
+## 5       3  SAT    88      86
+## 6       3  GRE    91      88
+## 1       1  SAT    95     100</code></pre>
 <div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb79-1" data-line-number="1">mydata[<span class="kw">order</span>(mydata<span class="op">$</span>Student, mydata<span class="op">$</span>Grade), <span class="dv">-2</span>] <span class="co"># Order by Student and Grade</span></a></code></pre></div>
 <pre><code>##   Student Grade Grade_2
-## 2       1    83      91
-## 1       1    84      90
-## 4       2    91      95
-## 3       2    95      88
-## 5       3    76      86
-## 6       3    85      92</code></pre>
+## 2       1    81      99
+## 1       1    95     100
+## 4       2    75      89
+## 3       2    83      97
+## 5       3    88      86
+## 6       3    91      88</code></pre>
 <div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb81-1" data-line-number="1"><span class="kw">sort</span>(<span class="kw">unique</span>(mydata[,<span class="dv">1</span>]))</a></code></pre></div>
 <pre><code>## [1] 1 2 3</code></pre>
 <div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb83-1" data-line-number="1"><span class="co"># Change Test column (GRE, SAT) to (1,2)</span></a>
 <a class="sourceLine" id="cb83-2" data-line-number="2">mydata<span class="op">$</span>Test &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(mydata<span class="op">$</span>Test) </a>
 <a class="sourceLine" id="cb83-3" data-line-number="3">mydata</a></code></pre></div>
 <pre><code>##   Student Test Grade Grade_2
-## 1       1    2    84      90
-## 2       1    1    83      91
-## 3       2    2    95      88
-## 4       2    1    91      95
-## 5       3    2    76      86
-## 6       3    1    85      92</code></pre>
+## 1       1    2    95     100
+## 2       1    1    81      99
+## 3       2    2    83      97
+## 4       2    1    75      89
+## 5       3    2    88      86
+## 6       3    1    91      88</code></pre>
 <div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb85-1" data-line-number="1"><span class="co"># Change Test column to a binary variable (0,1)</span></a>
 <a class="sourceLine" id="cb85-2" data-line-number="2">mydata &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">Student =</span> <span class="kw">sort</span>(<span class="kw">rep</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="dv">2</span>)), <span class="dt">Test =</span> <span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;SAT&quot;</span>,<span class="st">&quot;GRE&quot;</span>), <span class="dv">3</span>), <span class="dt">Grade =</span> <span class="kw">sample</span>(<span class="dv">75</span><span class="op">:</span><span class="dv">100</span>, <span class="dv">6</span>), <span class="dt">Grade_2 =</span> <span class="kw">sample</span>(<span class="dv">75</span><span class="op">:</span><span class="dv">100</span>, <span class="dv">6</span>), <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</a>
 <a class="sourceLine" id="cb85-3" data-line-number="3">mydata<span class="op">$</span>Test[mydata<span class="op">$</span>Test <span class="op">==</span><span class="st"> &quot;SAT&quot;</span>] &lt;-<span class="st"> </span><span class="dv">1</span> </a>
 <a class="sourceLine" id="cb85-4" data-line-number="4">mydata<span class="op">$</span>Test[mydata<span class="op">$</span>Test <span class="op">==</span><span class="st"> &quot;GRE&quot;</span>] &lt;-<span class="st"> </span><span class="dv">0</span></a>
 <a class="sourceLine" id="cb85-5" data-line-number="5">mydata</a></code></pre></div>
 <pre><code>##   Student Test Grade Grade_2
-## 1       1    1    86      82
-## 2       1    0    83      81
-## 3       2    1    96      95
-## 4       2    0    76      84
-## 5       3    1   100      78
-## 6       3    0    93      99</code></pre>
+## 1       1    1    95      96
+## 2       1    0    86      99
+## 3       2    1    98      93
+## 4       2    0    85      90
+## 5       3    1    94      78
+## 6       3    0   100      92</code></pre>
 <div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb87-1" data-line-number="1"><span class="co"># Generate data by paste</span></a>
 <a class="sourceLine" id="cb87-2" data-line-number="2"><span class="kw">paste</span>(<span class="st">&quot;Var&quot;</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">7</span>)</a></code></pre></div>
 <pre><code>## [1] &quot;Var 1&quot; &quot;Var 2&quot; &quot;Var 3&quot; &quot;Var 4&quot; &quot;Var 5&quot; &quot;Var 6&quot; &quot;Var 7&quot;</code></pre>
@@ -806,17 +809,17 @@ h4.author {
 <div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb95-1" data-line-number="1"><span class="co"># Apply</span></a>
 <a class="sourceLine" id="cb95-2" data-line-number="2"><span class="kw">apply</span>(mydata[<span class="dv">3</span><span class="op">:</span><span class="dv">4</span>], <span class="dv">2</span>, quantile) <span class="co"># Calculate quantile for column 3 and 4. Margin = 1 indicates rows, 2 indicates columns</span></a></code></pre></div>
 <pre><code>##       Grade Grade_2
-## 0%    76.00   78.00
-## 25%   83.75   81.25
-## 50%   89.50   83.00
-## 75%   95.25   92.25
+## 0%    85.00   78.00
+## 25%   88.00   90.50
+## 50%   94.50   92.50
+## 75%   97.25   95.25
 ## 100% 100.00   99.00</code></pre>
 <div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb97-1" data-line-number="1"><span class="kw">apply</span>(mydata[<span class="dv">3</span><span class="op">:</span><span class="dv">4</span>], <span class="dv">2</span>, mean) <span class="co"># Calculate mean for column 3 and 4</span></a></code></pre></div>
-<pre><code>##   Grade Grade_2 
-##    89.0    86.5</code></pre>
+<pre><code>##    Grade  Grade_2 
+## 93.00000 91.33333</code></pre>
 <div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb99-1" data-line-number="1"><span class="kw">colMeans</span>(mydata[<span class="dv">3</span><span class="op">:</span><span class="dv">4</span>])</a></code></pre></div>
-<pre><code>##   Grade Grade_2 
-##    89.0    86.5</code></pre>
+<pre><code>##    Grade  Grade_2 
+## 93.00000 91.33333</code></pre>
 <div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb101-1" data-line-number="1"><span class="co"># Cumulative sums, products, and extremes</span></a>
 <a class="sourceLine" id="cb101-2" data-line-number="2"><span class="kw">cumsum</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>)</a></code></pre></div>
 <pre><code>## [1]  1  3  6 10 15 21</code></pre>
@@ -830,9 +833,9 @@ h4.author {
 <a class="sourceLine" id="cb109-2" data-line-number="2"><span class="kw">scale</span>(mydata[<span class="op">-</span><span class="dv">2</span>])[<span class="dv">1</span>] <span class="co"># scale(x) = (x - mean(x)) / sd(x)</span></a></code></pre></div>
 <pre><code>## [1] -1.118034</code></pre>
 <div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb111-1" data-line-number="1"><span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>, <span class="dv">10</span>) <span class="co"># A sample of size 10 from 1 to 100</span></a></code></pre></div>
-<pre><code>##  [1] 52  8 63  7 48 96 91 66 11 60</code></pre>
+<pre><code>##  [1] 36 25 72 13 73 53 34 89 60 41</code></pre>
 <div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb113-1" data-line-number="1"><span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dv">10</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>) <span class="co"># # A sample of size 10 from 1 to 5 with replacement </span></a></code></pre></div>
-<pre><code>##  [1] 1 3 4 5 5 5 4 4 5 5</code></pre>
+<pre><code>##  [1] 1 2 3 1 3 3 5 3 3 2</code></pre>
 <div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb115-1" data-line-number="1"><span class="co"># Eval</span></a>
 <a class="sourceLine" id="cb115-2" data-line-number="2">y &lt;-<span class="st"> </span><span class="cf">function</span>(x1,x2) { </a>
 <a class="sourceLine" id="cb115-3" data-line-number="3">  <span class="kw">substitute</span>(<span class="dv">2</span><span class="op">*</span>x1<span class="op">^</span><span class="dv">2</span> <span class="op">+</span><span class="st"> </span><span class="dv">3</span><span class="op">*</span>x2<span class="op">^</span><span class="dv">2</span>)</a>
@@ -1029,34 +1032,34 @@ h4.author {
 <a class="sourceLine" id="cb160-2" data-line-number="2">data<span class="op">$</span>value &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">rnorm</span>(<span class="kw">nrow</span>(data)), <span class="dv">2</span>)</a>
 <a class="sourceLine" id="cb160-3" data-line-number="3">data</a></code></pre></div>
 <pre><code>##      meat   food value
-## 1 grade-1 burger  1.22
-## 2 grade-2 burger  0.91
-## 3 grade-3 burger  1.13
-## 4 grade-1  steak -1.42
-## 5 grade-2  steak -0.26
-## 6 grade-3  steak  0.74
-## 7 grade-1  pizza -0.73
-## 8 grade-2  pizza -0.11
-## 9 grade-3  pizza  0.70</code></pre>
+## 1 grade-1 burger  0.02
+## 2 grade-2 burger  0.80
+## 3 grade-3 burger -1.05
+## 4 grade-1  steak  1.14
+## 5 grade-2  steak  0.45
+## 6 grade-3  steak  0.10
+## 7 grade-1  pizza  0.66
+## 8 grade-2  pizza  1.92
+## 9 grade-3  pizza -0.75</code></pre>
 <div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb162-1" data-line-number="1">data_by_food &lt;-<span class="st"> </span><span class="kw">split</span>(data, data<span class="op">$</span>food)</a>
 <a class="sourceLine" id="cb162-2" data-line-number="2">data_by_food</a></code></pre></div>
 <pre><code>## $burger
 ##      meat   food value
-## 1 grade-1 burger  1.22
-## 2 grade-2 burger  0.91
-## 3 grade-3 burger  1.13
+## 1 grade-1 burger  0.02
+## 2 grade-2 burger  0.80
+## 3 grade-3 burger -1.05
 ## 
 ## $steak
 ##      meat  food value
-## 4 grade-1 steak -1.42
-## 5 grade-2 steak -0.26
-## 6 grade-3 steak  0.74
+## 4 grade-1 steak  1.14
+## 5 grade-2 steak  0.45
+## 6 grade-3 steak  0.10
 ## 
 ## $pizza
 ##      meat  food value
-## 7 grade-1 pizza -0.73
-## 8 grade-2 pizza -0.11
-## 9 grade-3 pizza  0.70</code></pre>
+## 7 grade-1 pizza  0.66
+## 8 grade-2 pizza  1.92
+## 9 grade-3 pizza -0.75</code></pre>
 <div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb164-1" data-line-number="1">result &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">meat =</span> <span class="kw">c</span>(<span class="st">&quot;grade-1&quot;</span>,<span class="st">&quot;grade-2&quot;</span>,<span class="st">&quot;grade-3&quot;</span>))</a>
 <a class="sourceLine" id="cb164-2" data-line-number="2"><span class="cf">for</span>(i <span class="cf">in</span> <span class="kw">seq</span>(data_by_food)) {</a>
 <a class="sourceLine" id="cb164-3" data-line-number="3">  result &lt;-<span class="st"> </span><span class="kw">merge</span>(result, data_by_food[[i]], <span class="dt">by =</span> <span class="st">&quot;meat&quot;</span>)</a>
@@ -1065,9 +1068,9 @@ h4.author {
 <a class="sourceLine" id="cb164-6" data-line-number="6"><span class="kw">colnames</span>(result) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;meat&quot;</span>, <span class="st">&quot;burger&quot;</span>, <span class="st">&quot;steak&quot;</span>, <span class="st">&quot;pizza&quot;</span>)</a>
 <a class="sourceLine" id="cb164-7" data-line-number="7">result</a></code></pre></div>
 <pre><code>##      meat burger steak pizza
-## 1 grade-1   1.22 -1.42 -0.73
-## 2 grade-2   0.91 -0.26 -0.11
-## 3 grade-3   1.13  0.74  0.70</code></pre>
+## 1 grade-1   0.02  1.14  0.66
+## 2 grade-2   0.80  0.45  1.92
+## 3 grade-3  -1.05  0.10 -0.75</code></pre>
 <div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb166-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">ID =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">6</span>, <span class="dt">Product =</span> <span class="kw">c</span>(<span class="kw">rep</span>(<span class="st">&quot;TV&quot;</span>, <span class="dv">3</span>), <span class="kw">rep</span>(<span class="st">&quot;Mobile&quot;</span>, <span class="dv">3</span>)))</a>
 <a class="sourceLine" id="cb166-2" data-line-number="2">y &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">ID =</span> <span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>), <span class="dt">Made_in =</span> <span class="kw">c</span>(<span class="kw">rep</span>(<span class="st">&quot;Japan&quot;</span>, <span class="dv">2</span>), <span class="kw">rep</span>(<span class="st">&quot;China&quot;</span>, <span class="dv">1</span>)))</a>
 <a class="sourceLine" id="cb166-3" data-line-number="3"></a>
