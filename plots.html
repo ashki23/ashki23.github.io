@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
 
 <meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
@@ -24,6 +25,7 @@
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 <!-- google.com -->
@@ -345,7 +347,6 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
-  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -374,12 +375,6 @@ $(document).ready(function () {
 }
 }
 
-@media print {
-.toc-content {
-  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
-  float: right;
-}
-}
 
 .toc-content {
   padding-left: 30px;
@@ -556,7 +551,7 @@ h4.author {
 <li><code>xlab/ylab</code>: X-axis/y-axis label</li>
 <li><code>xlim/ylim</code>: X-axis/y-axis limit</li>
 </ul>
-<p>This tutorial shows how to apply above functions and parameters to draw graphs by R.</p>
+<p>This tutorial shows how to apply above functions and parameters to draw graphs by R. We will also, briefly learn how to generate publication style tables and maps.</p>
 <hr />
 <div id="scatter-plots-lines-and-points" class="section level2">
 <h2>Scatter plots, lines and points</h2>
@@ -573,7 +568,7 @@ h4.author {
 <a class="sourceLine" id="cb1-11" data-line-number="11"><span class="kw">plot</span>(x, y, <span class="dt">type =</span> <span class="st">&quot;l&quot;</span>, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;&quot;</span>, <span class="dt">yaxt =</span> <span class="st">&quot;n&quot;</span>, <span class="dt">las =</span> <span class="dv">2</span>)</a>
 <a class="sourceLine" id="cb1-12" data-line-number="12"><span class="kw">lines</span>(<span class="kw">smooth</span>(y), <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">lty =</span> <span class="dv">1</span>, <span class="dt">lwd =</span> <span class="fl">1.4</span>)</a>
 <a class="sourceLine" id="cb1-13" data-line-number="13"><span class="kw">abline</span>(<span class="dt">h =</span> <span class="dv">3</span>, <span class="dt">v =</span> <span class="dv">80</span>, <span class="dt">col =</span> <span class="st">&quot;orange&quot;</span>, <span class="dt">lwd =</span> <span class="dv">3</span>)</a>
-<a class="sourceLine" id="cb1-14" data-line-number="14"><span class="kw">abline</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dt">lty =</span> <span class="dv">2</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb1-14" data-line-number="14"><span class="kw">abline</span>(<span class="dt">h =</span> <span class="dv">0</span>, <span class="dt">lty =</span> <span class="dv">2</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)</a>
 <a class="sourceLine" id="cb1-15" data-line-number="15"><span class="kw">points</span>(<span class="kw">c</span>(<span class="dv">20</span>,<span class="dv">40</span>,<span class="dv">60</span>,<span class="dv">80</span>,<span class="dv">100</span>), <span class="kw">c</span>(<span class="dv">0</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">2</span>), <span class="dt">col =</span> <span class="st">&quot;black&quot;</span>, <span class="dt">bg =</span> <span class="st">&quot;green&quot;</span>, <span class="dt">pch =</span> <span class="dv">21</span>, <span class="dt">cex =</span> <span class="dv">2</span>)</a>
 <a class="sourceLine" id="cb1-16" data-line-number="16"><span class="kw">text</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="dv">40</span>,<span class="dv">80</span>), <span class="dt">y =</span> <span class="kw">c</span>(<span class="op">-</span><span class="fl">1.2</span>,<span class="fl">3.2</span>), <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;MIN&quot;</span>,<span class="st">&quot;MAX&quot;</span>), <span class="dt">pos =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>), <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>,  <span class="dt">cex =</span> <span class="fl">0.9</span>)</a></code></pre></div>
 <p><img src="plots_files/figure-html/unnamed-chunk-2-1.png" width="672" style="display: block; margin: auto;" /></p>
@@ -621,8 +616,8 @@ h4.author {
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</a>
 <a class="sourceLine" id="cb5-2" data-line-number="2"></a>
 <a class="sourceLine" id="cb5-3" data-line-number="3"><span class="co">## Left plot</span></a>
-<a class="sourceLine" id="cb5-4" data-line-number="4"><span class="kw">boxplot</span>(y,y2, <span class="dt">col =</span> <span class="kw">c</span>(<span class="st">&quot;orange&quot;</span>, <span class="st">&quot;gold&quot;</span>))</a>
-<a class="sourceLine" id="cb5-5" data-line-number="5"><span class="kw">abline</span>(<span class="dv">0</span>,<span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb5-4" data-line-number="4"><span class="kw">boxplot</span>(y, y2, <span class="dt">col =</span> <span class="kw">c</span>(<span class="st">&quot;orange&quot;</span>, <span class="st">&quot;gold&quot;</span>))</a>
+<a class="sourceLine" id="cb5-5" data-line-number="5"><span class="kw">abline</span>(<span class="dt">h =</span> <span class="dv">0</span>)</a>
 <a class="sourceLine" id="cb5-6" data-line-number="6"></a>
 <a class="sourceLine" id="cb5-7" data-line-number="7"><span class="co">## Right plot</span></a>
 <a class="sourceLine" id="cb5-8" data-line-number="8"><span class="kw">acf</span>(y, <span class="dt">main =</span> <span class="st">&quot;&quot;</span>)</a></code></pre></div>
@@ -721,9 +716,672 @@ h4.author {
 <a class="sourceLine" id="cb19-5" data-line-number="5"><span class="kw">persp</span>(x, y, z, <span class="dt">theta =</span> <span class="dv">30</span>, <span class="dt">phi =</span> <span class="dv">30</span>, <span class="dt">expand =</span> <span class="fl">0.5</span>, <span class="dt">col =</span> <span class="st">&quot;lightblue&quot;</span>)</a></code></pre></div>
 <p><img src="plots_files/figure-html/unnamed-chunk-16-2.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
+<div id="tables" class="section level2">
+<h2>Tables</h2>
+<p>In R we can use <code>kable</code> function from <code>knitr</code> library to print tables in HTML or LaTeX formats. <code>kable</code> is a great tool, but the generated outputs are usually not formatted for including in reports. While building Markdown or Latex reports it will be useful to use the following packages to make them more publication quality:</p>
+<ul>
+<li><a href="https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html">kableExtra</a></li>
+<li><a href="https://cran.r-project.org/web/packages/xtable/vignettes/xtableGallery.pdf">xtable</a></li>
+<li><a href="https://www.jakeruss.com/cheatsheets/stargazer/">stargazer</a></li>
+</ul>
+<p>For example:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1"><span class="kw">library</span>(knitr)</a>
+<a class="sourceLine" id="cb20-2" data-line-number="2">cardata &lt;-<span class="st"> </span>mtcars</a>
+<a class="sourceLine" id="cb20-3" data-line-number="3"><span class="kw">kable</span>(<span class="kw">head</span>(cardata), <span class="dt">format =</span> <span class="st">&quot;html&quot;</span>, <span class="dt">caption =</span> <span class="st">&quot;Title of the table&quot;</span>)</a></code></pre></div>
+<table>
+<caption>
+Title of the table
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+mpg
+</th>
+<th style="text-align:right;">
+cyl
+</th>
+<th style="text-align:right;">
+disp
+</th>
+<th style="text-align:right;">
+hp
+</th>
+<th style="text-align:right;">
+drat
+</th>
+<th style="text-align:right;">
+wt
+</th>
+<th style="text-align:right;">
+qsec
+</th>
+<th style="text-align:right;">
+vs
+</th>
+<th style="text-align:right;">
+am
+</th>
+<th style="text-align:right;">
+gear
+</th>
+<th style="text-align:right;">
+carb
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Mazda RX4
+</td>
+<td style="text-align:right;">
+21.0
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+160
+</td>
+<td style="text-align:right;">
+110
+</td>
+<td style="text-align:right;">
+3.90
+</td>
+<td style="text-align:right;">
+2.620
+</td>
+<td style="text-align:right;">
+16.46
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Mazda RX4 Wag
+</td>
+<td style="text-align:right;">
+21.0
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+160
+</td>
+<td style="text-align:right;">
+110
+</td>
+<td style="text-align:right;">
+3.90
+</td>
+<td style="text-align:right;">
+2.875
+</td>
+<td style="text-align:right;">
+17.02
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Datsun 710
+</td>
+<td style="text-align:right;">
+22.8
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+108
+</td>
+<td style="text-align:right;">
+93
+</td>
+<td style="text-align:right;">
+3.85
+</td>
+<td style="text-align:right;">
+2.320
+</td>
+<td style="text-align:right;">
+18.61
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Hornet 4 Drive
+</td>
+<td style="text-align:right;">
+21.4
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+258
+</td>
+<td style="text-align:right;">
+110
+</td>
+<td style="text-align:right;">
+3.08
+</td>
+<td style="text-align:right;">
+3.215
+</td>
+<td style="text-align:right;">
+19.44
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Hornet Sportabout
+</td>
+<td style="text-align:right;">
+18.7
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+360
+</td>
+<td style="text-align:right;">
+175
+</td>
+<td style="text-align:right;">
+3.15
+</td>
+<td style="text-align:right;">
+3.440
+</td>
+<td style="text-align:right;">
+17.02
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Valiant
+</td>
+<td style="text-align:right;">
+18.1
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+225
+</td>
+<td style="text-align:right;">
+105
+</td>
+<td style="text-align:right;">
+2.76
+</td>
+<td style="text-align:right;">
+3.460
+</td>
+<td style="text-align:right;">
+20.22
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" data-line-number="1"><span class="kw">library</span>(kableExtra)</a>
+<a class="sourceLine" id="cb21-2" data-line-number="2"><span class="kw">kable</span>(<span class="kw">head</span>(cardata), <span class="dt">format =</span> <span class="st">&quot;html&quot;</span>, <span class="dt">caption =</span> <span class="st">&quot;Title of the table&quot;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb21-3" data-line-number="3"><span class="st">  </span><span class="kw">kable_styling</span>(<span class="dt">full_width =</span> <span class="ot">FALSE</span>, <span class="dt">font_size =</span> <span class="dv">16</span>, <span class="dt">position =</span> <span class="st">&quot;center&quot;</span>) <span class="co"># position: left, center, right, float_left and float_right</span></a></code></pre></div>
+<table class="table" style="font-size: 16px; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+Title of the table
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+mpg
+</th>
+<th style="text-align:right;">
+cyl
+</th>
+<th style="text-align:right;">
+disp
+</th>
+<th style="text-align:right;">
+hp
+</th>
+<th style="text-align:right;">
+drat
+</th>
+<th style="text-align:right;">
+wt
+</th>
+<th style="text-align:right;">
+qsec
+</th>
+<th style="text-align:right;">
+vs
+</th>
+<th style="text-align:right;">
+am
+</th>
+<th style="text-align:right;">
+gear
+</th>
+<th style="text-align:right;">
+carb
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Mazda RX4
+</td>
+<td style="text-align:right;">
+21.0
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+160
+</td>
+<td style="text-align:right;">
+110
+</td>
+<td style="text-align:right;">
+3.90
+</td>
+<td style="text-align:right;">
+2.620
+</td>
+<td style="text-align:right;">
+16.46
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Mazda RX4 Wag
+</td>
+<td style="text-align:right;">
+21.0
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+160
+</td>
+<td style="text-align:right;">
+110
+</td>
+<td style="text-align:right;">
+3.90
+</td>
+<td style="text-align:right;">
+2.875
+</td>
+<td style="text-align:right;">
+17.02
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Datsun 710
+</td>
+<td style="text-align:right;">
+22.8
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+108
+</td>
+<td style="text-align:right;">
+93
+</td>
+<td style="text-align:right;">
+3.85
+</td>
+<td style="text-align:right;">
+2.320
+</td>
+<td style="text-align:right;">
+18.61
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Hornet 4 Drive
+</td>
+<td style="text-align:right;">
+21.4
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+258
+</td>
+<td style="text-align:right;">
+110
+</td>
+<td style="text-align:right;">
+3.08
+</td>
+<td style="text-align:right;">
+3.215
+</td>
+<td style="text-align:right;">
+19.44
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Hornet Sportabout
+</td>
+<td style="text-align:right;">
+18.7
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+360
+</td>
+<td style="text-align:right;">
+175
+</td>
+<td style="text-align:right;">
+3.15
+</td>
+<td style="text-align:right;">
+3.440
+</td>
+<td style="text-align:right;">
+17.02
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Valiant
+</td>
+<td style="text-align:right;">
+18.1
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+225
+</td>
+<td style="text-align:right;">
+105
+</td>
+<td style="text-align:right;">
+2.76
+</td>
+<td style="text-align:right;">
+3.460
+</td>
+<td style="text-align:right;">
+20.22
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" data-line-number="1">fm &lt;-<span class="st"> </span><span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span>cyl <span class="op">+</span><span class="st"> </span>disp <span class="op">+</span><span class="st"> </span>hp, <span class="dt">data =</span> cardata)</a>
+<a class="sourceLine" id="cb22-2" data-line-number="2">sm &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">summary</span>(fm)<span class="op">$</span>coef,<span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb22-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb22-4" data-line-number="4"><span class="co"># Adding some cosmetic to columns that we want</span></a>
+<a class="sourceLine" id="cb22-5" data-line-number="5"><span class="kw">row.names</span>(sm) &lt;-<span class="st">  </span><span class="kw">cell_spec</span>(<span class="kw">row.names</span>(sm), <span class="st">&quot;html&quot;</span>, <span class="dt">bold =</span> <span class="ot">TRUE</span>) </a>
+<a class="sourceLine" id="cb22-6" data-line-number="6">sm[,<span class="dv">4</span>] &lt;-<span class="st">  </span><span class="kw">cell_spec</span>(sm[,<span class="dv">4</span>], <span class="st">&quot;html&quot;</span>, <span class="dt">color =</span> <span class="kw">ifelse</span>(sm[,<span class="dv">4</span>] <span class="op">&lt;</span><span class="st"> </span><span class="fl">0.1</span>, <span class="st">&quot;red&quot;</span>, <span class="st">&quot;black&quot;</span>))</a>
+<a class="sourceLine" id="cb22-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb22-8" data-line-number="8"><span class="kw">kable</span>(sm, <span class="st">&quot;html&quot;</span>, <span class="dt">escape =</span> F) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb22-9" data-line-number="9"><span class="st">  </span><span class="kw">kable_styling</span>(<span class="dt">bootstrap_options =</span> <span class="st">&quot;hover&quot;</span>, <span class="dt">full_width =</span> <span class="ot">FALSE</span>, <span class="dt">font_size =</span> <span class="dv">16</span>, <span class="dt">position =</span> <span class="st">&quot;center&quot;</span>)</a></code></pre></div>
+<table class="table table-hover" style="font-size: 16px; width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+Estimate
+</th>
+<th style="text-align:left;">
+Std. Error
+</th>
+<th style="text-align:left;">
+t value
+</th>
+<th style="text-align:left;">
+Pr(&gt;|t|)
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+<span style=" font-weight: bold;    ">(Intercept)</span>
+</td>
+<td style="text-align:left;">
+34.185
+</td>
+<td style="text-align:left;">
+2.591
+</td>
+<td style="text-align:left;">
+13.195
+</td>
+<td style="text-align:left;">
+<span style="     color: red !important;">0</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span style=" font-weight: bold;    ">cyl</span>
+</td>
+<td style="text-align:left;">
+-1.227
+</td>
+<td style="text-align:left;">
+0.797
+</td>
+<td style="text-align:left;">
+-1.54
+</td>
+<td style="text-align:left;">
+<span style="     color: black !important;">0.135</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span style=" font-weight: bold;    ">disp</span>
+</td>
+<td style="text-align:left;">
+-0.019
+</td>
+<td style="text-align:left;">
+0.01
+</td>
+<td style="text-align:left;">
+-1.811
+</td>
+<td style="text-align:left;">
+<span style="     color: red !important;">0.081</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span style=" font-weight: bold;    ">hp</span>
+</td>
+<td style="text-align:left;">
+-0.015
+</td>
+<td style="text-align:left;">
+0.015
+</td>
+<td style="text-align:left;">
+-1.002
+</td>
+<td style="text-align:left;">
+<span style="     color: black !important;">0.325</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
 <div id="maps" class="section level2">
 <h2>Maps</h2>
-<p>R does not have default functions for drawing maps and shape files. To generate maps, we can use the following packages:</p>
+<p>R does not have default functions for drawing maps and shapefiles. To generate maps, we can use the following packages:</p>
 <ul>
 <li><a href="https://cran.r-project.org/web/packages/maps/maps.pdf">maps</a>: draw lines and polygons as specified by a map database</li>
 <li><a href="https://r-spatial.github.io/sf/">sf</a>: provide <a href="https://r-spatial.github.io/sf/articles/sf1.html">Simple Features</a> for R. Find more details about <em>sf</em> in <a href="https://r-spatial.github.io/sf/articles/sf5.html">here</a> and in the <a href="https://github.com/rstudio/cheatsheets/blob/master/sf.pdf">cheetsheet</a></li>
@@ -733,30 +1391,30 @@ h4.author {
 <div id="layout" class="section level2">
 <h2>Layout</h2>
 <p><code>layout</code> creates a layout for putting multiple plots together. Number of rows and columns are specified in a matrix, with the column-widths and the row-heights specified in the respective arguments.</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1">lay &lt;-<span class="st"> </span><span class="kw">layout</span>(<span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">0</span>),<span class="dv">3</span>,<span class="dv">2</span>,<span class="dt">byrow =</span> <span class="ot">TRUE</span>), <span class="dt">widths =</span> <span class="kw">c</span>(<span class="dv">4</span>,<span class="fl">1.5</span>), <span class="dt">heights =</span> <span class="kw">c</span>(<span class="fl">1.5</span>,<span class="dv">4</span>,<span class="dv">1</span>), <span class="dt">respect =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb20-2" data-line-number="2"><span class="kw">layout.show</span>(lay)</a></code></pre></div>
-<p><img src="plots_files/figure-html/unnamed-chunk-17-1.png" width="672" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">pmin</span>(<span class="dv">3</span>, <span class="kw">pmax</span>(<span class="op">-</span><span class="dv">3</span>, <span class="kw">rnorm</span>(<span class="dv">100</span>)))</a>
-<a class="sourceLine" id="cb21-2" data-line-number="2">y &lt;-<span class="st"> </span><span class="kw">pmin</span>(<span class="dv">3</span>, <span class="kw">pmax</span>(<span class="op">-</span><span class="dv">3</span>, <span class="kw">rnorm</span>(<span class="dv">100</span>)))</a>
-<a class="sourceLine" id="cb21-3" data-line-number="3">xhist &lt;-<span class="st"> </span><span class="kw">hist</span>(x, <span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="op">-</span><span class="dv">3</span>,<span class="dv">3</span>,<span class="fl">0.5</span>), <span class="dt">plot =</span> <span class="ot">FALSE</span>)</a>
-<a class="sourceLine" id="cb21-4" data-line-number="4">yhist &lt;-<span class="st"> </span><span class="kw">hist</span>(y, <span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="op">-</span><span class="dv">3</span>,<span class="dv">3</span>,<span class="fl">0.5</span>), <span class="dt">plot =</span> <span class="ot">FALSE</span>)</a>
-<a class="sourceLine" id="cb21-5" data-line-number="5">top &lt;-<span class="st"> </span><span class="kw">max</span>(<span class="kw">c</span>(xhist<span class="op">$</span>counts, yhist<span class="op">$</span>counts))</a>
-<a class="sourceLine" id="cb21-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb21-7" data-line-number="7"><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">1</span>))</a>
-<a class="sourceLine" id="cb21-8" data-line-number="8"><span class="kw">plot</span>(xhist, <span class="dt">col =</span> <span class="st">&quot;gray&quot;</span>, <span class="dt">axes =</span> <span class="ot">FALSE</span>, <span class="dt">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;&quot;</span>)</a>
-<a class="sourceLine" id="cb21-9" data-line-number="9"><span class="kw">title</span>(<span class="dt">main =</span> <span class="st">&quot;Main Title&quot;</span>, <span class="dt">cex.main =</span> <span class="fl">1.5</span>)</a>
-<a class="sourceLine" id="cb21-10" data-line-number="10"></a>
-<a class="sourceLine" id="cb21-11" data-line-number="11"><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">1</span>))</a>
-<a class="sourceLine" id="cb21-12" data-line-number="12"><span class="kw">plot</span>(x[<span class="dv">1</span><span class="op">:</span><span class="dv">15</span>], y[<span class="dv">1</span><span class="op">:</span><span class="dv">15</span>], <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">3</span>, <span class="dv">3</span>), <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">3</span>, <span class="dv">3</span>), <span class="dt">xlab =</span> <span class="st">&quot;x variable&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;&quot;</span>, <span class="dt">cex.lab =</span> <span class="fl">1.2</span>)</a>
-<a class="sourceLine" id="cb21-13" data-line-number="13"><span class="kw">arrows</span>(x[<span class="dv">1</span><span class="op">:</span><span class="dv">15</span>], y[<span class="dv">1</span><span class="op">:</span><span class="dv">15</span>]<span class="op">-</span><span class="fl">0.5</span>, x[<span class="dv">1</span><span class="op">:</span><span class="dv">15</span>], y[<span class="dv">1</span><span class="op">:</span><span class="dv">15</span>]<span class="op">+</span><span class="fl">0.5</span>, <span class="dt">col =</span> <span class="dv">4</span>, <span class="dt">angle =</span> <span class="dv">90</span>, <span class="dt">length =</span> <span class="fl">0.05</span>, <span class="dt">code =</span> <span class="dv">3</span>)</a>
-<a class="sourceLine" id="cb21-14" data-line-number="14"></a>
-<a class="sourceLine" id="cb21-15" data-line-number="15"><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>))</a>
-<a class="sourceLine" id="cb21-16" data-line-number="16"><span class="kw">barplot</span>(yhist<span class="op">$</span>counts, <span class="dt">axes =</span> <span class="ot">FALSE</span>, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">0</span>, top), <span class="dt">space =</span> <span class="dv">0</span>, <span class="dt">horiz =</span> <span class="ot">TRUE</span>, <span class="dt">col =</span> <span class="st">&quot;black&quot;</span>, <span class="dt">bg =</span> <span class="st">&quot;gray&quot;</span>, <span class="dt">density =</span> <span class="dv">20</span>)</a>
-<a class="sourceLine" id="cb21-17" data-line-number="17"></a>
-<a class="sourceLine" id="cb21-18" data-line-number="18"><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">3</span>,<span class="dv">0</span>,<span class="dv">0</span>))</a>
-<a class="sourceLine" id="cb21-19" data-line-number="19"><span class="kw">plot.new</span>()</a>
-<a class="sourceLine" id="cb21-20" data-line-number="20"><span class="kw">legend</span>(<span class="st">&quot;center&quot;</span>, <span class="dt">legend =</span> <span class="kw">c</span>(<span class="st">&quot;Top&quot;</span>, <span class="st">&quot;Middle&quot;</span>, <span class="st">&quot;Right&quot;</span>), <span class="dt">fill =</span> <span class="kw">c</span>(<span class="st">&quot;gray&quot;</span>, <span class="st">&quot;white&quot;</span>, <span class="st">&quot;black&quot;</span>), <span class="dt">density =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">40</span>), <span class="dt">bg =</span> <span class="st">&quot;gray90&quot;</span>, <span class="dt">horiz =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
-<p><img src="plots_files/figure-html/unnamed-chunk-17-2.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" data-line-number="1">lay &lt;-<span class="st"> </span><span class="kw">layout</span>(<span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">0</span>),<span class="dv">3</span>,<span class="dv">2</span>,<span class="dt">byrow =</span> <span class="ot">TRUE</span>), <span class="dt">widths =</span> <span class="kw">c</span>(<span class="dv">4</span>,<span class="fl">1.5</span>), <span class="dt">heights =</span> <span class="kw">c</span>(<span class="fl">1.5</span>,<span class="dv">4</span>,<span class="dv">1</span>), <span class="dt">respect =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb23-2" data-line-number="2"><span class="kw">layout.show</span>(lay)</a></code></pre></div>
+<p><img src="plots_files/figure-html/unnamed-chunk-18-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">pmin</span>(<span class="dv">3</span>, <span class="kw">pmax</span>(<span class="op">-</span><span class="dv">3</span>, <span class="kw">rnorm</span>(<span class="dv">100</span>)))</a>
+<a class="sourceLine" id="cb24-2" data-line-number="2">y &lt;-<span class="st"> </span><span class="kw">pmin</span>(<span class="dv">3</span>, <span class="kw">pmax</span>(<span class="op">-</span><span class="dv">3</span>, <span class="kw">rnorm</span>(<span class="dv">100</span>)))</a>
+<a class="sourceLine" id="cb24-3" data-line-number="3">xhist &lt;-<span class="st"> </span><span class="kw">hist</span>(x, <span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="op">-</span><span class="dv">3</span>,<span class="dv">3</span>,<span class="fl">0.5</span>), <span class="dt">plot =</span> <span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb24-4" data-line-number="4">yhist &lt;-<span class="st"> </span><span class="kw">hist</span>(y, <span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="op">-</span><span class="dv">3</span>,<span class="dv">3</span>,<span class="fl">0.5</span>), <span class="dt">plot =</span> <span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb24-5" data-line-number="5">top &lt;-<span class="st"> </span><span class="kw">max</span>(<span class="kw">c</span>(xhist<span class="op">$</span>counts, yhist<span class="op">$</span>counts))</a>
+<a class="sourceLine" id="cb24-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb24-7" data-line-number="7"><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">1</span>))</a>
+<a class="sourceLine" id="cb24-8" data-line-number="8"><span class="kw">plot</span>(xhist, <span class="dt">col =</span> <span class="st">&quot;gray&quot;</span>, <span class="dt">axes =</span> <span class="ot">FALSE</span>, <span class="dt">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;&quot;</span>)</a>
+<a class="sourceLine" id="cb24-9" data-line-number="9"><span class="kw">title</span>(<span class="dt">main =</span> <span class="st">&quot;Main Title&quot;</span>, <span class="dt">cex.main =</span> <span class="fl">1.5</span>)</a>
+<a class="sourceLine" id="cb24-10" data-line-number="10"></a>
+<a class="sourceLine" id="cb24-11" data-line-number="11"><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">1</span>))</a>
+<a class="sourceLine" id="cb24-12" data-line-number="12"><span class="kw">plot</span>(x[<span class="dv">1</span><span class="op">:</span><span class="dv">15</span>], y[<span class="dv">1</span><span class="op">:</span><span class="dv">15</span>], <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">3</span>, <span class="dv">3</span>), <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">3</span>, <span class="dv">3</span>), <span class="dt">xlab =</span> <span class="st">&quot;x variable&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;&quot;</span>, <span class="dt">cex.lab =</span> <span class="fl">1.2</span>)</a>
+<a class="sourceLine" id="cb24-13" data-line-number="13"><span class="kw">arrows</span>(x[<span class="dv">1</span><span class="op">:</span><span class="dv">15</span>], y[<span class="dv">1</span><span class="op">:</span><span class="dv">15</span>]<span class="op">-</span><span class="fl">0.5</span>, x[<span class="dv">1</span><span class="op">:</span><span class="dv">15</span>], y[<span class="dv">1</span><span class="op">:</span><span class="dv">15</span>]<span class="op">+</span><span class="fl">0.5</span>, <span class="dt">col =</span> <span class="dv">4</span>, <span class="dt">angle =</span> <span class="dv">90</span>, <span class="dt">length =</span> <span class="fl">0.05</span>, <span class="dt">code =</span> <span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb24-14" data-line-number="14"></a>
+<a class="sourceLine" id="cb24-15" data-line-number="15"><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>))</a>
+<a class="sourceLine" id="cb24-16" data-line-number="16"><span class="kw">barplot</span>(yhist<span class="op">$</span>counts, <span class="dt">axes =</span> <span class="ot">FALSE</span>, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">0</span>, top), <span class="dt">space =</span> <span class="dv">0</span>, <span class="dt">horiz =</span> <span class="ot">TRUE</span>, <span class="dt">col =</span> <span class="st">&quot;black&quot;</span>, <span class="dt">bg =</span> <span class="st">&quot;gray&quot;</span>, <span class="dt">density =</span> <span class="dv">20</span>)</a>
+<a class="sourceLine" id="cb24-17" data-line-number="17"></a>
+<a class="sourceLine" id="cb24-18" data-line-number="18"><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">3</span>,<span class="dv">0</span>,<span class="dv">0</span>))</a>
+<a class="sourceLine" id="cb24-19" data-line-number="19"><span class="kw">plot.new</span>()</a>
+<a class="sourceLine" id="cb24-20" data-line-number="20"><span class="kw">legend</span>(<span class="st">&quot;center&quot;</span>, <span class="dt">legend =</span> <span class="kw">c</span>(<span class="st">&quot;Top&quot;</span>, <span class="st">&quot;Middle&quot;</span>, <span class="st">&quot;Right&quot;</span>), <span class="dt">fill =</span> <span class="kw">c</span>(<span class="st">&quot;gray&quot;</span>, <span class="st">&quot;white&quot;</span>, <span class="st">&quot;black&quot;</span>), <span class="dt">density =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">40</span>), <span class="dt">bg =</span> <span class="st">&quot;gray90&quot;</span>, <span class="dt">horiz =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<p><img src="plots_files/figure-html/unnamed-chunk-18-2.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="color-palettes" class="section level2">
 <h2>Color palettes</h2>
@@ -770,16 +1428,16 @@ h4.author {
 <li><code>topo.colors()</code></li>
 <li><code>cm.colors()</code></li>
 </ul>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" data-line-number="1"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</a>
-<a class="sourceLine" id="cb22-2" data-line-number="2"><span class="kw">pie</span>(<span class="kw">rep</span>(<span class="dv">1</span>, <span class="dv">24</span>), <span class="dt">col =</span> <span class="kw">rainbow</span>(<span class="dv">24</span>), <span class="dt">radius =</span> <span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb22-3" data-line-number="3"><span class="kw">pie</span>(<span class="kw">rep</span>(<span class="dv">1</span>, <span class="dv">24</span>), <span class="dt">col =</span> <span class="kw">colorRampPalette</span>(<span class="kw">c</span>(<span class="st">&quot;red&quot;</span>,<span class="st">&quot;yellow&quot;</span>,<span class="st">&quot;springgreen&quot;</span>,<span class="st">&quot;royalblue&quot;</span>))(<span class="dv">24</span>), <span class="dt">radius =</span> <span class="dv">1</span>)</a></code></pre></div>
-<p><img src="plots_files/figure-html/unnamed-chunk-18-1.png" width="672" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" data-line-number="1"><span class="kw">pie</span>(<span class="kw">rep</span>(<span class="dv">1</span>, <span class="dv">24</span>), <span class="dt">col =</span> <span class="kw">heat.colors</span>(<span class="dv">24</span>), <span class="dt">radius =</span> <span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb23-2" data-line-number="2"><span class="kw">pie</span>(<span class="kw">rep</span>(<span class="dv">1</span>, <span class="dv">24</span>), <span class="dt">col =</span> <span class="kw">terrain.colors</span>(<span class="dv">24</span>), <span class="dt">radius =</span> <span class="dv">1</span>)</a></code></pre></div>
-<p><img src="plots_files/figure-html/unnamed-chunk-18-2.png" width="672" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" data-line-number="1"><span class="kw">pie</span>(<span class="kw">rep</span>(<span class="dv">1</span>, <span class="dv">24</span>), <span class="dt">col =</span> <span class="kw">topo.colors</span>(<span class="dv">24</span>), <span class="dt">radius =</span> <span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb24-2" data-line-number="2"><span class="kw">pie</span>(<span class="kw">rep</span>(<span class="dv">1</span>, <span class="dv">24</span>), <span class="dt">col =</span> <span class="kw">cm.colors</span>(<span class="dv">24</span>), <span class="dt">radius =</span> <span class="dv">1</span>)</a></code></pre></div>
-<p><img src="plots_files/figure-html/unnamed-chunk-18-3.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" data-line-number="1"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</a>
+<a class="sourceLine" id="cb25-2" data-line-number="2"><span class="kw">pie</span>(<span class="kw">rep</span>(<span class="dv">1</span>, <span class="dv">24</span>), <span class="dt">col =</span> <span class="kw">rainbow</span>(<span class="dv">24</span>), <span class="dt">radius =</span> <span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb25-3" data-line-number="3"><span class="kw">pie</span>(<span class="kw">rep</span>(<span class="dv">1</span>, <span class="dv">24</span>), <span class="dt">col =</span> <span class="kw">colorRampPalette</span>(<span class="kw">c</span>(<span class="st">&quot;red&quot;</span>,<span class="st">&quot;yellow&quot;</span>,<span class="st">&quot;springgreen&quot;</span>,<span class="st">&quot;royalblue&quot;</span>))(<span class="dv">24</span>), <span class="dt">radius =</span> <span class="dv">1</span>)</a></code></pre></div>
+<p><img src="plots_files/figure-html/unnamed-chunk-19-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" data-line-number="1"><span class="kw">pie</span>(<span class="kw">rep</span>(<span class="dv">1</span>, <span class="dv">24</span>), <span class="dt">col =</span> <span class="kw">heat.colors</span>(<span class="dv">24</span>), <span class="dt">radius =</span> <span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb26-2" data-line-number="2"><span class="kw">pie</span>(<span class="kw">rep</span>(<span class="dv">1</span>, <span class="dv">24</span>), <span class="dt">col =</span> <span class="kw">terrain.colors</span>(<span class="dv">24</span>), <span class="dt">radius =</span> <span class="dv">1</span>)</a></code></pre></div>
+<p><img src="plots_files/figure-html/unnamed-chunk-19-2.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" data-line-number="1"><span class="kw">pie</span>(<span class="kw">rep</span>(<span class="dv">1</span>, <span class="dv">24</span>), <span class="dt">col =</span> <span class="kw">topo.colors</span>(<span class="dv">24</span>), <span class="dt">radius =</span> <span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb27-2" data-line-number="2"><span class="kw">pie</span>(<span class="kw">rep</span>(<span class="dv">1</span>, <span class="dv">24</span>), <span class="dt">col =</span> <span class="kw">cm.colors</span>(<span class="dv">24</span>), <span class="dt">radius =</span> <span class="dv">1</span>)</a></code></pre></div>
+<p><img src="plots_files/figure-html/unnamed-chunk-19-3.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 
 <br />
