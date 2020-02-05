@@ -769,7 +769,7 @@ h4.author {
 <div class="sourceCode" id="cb22"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb22-1" data-line-number="1">number <span class="op">=</span> [<span class="dv">88</span>,<span class="dv">22</span>,<span class="dv">11</span>,<span class="dv">33</span>,<span class="dv">2</span>,<span class="dv">99</span>]</a>
 <a class="sourceLine" id="cb22-2" data-line-number="2"><span class="bu">list</span>(<span class="bu">filter</span>(<span class="kw">lambda</span> x: x <span class="op">&gt;</span> <span class="dv">22</span>, number))</a>
 <a class="sourceLine" id="cb22-3" data-line-number="3"><span class="co">## [88, 33, 99]</span></a></code></pre></div>
-<p>Traditionally we can use the following loop to filter <code>number</code> list:</p>
+<p>Traditionally we can use <code>for</code> loop and <code>if</code> condition to filter <code>number</code> list such that:</p>
 <div class="sourceCode" id="cb23"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb23-1" data-line-number="1">number <span class="op">=</span> [<span class="dv">88</span>,<span class="dv">22</span>,<span class="dv">11</span>,<span class="dv">33</span>,<span class="dv">2</span>,<span class="dv">99</span>]</a>
 <a class="sourceLine" id="cb23-2" data-line-number="2">select <span class="op">=</span> []</a>
 <a class="sourceLine" id="cb23-3" data-line-number="3"><span class="cf">for</span> i <span class="kw">in</span> number:</a>
@@ -777,7 +777,11 @@ h4.author {
 <a class="sourceLine" id="cb23-5" data-line-number="5">    select.append(i)</a>
 <a class="sourceLine" id="cb23-6" data-line-number="6"></a>
 <a class="sourceLine" id="cb23-7" data-line-number="7">select</a>
-<a class="sourceLine" id="cb23-8" data-line-number="8"><span class="co">## [88, 33, 99]</span></a></code></pre></div>
+<a class="sourceLine" id="cb23-8" data-line-number="8"><span class="co">## [88, 33, 99]</span></a>
+<a class="sourceLine" id="cb23-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb23-10" data-line-number="10"><span class="co">## Or</span></a>
+<a class="sourceLine" id="cb23-11" data-line-number="11">[i <span class="cf">for</span> i <span class="kw">in</span> number <span class="cf">if</span> i <span class="op">&gt;</span> <span class="dv">22</span>]</a>
+<a class="sourceLine" id="cb23-12" data-line-number="12"><span class="co">## [88, 33, 99]</span></a></code></pre></div>
 <p>Now let’s define a function to return numbers (integer, float and complex) from a list of numbers and strings:</p>
 <div class="sourceCode" id="cb24"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb24-1" data-line-number="1"><span class="kw">def</span> return_num(lis):</a>
 <a class="sourceLine" id="cb24-2" data-line-number="2">  <span class="cf">return</span> <span class="bu">filter</span>(<span class="kw">lambda</span> x: <span class="bu">isinstance</span>(x, (<span class="bu">int</span>,<span class="bu">float</span>,<span class="bu">complex</span>)), lis) </a>
