@@ -606,7 +606,7 @@ module purge: to unload all modules</code></pre>
 <a class="sourceLine" id="cb8-5" data-line-number="5"><span class="co">#SBATCH --job-name=Test2</span></a>
 <a class="sourceLine" id="cb8-6" data-line-number="6"></a>
 <a class="sourceLine" id="cb8-7" data-line-number="7"><span class="bu">echo</span> === <span class="va">$(</span><span class="fu">date</span><span class="va">)</span></a>
-<a class="sourceLine" id="cb8-8" data-line-number="8"><span class="va">JID=$(</span><span class="ex">sbatch</span> job-test.sh<span class="va">)</span></a>
+<a class="sourceLine" id="cb8-8" data-line-number="8"><span class="ex">sbatch</span> job-test.sh</a>
 <a class="sourceLine" id="cb8-9" data-line-number="9"><span class="fu">sleep</span> 5 <span class="co"># to make sure &quot;job-test.sh&quot; is submitted</span></a>
 <a class="sourceLine" id="cb8-10" data-line-number="10"><span class="ex">srun</span> --dependency=afterok:<span class="va">$(</span><span class="fu">cat</span> ./job_id.log<span class="va">)</span> python3 ./test-2.py</a>
 <a class="sourceLine" id="cb8-11" data-line-number="11"><span class="bu">echo</span> === <span class="va">$(</span><span class="fu">date</span><span class="va">)</span> <span class="va">$(</span><span class="fu">hostname</span><span class="va">)</span></a></code></pre></div>
