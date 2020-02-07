@@ -565,14 +565,14 @@ module load &lt;name&gt;: to load a module ex. module load R or python
 module list: shows list of the loaded modules
 module unload &lt;name&gt;: to unload a module
 module purge: to unload all modules</code></pre>
-<p>To create a template <code>sbatch</code> job file, use the following steps:</p>
+<p>To create a simple template <code>sbatch</code> job file, use the following steps:</p>
 <ol style="list-style-type: decimal">
 <li>generate a file including all codes that we want to run in the cluster</li>
 <li>generate a Bash file including all modules that are required for the sending job (<code>environment.sh</code>)</li>
 <li>generate a Bash file to call steps 1 and 2 including all <code>#SBATCH</code> options (<code>job_file.sh</code>)</li>
-<li>use <code>sbatch</code>to run the generated file in step 3</li>
+<li>use <code>sbatch</code>to run the file in step 3</li>
 </ol>
-<p>For example let’s run a python code, run <code>nano test-hello.py</code> and copy the following:</p>
+<p>For example, let’s run the following Python code called <code>test.py</code>:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="co">#!/usr/bin/python3</span></a>
 <a class="sourceLine" id="cb4-2" data-line-number="2"></a>
 <a class="sourceLine" id="cb4-3" data-line-number="3"><span class="ex">print</span>(<span class="st">&quot;Hello world&quot;</span>)</a></code></pre></div>
@@ -580,27 +580,37 @@ module purge: to unload all modules</code></pre>
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="co">#!/bin/bash</span></a>
 <a class="sourceLine" id="cb5-2" data-line-number="2"></a>
 <a class="sourceLine" id="cb5-3" data-line-number="3"><span class="ex">module</span> load miniconda3</a></code></pre></div>
-<p>Then use <code>nano job-test-hello.sh</code> to make the job file by:</p>
+<p>Then use <code>nano job-test.sh</code> to make the job file by:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="co">#!/bin/bash</span></a>
 <a class="sourceLine" id="cb6-2" data-line-number="2"></a>
 <a class="sourceLine" id="cb6-3" data-line-number="3"><span class="co">#SBATCH --nodes=1</span></a>
-<a class="sourceLine" id="cb6-4" data-line-number="4"><span class="co">#SBATCH --mem 1G</span></a>
-<a class="sourceLine" id="cb6-5" data-line-number="5"><span class="co">#SBATCH --partition hpc0</span></a>
-<a class="sourceLine" id="cb6-6" data-line-number="6"><span class="co">#SBATCH --job-name=TestHello</span></a>
-<a class="sourceLine" id="cb6-7" data-line-number="7"></a>
-<a class="sourceLine" id="cb6-8" data-line-number="8"><span class="bu">echo</span> <span class="st">&quot;</span><span class="va">$SLURM_JOB_ID</span><span class="st">&quot;</span> <span class="op">&gt;</span> job_id.log</a>
-<a class="sourceLine" id="cb6-9" data-line-number="9"></a>
-<a class="sourceLine" id="cb6-10" data-line-number="10"><span class="bu">source</span> ./envrionment.sh</a>
-<a class="sourceLine" id="cb6-11" data-line-number="11"></a>
-<a class="sourceLine" id="cb6-12" data-line-number="12"><span class="co">## List of loaded modules</span></a>
-<a class="sourceLine" id="cb6-13" data-line-number="13"><span class="ex">module</span> list</a>
-<a class="sourceLine" id="cb6-14" data-line-number="14"></a>
-<a class="sourceLine" id="cb6-15" data-line-number="15"><span class="bu">echo</span> === <span class="va">$(</span><span class="fu">hostname</span><span class="va">)</span> <span class="va">$(</span><span class="fu">date</span><span class="va">)</span></a>
-<a class="sourceLine" id="cb6-16" data-line-number="16"></a>
-<a class="sourceLine" id="cb6-17" data-line-number="17"><span class="ex">srun</span> python3 ./test-hello.py</a>
-<a class="sourceLine" id="cb6-18" data-line-number="18"></a>
-<a class="sourceLine" id="cb6-19" data-line-number="19"><span class="bu">echo</span> === <span class="va">$(</span><span class="fu">date</span><span class="va">)</span></a></code></pre></div>
-<p>Now, use <code>sbatch job-test-hello.sh</code> to send the job for running. Note <code>$SLURM_JOB_ID</code> shows the job ID of the submitted job. We can use <code>job_id.log</code> to keep JOB IDs right after running the job.</p>
+<a class="sourceLine" id="cb6-4" data-line-number="4"><span class="co">#SBATCH --mem=1G</span></a>
+<a class="sourceLine" id="cb6-5" data-line-number="5"><span class="co">#SBATCH --job-name=Test1</span></a>
+<a class="sourceLine" id="cb6-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb6-7" data-line-number="7"><span class="bu">echo</span> <span class="st">&quot;</span><span class="va">$SLURM_JOB_ID</span><span class="st">&quot;</span> <span class="op">&gt;</span> job_id.log</a>
+<a class="sourceLine" id="cb6-8" data-line-number="8"><span class="bu">source</span> ./envrionment.sh</a>
+<a class="sourceLine" id="cb6-9" data-line-number="9"><span class="ex">module</span> list</a>
+<a class="sourceLine" id="cb6-10" data-line-number="10"></a>
+<a class="sourceLine" id="cb6-11" data-line-number="11"><span class="bu">echo</span> === <span class="va">$(</span><span class="fu">date</span><span class="va">)</span></a>
+<a class="sourceLine" id="cb6-12" data-line-number="12"><span class="ex">srun</span> python3 ./test.py</a>
+<a class="sourceLine" id="cb6-13" data-line-number="13"><span class="bu">echo</span> === <span class="va">$(</span><span class="fu">date</span><span class="va">)</span> <span class="va">$(</span><span class="fu">hostname</span><span class="va">)</span></a></code></pre></div>
+<p>Now, use <code>sbatch job-test.sh</code> to send the job. Note that <code>$SLURM_JOB_ID</code> shows the job ID of the submitted job and <code>job_id.log</code> keeps the job ID right after running the job. This can be used later for satisfying dependencies. For instance, let’s run the following code, <code>test-2.py</code>, right after finishing <code>job-test.sh</code>.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="co">#!/usr/bin/python3</span></a>
+<a class="sourceLine" id="cb7-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb7-3" data-line-number="3"><span class="bu">print</span>(<span class="st">&quot;Hi again world&quot;</span>)</a></code></pre></div>
+<p>To do that we need another job file such that:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="co">#!/bin/bash</span></a>
+<a class="sourceLine" id="cb8-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="co">#SBATCH --nodes=1</span></a>
+<a class="sourceLine" id="cb8-4" data-line-number="4"><span class="co">#SBATCH --mem=1G</span></a>
+<a class="sourceLine" id="cb8-5" data-line-number="5"><span class="co">#SBATCH --job-name=Test2</span></a>
+<a class="sourceLine" id="cb8-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb8-7" data-line-number="7"><span class="bu">echo</span> === <span class="va">$(</span><span class="fu">date</span><span class="va">)</span></a>
+<a class="sourceLine" id="cb8-8" data-line-number="8"><span class="va">JID=$(</span><span class="ex">sbatch</span> job-test.sh<span class="va">)</span></a>
+<a class="sourceLine" id="cb8-9" data-line-number="9"><span class="fu">sleep</span> 5 <span class="co"># to make sure &quot;job-test.sh&quot; is submitted</span></a>
+<a class="sourceLine" id="cb8-10" data-line-number="10"><span class="ex">srun</span> --dependency=afterok:<span class="va">$(</span><span class="fu">cat</span> ./job_id.log<span class="va">)</span> python3 ./test-2.py</a>
+<a class="sourceLine" id="cb8-11" data-line-number="11"><span class="bu">echo</span> === <span class="va">$(</span><span class="fu">date</span><span class="va">)</span> <span class="va">$(</span><span class="fu">hostname</span><span class="va">)</span></a></code></pre></div>
+<p>Now, run <code>sbatch job-test-2.sh</code></p>
 <hr />
 </div>
 <div id="transferring-files" class="section level2">
@@ -608,19 +618,19 @@ module purge: to unload all modules</code></pre>
 <div id="secure-copy-scp" class="section level3">
 <h3>Secure copy (scp)</h3>
 <p>We can use secure copy or <code>scp</code> to transfer files from a local computer to a cluster and vice versa. For example, let’s transfer <code>code_example.py</code> from <code>temp/</code> directory on the <code>remote.edu</code> cluster to <code>Documents/</code> directory in your local computer when we are using the local computer. For this we can use:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="bu">cd</span> ~/Documents</a>
-<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="fu">scp</span> user@remote.edu:/temp/code_example.py .</a></code></pre></div>
-<p>The <code>.</code> at the end of the code says, paste with the same name of the source file. To do the reverse task with:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="bu">cd</span> ~/Documents</a>
-<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="fu">scp</span> code_example.py user@remote.edu:/temp/.</a></code></pre></div>
-<p>To recursively copy a directory (with all files in the directory), we just need to add the -r (recursive) flag. For example to download temp folder use:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="bu">cd</span> ~/Documents</a>
-<a class="sourceLine" id="cb9-2" data-line-number="2"><span class="fu">scp</span> -r user@remote.edu:/temp .</a></code></pre></div>
+<a class="sourceLine" id="cb9-2" data-line-number="2"><span class="fu">scp</span> user@remote.edu:/temp/code_example.py .</a></code></pre></div>
+<p>The <code>.</code> at the end of the code says, paste with the same name of the source file. To do the reverse task with:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="bu">cd</span> ~/Documents</a>
+<a class="sourceLine" id="cb10-2" data-line-number="2"><span class="fu">scp</span> code_example.py user@remote.edu:/temp/.</a></code></pre></div>
+<p>To recursively copy a directory (with all files in the directory), we just need to add the -r (recursive) flag. For example to download temp folder use:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="bu">cd</span> ~/Documents</a>
+<a class="sourceLine" id="cb11-2" data-line-number="2"><span class="fu">scp</span> -r user@remote.edu:/temp .</a></code></pre></div>
 </div>
 <div id="rsync" class="section level3">
 <h3>Rsync</h3>
 <p>Rsync is a fast, versatile, remote (and local) file-copying tool. Rsync has a compress option that makes transferring large files easier. To use <code>rsync</code>, follow:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="fu">rsync</span> local-directory user@remote.edu:remote-directory</a></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="fu">rsync</span> local-directory user@remote.edu:remote-directory</a></code></pre></div>
 <p>That recursively transfer all files from the directory <code>local-directory</code> on the local machine into the <code>remote-directory</code> on the remote machine. Some of options for <code>rsync</code> are (use <code>rsync -help</code> to see all options):</p>
 <ul>
 <li><code>v</code>: verbose</li>
@@ -630,7 +640,7 @@ module purge: to unload all modules</code></pre>
 <li><code>P</code>: to keep the partial file which should make a subsequent transfer of the rest of the file much faster</li>
 </ul>
 <p>For example:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="fu">rsync</span> -avz ./home/myfiles user@remote.edu:./myproject</a></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="fu">rsync</span> -avz ./home/myfiles user@remote.edu:./myproject</a></code></pre></div>
 <p>Will transfer files in “archive” mode from <code>./home/myfiles/</code> in the local machine to the remote <code>./myproject</code> directory. Additionally, compression will be used to reduce the size of data portions of the transfer.</p>
 </div>
 <div id="ssh-file-transfer-protocol-sftp" class="section level3">
