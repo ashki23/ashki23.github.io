@@ -548,14 +548,15 @@ scancel -u &lt;username&gt;: cancel all the user jobs</code></pre>
 <a class="sourceLine" id="cb2-3" data-line-number="3"><span class="co">#SBATCH --mem=4G</span></a>
 <a class="sourceLine" id="cb2-4" data-line-number="4"><span class="co">#SBATCH --cpus-per-task=10</span></a>
 <a class="sourceLine" id="cb2-5" data-line-number="5"><span class="co">#SBATCH --partition=hpc0</span></a>
-<a class="sourceLine" id="cb2-6" data-line-number="6"><span class="co">#SBATCH --time=02-05:00</span></a>
-<a class="sourceLine" id="cb2-7" data-line-number="7"><span class="co">#SBATCH --job-name=NewJobName</span></a>
-<a class="sourceLine" id="cb2-8" data-line-number="8"><span class="co">#SBATCH --mail-user=your@email.com</span></a>
-<a class="sourceLine" id="cb2-9" data-line-number="9"><span class="co">#SBATCH --mail-type=</span><span class="re">END</span></a>
-<a class="sourceLine" id="cb2-10" data-line-number="10"></a>
-<a class="sourceLine" id="cb2-11" data-line-number="11"><span class="bu">echo</span> <span class="st">&#39;This script is running on:&#39;</span></a>
-<a class="sourceLine" id="cb2-12" data-line-number="12"><span class="fu">hostname</span></a>
-<a class="sourceLine" id="cb2-13" data-line-number="13"><span class="fu">sleep</span> 120</a></code></pre></div>
+<a class="sourceLine" id="cb2-6" data-line-number="6"><span class="co">#SBATCH --account=root</span></a>
+<a class="sourceLine" id="cb2-7" data-line-number="7"><span class="co">#SBATCH --time=02-05:00</span></a>
+<a class="sourceLine" id="cb2-8" data-line-number="8"><span class="co">#SBATCH --job-name=NewJobName</span></a>
+<a class="sourceLine" id="cb2-9" data-line-number="9"><span class="co">#SBATCH --mail-user=your@email.com</span></a>
+<a class="sourceLine" id="cb2-10" data-line-number="10"><span class="co">#SBATCH --mail-type=</span><span class="re">END</span></a>
+<a class="sourceLine" id="cb2-11" data-line-number="11"></a>
+<a class="sourceLine" id="cb2-12" data-line-number="12"><span class="bu">echo</span> <span class="st">&#39;This script is running on:&#39;</span></a>
+<a class="sourceLine" id="cb2-13" data-line-number="13"><span class="fu">hostname</span></a>
+<a class="sourceLine" id="cb2-14" data-line-number="14"><span class="fu">sleep</span> 120</a></code></pre></div>
 <p>Special characters <code>#!</code> (shebang) at the beginning of scripts specifies what program should be used (i.e. <code>/bin/bash</code> or <code>/usr/bin/python3</code>). SLURM uses <code>#SBATCH</code> special comment to denote special scheduler-specific options. To see more options, use <code>sbatch --help</code>. For example, the above file uses 1 nodes, 4 gigabytes of memory, 10 CPUs per task, using partition <code>hpc0</code>, 2 days and 5 hours of walltime, gives a new name to the job, and email you when the job is ended. Now we can submit the job file by <code>sbatch example-job.sh</code>. We can use <code>squeue -u USER</code> or <code>sacct -u USER</code> to check the job file status, and use <code>scancel JOBID</code> to cancel the job. You may find more sbatch options <a href="https://slurm.schedmd.com/sbatch.html">here</a>.</p>
 <p>To run a single command, we can use <code>srun</code>. For instance, <code>srun -c 2 echo &quot;This job will use 2 CPUs.&quot;</code> submits a job and allocates 2 CPUs. Also, we can use <code>srun</code> to open a program in an interaction mode. For example, <code>srun --pty bash</code> will open a Bash shell in a computation node.</p>
 <p><strong>Note</strong>: in general, when we connect to a cluster we will go to a node, called <strong>login node</strong>, which is not meant to do heavy computational tasks. So, to do our computations in a proper way, we should always use either <strong><code>sbatch</code></strong> or <strong><code>srun</code></strong>.</p>
@@ -587,14 +588,13 @@ module purge: to unload all modules</code></pre>
 <a class="sourceLine" id="cb6-4" data-line-number="4"><span class="co">#SBATCH --mem=1G</span></a>
 <a class="sourceLine" id="cb6-5" data-line-number="5"><span class="co">#SBATCH --job-name=Test1</span></a>
 <a class="sourceLine" id="cb6-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb6-7" data-line-number="7"><span class="bu">echo</span> <span class="st">&quot;</span><span class="va">$SLURM_JOB_ID</span><span class="st">&quot;</span> <span class="op">&gt;</span> job_id.log</a>
-<a class="sourceLine" id="cb6-8" data-line-number="8"><span class="bu">source</span> ./envrionment.sh</a>
+<a class="sourceLine" id="cb6-7" data-line-number="7"><span class="bu">echo</span> === <span class="va">$(</span><span class="fu">date</span><span class="va">)</span></a>
+<a class="sourceLine" id="cb6-8" data-line-number="8"><span class="bu">source</span> ./environment.sh</a>
 <a class="sourceLine" id="cb6-9" data-line-number="9"><span class="ex">module</span> list</a>
 <a class="sourceLine" id="cb6-10" data-line-number="10"></a>
-<a class="sourceLine" id="cb6-11" data-line-number="11"><span class="bu">echo</span> === <span class="va">$(</span><span class="fu">date</span><span class="va">)</span></a>
-<a class="sourceLine" id="cb6-12" data-line-number="12"><span class="ex">srun</span> python3 ./test.py</a>
-<a class="sourceLine" id="cb6-13" data-line-number="13"><span class="bu">echo</span> === <span class="va">$(</span><span class="fu">date</span><span class="va">)</span> <span class="va">$(</span><span class="fu">hostname</span><span class="va">)</span></a></code></pre></div>
-<p>Now, use <code>sbatch job-test.sh</code> to send the job. Note that <code>$SLURM_JOB_ID</code> shows the job ID of the submitted job and <code>job_id.log</code> keeps the job ID right after running the job. This can be used later for satisfying dependencies. For instance, let’s run the following code, <code>test-2.py</code>, right after finishing <code>job-test.sh</code>.</p>
+<a class="sourceLine" id="cb6-11" data-line-number="11"><span class="ex">srun</span> python3 ./test.py</a>
+<a class="sourceLine" id="cb6-12" data-line-number="12"><span class="bu">echo</span> === <span class="va">$(</span><span class="fu">date</span><span class="va">)</span> <span class="va">$(</span><span class="fu">hostname</span><span class="va">)</span></a></code></pre></div>
+<p>If there are some dependencies between jobs, <code>slurm</code> can defer the start of this job until the specified dependencies have been satisfied completed. For instance, let’s run the following code, <code>test-2.py</code>, right after finishing <code>job-test.sh</code>.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="co">#!/usr/bin/python3</span></a>
 <a class="sourceLine" id="cb7-2" data-line-number="2"></a>
 <a class="sourceLine" id="cb7-3" data-line-number="3"><span class="bu">print</span>(<span class="st">&quot;Hi again world&quot;</span>)</a></code></pre></div>
@@ -606,11 +606,15 @@ module purge: to unload all modules</code></pre>
 <a class="sourceLine" id="cb8-5" data-line-number="5"><span class="co">#SBATCH --job-name=Test2</span></a>
 <a class="sourceLine" id="cb8-6" data-line-number="6"></a>
 <a class="sourceLine" id="cb8-7" data-line-number="7"><span class="bu">echo</span> === <span class="va">$(</span><span class="fu">date</span><span class="va">)</span></a>
-<a class="sourceLine" id="cb8-8" data-line-number="8"><span class="ex">sbatch</span> job-test.sh</a>
-<a class="sourceLine" id="cb8-9" data-line-number="9"><span class="fu">sleep</span> 5 <span class="co"># to make sure &quot;job-test.sh&quot; is submitted</span></a>
-<a class="sourceLine" id="cb8-10" data-line-number="10"><span class="ex">srun</span> --dependency=afterok:<span class="va">$(</span><span class="fu">cat</span> ./job_id.log<span class="va">)</span> python3 ./test-2.py</a>
-<a class="sourceLine" id="cb8-11" data-line-number="11"><span class="bu">echo</span> === <span class="va">$(</span><span class="fu">date</span><span class="va">)</span> <span class="va">$(</span><span class="fu">hostname</span><span class="va">)</span></a></code></pre></div>
-<p>Now, run <code>sbatch job-test-2.sh</code></p>
+<a class="sourceLine" id="cb8-8" data-line-number="8"><span class="bu">echo</span> <span class="va">$SLURM_JOB_ID</span></a>
+<a class="sourceLine" id="cb8-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb8-10" data-line-number="10"><span class="va">JID=$(</span><span class="ex">sbatch</span> --parsable job-test.sh<span class="va">)</span></a>
+<a class="sourceLine" id="cb8-11" data-line-number="11"><span class="bu">echo</span> <span class="va">$JID</span></a>
+<a class="sourceLine" id="cb8-12" data-line-number="12"></a>
+<a class="sourceLine" id="cb8-13" data-line-number="13"><span class="ex">srun</span> --dependency=afterok:<span class="va">$JID</span> python3 ./test-2.py</a>
+<a class="sourceLine" id="cb8-14" data-line-number="14"><span class="bu">echo</span> === <span class="va">$(</span><span class="fu">date</span><span class="va">)</span> <span class="va">$(</span><span class="fu">hostname</span><span class="va">)</span></a></code></pre></div>
+<p>Where <code>echo $SLURM_JOB_ID</code> shows the job ID of <code>sbatch job-test-2.sh</code>, and <code>echo JID</code> shows the job ID for <code>sbatch job-test.sh</code>. Now, by running <code>sbatch job-test-2.sh</code> we will make sure that <code>test-2.py</code> will run after that <code>job-test.sh</code> is completed successfully.</p>
+<p>Note that there are some other tools, such as <a href="https://snakemake.readthedocs.io/en/stable/">Snakemake</a>, that could be used for workflow management.</p>
 <hr />
 </div>
 <div id="transferring-files" class="section level2">
