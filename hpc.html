@@ -568,7 +568,7 @@ module unload &lt;name&gt;: to unload a module
 module purge: to unload all modules</code></pre>
 <p>To create a simple template <code>sbatch</code> job file, use the following steps:</p>
 <ol style="list-style-type: decimal">
-<li>generate a file including all codes that we want to run in the cluster</li>
+<li>generate any files including all codes that we want to run in the cluster (that could be several Python or R or other scripts)</li>
 <li>generate a Bash file including all modules that are required for the sending job (<code>environment.sh</code>)</li>
 <li>generate a Bash file to call steps 1 and 2 including all <code>#SBATCH</code> options (<code>job_file.sh</code>)</li>
 <li>use <code>sbatch</code>to run the file in step 3</li>
@@ -594,26 +594,32 @@ module purge: to unload all modules</code></pre>
 <a class="sourceLine" id="cb6-10" data-line-number="10"></a>
 <a class="sourceLine" id="cb6-11" data-line-number="11"><span class="ex">srun</span> python3 ./test.py</a>
 <a class="sourceLine" id="cb6-12" data-line-number="12"><span class="bu">echo</span> === <span class="va">$(</span><span class="fu">date</span><span class="va">)</span> <span class="va">$(</span><span class="fu">hostname</span><span class="va">)</span></a></code></pre></div>
-<p>If there are some dependencies between jobs, <code>slurm</code> can defer the start of this job until the specified dependencies have been satisfied completed. For instance, let’s run the following code, <code>test-2.py</code>, right after finishing <code>job-test.sh</code>.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="co">#!/usr/bin/python3</span></a>
+<p>Now we can use <code>sbach job-test.sh</code> to run this job.</p>
+<p>If there are some dependencies between jobs, <code>slurm</code> can defer the start of a job until the specified dependencies have been satisfied completed. For instance, let’s create another job called <code>job-test-2.sh</code>:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="co">#!/bin/bash</span></a>
 <a class="sourceLine" id="cb7-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb7-3" data-line-number="3"><span class="bu">print</span>(<span class="st">&quot;Hi again world&quot;</span>)</a></code></pre></div>
-<p>To do that we need another job file such that:</p>
+<a class="sourceLine" id="cb7-3" data-line-number="3"><span class="co">#SBATCH --nodes=1</span></a>
+<a class="sourceLine" id="cb7-4" data-line-number="4"><span class="co">#SBATCH --mem=1G</span></a>
+<a class="sourceLine" id="cb7-5" data-line-number="5"><span class="co">#SBATCH --job-name=Test2</span></a>
+<a class="sourceLine" id="cb7-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb7-7" data-line-number="7"><span class="bu">echo</span> === <span class="va">$(</span><span class="fu">date</span><span class="va">)</span></a>
+<a class="sourceLine" id="cb7-8" data-line-number="8"><span class="bu">echo</span> <span class="va">$SLURM_JOB_ID</span></a>
+<a class="sourceLine" id="cb7-9" data-line-number="9"><span class="bu">echo</span> === This is a new job</a>
+<a class="sourceLine" id="cb7-10" data-line-number="10"><span class="bu">echo</span> === <span class="va">$(</span><span class="fu">date</span><span class="va">)</span> <span class="va">$(</span><span class="fu">hostname</span><span class="va">)</span></a></code></pre></div>
+<p>We need another job, called <code>job-test-3.sh</code>, to run both <code>job-test.sh</code> and <code>job-test-2.sh</code>:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="co">#!/bin/bash</span></a>
 <a class="sourceLine" id="cb8-2" data-line-number="2"></a>
 <a class="sourceLine" id="cb8-3" data-line-number="3"><span class="co">#SBATCH --nodes=1</span></a>
 <a class="sourceLine" id="cb8-4" data-line-number="4"><span class="co">#SBATCH --mem=1G</span></a>
-<a class="sourceLine" id="cb8-5" data-line-number="5"><span class="co">#SBATCH --job-name=Test2</span></a>
+<a class="sourceLine" id="cb8-5" data-line-number="5"><span class="co">#SBATCH --job-name=Dependency</span></a>
 <a class="sourceLine" id="cb8-6" data-line-number="6"></a>
 <a class="sourceLine" id="cb8-7" data-line-number="7"><span class="bu">echo</span> === <span class="va">$(</span><span class="fu">date</span><span class="va">)</span></a>
-<a class="sourceLine" id="cb8-8" data-line-number="8"><span class="bu">echo</span> <span class="va">$SLURM_JOB_ID</span></a>
-<a class="sourceLine" id="cb8-9" data-line-number="9"></a>
-<a class="sourceLine" id="cb8-10" data-line-number="10"><span class="va">JID=$(</span><span class="ex">sbatch</span> --parsable job-test.sh<span class="va">)</span></a>
-<a class="sourceLine" id="cb8-11" data-line-number="11"><span class="bu">echo</span> <span class="va">$JID</span></a>
-<a class="sourceLine" id="cb8-12" data-line-number="12"></a>
-<a class="sourceLine" id="cb8-13" data-line-number="13"><span class="ex">srun</span> --dependency=afterok:<span class="va">$JID</span> python3 ./test-2.py</a>
-<a class="sourceLine" id="cb8-14" data-line-number="14"><span class="bu">echo</span> === <span class="va">$(</span><span class="fu">date</span><span class="va">)</span> <span class="va">$(</span><span class="fu">hostname</span><span class="va">)</span></a></code></pre></div>
-<p>Where <code>echo $SLURM_JOB_ID</code> shows the job ID of <code>sbatch job-test-2.sh</code>, and <code>echo JID</code> shows the job ID for <code>sbatch job-test.sh</code>. Now, by running <code>sbatch job-test-2.sh</code> we will make sure that <code>test-2.py</code> will run after that <code>job-test.sh</code> is completed successfully.</p>
+<a class="sourceLine" id="cb8-8" data-line-number="8"><span class="va">JID=$(</span><span class="ex">sbatch</span> --parsable job-test.sh<span class="va">)</span></a>
+<a class="sourceLine" id="cb8-9" data-line-number="9"><span class="bu">echo</span> <span class="va">$JID</span></a>
+<a class="sourceLine" id="cb8-10" data-line-number="10"></a>
+<a class="sourceLine" id="cb8-11" data-line-number="11"><span class="ex">sbatch</span> --dependency=afterok:<span class="va">$JID</span> job-test-2.sh</a>
+<a class="sourceLine" id="cb8-12" data-line-number="12"><span class="bu">echo</span> === <span class="va">$(</span><span class="fu">date</span><span class="va">)</span> <span class="va">$(</span><span class="fu">hostname</span><span class="va">)</span></a></code></pre></div>
+<p>Where <code>JID</code> is the job ID for <code>sbatch job-test.sh</code> which is a dependency for <code>job-test-2.sh</code>. Now, by running <code>sbatch job-test-3.sh</code> we will make sure that <code>job-test-2.sh</code> will run after that <code>job-test.sh</code> is completed successfully.</p>
 <p>Note that there are some other tools, such as <a href="https://snakemake.readthedocs.io/en/stable/">Snakemake</a>, that could be used for workflow management.</p>
 <hr />
 </div>
@@ -633,9 +639,9 @@ module purge: to unload all modules</code></pre>
 </div>
 <div id="rsync" class="section level3">
 <h3>Rsync</h3>
-<p>Rsync is a fast, versatile, remote (and local) file-copying tool. Rsync has a compress option that makes transferring large files easier. To use <code>rsync</code>, follow:</p>
+<p>Rsync is a fast, versatile, remote (and local) file-copying tool. Rsync has two great features, first it always syncs your data (i.e. only transfer files that changed since last transfer) and second, the compress option that makes transferring large files easier. To use <code>rsync</code>, follow:</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="fu">rsync</span> local-directory user@remote.edu:remote-directory</a></code></pre></div>
-<p>That recursively transfer all files from the directory <code>local-directory</code> on the local machine into the <code>remote-directory</code> on the remote machine. Some of options for <code>rsync</code> are (use <code>rsync -help</code> to see all options):</p>
+<p>That recursively transfer all files from the directory <code>local-directory</code> on the local machine into the <code>remote-directory</code> on the remote machine. Some important options for <code>rsync</code> are (use <code>rsync -help</code> to see all options):</p>
 <ul>
 <li><code>v</code>: verbose</li>
 <li><code>z</code>: compression to reduce the size of data portions of the transfer</li>
@@ -649,7 +655,7 @@ module purge: to unload all modules</code></pre>
 </div>
 <div id="ssh-file-transfer-protocol-sftp" class="section level3">
 <h3>SSH file transfer protocol (sftp)</h3>
-<p>The other method to transfer data between the local machine and a cluster is SSH file transfer protocol or <code>sftp</code>. The great advantage of this way is tab completion that makes finding files (in both local and remote) much easier. We can connect to a cluster through <code>sftp</code> very similar to <code>ssh</code> by running <code>sftp username@server</code>.</p>
+<p>The other method to transfer data between the local machine and a cluster is SSH file transfer protocol or <code>sftp</code>. The great advantage of this way is tab completion in both local and remote that makes finding origins and destinations much easier. We can connect to a cluster through <code>sftp</code> very similar to <code>ssh</code> by running <code>sftp username@server</code>.</p>
 <p>We can also use most of the Bash commands when using <code>sftp</code> and at the same time access to both cluster and local computer. Usually we can apply the bash commands in the local system by adding <code>l</code> to the beginning of the commands. For example:</p>
 <pre class="txt"><code>pwd: print working directory on the cluster
 lpwd: print working directtory on the local computer
