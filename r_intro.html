@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
 
 <meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
@@ -345,7 +346,6 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
-  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -374,12 +374,6 @@ $(document).ready(function () {
 }
 }
 
-@media print {
-.toc-content {
-  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
-  float: right;
-}
-}
 
 .toc-content {
   padding-left: 30px;
@@ -518,7 +512,7 @@ h4.author {
 </style>
 <p><img src="images/r.gif" alt="R" align="left" style="width:30%; padding:1px; padding-top:9px; border-top:0 solid #75aadb; border-bottom:0 solid #75aadb; margin-right:20px; margin-bottom:5px;"></p>
 <p style="margin-top:-5px;">
-<p><a href="https://www.r-project.org/">R</a> is a free software environment for statistical computing and graphics. To use R we might use <a href="https://www.rstudio.com/">RStudio</a>, the most popular R IDE, or directly use R in a terminal. In both cases, we need to first download and install R from R webpage or from your favorite package manager (<code>apt</code>, <code>yum</code>, and etc.). In this article we will cover some fundamental syntax in R including operators, control flow commands, defining functions, reading and writing files, and installing and importing packages.</p>
+<p><a href="https://www.r-project.org/">R</a> is a free software environment for statistical computing and graphics. To use R we might use <a href="https://www.rstudio.com/">RStudio</a>, the most popular R IDE, or directly use R in a terminal. In both cases, we need to first download and install R from R webpage or from your favorite package manager (<code>apt</code>, <code>yum</code>, and etc.). In this article we will learn some fundamental syntax in R including data structures and operators, control flows, functions, and an overview of R packages.</p>
 <p>You may find more about plotting and programming in R at:</p>
 <ul>
 <li><a href="https://ashki23.github.io/r_plots.html">Basic graphics in R</a></li>

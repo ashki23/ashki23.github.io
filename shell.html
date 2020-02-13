@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
 
 <meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
@@ -345,7 +346,6 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
-  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -374,12 +374,6 @@ $(document).ready(function () {
 }
 }
 
-@media print {
-.toc-content {
-  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
-  float: right;
-}
-}
 
 .toc-content {
   padding-left: 30px;
@@ -522,6 +516,7 @@ h4.author {
 <li><a href="http://swcarpentry.github.io/shell-extras/">Extra Unix Shell Material</a></li>
 <li><a href="https://hpc-carpentry.github.io/hpc-shell/">Introduction to using the shell in a High-Performance Computing context</a></li>
 </ul>
+<p>This tutorial provides a reference of some practical commands in the Unix Shell and important text editors in Bash.</p>
 <hr />
 <div id="tab-completion" class="section level2">
 <h2>Tab completion</h2>
@@ -655,9 +650,9 @@ exit (ctrl+d): to exit</code></pre>
 ## A
 ## B
 ## ---
-##        5 grade.txt
-##        5 names.txt
-##       10 total</code></pre>
+##  5 grade.txt
+##  5 names.txt
+## 10 total</code></pre>
 <p>For finding things we can use <code>grep</code> or “global/regular expression/print” command. For example, let’s find lines that contain the letter “D”:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="fu">grep</span> D names.txt</a></code></pre></div>
 <pre><code>## Dori
@@ -669,9 +664,9 @@ exit (ctrl+d): to exit</code></pre>
 ## 4:Jackie</code></pre>
 <p>While <code>grep</code> finds lines in files, the <code>find</code> command finds files themselves. For instance, in directory <code>bash_test</code> command <code>find .</code> will shows all files and directories within the current directory. The following command will return number of lines in <code>names.txt</code> and <code>grade.txt</code> files in the directory:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="fu">wc</span> -l <span class="va">$(</span><span class="fu">find</span> . -name <span class="st">&#39;[n,g]*.txt&#39;</span><span class="va">)</span></a></code></pre></div>
-<pre><code>##        5 ./grade.txt
-##        5 ./names.txt
-##       10 total</code></pre>
+<pre><code>##  5 ./grade.txt
+##  5 ./names.txt
+## 10 total</code></pre>
 <p>For another example, you may use the command in below to print a divider, like <code>===</code>, followed by date and hostname:</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="bu">echo</span> === <span class="va">$(</span><span class="fu">hostname</span><span class="va">)</span> <span class="va">$(</span><span class="fu">date</span><span class="va">)</span></a>
 <a class="sourceLine" id="cb11-2" data-line-number="2"><span class="co"># Or</span></a>
@@ -694,19 +689,19 @@ command &gt;&gt; file: appends a command’s output to a file
 ## Dori
 ## Jackie
 ## --- To count number of occurrences ---
-##    1 Ari
-##    1 Ashi
-##    2 Dori
-##    1 Jackie</code></pre>
+##       1 Ari
+##       1 Ashi
+##       2 Dori
+##       1 Jackie</code></pre>
 <p>Or make a new file, <code>count.txt</code>, including number of lines, words, and characters in the text files:</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb15-1" data-line-number="1"><span class="fu">wc</span> [n,g]*.txt <span class="op">&gt;</span> count.txt</a></code></pre></div>
 <p>Use <code>cat count.txt</code> to see the file content. Also, you may use:</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb16-1" data-line-number="1"><span class="fu">cat</span> count.txt</a>
 <a class="sourceLine" id="cb16-2" data-line-number="2"><span class="fu">wc</span> -l <span class="op">&lt;</span> count.txt</a></code></pre></div>
-<pre><code>##        5       5      12 grade.txt
-##        5       5      26 names.txt
-##       10      10      38 total
-##        3</code></pre>
+<pre><code>##  5  5 12 grade.txt
+##  5  5 26 names.txt
+## 10 10 38 total
+## 3</code></pre>
 <p>To find number of lines in the <code>count.txt</code>. Note that you also can use <code>wc -l count.txt</code> to find the number of lines.</p>
 <hr />
 </div>
