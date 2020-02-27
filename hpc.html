@@ -640,18 +640,21 @@ module purge: to unload all modules</code></pre>
 <div id="rsync" class="section level3">
 <h3>Rsync</h3>
 <p>Rsync is a fast, versatile, remote (and local) file-copying tool. Rsync has two great features, first it always syncs your data (i.e. only transfer files that changed since last transfer) and second, the compress option that makes transferring large files easier. To use <code>rsync</code>, follow:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="fu">rsync</span> local-directory user@remote.edu:remote-directory</a></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="co"># From local to remote</span></a>
+<a class="sourceLine" id="cb12-2" data-line-number="2"><span class="fu">rsync</span> local-directory user@remote.edu:remote-directory</a>
+<a class="sourceLine" id="cb12-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb12-4" data-line-number="4"><span class="co"># From remote to local</span></a>
+<a class="sourceLine" id="cb12-5" data-line-number="5"><span class="fu">rsync</span> user@remote.edu:remote-directory local-directory</a></code></pre></div>
 <p>That recursively transfer all files from the directory <code>local-directory</code> on the local machine into the <code>remote-directory</code> on the remote machine. Some important options for <code>rsync</code> are (use <code>rsync -help</code> to see all options):</p>
 <ul>
 <li><code>v</code>: verbose</li>
-<li><code>z</code>: compression to reduce the size of data portions of the transfer</li>
 <li><code>h</code>: human-readable</li>
-<li><code>a</code>: archive mode, which ensures that symbolic links, devices, attributes, permissions, ownerships, etc. are preserved in the transfer</li>
+<li><code>z</code>: compression to reduce the size of data portions of the transfer</li>
 <li><code>P</code>: to keep the partial file which should make a subsequent transfer of the rest of the file much faster</li>
 </ul>
 <p>For example:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="fu">rsync</span> -avz ./home/myfiles user@remote.edu:./myproject</a></code></pre></div>
-<p>Will transfer files in “archive” mode from <code>./home/myfiles/</code> in the local machine to the remote <code>./myproject</code> directory. Additionally, compression will be used to reduce the size of data portions of the transfer.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="fu">rsync</span> -Pz ./home/myfiles user@remote.edu:./myproject</a></code></pre></div>
+<p>Will transfer files in “partial” mode from <code>./home/myfiles/</code> in the local machine to the remote <code>./myproject</code> directory. Additionally, compression will be used to reduce the size of data portions of the transfer.</p>
 </div>
 <div id="ssh-file-transfer-protocol-sftp" class="section level3">
 <h3>SSH file transfer protocol (sftp)</h3>
