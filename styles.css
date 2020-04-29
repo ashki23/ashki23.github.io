@@ -1,108 +1,291 @@
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%
 }
+
 body {
-  color: #555;
-  font: 20px/1.8 "Palatino Linotype", "Book Antiqua", Palatino, serif;
-  text-rendering: optimizeLegibility;
+    color: #333;
+    padding-top: 4rem;
+    padding-bottom: 8rem
 }
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-weight: 300
 }
-code {
-  white-space: pre-wrap !important;
-  font-size: 16px !important;
+
+h6 {
+    font-family: Palatino, serif;
+    font-weight: 300;
+    color: #555
 }
-blockquote {
-  font-size: 24px;
-  border-left: 1px solid #ccc;
-}
-img {
-  max-width: 100%;
-}
-img-circle {
-  border-radius: 50%;
-}
+
 .footer {
-  position: relative;
-  padding-top: 16px;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  text-align: center;
-  font-style: normal;
-  font-size: 15px;
-  line-height: 1.6;
-  background-color: transparent;
-  color: #333;
+    background-color: #f7f7f7;
+    font-size: 85%;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    min-height: 2em;
+    padding-top: 0.75em;
+    overflow: hidden
 }
-.footer_sticky {
-  position: absolute;
-  padding: 16px;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  text-align: center;
-  font-style: normal;
-  font-size: 15px;
-  line-height: 1.6;
-  background-color: transparent;
-  color: #333;
+
+pre {
+    color: #333;
+    display: block;
+    padding: 9.5px;
+    margin: 0 0 10px;
+    font-size: 80%;
+    line-height: 20px;
+    word-break: break-all;
+    word-wrap: break-word;
+    white-space: pre;
+    white-space: pre-wrap;
+    background-color: #f8f9fa;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px
 }
-.tocify-extend-page {
-  height: 0 !important;
+
+blockquote {
+    padding: 10px 25px 1px;
+    margin: 0 0 25px;
+    font-weight: 300;
+    font-size: 125%;
+    border-left: 2px solid #eee
 }
-.tocify-item {
-  font-size: 140%;
+
+.table {
+    color: inherit
 }
-.tocify-subheader {
-  font-size: 130%;
+
+.navbar {
+    padding-top: .25rem;
+    padding-bottom: .25rem
 }
-.toc-content {
-  padding: 0 0 0 25px !important;
+
+.bd-navbar {
+    background-color: #563d7c
 }
-.pager {
-  font-size: 22px;
-  font-style: normal;
-  line-height: 1.8;
+
+.bd-navbar .navbar-nav .nav-link {
+    padding-right: .65rem;
+    padding-left: .65rem;
+    color: #cbbde2
 }
-.pager .next a:hover {
-    background-color: transparent;
-    border-color: transparent;
-    text-decoration: underline;
+
+.bd-navbar .navbar-nav .nav-link.active,
+.bd-navbar .navbar-nav .nav-link:hover {
+    color: #fff;
+    background-color: transparent
 }
-.pager .previous a:hover {
-    background-color: transparent;
-    border-color: transparent;
-    text-decoration: underline;
+
+.bd-navbar .navbar-nav .nav-link.active {
+    font-weight: 600
 }
-.navbar-default .navbar-brand {
-  font-size: 21px;
+
+.bd-toc {
+    -ms-flex-order: 2;
+    order: 2;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    font-size: .875rem
 }
-.navbar-default .navbar-nav {
-  font-size: 14px;
+
+@supports ((position: -webkit-sticky) or(position: sticky)) {
+    .bd-toc {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 3rem;
+        height: calc(100vh - 4rem);
+        overflow-y: auto
+    }
 }
-.fb-comments, .fb-comments iframe[style] {
-  width: 100% !important;
+
+.section-nav {
+    padding-left: 0;
+    border-left: 1px solid #eee
 }
-@media (max-width: 767px) {
-  body {
-    font-size: 18px;
-    line-height: 1.7;
-  }
-  h1 {
-    font-size: 33px;
-  }
-  blockquote {
-    font-size: 22px;
-  }
-  /*
-  .tocify {
-    display: none;
-  }
-  */
-  .toc-content {
-    padding: 0 !important;
-  }
+
+.section-nav ul {
+    padding-left: 1rem
+}
+
+.toc-entry {
+    margin-left: -15px;
+    display: block
+}
+
+.toc-entry a {
+    display: block;
+    padding: .125rem 1.5rem;
+    color: #77757a
+}
+
+.toc-entry a:hover {
+    color: #007bff;
+    text-decoration: none
+}
+
+.toc-entry ul {
+    list-style: none
+}
+
+/* Alert */
+code span.al {
+    color: #ff0000;
+    font-weight: bold;
+}
+
+/* Annotation */
+code span.an {
+    color: #60a0b0;
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* Attribute */
+code span.at {
+    color: #7d9029;
+}
+
+/* BaseN */
+code span.bn {
+    color: #40a070;
+}
+
+/* BuiltIn */
+code span.bu {}
+
+/* ControlFlow */
+code span.cf {
+    color: #007020;
+    font-weight: bold;
+}
+
+/* Char */
+code span.ch {
+    color: #4070a0;
+}
+
+/* Constant */
+code span.cn {
+    color: #880000;
+}
+
+/* Comment */
+code span.co {
+    color: #60a0b0;
+    font-style: italic;
+}
+
+/* CommentVar */
+code span.cv {
+    color: #60a0b0;
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* Documentation */
+code span.do {
+    color: #ba2121;
+    font-style: italic;
+}
+
+/* DataType */
+code span.dt {
+    color: #902000;
+}
+
+/* DecVal */
+code span.dv {
+    color: #40a070;
+}
+
+/* Error */
+code span.er {
+    color: #ff0000;
+    font-weight: bold;
+}
+
+/* Extension */
+code span.ex {}
+
+/* Float */
+code span.fl {
+    color: #40a070;
+}
+
+/* Function */
+code span.fu {
+    color: #06287e;
+}
+
+/* Import */
+code span.im {}
+
+/* Information */
+code span.in {
+    color: #60a0b0;
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* Keyword */
+code span.kw {
+    color: #007020;
+    font-weight: bold;
+}
+
+/* Operator */
+code span.op {
+    color: #666666;
+}
+
+/* Other */
+code span.ot {
+    color: #007020;
+}
+
+
+/* Preprocessor */
+code span.pp {
+    color: #bc7a00;
+}
+
+/* SpecialChar */
+code span.sc {
+    color: #4070a0;
+}
+
+/* SpecialString */
+code span.ss {
+    color: #bb6688;
+}
+
+/* String */
+code span.st {
+    color: #4070a0;
+}
+
+/* Variable */
+code span.va {
+    color: #19177c;
+}
+
+/* VerbatimString */
+code span.vs {
+    color: #4070a0;
+}
+
+/* Warning */
+code span.wa {
+    color: #60a0b0;
+    font-weight: bold;
+    font-style: italic;
 }
