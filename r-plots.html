@@ -23,7 +23,7 @@
    <body>
       <nav class="navbar fixed-top navbar-expand-lg navbar-dark bd-navbar">
    <a class="navbar-brand" href="index.html">Ashkan Mirzaee</a>
-   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="border: 0">
    <span class="navbar-toggler-icon"></span>
    </button>
    <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -124,7 +124,7 @@
 <span id="cb1-15"><a href="#cb1-15"></a><span class="kw">points</span>(<span class="kw">c</span>(<span class="dv">20</span>,<span class="dv">40</span>,<span class="dv">60</span>,<span class="dv">80</span>,<span class="dv">100</span>), <span class="kw">c</span>(<span class="dv">0</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">2</span>), <span class="dt">col =</span> <span class="st">&quot;black&quot;</span>, <span class="dt">bg =</span> <span class="st">&quot;green&quot;</span>, <span class="dt">pch =</span> <span class="dv">21</span>, <span class="dt">cex =</span> <span class="dv">2</span>)</span>
 <span id="cb1-16"><a href="#cb1-16"></a><span class="kw">text</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="dv">40</span>,<span class="dv">80</span>), <span class="dt">y =</span> <span class="kw">c</span>(<span class="op">-</span><span class="fl">1.2</span>,<span class="fl">3.2</span>), <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;MIN&quot;</span>,<span class="st">&quot;MAX&quot;</span>), <span class="dt">pos =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>), <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>,  <span class="dt">cex =</span> <span class="fl">0.9</span>)</span></code></pre></div>
 <p align="center">
-<img src="images/r-plots/chunk-2-1.png" alt="Scatter plots" style="width:75%; border:0;">
+<img src="images/r-plots/chunk-2-1.png" alt="Scatter plots" style="width: 75%; border: 0;">
 </p>
 <h2 id="probability-density-functions">Probability density functions</h2>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
@@ -138,7 +138,7 @@
 <span id="cb2-9"><a href="#cb2-9"></a><span class="kw">lines</span>(<span class="kw">density</span>(y2, <span class="dt">bw =</span> <span class="dv">1</span>), <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>)</span>
 <span id="cb2-10"><a href="#cb2-10"></a><span class="kw">legend</span>(<span class="st">&quot;topleft&quot;</span>, <span class="dt">legend =</span> <span class="kw">c</span>(<span class="st">&quot;Line 1&quot;</span>, <span class="st">&quot;Line 2&quot;</span>), <span class="dt">title =</span> <span class="st">&quot;Line types&quot;</span>, <span class="dt">lty =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">2</span>, <span class="dt">lwd =</span> <span class="dv">1</span>,  <span class="dt">col =</span> <span class="kw">c</span>(<span class="st">&quot;red&quot;</span>, <span class="st">&quot;blue&quot;</span>), <span class="dt">cex =</span> <span class="fl">0.7</span>, <span class="dt">box.lty =</span> <span class="dv">0</span>, <span class="dt">bg =</span> <span class="kw">rgb</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>))</span></code></pre></div>
 <p align="center">
-<img src="images/r-plots/chunk-3-1.png" alt="Probability density functions" style="width:75%; border:0;">
+<img src="images/r-plots/chunk-3-1.png" alt="Probability density functions" style="width: 75%; border: 0;">
 </p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co">## Left plot</span></span>
 <span id="cb3-2"><a href="#cb3-2"></a>seq &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="op">-</span><span class="dv">10</span>, <span class="dv">10</span>, <span class="dt">length.out =</span> <span class="dv">100</span>)</span>
@@ -152,7 +152,7 @@
 <span id="cb3-10"><a href="#cb3-10"></a><span class="kw">polygon</span>(seq, f, <span class="dt">density =</span> <span class="ot">NA</span>, <span class="dt">col =</span> <span class="st">&quot;gold&quot;</span>, <span class="dt">border =</span> <span class="ot">NA</span>)</span>
 <span id="cb3-11"><a href="#cb3-11"></a><span class="kw">polygon</span>(<span class="kw">c</span>(<span class="dv">2</span>, seq[seq <span class="op">&gt;=</span><span class="st"> </span><span class="dv">2</span>]), <span class="kw">c</span>(<span class="dv">0</span>, f[seq <span class="op">&gt;=</span><span class="st"> </span><span class="dv">2</span>]), <span class="dt">density =</span> <span class="ot">NA</span>, <span class="dt">col=</span><span class="st">&quot;green&quot;</span>, <span class="dt">border =</span> <span class="ot">NA</span>)</span></code></pre></div>
 <p align="center">
-<img src="images/r-plots/chunk-3-2.png" alt="Probability density functions" style="width:75%; border:0;">
+<img src="images/r-plots/chunk-3-2.png" alt="Probability density functions" style="width: 75%; border: 0;">
 </p>
 <h2 id="histograms">Histograms</h2>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
@@ -164,7 +164,7 @@
 <span id="cb4-7"><a href="#cb4-7"></a><span class="kw">hist</span>(y, <span class="dt">col =</span> <span class="kw">cm.colors</span>(<span class="dv">10</span>), <span class="dt">probability =</span> <span class="ot">TRUE</span>, <span class="dt">main =</span> <span class="st">&quot;&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;&quot;</span>)</span>
 <span id="cb4-8"><a href="#cb4-8"></a><span class="kw">lines</span>(seq, f, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="dt">lty =</span> <span class="dv">1</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)</span></code></pre></div>
 <p align="center">
-<img src="images/r-plots/chunk-4-1.png" alt="Histograms" style="width:75%; border:0;">
+<img src="images/r-plots/chunk-4-1.png" alt="Histograms" style="width: 75%; border: 0;">
 </p>
 <h2 id="box-plots-and-autocorrelations">Box plots and autocorrelations</h2>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
@@ -176,18 +176,18 @@
 <span id="cb5-7"><a href="#cb5-7"></a><span class="co">## Right plot</span></span>
 <span id="cb5-8"><a href="#cb5-8"></a><span class="kw">acf</span>(y, <span class="dt">main =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
 <p align="center">
-<img src="images/r-plots/chunk-5-1.png" alt="Box plots" style="width:75%; border:0;">
+<img src="images/r-plots/chunk-5-1.png" alt="Box plots" style="width: 75%; border: 0;">
 </p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="kw">boxplot</span>(count <span class="op">~</span><span class="st"> </span>spray, <span class="dt">data =</span> InsectSprays, <span class="dt">ylab =</span> <span class="st">&quot;Number of var&quot;</span>, <span class="dt">col =</span> <span class="kw">cm.colors</span>(<span class="dv">6</span>))</span></code></pre></div>
 <p align="center">
-<img src="images/r-plots/chunk-6-1.png" alt="Box plots" style="width:75%; border:0;">
+<img src="images/r-plots/chunk-6-1.png" alt="Box plots" style="width: 75%; border: 0;">
 </p>
 <h2 id="barplots-and-dotcharts">Barplots and dotcharts</h2>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">6</span>), <span class="dt">xpd =</span> <span class="ot">TRUE</span>)</span>
 <span id="cb7-2"><a href="#cb7-2"></a><span class="kw">barplot</span>(VADeaths, <span class="dt">border =</span> <span class="st">&quot;dark blue&quot;</span>, <span class="dt">col =</span> <span class="kw">rainbow</span>(<span class="dv">20</span>), <span class="dt">cex.axis =</span>  <span class="fl">1.3</span>)</span>
 <span id="cb7-3"><a href="#cb7-3"></a><span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="dt">legend =</span> <span class="kw">c</span>(<span class="st">&quot;Group 1&quot;</span>, <span class="st">&quot;Group 2&quot;</span>, <span class="st">&quot;Group 3&quot;</span>, <span class="st">&quot;Group 4&quot;</span>, <span class="st">&quot;Group 5&quot;</span>),  <span class="dt">title =</span> <span class="st">&quot;Group types&quot;</span>, <span class="dt">fill =</span> <span class="kw">c</span>(<span class="kw">rainbow</span>(<span class="dv">20</span>)), <span class="dt">cex =</span> <span class="fl">0.8</span>,  <span class="dt">box.lty =</span> <span class="dv">0</span>, <span class="dt">inset =</span> <span class="kw">c</span>(<span class="op">-</span><span class="fl">0.2</span>,<span class="dv">0</span>))</span></code></pre></div>
 <p align="center">
-<img src="images/r-plots/chunk-7-1.png" alt="Barplots" style="width:75%; border:0;">
+<img src="images/r-plots/chunk-7-1.png" alt="Barplots" style="width: 75%; border: 0;">
 </p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>eu_data &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="kw">c</span>(<span class="fl">1.75</span>,<span class="fl">4.5</span>), <span class="kw">c</span>(<span class="fl">2.8</span>,<span class="fl">6.3</span>), <span class="kw">c</span>(<span class="fl">3.9</span>,<span class="fl">6.8</span>), <span class="kw">c</span>(<span class="fl">4.35</span>,<span class="fl">7.2</span>), <span class="kw">c</span>(<span class="dv">5</span>,<span class="fl">8.25</span>),  <span class="kw">c</span>(<span class="fl">5.3</span>,<span class="fl">8.8</span>))</span>
 <span id="cb8-2"><a href="#cb8-2"></a><span class="kw">colnames</span>(eu_data) &lt;-<span class="st"> </span><span class="dv">2012</span><span class="op">:</span><span class="dv">2017</span></span>
@@ -196,32 +196,32 @@
 <span id="cb8-5"><a href="#cb8-5"></a><span class="kw">barplot</span>(<span class="kw">as.matrix</span>(eu_data), <span class="dt">beside =</span> <span class="ot">TRUE</span>, <span class="dt">ylab =</span> <span class="st">&quot;Million metric tons&quot;</span>, <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">10</span>), <span class="dt">las =</span> <span class="dv">1</span>, <span class="dt">col =</span> <span class="kw">gray.colors</span>(<span class="dv">2</span>))</span>
 <span id="cb8-6"><a href="#cb8-6"></a><span class="kw">legend</span>(<span class="st">&quot;top&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;US&quot;</span>,<span class="st">&quot;World&quot;</span>), <span class="dt">fill =</span> <span class="kw">gray.colors</span>(<span class="dv">2</span>), <span class="dt">horiz =</span> <span class="ot">TRUE</span>, <span class="dt">bty =</span> <span class="st">&quot;n&quot;</span>)</span></code></pre></div>
 <p align="center">
-<img src="images/r-plots/chunk-8-1.png" alt="Barplots" style="width:75%; border:0;">
+<img src="images/r-plots/chunk-8-1.png" alt="Barplots" style="width: 75%; border: 0;">
 </p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="kw">dotchart</span>(VADeaths, <span class="dt">main =</span> <span class="st">&quot;Death Rates in Virginia1940&quot;</span>)</span></code></pre></div>
 <p align="center">
-<img src="images/r-plots/chunk-8-2.png" alt="Dotchart" style="width:75%; border:0;">
+<img src="images/r-plots/chunk-8-2.png" alt="Dotchart" style="width: 75%; border: 0;">
 </p>
 <h2 id="matrix-of-scatter-plots">Matrix of scatter plots</h2>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="kw">pairs</span>(iris[<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>], <span class="dt">lower.panel =</span> panel.smooth, <span class="dt">upper.panel =</span> <span class="ot">NULL</span>, <span class="dt">cex =</span> <span class="fl">0.75</span>, <span class="dt">cex.labels =</span> <span class="fl">1.5</span>, <span class="dt">col =</span> <span class="kw">c</span>(<span class="st">&quot;red&quot;</span>, <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;green&quot;</span>)[iris<span class="op">$</span>Species], <span class="dt">main =</span> <span class="st">&quot;Iris Data - 3 species&quot;</span>)</span></code></pre></div>
 <p align="center">
-<img src="images/r-plots/chunk-9-1.png" alt="Matrix of scatter plots" style="width:75%; border:0;">
+<img src="images/r-plots/chunk-9-1.png" alt="Matrix of scatter plots" style="width: 75%; border: 0;">
 </p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="kw">pairs</span>(<span class="op">~</span>Sepal.Length <span class="op">+</span><span class="st"> </span>Petal.Length <span class="op">+</span><span class="st"> </span>Species, <span class="dt">data =</span> iris, <span class="dt">subset =</span> iris<span class="op">$</span>Sepal.Length <span class="op">&lt;</span><span class="st"> </span><span class="dv">7</span> , <span class="dt">main =</span> <span class="st">&quot;Sepal Length &lt; 7&quot;</span>, <span class="dt">col =</span> <span class="kw">rainbow</span>(<span class="kw">length</span>(<span class="kw">levels</span>(iris<span class="op">$</span>Species)))[iris<span class="op">$</span>Species])</span></code></pre></div>
 <p align="center">
-<img src="images/r-plots/chunk-9-2.png" alt="Matrix of scatter plots" style="width:75%; border:0;">
+<img src="images/r-plots/chunk-9-2.png" alt="Matrix of scatter plots" style="width: 75%; border: 0;">
 </p>
 <h2 id="hierarchical-clustering">Hierarchical clustering</h2>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>hca &lt;-<span class="st"> </span><span class="kw">hclust</span>(eurodist)</span>
 <span id="cb12-2"><a href="#cb12-2"></a><span class="kw">plot</span>(hca, <span class="dt">main =</span> <span class="st">&quot;Distance between European Cities&quot;</span>, <span class="dt">hang =</span> <span class="dv">-1</span>, <span class="dt">ylab =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
 <p align="center">
-<img src="images/r-plots/chunk-10-1.png" alt="Scatter plots" style="width:75%; border:0;">
+<img src="images/r-plots/chunk-10-1.png" alt="Scatter plots" style="width: 75%; border: 0;">
 </p>
 <h2 id="time-series">Time series</h2>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>ts_data &lt;-<span class="st"> </span><span class="kw">ts</span>(<span class="kw">matrix</span>(<span class="kw">rt</span>(<span class="dv">300</span><span class="op">*</span><span class="dv">2</span>, <span class="dt">df =</span> <span class="dv">3</span>), <span class="dv">300</span>,<span class="dv">2</span>), <span class="dt">start =</span> <span class="kw">c</span>(<span class="dv">1961</span>, <span class="dv">1</span>), <span class="dt">frequency =</span> <span class="dv">12</span>)</span>
 <span id="cb13-2"><a href="#cb13-2"></a><span class="kw">plot</span>(ts_data, <span class="dt">main =</span> <span class="st">&quot;Time series&quot;</span>)</span></code></pre></div>
 <p align="center">
-<img src="images/r-plots/chunk-11-1.png" alt="Time series" style="width:75%; border:0;">
+<img src="images/r-plots/chunk-11-1.png" alt="Time series" style="width: 75%; border: 0;">
 </p>
 <h2 id="draw-functions">Draw functions</h2>
 <p>For instance we can draw <span class="math inline"><em>y</em> = 4<em>s</em><em>i</em><em>n</em>(<em>x</em>) + (1 − <em>c</em><em>o</em><em>s</em>(<em>x</em>))</span> by:</p>
@@ -238,7 +238,7 @@
 <span id="cb14-11"><a href="#cb14-11"></a><span class="kw">plot</span>(<span class="dt">x =</span> seq_, <span class="dt">y =</span> a, <span class="dt">type =</span> <span class="st">&quot;l&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;x&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;y&quot;</span>, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>)</span>
 <span id="cb14-12"><a href="#cb14-12"></a><span class="kw">lines</span>(<span class="dt">x =</span> seq_ <span class="op">+</span><span class="st"> </span><span class="fl">0.5</span>, <span class="dt">y =</span> a, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
 <p align="center">
-<img src="images/r-plots/chunk-12-1.png" alt="Sin function" style="width:75%; border:0;">
+<img src="images/r-plots/chunk-12-1.png" alt="Sin function" style="width: 75%; border: 0;">
 </p>
 <p>For another example let’s draw a Ergodic mean plots:</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>))</span>
@@ -255,18 +255,18 @@
 <span id="cb15-12"><a href="#cb15-12"></a>y &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">100</span>, <span class="dv">0</span>, <span class="dv">2</span>)</span>
 <span id="cb15-13"><a href="#cb15-13"></a><span class="kw">ErgodicMean</span>(y, <span class="dv">100</span>)</span></code></pre></div>
 <p align="center">
-<img src="images/r-plots/chunk-13-1.png" alt="Ergodic plot" style="width:75%; border:0;">
+<img src="images/r-plots/chunk-13-1.png" alt="Ergodic plot" style="width: 75%; border: 0;">
 </p>
 <h2 id="symbols-and-stars">Symbols and stars</h2>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="kw">par</span>(<span class="dt">bty =</span> <span class="st">&quot;n&quot;</span>, <span class="dt">xaxt =</span> <span class="st">&quot;n&quot;</span>, <span class="dt">yaxt =</span> <span class="st">&quot;n&quot;</span>, <span class="dt">ann =</span> <span class="ot">FALSE</span>)</span>
 <span id="cb16-2"><a href="#cb16-2"></a><span class="kw">symbols</span>(<span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">6</span>), <span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">8</span>), <span class="dt">circles =</span> <span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>), <span class="dt">inches =</span> <span class="ot">FALSE</span>, <span class="dt">bg =</span> <span class="kw">c</span>(<span class="st">&quot;green&quot;</span>, <span class="st">&quot;green&quot;</span>), <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">2</span>,<span class="dv">8</span>), <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">10</span>), <span class="dt">asp =</span> <span class="dv">1</span>)</span>
 <span id="cb16-3"><a href="#cb16-3"></a><span class="kw">symbols</span>(<span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">6</span>), <span class="kw">c</span>(<span class="dv">8</span>,<span class="dv">2</span>), <span class="dt">squares =</span> <span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">4</span>), <span class="dt">inches =</span> <span class="ot">FALSE</span>, <span class="dt">bg =</span> <span class="kw">c</span>(<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;blue&quot;</span>), <span class="dt">add =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
 <p align="center">
-<img src="images/r-plots/chunk-14-1.png" alt="Symbols" style="width:75%; border:0;">
+<img src="images/r-plots/chunk-14-1.png" alt="Symbols" style="width: 75%; border: 0;">
 </p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="kw">stars</span>(mtcars[, <span class="dv">1</span><span class="op">:</span><span class="dv">7</span>], <span class="dt">len =</span> <span class="fl">0.8</span>, <span class="dt">key.loc =</span> <span class="kw">c</span>(<span class="dv">12</span>, <span class="fl">1.5</span>), <span class="dt">main =</span> <span class="st">&quot;Motor Trend Cars&quot;</span>, <span class="dt">draw.segments =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
 <p align="center">
-<img src="images/r-plots/chunk-15-1.png" alt="Stars" style="width:75%; border:0;">
+<img src="images/r-plots/chunk-15-1.png" alt="Stars" style="width: 75%; border: 0;">
 </p>
 <h2 id="contour-image-and-perspective">Contour, image and perspective</h2>
 <div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="co">## Persian Rug Art (R user manual example)</span></span>
@@ -277,13 +277,13 @@
 <span id="cb18-6"><a href="#cb18-6"></a>  <span class="kw">contour</span>(<span class="kw">cos</span>(r<span class="op">^</span><span class="dv">2</span>)<span class="op">*</span><span class="kw">exp</span>(<span class="op">-</span>r<span class="op">/</span>f), <span class="dt">drawlabels =</span> <span class="ot">FALSE</span>, <span class="dt">axes =</span> <span class="ot">FALSE</span>, <span class="dt">frame =</span> <span class="ot">TRUE</span>)</span>
 <span id="cb18-7"><a href="#cb18-7"></a>}</span></code></pre></div>
 <p align="center">
-<img src="images/r-plots/chunk-16-1.png" alt="Conture" style="width:75%; border:0;">
+<img src="images/r-plots/chunk-16-1.png" alt="Conture" style="width: 75%; border: 0;">
 </p>
 <div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>x &lt;-<span class="st"> </span>y &lt;-<span class="st"> </span><span class="dv">-6</span><span class="op">:</span><span class="dv">16</span></span>
 <span id="cb19-2"><a href="#cb19-2"></a>z &lt;-<span class="st"> </span><span class="kw">outer</span>(x, <span class="kw">sqrt</span>(<span class="kw">abs</span>(x)), <span class="dt">FUN =</span> <span class="st">&quot;/&quot;</span>)</span>
 <span id="cb19-3"><a href="#cb19-3"></a><span class="kw">image</span>(x, y, z)</span></code></pre></div>
 <p align="center">
-<img src="images/r-plots/chunk-17-1.png" alt="Image plot" style="width:75%; border:0;">
+<img src="images/r-plots/chunk-17-1.png" alt="Image plot" style="width: 75%; border: 0;">
 </p>
 <div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>x &lt;-<span class="st"> </span>y &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="op">-</span><span class="dv">10</span>, <span class="dv">10</span>, <span class="dt">length =</span> <span class="dv">30</span>)</span>
 <span id="cb20-2"><a href="#cb20-2"></a>f &lt;-<span class="st"> </span><span class="cf">function</span>(x, y) {r &lt;-<span class="st"> </span><span class="kw">sqrt</span>(x<span class="op">^</span><span class="dv">2</span> <span class="op">+</span><span class="st"> </span>y<span class="op">^</span><span class="dv">2</span>); <span class="dv">10</span> <span class="op">*</span><span class="st"> </span><span class="kw">sin</span>(r)<span class="op">/</span>r}</span>
@@ -291,7 +291,7 @@
 <span id="cb20-4"><a href="#cb20-4"></a>z[<span class="kw">is.na</span>(z)] &lt;-<span class="st"> </span><span class="dv">1</span></span>
 <span id="cb20-5"><a href="#cb20-5"></a><span class="kw">persp</span>(x, y, z, <span class="dt">theta =</span> <span class="dv">30</span>, <span class="dt">phi =</span> <span class="dv">30</span>, <span class="dt">expand =</span> <span class="fl">0.5</span>, <span class="dt">col =</span> <span class="st">&quot;lightblue&quot;</span>)</span></code></pre></div>
 <p align="center">
-<img src="images/r-plots/chunk-17-2.png" alt="Perspective plot" style="width:75%; border:0;">
+<img src="images/r-plots/chunk-17-2.png" alt="Perspective plot" style="width: 75%; border: 0;">
 </p>
 <h2 id="tables">Tables</h2>
 <p>In R we can use <code>kable</code> function from <code>knitr</code> library to print tables in HTML or LaTeX formats. <code>kable</code> is a great tool, but the generated outputs are usually not formatted for including in reports. While building Markdown or Latex reports it will be useful to use the following packages to make them more publication quality:</p>
@@ -689,7 +689,7 @@ Pr(&gt;|t|)
 <div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>lay &lt;-<span class="st"> </span><span class="kw">layout</span>(<span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">0</span>),<span class="dv">3</span>,<span class="dv">2</span>,<span class="dt">byrow =</span> <span class="ot">TRUE</span>), <span class="dt">widths =</span> <span class="kw">c</span>(<span class="dv">4</span>,<span class="fl">1.5</span>), <span class="dt">heights =</span> <span class="kw">c</span>(<span class="fl">1.5</span>,<span class="dv">4</span>,<span class="dv">1</span>), <span class="dt">respect =</span> <span class="ot">TRUE</span>)</span>
 <span id="cb23-2"><a href="#cb23-2"></a><span class="kw">layout.show</span>(lay)</span></code></pre></div>
 <p align="center">
-<img src="images/r-plots/chunk-19-1.png" alt="Layout" style="width:75%; border:0;">
+<img src="images/r-plots/chunk-19-1.png" alt="Layout" style="width: 75%; border: 0;">
 </p>
 <div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a>x &lt;-<span class="st"> </span><span class="kw">pmin</span>(<span class="dv">3</span>, <span class="kw">pmax</span>(<span class="op">-</span><span class="dv">3</span>, <span class="kw">rnorm</span>(<span class="dv">100</span>)))</span>
 <span id="cb24-2"><a href="#cb24-2"></a>y &lt;-<span class="st"> </span><span class="kw">pmin</span>(<span class="dv">3</span>, <span class="kw">pmax</span>(<span class="op">-</span><span class="dv">3</span>, <span class="kw">rnorm</span>(<span class="dv">100</span>)))</span>
@@ -712,7 +712,7 @@ Pr(&gt;|t|)
 <span id="cb24-19"><a href="#cb24-19"></a><span class="kw">plot.new</span>()</span>
 <span id="cb24-20"><a href="#cb24-20"></a><span class="kw">legend</span>(<span class="st">&quot;center&quot;</span>, <span class="dt">legend =</span> <span class="kw">c</span>(<span class="st">&quot;Top&quot;</span>, <span class="st">&quot;Middle&quot;</span>, <span class="st">&quot;Right&quot;</span>), <span class="dt">fill =</span> <span class="kw">c</span>(<span class="st">&quot;gray&quot;</span>, <span class="st">&quot;white&quot;</span>, <span class="st">&quot;black&quot;</span>), <span class="dt">density =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">40</span>), <span class="dt">bg =</span> <span class="st">&quot;gray90&quot;</span>, <span class="dt">horiz =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
 <p align="center">
-<img src="images/r-plots/chunk-19-2.png" alt="Plot with a layout" style="width:75%; border:0;">
+<img src="images/r-plots/chunk-19-2.png" alt="Plot with a layout" style="width: 75%; border: 0;">
 </p>
 <h2 id="color-palettes">Color palettes</h2>
 <p>R also offers the following built in color palettes that help to generate color vectors of desired length quickly.</p>
@@ -729,17 +729,17 @@ Pr(&gt;|t|)
 <span id="cb25-2"><a href="#cb25-2"></a><span class="kw">pie</span>(<span class="kw">rep</span>(<span class="dv">1</span>, <span class="dv">24</span>), <span class="dt">col =</span> <span class="kw">rainbow</span>(<span class="dv">24</span>), <span class="dt">radius =</span> <span class="dv">1</span>)</span>
 <span id="cb25-3"><a href="#cb25-3"></a><span class="kw">pie</span>(<span class="kw">rep</span>(<span class="dv">1</span>, <span class="dv">24</span>), <span class="dt">col =</span> <span class="kw">colorRampPalette</span>(<span class="kw">c</span>(<span class="st">&quot;red&quot;</span>,<span class="st">&quot;yellow&quot;</span>,<span class="st">&quot;springgreen&quot;</span>,<span class="st">&quot;royalblue&quot;</span>))(<span class="dv">24</span>), <span class="dt">radius =</span> <span class="dv">1</span>)</span></code></pre></div>
 <p align="center">
-<img src="images/r-plots/chunk-20-1.png" alt="Rainbow/colorRampPalette" style="width:75%; border:0;">
+<img src="images/r-plots/chunk-20-1.png" alt="Rainbow/colorRampPalette" style="width: 75%; border: 0;">
 </p>
 <div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="kw">pie</span>(<span class="kw">rep</span>(<span class="dv">1</span>, <span class="dv">24</span>), <span class="dt">col =</span> <span class="kw">heat.colors</span>(<span class="dv">24</span>), <span class="dt">radius =</span> <span class="dv">1</span>)</span>
 <span id="cb26-2"><a href="#cb26-2"></a><span class="kw">pie</span>(<span class="kw">rep</span>(<span class="dv">1</span>, <span class="dv">24</span>), <span class="dt">col =</span> <span class="kw">terrain.colors</span>(<span class="dv">24</span>), <span class="dt">radius =</span> <span class="dv">1</span>)</span></code></pre></div>
 <p align="center">
-<img src="images/r-plots/chunk-20-2.png" alt="Heat/terrain" style="width:75%; border:0;">
+<img src="images/r-plots/chunk-20-2.png" alt="Heat/terrain" style="width: 75%; border: 0;">
 </p>
 <div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="kw">pie</span>(<span class="kw">rep</span>(<span class="dv">1</span>, <span class="dv">24</span>), <span class="dt">col =</span> <span class="kw">topo.colors</span>(<span class="dv">24</span>), <span class="dt">radius =</span> <span class="dv">1</span>)</span>
 <span id="cb27-2"><a href="#cb27-2"></a><span class="kw">pie</span>(<span class="kw">rep</span>(<span class="dv">1</span>, <span class="dv">24</span>), <span class="dt">col =</span> <span class="kw">cm.colors</span>(<span class="dv">24</span>), <span class="dt">radius =</span> <span class="dv">1</span>)</span></code></pre></div>
 <p align="center">
-<img src="images/r-plots/chunk-20-3.png" alt="Topo/cm" style="width:75%; border:0;">
+<img src="images/r-plots/chunk-20-3.png" alt="Topo/cm" style="width: 75%; border: 0;">
 </p></div>
             <div class="d-none d-xl-block col-xl-2 bd-toc" style="position: fixed; right: 0; font-size: 14px">
                <ul class="section-nav">
