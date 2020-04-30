@@ -13,14 +13,19 @@ h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+h6 {
     font-weight: 300
 }
 
-h6 {
+h7 {
+    color: #555;
     font-family: Palatino, serif;
+    font-size: 1rem;
     font-weight: 300;
-    color: #555
+    line-height: 1.2;
+    margin-top: 0;
+    margin-bottom: .5rem;
 }
 
 .footer {
@@ -55,7 +60,7 @@ pre {
 blockquote {
     padding: 10px 25px 1px;
     margin: 0 0 25px;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 125%;
     border-left: 2px solid #eee
 }
