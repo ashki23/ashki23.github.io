@@ -18,14 +18,10 @@ h6 {
     font-weight: 300
 }
 
-h7 {
-    color: #555;
-    font-family: Palatino, serif;
-    font-size: 1rem;
-    font-weight: 300;
-    line-height: 1.2;
-    margin-top: 0;
-    margin-bottom: .5rem;
+h6 {
+    color: #555
+}
+
 }
 
 .footer {
