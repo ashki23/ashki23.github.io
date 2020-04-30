@@ -100,7 +100,7 @@ blockquote {
     .bd-toc {
         position: -webkit-sticky;
         position: sticky;
-        top: 1.5rem;
+        top: 3rem;
         height: calc(100vh - 4rem);
         overflow-y: auto
     }
