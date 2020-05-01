@@ -64,8 +64,7 @@
       <div class="container" style="font-size: 110%"> 
          <h1 class="title">Basic graphics in R</h1>
                   <div class="row">
-            <div class="col-xl-10"></style>
-<p><a href="https://www.r-project.org/">R</a> is a great tool for creating plots, maps and graphics. R includes many built-in graphics functions that would help to draw plots easily. R is a very self explanatory environment in terms of documentation. We can learn about any R commands only by using <code>help(command)</code>. The following is a list of the most practical graphics functions in R:</p>
+            <div class="col-xl-10"><p><a href="https://www.r-project.org/">R</a> is a great tool for creating plots, maps and graphics. R includes many built-in graphics functions that would help to draw plots easily. R is a very self explanatory environment in terms of documentation. We can learn about any R commands only by using <code>help(command)</code>. The following is a list of the most practical graphics functions in R:</p>
 <ul>
 <li><code>plot</code>: Generic function for plotting of R objects</li>
 <li><code>lines</code>: A generic function taking coordinates and joining the corresponding points with line segments</li>
@@ -307,7 +306,7 @@
 <span id="cb21-3"><a href="#cb21-3"></a>cardata =<span class="st"> </span>mtcars</span>
 <span id="cb21-4"><a href="#cb21-4"></a><span class="kw">kable</span>(<span class="kw">head</span>(cardata), <span class="dt">format =</span> <span class="st">&quot;html&quot;</span>, <span class="dt">caption =</span> <span class="st">&quot;Title of the table&quot;</span>) <span class="op">%&gt;%</span></span>
 <span id="cb21-5"><a href="#cb21-5"></a><span class="st">  </span><span class="kw">kable_styling</span>(<span class="dt">full_width =</span> <span class="ot">FALSE</span>, <span class="dt">font_size =</span> <span class="dv">16</span>, <span class="dt">position =</span> <span class="st">&quot;center&quot;</span>) <span class="co"># position: left, center, right, float_left and float_right</span></span></code></pre></div>
-<div style="padding: 5px; overflow-x: scroll; width:100%">
+<div style="padding: 5px; overflow-x: scroll;">
 <table class="table">
 <thead>
 <tr>
@@ -589,6 +588,7 @@ Valiant
 <span id="cb22-7"><a href="#cb22-7"></a></span>
 <span id="cb22-8"><a href="#cb22-8"></a><span class="kw">kable</span>(sm, <span class="st">&quot;html&quot;</span>, <span class="dt">escape =</span> F) <span class="op">%&gt;%</span></span>
 <span id="cb22-9"><a href="#cb22-9"></a><span class="st">  </span><span class="kw">kable_styling</span>(<span class="dt">bootstrap_options =</span> <span class="st">&quot;hover&quot;</span>, <span class="dt">full_width =</span> <span class="ot">FALSE</span>, <span class="dt">font_size =</span> <span class="dv">16</span>, <span class="dt">position =</span> <span class="st">&quot;center&quot;</span>)</span></code></pre></div>
+<div style="padding: 5px; overflow-x: scroll;">
 <table class="table table-hover">
 <thead>
 <tr>
@@ -679,6 +679,7 @@ Pr(&gt;|t|)
 </tr>
 </tbody>
 </table>
+</div>
 <h2 id="maps">Maps</h2>
 <p>R does not have default functions for drawing maps and shapefiles. To generate maps, we can use the following packages:</p>
 <ul>
