@@ -1,11 +1,12 @@
 html {
+    position: relative;
     min-height: 100%;
 }
 
 body {
     color: #333;
     padding-top: 4rem;
-    padding-bottom: 10rem;
+    padding-bottom: 6rem;
 }
 
 h1,
@@ -44,12 +45,11 @@ blockquote {
 .footer {
     background-color: #f7f7f7;
     font-size: .85rem;
-    padding: .875rem;
-    margin-top: 2rem;
+    padding: .875rem 0 .875rem;
     position: absolute;
     bottom: 0;
     width: 100%;
-    max-height: 8rem;
+    max-height: 6rem;
     overflow: visible;
 }
 
