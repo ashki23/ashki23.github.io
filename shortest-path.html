@@ -69,6 +69,18 @@
 <p>In this work we consider the problem of the shortest path in Euclidean space in the presence of convex polyhedral forbidden regions. A travel path is to be selected to minimize the travel distance where direct path is prohibited in the presence of forbidden or no-fly regions. A solution is presented by a geometrical algorithm for polygonal barriers. The procedure iterates by increasing the number of vertices of the barrier to generalize the solution to circular barriers. This research was motivated by a practical shortest path problem for goods delivery in the absence of direct paths using Unmanned Aerial Vehicles (UAV), commonly referred to as drones.</p>
 <h3 id="url">URL</h3>
 <p>View paper <a href="https://www.xcdsystem.com/iise/2017_proceedings/prof2276.html">here</a>.</p>      </div>
+            <!-- footer -->
+            <footer class="footer text-muted">
+               <div align="center">
+                  Docs is available under <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>
+                  &nbsp;|&nbsp;
+                  Code licensed under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank" rel="noopener">GPL-3.0</a>
+                  &nbsp;|&nbsp;
+                  Built with <a href="https://github.com/ashki23/pandoc-bootstrap" target="_blank" rel="noopener">pandoc-bootstrap</a> theme
+                  <br />
+                  Copyright 2018-2020, Ashkan Mirzaee
+               </div>
+            </footer>
             <!-- Global site tag (gtag.js) - Google Analytics -->
             <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132464297-1"></script>
             <script>
@@ -77,20 +89,6 @@
                gtag('js', new Date());
                gtag('config', 'UA-132464297-1');
             </script>
-            <!-- footer -->
-            <footer class="footer">
-               <div align="center">
-                  <p class="text-muted">
-                     Docs is available under <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>
-                     &nbsp;|&nbsp;
-                     Code licensed under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank" rel="noopener">GPL-3.0</a>
-            	 &nbsp;|&nbsp;
-                     Built with <a href="https://github.com/ashki23/pandoc-bootstrap" target="_blank" rel="noopener">pandoc-bootstrap</a> theme
-                     <br />
-                     Copyright 2018-2020, Ashkan Mirzaee
-                  </p>
-               </div>
-            </footer>
             <!-- jQuery and Bootstrap's JavaScript plugins -->
       <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -99,14 +97,14 @@
       <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       <script>
-         /* add Bootstrap styles to tables */
-         function bootstrapStylePandocTables() {
-         $('tr.header').parent('thead').parent('table').addClass('table table-condensed'); }
-         $(document).ready(function () { bootstrapStylePandocTables(); });
-         /* adjust the height when click the toc */
-         var shiftWindow = function() { scrollBy(0, -60) };
-         window.addEventListener("hashchange", shiftWindow);
-         function load() { if (window.location.hash) shiftWindow(); }
+	 /* add Bootstrap styles to tables */
+	 function bootstrapStylePandocTables() {
+	     $('tr.header').parent('thead').parent('table').addClass('table table-condensed'); }
+	 $(document).ready(function () { bootstrapStylePandocTables(); });
+	 /* adjust the height when click the toc */
+	 var shiftWindow = function() { scrollBy(0, -60) };
+	 window.addEventListener("hashchange", shiftWindow);
+	 function load() { if (window.location.hash) shiftWindow(); }
       </script>
    </body>
 </html>

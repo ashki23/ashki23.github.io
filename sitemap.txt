@@ -2,7 +2,6 @@ https://ashki23.github.io/index.html
 https://ashki23.github.io/page1.html
 https://ashki23.github.io/page2.html
 https://ashki23.github.io/page3.html
-https://ashki23.github.io/page4.html
 https://ashki23.github.io/contact.html
 https://ashki23.github.io/tutorials.html
 https://ashki23.github.io/research.html

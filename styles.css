@@ -6,7 +6,7 @@ html {
 body {
     color: #333;
     padding-top: 4rem;
-    padding-bottom: 6rem;
+    padding-bottom: 8rem;
 }
 
 h1,
@@ -40,6 +40,16 @@ blockquote {
     margin: 1rem 0 2rem;
     border-left: 2px solid #ccc;
     padding-left: 2rem;
+}
+
+.container {
+    font-size: 1.1rem;
+
+}
+
+.pagination {
+    font-size: 1rem;
+    margin: 4rem 0 2rem;
 }
 
 .footer {
