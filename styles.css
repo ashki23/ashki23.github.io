@@ -63,10 +63,9 @@ blockquote {
 }
 
 .table {
-    width: auto;
-    margin-left: auto;
-    margin-right: auto;
     color: inherit;
+    width: auto;
+    margin: auto;
 }
 
 .navbar {

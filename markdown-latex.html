@@ -161,7 +161,7 @@ H3
 <hr />
 <div class="sourceCode" id="cb14"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1"></a><span class="co">---</span></span></code></pre></div>
 <h2 id="tables">Tables</h2>
-<div style="padding: 5px; overflow-x: scroll;">
+<div style="margin-bottom: 1rem; overflow-x: auto;">
 <table>
 <thead>
 <tr class="header">
@@ -195,9 +195,10 @@ H3
 <span id="cb15-4"><a href="#cb15-4"></a>col 2 is|center-aligned|2</span>
 <span id="cb15-5"><a href="#cb15-5"></a>col 3 is|right-aligned|3</span></code></pre></div>
 <p>Note that we can use HTML styles to hide tables’ overflow by putting them in a division like:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb16-1"><a href="#cb16-1"></a><span class="kw">&lt;div</span><span class="ot"> style=</span><span class="st">&quot;padding: 5px; overflow-x: scroll;&quot;</span><span class="kw">&gt;</span></span>
+<div class="sourceCode" id="cb16"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb16-1"><a href="#cb16-1"></a><span class="kw">&lt;div</span> <span class="er">&quot;margin-bottom:</span> <span class="er">1rem;</span><span class="ot"> overflow-x: auto</span><span class="er">;&quot;</span><span class="kw">&gt;</span></span>
 <span id="cb16-2"><a href="#cb16-2"></a>...</span>
 <span id="cb16-3"><a href="#cb16-3"></a><span class="kw">&lt;/div&gt;</span></span></code></pre></div>
+<p>Also, we can use <code>overflow-x: scroll</code> to always scroll or <code>overflow-x: hidden</code> to hide them compeletely.</p>
 <h2 id="code-blocks">Code blocks</h2>
 <p>In Markdown, we can simply add plain code blocks to display (not evaluating) by inserting triple back quote i.e. <code>```</code>. For example:</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>norm =<span class="st"> </span><span class="cf">function</span>(x) {</span>
