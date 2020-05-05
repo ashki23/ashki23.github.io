@@ -63,10 +63,10 @@ blockquote {
 }
 
 .table {
-    color: inherit;
     width: auto;
     margin-left: auto;
     margin-right: auto;
+    color: inherit;
 }
 
 .navbar {
