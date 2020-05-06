@@ -96,72 +96,62 @@
 <p>The following is a list of basic Bash commands. You may find a short explanation next to each command.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">man</span> command <span class="co"># user manual of the command (enter q to exit)</span></span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="bu">command</span> --help <span class="co"># display brief help</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">date</span> <span class="co"># show date and time </span></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="ex">hostnme</span> <span class="co"># show the host nsme</span></span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="fu">w</span> <span class="co"># show current users</span></span>
-<span id="cb1-6"><a href="#cb1-6"></a><span class="fu">whoami</span> <span class="co"># show the user name</span></span>
-<span id="cb1-7"><a href="#cb1-7"></a><span class="fu">id</span> <span class="co"># shows your id</span></span>
-<span id="cb1-8"><a href="#cb1-8"></a><span class="fu">passwd</span> <span class="co"># change user password</span></span>
-<span id="cb1-9"><a href="#cb1-9"></a><span class="ex">nproc</span> <span class="co"># show number of processors</span></span>
-<span id="cb1-10"><a href="#cb1-10"></a><span class="ex">lscpu</span> <span class="co"># list CPU, display information about the CPU architecture</span></span>
-<span id="cb1-11"><a href="#cb1-11"></a><span class="fu">free</span> -h <span class="co"># show amount of memory RAM </span></span>
-<span id="cb1-12"><a href="#cb1-12"></a><span class="fu">ps</span> <span class="co"># report a snapshot of the current processes</span></span>
-<span id="cb1-13"><a href="#cb1-13"></a><span class="bu">pwd</span> <span class="co"># print working directory</span></span>
-<span id="cb1-14"><a href="#cb1-14"></a><span class="bu">cd</span> <span class="co"># change directory</span></span>
-<span id="cb1-15"><a href="#cb1-15"></a><span class="bu">cd</span> .. <span class="co"># back to the previous directory</span></span>
-<span id="cb1-16"><a href="#cb1-16"></a><span class="bu">cd</span> ~ <span class="co"># change to the home directory</span></span>
-<span id="cb1-17"><a href="#cb1-17"></a><span class="bu">cd</span> / <span class="co"># change to the system files directory</span></span>
-<span id="cb1-18"><a href="#cb1-18"></a><span class="fu">ls</span> <span class="co"># lists</span></span>
-<span id="cb1-19"><a href="#cb1-19"></a><span class="fu">ls</span> -a <span class="co"># lists all</span></span>
-<span id="cb1-20"><a href="#cb1-20"></a><span class="fu">ls</span> -al <span class="co"># lists all long</span></span>
-<span id="cb1-21"><a href="#cb1-21"></a><span class="fu">file</span> <span class="co"># determine file type</span></span>
-<span id="cb1-22"><a href="#cb1-22"></a><span class="fu">cp</span> <span class="co"># copy a file </span></span>
-<span id="cb1-23"><a href="#cb1-23"></a><span class="fu">cp</span> -r <span class="co"># copy a directory</span></span>
-<span id="cb1-24"><a href="#cb1-24"></a><span class="fu">ln</span> <span class="co"># make links between files</span></span>
-<span id="cb1-25"><a href="#cb1-25"></a><span class="fu">scp</span> <span class="co"># secure copy a file</span></span>
-<span id="cb1-26"><a href="#cb1-26"></a><span class="fu">scp</span> -r <span class="co"># secure copy a directory</span></span>
-<span id="cb1-27"><a href="#cb1-27"></a><span class="ex">sftp</span> <span class="co"># secure file transfer program (SSH file transfer protocol)</span></span>
-<span id="cb1-28"><a href="#cb1-28"></a><span class="fu">wget</span> <span class="co"># the non-interactive network downloader (-O &lt;newname&gt; to rename)</span></span>
-<span id="cb1-29"><a href="#cb1-29"></a><span class="ex">md5sum</span> <span class="co"># compute MD5 message digest</span></span>
-<span id="cb1-30"><a href="#cb1-30"></a><span class="ex">md5sum</span> -c <span class="co"># check MD5 message digest</span></span>
-<span id="cb1-31"><a href="#cb1-31"></a><span class="fu">tar</span> -xzf <span class="co"># extract (x) a zip (z) file (f)</span></span>
-<span id="cb1-32"><a href="#cb1-32"></a><span class="fu">tar</span> -czf <span class="co"># create (c) a zip (z) file (f)</span></span>
-<span id="cb1-33"><a href="#cb1-33"></a><span class="fu">mv</span> <span class="co"># move</span></span>
-<span id="cb1-34"><a href="#cb1-34"></a><span class="fu">rm</span> <span class="co"># remove file</span></span>
-<span id="cb1-35"><a href="#cb1-35"></a><span class="fu">rm</span> -r <span class="co"># remove a directory</span></span>
-<span id="cb1-36"><a href="#cb1-36"></a><span class="fu">mkdir</span> <span class="co"># make a directory</span></span>
-<span id="cb1-37"><a href="#cb1-37"></a><span class="fu">rmdir</span> <span class="co"># remove an empty directory</span></span>
-<span id="cb1-38"><a href="#cb1-38"></a><span class="fu">install</span> -dvp <span class="co"># make a directory (-d), verbose (-v) and parent (-p)</span></span>
-<span id="cb1-39"><a href="#cb1-39"></a><span class="fu">cat</span> <span class="co"># concatenate files and print on the standard output</span></span>
-<span id="cb1-40"><a href="#cb1-40"></a><span class="fu">zcat</span> <span class="co"># concatenate compressed (zip) files </span></span>
-<span id="cb1-41"><a href="#cb1-41"></a><span class="fu">less</span> <span class="co"># to view the contents of a text file one screen at a time (less than a text editor)</span></span>
-<span id="cb1-42"><a href="#cb1-42"></a><span class="fu">touch</span> <span class="co"># generate a new file that contains no data</span></span>
-<span id="cb1-43"><a href="#cb1-43"></a><span class="fu">chmod</span> <span class="co"># change file mode for user (u), group (g) or other (o) to give (+) or take (-) permission for read (r), write (w), or execute (x) (example chmod u+r)</span></span>
-<span id="cb1-44"><a href="#cb1-44"></a><span class="bu">echo</span> <span class="co"># display a line of text ex. echo === $(date)</span></span>
-<span id="cb1-45"><a href="#cb1-45"></a><span class="fu">cut</span> <span class="co"># cut sections from each line of files</span></span>
-<span id="cb1-46"><a href="#cb1-46"></a><span class="fu">cut</span> -f <span class="op">&lt;</span>field number<span class="op">&gt;</span> -d <span class="op">&lt;</span>delimiter<span class="op">&gt;</span> <span class="co"># cut field number based on the delimiter</span></span>
-<span id="cb1-47"><a href="#cb1-47"></a><span class="fu">grep</span> <span class="co"># print lines matching a pattern (&quot;global/regular expression/print&quot;)</span></span>
-<span id="cb1-48"><a href="#cb1-48"></a><span class="fu">grep</span> -o <span class="co"># print only the matched parts</span></span>
-<span id="cb1-49"><a href="#cb1-49"></a><span class="fu">grep</span> -P <span class="co"># interpret the pattern as a Perl-compatible regular expression (PCRE)</span></span>
-<span id="cb1-50"><a href="#cb1-50"></a><span class="fu">sed</span> <span class="co"># stream editor for filtering and transforming text</span></span>
-<span id="cb1-51"><a href="#cb1-51"></a><span class="fu">tr</span> <span class="co"># translate or delete characters (for example tr -d , removes comma)</span></span>
-<span id="cb1-52"><a href="#cb1-52"></a><span class="fu">awk</span> <span class="co"># pattern scanning and text processing language</span></span>
-<span id="cb1-53"><a href="#cb1-53"></a><span class="fu">wc</span> <span class="co"># word count; it counts the number of lines, words, and characters in files </span></span>
-<span id="cb1-54"><a href="#cb1-54"></a><span class="fu">wc</span> -l <span class="co"># show number of lines</span></span>
-<span id="cb1-55"><a href="#cb1-55"></a><span class="fu">nl</span> <span class="co"># number lines of files</span></span>
-<span id="cb1-56"><a href="#cb1-56"></a><span class="fu">head</span> -n <span class="op">&lt;</span>number<span class="op">&gt;</span> <span class="co"># output the n first lines of files</span></span>
-<span id="cb1-57"><a href="#cb1-57"></a><span class="fu">tail</span> -n <span class="op">&lt;</span>number<span class="op">&gt;</span> <span class="co"># output the n last lines of files</span></span>
-<span id="cb1-58"><a href="#cb1-58"></a><span class="fu">sort</span> <span class="co"># sort lines of text files (use flag -r for reverse)</span></span>
-<span id="cb1-59"><a href="#cb1-59"></a><span class="fu">sort</span> -n <span class="co"># sort numeric</span></span>
-<span id="cb1-60"><a href="#cb1-60"></a><span class="fu">uniq</span> <span class="co"># remove adjacent duplicated lines from input</span></span>
-<span id="cb1-61"><a href="#cb1-61"></a><span class="fu">uniq</span> -c <span class="co"># remove adjacent duplicated lines and prefix lines by the number of occurrences</span></span>
-<span id="cb1-62"><a href="#cb1-62"></a><span class="fu">find</span> <span class="co"># search for files in a directory hierarchy</span></span>
-<span id="cb1-63"><a href="#cb1-63"></a><span class="bu">history</span> <span class="co"># show history of commnads</span></span>
-<span id="cb1-64"><a href="#cb1-64"></a>!<span class="op">&lt;</span><span class="ex">number</span><span class="op">&gt;</span> <span class="co"># rerun the command with the number from history</span></span>
-<span id="cb1-65"><a href="#cb1-65"></a>!! <span class="co"># rerun the last command (bang bang)</span></span>
-<span id="cb1-66"><a href="#cb1-66"></a><span class="fu">bc</span> <span class="co"># Bash calculator language ex. echo &#39;3 + 4&#39; | bc</span></span>
-<span id="cb1-67"><a href="#cb1-67"></a><span class="fu">clear</span> (ctrl+l) <span class="co"># clear terminal</span></span>
-<span id="cb1-68"><a href="#cb1-68"></a><span class="bu">exit</span> (ctrl+d) <span class="co"># to exit</span></span></code></pre></div>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">uname</span> <span class="co"># print operating system name</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="bu">alias</span> <span class="co"># show alias </span></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="fu">env</span> <span class="co"># show all environmental variables</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="fu">w</span> <span class="co"># show current users</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="ex">hostnme</span> <span class="co"># show the host nsme</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="fu">whoami</span> <span class="co"># show the user name</span></span>
+<span id="cb1-9"><a href="#cb1-9"></a><span class="fu">id</span> <span class="co"># shows your id</span></span>
+<span id="cb1-10"><a href="#cb1-10"></a><span class="fu">passwd</span> <span class="co"># change user password</span></span>
+<span id="cb1-11"><a href="#cb1-11"></a><span class="ex">nproc</span> <span class="co"># show number of processors</span></span>
+<span id="cb1-12"><a href="#cb1-12"></a><span class="ex">lscpu</span> <span class="co"># list CPU, display information about the CPU architecture</span></span>
+<span id="cb1-13"><a href="#cb1-13"></a><span class="fu">free</span> -h <span class="co"># show amount of memory RAM </span></span>
+<span id="cb1-14"><a href="#cb1-14"></a><span class="fu">ps</span> <span class="co"># report a snapshot of the current processes</span></span>
+<span id="cb1-15"><a href="#cb1-15"></a><span class="fu">file</span> <span class="co"># determine file type</span></span>
+<span id="cb1-16"><a href="#cb1-16"></a><span class="fu">date</span> <span class="co"># show date and time </span></span>
+<span id="cb1-17"><a href="#cb1-17"></a><span class="bu">pwd</span> <span class="co"># print working directory</span></span>
+<span id="cb1-18"><a href="#cb1-18"></a><span class="bu">cd</span> <span class="co"># change directory. Use cd .. or ~ or / to go back or home or system dir</span></span>
+<span id="cb1-19"><a href="#cb1-19"></a><span class="fu">ls</span> <span class="co"># lists. Use flages -al to see all files in long formats</span></span>
+<span id="cb1-20"><a href="#cb1-20"></a><span class="fu">cp</span> <span class="co"># copy a file. Use -r to copy a directory recursively </span></span>
+<span id="cb1-21"><a href="#cb1-21"></a><span class="fu">scp</span> <span class="co"># secure copy a file. Use -r to copy a directory </span></span>
+<span id="cb1-22"><a href="#cb1-22"></a><span class="ex">sftp</span> <span class="co"># secure file transfer program (SSH file transfer protocol)</span></span>
+<span id="cb1-23"><a href="#cb1-23"></a><span class="fu">wget</span> <span class="co"># the non-interactive network downloader (-O &lt;newname&gt; to rename)</span></span>
+<span id="cb1-24"><a href="#cb1-24"></a><span class="ex">curl</span> <span class="co"># copy a url. Use -o to name the output </span></span>
+<span id="cb1-25"><a href="#cb1-25"></a><span class="ex">md5sum</span> <span class="co"># compute MD5 message digest. Use -c to check the digits</span></span>
+<span id="cb1-26"><a href="#cb1-26"></a><span class="fu">tar</span> -c/xzf <span class="co"># to archive and create(c)/extract(x) a compressed(z) file(f)</span></span>
+<span id="cb1-27"><a href="#cb1-27"></a><span class="fu">ln</span> <span class="co"># make links between files</span></span>
+<span id="cb1-28"><a href="#cb1-28"></a><span class="fu">mv</span> <span class="co"># move</span></span>
+<span id="cb1-29"><a href="#cb1-29"></a><span class="fu">rm</span> <span class="co"># remove file. Use -r to remove a directory</span></span>
+<span id="cb1-30"><a href="#cb1-30"></a><span class="fu">mkdir</span> <span class="co"># make a directory</span></span>
+<span id="cb1-31"><a href="#cb1-31"></a><span class="fu">rmdir</span> <span class="co"># remove an empty directory</span></span>
+<span id="cb1-32"><a href="#cb1-32"></a><span class="fu">install</span> -dvp <span class="co"># make a directory(d), verbose(v) and parent(p)</span></span>
+<span id="cb1-33"><a href="#cb1-33"></a><span class="fu">cat</span> <span class="co"># concatenate files and print on the standard output</span></span>
+<span id="cb1-34"><a href="#cb1-34"></a><span class="fu">zcat</span> <span class="co"># concatenate compressed (zip) files</span></span>
+<span id="cb1-35"><a href="#cb1-35"></a><span class="fu">diff</span> file1 file2 compare files line by line. Use -y for side by side and -q for report only when files differ</span>
+<span id="cb1-36"><a href="#cb1-36"></a><span class="fu">less</span> <span class="co"># to view the contents of a text file one screen at a time (less than a text editor)</span></span>
+<span id="cb1-37"><a href="#cb1-37"></a><span class="fu">touch</span> <span class="co"># generate a new file that contains no data</span></span>
+<span id="cb1-38"><a href="#cb1-38"></a><span class="fu">chmod</span> <span class="co"># change file mode for user(u), group(g) or other(o) to give(+) or take(-) permission for read(r), write(w), or execute(x) (example chmod u+r)</span></span>
+<span id="cb1-39"><a href="#cb1-39"></a><span class="bu">echo</span> <span class="co"># display a line of text ex. echo === $(date)</span></span>
+<span id="cb1-40"><a href="#cb1-40"></a><span class="fu">cut</span> -f <span class="op">&lt;</span>field number<span class="op">&gt;</span> -d <span class="op">&lt;</span>delimiter<span class="op">&gt;</span> <span class="co"># cut field number based on the delimiter</span></span>
+<span id="cb1-41"><a href="#cb1-41"></a><span class="fu">grep</span> <span class="co"># print lines matching a pattern (&quot;global/regular expression/print&quot;)</span></span>
+<span id="cb1-42"><a href="#cb1-42"></a><span class="fu">sed</span> <span class="co"># stream editor for filtering and transforming text</span></span>
+<span id="cb1-43"><a href="#cb1-43"></a><span class="fu">tr</span> <span class="co"># translate or delete characters (for example `tr -d ,` removes comma)</span></span>
+<span id="cb1-44"><a href="#cb1-44"></a><span class="fu">awk</span> <span class="co"># pattern scanning and text processing language</span></span>
+<span id="cb1-45"><a href="#cb1-45"></a><span class="fu">wc</span> <span class="co"># word count; it counts the number of lines(-l), words(-w), and characters(-m) of files </span></span>
+<span id="cb1-46"><a href="#cb1-46"></a><span class="fu">nl</span> <span class="co"># number lines of files</span></span>
+<span id="cb1-47"><a href="#cb1-47"></a><span class="fu">head</span> -n <span class="op">&lt;</span>number<span class="op">&gt;</span> <span class="co"># output the n first lines of files</span></span>
+<span id="cb1-48"><a href="#cb1-48"></a><span class="fu">tail</span> -n <span class="op">&lt;</span>number<span class="op">&gt;</span> <span class="co"># output the n last lines of files</span></span>
+<span id="cb1-49"><a href="#cb1-49"></a><span class="fu">sort</span> <span class="co"># sort lines of text files (use flag -r for reverse). Use -n to sort numerically</span></span>
+<span id="cb1-50"><a href="#cb1-50"></a><span class="fu">uniq</span> <span class="co"># remove adjacent duplicated lines from input. Use -c to see number of times the line occurred </span></span>
+<span id="cb1-51"><a href="#cb1-51"></a><span class="fu">find</span> <span class="op">&lt;</span>dir<span class="op">&gt;</span> -name file_name <span class="co"># search for files in a directory hierarchy by name. Use -iname for case insensitive search</span></span>
+<span id="cb1-52"><a href="#cb1-52"></a><span class="fu">which</span> <span class="co"># locate a program file in the user&#39;s path</span></span>
+<span id="cb1-53"><a href="#cb1-53"></a><span class="bu">history</span> <span class="co"># show history of commnads</span></span>
+<span id="cb1-54"><a href="#cb1-54"></a>!<span class="op">&lt;</span><span class="ex">number</span><span class="op">&gt;</span> <span class="co"># rerun the command with the number from history</span></span>
+<span id="cb1-55"><a href="#cb1-55"></a>!! <span class="co"># rerun the last command (bang bang)</span></span>
+<span id="cb1-56"><a href="#cb1-56"></a><span class="fu">bc</span> <span class="co"># Bash calculator language ex. echo &#39;3 + 4&#39; | bc</span></span>
+<span id="cb1-57"><a href="#cb1-57"></a><span class="fu">clear</span> (ctrl+l) <span class="co"># clear terminal</span></span>
+<span id="cb1-58"><a href="#cb1-58"></a><span class="bu">exit</span> (ctrl+d) <span class="co"># to exit</span></span></code></pre></div>
 <p>For practice, let’s create two text files including some names and grades by <code>cat</code> command in <code>bash_test</code> directory:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">mkdir</span> bash_test</span>
 <span id="cb2-2"><a href="#cb2-2"></a><span class="bu">cd</span> bash_text</span>
