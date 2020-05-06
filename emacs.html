@@ -74,7 +74,7 @@
 </ul>
 <h2 id="config-file">Config file</h2>
 <p>Use a text editor to create Emacs config file called <code>.emacs</code> in the home directory <code>cd ~</code> then insert the following to make our very preliminary configurations by:</p>
-<pre><code>;; Add MELPA
+<pre class="lips"><code>;; Add MELPA
 (package-initialize)
 (add-to-list &#39;package-archives &#39;(&quot;melpa&quot; . &quot;http://melpa.org/packages/&quot;) t)
 
@@ -133,7 +133,7 @@
 <h2 id="customize-faces">Customize faces</h2>
 <p>An easy way to change the appearance of Emacs is changing faces. <code>M-x list-faces-display</code> shows current faces that can be modified (use GUI Emacs to access them by clicking). To customize certain faces, use <code>M-x customize-face</code> and select the face that you want to change (press tab to see all options).</p>
 <p>Also, we are able to customize faces from Emacs config file. For instance, adding the following to the <code>.emacs</code> file will change some faces in the Emacs terminal mode:</p>
-<pre><code>;; Customize faces
+<pre class="lips"><code>;; Customize faces
 (custom-set-faces
  &#39;(font-lock-builtin-face ((t (:foreground &quot;SkyBlue1&quot;))))
  &#39;(font-lock-comment-delimiter-face ((t (:foreground &quot;salmon&quot;))))
@@ -153,7 +153,7 @@
 <p>To change the theme use <code>M-x load-theme</code>, then press <code>tab</code> to show a list of available themes. To clear theme use <code>M-x disable-theme</code>.</p>
 <h2 id="install-packages">Install packages</h2>
 <p>In Emacs we can install extra packages based on our needs. To install a new package, press <code>M-x</code> and type <code>package-refresh-contents</code> to fetch all packages and then use <code>M-x package-install</code> and enter the new package’s name. For example we can install Markdown-mode, htmlize and ESS (R-mode) packages with:</p>
-<pre><code>M-x package-install markdown-mode
+<pre class="lips"><code>M-x package-install markdown-mode
 M-x package-install htmlize
 M-x package-install ess</code></pre>
 <p>To see list of the available packages use <code>M-x package-list-packages</code>. And to delete packages, use <code>M-x package-delete</code> and enter the package’s name. Note that you may use <code>C-s</code>/<code>C-r</code> for searching and <code>C-g</code> to cancel any actions and <code>q</code> to close buffers in Emacs.</p>
@@ -186,7 +186,7 @@ M-x package-install ess</code></pre>
 </ul></li>
 </ul>
 <p>To create above list in Org use:</p>
-<pre><code> ** Introduction
+<pre class="org"><code> ** Introduction
  Let&#39;s learn how use *org-mode* to:
  - insert headlines (=M-enter=) - press =M-enter= to go to the next line
  - move headlines up and down (=M-up/down=)
@@ -208,7 +208,7 @@ M-x package-install ess</code></pre>
 <li>Third is a link to <a href="https://orgmode.org/">org-mode</a> website</li>
 </ol>
 <p>To create above list in Org use:</p>
-<pre><code>*For example*, this is an /orderd/ list:
+<pre class="org"><code>*For example*, this is an /orderd/ list:
  1. First (press =M-enter=)
  2. Second (press =M-enter=)
  3. Third is a link to [[https://orgmode.org/][org-mode]] website</code></pre>
@@ -261,16 +261,13 @@ M-x package-install ess</code></pre>
 <p>We can use <code>&lt;c&gt;</code>, <code>&lt;l&gt;</code> or <code>&lt;r&gt;</code> for center, left or right alignment.</p>
 <h3 id="basic-todo">Basic TODO</h3>
 <p>To create a TODO list you only need:</p>
-<pre><code> ** TODO learn org-mode
+<pre class="org"><code> ** TODO learn org-mode
  ** DONE learn emacs
     DEADLINE: &lt;2019-11-16 Sat&gt;</code></pre>
 <p>To change a TODO task to DONE or remove it use <code>S-left/right</code>. Use <code>C-c C-d</code> to add a deadline.</p>
 <h3 id="latex">LaTeX</h3>
 <p>We can use LaTeX to write equations in Org. For example:</p>
-<p><span class="math display">\[\begin{equation}
-x=\sqrt{b}
-\end{equation}\]</span> If <span class="math inline">\(a^2=b\)</span> and <span class="math inline">\(b=2\)</span>, then the solution must be either <span class="math display">\[a=+\sqrt{2}\]</span> or <span class="math display">\[a=-\sqrt{2}\]</span></p>
-<pre><code>#+BEGIN_SRC latex
+<pre class="org"><code>#+BEGIN_SRC latex
 \begin{equation}
 x=\sqrt{b}
 \end{equation}
