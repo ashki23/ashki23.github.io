@@ -78,65 +78,212 @@
 </ul>
 <p>In this article we will learn more about R built-in functions related to calculus, matrix operations, summary statistics and regular expressions.</p>
 <hr />
-<h2 id="date-and-time">Date and time</h2>
-<p>There are several functions to work with date and time classes, following are some examples of these functions.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">Sys.time</span>()</span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="co">## [1] &quot;2020-02-12 21:47:43 CST&quot;</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a></span>
-<span id="cb1-4"><a href="#cb1-4"></a>d =<span class="st"> </span><span class="kw">Sys.Date</span>()</span>
-<span id="cb1-5"><a href="#cb1-5"></a>d</span>
-<span id="cb1-6"><a href="#cb1-6"></a><span class="co">## [1] &quot;2020-02-12&quot;</span></span>
+<h2 id="shell-like-commands">Shell-like commands</h2>
+<ul>
+<li>List of objects: <code>ls()</code></li>
+<li>Remove an object: <code>rm(object)</code></li>
+<li>Remove all objects: <code>rm(list = ls())</code></li>
+<li>List the files in a directory: <code>dir()</code>, <code>dir(path = ".", pattern)</code></li>
+<li>Working directory: <code>getwd()</code></li>
+<li>Set working directory: <code>setwd("new/dir")</code></li>
+<li>Running shell commands: <code>system("command")</code></li>
+</ul>
+<h2 id="statistical-functions">Statistical functions</h2>
+<p>R is one of the best application statistical analysis and natively supports many advanced statistical methods. The following show some of these functions:</p>
+<ul>
+<li>Basic stats: <code>mean</code>, <code>median</code>, <code>sd</code>, <code>var</code>, <code>cov</code>, <code>cor</code>, <code>quantile</code></li>
+<li>Probability functions
+<ul>
+<li>Density functions (ddist): <code>dnorm</code>, <code>dchisq</code>, <code>dt</code>, <code>df</code></li>
+<li>Cumulative distribution functions (pdist): <code>pgamma</code>, <code>pbeta</code>, <code>pexp</code></li>
+<li>Quantile functions (qdist): <code>qpois</code>, <code>qunif</code>, <code>qbinom</code></li>
+<li>Random numbers (rdist) : <code>runif</code>, <code>rlogis</code>, <code>rlnorm</code></li>
+</ul></li>
+<li>Regression analysis
+<ul>
+<li>Linear models: <code>lm</code></li>
+<li>Generalized linear models: <code>glm</code></li>
+<li>Nonlinear models: <code>nls</code></li>
+</ul></li>
+<li>Analysis of varience: <code>anova</code></li>
+<li>Multivariate aalysis of varience: <code>manova</code></li>
+<li>Confidence intervals: <code>confint</code></li>
+<li>t-test: <code>t.test</code></li>
+<li>principal components: <code>prcomp</code></li>
+</ul>
+<h2 id="computational-functions">Computational functions</h2>
+<p>R provides an abundance of computational functions, such as:</p>
+<ul>
+<li>Cumulative: <code>cumsum</code>, <code>cumprod</code>, <code>colSums</code>, <code>rowSums</code></li>
+<li>Finding min/mix: <code>which.min</code>, <code>which.max</code></li>
+<li>Mapping: <code>apply</code></li>
+<li>Normalizing: <code>scale</code></li>
+<li>Sampling: <code>sample</code></li>
+</ul>
+<p>The following are some examples of these functions:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Cumulative sums, products</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="kw">cumsum</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>)</span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="co">## [1]  1  3  6 10 15</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="kw">cumprod</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>)</span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="co">## [1]   1   2   6  24 120</span></span>
 <span id="cb1-7"><a href="#cb1-7"></a></span>
-<span id="cb1-8"><a href="#cb1-8"></a><span class="kw">weekdays</span>(d)</span>
-<span id="cb1-9"><a href="#cb1-9"></a><span class="co">## [1] &quot;Wednesday&quot;</span></span>
-<span id="cb1-10"><a href="#cb1-10"></a></span>
-<span id="cb1-11"><a href="#cb1-11"></a><span class="kw">months</span>(d)</span>
-<span id="cb1-12"><a href="#cb1-12"></a><span class="co">## [1] &quot;February&quot;</span></span>
-<span id="cb1-13"><a href="#cb1-13"></a></span>
-<span id="cb1-14"><a href="#cb1-14"></a><span class="kw">quarters</span>(d)</span>
-<span id="cb1-15"><a href="#cb1-15"></a><span class="co">## [1] &quot;Q1&quot;</span></span>
-<span id="cb1-16"><a href="#cb1-16"></a></span>
-<span id="cb1-17"><a href="#cb1-17"></a><span class="kw">format</span>(<span class="kw">Sys.time</span>(), <span class="st">&quot;%d&quot;</span>)</span>
-<span id="cb1-18"><a href="#cb1-18"></a><span class="co">## [1] &quot;12&quot;</span></span>
-<span id="cb1-19"><a href="#cb1-19"></a></span>
-<span id="cb1-20"><a href="#cb1-20"></a><span class="kw">format</span>(<span class="kw">Sys.time</span>(), <span class="st">&quot;%m&quot;</span>)</span>
-<span id="cb1-21"><a href="#cb1-21"></a><span class="co">## [1] &quot;02&quot;</span></span>
-<span id="cb1-22"><a href="#cb1-22"></a></span>
-<span id="cb1-23"><a href="#cb1-23"></a><span class="kw">format</span>(<span class="kw">Sys.time</span>(), <span class="st">&quot;%Y&quot;</span>)</span>
-<span id="cb1-24"><a href="#cb1-24"></a><span class="co">## [1] &quot;2020&quot;</span></span>
-<span id="cb1-25"><a href="#cb1-25"></a></span>
-<span id="cb1-26"><a href="#cb1-26"></a><span class="kw">timestamp</span>()</span>
-<span id="cb1-27"><a href="#cb1-27"></a><span class="co">## ##------ Wed Feb 12 21:47:43 2020 ------##</span></span>
-<span id="cb1-28"><a href="#cb1-28"></a></span>
-<span id="cb1-29"><a href="#cb1-29"></a><span class="kw">format</span>(<span class="kw">Sys.time</span>(), <span class="st">&quot;%a %b %d %Y %X&quot;</span>) <span class="co"># To see more options for format enter `help(strftime)`</span></span>
-<span id="cb1-30"><a href="#cb1-30"></a><span class="co">## [1] &quot;Wed Feb 12 2020 21:47:43&quot;</span></span>
-<span id="cb1-31"><a href="#cb1-31"></a></span>
-<span id="cb1-32"><a href="#cb1-32"></a><span class="kw">format</span>(<span class="kw">Sys.time</span>(), <span class="st">&quot;%Y-%m-%d&quot;</span>)</span>
-<span id="cb1-33"><a href="#cb1-33"></a><span class="co">## [1] &quot;2020-02-12&quot;</span></span>
-<span id="cb1-34"><a href="#cb1-34"></a></span>
-<span id="cb1-35"><a href="#cb1-35"></a><span class="kw">format</span>(<span class="kw">Sys.time</span>(), <span class="st">&quot;%H:%M:%S&quot;</span>)</span>
-<span id="cb1-36"><a href="#cb1-36"></a><span class="co">## [1] &quot;21:47:43&quot;</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="kw">set.seed</span>(<span class="dv">23</span>)</span>
+<span id="cb1-9"><a href="#cb1-9"></a>mydata =<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">sample =</span> <span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>, <span class="dv">5</span>), <span class="dt">random =</span> <span class="kw">rnorm</span>(<span class="dv">5</span>))</span>
+<span id="cb1-10"><a href="#cb1-10"></a>mydata</span>
+<span id="cb1-11"><a href="#cb1-11"></a><span class="co">##   sample     random</span></span>
+<span id="cb1-12"><a href="#cb1-12"></a><span class="co">## 1     29  2.7075823</span></span>
+<span id="cb1-13"><a href="#cb1-13"></a><span class="co">## 2     28  0.5284939</span></span>
+<span id="cb1-14"><a href="#cb1-14"></a><span class="co">## 3     72 -0.4823752</span></span>
+<span id="cb1-15"><a href="#cb1-15"></a><span class="co">## 4     43 -1.0835666</span></span>
+<span id="cb1-16"><a href="#cb1-16"></a><span class="co">## 5     45  0.2366887</span></span>
+<span id="cb1-17"><a href="#cb1-17"></a></span>
+<span id="cb1-18"><a href="#cb1-18"></a><span class="co"># Which min/max</span></span>
+<span id="cb1-19"><a href="#cb1-19"></a><span class="kw">which.min</span>(mydata<span class="op">$</span>sample)</span>
+<span id="cb1-20"><a href="#cb1-20"></a><span class="co">## [1] 2</span></span>
+<span id="cb1-21"><a href="#cb1-21"></a></span>
+<span id="cb1-22"><a href="#cb1-22"></a><span class="kw">which.max</span>(mydata<span class="op">$</span>sample)</span>
+<span id="cb1-23"><a href="#cb1-23"></a><span class="co">## [1] 3</span></span>
+<span id="cb1-24"><a href="#cb1-24"></a></span>
+<span id="cb1-25"><a href="#cb1-25"></a><span class="co"># Apply</span></span>
+<span id="cb1-26"><a href="#cb1-26"></a><span class="kw">apply</span>(mydata , <span class="dv">2</span>, quantile) <span class="co"># Calculate quantile</span></span>
+<span id="cb1-27"><a href="#cb1-27"></a><span class="co">##      sample     random</span></span>
+<span id="cb1-28"><a href="#cb1-28"></a><span class="co">## 0%       28 -1.0835666</span></span>
+<span id="cb1-29"><a href="#cb1-29"></a><span class="co">## 25%      29 -0.4823752</span></span>
+<span id="cb1-30"><a href="#cb1-30"></a><span class="co">## 50%      43  0.2366887</span></span>
+<span id="cb1-31"><a href="#cb1-31"></a><span class="co">## 75%      45  0.5284939</span></span>
+<span id="cb1-32"><a href="#cb1-32"></a><span class="co">## 100%     72  2.7075823</span></span>
+<span id="cb1-33"><a href="#cb1-33"></a></span>
+<span id="cb1-34"><a href="#cb1-34"></a><span class="kw">apply</span>(mydata, <span class="dv">2</span>, mean) <span class="co"># Calculate mean</span></span>
+<span id="cb1-35"><a href="#cb1-35"></a><span class="co">##     sample     random </span></span>
+<span id="cb1-36"><a href="#cb1-36"></a><span class="co">## 43.4000000  0.3813646</span></span>
 <span id="cb1-37"><a href="#cb1-37"></a></span>
-<span id="cb1-38"><a href="#cb1-38"></a>weeks =<span class="st"> </span><span class="kw">seq</span>(<span class="kw">Sys.Date</span>(), <span class="dt">length.out =</span> <span class="dv">3</span>, <span class="dt">by =</span> <span class="st">&quot;1 week&quot;</span>) <span class="co"># Next three weeks</span></span>
-<span id="cb1-39"><a href="#cb1-39"></a>weeks</span>
-<span id="cb1-40"><a href="#cb1-40"></a><span class="co">## [1] &quot;2020-02-12&quot; &quot;2020-02-19&quot; &quot;2020-02-26&quot;</span></span>
+<span id="cb1-38"><a href="#cb1-38"></a><span class="kw">colMeans</span>(mydata)</span>
+<span id="cb1-39"><a href="#cb1-39"></a><span class="co">##     sample     random </span></span>
+<span id="cb1-40"><a href="#cb1-40"></a><span class="co">## 43.4000000  0.3813646</span></span>
 <span id="cb1-41"><a href="#cb1-41"></a></span>
-<span id="cb1-42"><a href="#cb1-42"></a><span class="kw">difftime</span>(weeks[<span class="dv">2</span>], weeks[<span class="dv">1</span>], <span class="dt">units =</span> <span class="st">&quot;auto&quot;</span>)</span>
-<span id="cb1-43"><a href="#cb1-43"></a><span class="co">## Time difference of 7 days</span></span>
-<span id="cb1-44"><a href="#cb1-44"></a></span>
-<span id="cb1-45"><a href="#cb1-45"></a><span class="co"># Date-time conversion</span></span>
-<span id="cb1-46"><a href="#cb1-46"></a><span class="kw">strftime</span>(<span class="kw">Sys.time</span>(), <span class="dt">format =</span> <span class="st">&quot;%a %d %b %Y %H:%M:%S&quot;</span>) <span class="co"># convert time-date objects to character</span></span>
-<span id="cb1-47"><a href="#cb1-47"></a><span class="co">## [1] &quot;Wed 12 Feb 2020 21:47:43&quot;</span></span>
-<span id="cb1-48"><a href="#cb1-48"></a></span>
-<span id="cb1-49"><a href="#cb1-49"></a><span class="kw">strptime</span>(<span class="st">&quot;20/2/06 11:16:16.683&quot;</span>, <span class="dt">format =</span> <span class="st">&quot;%d/%m/%y %H:%M:%OS&quot;</span>) <span class="co"># convert character to time-date objects</span></span>
-<span id="cb1-50"><a href="#cb1-50"></a><span class="co">## [1] &quot;2006-02-20 11:16:16 CST&quot;</span></span></code></pre></div>
-<p><code>ts</code> function can be used to create a vector or matrix of <strong>time-series</strong> objects.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">ts</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">12</span>, <span class="dt">start =</span> <span class="kw">c</span>(<span class="dv">1956</span>, <span class="dv">3</span>), <span class="dt">frequency =</span> <span class="dv">12</span>) <span class="co"># for season: frequency = 4</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="co">##      Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec</span></span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="co">## 1956           1   2   3   4   5   6   7   8   9  10</span></span>
-<span id="cb2-4"><a href="#cb2-4"></a><span class="co">## 1957  11  12</span></span></code></pre></div>
+<span id="cb1-42"><a href="#cb1-42"></a><span class="kw">scale</span>(mydata) <span class="co"># scale(x) = (x - mean(x)) / sd(x)</span></span>
+<span id="cb1-43"><a href="#cb1-43"></a><span class="co">##           sample     random</span></span>
+<span id="cb1-44"><a href="#cb1-44"></a><span class="co">## [1,] -0.80967904  1.6104335</span></span>
+<span id="cb1-45"><a href="#cb1-45"></a><span class="co">## [2,] -0.86590675  0.1018572</span></span>
+<span id="cb1-46"><a href="#cb1-46"></a><span class="co">## [3,]  1.60811253 -0.5979645</span></span>
+<span id="cb1-47"><a href="#cb1-47"></a><span class="co">## [4,] -0.02249108 -1.0141675</span></span>
+<span id="cb1-48"><a href="#cb1-48"></a><span class="co">## [5,]  0.08996434 -0.1001587</span></span>
+<span id="cb1-49"><a href="#cb1-49"></a><span class="co">## attr(,&quot;scaled:center&quot;)</span></span>
+<span id="cb1-50"><a href="#cb1-50"></a><span class="co">##     sample     random </span></span>
+<span id="cb1-51"><a href="#cb1-51"></a><span class="co">## 43.4000000  0.3813646 </span></span>
+<span id="cb1-52"><a href="#cb1-52"></a><span class="co">## attr(,&quot;scaled:scale&quot;)</span></span>
+<span id="cb1-53"><a href="#cb1-53"></a><span class="co">##    sample    random </span></span>
+<span id="cb1-54"><a href="#cb1-54"></a><span class="co">## 17.784825  1.444467</span></span></code></pre></div>
+<h2 id="matrix-operations">Matrix operations</h2>
+<p>The most common matrix operations include:</p>
+<ul>
+<li>Dimensions of a matrix: <code>dim</code></li>
+<li>Diagonal of a matrix: <code>diag</code></li>
+<li>Identity matrix: <code>diag(number)</code></li>
+<li>Matrix diagonal: <code>Diagonal</code></li>
+<li>Matrix symmetric test: <code>isSymmetric</code></li>
+<li>Matrix multiplication: <code>%*%</code></li>
+<li>Test matrices for exact equality: <code>identical</code></li>
+<li>Matrix transpose: <code>t</code></li>
+<li>Determinant of a matrix: <code>det</code></li>
+<li>Inverse of a matrix: <code>solve</code></li>
+<li>Solve a system of equations: <code>solve</code></li>
+<li>QR Decomposition of a Matrix: <code>qr</code></li>
+<li>Spectral Decomposition of a Matrix: <code>eigen</code></li>
+</ul>
+<p>The following are some examples of above functions.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>M =<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">4</span>,<span class="op">-</span><span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">6</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">8</span>,<span class="dv">4</span>), <span class="dv">3</span>, <span class="dv">3</span>)</span>
+<span id="cb2-2"><a href="#cb2-2"></a>N =<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="op">-</span><span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>), <span class="dv">3</span>, <span class="dv">3</span>)</span>
+<span id="cb2-3"><a href="#cb2-3"></a>b =<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>))</span>
+<span id="cb2-4"><a href="#cb2-4"></a></span>
+<span id="cb2-5"><a href="#cb2-5"></a><span class="kw">dim</span>(M)</span>
+<span id="cb2-6"><a href="#cb2-6"></a><span class="co">## [1] 3 3</span></span>
+<span id="cb2-7"><a href="#cb2-7"></a></span>
+<span id="cb2-8"><a href="#cb2-8"></a><span class="kw">diag</span>(M)</span>
+<span id="cb2-9"><a href="#cb2-9"></a><span class="co">## [1] 4 6 4</span></span>
+<span id="cb2-10"><a href="#cb2-10"></a></span>
+<span id="cb2-11"><a href="#cb2-11"></a><span class="kw">diag</span>(<span class="dv">3</span>)</span>
+<span id="cb2-12"><a href="#cb2-12"></a><span class="co">##      [,1] [,2] [,3]</span></span>
+<span id="cb2-13"><a href="#cb2-13"></a><span class="co">## [1,]    1    0    0</span></span>
+<span id="cb2-14"><a href="#cb2-14"></a><span class="co">## [2,]    0    1    0</span></span>
+<span id="cb2-15"><a href="#cb2-15"></a><span class="co">## [3,]    0    0    1</span></span>
+<span id="cb2-16"><a href="#cb2-16"></a></span>
+<span id="cb2-17"><a href="#cb2-17"></a>Matrix<span class="op">::</span><span class="kw">Diagonal</span>(<span class="dv">3</span>, <span class="kw">c</span>(.<span class="dv">1</span>,.<span class="dv">2</span>,.<span class="dv">3</span>))</span>
+<span id="cb2-18"><a href="#cb2-18"></a><span class="co">##      [,1] [,2] [,3]</span></span>
+<span id="cb2-19"><a href="#cb2-19"></a><span class="co">## [1,]  0.1    .    .</span></span>
+<span id="cb2-20"><a href="#cb2-20"></a><span class="co">## [2,]    .  0.2    .</span></span>
+<span id="cb2-21"><a href="#cb2-21"></a><span class="co">## [3,]    .    .  0.3</span></span>
+<span id="cb2-22"><a href="#cb2-22"></a></span>
+<span id="cb2-23"><a href="#cb2-23"></a><span class="kw">isSymmetric</span>(M)</span>
+<span id="cb2-24"><a href="#cb2-24"></a><span class="co">## [1] FALSE</span></span>
+<span id="cb2-25"><a href="#cb2-25"></a></span>
+<span id="cb2-26"><a href="#cb2-26"></a>M <span class="op">%*%</span><span class="st"> </span>N</span>
+<span id="cb2-27"><a href="#cb2-27"></a><span class="co">##      [,1] [,2] [,3]</span></span>
+<span id="cb2-28"><a href="#cb2-28"></a><span class="co">## [1,]   18   -2   38</span></span>
+<span id="cb2-29"><a href="#cb2-29"></a><span class="co">## [2,]   32  -10   94</span></span>
+<span id="cb2-30"><a href="#cb2-30"></a><span class="co">## [3,]    2   -6   26</span></span>
+<span id="cb2-31"><a href="#cb2-31"></a></span>
+<span id="cb2-32"><a href="#cb2-32"></a><span class="kw">identical</span>(M, N)</span>
+<span id="cb2-33"><a href="#cb2-33"></a><span class="co">## [1] FALSE</span></span>
+<span id="cb2-34"><a href="#cb2-34"></a></span>
+<span id="cb2-35"><a href="#cb2-35"></a><span class="kw">t</span>(M)</span>
+<span id="cb2-36"><a href="#cb2-36"></a><span class="co">##      [,1] [,2] [,3]</span></span>
+<span id="cb2-37"><a href="#cb2-37"></a><span class="co">## [1,]    4    4   -2</span></span>
+<span id="cb2-38"><a href="#cb2-38"></a><span class="co">## [2,]    2    6    2</span></span>
+<span id="cb2-39"><a href="#cb2-39"></a><span class="co">## [3,]    2    8    4</span></span>
+<span id="cb2-40"><a href="#cb2-40"></a></span>
+<span id="cb2-41"><a href="#cb2-41"></a><span class="kw">det</span>(M)</span>
+<span id="cb2-42"><a href="#cb2-42"></a><span class="co">## [1] 8</span></span>
+<span id="cb2-43"><a href="#cb2-43"></a></span>
+<span id="cb2-44"><a href="#cb2-44"></a><span class="kw">qr</span>(M)</span>
+<span id="cb2-45"><a href="#cb2-45"></a><span class="co">## $qr</span></span>
+<span id="cb2-46"><a href="#cb2-46"></a><span class="co">##            [,1]       [,2]       [,3]</span></span>
+<span id="cb2-47"><a href="#cb2-47"></a><span class="co">## [1,] -6.0000000 -4.6666667 -5.3333333</span></span>
+<span id="cb2-48"><a href="#cb2-48"></a><span class="co">## [2,]  0.6666667 -4.7140452 -7.4481914</span></span>
+<span id="cb2-49"><a href="#cb2-49"></a><span class="co">## [3,] -0.3333333  0.7071068  0.2828427</span></span>
+<span id="cb2-50"><a href="#cb2-50"></a><span class="co">## </span></span>
+<span id="cb2-51"><a href="#cb2-51"></a><span class="co">## $rank</span></span>
+<span id="cb2-52"><a href="#cb2-52"></a><span class="co">## [1] 3</span></span>
+<span id="cb2-53"><a href="#cb2-53"></a><span class="co">## </span></span>
+<span id="cb2-54"><a href="#cb2-54"></a><span class="co">## $qraux</span></span>
+<span id="cb2-55"><a href="#cb2-55"></a><span class="co">## [1] 1.6666667 1.7071068 0.2828427</span></span>
+<span id="cb2-56"><a href="#cb2-56"></a><span class="co">## </span></span>
+<span id="cb2-57"><a href="#cb2-57"></a><span class="co">## $pivot</span></span>
+<span id="cb2-58"><a href="#cb2-58"></a><span class="co">## [1] 1 2 3</span></span>
+<span id="cb2-59"><a href="#cb2-59"></a><span class="co">## </span></span>
+<span id="cb2-60"><a href="#cb2-60"></a><span class="co">## attr(,&quot;class&quot;)</span></span>
+<span id="cb2-61"><a href="#cb2-61"></a><span class="co">## [1] &quot;qr&quot;</span></span>
+<span id="cb2-62"><a href="#cb2-62"></a></span>
+<span id="cb2-63"><a href="#cb2-63"></a><span class="kw">solve</span>(M) <span class="co"># Inverse of M</span></span>
+<span id="cb2-64"><a href="#cb2-64"></a><span class="co">##      [,1] [,2] [,3]</span></span>
+<span id="cb2-65"><a href="#cb2-65"></a><span class="co">## [1,]  1.0 -0.5  0.5</span></span>
+<span id="cb2-66"><a href="#cb2-66"></a><span class="co">## [2,] -4.0  2.5 -3.0</span></span>
+<span id="cb2-67"><a href="#cb2-67"></a><span class="co">## [3,]  2.5 -1.5  2.0</span></span>
+<span id="cb2-68"><a href="#cb2-68"></a></span>
+<span id="cb2-69"><a href="#cb2-69"></a><span class="kw">solve</span>(M,b) <span class="co"># Solve a system</span></span>
+<span id="cb2-70"><a href="#cb2-70"></a><span class="co">##      [,1]</span></span>
+<span id="cb2-71"><a href="#cb2-71"></a><span class="co">## [1,]  0.5</span></span>
+<span id="cb2-72"><a href="#cb2-72"></a><span class="co">## [2,] -3.0</span></span>
+<span id="cb2-73"><a href="#cb2-73"></a><span class="co">## [3,]  2.0</span></span>
+<span id="cb2-74"><a href="#cb2-74"></a></span>
+<span id="cb2-75"><a href="#cb2-75"></a><span class="kw">eigen</span>(M)</span>
+<span id="cb2-76"><a href="#cb2-76"></a><span class="co">## eigen() decomposition</span></span>
+<span id="cb2-77"><a href="#cb2-77"></a><span class="co">## $values</span></span>
+<span id="cb2-78"><a href="#cb2-78"></a><span class="co">## [1] 9.4185507 4.3878731 0.1935761</span></span>
+<span id="cb2-79"><a href="#cb2-79"></a><span class="co">## </span></span>
+<span id="cb2-80"><a href="#cb2-80"></a><span class="co">## $vectors</span></span>
+<span id="cb2-81"><a href="#cb2-81"></a><span class="co">##           [,1]       [,2]       [,3]</span></span>
+<span id="cb2-82"><a href="#cb2-82"></a><span class="co">## [1,] 0.3994272 -0.6725085  0.1632537</span></span>
+<span id="cb2-83"><a href="#cb2-83"></a><span class="co">## [2,] 0.8980978 -0.5844552 -0.8354557</span></span>
+<span id="cb2-84"><a href="#cb2-84"></a><span class="co">## [3,] 0.1840605  0.4540313  0.5247494</span></span></code></pre></div>
 <h2 id="differentiation-and-integration">Differentiation and integration</h2>
-<p>R base system supports both differentiation and integration, for instance:</p>
+<p>R base system supports both differentiation and integration with:</p>
+<ul>
+<li>Derivative: <code>D(function, "wrt")</code></li>
+<li>Integrate: <code>integrate(function, lower, upper)</code></li>
+</ul>
+<p>For instance:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co">## Derivative</span></span>
 <span id="cb3-2"><a href="#cb3-2"></a>f =<span class="st"> </span><span class="kw">expression</span>(x<span class="op">^</span><span class="dv">2</span><span class="op">+</span><span class="dv">3</span><span class="op">*</span>x)</span>
 <span id="cb3-3"><a href="#cb3-3"></a>ff =<span class="st"> </span><span class="kw">D</span>(f, <span class="st">&quot;x&quot;</span>)</span>
@@ -154,157 +301,53 @@
 <span id="cb3-15"><a href="#cb3-15"></a>f =<span class="st"> </span><span class="cf">function</span>(x) x<span class="op">^</span><span class="dv">2</span><span class="op">+</span><span class="dv">3</span><span class="op">*</span>x</span>
 <span id="cb3-16"><a href="#cb3-16"></a><span class="kw">integrate</span>(f, <span class="dt">lower =</span> <span class="dv">0</span>, <span class="dt">upper =</span> <span class="dv">1</span>)</span>
 <span id="cb3-17"><a href="#cb3-17"></a><span class="co">## 1.833333 with absolute error &lt; 2e-14</span></span></code></pre></div>
-<h2 id="matrix-operations">Matrix operations</h2>
-<p>The most common matrix operations include:</p>
+<h2 id="date-and-time">Date and time</h2>
+<p>There are several functions to work with date and time classes such as:</p>
 <ul>
-<li>Dimensions of a matrix: <code>dim()</code></li>
-<li>Diagonal of a matrix: <code>diag()</code></li>
-<li>Identity matrix: <code>diag(number)</code></li>
-<li>Matrix symmetric test: <code>isSymmetric()</code></li>
-<li>Matrix multiplication: <code>%*%</code></li>
-<li>Test matrices for exact equality: <code>identical(,)</code></li>
-<li>Matrix transpose: <code>t()</code></li>
-<li>Determinant of a matrix: <code>det()</code></li>
-<li>Inverse of a matrix: <code>solve()</code></li>
-<li>Solve a system of equations: <code>solve()</code></li>
-<li>QR Decomposition of a Matrix: <code>qr()</code></li>
-<li>Spectral Decomposition of a Matrix: <code>eigen()</code></li>
+<li>Current time and data: <code>Sys.time</code>, <code>Sys.Date</code>, <code>timestamp</code></li>
+<li>Date information: <code>weekdays</code>, <code>month</code>, <code>quarters</code></li>
+<li>Time formats: <code>%a %b %d %Y %X %H %M %S</code>. Use <code>help(strftime)</code> to see all formats</li>
+<li>Time difference: <code>difftime</code></li>
+<li>Time sequences: <code>seq</code></li>
+<li>Date-time conversion: <code>strftime</code></li>
+<li>Time-series: <code>ts</code></li>
 </ul>
-<p>The following are some examples of above functions.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>M =<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">4</span>,<span class="op">-</span><span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">6</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">8</span>,<span class="dv">4</span>), <span class="dv">3</span>, <span class="dv">3</span>)</span>
-<span id="cb4-2"><a href="#cb4-2"></a>N =<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="op">-</span><span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>), <span class="dv">3</span>, <span class="dv">3</span>)</span>
-<span id="cb4-3"><a href="#cb4-3"></a>b =<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>))</span>
-<span id="cb4-4"><a href="#cb4-4"></a></span>
-<span id="cb4-5"><a href="#cb4-5"></a><span class="kw">dim</span>(M)</span>
-<span id="cb4-6"><a href="#cb4-6"></a><span class="co">## [1] 3 3</span></span>
-<span id="cb4-7"><a href="#cb4-7"></a></span>
-<span id="cb4-8"><a href="#cb4-8"></a><span class="kw">diag</span>(M)</span>
-<span id="cb4-9"><a href="#cb4-9"></a><span class="co">## [1] 4 6 4</span></span>
-<span id="cb4-10"><a href="#cb4-10"></a></span>
-<span id="cb4-11"><a href="#cb4-11"></a><span class="kw">diag</span>(<span class="dv">3</span>)</span>
-<span id="cb4-12"><a href="#cb4-12"></a><span class="co">##      [,1] [,2] [,3]</span></span>
-<span id="cb4-13"><a href="#cb4-13"></a><span class="co">## [1,]    1    0    0</span></span>
-<span id="cb4-14"><a href="#cb4-14"></a><span class="co">## [2,]    0    1    0</span></span>
-<span id="cb4-15"><a href="#cb4-15"></a><span class="co">## [3,]    0    0    1</span></span>
-<span id="cb4-16"><a href="#cb4-16"></a></span>
-<span id="cb4-17"><a href="#cb4-17"></a><span class="kw">isSymmetric</span>(M)</span>
-<span id="cb4-18"><a href="#cb4-18"></a><span class="co">## [1] FALSE</span></span>
-<span id="cb4-19"><a href="#cb4-19"></a></span>
-<span id="cb4-20"><a href="#cb4-20"></a>M <span class="op">%*%</span><span class="st"> </span>N</span>
-<span id="cb4-21"><a href="#cb4-21"></a><span class="co">##      [,1] [,2] [,3]</span></span>
-<span id="cb4-22"><a href="#cb4-22"></a><span class="co">## [1,]   18   -2   38</span></span>
-<span id="cb4-23"><a href="#cb4-23"></a><span class="co">## [2,]   32  -10   94</span></span>
-<span id="cb4-24"><a href="#cb4-24"></a><span class="co">## [3,]    2   -6   26</span></span>
-<span id="cb4-25"><a href="#cb4-25"></a></span>
-<span id="cb4-26"><a href="#cb4-26"></a><span class="kw">identical</span>(M, N)</span>
-<span id="cb4-27"><a href="#cb4-27"></a><span class="co">## [1] FALSE</span></span>
-<span id="cb4-28"><a href="#cb4-28"></a></span>
-<span id="cb4-29"><a href="#cb4-29"></a><span class="kw">t</span>(M)</span>
-<span id="cb4-30"><a href="#cb4-30"></a><span class="co">##      [,1] [,2] [,3]</span></span>
-<span id="cb4-31"><a href="#cb4-31"></a><span class="co">## [1,]    4    4   -2</span></span>
-<span id="cb4-32"><a href="#cb4-32"></a><span class="co">## [2,]    2    6    2</span></span>
-<span id="cb4-33"><a href="#cb4-33"></a><span class="co">## [3,]    2    8    4</span></span>
-<span id="cb4-34"><a href="#cb4-34"></a></span>
-<span id="cb4-35"><a href="#cb4-35"></a><span class="kw">det</span>(M)</span>
-<span id="cb4-36"><a href="#cb4-36"></a><span class="co">## [1] 8</span></span>
-<span id="cb4-37"><a href="#cb4-37"></a></span>
-<span id="cb4-38"><a href="#cb4-38"></a><span class="kw">qr</span>(M)</span>
-<span id="cb4-39"><a href="#cb4-39"></a><span class="co">## $qr</span></span>
-<span id="cb4-40"><a href="#cb4-40"></a><span class="co">##            [,1]       [,2]       [,3]</span></span>
-<span id="cb4-41"><a href="#cb4-41"></a><span class="co">## [1,] -6.0000000 -4.6666667 -5.3333333</span></span>
-<span id="cb4-42"><a href="#cb4-42"></a><span class="co">## [2,]  0.6666667 -4.7140452 -7.4481914</span></span>
-<span id="cb4-43"><a href="#cb4-43"></a><span class="co">## [3,] -0.3333333  0.7071068  0.2828427</span></span>
-<span id="cb4-44"><a href="#cb4-44"></a><span class="co">## </span></span>
-<span id="cb4-45"><a href="#cb4-45"></a><span class="co">## $rank</span></span>
-<span id="cb4-46"><a href="#cb4-46"></a><span class="co">## [1] 3</span></span>
-<span id="cb4-47"><a href="#cb4-47"></a><span class="co">## </span></span>
-<span id="cb4-48"><a href="#cb4-48"></a><span class="co">## $qraux</span></span>
-<span id="cb4-49"><a href="#cb4-49"></a><span class="co">## [1] 1.6666667 1.7071068 0.2828427</span></span>
-<span id="cb4-50"><a href="#cb4-50"></a><span class="co">## </span></span>
-<span id="cb4-51"><a href="#cb4-51"></a><span class="co">## $pivot</span></span>
-<span id="cb4-52"><a href="#cb4-52"></a><span class="co">## [1] 1 2 3</span></span>
-<span id="cb4-53"><a href="#cb4-53"></a><span class="co">## </span></span>
-<span id="cb4-54"><a href="#cb4-54"></a><span class="co">## attr(,&quot;class&quot;)</span></span>
-<span id="cb4-55"><a href="#cb4-55"></a><span class="co">## [1] &quot;qr&quot;</span></span>
-<span id="cb4-56"><a href="#cb4-56"></a></span>
-<span id="cb4-57"><a href="#cb4-57"></a><span class="kw">solve</span>(M) <span class="co"># Inverse of M</span></span>
-<span id="cb4-58"><a href="#cb4-58"></a><span class="co">##      [,1] [,2] [,3]</span></span>
-<span id="cb4-59"><a href="#cb4-59"></a><span class="co">## [1,]  1.0 -0.5  0.5</span></span>
-<span id="cb4-60"><a href="#cb4-60"></a><span class="co">## [2,] -4.0  2.5 -3.0</span></span>
-<span id="cb4-61"><a href="#cb4-61"></a><span class="co">## [3,]  2.5 -1.5  2.0</span></span>
-<span id="cb4-62"><a href="#cb4-62"></a></span>
-<span id="cb4-63"><a href="#cb4-63"></a><span class="kw">solve</span>(M,b) <span class="co"># Solve a system</span></span>
-<span id="cb4-64"><a href="#cb4-64"></a><span class="co">##      [,1]</span></span>
-<span id="cb4-65"><a href="#cb4-65"></a><span class="co">## [1,]  0.5</span></span>
-<span id="cb4-66"><a href="#cb4-66"></a><span class="co">## [2,] -3.0</span></span>
-<span id="cb4-67"><a href="#cb4-67"></a><span class="co">## [3,]  2.0</span></span>
-<span id="cb4-68"><a href="#cb4-68"></a></span>
-<span id="cb4-69"><a href="#cb4-69"></a><span class="kw">eigen</span>(M)</span>
-<span id="cb4-70"><a href="#cb4-70"></a><span class="co">## eigen() decomposition</span></span>
-<span id="cb4-71"><a href="#cb4-71"></a><span class="co">## $values</span></span>
-<span id="cb4-72"><a href="#cb4-72"></a><span class="co">## [1] 9.4185507 4.3878731 0.1935761</span></span>
-<span id="cb4-73"><a href="#cb4-73"></a><span class="co">## </span></span>
-<span id="cb4-74"><a href="#cb4-74"></a><span class="co">## $vectors</span></span>
-<span id="cb4-75"><a href="#cb4-75"></a><span class="co">##           [,1]       [,2]       [,3]</span></span>
-<span id="cb4-76"><a href="#cb4-76"></a><span class="co">## [1,] 0.3994272 -0.6725085  0.1632537</span></span>
-<span id="cb4-77"><a href="#cb4-77"></a><span class="co">## [2,] 0.8980978 -0.5844552 -0.8354557</span></span>
-<span id="cb4-78"><a href="#cb4-78"></a><span class="co">## [3,] 0.1840605  0.4540313  0.5247494</span></span></code></pre></div>
-<h2 id="computational-functions">Computational functions</h2>
-<p>R provides an abundance of computational functions. The following are some examples of these functions.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># Cumulative sums, products</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="kw">cumsum</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>)</span>
-<span id="cb5-3"><a href="#cb5-3"></a><span class="co">## [1]  1  3  6 10 15</span></span>
-<span id="cb5-4"><a href="#cb5-4"></a></span>
-<span id="cb5-5"><a href="#cb5-5"></a><span class="kw">cumprod</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>)</span>
-<span id="cb5-6"><a href="#cb5-6"></a><span class="co">## [1]   1   2   6  24 120</span></span>
-<span id="cb5-7"><a href="#cb5-7"></a></span>
-<span id="cb5-8"><a href="#cb5-8"></a><span class="kw">set.seed</span>(<span class="dv">23</span>)</span>
-<span id="cb5-9"><a href="#cb5-9"></a>mydata =<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">sample =</span> <span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>, <span class="dv">5</span>), <span class="dt">random =</span> <span class="kw">rnorm</span>(<span class="dv">5</span>))</span>
-<span id="cb5-10"><a href="#cb5-10"></a>mydata</span>
-<span id="cb5-11"><a href="#cb5-11"></a><span class="co">##   sample     random</span></span>
-<span id="cb5-12"><a href="#cb5-12"></a><span class="co">## 1     29  2.7075823</span></span>
-<span id="cb5-13"><a href="#cb5-13"></a><span class="co">## 2     28  0.5284939</span></span>
-<span id="cb5-14"><a href="#cb5-14"></a><span class="co">## 3     72 -0.4823752</span></span>
-<span id="cb5-15"><a href="#cb5-15"></a><span class="co">## 4     43 -1.0835666</span></span>
-<span id="cb5-16"><a href="#cb5-16"></a><span class="co">## 5     45  0.2366887</span></span>
-<span id="cb5-17"><a href="#cb5-17"></a></span>
-<span id="cb5-18"><a href="#cb5-18"></a><span class="co"># Which min/max</span></span>
-<span id="cb5-19"><a href="#cb5-19"></a><span class="kw">which.min</span>(mydata<span class="op">$</span>sample)</span>
-<span id="cb5-20"><a href="#cb5-20"></a><span class="co">## [1] 2</span></span>
-<span id="cb5-21"><a href="#cb5-21"></a></span>
-<span id="cb5-22"><a href="#cb5-22"></a><span class="kw">which.max</span>(mydata<span class="op">$</span>sample)</span>
-<span id="cb5-23"><a href="#cb5-23"></a><span class="co">## [1] 3</span></span>
-<span id="cb5-24"><a href="#cb5-24"></a></span>
-<span id="cb5-25"><a href="#cb5-25"></a><span class="co"># Apply</span></span>
-<span id="cb5-26"><a href="#cb5-26"></a><span class="kw">apply</span>(mydata , <span class="dv">2</span>, quantile) <span class="co"># Calculate quantile</span></span>
-<span id="cb5-27"><a href="#cb5-27"></a><span class="co">##      sample     random</span></span>
-<span id="cb5-28"><a href="#cb5-28"></a><span class="co">## 0%       28 -1.0835666</span></span>
-<span id="cb5-29"><a href="#cb5-29"></a><span class="co">## 25%      29 -0.4823752</span></span>
-<span id="cb5-30"><a href="#cb5-30"></a><span class="co">## 50%      43  0.2366887</span></span>
-<span id="cb5-31"><a href="#cb5-31"></a><span class="co">## 75%      45  0.5284939</span></span>
-<span id="cb5-32"><a href="#cb5-32"></a><span class="co">## 100%     72  2.7075823</span></span>
-<span id="cb5-33"><a href="#cb5-33"></a></span>
-<span id="cb5-34"><a href="#cb5-34"></a><span class="kw">apply</span>(mydata, <span class="dv">2</span>, mean) <span class="co"># Calculate mean</span></span>
-<span id="cb5-35"><a href="#cb5-35"></a><span class="co">##     sample     random </span></span>
-<span id="cb5-36"><a href="#cb5-36"></a><span class="co">## 43.4000000  0.3813646</span></span>
-<span id="cb5-37"><a href="#cb5-37"></a></span>
-<span id="cb5-38"><a href="#cb5-38"></a><span class="kw">colMeans</span>(mydata)</span>
-<span id="cb5-39"><a href="#cb5-39"></a><span class="co">##     sample     random </span></span>
-<span id="cb5-40"><a href="#cb5-40"></a><span class="co">## 43.4000000  0.3813646</span></span>
-<span id="cb5-41"><a href="#cb5-41"></a></span>
-<span id="cb5-42"><a href="#cb5-42"></a><span class="kw">scale</span>(mydata) <span class="co"># scale(x) = (x - mean(x)) / sd(x)</span></span>
-<span id="cb5-43"><a href="#cb5-43"></a><span class="co">##           sample     random</span></span>
-<span id="cb5-44"><a href="#cb5-44"></a><span class="co">## [1,] -0.80967904  1.6104335</span></span>
-<span id="cb5-45"><a href="#cb5-45"></a><span class="co">## [2,] -0.86590675  0.1018572</span></span>
-<span id="cb5-46"><a href="#cb5-46"></a><span class="co">## [3,]  1.60811253 -0.5979645</span></span>
-<span id="cb5-47"><a href="#cb5-47"></a><span class="co">## [4,] -0.02249108 -1.0141675</span></span>
-<span id="cb5-48"><a href="#cb5-48"></a><span class="co">## [5,]  0.08996434 -0.1001587</span></span>
-<span id="cb5-49"><a href="#cb5-49"></a><span class="co">## attr(,&quot;scaled:center&quot;)</span></span>
-<span id="cb5-50"><a href="#cb5-50"></a><span class="co">##     sample     random </span></span>
-<span id="cb5-51"><a href="#cb5-51"></a><span class="co">## 43.4000000  0.3813646 </span></span>
-<span id="cb5-52"><a href="#cb5-52"></a><span class="co">## attr(,&quot;scaled:scale&quot;)</span></span>
-<span id="cb5-53"><a href="#cb5-53"></a><span class="co">##    sample    random </span></span>
-<span id="cb5-54"><a href="#cb5-54"></a><span class="co">## 17.784825  1.444467</span></span></code></pre></div>
+<p>For example:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">timestamp</span>()</span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="co">##------ Wed Feb 12 21:47:43 2020 ------##</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a></span>
+<span id="cb4-4"><a href="#cb4-4"></a><span class="kw">Sys.time</span>()</span>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="co">## [1] &quot;2020-02-12 21:47:43 CST&quot;</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a></span>
+<span id="cb4-7"><a href="#cb4-7"></a>d =<span class="st"> </span><span class="kw">Sys.Date</span>()</span>
+<span id="cb4-8"><a href="#cb4-8"></a><span class="co">## [1] &quot;2020-02-12&quot;</span></span>
+<span id="cb4-9"><a href="#cb4-9"></a></span>
+<span id="cb4-10"><a href="#cb4-10"></a><span class="kw">weekdays</span>(d)</span>
+<span id="cb4-11"><a href="#cb4-11"></a><span class="co">## [1] &quot;Wednesday&quot;</span></span>
+<span id="cb4-12"><a href="#cb4-12"></a></span>
+<span id="cb4-13"><a href="#cb4-13"></a><span class="kw">format</span>(<span class="kw">Sys.time</span>(), <span class="st">&quot;%Y-%m-%d&quot;</span>)</span>
+<span id="cb4-14"><a href="#cb4-14"></a><span class="co">## [1] &quot;2020-02-12&quot;</span></span>
+<span id="cb4-15"><a href="#cb4-15"></a></span>
+<span id="cb4-16"><a href="#cb4-16"></a><span class="kw">format</span>(<span class="kw">Sys.time</span>(), <span class="st">&quot;%a %b %d %Y %X&quot;</span>)</span>
+<span id="cb4-17"><a href="#cb4-17"></a><span class="co">## [1] &quot;Wed Feb 12 2020 21:47:43&quot;</span></span>
+<span id="cb4-18"><a href="#cb4-18"></a></span>
+<span id="cb4-19"><a href="#cb4-19"></a><span class="kw">format</span>(<span class="kw">Sys.time</span>(), <span class="st">&quot;%H:%M:%S&quot;</span>)</span>
+<span id="cb4-20"><a href="#cb4-20"></a><span class="co">## [1] &quot;21:47:43&quot;</span></span>
+<span id="cb4-21"><a href="#cb4-21"></a></span>
+<span id="cb4-22"><a href="#cb4-22"></a><span class="kw">seq</span>(<span class="kw">Sys.Date</span>(), <span class="dt">length =</span> <span class="dv">3</span>, <span class="dt">by =</span> <span class="st">&quot;1 week&quot;</span>) <span class="co"># Next three weeks</span></span>
+<span id="cb4-23"><a href="#cb4-23"></a><span class="co">## [1] &quot;2020-02-12&quot; &quot;2020-02-19&quot; &quot;2020-02-26&quot;</span></span>
+<span id="cb4-24"><a href="#cb4-24"></a></span>
+<span id="cb4-25"><a href="#cb4-25"></a><span class="kw">difftime</span>(<span class="st">&quot;2020-02-26&quot;</span>, <span class="st">&quot;2020-02-12&quot;</span>, <span class="dt">units =</span> <span class="st">&quot;auto&quot;</span>)</span>
+<span id="cb4-26"><a href="#cb4-26"></a><span class="co">## Time difference of 14 days</span></span>
+<span id="cb4-27"><a href="#cb4-27"></a></span>
+<span id="cb4-28"><a href="#cb4-28"></a><span class="co"># Date-time conversion</span></span>
+<span id="cb4-29"><a href="#cb4-29"></a><span class="kw">strptime</span>(<span class="st">&quot;20/2/06 11:16:16.683&quot;</span>, <span class="dt">format =</span> <span class="st">&quot;%d/%m/%y %H:%M:%OS&quot;</span>) <span class="co"># convert character to time-date objects</span></span>
+<span id="cb4-30"><a href="#cb4-30"></a><span class="co">## [1] &quot;2006-02-20 11:16:16 CST&quot;</span></span></code></pre></div>
+<p><code>ts</code> function can be used to create a vector or matrix of <strong>time-series</strong> objects.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">ts</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">12</span>, <span class="dt">start =</span> <span class="kw">c</span>(<span class="dv">1956</span>, <span class="dv">3</span>), <span class="dt">frequency =</span> <span class="dv">12</span>) <span class="co"># for season: frequency = 4</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="co">##      Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="co">## 1956           1   2   3   4   5   6   7   8   9  10</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="co">## 1957  11  12</span></span></code></pre></div>
 <h2 id="summary-statistics">Summary statistics</h2>
 <p><code>aggregate</code> function splits the data into subsets, computes summary statistics for each, and returns the result in a convenient form. <code>table</code> uses the cross-classifying factors to build a contingency table of the counts at each combination of factor levels.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="kw">head</span>(warpbreaks)</span>
@@ -494,25 +537,25 @@
 <span id="cb8-32"><a href="#cb8-32"></a><span class="co">## [1] TRUE</span></span>
 <span id="cb8-33"><a href="#cb8-33"></a></span>
 <span id="cb8-34"><a href="#cb8-34"></a>pattern =<span class="st"> &quot;(</span><span class="ch">\\</span><span class="st">d{3})[-. )]*(</span><span class="ch">\\</span><span class="st">d{3})[-. ]*(</span><span class="ch">\\</span><span class="st">d{4})&quot;</span></span>
-<span id="cb8-35"><a href="#cb8-35"></a></span>
-<span id="cb8-36"><a href="#cb8-36"></a><span class="kw">grep</span>(pattern, <span class="st">&quot;888-555-7766&quot;</span>, <span class="dt">value =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb8-37"><a href="#cb8-37"></a><span class="co">## [1] &quot;888-555-7766&quot;</span></span>
-<span id="cb8-38"><a href="#cb8-38"></a></span>
-<span id="cb8-39"><a href="#cb8-39"></a>r =<span class="st"> </span><span class="kw">regexec</span>(pattern, <span class="st">&quot;888-555-7766&quot;</span>)</span>
-<span id="cb8-40"><a href="#cb8-40"></a><span class="kw">regmatches</span>(<span class="st">&quot;888-555-7766&quot;</span>, r)</span>
-<span id="cb8-41"><a href="#cb8-41"></a><span class="co">## [[1]]</span></span>
-<span id="cb8-42"><a href="#cb8-42"></a><span class="co">## [1] &quot;888-555-7766&quot; &quot;888&quot;          &quot;555&quot;          &quot;7766&quot;</span></span>
-<span id="cb8-43"><a href="#cb8-43"></a></span>
-<span id="cb8-44"><a href="#cb8-44"></a><span class="kw">list.files</span>(<span class="dt">path =</span> <span class="st">&quot;./files&quot;</span>, <span class="dt">pattern =</span> <span class="st">&quot;*.pdf$&quot;</span>) <span class="co"># List of &quot;pdf&quot; files in a directory</span></span>
-<span id="cb8-45"><a href="#cb8-45"></a><span class="co">## [1] &quot;Ashkan_Mirzaee_CV_Fall2019.pdf&quot;   &quot;Ashkan_Mirzaee_CV_Spring2020.pdf&quot;</span></span>
-<span id="cb8-46"><a href="#cb8-46"></a><span class="co">## [3] &quot;CV_01_2019.pdf&quot;</span></span></code></pre></div></div>
+<span id="cb8-35"><a href="#cb8-35"></a><span class="kw">grep</span>(pattern, <span class="st">&quot;888-555-7766&quot;</span>, <span class="dt">value =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb8-36"><a href="#cb8-36"></a><span class="co">## [1] &quot;888-555-7766&quot;</span></span>
+<span id="cb8-37"><a href="#cb8-37"></a></span>
+<span id="cb8-38"><a href="#cb8-38"></a>r =<span class="st"> </span><span class="kw">regexec</span>(pattern, <span class="st">&quot;888-555-7766&quot;</span>)</span>
+<span id="cb8-39"><a href="#cb8-39"></a><span class="kw">regmatches</span>(<span class="st">&quot;888-555-7766&quot;</span>, r)</span>
+<span id="cb8-40"><a href="#cb8-40"></a><span class="co">## [[1]]</span></span>
+<span id="cb8-41"><a href="#cb8-41"></a><span class="co">## [1] &quot;888-555-7766&quot; &quot;888&quot;          &quot;555&quot;          &quot;7766&quot;</span></span>
+<span id="cb8-42"><a href="#cb8-42"></a></span>
+<span id="cb8-43"><a href="#cb8-43"></a><span class="kw">list.files</span>(<span class="dt">path =</span> <span class="st">&quot;./doc&quot;</span>, <span class="dt">pattern =</span> <span class="st">&quot;*.pdf$&quot;</span>) <span class="co"># List of &quot;pdf&quot; files in &quot;doc&quot; directory</span></span>
+<span id="cb8-44"><a href="#cb8-44"></a><span class="co">## [1] &quot;file1.pdf&quot;   &quot;file2.pdf&quot;</span></span></code></pre></div></div>
             <div class="d-none d-xl-block col-xl-2 bd-toc">
                <ul class="section-nav">
                   <li class="toc-entry"><ul>
-<li><a href="#date-and-time">Date and time</a></li>
-<li><a href="#differentiation-and-integration">Differentiation and integration</a></li>
-<li><a href="#matrix-operations">Matrix operations</a></li>
+<li><a href="#shell-like-commands">Shell-like commands</a></li>
+<li><a href="#statistical-functions">Statistical functions</a></li>
 <li><a href="#computational-functions">Computational functions</a></li>
+<li><a href="#matrix-operations">Matrix operations</a></li>
+<li><a href="#differentiation-and-integration">Differentiation and integration</a></li>
+<li><a href="#date-and-time">Date and time</a></li>
 <li><a href="#summary-statistics">Summary statistics</a></li>
 <li><a href="#split-and-merge-data">Split and merge data</a></li>
 <li><a href="#regular-expressions">Regular expressions</a></li>
