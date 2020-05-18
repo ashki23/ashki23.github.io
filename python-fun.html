@@ -101,7 +101,7 @@
 <li><strong>iterative</strong>, find the results by iteration (control flow tools)</li>
 <li><strong>recursive</strong>, find the results by recursion (function itself)</li>
 </ul>
-<p>In above example, we used a <strong>computative</strong> function to find <code>a * b</code>. Now let’s use <strong>iterative</strong> method:</p>
+<p>In above example, we used a <strong>computative</strong> function to find <em>a * b</em>. Now let’s use <strong>iterative</strong> method:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">def</span> mult_itr(a, b):</span>
 <span id="cb3-2"><a href="#cb3-2"></a>  <span class="co">&quot;&quot;&quot;</span></span>
 <span id="cb3-3"><a href="#cb3-3"></a><span class="co">  Two integers multiplication by iteration.</span></span>
@@ -301,7 +301,7 @@
 <div class="sourceCode" id="cb20"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a>flt <span class="op">=</span> [<span class="fl">2.0678</span>,<span class="fl">3.9870</span>,<span class="fl">4.7869</span>,<span class="fl">5.3459</span>]</span>
 <span id="cb20-2"><a href="#cb20-2"></a><span class="bu">list</span>(<span class="bu">map</span>(<span class="bu">round</span>, flt, [<span class="dv">2</span>]<span class="op">*</span><span class="bu">len</span>(flt)))</span>
 <span id="cb20-3"><a href="#cb20-3"></a><span class="co">## [2.07, 3.99, 4.79, 5.35]</span></span></code></pre></div>
-<p>Note that the above function has two <em>iterable</em>s (<code>flt</code> and <code>[2,2,2,2]</code>).</p>
+<p>Note that the above function has two <em>iterables</em> (<code>flt</code> and <code>[2,2,2,2]</code>).</p>
 <p>We can also use <strong>map</strong> to create new functions. For instance, let’s define <code>zip_diy</code> function that do same operation as Python <code>zip</code> function:</p>
 <div class="sourceCode" id="cb21"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a><span class="kw">def</span> zip_diy(x,y):</span>
 <span id="cb21-2"><a href="#cb21-2"></a>  <span class="cf">return</span> <span class="bu">map</span>(<span class="kw">lambda</span> a, b: (a,b), x, y)</span>
