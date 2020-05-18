@@ -229,7 +229,10 @@ code span.fu {
 }
 
 /* Import */
-code span.im {}
+code span.im {
+    color: #007020;
+    font-weight: bold;
+}
 
 /* Information */
 code span.in {
