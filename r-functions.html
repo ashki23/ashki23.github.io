@@ -83,10 +83,12 @@
 <li>List of objects: <code>ls()</code></li>
 <li>Remove an object: <code>rm(object)</code></li>
 <li>Remove all objects: <code>rm(list = ls())</code></li>
-<li>List the files in a directory: <code>dir()</code>, <code>dir(path = ".", pattern)</code></li>
-<li>Working directory: <code>getwd()</code></li>
-<li>Set working directory: <code>setwd("new/dir")</code></li>
-<li>Running shell commands: <code>system("command")</code></li>
+<li>List the files in a directory: <code>dir()</code>, <code>dir(path, pattern)</code></li>
+<li>Get working directory: <code>getwd()</code></li>
+<li>Set working directory: <code>setwd("path")</code></li>
+<li>Get environmental variables: <code>Sys.getenv("ENV")</code></li>
+<li>Set environmental variables: <code>Sys.setenv(ENV = "path")</code></li>
+<li>Running shell commands: <code>system("command", intern = TRUE)</code></li>
 </ul>
 <h2 id="statistical-functions">Statistical functions</h2>
 <p>R is one of the best application statistical analysis and natively supports many advanced statistical methods. The following show some of these functions:</p>
@@ -114,6 +116,8 @@
 <h2 id="computational-functions">Computational functions</h2>
 <p>R provides an abundance of computational functions, such as:</p>
 <ul>
+<li>Counting: <code>nrow</code>, <code>ncol</code>, <code>length</code></li>
+<li>Ordinal and sequential: <code>sort</code>, <code>order</code>, <code>seq</code></li>
 <li>Cumulative: <code>cumsum</code>, <code>cumprod</code>, <code>colSums</code>, <code>rowSums</code></li>
 <li>Finding min/mix: <code>which.min</code>, <code>which.max</code></li>
 <li>Mapping: <code>apply</code></li>
@@ -162,19 +166,7 @@
 <span id="cb1-39"><a href="#cb1-39"></a><span class="co">##     sample     random </span></span>
 <span id="cb1-40"><a href="#cb1-40"></a><span class="co">## 43.4000000  0.3813646</span></span>
 <span id="cb1-41"><a href="#cb1-41"></a></span>
-<span id="cb1-42"><a href="#cb1-42"></a><span class="kw">scale</span>(mydata) <span class="co"># scale(x) = (x - mean(x)) / sd(x)</span></span>
-<span id="cb1-43"><a href="#cb1-43"></a><span class="co">##           sample     random</span></span>
-<span id="cb1-44"><a href="#cb1-44"></a><span class="co">## [1,] -0.80967904  1.6104335</span></span>
-<span id="cb1-45"><a href="#cb1-45"></a><span class="co">## [2,] -0.86590675  0.1018572</span></span>
-<span id="cb1-46"><a href="#cb1-46"></a><span class="co">## [3,]  1.60811253 -0.5979645</span></span>
-<span id="cb1-47"><a href="#cb1-47"></a><span class="co">## [4,] -0.02249108 -1.0141675</span></span>
-<span id="cb1-48"><a href="#cb1-48"></a><span class="co">## [5,]  0.08996434 -0.1001587</span></span>
-<span id="cb1-49"><a href="#cb1-49"></a><span class="co">## attr(,&quot;scaled:center&quot;)</span></span>
-<span id="cb1-50"><a href="#cb1-50"></a><span class="co">##     sample     random </span></span>
-<span id="cb1-51"><a href="#cb1-51"></a><span class="co">## 43.4000000  0.3813646 </span></span>
-<span id="cb1-52"><a href="#cb1-52"></a><span class="co">## attr(,&quot;scaled:scale&quot;)</span></span>
-<span id="cb1-53"><a href="#cb1-53"></a><span class="co">##    sample    random </span></span>
-<span id="cb1-54"><a href="#cb1-54"></a><span class="co">## 17.784825  1.444467</span></span></code></pre></div>
+<span id="cb1-42"><a href="#cb1-42"></a><span class="kw">scale</span>(mydata) <span class="co"># scale(x) = (x - mean(x)) / sd(x)</span></span></code></pre></div>
 <h2 id="matrix-operations">Matrix operations</h2>
 <p>The most common matrix operations include:</p>
 <ul>
@@ -385,46 +377,39 @@
 <span id="cb6-33"><a href="#cb6-33"></a><span class="co">## 4     8 59.96154 83.96154</span></span>
 <span id="cb6-34"><a href="#cb6-34"></a><span class="co">## 5     9 31.44828 76.89655</span></span>
 <span id="cb6-35"><a href="#cb6-35"></a></span>
-<span id="cb6-36"><a href="#cb6-36"></a><span class="co"># Finding frequency</span></span>
-<span id="cb6-37"><a href="#cb6-37"></a>letter =<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;d&#39;</span>,<span class="st">&#39;b&#39;</span>,<span class="st">&#39;c&#39;</span>,<span class="st">&#39;d&#39;</span>,<span class="st">&#39;a&#39;</span>,<span class="st">&#39;d&#39;</span>,<span class="st">&#39;a&#39;</span>, <span class="st">&#39;c&#39;</span>)</span>
-<span id="cb6-38"><a href="#cb6-38"></a>fr =<span class="st"> </span><span class="kw">data.frame</span>(<span class="kw">table</span>(letter))</span>
-<span id="cb6-39"><a href="#cb6-39"></a>fr</span>
+<span id="cb6-36"><a href="#cb6-36"></a><span class="co"># Table of frequencies</span></span>
+<span id="cb6-37"><a href="#cb6-37"></a>letters =<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;d&#39;</span>,<span class="st">&#39;b&#39;</span>,<span class="st">&#39;c&#39;</span>,<span class="st">&#39;d&#39;</span>,<span class="st">&#39;a&#39;</span>,<span class="st">&#39;d&#39;</span>,<span class="st">&#39;a&#39;</span>, <span class="st">&#39;c&#39;</span>)</span>
+<span id="cb6-38"><a href="#cb6-38"></a>fr =<span class="st"> </span><span class="kw">data.frame</span>(<span class="kw">table</span>(letters))</span>
+<span id="cb6-39"><a href="#cb6-39"></a>fr[<span class="kw">order</span>(fr<span class="op">$</span>Freq, <span class="dt">decreasing =</span> <span class="ot">TRUE</span>),]</span>
 <span id="cb6-40"><a href="#cb6-40"></a><span class="co">##   letter Freq</span></span>
-<span id="cb6-41"><a href="#cb6-41"></a><span class="co">## 1      a    2</span></span>
-<span id="cb6-42"><a href="#cb6-42"></a><span class="co">## 2      b    1</span></span>
+<span id="cb6-41"><a href="#cb6-41"></a><span class="co">## 4      d    3</span></span>
+<span id="cb6-42"><a href="#cb6-42"></a><span class="co">## 1      a    2</span></span>
 <span id="cb6-43"><a href="#cb6-43"></a><span class="co">## 3      c    2</span></span>
-<span id="cb6-44"><a href="#cb6-44"></a><span class="co">## 4      d    3</span></span>
+<span id="cb6-44"><a href="#cb6-44"></a><span class="co">## 2      b    1</span></span>
 <span id="cb6-45"><a href="#cb6-45"></a></span>
-<span id="cb6-46"><a href="#cb6-46"></a>fr[<span class="kw">order</span>(fr<span class="op">$</span>Freq, <span class="dt">decreasing =</span> <span class="ot">TRUE</span>),]</span>
-<span id="cb6-47"><a href="#cb6-47"></a><span class="co">##   letter Freq</span></span>
-<span id="cb6-48"><a href="#cb6-48"></a><span class="co">## 4      d    3</span></span>
-<span id="cb6-49"><a href="#cb6-49"></a><span class="co">## 1      a    2</span></span>
-<span id="cb6-50"><a href="#cb6-50"></a><span class="co">## 3      c    2</span></span>
-<span id="cb6-51"><a href="#cb6-51"></a><span class="co">## 2      b    1</span></span>
+<span id="cb6-46"><a href="#cb6-46"></a><span class="co"># Correlation matrix</span></span>
+<span id="cb6-47"><a href="#cb6-47"></a><span class="kw">cor</span>(mtcars[,<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>])</span>
+<span id="cb6-48"><a href="#cb6-48"></a><span class="co">##             mpg        cyl       disp</span></span>
+<span id="cb6-49"><a href="#cb6-49"></a><span class="co">## mpg   1.0000000 -0.8521620 -0.8475514</span></span>
+<span id="cb6-50"><a href="#cb6-50"></a><span class="co">## cyl  -0.8521620  1.0000000  0.9020329</span></span>
+<span id="cb6-51"><a href="#cb6-51"></a><span class="co">## disp -0.8475514  0.9020329  1.0000000</span></span>
 <span id="cb6-52"><a href="#cb6-52"></a></span>
-<span id="cb6-53"><a href="#cb6-53"></a><span class="co"># Correlation matrix</span></span>
-<span id="cb6-54"><a href="#cb6-54"></a><span class="kw">cor</span>(mtcars[,<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>])</span>
-<span id="cb6-55"><a href="#cb6-55"></a><span class="co">##             mpg        cyl       disp</span></span>
-<span id="cb6-56"><a href="#cb6-56"></a><span class="co">## mpg   1.0000000 -0.8521620 -0.8475514</span></span>
-<span id="cb6-57"><a href="#cb6-57"></a><span class="co">## cyl  -0.8521620  1.0000000  0.9020329</span></span>
-<span id="cb6-58"><a href="#cb6-58"></a><span class="co">## disp -0.8475514  0.9020329  1.0000000</span></span>
-<span id="cb6-59"><a href="#cb6-59"></a></span>
-<span id="cb6-60"><a href="#cb6-60"></a><span class="co"># Symbolic coding correlation matrix</span></span>
-<span id="cb6-61"><a href="#cb6-61"></a><span class="kw">symnum</span>(<span class="kw">cor</span>(mtcars))</span>
-<span id="cb6-62"><a href="#cb6-62"></a><span class="co">##      m cy ds h dr w q v a g cr</span></span>
-<span id="cb6-63"><a href="#cb6-63"></a><span class="co">## mpg  1                        </span></span>
-<span id="cb6-64"><a href="#cb6-64"></a><span class="co">## cyl  + 1                      </span></span>
-<span id="cb6-65"><a href="#cb6-65"></a><span class="co">## disp + *  1                   </span></span>
-<span id="cb6-66"><a href="#cb6-66"></a><span class="co">## hp   , +  ,  1                </span></span>
-<span id="cb6-67"><a href="#cb6-67"></a><span class="co">## drat , ,  ,  . 1              </span></span>
-<span id="cb6-68"><a href="#cb6-68"></a><span class="co">## wt   + ,  +  , ,  1           </span></span>
-<span id="cb6-69"><a href="#cb6-69"></a><span class="co">## qsec . .  .  ,      1         </span></span>
-<span id="cb6-70"><a href="#cb6-70"></a><span class="co">## vs   , +  ,  , .  . , 1       </span></span>
-<span id="cb6-71"><a href="#cb6-71"></a><span class="co">## am   . .  .    ,  ,     1     </span></span>
-<span id="cb6-72"><a href="#cb6-72"></a><span class="co">## gear . .  .    ,  .     , 1   </span></span>
-<span id="cb6-73"><a href="#cb6-73"></a><span class="co">## carb . .  .  ,    . , .     1 </span></span>
-<span id="cb6-74"><a href="#cb6-74"></a><span class="co">## attr(,&quot;legend&quot;)</span></span>
-<span id="cb6-75"><a href="#cb6-75"></a><span class="co">## [1] 0 &#39; &#39; 0.3 &#39;.&#39; 0.6 &#39;,&#39; 0.8 &#39;+&#39; 0.9 &#39;*&#39; 0.95 &#39;B&#39; 1</span></span></code></pre></div>
+<span id="cb6-53"><a href="#cb6-53"></a><span class="co"># Symbolic coding correlation matrix</span></span>
+<span id="cb6-54"><a href="#cb6-54"></a><span class="kw">symnum</span>(<span class="kw">cor</span>(mtcars))</span>
+<span id="cb6-55"><a href="#cb6-55"></a><span class="co">##      m cy ds h dr w q v a g cr</span></span>
+<span id="cb6-56"><a href="#cb6-56"></a><span class="co">## mpg  1                        </span></span>
+<span id="cb6-57"><a href="#cb6-57"></a><span class="co">## cyl  + 1                      </span></span>
+<span id="cb6-58"><a href="#cb6-58"></a><span class="co">## disp + *  1                   </span></span>
+<span id="cb6-59"><a href="#cb6-59"></a><span class="co">## hp   , +  ,  1                </span></span>
+<span id="cb6-60"><a href="#cb6-60"></a><span class="co">## drat , ,  ,  . 1              </span></span>
+<span id="cb6-61"><a href="#cb6-61"></a><span class="co">## wt   + ,  +  , ,  1           </span></span>
+<span id="cb6-62"><a href="#cb6-62"></a><span class="co">## qsec . .  .  ,      1         </span></span>
+<span id="cb6-63"><a href="#cb6-63"></a><span class="co">## vs   , +  ,  , .  . , 1       </span></span>
+<span id="cb6-64"><a href="#cb6-64"></a><span class="co">## am   . .  .    ,  ,     1     </span></span>
+<span id="cb6-65"><a href="#cb6-65"></a><span class="co">## gear . .  .    ,  .     , 1   </span></span>
+<span id="cb6-66"><a href="#cb6-66"></a><span class="co">## carb . .  .  ,    . , .     1 </span></span>
+<span id="cb6-67"><a href="#cb6-67"></a><span class="co">## attr(,&quot;legend&quot;)</span></span>
+<span id="cb6-68"><a href="#cb6-68"></a><span class="co">## [1] 0 &#39; &#39; 0.3 &#39;.&#39; 0.6 &#39;,&#39; 0.8 &#39;+&#39; 0.9 &#39;*&#39; 0.95 &#39;B&#39; 1</span></span></code></pre></div>
 <h2 id="split-and-merge-data">Split and merge data</h2>
 <p><code>split</code> function divides the data into a list of defined groups. <code>merge</code> function merge two data frames by common columns or row names. <code>merge</code> is similar to <code>JOIN</code> in SQL:</p>
 <ul>
