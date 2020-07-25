@@ -23,4 +23,5 @@ https://ashki23.github.io/hpc.html
 https://ashki23.github.io/gcloud.html
 https://ashki23.github.io/git.html
 https://ashki23.github.io/emacs.html
+https://ashki23.github.io/spack.html
 https://ashki23.github.io/markdown-latex.html
