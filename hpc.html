@@ -71,9 +71,13 @@
 </ul>
 <p>Using HPC systems often involves the use of a Shell through a command line interface which is necessary for this topic (see <a href="shell.html">here</a>).</p>
 <p>This tutorial provides a list of basic scheduling commands, submitting jobs, methods of transferring files from local computers, and installing software on clusters.</p>
+<p>Related document:</p>
+<ul>
+<li><a href="./cluster.html">Introduction to using clusters</a></li>
+</ul>
 <hr />
 <h2 id="scheduling-jobs">Scheduling jobs</h2>
-<p>On an HPC system, we need a scheduler to manage how jobs running on a cluster. One of the most common schedulers is <a href="https://slurm.schedmd.com/">SLURM</a>. The following are some the most helpful SLURM commands (<a href="https://slurm.schedmd.com/quickstart.html">quick start user guide</a>):</p>
+<p>On an HPC system, we need a scheduler to manage how jobs running on a cluster. One of the most common schedulers is <a href="https://slurm.schedmd.com/">SLURM</a>. The following are some practical SLURM commands (<a href="https://slurm.schedmd.com/quickstart.html">quick start user guide</a>):</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="ex">sinfo</span> -s <span class="co"># shows summary info about all patritions</span></span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="ex">sjstat</span> -c <span class="co"># shows computing resources info</span></span>
 <span id="cb1-3"><a href="#cb1-3"></a><span class="ex">srun</span> <span class="co"># run parallel jobs</span></span>
@@ -82,23 +86,23 @@
 <span id="cb1-6"><a href="#cb1-6"></a><span class="ex">sbatch</span> --dependency=afterok:JOB_ID file.sh <span class="co"># submit a job file after finishing other jobs</span></span>
 <span id="cb1-7"><a href="#cb1-7"></a><span class="ex">sbatch</span> --dependency=singleton <span class="co"># submit a job after ending a job with a same name </span></span>
 <span id="cb1-8"><a href="#cb1-8"></a><span class="ex">sacct</span> <span class="co"># displays accounting data for all jobs and job steps in the SLURM job accounting log</span></span>
-<span id="cb1-9"><a href="#cb1-9"></a><span class="ex">squeue</span> -u <span class="op">&lt;</span>username<span class="op">&gt;</span> <span class="co"># check on a user&#39;s job status</span></span>
-<span id="cb1-10"><a href="#cb1-10"></a><span class="ex">squeue</span> -u username --start <span class="co"># show estimation time to start pending jobs</span></span>
+<span id="cb1-9"><a href="#cb1-9"></a><span class="ex">squeue</span> -u <span class="op">&lt;</span>userid<span class="op">&gt;</span> <span class="co"># check on a user&#39;s job status</span></span>
+<span id="cb1-10"><a href="#cb1-10"></a><span class="ex">squeue</span> -u <span class="op">&lt;</span>userid<span class="op">&gt;</span> --start <span class="co"># show estimation time to start pending jobs</span></span>
 <span id="cb1-11"><a href="#cb1-11"></a><span class="ex">scancel</span> JOBID <span class="co"># cancel the job with JOBID</span></span>
-<span id="cb1-12"><a href="#cb1-12"></a><span class="ex">scancel</span> -u <span class="op">&lt;</span>username<span class="op">&gt;</span> <span class="co"># cancel all the user jobs</span></span></code></pre></div>
+<span id="cb1-12"><a href="#cb1-12"></a><span class="ex">scancel</span> -u <span class="op">&lt;</span>useride<span class="op">&gt;</span> <span class="co"># cancel all the user jobs</span></span></code></pre></div>
 <p>To see more details about these commands use <code>&lt;command&gt; --help</code>.</p>
 <p>Let’s connect to the cluster through <code>ssh user@server</code>, and do some practices. For example, use <code>nano example-job.sh</code> to make a job file including:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="co">#!/bin/bash</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="co">#SBATCH --nodes=1</span></span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="co">#SBATCH --mem=16G</span></span>
-<span id="cb2-4"><a href="#cb2-4"></a><span class="co">#SBATCH --ntasks=1</span></span>
-<span id="cb2-5"><a href="#cb2-5"></a><span class="co">#SBATCH --cpus-per-task=4</span></span>
-<span id="cb2-6"><a href="#cb2-6"></a><span class="co">#SBATCH --partition=hpc0</span></span>
-<span id="cb2-7"><a href="#cb2-7"></a><span class="co">#SBATCH --account=general</span></span>
-<span id="cb2-8"><a href="#cb2-8"></a><span class="co">#SBATCH --time=02-05:00</span></span>
-<span id="cb2-9"><a href="#cb2-9"></a><span class="co">#SBATCH --job-name=NewJobName</span></span>
-<span id="cb2-10"><a href="#cb2-10"></a><span class="co">#SBATCH --mail-user=your@email.com</span></span>
-<span id="cb2-11"><a href="#cb2-11"></a><span class="co">#SBATCH --mail-type=</span><span class="re">END</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="co">#SBATCH --nodes 1</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="co">#SBATCH --mem 16G</span></span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="co">#SBATCH --ntasks 1</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a><span class="co">#SBATCH --cpus-per-task 4</span></span>
+<span id="cb2-6"><a href="#cb2-6"></a><span class="co">#SBATCH --partition hpc0</span></span>
+<span id="cb2-7"><a href="#cb2-7"></a><span class="co">#SBATCH --account general</span></span>
+<span id="cb2-8"><a href="#cb2-8"></a><span class="co">#SBATCH --time 02-05:00</span></span>
+<span id="cb2-9"><a href="#cb2-9"></a><span class="co">#SBATCH --job-name NewJobName</span></span>
+<span id="cb2-10"><a href="#cb2-10"></a><span class="co">#SBATCH --mail-user your@email.com</span></span>
+<span id="cb2-11"><a href="#cb2-11"></a><span class="co">#SBATCH --mail-type </span><span class="re">END</span></span>
 <span id="cb2-12"><a href="#cb2-12"></a></span>
 <span id="cb2-13"><a href="#cb2-13"></a><span class="bu">echo</span> <span class="st">&#39;This script is running on:&#39;</span></span>
 <span id="cb2-14"><a href="#cb2-14"></a><span class="fu">hostname</span></span>
@@ -130,8 +134,8 @@
 <p>Then use <code>nano job-test.sh</code> to make the job file by:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1"></a><span class="co">#!/bin/bash</span></span>
 <span id="cb6-2"><a href="#cb6-2"></a></span>
-<span id="cb6-3"><a href="#cb6-3"></a><span class="co">#SBATCH --mem=1G</span></span>
-<span id="cb6-4"><a href="#cb6-4"></a><span class="co">#SBATCH --job-name=Test1</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="co">#SBATCH --mem 1G</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="co">#SBATCH --job-name Test1</span></span>
 <span id="cb6-5"><a href="#cb6-5"></a></span>
 <span id="cb6-6"><a href="#cb6-6"></a><span class="bu">echo</span> === <span class="va">$(</span><span class="fu">date</span><span class="va">)</span></span>
 <span id="cb6-7"><a href="#cb6-7"></a><span class="bu">echo</span> <span class="va">$SLURM_JOB_ID</span></span>
@@ -146,8 +150,8 @@
 <p>If there are some dependencies between jobs, <code>slurm</code> can defer the start of a job until the specified dependencies have been satisfied completed. For instance, let’s create another job called <code>job-test-2.sh</code>:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1"></a><span class="co">#!/bin/bash</span></span>
 <span id="cb7-2"><a href="#cb7-2"></a></span>
-<span id="cb7-3"><a href="#cb7-3"></a><span class="co">#SBATCH --mem=1G</span></span>
-<span id="cb7-4"><a href="#cb7-4"></a><span class="co">#SBATCH --job-name=Test2</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a><span class="co">#SBATCH --mem 1G</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="co">#SBATCH --job-name Test2</span></span>
 <span id="cb7-5"><a href="#cb7-5"></a></span>
 <span id="cb7-6"><a href="#cb7-6"></a><span class="bu">echo</span> === <span class="va">$(</span><span class="fu">date</span><span class="va">)</span></span>
 <span id="cb7-7"><a href="#cb7-7"></a><span class="bu">echo</span> <span class="va">$SLURM_JOB_ID</span></span>
@@ -156,8 +160,8 @@
 <p>We need another job, called <code>job-test-3.sh</code>, to run both <code>job-test.sh</code> and <code>job-test-2.sh</code>:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1"></a><span class="co">#!/bin/bash</span></span>
 <span id="cb8-2"><a href="#cb8-2"></a></span>
-<span id="cb8-3"><a href="#cb8-3"></a><span class="co">#SBATCH --mem=1G</span></span>
-<span id="cb8-4"><a href="#cb8-4"></a><span class="co">#SBATCH --job-name=Dependency</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a><span class="co">#SBATCH --mem 1G</span></span>
+<span id="cb8-4"><a href="#cb8-4"></a><span class="co">#SBATCH --job-name Dependency</span></span>
 <span id="cb8-5"><a href="#cb8-5"></a></span>
 <span id="cb8-6"><a href="#cb8-6"></a><span class="bu">echo</span> === <span class="va">$(</span><span class="fu">date</span><span class="va">)</span></span>
 <span id="cb8-7"><a href="#cb8-7"></a><span class="va">JID=$(</span><span class="ex">sbatch</span> --parsable job-test.sh<span class="va">)</span></span>
