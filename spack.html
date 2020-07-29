@@ -88,7 +88,8 @@
 <span id="cb4-2"><a href="#cb4-2"></a><span class="ex">spack</span> find <span class="op">&lt;</span>software-name<span class="op">&gt;</span> <span class="co"># to find a software (use -lfvp to see hashes, flags, variants and pathes)</span></span>
 <span id="cb4-3"><a href="#cb4-3"></a><span class="ex">spack</span> location -i <span class="op">&lt;</span>software-name<span class="op">&gt;</span> <span class="co"># to find location of a software </span></span></code></pre></div>
 <p>And we can load the software:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1"></a><span class="ex">spack</span> load <span class="op">&lt;</span>software_name<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1"></a><span class="ex">spack</span> load <span class="op">&lt;</span>software_name<span class="op">&gt;</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="ex">spack</span> find --loaded <span class="co"># see what is loaded</span></span></code></pre></div>
 <p>To uninstall a software we can use:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1"></a><span class="ex">spack</span> uninstall <span class="op">&lt;</span>software_name<span class="op">&gt;</span> or <span class="op">&lt;</span>software_name@version<span class="op">&gt;</span> or <span class="op">&lt;</span>software_name@version %compiler@version<span class="op">&gt;</span></span></code></pre></div>
 <p>We can use <code>-R</code> or <code>--dependents</code> option to uninstall depndencies and <code>--force</code> to force to remove.</p>
@@ -140,8 +141,8 @@
 <p>To use Lmode for installing and loading new packages use:</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1"></a><span class="bu">unset</span> <span class="va">MODULEPATH</span></span>
 <span id="cb16-2"><a href="#cb16-2"></a><span class="bu">unset</span> <span class="va">MODULESHOME</span></span>
-<span id="cb16-3"><a href="#cb16-3"></a><span class="bu">source</span> spack/share/spack/setup-env.sh</span>
-<span id="cb16-4"><a href="#cb16-4"></a><span class="bu">source</span> <span class="va">$(</span><span class="ex">spack</span> location -i lmod<span class="va">)</span>/lmod/lmod/init/bash</span>
+<span id="cb16-3"><a href="#cb16-3"></a><span class="bu">source</span> <span class="va">$(</span><span class="ex">spack</span> location -i lmod<span class="va">)</span>/lmod/lmod/init/bash</span>
+<span id="cb16-4"><a href="#cb16-4"></a><span class="bu">source</span> spack/share/spack/setup-env.sh</span>
 <span id="cb16-5"><a href="#cb16-5"></a></span>
 <span id="cb16-6"><a href="#cb16-6"></a><span class="ex">spack</span> install <span class="op">&lt;</span>software-name<span class="op">&gt;</span></span>
 <span id="cb16-7"><a href="#cb16-7"></a><span class="ex">module</span> load <span class="op">&lt;</span>software-name<span class="op">&gt;</span></span></code></pre></div>
