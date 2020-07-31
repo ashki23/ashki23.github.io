@@ -153,7 +153,9 @@
  &#39;(font-lock-variable-name-face ((t (:foreground &quot;lime green&quot;))))
  &#39;(font-lock-warning-face ((t (:foreground &quot;dark orange&quot; :weight bold))))
  &#39;(minibuffer-prompt ((t (:foreground &quot;lime green&quot; :weight bold)))))</code></pre>
-<p>To change the theme use <code>M-x load-theme</code>, then press <code>tab</code> to show a list of available themes. To clear theme use <code>M-x disable-theme</code>.</p>
+<p>To change the theme use <code>M-x load-theme</code>, then press <code>tab</code> to show a list of available themes. To clear theme use <code>M-x disable-theme</code>. Also, we can set a theme permanently, by add the following to <code>.emacs</code> init file:</p>
+<pre class="lips"><code>;; Load tango-dark theme
+(load-theme &#39;tango-dark)</code></pre>
 <h2 id="install-packages">Install packages</h2>
 <p>In Emacs we can install extra packages based on our needs. To install a new package, press <code>M-x</code> and type <code>package-refresh-contents</code> to fetch all packages and then use <code>M-x package-install</code> and enter the new package’s name. For example we can install Markdown-mode, htmlize and ESS (R-mode) packages with:</p>
 <pre class="lips"><code>M-x package-install markdown-mode
