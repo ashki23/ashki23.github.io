@@ -66,19 +66,22 @@
                   <div class="row">
             <div class="col-xl-10"><p>This page discribes several ways to manage resources and also submit and monitor jobs in a high performance computing (HPC) environment.</p>
 <ul>
-<li>Training presentation (<a href="/files/hpc-intro.pdf">pdf</a>)</li>
-<li>Related training <a href="https://www.youtube.com/watch?v=5SDAha-7Glo&amp;t=196s">video</a></li>
+<li>Training presentation (<a href="http://docs.rnet.missouri.edu/files/hpc-intro.pdf">pdf</a>)</li>
 </ul>
-<p><strong>Prerequisite:</strong></p>
-<p>for better understanding of this course, users are expected to know a basic knowledge about Linux (Unix Shell) and terminal text editors. Users can:</p>
+<p><strong>Prerequisite:</strong> for better understanding of this course, users are expected to know a basic knowledge about Linux (Unix Shell) and terminal text editors. You can review:</p>
 <ul>
-<li>Attend RCSS “Intro to Basic Linux” training</li>
-<li>Review “Intro to Basic Linux” training presentation</li>
-<li>Watch the RCSS video “Intro to Basic Linux” tutorial in <a href="https://www.youtube.com/watch?v=xeFd9Jkm1uw&amp;t=14s">here</a></li>
-<li>Review Software Carpentry workshop, <a href="http://swcarpentry.github.io/shell-novice/">“The Unix Shell”</a></li>
+<li><a href="https://ashki23.github.io/shell.html">The Unix Shell</a></li>
+<li><a href="http://swcarpentry.github.io/shell-novice/">Software Carpentry workshop</a></li>
 </ul>
 <hr />
 <h2 id="clusters">Clusters</h2>
+<p>A cluster or supercomputer is a computer with a high level of performance as compared to a general-purpose computer. They have built for the purpose of massive parallelization to decrease computation time and get results faster. Each cluster consists of several components. The smallest element in a cluster is Processing Element (PE) that can be compared with personal computers’ cores. Tens of PEs create a Computational Node and hundreds of Nodes create a Partition, and finally putting Partitions together will create a cluster. Following shows hierarchy of a cluster.</p>
+<p align="center">
+<img src="https://upload.wikimedia.org/wikipedia/commons/b/b4/LLNL_BGL_Diagram.png" alt="Super Computers" style="width: 60%; border: 0;">
+<div style="text-align: center; font-size: 85%;">
+From <a href="http://en.wikipedia.org/wiki/Image:LLNL_BGL_Diagram.png">wikipedia</a>
+</div>
+</p>
 <h2 id="slurm">Slurm</h2>
 <p><a href="https://slurm.schedmd.com">Slurm</a> is an open source and highly scalable cluster management and job scheduling system for large and small Linux clusters. As a cluster workload manager, Slurm has three key functions.</p>
 <ul>
@@ -89,7 +92,7 @@
 <h2 id="login-node">Login Node</h2>
 <p>Users connect to clusters through the login nodes.</p>
 <p align="center">
-<img src="images/cluster-login.png" alt="Scatter plots" style="width: 80%; border: 0;">
+<img src="images/cluster-login.png" alt="Login Node" style="width: 80%; border: 0;">
 </p>
 <p><br /></p>
 <p>All jobs must be run using Slurm submitting tools to prevent running on the login node.</p>
@@ -128,12 +131,12 @@ General*   122534Mb    24      4      4      4
 <h2 id="job-submission">Job Submission</h2>
 <p>All jobs must be run using <code>srun</code> or <code>sbatch</code> to prevent running on the Cluster login node. In general, users can request resources and run tasks interactively or create a batch file and submit their jobs. The following graphs shows job submission workflow:</p>
 <p align="center">
-<img src="images/cluster-submit.png" alt="Scatter plots" style="width: 90%; border: 0;">
+<img src="images/cluster-submit.png" alt="Job Submission" style="width: 90%; border: 0;">
 </p>
 <p>For running jobs interactively, we can use <code>srun</code> to request required resources through Slurm and run jobs interactively. For instance:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1"></a><span class="ex">srun</span> <span class="op">&lt;</span>slurm-options<span class="op">&gt;</span> <span class="op">&lt;</span>software-name/path<span class="op">&gt;</span></span>
 <span id="cb4-2"><a href="#cb4-2"></a><span class="ex">srun</span> --pty /bin/bash <span class="co"># requesting a pseudo terminal of bash shell to run jobs interactively</span></span>
-<span id="cb4-3"><a href="#cb4-3"></a><span class="ex">srun</span> -p Interactive --pty /bin/bash <span class="co"># requesting a p.t. of bash shell in Interactive Node (-p --partition)</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="ex">srun</span> -p Interactive --pty /bin/bash <span class="co"># requesting a p.t. of bash shell on patition called Interactive (-p --partition)</span></span>
 <span id="cb4-4"><a href="#cb4-4"></a><span class="ex">srun</span> -p <span class="op">&lt;</span>partition-name<span class="op">&gt;</span> -n 4 --mem 16G --pty /bin/bash <span class="co"># req. 4 tasks and 16G memory (-n --ntasks)</span></span>
 <span id="cb4-5"><a href="#cb4-5"></a><span class="ex">srun</span> -p Gpu --gres gpu:1 -N 1 --ntasks-per-node 8 --pty /bin/bash <span class="co"># req. 1 GPU and 1 node for running 8 tasks on Gpu partition (-N --nodes)</span></span></code></pre></div>
 <p>For submitting jobs, we can create a batch file, which is a shell script (<code>#!/bin/bash</code>) including Slurm options (<code>#SBATCH</code>) and computational tasks, and use:</p>
@@ -166,7 +169,7 @@ General*   122534Mb    24      4      4      4
 <span id="cb8-10"><a href="#cb8-10"></a><span class="st">&quot;&quot;&quot;</span>)</span>
 <span id="cb8-11"><a href="#cb8-11"></a></span>
 <span id="cb8-12"><a href="#cb8-12"></a><span class="bu">print</span>(<span class="st">&quot;Hello world”)</span></span></code></pre></div>
-<p>To run the above code, we can use <code>srun</code> to run <code>test.py</code> interactively such that:</p>
+<p>To run the above code, we can use <code>srun</code> to run <code>test.py</code> interactively on a partition called Interactive such that:</p>
 <pre><code>srun -p Interactive -n 4 --mem 8G --pty bash
 
 python3 test.py</code></pre>
@@ -232,7 +235,7 @@ python3 test.py</code></pre>
 <span id="cb18-5"><a href="#cb18-5"></a><span class="ex">module</span> unload <span class="co"># unload loaded modules</span></span>
 <span id="cb18-6"><a href="#cb18-6"></a><span class="ex">module</span> purge <span class="co"># unload all loaded modules</span></span></code></pre></div>
 <p><strong>Never load modules in the login node</strong>. It makes login node slow for all users and many modules don’t work in the login node.</p>
-<p>For example to use R interactively, first need to request resources by <code>srun</code> and then use <code>module load R</code>:</p>
+<p>For example to use R interactively, first need to request resources on a partition called Interactive by <code>srun</code> and then use <code>module load R</code>:</p>
 <div class="sourceCode" id="cb19"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1"></a><span class="ex">srun</span> -p Interactive --mem 4G --pty /bin/bash</span>
 <span id="cb19-2"><a href="#cb19-2"></a><span class="ex">module</span> load R</span>
 <span id="cb19-3"><a href="#cb19-3"></a><span class="ex">R</span></span></code></pre></div>
