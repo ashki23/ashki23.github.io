@@ -66,7 +66,7 @@
                   <div class="row">
             <div class="col-xl-10"><p>This page discribes several ways to manage resources and also submit and monitor jobs in a high performance computing (HPC) environment.</p>
 <ul>
-<li>Training presentation (<a href="./files/hpc-intro.pdf">pdf</a>)</li>
+<li>Training presentation (<a href="/files/hpc-intro.pdf">pdf</a>)</li>
 <li>Related training <a href="https://www.youtube.com/watch?v=5SDAha-7Glo&amp;t=196s">video</a></li>
 </ul>
 <p><strong>Prerequisite:</strong></p>
@@ -89,7 +89,7 @@
 <h2 id="login-node">Login Node</h2>
 <p>Users connect to clusters through the login nodes.</p>
 <p align="center">
-<img src="images/login-node.png" alt="Scatter plots" style="width: 80%; border: 0;">
+<img src="images/cluster-login.png" alt="Scatter plots" style="width: 80%; border: 0;">
 </p>
 <p><br /></p>
 <p>All jobs must be run using Slurm submitting tools to prevent running on the login node.</p>
@@ -128,7 +128,7 @@ General*   122534Mb    24      4      4      4
 <h2 id="job-submission">Job Submission</h2>
 <p>All jobs must be run using <code>srun</code> or <code>sbatch</code> to prevent running on the Cluster login node. In general, users can request resources and run tasks interactively or create a batch file and submit their jobs. The following graphs shows job submission workflow:</p>
 <p align="center">
-<img src="images/job-submit.png" alt="Scatter plots" style="width: 90%; border: 0;">
+<img src="images/cluster-submit.png" alt="Scatter plots" style="width: 90%; border: 0;">
 </p>
 <p>For running jobs interactively, we can use <code>srun</code> to request required resources through Slurm and run jobs interactively. For instance:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1"></a><span class="ex">srun</span> <span class="op">&lt;</span>slurm-options<span class="op">&gt;</span> <span class="op">&lt;</span>software-name/path<span class="op">&gt;</span></span>
