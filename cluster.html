@@ -64,7 +64,7 @@
             <div class="container">
          <h1 class="title">Introduction to using clusters</h1>
                   <div class="row">
-            <div class="col-xl-10"><p>This page discribes several ways to manage resources and also submit and monitor jobs in a high performance computing (HPC) environment.</p>
+            <div class="col-xl-10"><p>This page describes several ways to manage resources and also submit and monitor jobs in a high performance computing (HPC) environment.</p>
 <ul>
 <li>Training presentation (<a href="http://docs.rnet.missouri.edu/files/hpc-intro.pdf">pdf</a>)</li>
 </ul>
@@ -99,7 +99,7 @@ From <a href="http://en.wikipedia.org/wiki/Image:LLNL_BGL_Diagram.png">wikipedia
 <h2 id="cluster-information">Cluster Information</h2>
 <p>Slurm is a resource management system and has many tools to find available resources in the cluster. Following are set of Slurm commands for that purpose:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="ex">sinfo</span> –s <span class="co"># summary of cluster resources (-s --summarize)</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="ex">sinfo</span> -p <span class="op">&lt;</span>partitoion-name<span class="op">&gt;</span> -o %n,%C,%m,%z <span class="co"># compute info of nodes in a partition (-o --format)</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="ex">sinfo</span> -p <span class="op">&lt;</span>partition-name<span class="op">&gt;</span> -o %n,%C,%m,%z <span class="co"># compute info of nodes in a partition (-o --format)</span></span>
 <span id="cb1-3"><a href="#cb1-3"></a><span class="ex">sinfo</span> -p Gpu -o %n,%C,%m,%G <span class="co"># GPUs information in Gpu partition (-p --partition)</span></span>
 <span id="cb1-4"><a href="#cb1-4"></a><span class="ex">sjstat</span> –c <span class="co"># show computing resources per node</span></span>
 <span id="cb1-5"><a href="#cb1-5"></a><span class="ex">scontrol</span> show partition <span class="op">&lt;</span>partition-name<span class="op">&gt;</span> <span class="co"># partition information</span></span>
@@ -121,9 +121,9 @@ hpc        122534Mb    24      4      4      4
 Interact   122534Mb    24      4      4      4
 General*   122534Mb    24      4      4      4
 </code></pre>
-<p>For instance above <code>sinfo -s</code> shows partition hpc3 has 4 idle nodes (free) and users can run jobs up 2 days. And, <code>sjstat -c</code> shows that partion hpc3 has 4 nodes with 24 cpus and 122GB of memory on each node. In general, <code>CPUS/NODES(A/I/O/T)</code> count of CPUs/nodes in the form “available/idle/other/total” and <code>S:C:T</code> counts number of “sockets, cores, threads”.</p>
+<p>For instance above <code>sinfo -s</code> shows partition hpc3 has 4 idle nodes (free) and users can run jobs up 2 days. And, <code>sjstat -c</code> shows that partition hpc3 has 4 nodes with 24 cpus and 122GB of memory on each node. In general, <code>CPUS/NODES(A/I/O/T)</code> count of CPUs/nodes in the form “available/idle/other/total” and <code>S:C:T</code> counts number of “sockets, cores, threads”.</p>
 <h2 id="users-information">Users Information</h2>
-<p>Users can use Slurm to find more informations about their accounts, fairshare and quality of services (QOS) and several Unix commands to find their storage quotas.</p>
+<p>Users can use Slurm to find more information about their accounts, fairshare and quality of services (QOS) and several Unix commands to find their storage quotas.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="ex">sshare</span> -U <span class="co"># show your fairshare and accounts (-U --Users)</span></span>
 <span id="cb3-2"><a href="#cb3-2"></a><span class="ex">sacctmgr</span> show assoc user=<span class="va">$USER</span> format=acc,user,share,qos,maxj <span class="co"># your QOS </span></span>
 <span id="cb3-3"><a href="#cb3-3"></a><span class="fu">groups</span> <span class="co"># show your groups</span></span>
@@ -136,7 +136,7 @@ General*   122534Mb    24      4      4      4
 <p>For running jobs interactively, we can use <code>srun</code> to request required resources through Slurm and run jobs interactively. For instance:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1"></a><span class="ex">srun</span> <span class="op">&lt;</span>slurm-options<span class="op">&gt;</span> <span class="op">&lt;</span>software-name/path<span class="op">&gt;</span></span>
 <span id="cb4-2"><a href="#cb4-2"></a><span class="ex">srun</span> --pty /bin/bash <span class="co"># requesting a pseudo terminal of bash shell to run jobs interactively</span></span>
-<span id="cb4-3"><a href="#cb4-3"></a><span class="ex">srun</span> -p Interactive --pty /bin/bash <span class="co"># requesting a p.t. of bash shell on patition called Interactive (-p --partition)</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="ex">srun</span> -p Interactive --pty /bin/bash <span class="co"># requesting a p.t. of bash shell on partition called Interactive (-p --partition)</span></span>
 <span id="cb4-4"><a href="#cb4-4"></a><span class="ex">srun</span> -p <span class="op">&lt;</span>partition-name<span class="op">&gt;</span> -n 4 --mem 16G --pty /bin/bash <span class="co"># req. 4 tasks and 16G memory (-n --ntasks)</span></span>
 <span id="cb4-5"><a href="#cb4-5"></a><span class="ex">srun</span> -p Gpu --gres gpu:1 -N 1 --ntasks-per-node 8 --pty /bin/bash <span class="co"># req. 1 GPU and 1 node for running 8 tasks on Gpu partition (-N --nodes)</span></span></code></pre></div>
 <p>For submitting jobs, we can create a batch file, which is a shell script (<code>#!/bin/bash</code>) including Slurm options (<code>#SBATCH</code>) and computational tasks, and use:</p>
@@ -193,8 +193,8 @@ python3 test.py</code></pre>
 <span id="cb12-6"><a href="#cb12-6"></a><span class="ex">squeue</span> -u <span class="op">&lt;</span>username<span class="op">&gt;</span> --start <span class="co"># show estimation time to start pending jobs</span></span>
 <span id="cb12-7"><a href="#cb12-7"></a><span class="ex">scancel</span> <span class="op">&lt;</span>jobid<span class="op">&gt;</span> <span class="co"># cancel jobs</span></span></code></pre></div>
 <h2 id="monitor-cpu-and-memory">Monitor CPU and Memory</h2>
-<p><strong>Compeleted jobs</strong></p>
-<p>We can use the following options to check how many resouces is consumed by a competed job.</p>
+<p><strong>Completed jobs</strong></p>
+<p>We can use the following options to check how many resouces is consumed by a completed job.</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1"></a><span class="ex">sacct</span> -j <span class="op">&lt;</span>jobid<span class="op">&gt;</span> -o User,Acc,AllocCPUS,Elaps,CPUTime,TotalCPU,AveDiskRead,AveDiskWrite,ReqMem,MaxRSS <span class="co"># info about CPU and virtual memory for compeleted jobs (-j --jobs)</span></span>
 <span id="cb13-2"><a href="#cb13-2"></a><span class="ex">seff</span> <span class="op">&lt;</span>jobid<span class="op">&gt;</span> <span class="co"># show job CPU and memory efficiency </span></span></code></pre></div>
 <p>For more information on what fields to include see <code>man sacct</code>.</p>
@@ -218,7 +218,7 @@ python3 test.py</code></pre>
 <p><strong>Running jobs</strong></p>
 <p>Slurm provides a tool to monitor running jobs. In order for this to work jobs using SBATCH must utilize the <code>srun</code> command within the job file.</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1"></a><span class="ex">sstat</span> <span class="op">&lt;</span>jobid<span class="op">&gt;</span> -o AveCPU,AveDiskRead,AveDiskWrite,MaxRSS <span class="co"># info about CPU and memory for runing jobs (srun only)</span></span></code></pre></div>
-<p>Also, we can use <code>top</code> command to find how much CPU and memory are using by a submited job. To do that, we need to attach to the nodes that our job is running and run <code>top</code> command.</p>
+<p>Also, we can use <code>top</code> command to find how much CPU and memory are using by a submitted job. To do that, we need to attach to the nodes that our job is running and run <code>top</code> command.</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1"></a><span class="ex">srun</span> --jobid <span class="op">&lt;</span>jobid<span class="op">&gt;</span> --pty /bin/bash </span>
 <span id="cb16-2"><a href="#cb16-2"></a></span>
 <span id="cb16-3"><a href="#cb16-3"></a><span class="ex">top</span> -u <span class="va">$USER</span></span></code></pre></div>
@@ -227,7 +227,7 @@ python3 test.py</code></pre>
 <span id="cb17-2"><a href="#cb17-2"></a><span class="ex">14278</span> Buzz     20   0  124924   5612   2600 S   0.0  0.0   0:00.04 python3</span>
 <span id="cb17-3"><a href="#cb17-3"></a><span class="ex">14279</span> Buzz     20   0  124924   5612   2600 S   0.0  0.0   0:00.03 python3</span></code></pre></div>
 <h2 id="modules">Modules</h2>
-<p>In order to use a software, we need to load the coresponding module firts. The following commands let us mange modules in our workflow:</p>
+<p>In order to use a software, we need to load the corresponding module first. The following commands let us manage modules in our workflow:</p>
 <div class="sourceCode" id="cb18"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1"></a><span class="ex">module</span> avail <span class="co"># available modules</span></span>
 <span id="cb18-2"><a href="#cb18-2"></a><span class="ex">module</span> show <span class="co"># show modules info </span></span>
 <span id="cb18-3"><a href="#cb18-3"></a><span class="ex">module</span> list <span class="co"># list loaded modules</span></span>
@@ -239,7 +239,7 @@ python3 test.py</code></pre>
 <div class="sourceCode" id="cb19"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1"></a><span class="ex">srun</span> -p Interactive --mem 4G --pty /bin/bash</span>
 <span id="cb19-2"><a href="#cb19-2"></a><span class="ex">module</span> load R</span>
 <span id="cb19-3"><a href="#cb19-3"></a><span class="ex">R</span></span></code></pre></div>
-<p>If you are looking for using a licenced software (available in cluster) make sure you call the licence when requesting resources. For instance to use MATLAB:</p>
+<p>If you are looking for using a licensed software (available in cluster) make sure you call the license when requesting resources. For instance to use MATLAB:</p>
 <div class="sourceCode" id="cb20"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1"></a><span class="ex">srun</span> -p Interactive --mem 4G -L matlab --pty /bin/bash</span>
 <span id="cb20-2"><a href="#cb20-2"></a><span class="ex">module</span> load matlab</span>
 <span id="cb20-3"><a href="#cb20-3"></a><span class="ex">matlab</span> -nodisplay</span></code></pre></div>

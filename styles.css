@@ -18,6 +18,11 @@ h6 {
     font-weight: 300;
 }
 
+h2,
+h3 {
+    line-height: 1.1rem;
+}
+
 h6 {
     color: #555;
 }

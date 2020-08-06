@@ -64,7 +64,7 @@
             <div class="container">
          <h1 class="title">Install software with Spack</h1>
                   <div class="row">
-            <div class="col-xl-10"><p><a href="https://spack.readthedocs.io/en/latest/">Spack</a> is an open source package manager that simplifies building, installing, customizing, and sharing HPC software stacks. Spack helps installing software with much less efforts. It is a very simple and efficient way for installing packages with cumbersome structures and lots of dependencies. Spack is an open source package manger and developing and maitaining by community of HPC developers.</p>
+            <div class="col-xl-10"><p><a href="https://spack.readthedocs.io/en/latest/">Spack</a> is an open source package manager that simplifies building, installing, customizing, and sharing HPC software stacks. Spack helps installing software with much less efforts. It is a very simple and efficient way for installing packages with cumbersome structures and lots of dependencies. Spack is an open source package manger and developing and maintaining by community of HPC developers.</p>
 <p>To learn more about Sapck review:</p>
 <ul>
 <li><a href="https://spack-tutorial.readthedocs.io/en/latest/">Tutorial: Spack 101</a></li>
@@ -80,7 +80,7 @@
 <span id="cb2-2"><a href="#cb2-2"></a><span class="ex">spack</span> info <span class="op">&lt;</span>software-name<span class="op">&gt;</span> <span class="co"># show information and variants of a software</span></span>
 <span id="cb2-3"><a href="#cb2-3"></a><span class="ex">spack</span> spec -I <span class="op">&lt;</span>software-name<span class="op">&gt;</span> <span class="co"># show specifications (dependencies)</span></span></code></pre></div>
 <p>Option <code>-I</code> or <code>--install-status</code> shows status of the software dependencies i.e. installed (<code>+</code>) or will be installed during the installation (<code>-</code>).</p>
-<p>Now let’s install a new softwares from Spack:</p>
+<p>Now let’s install a new software’s from Spack:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="ex">spack</span> install <span class="op">&lt;</span>software_name<span class="op">&gt;</span> or <span class="op">&lt;</span>software_name@version<span class="op">&gt;</span> or <span class="op">&lt;</span>software_name@version %compiler@version<span class="op">&gt;</span> </span></code></pre></div>
 <p>In general, <code>@version</code> for both software and compiler could be removed. Spack installs the most stable version by default (see <code>spack versions -s &lt;software-name&gt;</code>). You may find complete list of software that you can install by using <code>spack list</code> or in Spack online <a href="https://spack.readthedocs.io/en/latest/package_list.html">package list</a>. Also. we can use <code>--verbose</code> option to see more details during the installation, <code>--no-cache</code> to install a package directly from the source, and <code>--overwrite</code> to overwrite an installed package.</p>
 <p>After installation, we can find the software by:</p>
@@ -92,7 +92,7 @@
 <span id="cb5-2"><a href="#cb5-2"></a><span class="ex">spack</span> find --loaded <span class="co"># see what is loaded</span></span></code></pre></div>
 <p>To uninstall a software we can use:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1"></a><span class="ex">spack</span> uninstall <span class="op">&lt;</span>software_name<span class="op">&gt;</span> or <span class="op">&lt;</span>software_name@version<span class="op">&gt;</span> or <span class="op">&lt;</span>software_name@version %compiler@version<span class="op">&gt;</span></span></code></pre></div>
-<p>We can use <code>-R</code> or <code>--dependents</code> option to uninstall depndencies and <code>--force</code> to force to remove.</p>
+<p>We can use <code>-R</code> or <code>--dependents</code> option to uninstall dependencies and <code>--force</code> to force to remove.</p>
 <p>More details about Spack commands can be found by:</p>
 <ul>
 <li><code>spack help</code> getting help</li>
@@ -121,7 +121,7 @@
 <p>If the package that you are looking for is not among Spack repo list, you can create a package file in Python by <code>spack create &lt;tarball link&gt;</code> and <a href="https://spack.readthedocs.io/en/latest/contribution_guide.html">add to the Spack reop</a>. Review <a href="https://spack-tutorial.readthedocs.io/en/latest/tutorial_packaging.html">Package Creation Tutorial</a> to learn how to build and debug a package.</p>
 <p>If the package that you are looking for is outdated or has wrong dependencies, you can modify the package Python file by:</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1"></a><span class="ex">spack</span> edit <span class="op">&lt;</span>software-name<span class="op">&gt;</span></span></code></pre></div>
-<p>To update version of the package, install the package tar file from the developer webpage or Github and extract the related hash number by <code>md5sum</code> or <code>shasum -a 256</code> command and add version and hash number to the package file. For example, <code>spack edit octopus</code>:</p>
+<p>To update version of the package, install the package tar file from the developer web-page or GitHub and extract the related hash number by <code>md5sum</code> or <code>shasum -a 256</code> command and add version and hash number to the package file. For example, <code>spack edit octopus</code>:</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1"></a><span class="ex">class</span> Octopus(Package)<span class="bu">:</span></span>
 <span id="cb13-2"><a href="#cb13-2"></a>    <span class="st">&quot;&quot;&quot;A real-space finite-difference (time-dependent) density-functional</span></span>
 <span id="cb13-3"><a href="#cb13-3"></a><span class="st">    theory code.&quot;&quot;&quot;</span></span>
@@ -133,9 +133,9 @@
 <p>In the above example, we have added Octopus version 10 to the package file.</p>
 <p>Also, we can open the packages configuration file and update preferences by:</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1"></a><span class="ex">spack</span> config edit packages</span></code></pre></div>
-<p><strong>Note:</strong> if you prefere to use Emacs to edit Spack config files, use <code>export EDITOR=emacs</code> to make Emacs the default text editor.</p>
-<h2 id="lmod">Lmod</h2>
-<p><a href="https://www.tacc.utexas.edu/research-development/tacc-projects/lmod">Lmod</a> is a Lua-based module system that easily handles the MODULEPATH Hierarchical problem. To install Lmode, use the following (note this may take a while):</p>
+<p><strong>Note:</strong> if you prefer to use Emacs to edit Spack config files, use <code>export EDITOR=emacs</code> to make Emacs the default text editor.</p>
+<h2 id="environment-modules">Environment modules</h2>
+<p><a href="https://www.tacc.utexas.edu/research-development/tacc-projects/lmod">Lmod</a> is a Lua-based module system that easily handles the <code>MODULEPATH</code> Hierarchical problem. To install Lmode, use the following (note this may take a while):</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1"></a><span class="bu">source</span> spack/share/spack/setup-env.sh</span>
 <span id="cb15-2"><a href="#cb15-2"></a><span class="ex">spack</span> install lmod</span></code></pre></div>
 <p>To use Lmode for installing and loading new packages use:</p>
@@ -146,7 +146,50 @@
 <span id="cb16-5"><a href="#cb16-5"></a></span>
 <span id="cb16-6"><a href="#cb16-6"></a><span class="ex">spack</span> install <span class="op">&lt;</span>software-name<span class="op">&gt;</span></span>
 <span id="cb16-7"><a href="#cb16-7"></a><span class="ex">module</span> load <span class="op">&lt;</span>software-name<span class="op">&gt;</span></span></code></pre></div>
-<p>Learn more about Lmod and module files in <a href="https://spack-tutorial.readthedocs.io/en/latest/tutorial_modules.html">here</a>.</p></div>
+<p>Now we can use <code>module avail</code> to see list of the available (installed) modules.</p>
+<p>We can also, use <code>lomd</code> to manage modules by editing the module configuration file. Let’s open the file:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1"></a><span class="ex">spack</span> config edit modules </span></code></pre></div>
+<p>And add the following configuration from <a href="https://spack-tutorial.readthedocs.io/en/latest/tutorial_modules.html#modules-tutorial">Spack tutorial</a> to the config file:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1"></a><span class="ex">modules</span>:</span>
+<span id="cb18-2"><a href="#cb18-2"></a>  <span class="ex">enable</span>::</span>
+<span id="cb18-3"><a href="#cb18-3"></a>    <span class="ex">-</span> lmod</span>
+<span id="cb18-4"><a href="#cb18-4"></a>  <span class="ex">lmod</span>:</span>
+<span id="cb18-5"><a href="#cb18-5"></a>    <span class="ex">core_compilers</span>:</span>
+<span id="cb18-6"><a href="#cb18-6"></a>      <span class="ex">-</span> <span class="st">&#39;gcc@7.5.0&#39;</span></span>
+<span id="cb18-7"><a href="#cb18-7"></a>    <span class="ex">hierarchy</span>:</span>
+<span id="cb18-8"><a href="#cb18-8"></a>      <span class="ex">-</span> mpi</span>
+<span id="cb18-9"><a href="#cb18-9"></a>      <span class="ex">-</span> lapack</span>
+<span id="cb18-10"><a href="#cb18-10"></a>    <span class="ex">hash_length</span>: 0</span>
+<span id="cb18-11"><a href="#cb18-11"></a>    <span class="ex">whitelist</span>:</span>
+<span id="cb18-12"><a href="#cb18-12"></a>      <span class="ex">-</span> gcc</span>
+<span id="cb18-13"><a href="#cb18-13"></a>    <span class="ex">blacklist</span>:</span>
+<span id="cb18-14"><a href="#cb18-14"></a>      <span class="ex">-</span> <span class="st">&#39;%gcc@3.8.0&#39;</span> </span>
+<span id="cb18-15"><a href="#cb18-15"></a>      <span class="ex">-</span> readline</span>
+<span id="cb18-16"><a href="#cb18-16"></a>    <span class="ex">all</span>:</span>
+<span id="cb18-17"><a href="#cb18-17"></a>      <span class="ex">filter</span>:</span>
+<span id="cb18-18"><a href="#cb18-18"></a>        <span class="ex">environment_blacklist</span>:</span>
+<span id="cb18-19"><a href="#cb18-19"></a>          <span class="ex">-</span> <span class="st">&quot;C_INCLUDE_PATH&quot;</span></span>
+<span id="cb18-20"><a href="#cb18-20"></a>          <span class="ex">-</span> <span class="st">&quot;CPLUS_INCLUDE_PATH&quot;</span></span>
+<span id="cb18-21"><a href="#cb18-21"></a>          <span class="ex">-</span> <span class="st">&quot;LIBRARY_PATH&quot;</span></span>
+<span id="cb18-22"><a href="#cb18-22"></a>      <span class="ex">environment</span>:</span>
+<span id="cb18-23"><a href="#cb18-23"></a>        <span class="ex">set</span>:</span>
+<span id="cb18-24"><a href="#cb18-24"></a>          <span class="st">&#39;{name}_ROOT&#39;</span>: <span class="st">&#39;{prefix}&#39;</span></span>
+<span id="cb18-25"><a href="#cb18-25"></a>    <span class="ex">openmpi</span>:</span>
+<span id="cb18-26"><a href="#cb18-26"></a>      <span class="ex">environment</span>:</span>
+<span id="cb18-27"><a href="#cb18-27"></a>        <span class="ex">set</span>:</span>
+<span id="cb18-28"><a href="#cb18-28"></a>          <span class="ex">SLURM_MPI_TYPE</span>: pmi2</span>
+<span id="cb18-29"><a href="#cb18-29"></a>          <span class="ex">OMPI_MCA_btl_openib_warn_default_gid_prefix</span>: <span class="st">&#39;0&#39;</span></span>
+<span id="cb18-30"><a href="#cb18-30"></a>    <span class="ex">netlib-scalapack</span>:</span>
+<span id="cb18-31"><a href="#cb18-31"></a>      <span class="ex">template</span>: <span class="st">&#39;group-restricted.lua&#39;</span></span></code></pre></div>
+<p>Note that in the above example, we seleceted <code>gcc@7.5.0</code> as core compiler and hided <code>gcc@3.8.0</code> from the tree. Also, we supposed the hierarchy of installed modules are depends on <code>mpi</code> and <code>lapack</code>.</p>
+<p>To apply these changes, we need to refresh the modules tree and update <code>MODULEPATH</code> by:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1"></a><span class="ex">module</span> purge</span>
+<span id="cb19-2"><a href="#cb19-2"></a><span class="ex">spack</span> module lmod refresh --delete-tree -y</span>
+<span id="cb19-3"><a href="#cb19-3"></a><span class="ex">module</span> unuse <span class="va">$HOME</span>/spack/share/spack/modules/<span class="op">&lt;</span>os-arch<span class="op">&gt;</span></span>
+<span id="cb19-4"><a href="#cb19-4"></a><span class="ex">module</span> use <span class="va">$HOME</span>/spack/share/spack/lmod/<span class="op">&lt;</span>os-arch<span class="op">&gt;</span>/Core</span></code></pre></div>
+<p>Note that in above commands, I assumed that Spack directory is located on <code>$HOME</code>. You need to update path and <code>&lt;os-arch&gt;</code> based on the Sapck directory and, the operating system and architecture of your machine (for example <code>linux-ubuntu18.04-x86_64</code>). To keep the new module path for latter, you can add the following to the <code>.bashrc</code> file.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1"></a><span class="bu">export</span> <span class="va">MODULEPATH=$HOME</span>/spack/share/spack/lmod/<span class="op">&lt;</span><span class="ex">os-arch</span><span class="op">&gt;</span>/Core</span></code></pre></div>
+<p>Now use <code>module avail</code> to see changes. You can learn more about modules and Lmod in <a href="https://spack-tutorial.readthedocs.io/en/latest/tutorial_modules.html">here</a>.</p></div>
             <div class="d-none d-xl-block col-xl-2 bd-toc">
                <ul class="section-nav">
                   <li class="toc-entry"><ul>
@@ -155,7 +198,7 @@
 <li><a href="#compilers">Compilers</a></li>
 <li><a href="#architecture-specifiers">Architecture specifiers</a></li>
 <li><a href="#create-and-edit-package-files">Create and edit package files</a></li>
-<li><a href="#lmod">Lmod</a></li>
+<li><a href="#environment-modules">Environment modules</a></li>
 </ul></li>
                </ul>
             </div>
