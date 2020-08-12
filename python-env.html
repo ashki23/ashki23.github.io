@@ -92,7 +92,7 @@
 <h2 id="miniconda">Miniconda</h2>
 <p>To use a more sophisticated method, we might consider Conda as an environment management system. To start using Conda, you might need to install Miniconda (or Anaconda) first. Follow the instruction at <a href="https://conda.io/projects/conda/en/latest/user-guide/install/index.html">Conda website</a> to install Miniconda (or Anaconda) on the operating system.</p>
 <p>To create a new environment, use <code>conda create</code> command including names of the environment and required packages:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1"></a><span class="ex">conda</span> create --name <span class="op">&lt;</span>env_name<span class="op">&gt;</span> <span class="op">&lt;</span>pkg name<span class="op">&gt;</span> <span class="op">&lt;</span>pkg name<span class="op">&gt;</span> ...</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1"></a><span class="ex">conda</span> create --name <span class="op">&lt;</span>env_name<span class="op">&gt;</span> <span class="op">&lt;</span>pkg name<span class="op">&gt;</span> <span class="op">&lt;</span>pkg name=version<span class="op">&gt;</span> ...</span></code></pre></div>
 <p>We also can use <code>--yes</code> flag to set up the environment without a question and use <code>--prefix &lt;env_path&gt;</code> to setup the environment in a certain path (note that we can not use <code>--prefix</code> and <code>--name</code> at the same time). To see list of environments, use the following:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1"></a><span class="ex">conda</span> env list</span></code></pre></div>
 <p>We can also use <code>conda info --envs</code> to see list of envs. To activate/deactivate an environment use the following:</p>
@@ -104,7 +104,7 @@
 <p>To remove the package use:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1"></a><span class="ex">conda</span> remove <span class="op">&lt;</span>pkg name<span class="op">&gt;</span></span></code></pre></div>
 <p>To see list of the installed packages within the env, use:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1"></a><span class="ex">conda</span> liat</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1"></a><span class="ex">conda</span> list</span></code></pre></div>
 <p>And to remove cache files use:</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1"></a><span class="ex">conda</span> clean --all</span></code></pre></div>
 <p><strong>Note</strong>: before removing packages or caches, make sure we are in the right virtual environment. We can use <code>conda info</code> and <code>conda env list</code> to find the current environment and use <code>source activate &lt;env name or path&gt;</code> or <code>source deactivate</code> to active or deactivate the right env.</p>
@@ -116,15 +116,13 @@
 <p>Also, it is important to keep using same channels for updating the environment by:</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1"></a><span class="ex">conda</span> update --chanel r --channel conda-forge --prefix ./yourlocal_env <span class="op">&lt;</span>pkg name<span class="op">&gt;</span> <span class="op">&lt;</span>pkg name<span class="op">&gt;</span> ...</span></code></pre></div>
 <p>In a <strong>HPC</strong> cluster system, first we need to load <code>miniconda3</code> module to be able to use <code>conda</code>. We can use the following as a template to build new environment:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1"></a><span class="bu">export</span> <span class="va">CONDA_PKGS_DIRS=</span><span class="op">&lt;</span><span class="fu">dir</span><span class="op">&gt;</span>/.conda/pkgs</span>
-<span id="cb15-2"><a href="#cb15-2"></a><span class="bu">export</span> <span class="va">CONDA_ENVS_PATH=</span><span class="op">&lt;</span><span class="fu">dir</span><span class="op">&gt;</span>/.conda/envs</span>
-<span id="cb15-3"><a href="#cb15-3"></a><span class="ex">module</span> load miniconda3</span>
-<span id="cb15-4"><a href="#cb15-4"></a></span>
-<span id="cb15-5"><a href="#cb15-5"></a><span class="kw">if</span><span class="bu"> [</span> <span class="ot">!</span> <span class="ot">-d</span> yourlocal_env<span class="bu"> ]</span>; <span class="kw">then</span></span>
-<span id="cb15-6"><a href="#cb15-6"></a><span class="ex">conda</span> create --yes --prefix ./yourlocal_env <span class="op">&lt;</span>pkg name<span class="op">&gt;</span> <span class="op">&lt;</span>pkg name<span class="op">&gt;</span> ...</span>
-<span id="cb15-7"><a href="#cb15-7"></a><span class="kw">fi</span></span>
-<span id="cb15-8"><a href="#cb15-8"></a><span class="bu">source</span> activate ./yourlocal_env</span></code></pre></div>
-<p>We need to update conda pathes (<code>CONDA_PKGS_DIRS</code> and <code>CONDA_ENVS_DIRS</code>), only if we prefer to put them somewhere except home directory.</p></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1"></a><span class="ex">module</span> load miniconda3</span>
+<span id="cb15-2"><a href="#cb15-2"></a></span>
+<span id="cb15-3"><a href="#cb15-3"></a><span class="kw">if</span><span class="bu"> [</span> <span class="ot">!</span> <span class="ot">-d</span> yourlocal_env<span class="bu"> ]</span>; <span class="kw">then</span></span>
+<span id="cb15-4"><a href="#cb15-4"></a><span class="ex">conda</span> create --yes --prefix ./yourlocal_env <span class="op">&lt;</span>pkg name<span class="op">&gt;</span> <span class="op">&lt;</span>pkg name<span class="op">&gt;</span> ...</span>
+<span id="cb15-5"><a href="#cb15-5"></a><span class="kw">fi</span></span>
+<span id="cb15-6"><a href="#cb15-6"></a><span class="bu">source</span> activate ./yourlocal_env</span></code></pre></div>
+<p>We can update conda pathes, <code>CONDA_PKGS_DIRS</code> and <code>CONDA_ENVS_DIRS</code>, if we prefer to put Conda caches somewhere except the home directory (review <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/configuration/use-condarc.html#specify-environment-directories-envs-dirs">here</a>).</p></div>
             <div class="d-none d-xl-block col-xl-2 bd-toc">
                <ul class="section-nav">
                   <li class="toc-entry"><ul>
