@@ -74,7 +74,8 @@
 <h2 id="usage">Usage</h2>
 <p>Spack has a very simple workflow. Basically, it is a Git repo of package files are written in pure Python including software build requirements and dependencies. We can Clone and setup Spack by:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">git</span> clone https://github.com/spack/spack.git</span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="bu">source</span> spack/share/spack/setup-env.sh <span class="co"># setup Spack</span></span></code></pre></div>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">git</span> checkout releases/<span class="op">&lt;</span>version<span class="op">&gt;</span> <span class="co"># use the most recent release e.g v0.15</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="bu">source</span> spack/share/spack/setup-env.sh <span class="co"># setup Spack</span></span></code></pre></div>
 <p>To list a specific software and it’s specifications we can use:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="ex">spack</span> list <span class="op">&lt;</span>software-name<span class="op">&gt;</span> <span class="co"># list a software</span></span>
 <span id="cb2-2"><a href="#cb2-2"></a><span class="ex">spack</span> info <span class="op">&lt;</span>software-name<span class="op">&gt;</span> <span class="co"># show information and variants of a software</span></span>
@@ -95,8 +96,9 @@
 <p>We can use <code>-R</code> or <code>--dependents</code> option to uninstall dependencies and <code>--force</code> to force to remove.</p>
 <p>More details about Spack commands can be found by:</p>
 <ul>
-<li><code>spack help</code> getting help</li>
-<li><code>spack help subcommand</code> print out usage information for a particular subcommand (eg. <code>spack help find</code>)</li>
+<li><code>spack --help</code> or <code>spack -h</code> getting help</li>
+<li><code>spack command -h</code> print out usage information for a particular command (eg. <code>spack view -h</code>)</li>
+<li><code>spack command subcommand -h</code> print out usage information for a particular subcommand (eg. <code>spack view add -h</code>)</li>
 </ul>
 <p>To see full list of commands visit Spack <a href="https://spack.readthedocs.io/en/latest/command_index.html">Command Reference</a>.</p>
 <h2 id="specs-dependencies">Specs &amp; dependencies</h2>
