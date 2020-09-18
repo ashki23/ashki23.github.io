@@ -6,6 +6,7 @@ https://ashki23.github.io/page3.html
 https://ashki23.github.io/contact.html
 https://ashki23.github.io/tutorials.html
 https://ashki23.github.io/research.html
+https://ashki23.github.io/applications.html
 https://ashki23.github.io/blogroll.html
 https://ashki23.github.io/biomass-conf.html
 https://ashki23.github.io/biomass-conf2.html
@@ -26,4 +27,5 @@ https://ashki23.github.io/emacs.html
 https://ashki23.github.io/spack.html
 https://ashki23.github.io/cluster.html
 https://ashki23.github.io/python-lib.html
+https://ashki23.github.io/tensorflow.html
 https://ashki23.github.io/markdown-latex.html

@@ -38,6 +38,9 @@
                         <a class="nav-link" href="research.html">Research</a>
                      </li>
             	 <li class="nav-item">
+                        <a class="nav-link" href="applications.html">Applications</a>
+                     </li>
+            	 <li class="nav-item">
                         <a class="nav-link" href="blogroll.html">Blogroll</a>
                      </li>
                   </ul>
@@ -89,14 +92,14 @@ From <a href="http://en.wikipedia.org/wiki/Image:LLNL_BGL_Diagram.png">wikipedia
 <li>Second, it provides a framework for starting, executing, and monitoring work (normally a parallel job) on the set of allocated nodes</li>
 <li>Finally, it arbitrates contention for resources by managing a queue of pending work (from <a href="https://slurm.schedmd.com/overview.html">Slurm overview</a>)</li>
 </ul>
-<h2 id="login-node">Login Node</h2>
+<h2 id="login-node">Login node</h2>
 <p>Users connect to clusters through the login nodes.</p>
 <p align="center">
 <img src="images/cluster-login.png" alt="Login Node" style="width: 80%; border: 0;">
 </p>
 <p><br /></p>
 <p>All jobs must be run using Slurm submitting tools to prevent running on the login node.</p>
-<h2 id="cluster-information">Cluster Information</h2>
+<h2 id="cluster-information">Cluster information</h2>
 <p>Slurm is a resource management system and has many tools to find available resources in the cluster. Following are set of Slurm commands for that purpose:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="ex">sinfo</span> –s <span class="co"># summary of cluster resources (-s --summarize)</span></span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="ex">sinfo</span> -p <span class="op">&lt;</span>partition-name<span class="op">&gt;</span> -o %n,%C,%m,%z <span class="co"># compute info of nodes in a partition (-o --format)</span></span>
@@ -122,13 +125,13 @@ Interact   122534Mb    24      4      4      4
 General*   122534Mb    24      4      4      4
 </code></pre>
 <p>For instance above <code>sinfo -s</code> shows partition hpc3 has 4 idle nodes (free) and users can run jobs up 2 days. And, <code>sjstat -c</code> shows that partition hpc3 has 4 nodes with 24 cpus and 122GB of memory on each node. In general, <code>CPUS/NODES(A/I/O/T)</code> count of CPUs/nodes in the form “available/idle/other/total” and <code>S:C:T</code> counts number of “sockets, cores, threads”.</p>
-<h2 id="users-information">Users Information</h2>
+<h2 id="users-information">Users information</h2>
 <p>Users can use Slurm to find more information about their accounts, fairshare and quality of services (QOS) and several Unix commands to find their storage quotas.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="ex">sshare</span> -U <span class="co"># show your fairshare and accounts (-U --Users)</span></span>
 <span id="cb3-2"><a href="#cb3-2"></a><span class="ex">sacctmgr</span> show assoc user=<span class="va">$USER</span> format=acc,user,share,qos,maxj <span class="co"># your QOS </span></span>
 <span id="cb3-3"><a href="#cb3-3"></a><span class="fu">groups</span> <span class="co"># show your groups</span></span>
 <span id="cb3-4"><a href="#cb3-4"></a><span class="fu">df</span> -h /home/<span class="va">$USER</span> home <span class="co"># storage quota (-h --human-readable)</span></span></code></pre></div>
-<h2 id="job-submission">Job Submission</h2>
+<h2 id="job-submission">Job submission</h2>
 <p>All jobs must be run using <code>srun</code> or <code>sbatch</code> to prevent running on the Cluster login node. In general, users can request resources and run tasks interactively or create a batch file and submit their jobs. The following graphs shows job submission workflow:</p>
 <p align="center">
 <img src="images/cluster-submit.png" alt="Job Submission" style="width: 90%; border: 0;">
@@ -219,7 +222,7 @@ Task ID: 6, Hostanem: cluster-hpc3-node908, CPU ID: 10
 Task ID: 7, Hostanem: cluster-hpc3-node908, CPU ID: 12
 Task ID: 8, Hostanem: cluster-hpc3-node908, CPU ID: 14
 Task ID: 9, Hostanem: cluster-hpc3-node908, CPU ID: 16</code></pre>
-<h2 id="monitoring-jobs">Monitoring Jobs</h2>
+<h2 id="monitoring-jobs">Monitoring jobs</h2>
 <p>The following Slurm commands can be used to monitor jobs:</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1"></a><span class="ex">sacct</span> -X <span class="co"># show your jobs in the last 24 hours (-X --allocations)</span></span>
 <span id="cb16-2"><a href="#cb16-2"></a><span class="ex">sacct</span> -X -S <span class="op">&lt;</span>yyyy-mm-dd<span class="op">&gt;</span> <span class="co"># show your jobs since a date (-S --starttime)</span></span>
@@ -228,7 +231,7 @@ Task ID: 9, Hostanem: cluster-hpc3-node908, CPU ID: 16</code></pre>
 <span id="cb16-5"><a href="#cb16-5"></a><span class="ex">squeue</span> -u <span class="op">&lt;</span>username<span class="op">&gt;</span> <span class="co"># show a user jobs (R/PD/CD) in the queue (-u --user)</span></span>
 <span id="cb16-6"><a href="#cb16-6"></a><span class="ex">squeue</span> -u <span class="op">&lt;</span>username<span class="op">&gt;</span> --start <span class="co"># show estimation time to start pending jobs</span></span>
 <span id="cb16-7"><a href="#cb16-7"></a><span class="ex">scancel</span> <span class="op">&lt;</span>jobid<span class="op">&gt;</span> <span class="co"># cancel jobs</span></span></code></pre></div>
-<h2 id="monitor-cpu-and-memory">Monitor CPU and Memory</h2>
+<h2 id="monitor-cpu-and-memory">Monitor CPU and memory</h2>
 <p><strong>Completed jobs</strong></p>
 <p>We can use the following options to check how many resouces is consumed by a completed job.</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1"></a><span class="ex">sacct</span> -j <span class="op">&lt;</span>jobid<span class="op">&gt;</span> -o User,Acc,AllocCPUS,Elaps,CPUTime,TotalCPU,AveDiskRead,AveDiskWrite,ReqMem,MaxRSS <span class="co"># info about CPU and virtual memory for compeleted jobs (-j --jobs)</span></span>
@@ -280,7 +283,7 @@ Task ID: 9, Hostanem: cluster-hpc3-node908, CPU ID: 16</code></pre>
 <span id="cb24-2"><a href="#cb24-2"></a><span class="ex">module</span> load matlab</span>
 <span id="cb24-3"><a href="#cb24-3"></a><span class="ex">matlab</span> -nodisplay</span></code></pre></div>
 <hr />
-<h2 id="more-resources">More Resources</h2>
+<h2 id="more-resources">More resources</h2>
 <ul>
 <li><a href="http://docs.rnet.missouri.edu">RCSS Documentation</a></li>
 <li><a href="https://www.xsede.org/for-users/training">XSEDE Training</a></li>
@@ -296,15 +299,15 @@ Task ID: 9, Hostanem: cluster-hpc3-node908, CPU ID: 16</code></pre>
                   <li class="toc-entry"><ul>
 <li><a href="#clusters">Clusters</a></li>
 <li><a href="#slurm">Slurm</a></li>
-<li><a href="#login-node">Login Node</a></li>
-<li><a href="#cluster-information">Cluster Information</a></li>
-<li><a href="#users-information">Users Information</a></li>
-<li><a href="#job-submission">Job Submission</a></li>
+<li><a href="#login-node">Login node</a></li>
+<li><a href="#cluster-information">Cluster information</a></li>
+<li><a href="#users-information">Users information</a></li>
+<li><a href="#job-submission">Job submission</a></li>
 <li><a href="#job-array">Job array</a></li>
-<li><a href="#monitoring-jobs">Monitoring Jobs</a></li>
-<li><a href="#monitor-cpu-and-memory">Monitor CPU and Memory</a></li>
+<li><a href="#monitoring-jobs">Monitoring jobs</a></li>
+<li><a href="#monitor-cpu-and-memory">Monitor CPU and memory</a></li>
 <li><a href="#modules">Modules</a></li>
-<li><a href="#more-resources">More Resources</a></li>
+<li><a href="#more-resources">More resources</a></li>
 </ul></li>
                </ul>
             </div>
@@ -313,7 +316,7 @@ Task ID: 9, Hostanem: cluster-hpc3-node908, CPU ID: 16</code></pre>
             <!-- Footer -->
             <footer class="footer text-muted">
                <div align="center">
-                  Docs is available under <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>
+                  Text is available under <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>
                   &nbsp;|&nbsp;
                   Code licensed under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank" rel="noopener">GPL-3.0</a>
                   &nbsp;|&nbsp;

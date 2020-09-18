@@ -38,6 +38,9 @@
                         <a class="nav-link" href="research.html">Research</a>
                      </li>
             	 <li class="nav-item">
+                        <a class="nav-link" href="applications.html">Applications</a>
+                     </li>
+            	 <li class="nav-item">
                         <a class="nav-link" href="blogroll.html">Blogroll</a>
                      </li>
                   </ul>
@@ -89,8 +92,8 @@
 <span id="cb4-10"><a href="#cb4-10"></a><span class="ex">pip</span> install redis gitpython</span></code></pre></div>
 <hr />
 <h2 id="miniconda">Miniconda</h2>
-<p>To use a more sophisticated method, we might consider <a href="https://conda.io/en/latest/">Conda</a> as an environment management system. To start using Conda, follow <a href="https://conda.io/projects/conda/en/latest/user-guide/install/index.html">Conda website</a> instruction to install Miniconda (or Anaconda) on your operating system.</p>
-<p>When Miniconda is installed use <code>conda init &lt;shell-name&gt;</code> to initiate Conda and run <code>conda config --set auto_activate_base false</code> to stop auto base activation. For Conda autocompletion copy <a href="https://github.com/tartansandal/conda-bash-completion/blob/master/conda">conda-bash-completion</a> in <code>/usr/share/bash-completion/completions/conda</code>.</p>
+<p>To create virtual environments, <a href="https://conda.io/en/latest/">Conda</a> could be the best environment management system. Miniconda is an open source package and environment management system that includes Conda. Conda quickly installs, runs and updates packages and their dependencies. To start using Conda, follow <a href="https://conda.io/projects/conda/en/latest/user-guide/install/index.html">Conda website</a> instruction to install Miniconda (or Anaconda if you want to have most of the scientific packages) on your operating system.</p>
+<p>When Miniconda is installed, use <code>conda init &lt;shell-name&gt;</code> to initiate Conda and run <code>conda config --set auto_activate_base false</code> to stop auto base activation. For Conda autocompletion copy <a href="https://github.com/tartansandal/conda-bash-completion/blob/master/conda">conda-bash-completion</a> in <code>/usr/share/bash-completion/completions/conda</code> on a Linux or corresponding directory on a MacOS or Windows OS.</p>
 <h3 id="usage">Usage</h3>
 <p>To create a new environment, use <code>conda create</code> command including names of the environment and required packages:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1"></a><span class="ex">conda</span> create --name env_name package1 package2=version ...</span></code></pre></div>
@@ -148,7 +151,7 @@
             <!-- Footer -->
             <footer class="footer text-muted">
                <div align="center">
-                  Docs is available under <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>
+                  Text is available under <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>
                   &nbsp;|&nbsp;
                   Code licensed under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank" rel="noopener">GPL-3.0</a>
                   &nbsp;|&nbsp;

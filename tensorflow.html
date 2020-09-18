@@ -1,0 +1,173 @@
+<!doctype html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="generator" content="pandoc">
+      <meta name="author" content="Ashkan Mirzaee">
+      <meta name="description" content="How to install and use TensorFlow">
+      <title>Introduction to TensorFlow</title>
+      <!-- Bootstrap -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+      <!-- Font-awesome -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <!-- Styles -->
+      <link rel="stylesheet" href="https://ashki23.github.io/styles.css">
+            <!-- Favicon -->
+            <link rel="icon" href="images/AM.jpg">
+            <!-- Google-site-verification -->
+            <meta name="google-site-verification" content="lD_nifpQ-CA6LaDwxYJbe5bq0oa6Ir0Ax-txvtdP51E">
+            <!-- Bing-site-verification -->
+            <meta name="msvalidate.01" content="89BCD3FF42B6E9FE48E0C8365767D11B">
+         </head>
+   <body>
+            <nav class="navbar fixed-top navbar-expand-lg navbar-dark bd-navbar">
+               <a class="navbar-brand" href="index.html">Ashkan Mirzaee</a>
+               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="border: none; outline: none; padding-right: 0; padding-left: 1rem;">
+               <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                     <li class="nav-item">
+                        <a class="nav-link" href="page1.html">Blog</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="tutorials.html">Tutorials</a>
+                     </li>
+            	 <li class="nav-item">
+                        <a class="nav-link" href="research.html">Research</a>
+                     </li>
+            	 <li class="nav-item">
+                        <a class="nav-link" href="applications.html">Applications</a>
+                     </li>
+            	 <li class="nav-item">
+                        <a class="nav-link" href="blogroll.html">Blogroll</a>
+                     </li>
+                  </ul>
+                  <ul class="navbar-nav ml-auto">
+            	<li class="nav-item">
+            	  <a class="nav-link" href="contact.html" aria-label="Contact">
+            	    <span class="fa fa-envelope fa-lg"></a>
+            	</li>
+            	<li class="nav-item">
+            	  <a class="nav-link" href="https://github.com/ashki23" target="_blank" rel="noopener" aria-label="GitHub">
+            	    <span class="fa fa-github fa-lg"></span></a>
+            	</li>
+            	<li class="nav-item">
+            	  <a class="nav-link" href="https://gitlab.com/ashki23" target="_blank" rel="noopener" aria-label="GitLab">
+            	    <span class="fa fa-gitlab fa-lg"></span></a>
+            	</li>
+            	<li class="nav-item">
+            	  <a class="nav-link" href="https://www.linkedin.com/in/ashkan-mirzaee/" target="_blank" rel="noopener" aria-label="Linkedin">
+            	    <span class="fa fa-linkedin fa-lg"></span></a>
+            	</li>
+                  </ul>
+               </div>
+            </nav>
+            <div class="container">
+         <h1 class="title">Introduction to TensorFlow</h1>
+                  <div class="row">
+            <div class="col-xl-10"><p><a href="https://www.tensorflow.org/">TensorFlow</a> is an end-to-end open source platform for machine learning. It has a comprehensive, flexible ecosystem of tools, libraries and community resources that lets researchers push the state-of-the-art in ML and developers easily build and deploy ML powered applications.</p>
+<ul>
+<li><a href="https://www.tensorflow.org/guide">TensorFlow Guide</a></li>
+</ul>
+<p>This document will cover how to install TensorFlow (TF) by using Anaconda and run a toy example in Python. Make sure review <a href="python-env.html#miniconda">Anaconda</a> to learn how to create and maintain Conda virtual environments.</p>
+<hr />
+<h2 id="tensorflow-environment">TensorFlow environment</h2>
+<p>We have two options for using TensorFlow (TF), one is using CPUs for the computational tasks and the other one is using GPU resources. Depends on your workflow and identity of your calculations, you might choose any of these methods.</p>
+<p>To use TF with CPU resources, use the following to create the environment (env) and install TF:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="ex">conda</span> create --name tensorflow-env tensorflow</span></code></pre></div>
+<p>And use the following to install TF for GPUs:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="ex">conda</span> create --name tensorflow-gpu-env tensorflow-gpu</span></code></pre></div>
+<p>Note that <code>tensorflow-gpu</code> includes <code>cudatoolkit</code> and <code>cudnn</code> in addition to TF. Also in a HPC system, you need to request resources and load <code>miniconda3</code> module first.</p>
+<h2 id="a-simple-example">A simple example</h2>
+<p>After creating the preferred env, we can use Python to run TF. The following is a simple example from TensorFlow <a href="https://www.tensorflow.org/tutorials/quickstart/beginner">tutorials</a>. This example uses <a href="http://yann.lecun.com/exdb/mnist/">the MNIST database</a> and <em>Keras</em> to run a pattern recognition training task on images of handwritten digits.</p>
+<p>Create a Python file called <code>minist.py</code> including the following scripts (from <a href="https://www.tensorflow.org/tutorials/quickstart/beginner">here</a>):</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="im">import</span> tensorflow <span class="im">as</span> tf</span>
+<span id="cb3-2"><a href="#cb3-2"></a>mnist <span class="op">=</span> tf.keras.datasets.mnist</span>
+<span id="cb3-3"><a href="#cb3-3"></a></span>
+<span id="cb3-4"><a href="#cb3-4"></a>(x_train, y_train),(x_test, y_test) <span class="op">=</span> mnist.load_data()</span>
+<span id="cb3-5"><a href="#cb3-5"></a>x_train, x_test <span class="op">=</span> x_train <span class="op">/</span> <span class="fl">255.0</span>, x_test <span class="op">/</span> <span class="fl">255.0</span></span>
+<span id="cb3-6"><a href="#cb3-6"></a></span>
+<span id="cb3-7"><a href="#cb3-7"></a>model <span class="op">=</span> tf.keras.models.Sequential([</span>
+<span id="cb3-8"><a href="#cb3-8"></a>  tf.keras.layers.Flatten(input_shape<span class="op">=</span>(<span class="dv">28</span>, <span class="dv">28</span>)),</span>
+<span id="cb3-9"><a href="#cb3-9"></a>  tf.keras.layers.Dense(<span class="dv">128</span>, activation<span class="op">=</span><span class="st">&#39;relu&#39;</span>),</span>
+<span id="cb3-10"><a href="#cb3-10"></a>  tf.keras.layers.Dropout(<span class="fl">0.2</span>),</span>
+<span id="cb3-11"><a href="#cb3-11"></a>  tf.keras.layers.Dense(<span class="dv">10</span>, activation<span class="op">=</span><span class="st">&#39;softmax&#39;</span>)</span>
+<span id="cb3-12"><a href="#cb3-12"></a>])</span>
+<span id="cb3-13"><a href="#cb3-13"></a></span>
+<span id="cb3-14"><a href="#cb3-14"></a>model.<span class="bu">compile</span>(optimizer<span class="op">=</span><span class="st">&#39;adam&#39;</span>,</span>
+<span id="cb3-15"><a href="#cb3-15"></a>              loss<span class="op">=</span><span class="st">&#39;sparse_categorical_crossentropy&#39;</span>,</span>
+<span id="cb3-16"><a href="#cb3-16"></a>              metrics<span class="op">=</span>[<span class="st">&#39;accuracy&#39;</span>])</span>
+<span id="cb3-17"><a href="#cb3-17"></a></span>
+<span id="cb3-18"><a href="#cb3-18"></a>model.fit(x_train, y_train, epochs<span class="op">=</span><span class="dv">5</span>)</span>
+<span id="cb3-19"><a href="#cb3-19"></a>model.evaluate(x_test, y_test)</span></code></pre></div>
+<p>To run the above code with CPUs, we can use:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1"></a><span class="ex">conda</span> activate tensorflow-env</span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="ex">python3</span> minist.py</span></code></pre></div>
+<p>Also, if you have created <code>tensorflow-gpu-env</code> environment, you can use the following to run this job with a GPU.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1"></a><span class="ex">conda</span> activate tensorflow-gpu-env</span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="ex">python3</span> minist.py</span></code></pre></div>
+<p>Note that in an HPC system with <a href="cluster.html#slurm">Slum</a> scheduler, we can use a sbatch file, called <code>tf-gpu.sh</code>, such that:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a></span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="co">#SBATCH -p gpu-partition # modify partition&#39;s name</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="co">#SBATCH --gres gpu:1</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a><span class="co">#SBATCH --mem 16G</span></span>
+<span id="cb6-6"><a href="#cb6-6"></a><span class="co">#SBATCH -n 4</span></span>
+<span id="cb6-7"><a href="#cb6-7"></a><span class="co">#SBATCH -N 1</span></span>
+<span id="cb6-8"><a href="#cb6-8"></a></span>
+<span id="cb6-9"><a href="#cb6-9"></a><span class="ex">module</span> load miniconda3</span>
+<span id="cb6-10"><a href="#cb6-10"></a><span class="ex">conda</span> activate tensorflow-gpu-env</span>
+<span id="cb6-11"><a href="#cb6-11"></a></span>
+<span id="cb6-12"><a href="#cb6-12"></a><span class="ex">python3</span> minist.py</span></code></pre></div>
+<p>To submit the job to a GPU partition by running <code>sbatch tf-gpu.sh</code>. Slurm out file will show the outputs.</p></div>
+            <div class="d-none d-xl-block col-xl-2 bd-toc">
+               <ul class="section-nav">
+                  <li class="toc-entry"><ul>
+<li><a href="#tensorflow-environment">TensorFlow environment</a></li>
+<li><a href="#a-simple-example">A simple example</a></li>
+</ul></li>
+               </ul>
+            </div>
+         </div>
+               </div>
+            <!-- Footer -->
+            <footer class="footer text-muted">
+               <div align="center">
+                  Text is available under <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>
+                  &nbsp;|&nbsp;
+                  Code licensed under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank" rel="noopener">GPL-3.0</a>
+                  &nbsp;|&nbsp;
+                  Built with <a href="https://github.com/ashki23/pandoc-bootstrap" target="_blank" rel="noopener">pandoc-bootstrap</a> theme
+                  <br />
+                  Copyright 2018-2020, Ashkan Mirzaee
+               </div>
+            </footer>
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132464297-1"></script>
+            <script>
+               window.dataLayer = window.dataLayer || [];
+               function gtag(){dataLayer.push(arguments);}
+               gtag('js', new Date());
+               gtag('config', 'UA-132464297-1');
+            </script>
+            <!-- JS, Popper.js, and jQuery -->
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+      <!-- Mathjax -->
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script>
+         /* Bootstrap styles to tables */
+         function bootstrapStylePandocTables() {
+         $('tr.header').parent('thead').parent('table').addClass('table table-condensed'); }
+         $(document).ready(function () { bootstrapStylePandocTables(); });
+         /* Adjust the height when click the toc */
+         var shiftWindow = function() { scrollBy(0, -60) };
+         window.addEventListener("hashchange", shiftWindow);
+         function load() { if (window.location.hash) shiftWindow(); }
+      </script>
+   </body>
+</html>
