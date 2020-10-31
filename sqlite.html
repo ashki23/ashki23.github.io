@@ -79,21 +79,22 @@
 <h2 id="usage">Usage</h2>
 <p>SQLite can be used in GUI software such as <a href="https://sqlitebrowser.org/">DB Browser for SQLite</a>. But there are a lot of advantages to get queries directly in Python. In this document we are going to use module <code>sqlite3</code> in Python to create a databases, import data and run queries.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> sqlite3</span></code></pre></div>
-<p>To create a database (db) or connect to an existing db and add a cursor to the db use:</p>
+<p>To create a database (db) or connect to an existing one and to add a cursor use:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>con <span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="st">&#39;./mydb.db&#39;</span>)</span>
 <span id="cb2-2"><a href="#cb2-2"></a>cur <span class="op">=</span> con.cursor()</span></code></pre></div>
 <p>After setting “cur” pragma, we can start to execute SQL commands. For instance to create a table, called “survey”, with some fields we can run:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>cur.execute(<span class="st">&quot;&quot;&quot;CREATE TABLE IF NOT EXISTS survey (</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="st">                   record_id integer PRIMARY KEY,</span></span>
-<span id="cb3-3"><a href="#cb3-3"></a><span class="st">                   month text,</span></span>
-<span id="cb3-4"><a href="#cb3-4"></a><span class="st">                   day text,</span></span>
-<span id="cb3-5"><a href="#cb3-5"></a><span class="st">                   year text,</span></span>
-<span id="cb3-6"><a href="#cb3-6"></a><span class="st">                   plot_id text,</span></span>
-<span id="cb3-7"><a href="#cb3-7"></a><span class="st">                   species_id text,</span></span>
-<span id="cb3-8"><a href="#cb3-8"></a><span class="st">                   sex text,</span></span>
-<span id="cb3-9"><a href="#cb3-9"></a><span class="st">                   hindfoot_length real,</span></span>
-<span id="cb3-10"><a href="#cb3-10"></a><span class="st">                   weight real</span></span>
-<span id="cb3-11"><a href="#cb3-11"></a><span class="st">                );&quot;&quot;&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>cur.execute(<span class="st">&quot;&quot;&quot;</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="st">CREATE TABLE IF NOT EXISTS survey (</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="st">    record_id integer PRIMARY KEY,</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="st">    month text,</span></span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="st">    day text,</span></span>
+<span id="cb3-6"><a href="#cb3-6"></a><span class="st">    year text,</span></span>
+<span id="cb3-7"><a href="#cb3-7"></a><span class="st">    plot_id text,</span></span>
+<span id="cb3-8"><a href="#cb3-8"></a><span class="st">    species_id text,</span></span>
+<span id="cb3-9"><a href="#cb3-9"></a><span class="st">    sex text,</span></span>
+<span id="cb3-10"><a href="#cb3-10"></a><span class="st">    hindfoot_length real,</span></span>
+<span id="cb3-11"><a href="#cb3-11"></a><span class="st">    weight real</span></span>
+<span id="cb3-12"><a href="#cb3-12"></a><span class="st">    );&quot;&quot;&quot;</span>)</span></code></pre></div>
 <p>As you noticed we simply ran the SQL command to create the table with <code>cur.execute</code>. Later we will use this method to run SQL queries.</p>
 <h2 id="importing-data-from-csv">Importing data from CSV</h2>
 <p>Since we have a table, we can insert the data from “surveys.csv” into “survey” table by:</p>
@@ -141,7 +142,7 @@
 <p>Let’s use the above function to convert “survey.csv” and “species.csv” to tables in “eco.db”. Now, we can use <code>execute</code> command for running SQL commands in Python. For example:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="im">import</span> sqlite3</span>
 <span id="cb7-2"><a href="#cb7-2"></a></span>
-<span id="cb7-3"><a href="#cb7-3"></a><span class="co"># Connect and read the BD</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a><span class="co"># Connect and read the db</span></span>
 <span id="cb7-4"><a href="#cb7-4"></a>con <span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="st">&#39;./eco.db&#39;</span>)</span>
 <span id="cb7-5"><a href="#cb7-5"></a>cur <span class="op">=</span> con.cursor()</span>
 <span id="cb7-6"><a href="#cb7-6"></a></span>
@@ -161,43 +162,43 @@
 <span id="cb7-20"><a href="#cb7-20"></a>lis <span class="op">=</span> [x[<span class="dv">0</span>] <span class="cf">for</span> x <span class="kw">in</span> out]</span>
 <span id="cb7-21"><a href="#cb7-21"></a><span class="bu">print</span>(lis)</span>
 <span id="cb7-22"><a href="#cb7-22"></a></span>
-<span id="cb7-23"><a href="#cb7-23"></a><span class="co"># Connect and read the BD</span></span>
-<span id="cb7-24"><a href="#cb7-24"></a>con <span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="st">&#39;./eco.db&#39;</span>)</span>
-<span id="cb7-25"><a href="#cb7-25"></a>cur <span class="op">=</span> con.cursor()</span>
-<span id="cb7-26"><a href="#cb7-26"></a></span>
-<span id="cb7-27"><a href="#cb7-27"></a><span class="co">## [&#39;1977&#39;, &#39;1978&#39;, &#39;1979&#39;, &#39;1980&#39;, &#39;1981&#39;, &#39;1982&#39;, &#39;1983&#39;, &#39;1984&#39;, &#39;1985&#39;, &#39;1986&#39;, &#39;1987&#39;, &#39;1988&#39;, &#39;1989&#39;, &#39;1990&#39;, &#39;1991&#39;, &#39;1992&#39;, &#39;1993&#39;, &#39;1994&#39;, &#39;1995&#39;, &#39;1996&#39;, &#39;1997&#39;, &#39;1998&#39;, &#39;1999&#39;, &#39;2000&#39;, &#39;2001&#39;, &#39;2002&#39;]</span></span></code></pre></div>
+<span id="cb7-23"><a href="#cb7-23"></a><span class="co">## [&#39;1977&#39;, &#39;1978&#39;, &#39;1979&#39;, &#39;1980&#39;, &#39;1981&#39;, &#39;1982&#39;, &#39;1983&#39;, &#39;1984&#39;, &#39;1985&#39;, &#39;1986&#39;, &#39;1987&#39;, &#39;1988&#39;, &#39;1989&#39;, &#39;1990&#39;, &#39;1991&#39;, &#39;1992&#39;, &#39;1993&#39;, &#39;1994&#39;, &#39;1995&#39;, &#39;1996&#39;, &#39;1997&#39;, &#39;1998&#39;, &#39;1999&#39;, &#39;2000&#39;, &#39;2001&#39;, &#39;2002&#39;]</span></span></code></pre></div>
 <p>In the above example we stored the output as a Python list. We can also store the queries in Python dictionaries:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="im">import</span> sqlite3</span>
 <span id="cb8-2"><a href="#cb8-2"></a></span>
-<span id="cb8-3"><a href="#cb8-3"></a><span class="co"># SQL query</span></span>
-<span id="cb8-4"><a href="#cb8-4"></a>cur.execute(<span class="st">&quot;SELECT name FROM PRAGMA_TABLE_INFO(&#39;survey&#39;);&quot;</span>) <span class="co"># select fields&#39; name</span></span>
-<span id="cb8-5"><a href="#cb8-5"></a></span>
-<span id="cb8-6"><a href="#cb8-6"></a><span class="co"># Store output</span></span>
-<span id="cb8-7"><a href="#cb8-7"></a>out <span class="op">=</span> cur.fetchall()</span>
-<span id="cb8-8"><a href="#cb8-8"></a>name <span class="op">=</span> [x[<span class="dv">0</span>] <span class="cf">for</span> x <span class="kw">in</span> out]</span>
-<span id="cb8-9"><a href="#cb8-9"></a><span class="bu">print</span>(name)</span>
-<span id="cb8-10"><a href="#cb8-10"></a></span>
-<span id="cb8-11"><a href="#cb8-11"></a><span class="co">## [&#39;record_id&#39;, &#39;month&#39;, &#39;day&#39;, &#39;year&#39;, &#39;plot_id&#39;, &#39;species_id&#39;, &#39;sex&#39;, &#39;hindfoot_length&#39;, &#39;weight&#39;]</span></span>
-<span id="cb8-12"><a href="#cb8-12"></a></span>
-<span id="cb8-13"><a href="#cb8-13"></a><span class="co"># Exe query, store output and close the connection</span></span>
-<span id="cb8-14"><a href="#cb8-14"></a>cur.execute(<span class="st">&#39;SELECT * FROM survey LIMIT 2;&#39;</span>) <span class="co"># select first two rows</span></span>
-<span id="cb8-15"><a href="#cb8-15"></a>out <span class="op">=</span> cur.fetchall()</span>
-<span id="cb8-16"><a href="#cb8-16"></a>con.close()</span>
-<span id="cb8-17"><a href="#cb8-17"></a><span class="bu">print</span>(out)</span>
-<span id="cb8-18"><a href="#cb8-18"></a></span>
-<span id="cb8-19"><a href="#cb8-19"></a><span class="co">## [(1, &#39;7&#39;, &#39;16&#39;, &#39;1977&#39;, &#39;2&#39;, &#39;NL&#39;, &#39;M&#39;, 32.0, &#39;&#39;), (2, &#39;7&#39;, &#39;16&#39;, &#39;1977&#39;, &#39;3&#39;, &#39;NL&#39;, &#39;M&#39;, 33.0, &#39;&#39;)]</span></span>
-<span id="cb8-20"><a href="#cb8-20"></a></span>
-<span id="cb8-21"><a href="#cb8-21"></a><span class="co"># Output as a list of dictionaries</span></span>
-<span id="cb8-22"><a href="#cb8-22"></a>d <span class="op">=</span> []</span>
-<span id="cb8-23"><a href="#cb8-23"></a><span class="cf">for</span> i <span class="kw">in</span> out:</span>
-<span id="cb8-24"><a href="#cb8-24"></a>    d.append(<span class="bu">dict</span>(<span class="bu">zip</span>(name,i)))</span>
-<span id="cb8-25"><a href="#cb8-25"></a><span class="bu">print</span>(d)</span>
-<span id="cb8-26"><a href="#cb8-26"></a></span>
-<span id="cb8-27"><a href="#cb8-27"></a><span class="co">## [{&#39;record_id&#39;: 1, &#39;month&#39;: &#39;7&#39;, &#39;day&#39;: &#39;16&#39;, &#39;year&#39;: &#39;1977&#39;, &#39;plot_id&#39;: &#39;2&#39;, &#39;species_id&#39;: &#39;NL&#39;, &#39;sex&#39;: &#39;M&#39;, &#39;hindfoot_length&#39;: 32.0, &#39;weight&#39;: &#39;&#39;}, {&#39;record_id&#39;: 2, &#39;month&#39;: &#39;7&#39;, &#39;day&#39;: &#39;16&#39;, &#39;year&#39;: &#39;1977&#39;, &#39;plot_id&#39;: &#39;3&#39;, &#39;species_id&#39;: &#39;NL&#39;, &#39;sex&#39;: &#39;M&#39;, &#39;hindfoot_length&#39;: 33.0, &#39;weight&#39;: &#39;&#39;}]</span></span></code></pre></div>
+<span id="cb8-3"><a href="#cb8-3"></a><span class="co"># Connect and read the db</span></span>
+<span id="cb8-4"><a href="#cb8-4"></a>con <span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="st">&#39;./eco.db&#39;</span>)</span>
+<span id="cb8-5"><a href="#cb8-5"></a>cur <span class="op">=</span> con.cursor()</span>
+<span id="cb8-6"><a href="#cb8-6"></a></span>
+<span id="cb8-7"><a href="#cb8-7"></a><span class="co"># SQL query</span></span>
+<span id="cb8-8"><a href="#cb8-8"></a>cur.execute(<span class="st">&quot;SELECT name FROM PRAGMA_TABLE_INFO(&#39;survey&#39;);&quot;</span>) <span class="co"># select fields&#39; name</span></span>
+<span id="cb8-9"><a href="#cb8-9"></a></span>
+<span id="cb8-10"><a href="#cb8-10"></a><span class="co"># Store output</span></span>
+<span id="cb8-11"><a href="#cb8-11"></a>out <span class="op">=</span> cur.fetchall()</span>
+<span id="cb8-12"><a href="#cb8-12"></a>name <span class="op">=</span> [x[<span class="dv">0</span>] <span class="cf">for</span> x <span class="kw">in</span> out]</span>
+<span id="cb8-13"><a href="#cb8-13"></a><span class="bu">print</span>(name)</span>
+<span id="cb8-14"><a href="#cb8-14"></a></span>
+<span id="cb8-15"><a href="#cb8-15"></a><span class="co">## [&#39;record_id&#39;, &#39;month&#39;, &#39;day&#39;, &#39;year&#39;, &#39;plot_id&#39;, &#39;species_id&#39;, &#39;sex&#39;, &#39;hindfoot_length&#39;, &#39;weight&#39;]</span></span>
+<span id="cb8-16"><a href="#cb8-16"></a></span>
+<span id="cb8-17"><a href="#cb8-17"></a><span class="co"># Exe query, store output and close the connection</span></span>
+<span id="cb8-18"><a href="#cb8-18"></a>cur.execute(<span class="st">&#39;SELECT * FROM survey LIMIT 2;&#39;</span>) <span class="co"># select first two rows</span></span>
+<span id="cb8-19"><a href="#cb8-19"></a>out <span class="op">=</span> cur.fetchall()</span>
+<span id="cb8-20"><a href="#cb8-20"></a>con.close()</span>
+<span id="cb8-21"><a href="#cb8-21"></a><span class="bu">print</span>(out)</span>
+<span id="cb8-22"><a href="#cb8-22"></a></span>
+<span id="cb8-23"><a href="#cb8-23"></a><span class="co">## [(1, &#39;7&#39;, &#39;16&#39;, &#39;1977&#39;, &#39;2&#39;, &#39;NL&#39;, &#39;M&#39;, 32.0, &#39;&#39;), (2, &#39;7&#39;, &#39;16&#39;, &#39;1977&#39;, &#39;3&#39;, &#39;NL&#39;, &#39;M&#39;, 33.0, &#39;&#39;)]</span></span>
+<span id="cb8-24"><a href="#cb8-24"></a></span>
+<span id="cb8-25"><a href="#cb8-25"></a><span class="co"># Output as a list of dictionaries</span></span>
+<span id="cb8-26"><a href="#cb8-26"></a>d <span class="op">=</span> []</span>
+<span id="cb8-27"><a href="#cb8-27"></a><span class="cf">for</span> i <span class="kw">in</span> out:</span>
+<span id="cb8-28"><a href="#cb8-28"></a>    d.append(<span class="bu">dict</span>(<span class="bu">zip</span>(name,i)))</span>
+<span id="cb8-29"><a href="#cb8-29"></a><span class="bu">print</span>(d)</span>
+<span id="cb8-30"><a href="#cb8-30"></a></span>
+<span id="cb8-31"><a href="#cb8-31"></a><span class="co">## [{&#39;record_id&#39;: 1, &#39;month&#39;: &#39;7&#39;, &#39;day&#39;: &#39;16&#39;, &#39;year&#39;: &#39;1977&#39;, &#39;plot_id&#39;: &#39;2&#39;, &#39;species_id&#39;: &#39;NL&#39;, &#39;sex&#39;: &#39;M&#39;, &#39;hindfoot_length&#39;: 32.0, &#39;weight&#39;: &#39;&#39;}, {&#39;record_id&#39;: 2, &#39;month&#39;: &#39;7&#39;, &#39;day&#39;: &#39;16&#39;, &#39;year&#39;: &#39;1977&#39;, &#39;plot_id&#39;: &#39;3&#39;, &#39;species_id&#39;: &#39;NL&#39;, &#39;sex&#39;: &#39;M&#39;, &#39;hindfoot_length&#39;: 33.0, &#39;weight&#39;: &#39;&#39;}]</span></span></code></pre></div>
 <p>The following are more examples of different SQL queries in Python:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a><span class="im">import</span> sqlite3</span>
 <span id="cb9-2"><a href="#cb9-2"></a></span>
-<span id="cb9-3"><a href="#cb9-3"></a><span class="co"># Connect and read the BD</span></span>
+<span id="cb9-3"><a href="#cb9-3"></a><span class="co"># Connect and read the db</span></span>
 <span id="cb9-4"><a href="#cb9-4"></a>con <span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="st">&#39;./eco.db&#39;</span>)</span>
 <span id="cb9-5"><a href="#cb9-5"></a>cur <span class="op">=</span> con.cursor()</span>
 <span id="cb9-6"><a href="#cb9-6"></a></span>
