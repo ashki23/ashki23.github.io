@@ -245,7 +245,12 @@
 <span id="cb9-48"><a href="#cb9-48"></a><span class="st">WHERE weight &lt; 5 AND sex = &#39;F&#39;</span></span>
 <span id="cb9-49"><a href="#cb9-49"></a><span class="st">LIMIT 2;&quot;&quot;&quot;</span>)</span>
 <span id="cb9-50"><a href="#cb9-50"></a><span class="bu">print</span>(cur.fetchall())</span>
-<span id="cb9-51"><a href="#cb9-51"></a><span class="co">## (&#39;AB-bilineata&#39;,)</span></span></code></pre></div>
+<span id="cb9-51"><a href="#cb9-51"></a><span class="co">## [(4052, &#39;4&#39;, &#39;5&#39;, &#39;1981&#39;, &#39;3&#39;, &#39;PF&#39;, &#39;F&#39;, 15.0, 4.0, &#39;PF&#39;, &#39;Perognathus&#39;, &#39;flavus&#39;, &#39;Rodent&#39;), (5346, &#39;2&#39;, &#39;22&#39;, &#39;1982&#39;, &#39;21&#39;, &#39;PF&#39;, &#39;F&#39;, 14.0, 4.0, &#39;PF&#39;, &#39;Perognathus&#39;, &#39;flavus&#39;, &#39;Rodent&#39;)]</span></span>
+<span id="cb9-52"><a href="#cb9-52"></a></span>
+<span id="cb9-53"><a href="#cb9-53"></a>cur.execute(<span class="st">&quot;&quot;&quot;</span></span>
+<span id="cb9-54"><a href="#cb9-54"></a><span class="st">SELECT species_id ||&#39;-&#39;|| species FROM species;&quot;&quot;&quot;</span>)</span>
+<span id="cb9-55"><a href="#cb9-55"></a><span class="bu">print</span>(cur.fetchone())</span>
+<span id="cb9-56"><a href="#cb9-56"></a><span class="co">## (&#39;AB-bilineata&#39;,)</span></span></code></pre></div>
 <p>Note that:</p>
 <ul>
 <li>We can use <code>fetchall()</code> to fetch all outputs and <code>fetchone()</code> to get the first query</li>
@@ -272,16 +277,13 @@
 <span id="cb10-17"><a href="#cb10-17"></a><span class="co">-- 1          7      16   1977  2        NL          M    32.0                   </span></span>
 <span id="cb10-18"><a href="#cb10-18"></a><span class="co">-- 2          7      16   1977  3        NL          M    33.0                   </span></span>
 <span id="cb10-19"><a href="#cb10-19"></a><span class="co">-- 3          7      16   1977  2        DM          F    37.0                   </span></span>
-<span id="cb10-20"><a href="#cb10-20"></a><span class="co">-- 4          7      16   1977  7        DM          M    36.0                   </span></span></code></pre></div>
-<h2 id="pf-f-15.0-4.0-pf-perognathus-flavus-rodent-5346-2-22-1982-21-pf-f-14.0-4.0-pf-perognathus-flavus-rodent">[(4052, ‘4’, ‘5’, ‘1981’, ‘3’, ‘PF’, ‘F’, 15.0, 4.0, ‘PF’, ‘Perognathus’, ‘flavus’, ‘Rodent’), (5346, ‘2’, ‘22’, ‘1982’, ‘21’, ‘PF’, ‘F’, 14.0, 4.0, ‘PF’, ‘Perognathus’, ‘flavus’, ‘Rodent’)]</h2>
-<p>cur.execute(""" SELECT species_id ||‘-’|| species FROM species;""") print(cur.fetchone())</p></div>
+<span id="cb10-20"><a href="#cb10-20"></a><span class="co">-- 4          7      16   1977  7        DM          M    36.0                   </span></span></code></pre></div></div>
             <div class="d-none d-xl-block col-xl-2 bd-toc">
                <ul class="section-nav">
                   <li class="toc-entry"><ul>
 <li><a href="#usage">Usage</a></li>
 <li><a href="#importing-data-from-csv">Importing data from CSV</a></li>
 <li><a href="#queries">Queries</a></li>
-<li><a href="#pf-f-15.0-4.0-pf-perognathus-flavus-rodent-5346-2-22-1982-21-pf-f-14.0-4.0-pf-perognathus-flavus-rodent">[(4052, ‘4’, ‘5’, ‘1981’, ‘3’, ‘PF’, ‘F’, 15.0, 4.0, ‘PF’, ‘Perognathus’, ‘flavus’, ‘Rodent’), (5346, ‘2’, ‘22’, ‘1982’, ‘21’, ‘PF’, ‘F’, 14.0, 4.0, ‘PF’, ‘Perognathus’, ‘flavus’, ‘Rodent’)]</a></li>
 </ul></li>
                </ul>
             </div>
