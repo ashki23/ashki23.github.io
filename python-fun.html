@@ -271,7 +271,7 @@
 <span id="cb14-7"><a href="#cb14-7"></a><span class="co">## 12.002843163827492</span></span></code></pre></div>
 <p>As we know, the second derivative of <em>f(x) = x^3</em> is equal to <em>6 * x</em> which is equal to <em>12</em> for <em>x = 2</em>. Note that we can find the derivative of functions by using <code>SymPy</code> package, for example:</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a><span class="im">import</span> sympy</span>
-<span id="cb15-2"><a href="#cb15-2"></a>x <span class="op">=</span> symbols(<span class="st">&#39;x&#39;</span>)</span>
+<span id="cb15-2"><a href="#cb15-2"></a>x <span class="op">=</span> sympy.symbols(<span class="st">&#39;x&#39;</span>)</span>
 <span id="cb15-3"><a href="#cb15-3"></a>f <span class="op">=</span> x<span class="op">**</span><span class="dv">3</span></span>
 <span id="cb15-4"><a href="#cb15-4"></a>ff <span class="op">=</span> f.diff(x,<span class="dv">2</span>)</span>
 <span id="cb15-5"><a href="#cb15-5"></a>ff</span>

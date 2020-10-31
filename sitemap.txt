@@ -12,6 +12,7 @@ https://ashki23.github.io/biomass-conf.html
 https://ashki23.github.io/biomass-conf2.html
 https://ashki23.github.io/shortest-path.html
 https://ashki23.github.io/safety-stock.html
+https://ashki23.github.io/biomass.html
 https://ashki23.github.io/python-fun.html
 https://ashki23.github.io/python-str.html
 https://ashki23.github.io/python-env.html
@@ -28,4 +29,6 @@ https://ashki23.github.io/spack.html
 https://ashki23.github.io/cluster.html
 https://ashki23.github.io/python-lib.html
 https://ashki23.github.io/tensorflow.html
+https://ashki23.github.io/sqlite.html
+https://ashki23.github.io/vagrant.html
 https://ashki23.github.io/markdown-latex.html
