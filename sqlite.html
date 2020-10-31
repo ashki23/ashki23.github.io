@@ -258,26 +258,12 @@
 <li>And we can combine fields by <code>||'&lt;separator&gt;'||</code></li>
 </ul>
 <p>Also, we can use SQLite3 directly from command line for getting queries. For example, change the directory to your database location and enter <code>sqlite3 eco.db</code> to open the database and run:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb10-1"><a href="#cb10-1"></a>.<span class="kw">schema</span> <span class="co">--to see the schema of the databse</span></span>
-<span id="cb10-2"><a href="#cb10-2"></a>.<span class="kw">tables</span> <span class="co">--to list tables in the databaset</span></span>
-<span id="cb10-3"><a href="#cb10-3"></a>.<span class="kw">mode</span> <span class="kw">column</span> <span class="co">--to see in column mode</span></span>
-<span id="cb10-4"><a href="#cb10-4"></a>.<span class="kw">header</span> <span class="kw">on</span> <span class="co">--to show headers</span></span>
-<span id="cb10-5"><a href="#cb10-5"></a></span>
-<span id="cb10-6"><a href="#cb10-6"></a>PRAGMA TABLE_INFO(species); <span class="co">--to see tables info</span></span>
-<span id="cb10-7"><a href="#cb10-7"></a><span class="co">-- cid  name        type  notnull  dflt_value  pk</span></span>
-<span id="cb10-8"><a href="#cb10-8"></a><span class="co">-- ---  ----------  ----  -------  ----------  --</span></span>
-<span id="cb10-9"><a href="#cb10-9"></a><span class="co">-- 0    species_id  text  0                    1 </span></span>
-<span id="cb10-10"><a href="#cb10-10"></a><span class="co">-- 1    genus       text  0                    0 </span></span>
-<span id="cb10-11"><a href="#cb10-11"></a><span class="co">-- 2    species     text  0                    0 </span></span>
-<span id="cb10-12"><a href="#cb10-12"></a><span class="co">-- 3    taxa        text  0                    0 </span></span>
-<span id="cb10-13"><a href="#cb10-13"></a></span>
-<span id="cb10-14"><a href="#cb10-14"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> survey <span class="kw">ORDER</span> <span class="kw">BY</span> <span class="dt">year</span> <span class="kw">ASC</span> <span class="kw">LIMIT</span> <span class="dv">4</span>;</span>
-<span id="cb10-15"><a href="#cb10-15"></a><span class="co">-- record_id  month  day  year  plot_id  species_id  sex  hindfoot_length  weight</span></span>
-<span id="cb10-16"><a href="#cb10-16"></a><span class="co">-- ---------  -----  ---  ----  -------  ----------  ---  ---------------  ------</span></span>
-<span id="cb10-17"><a href="#cb10-17"></a><span class="co">-- 1          7      16   1977  2        NL          M    32.0                   </span></span>
-<span id="cb10-18"><a href="#cb10-18"></a><span class="co">-- 2          7      16   1977  3        NL          M    33.0                   </span></span>
-<span id="cb10-19"><a href="#cb10-19"></a><span class="co">-- 3          7      16   1977  2        DM          F    37.0                   </span></span>
-<span id="cb10-20"><a href="#cb10-20"></a><span class="co">-- 4          7      16   1977  7        DM          M    36.0                   </span></span></code></pre></div></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb10-1"><a href="#cb10-1"></a>.<span class="kw">schema</span> <span class="co">-- to see the schema of the databse</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a>.<span class="kw">tables</span> <span class="co">-- to list database tables</span></span>
+<span id="cb10-3"><a href="#cb10-3"></a>.<span class="kw">mode</span> <span class="kw">column</span> <span class="co">-- to see in column mode</span></span>
+<span id="cb10-4"><a href="#cb10-4"></a>.<span class="kw">header</span> <span class="kw">on</span> <span class="co">-- to show headers</span></span>
+<span id="cb10-5"><a href="#cb10-5"></a>PRAGMA TABLE_INFO(species); <span class="co">-- to see tables info</span></span>
+<span id="cb10-6"><a href="#cb10-6"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> survey <span class="kw">ORDER</span> <span class="kw">BY</span> <span class="dt">year</span> <span class="kw">ASC</span> <span class="kw">LIMIT</span> <span class="dv">10</span>;</span></code></pre></div></div>
             <div class="d-none d-xl-block col-xl-2 bd-toc">
                <ul class="section-nav">
                   <li class="toc-entry"><ul>
