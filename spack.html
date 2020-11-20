@@ -95,13 +95,15 @@
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1"></a><span class="ex">spack</span> load <span class="op">&lt;</span>software_name<span class="op">&gt;</span></span>
 <span id="cb5-2"><a href="#cb5-2"></a><span class="ex">spack</span> find --loaded <span class="co"># see what is loaded</span></span></code></pre></div>
 <p>To uninstall a software we can use:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1"></a><span class="ex">spack</span> uninstall <span class="op">&lt;</span>software_name<span class="op">&gt;</span> or <span class="op">&lt;</span>software_name@version<span class="op">&gt;</span> or <span class="op">&lt;</span>software_name@version %compiler@version<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1"></a><span class="ex">spack</span> uninstall <span class="op">&lt;</span>software_name@version<span class="op">&gt;</span> or <span class="op">&lt;</span>software_name@version %compiler@version<span class="op">&gt;</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="ex">spack</span> uninstall --all arch=<span class="op">&lt;</span>arch-name<span class="op">&gt;</span> <span class="co"># uninstall by architecture</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="ex">spack</span> uninstall --all %<span class="op">&lt;</span>compiler@version<span class="op">&gt;</span> <span class="co"># uninstall by compiler</span></span></code></pre></div>
 <p>We can use <code>-R</code> or <code>--dependents</code> option to uninstall dependencies and <code>--force</code> to force to remove.</p>
 <p>More details about Spack commands can be found by:</p>
 <ul>
 <li><code>spack --help</code> or <code>spack -h</code> getting help</li>
-<li><code>spack command -h</code> print out usage information for a particular command (eg. <code>spack view -h</code>)</li>
-<li><code>spack command subcommand -h</code> print out usage information for a particular subcommand (eg. <code>spack view add -h</code>)</li>
+<li><code>spack command -h</code> print information for a particular command (eg. <code>spack view -h</code>)</li>
+<li><code>spack command subcommand -h</code> print information for a particular subcommand (eg. <code>spack view add -h</code>)</li>
 </ul>
 <p>To see full list of commands visit Spack <a href="https://spack.readthedocs.io/en/latest/command_index.html">Command Reference</a>.</p>
 <h2 id="specs-dependencies">Specs &amp; dependencies</h2>
