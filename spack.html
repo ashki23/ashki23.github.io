@@ -156,7 +156,7 @@
 <div class="sourceCode" id="cb17"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1"></a><span class="ex">spack</span> config edit modules </span></code></pre></div>
 <p>And add the following configuration from <a href="https://spack-tutorial.readthedocs.io/en/latest/tutorial_modules.html#modules-tutorial">Spack tutorial</a> to the config file:</p>
 <div class="sourceCode" id="cb18"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1"></a><span class="ex">modules</span>:</span>
-<span id="cb18-2"><a href="#cb18-2"></a>  <span class="ex">enable</span>::</span>
+<span id="cb18-2"><a href="#cb18-2"></a>  <span class="ex">enable</span>:</span>
 <span id="cb18-3"><a href="#cb18-3"></a>    <span class="ex">-</span> lmod</span>
 <span id="cb18-4"><a href="#cb18-4"></a>  <span class="ex">lmod</span>:</span>
 <span id="cb18-5"><a href="#cb18-5"></a>    <span class="ex">core_compilers</span>:</span>
@@ -194,7 +194,8 @@
 <span id="cb19-4"><a href="#cb19-4"></a><span class="ex">module</span> use <span class="va">$HOME</span>/spack/share/spack/lmod/<span class="op">&lt;</span>os-arch<span class="op">&gt;</span>/Core</span></code></pre></div>
 <p>Note that in above commands, I assumed that Spack directory is located on <code>$HOME</code>. You need to update path and <code>&lt;os-arch&gt;</code> based on the Sapck directory and, the operating system and architecture of your machine (for example <code>linux-ubuntu18.04-x86_64</code>). To keep the new module path for latter, you can add the following to the <code>.bashrc</code> file.</p>
 <div class="sourceCode" id="cb20"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1"></a><span class="bu">export</span> <span class="va">MODULEPATH=$HOME</span>/spack/share/spack/lmod/<span class="op">&lt;</span><span class="ex">os-arch</span><span class="op">&gt;</span>/Core</span></code></pre></div>
-<p>Now use <code>module avail</code> to see changes. You can learn more about modules and Lmod in <a href="https://spack-tutorial.readthedocs.io/en/latest/tutorial_modules.html">here</a>.</p></div>
+<p>Now use <code>module avail</code> to see changes. You can learn more about modules and Lmod in <a href="https://spack-tutorial.readthedocs.io/en/latest/tutorial_modules.html">here</a>.</p>
+<p>To learn more about management and projection of modulefile, review <a href="https://github.com/ashki23/module-projection">module-projection</a> repository.</p></div>
             <div class="d-none d-xl-block col-xl-2 bd-toc">
                <ul class="section-nav">
                   <li class="toc-entry"><ul>
