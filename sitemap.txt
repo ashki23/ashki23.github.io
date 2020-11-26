@@ -13,6 +13,7 @@ https://ashki23.github.io/biomass-conf2.html
 https://ashki23.github.io/shortest-path.html
 https://ashki23.github.io/safety-stock.html
 https://ashki23.github.io/biomass.html
+https://ashki23.github.io/bioenergy-conf.html
 https://ashki23.github.io/python-fun.html
 https://ashki23.github.io/python-str.html
 https://ashki23.github.io/python-env.html
