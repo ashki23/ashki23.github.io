@@ -77,8 +77,10 @@
 <h2 id="usage">Usage</h2>
 <p>Spack has a very simple workflow. Basically, it is a Git repo of package files are written in pure Python including software build requirements and dependencies. We can Clone and setup Spack by:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">git</span> clone https://github.com/spack/spack.git</span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">git</span> checkout releases/<span class="op">&lt;</span>version<span class="op">&gt;</span> <span class="co"># use the most recent release e.g v0.15</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="bu">source</span> spack/share/spack/setup-env.sh <span class="co"># setup Spack</span></span></code></pre></div>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="bu">cd</span> spack</span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">git</span> checkout -b spack-latest <span class="co"># create a new branch</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="fu">git</span> pull origin releases/latest <span class="co"># pull the latest release</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="bu">source</span> spack/share/spack/setup-env.sh <span class="co"># setup Spack</span></span></code></pre></div>
 <p>To list a specific software and it’s specifications we can use:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="ex">spack</span> list <span class="op">&lt;</span>software-name<span class="op">&gt;</span> <span class="co"># list a software</span></span>
 <span id="cb2-2"><a href="#cb2-2"></a><span class="ex">spack</span> info <span class="op">&lt;</span>software-name<span class="op">&gt;</span> <span class="co"># show information and variants of a software</span></span>
@@ -95,10 +97,10 @@
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1"></a><span class="ex">spack</span> load <span class="op">&lt;</span>software_name<span class="op">&gt;</span></span>
 <span id="cb5-2"><a href="#cb5-2"></a><span class="ex">spack</span> find --loaded <span class="co"># see what is loaded</span></span></code></pre></div>
 <p>To uninstall a software we can use:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1"></a><span class="ex">spack</span> uninstall <span class="op">&lt;</span>software_name@version<span class="op">&gt;</span> or <span class="op">&lt;</span>software_name@version %compiler@version<span class="op">&gt;</span></span>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1"></a><span class="ex">spack</span> uninstall <span class="op">&lt;</span>software_name@version<span class="op">&gt;</span> or <span class="op">&lt;</span>software_name/hash<span class="op">&gt;</span></span>
 <span id="cb6-2"><a href="#cb6-2"></a><span class="ex">spack</span> uninstall --all arch=<span class="op">&lt;</span>arch-name<span class="op">&gt;</span> <span class="co"># uninstall by architecture</span></span>
 <span id="cb6-3"><a href="#cb6-3"></a><span class="ex">spack</span> uninstall --all %<span class="op">&lt;</span>compiler@version<span class="op">&gt;</span> <span class="co"># uninstall by compiler</span></span></code></pre></div>
-<p>We can use <code>-R</code> or <code>--dependents</code> option to uninstall dependencies and <code>--force</code> to force to remove.</p>
+<p>We can use <code>-R</code> or <code>--dependents</code> option to uninstall any packages that depend on that package and <code>-f</code> or <code>--force</code> to force to remove. Note that after uninstalling a software, using <code>spack gc</code> will uninstall dependencies of the software.</p>
 <p>More details about Spack commands can be found by:</p>
 <ul>
 <li><code>spack --help</code> or <code>spack -h</code> getting help</li>
