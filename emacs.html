@@ -73,7 +73,7 @@
 <p>To start working Emacs you might need to install it first. To install Emacs follow the instruction at <a href="https://www.gnu.org/software/emacs/download.html">GNU Emacs</a>. Briefly for:</p>
 <ul>
 <li>Linux (Debian) use <code>sudo apt install emacs</code></li>
-<li>Mac use <a href="https://emacsformacosx.com/">binaries</a> - see config <a href="https://github.com/ashki23/Linux-notes/blob/master/Mac_terminal.md">here</a></li>
+<li>Mac use <a href="https://emacsformacosx.com/">binaries</a> - see config <a href="https://github.com/ashki23/Linux-notes/blob/master/mac-terminal.md">here</a></li>
 </ul>
 <h2 id="config-file">Config file</h2>
 <p>Use a text editor to create Emacs config file called <code>.emacs</code> in the home directory <code>cd ~</code> then insert the following to make our very preliminary configurations by:</p>
@@ -160,10 +160,12 @@
 <pre class="lips"><code>;; Load tango-dark theme
 (load-theme &#39;tango-dark)</code></pre>
 <h2 id="install-packages">Install packages</h2>
-<p>In Emacs we can install extra packages based on our needs. To install a new package, press <code>M-x</code> and type <code>package-refresh-contents</code> to fetch all packages and then use <code>M-x package-install</code> and enter the new package’s name. For example we can install Markdown-mode, htmlize and ESS (R-mode) packages with:</p>
+<p>In Emacs we can install extra packages based on our needs. To install a new package, press <code>M-x</code> and type <code>package-refresh-contents</code> to fetch all packages and then use <code>M-x package-install</code> and enter the new package’s name. For example we can install Markdown-mode, htmlize, ESS (R-mode), autocomplete-mode and <a href="https://tkf.github.io/emacs-jedi/latest/">Jedi</a> with:</p>
 <pre class="lips"><code>M-x package-install markdown-mode
 M-x package-install htmlize
-M-x package-install ess</code></pre>
+M-x package-install ess
+M-x package-install auto-complete
+M-x package-install jedi</code></pre>
 <p>To see list of the available packages use <code>M-x package-list-packages</code>. And to delete packages, use <code>M-x package-delete</code> and enter the package’s name. Note that you may use <code>C-s / C-r</code> for searching and <code>C-g</code> to cancel any actions and <code>q</code> to close buffers in Emacs.</p>
 <h2 id="org-mode">Org-mode</h2>
 <p><a href="https://orgmode.org">Org website</a> describes “Org mode is for keeping notes, maintaining TODO lists, planning projects, and authoring documents with a fast and effective plain-text system”. Org-mode in Emacs is very similar to Markdown. They let us combine text and codes and evaluate codes and generate PDF or HTML outputs. Following are great resources to learn Org:</p>
