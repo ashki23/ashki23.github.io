@@ -67,12 +67,13 @@
             <div class="container">
          <h1 class="title">A gentle introduction to R</h1>
                   <div class="row">
-            <div class="col-xl-10"><p><a href="https://www.r-project.org/">R</a> is a free software environment for statistical computing and graphics. To use R we might use <a href="https://www.rstudio.com/">RStudio</a>, the most popular R IDE, or directly use R in a terminal. In both cases, we need to first download and install R from R webpage or from your favorite package manager (<code>apt</code>, <code>yum</code>, and etc.). In this article we will learn some fundamental syntax in R including data structures and operators, control flows, functions, and an overview of R packages.</p>
+            <div class="col-xl-10"><p><a href="https://www.r-project.org/">R</a> is a free software environment for statistical computing and graphics. To use R we might use <a href="https://www.rstudio.com/">RStudio</a>, the most popular R IDE, or directly use R in a terminal. In both cases, we need to first download and install R. To install R we can create a virtual environment by <a href="python-env.html#miniconda">conda</a> or directly download R <a href="https://mirror.las.iastate.edu/CRAN/">source code</a> or use a Linux package manager (<code>apt</code>, <code>yum</code>, and etc.). In this article we will learn some fundamental syntax in R including data structures and operators, control flows, functions, and an overview of R packages.</p>
 <p>You may find more about plotting and programming in R at:</p>
 <ul>
 <li><a href="r-plots.html">Basic graphics in R</a></li>
 <li><a href="r-functions.html">Helpful functions in R</a></li>
 <li><a href="http://www.cyclismo.org/tutorial/R/index.html">R Tutorial</a></li>
+<li><a href="https://cran.r-project.org/doc/manuals/R-lang.html">R Language Definition</a></li>
 <li><a href="http://swcarpentry.github.io/r-novice-inflammation/">Programming with R</a></li>
 <li><a href="http://swcarpentry.github.io/r-novice-gapminder/">R for Reproducible Scientific Analysis</a></li>
 </ul>
@@ -205,46 +206,52 @@
 <span id="cb2-75"><a href="#cb2-75"></a>df[,<span class="dv">1</span>] <span class="co"># column 1</span></span>
 <span id="cb2-76"><a href="#cb2-76"></a><span class="co">## [1] 1 2 3</span></span>
 <span id="cb2-77"><a href="#cb2-77"></a></span>
-<span id="cb2-78"><a href="#cb2-78"></a>df[<span class="dv">1</span>,] <span class="co"># row 1</span></span>
-<span id="cb2-79"><a href="#cb2-79"></a><span class="co">##   col1 col2 col3</span></span>
-<span id="cb2-80"><a href="#cb2-80"></a><span class="co">## 1    1    a   31</span></span>
-<span id="cb2-81"><a href="#cb2-81"></a></span>
-<span id="cb2-82"><a href="#cb2-82"></a>df[<span class="dv">1</span>,<span class="dv">1</span>] <span class="co"># row 1 and col 1</span></span>
-<span id="cb2-83"><a href="#cb2-83"></a><span class="co">## [1] 1</span></span>
-<span id="cb2-84"><a href="#cb2-84"></a></span>
-<span id="cb2-85"><a href="#cb2-85"></a>df[<span class="dv">1</span>,<span class="dv">1</span>] =<span class="st"> </span><span class="dv">100</span> <span class="co"># mutable</span></span>
-<span id="cb2-86"><a href="#cb2-86"></a>df</span>
-<span id="cb2-87"><a href="#cb2-87"></a><span class="co">##   col1 col2 col3</span></span>
-<span id="cb2-88"><a href="#cb2-88"></a><span class="co">## 1  100    a   31</span></span>
-<span id="cb2-89"><a href="#cb2-89"></a><span class="co">## 2    2    b   32</span></span>
-<span id="cb2-90"><a href="#cb2-90"></a><span class="co">## 3    3    c   33</span></span>
-<span id="cb2-91"><a href="#cb2-91"></a></span>
-<span id="cb2-92"><a href="#cb2-92"></a>df<span class="op">$</span>col4 =<span class="st"> </span><span class="kw">c</span>(<span class="dv">103</span>,<span class="dv">102</span>,<span class="dv">101</span>) <span class="co"># concatenate</span></span>
-<span id="cb2-93"><a href="#cb2-93"></a>df</span>
-<span id="cb2-94"><a href="#cb2-94"></a><span class="co">##   col1 col2 col3 col4</span></span>
-<span id="cb2-95"><a href="#cb2-95"></a><span class="co">## 1  100    a   31  103</span></span>
-<span id="cb2-96"><a href="#cb2-96"></a><span class="co">## 2    2    b   32  102</span></span>
-<span id="cb2-97"><a href="#cb2-97"></a><span class="co">## 3    3    c  500  101</span></span>
-<span id="cb2-98"><a href="#cb2-98"></a></span>
-<span id="cb2-99"><a href="#cb2-99"></a><span class="co">## Lists</span></span>
-<span id="cb2-100"><a href="#cb2-100"></a>ls =<span class="st"> </span><span class="kw">list</span>(<span class="dt">x =</span> <span class="dv">11</span><span class="op">:</span><span class="dv">15</span>, <span class="dt">y =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">7</span>)</span>
-<span id="cb2-101"><a href="#cb2-101"></a><span class="kw">typeof</span>(ls)</span>
-<span id="cb2-102"><a href="#cb2-102"></a><span class="co">## &quot;list&quot;</span></span>
-<span id="cb2-103"><a href="#cb2-103"></a></span>
-<span id="cb2-104"><a href="#cb2-104"></a><span class="kw">str</span>(ls)</span>
-<span id="cb2-105"><a href="#cb2-105"></a><span class="co">## List of 2</span></span>
-<span id="cb2-106"><a href="#cb2-106"></a><span class="co">##  $ x: int [1:5] 11 12 13 14 15</span></span>
-<span id="cb2-107"><a href="#cb2-107"></a><span class="co">##  $ y: int [1:7] 1 2 3 4 5 6 7</span></span>
-<span id="cb2-108"><a href="#cb2-108"></a></span>
-<span id="cb2-109"><a href="#cb2-109"></a>ls<span class="op">$</span>y[<span class="dv">7</span>] <span class="co"># or ls[[2]][7]</span></span>
-<span id="cb2-110"><a href="#cb2-110"></a><span class="co">## [1] 7</span></span>
-<span id="cb2-111"><a href="#cb2-111"></a></span>
-<span id="cb2-112"><a href="#cb2-112"></a>ls<span class="op">$</span>y[<span class="dv">8</span>] =<span class="st"> </span><span class="dv">80</span> <span class="co"># concatenate</span></span>
-<span id="cb2-113"><a href="#cb2-113"></a>ls<span class="op">$</span>y</span>
-<span id="cb2-114"><a href="#cb2-114"></a><span class="co">## [1]  1  2  3  4  5  6  7 80</span></span>
-<span id="cb2-115"><a href="#cb2-115"></a></span>
-<span id="cb2-116"><a href="#cb2-116"></a>mpty_list =<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;list&quot;</span>, <span class="dv">2</span>) <span class="co"># make an empty list</span></span>
-<span id="cb2-117"><a href="#cb2-117"></a><span class="kw">names</span>(empty_list) =<span class="st"> </span><span class="kw">paste</span>(<span class="st">&quot;list&quot;</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">2</span>, <span class="dt">sep =</span> <span class="st">&quot;_&quot;</span>) <span class="co"># rename the list</span></span></code></pre></div>
+<span id="cb2-78"><a href="#cb2-78"></a>df[,<span class="st">&quot;col1&quot;</span>] <span class="co"># column 1</span></span>
+<span id="cb2-79"><a href="#cb2-79"></a><span class="co">## [1] 1 2 3</span></span>
+<span id="cb2-80"><a href="#cb2-80"></a></span>
+<span id="cb2-81"><a href="#cb2-81"></a>df[[<span class="st">&quot;col1&quot;</span>]]</span>
+<span id="cb2-82"><a href="#cb2-82"></a><span class="co">## [1] 1 2 3</span></span>
+<span id="cb2-83"><a href="#cb2-83"></a></span>
+<span id="cb2-84"><a href="#cb2-84"></a>df[<span class="dv">1</span>,] <span class="co"># row 1</span></span>
+<span id="cb2-85"><a href="#cb2-85"></a><span class="co">##   col1 col2 col3</span></span>
+<span id="cb2-86"><a href="#cb2-86"></a><span class="co">## 1    1    a   31</span></span>
+<span id="cb2-87"><a href="#cb2-87"></a></span>
+<span id="cb2-88"><a href="#cb2-88"></a>df[<span class="dv">1</span>,<span class="dv">1</span>] <span class="co"># row 1 and col 1</span></span>
+<span id="cb2-89"><a href="#cb2-89"></a><span class="co">## [1] 1</span></span>
+<span id="cb2-90"><a href="#cb2-90"></a></span>
+<span id="cb2-91"><a href="#cb2-91"></a>df[<span class="dv">1</span>,<span class="dv">1</span>] =<span class="st"> </span><span class="dv">100</span> <span class="co"># mutable</span></span>
+<span id="cb2-92"><a href="#cb2-92"></a>df</span>
+<span id="cb2-93"><a href="#cb2-93"></a><span class="co">##   col1 col2 col3</span></span>
+<span id="cb2-94"><a href="#cb2-94"></a><span class="co">## 1  100    a   31</span></span>
+<span id="cb2-95"><a href="#cb2-95"></a><span class="co">## 2    2    b   32</span></span>
+<span id="cb2-96"><a href="#cb2-96"></a><span class="co">## 3    3    c   33</span></span>
+<span id="cb2-97"><a href="#cb2-97"></a></span>
+<span id="cb2-98"><a href="#cb2-98"></a>df<span class="op">$</span>col4 =<span class="st"> </span><span class="kw">c</span>(<span class="dv">103</span>,<span class="dv">102</span>,<span class="dv">101</span>) <span class="co"># concatenate</span></span>
+<span id="cb2-99"><a href="#cb2-99"></a>df</span>
+<span id="cb2-100"><a href="#cb2-100"></a><span class="co">##   col1 col2 col3 col4</span></span>
+<span id="cb2-101"><a href="#cb2-101"></a><span class="co">## 1  100    a   31  103</span></span>
+<span id="cb2-102"><a href="#cb2-102"></a><span class="co">## 2    2    b   32  102</span></span>
+<span id="cb2-103"><a href="#cb2-103"></a><span class="co">## 3    3    c  500  101</span></span>
+<span id="cb2-104"><a href="#cb2-104"></a></span>
+<span id="cb2-105"><a href="#cb2-105"></a><span class="co">## Lists</span></span>
+<span id="cb2-106"><a href="#cb2-106"></a>ls =<span class="st"> </span><span class="kw">list</span>(<span class="dt">x =</span> <span class="dv">11</span><span class="op">:</span><span class="dv">15</span>, <span class="dt">y =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">7</span>)</span>
+<span id="cb2-107"><a href="#cb2-107"></a><span class="kw">typeof</span>(ls)</span>
+<span id="cb2-108"><a href="#cb2-108"></a><span class="co">## &quot;list&quot;</span></span>
+<span id="cb2-109"><a href="#cb2-109"></a></span>
+<span id="cb2-110"><a href="#cb2-110"></a><span class="kw">str</span>(ls)</span>
+<span id="cb2-111"><a href="#cb2-111"></a><span class="co">## List of 2</span></span>
+<span id="cb2-112"><a href="#cb2-112"></a><span class="co">##  $ x: int [1:5] 11 12 13 14 15</span></span>
+<span id="cb2-113"><a href="#cb2-113"></a><span class="co">##  $ y: int [1:7] 1 2 3 4 5 6 7</span></span>
+<span id="cb2-114"><a href="#cb2-114"></a></span>
+<span id="cb2-115"><a href="#cb2-115"></a>ls<span class="op">$</span>y[<span class="dv">7</span>] <span class="co"># or ls[[2]][7]</span></span>
+<span id="cb2-116"><a href="#cb2-116"></a><span class="co">## [1] 7</span></span>
+<span id="cb2-117"><a href="#cb2-117"></a></span>
+<span id="cb2-118"><a href="#cb2-118"></a>ls<span class="op">$</span>y[<span class="dv">8</span>] =<span class="st"> </span><span class="dv">80</span> <span class="co"># concatenate</span></span>
+<span id="cb2-119"><a href="#cb2-119"></a>ls<span class="op">$</span>y</span>
+<span id="cb2-120"><a href="#cb2-120"></a><span class="co">## [1]  1  2  3  4  5  6  7 80</span></span>
+<span id="cb2-121"><a href="#cb2-121"></a></span>
+<span id="cb2-122"><a href="#cb2-122"></a>mpty_list =<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;list&quot;</span>, <span class="dv">2</span>) <span class="co"># make an empty list</span></span>
+<span id="cb2-123"><a href="#cb2-123"></a><span class="kw">names</span>(empty_list) =<span class="st"> </span><span class="kw">paste</span>(<span class="st">&quot;list&quot;</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">2</span>, <span class="dt">sep =</span> <span class="st">&quot;_&quot;</span>) <span class="co"># rename the list</span></span></code></pre></div>
 <p>Note that not only we can select by indexing the objects, but also we can <strong>remove</strong> entries. For instance:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>letter[<span class="op">-</span><span class="dv">4</span>] <span class="co"># remove 4th element </span></span>
 <span id="cb3-2"><a href="#cb3-2"></a><span class="co">## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot;</span></span>
@@ -341,7 +348,7 @@
 <span id="cb5-8"><a href="#cb5-8"></a>}</span>
 <span id="cb5-9"><a href="#cb5-9"></a><span class="co">## [1] &quot;n is greater than 7&quot;</span></span>
 <span id="cb5-10"><a href="#cb5-10"></a></span>
-<span id="cb5-11"><a href="#cb5-11"></a>n =<span class="st"> </span><span class="dv">7</span>  </span>
+<span id="cb5-11"><a href="#cb5-11"></a>n =<span class="st"> </span><span class="dv">7</span></span>
 <span id="cb5-12"><a href="#cb5-12"></a><span class="cf">while</span> (n <span class="op">&lt;</span><span class="st"> </span><span class="dv">10</span>) {</span>
 <span id="cb5-13"><a href="#cb5-13"></a>  <span class="kw">print</span>(n)</span>
 <span id="cb5-14"><a href="#cb5-14"></a>  n =<span class="st"> </span>n <span class="op">+</span><span class="st"> </span><span class="dv">1</span> </span>
@@ -370,7 +377,7 @@
 <span id="cb5-37"><a href="#cb5-37"></a>a =<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">2</span></span>
 <span id="cb5-38"><a href="#cb5-38"></a>b =<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">2</span></span>
 <span id="cb5-39"><a href="#cb5-39"></a><span class="cf">for</span> (i <span class="cf">in</span> a) {</span>
-<span id="cb5-40"><a href="#cb5-40"></a>  <span class="kw">stopifnot</span>(<span class="kw">all.equal</span>(a,b)) <span class="co"># if all are not TRUE then stop  </span></span>
+<span id="cb5-40"><a href="#cb5-40"></a>  <span class="kw">stopifnot</span>(<span class="kw">all.equal</span>(a,b)) <span class="co"># if all are not TRUE then stop</span></span>
 <span id="cb5-41"><a href="#cb5-41"></a>  <span class="kw">cat</span>(<span class="st">&quot;&#39;a&#39; and &#39;b&#39; both are equal to: &quot;</span>, i,<span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)</span>
 <span id="cb5-42"><a href="#cb5-42"></a>}</span>
 <span id="cb5-43"><a href="#cb5-43"></a><span class="co">## &#39;a&#39; and &#39;b&#39; both are equal to:  1 </span></span>
@@ -391,7 +398,7 @@
 <span id="cb7-5"><a href="#cb7-5"></a><span class="co">## [1,] 5.477226</span></span>
 <span id="cb7-6"><a href="#cb7-6"></a></span>
 <span id="cb7-7"><a href="#cb7-7"></a><span class="co"># Square</span></span>
-<span id="cb7-8"><a href="#cb7-8"></a>square =<span class="st"> </span><span class="cf">function</span>(x) <span class="kw">return</span> (x <span class="op">*</span><span class="st"> </span>x)</span>
+<span id="cb7-8"><a href="#cb7-8"></a>square =<span class="st"> </span><span class="cf">function</span>(x) <span class="kw">return</span>(x <span class="op">*</span><span class="st"> </span>x)</span>
 <span id="cb7-9"><a href="#cb7-9"></a><span class="kw">square</span>(<span class="dv">2</span>)</span>
 <span id="cb7-10"><a href="#cb7-10"></a><span class="co">## [1] 4</span></span>
 <span id="cb7-11"><a href="#cb7-11"></a></span>
@@ -400,7 +407,7 @@
 <span id="cb7-14"><a href="#cb7-14"></a>  p =<span class="st"> </span><span class="dv">1</span></span>
 <span id="cb7-15"><a href="#cb7-15"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>n) {</span>
 <span id="cb7-16"><a href="#cb7-16"></a>     p =<span class="st"> </span>p <span class="op">*</span><span class="st"> </span>i <span class="co"># Not recursive </span></span>
-<span id="cb7-17"><a href="#cb7-17"></a>  }  </span>
+<span id="cb7-17"><a href="#cb7-17"></a>  }</span>
 <span id="cb7-18"><a href="#cb7-18"></a>  <span class="kw">return</span>(p)</span>
 <span id="cb7-19"><a href="#cb7-19"></a>} </span>
 <span id="cb7-20"><a href="#cb7-20"></a><span class="kw">fact_iter</span>(<span class="dv">8</span>)</span>
