@@ -286,11 +286,11 @@
 <li><code>str.lower()</code> lowercase</li>
 <li><code>str.upper()</code> uppercase</li>
 <li><code>str.find(x)</code> find index of character x</li>
-<li><code>str.index(x)</code> index of x character (similar to <code>.find(x)</code> if x is in the string)</li>
+<li><code>str.index(x)</code> index of character x (similar to <code>.find(x)</code> if x is in the string)</li>
 <li><code>str.count(x)</code> count how many times x repeated</li>
 <li><code>str.replace(x,y)</code> replace character x with y</li>
-<li><code>str.split('sep')</code> split an string to a list of strings based on the separator <code>sep</code> (can be empty <code>''</code>)</li>
-<li><code>sep.join(list)</code> join a list of strings to make an string with separator <code>sep</code> (can be empty <code>''</code>) - opposite of <code>.split()</code></li>
+<li><code>str.split(x)</code> split an string to a list of strings based on the separator x (can be empty <code>''</code>)</li>
+<li><code>str.join(x)</code> join list of strings or string x to make an string by a separator - opposite of <code>.split()</code></li>
 <li><code>str.center('chr', num)</code> see an example in below</li>
 </ul>
 <p>For example:</p>
@@ -323,16 +323,16 @@
 <span id="cb10-27"><a href="#cb10-27"></a><span class="co">## &#39;======= This is a test =======&#39;</span></span></code></pre></div>
 <h3 id="lists">Lists</h3>
 <p>A list is a set of objects enclosed by a set of square brackets (<code>[]</code>). Lists are <strong>mutable</strong>, and their elements are usually <strong>homogeneous</strong> and are accessed by iterating over the list.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>list_ <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">7</span>]</span>
-<span id="cb11-2"><a href="#cb11-2"></a>list_[<span class="dv">0</span>] <span class="op">=</span> <span class="dv">100</span> <span class="co"># Lists are mutable</span></span>
-<span id="cb11-3"><a href="#cb11-3"></a>list_</span>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>ls <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">7</span>]</span>
+<span id="cb11-2"><a href="#cb11-2"></a>ls[<span class="dv">0</span>] <span class="op">=</span> <span class="dv">100</span> <span class="co"># Lists are mutable</span></span>
+<span id="cb11-3"><a href="#cb11-3"></a>ls</span>
 <span id="cb11-4"><a href="#cb11-4"></a><span class="co">## [100, 3, 5, 7]</span></span>
 <span id="cb11-5"><a href="#cb11-5"></a></span>
 <span id="cb11-6"><a href="#cb11-6"></a><span class="co"># Lists can hold any type of item</span></span>
 <span id="cb11-7"><a href="#cb11-7"></a>example <span class="op">=</span> [<span class="dv">1</span>,<span class="va">True</span>,<span class="va">None</span>,[<span class="st">&#39;word&#39;</span>,<span class="dv">123</span>],<span class="st">&#39;test&#39;</span>,(<span class="dv">0</span>,<span class="dv">1</span>),{<span class="st">&#39;name id&#39;</span>: <span class="dv">7</span>}]</span>
 <span id="cb11-8"><a href="#cb11-8"></a></span>
 <span id="cb11-9"><a href="#cb11-9"></a><span class="co"># Indexing</span></span>
-<span id="cb11-10"><a href="#cb11-10"></a>list_[<span class="dv">1</span>:<span class="dv">3</span>]</span>
+<span id="cb11-10"><a href="#cb11-10"></a>ls[<span class="dv">1</span>:<span class="dv">3</span>]</span>
 <span id="cb11-11"><a href="#cb11-11"></a><span class="co">## [3, 5]</span></span>
 <span id="cb11-12"><a href="#cb11-12"></a></span>
 <span id="cb11-13"><a href="#cb11-13"></a>example[<span class="dv">3</span>][<span class="dv">1</span>]</span>
@@ -341,12 +341,13 @@
 <ul>
 <li><code>list.append(x)</code> append x</li>
 <li><code>list.extend(x)</code> or <code>+=</code> extend/add x</li>
-<li><code>list.insert(i,x)</code> insert x in position i</li>
+<li><code>list.insert(i,x)</code> insert x to index i</li>
 <li><code>list.remove(x)</code> remove x</li>
-<li><code>list.pop(i)</code> remove item at position i (similar to <code>del(list[i])</code>)</li>
+<li><code>list.pop(i)</code> pop out and remove item at index i (similar to <code>del(list[i])</code>)</li>
+<li><code>list.pop()</code> pop out and remove the last item</li>
 <li><code>list.sort()</code> sort</li>
 <li><code>list.reverse()</code> reverse the order</li>
-<li><code>list.count(x)</code> count number of times x repeated</li>
+<li><code>list.count(x)</code> count number of times x is repeated</li>
 <li><code>list.index(x)</code> find index of item x</li>
 <li><code>list.copy()</code> copy list</li>
 <li><code>list.clear()</code> clear list</li>
@@ -480,7 +481,7 @@
 <p>Here are some of dictionaries methods:</p>
 <ul>
 <li><code>dict.update()</code> update/add items</li>
-<li><code>dict.popitem()</code> remove an item</li>
+<li><code>dict.popitem()</code> remove the last item</li>
 <li><code>dict.pop(k)</code> remove item with key k</li>
 <li><code>dict.keys()</code> return keys</li>
 <li><code>dict.values()</code> return values</li>
@@ -530,29 +531,34 @@
 <span id="cb20-17"><a href="#cb20-17"></a>{x:y <span class="cf">for</span> x,y <span class="kw">in</span> d.items() <span class="cf">if</span> y <span class="op">&gt;=</span> <span class="dv">12</span>}</span>
 <span id="cb20-18"><a href="#cb20-18"></a><span class="co">## {&#39;b&#39;: 12, &#39;c&#39;: 20}</span></span></code></pre></div>
 <p>For another example, let’s consider a list of dictionaries including production rate of two products, id 23 and id 35, in years 2005 and 2010:</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a>exmp <span class="op">=</span> [{<span class="st">&#39;id&#39;</span>:<span class="dv">23</span>,<span class="st">&#39;year&#39;</span>:<span class="dv">2005</span>,<span class="st">&#39;production&#39;</span>:<span class="dv">2305</span>},{<span class="st">&#39;id&#39;</span>:<span class="dv">35</span>,<span class="st">&#39;year&#39;</span>:<span class="dv">2005</span>,<span class="st">&#39;production&#39;</span>:<span class="dv">3505</span>},{<span class="st">&#39;id&#39;</span>:<span class="dv">23</span>,<span class="st">&#39;year&#39;</span>:<span class="dv">2010</span>,<span class="st">&#39;production&#39;</span>:<span class="dv">2310</span>},{<span class="st">&#39;id&#39;</span>:<span class="dv">35</span>,<span class="st">&#39;year&#39;</span>:<span class="dv">2010</span>,<span class="st">&#39;production&#39;</span>:<span class="dv">3510</span>}]</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a>production <span class="op">=</span> [{<span class="st">&#39;id&#39;</span>:<span class="dv">23</span>,<span class="st">&#39;year&#39;</span>:<span class="dv">2005</span>,<span class="st">&#39;rate&#39;</span>:<span class="dv">2305</span>},{<span class="st">&#39;id&#39;</span>:<span class="dv">35</span>,<span class="st">&#39;year&#39;</span>:<span class="dv">2005</span>,<span class="st">&#39;rate&#39;</span>:<span class="dv">3505</span>},{<span class="st">&#39;id&#39;</span>:<span class="dv">23</span>,<span class="st">&#39;year&#39;</span>:<span class="dv">2010</span>,<span class="st">&#39;rate&#39;</span>:<span class="dv">2310</span>},{<span class="st">&#39;id&#39;</span>:<span class="dv">35</span>,<span class="st">&#39;year&#39;</span>:<span class="dv">2010</span>,<span class="st">&#39;rate&#39;</span>:<span class="dv">3510</span>}]</span></code></pre></div>
 <p>We can make a dictionary of production rates for each <code>id_year</code> combination such that:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1"></a>dict_ <span class="op">=</span> {}</span>
-<span id="cb22-2"><a href="#cb22-2"></a><span class="cf">for</span> i <span class="kw">in</span> exmp:</span>
-<span id="cb22-3"><a href="#cb22-3"></a>  dict_[<span class="st">&#39;</span><span class="sc">%s</span><span class="st">_</span><span class="sc">%s</span><span class="st">&#39;</span> <span class="op">%</span> (i[<span class="st">&#39;id&#39;</span>],i[<span class="st">&#39;year&#39;</span>])] <span class="op">=</span> i[<span class="st">&#39;production&#39;</span>]</span>
-<span id="cb22-4"><a href="#cb22-4"></a>dict_</span>
-<span id="cb22-5"><a href="#cb22-5"></a><span class="co">## {&#39;23_2005&#39;: 2305, &#39;35_2005&#39;: 3505, &#39;23_2010&#39;: 2310, &#39;35_2010&#39;: 3510}</span></span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1"></a>annual_rates <span class="op">=</span> {}</span>
+<span id="cb22-2"><a href="#cb22-2"></a><span class="cf">for</span> i <span class="kw">in</span> production:</span>
+<span id="cb22-3"><a href="#cb22-3"></a>  annual_rates[<span class="st">&#39;</span><span class="sc">%s</span><span class="st">_</span><span class="sc">%s</span><span class="st">&#39;</span> <span class="op">%</span> (i[<span class="st">&#39;id&#39;</span>],i[<span class="st">&#39;year&#39;</span>])] <span class="op">=</span> i[<span class="st">&#39;rate&#39;</span>]</span>
+<span id="cb22-4"><a href="#cb22-4"></a></span>
+<span id="cb22-5"><a href="#cb22-5"></a>annual_rates</span>
+<span id="cb22-6"><a href="#cb22-6"></a><span class="co">## {&#39;23_2005&#39;: 2305, &#39;35_2005&#39;: 3505, &#39;23_2010&#39;: 2310, &#39;35_2010&#39;: 3510}</span></span></code></pre></div>
 <p>To make a dictionary of list of the production rates over years, we can use <code>collections</code> module. <code>defaultdict(list)</code> makes a default dictionary of lists such that:</p>
 <div class="sourceCode" id="cb23"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a><span class="im">import</span> collections</span>
-<span id="cb23-2"><a href="#cb23-2"></a>dt_ <span class="op">=</span> collections.defaultdict(<span class="bu">list</span>)</span>
-<span id="cb23-3"><a href="#cb23-3"></a><span class="cf">for</span> i <span class="kw">in</span> exmp:</span>
-<span id="cb23-4"><a href="#cb23-4"></a>  dt_[i[<span class="st">&#39;id&#39;</span>]].append(i[<span class="st">&#39;production&#39;</span>])</span>
-<span id="cb23-5"><a href="#cb23-5"></a><span class="bu">dict</span>(dt_)</span>
-<span id="cb23-6"><a href="#cb23-6"></a><span class="co">## {23: [2305, 2310], 35: [3505, 3510]}</span></span></code></pre></div>
+<span id="cb23-2"><a href="#cb23-2"></a></span>
+<span id="cb23-3"><a href="#cb23-3"></a>annual_rates <span class="op">=</span> collections.defaultdict(<span class="bu">list</span>)</span>
+<span id="cb23-4"><a href="#cb23-4"></a><span class="cf">for</span> i <span class="kw">in</span> production:</span>
+<span id="cb23-5"><a href="#cb23-5"></a>  annual_rates[i[<span class="st">&#39;id&#39;</span>]].append(i[<span class="st">&#39;rate&#39;</span>])</span>
+<span id="cb23-6"><a href="#cb23-6"></a></span>
+<span id="cb23-7"><a href="#cb23-7"></a><span class="bu">dict</span>(annual_rates)</span>
+<span id="cb23-8"><a href="#cb23-8"></a><span class="co">## {23: [2305, 2310], 35: [3505, 3510]}</span></span></code></pre></div>
 <p>Now let’s find total production over years:</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a><span class="cf">for</span> i <span class="kw">in</span> dt_:</span>
-<span id="cb24-2"><a href="#cb24-2"></a>  dt_[i] <span class="op">=</span> <span class="bu">sum</span>(dt_[i])</span>
-<span id="cb24-3"><a href="#cb24-3"></a><span class="bu">dict</span>(dt_)</span>
-<span id="cb24-4"><a href="#cb24-4"></a><span class="co">## {23: 4615, 35: 7015}</span></span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a>annual_rates_total <span class="op">=</span> {}</span>
+<span id="cb24-2"><a href="#cb24-2"></a><span class="cf">for</span> i <span class="kw">in</span> annual_rates:</span>
+<span id="cb24-3"><a href="#cb24-3"></a>  annual_rates_total[i] <span class="op">=</span> <span class="bu">sum</span>(annual_rates[i])</span>
+<span id="cb24-4"><a href="#cb24-4"></a></span>
+<span id="cb24-5"><a href="#cb24-5"></a>annual_rates_total</span>
+<span id="cb24-6"><a href="#cb24-6"></a><span class="co">## {23: 4615, 35: 7015}</span></span></code></pre></div>
 <p>Also, the <code>dict()</code> constructor can accept an iterator that returns a finite stream of <code>(key, value)</code> tuples:</p>
 <div class="sourceCode" id="cb25"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1"></a>L <span class="op">=</span> [(<span class="st">&#39;Italy&#39;</span>, <span class="st">&#39;Rome&#39;</span>), (<span class="st">&#39;France&#39;</span>, <span class="st">&#39;Paris&#39;</span>), (<span class="st">&#39;US&#39;</span>, <span class="st">&#39;Washington DC&#39;</span>)]</span>
-<span id="cb25-2"><a href="#cb25-2"></a><span class="bu">dict</span>(<span class="bu">iter</span>(L))</span>
-<span id="cb25-3"><a href="#cb25-3"></a>{<span class="st">&#39;Italy&#39;</span>: <span class="st">&#39;Rome&#39;</span>, <span class="st">&#39;France&#39;</span>: <span class="st">&#39;Paris&#39;</span>, <span class="st">&#39;US&#39;</span>: <span class="st">&#39;Washington DC&#39;</span>}</span></code></pre></div>
+<span id="cb25-2"><a href="#cb25-2"></a><span class="bu">dict</span>(L)</span>
+<span id="cb25-3"><a href="#cb25-3"></a><span class="co">## {&#39;Italy&#39;: &#39;Rome&#39;, &#39;France&#39;: &#39;Paris&#39;, &#39;US&#39;: &#39;Washington DC&#39;}</span></span></code></pre></div>
 <h3 id="sets">Sets</h3>
 <p>A <strong>set</strong> is an <strong>unordered</strong> collection with <strong>no duplicate</strong> elements. Basic uses include membership testing and eliminating duplicate entries. Set objects also support mathematical operations like union, intersection, difference, and symmetric difference.</p>
 <div class="sourceCode" id="cb26"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1"></a>st <span class="op">=</span> {<span class="dv">12</span>,<span class="dv">13</span>,<span class="dv">13</span>,<span class="dv">15</span>,<span class="dv">12</span>,<span class="dv">15</span>}</span>
@@ -569,10 +575,30 @@
 <span id="cb27-3"><a href="#cb27-3"></a><span class="co">## &lt;class &#39;list&#39;&gt;</span></span>
 <span id="cb27-4"><a href="#cb27-4"></a><span class="co">## &lt;class &#39;tuple&#39;&gt;</span></span>
 <span id="cb27-5"><a href="#cb27-5"></a><span class="co">## &lt;class &#39;dict&#39;&gt;</span></span></code></pre></div>
-<p>Sets have several methods including set operations such as <code>union</code>, <code>intersection</code>, and <code>difference</code>.</p>
+<p>Sets have several methods including set operations such as:</p>
+<ul>
+<li><code>set.add(x)</code>: add a member to the set</li>
+<li><code>set.update(x)</code>: add a set/list to a set</li>
+<li><code>set.remove(x)</code>: remove a member of the set</li>
+<li><code>set.pop()</code>: pop out and remove the first member</li>
+<li><code>set.union(x)</code>: union of a set/list to a set</li>
+<li><code>set.intersection(x)</code>: intersection of a set/list to a set</li>
+<li><code>set.difference(x)</code>: difference of a set/list to a set</li>
+</ul>
+<div class="sourceCode" id="cb28"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1"></a>s <span class="op">=</span> {<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>}</span>
+<span id="cb28-2"><a href="#cb28-2"></a>t <span class="op">=</span> {<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>}</span>
+<span id="cb28-3"><a href="#cb28-3"></a></span>
+<span id="cb28-4"><a href="#cb28-4"></a>s.union(t)</span>
+<span id="cb28-5"><a href="#cb28-5"></a><span class="co">## {1, 2, 3, 4, 5}</span></span>
+<span id="cb28-6"><a href="#cb28-6"></a></span>
+<span id="cb28-7"><a href="#cb28-7"></a>s.intersection(t)</span>
+<span id="cb28-8"><a href="#cb28-8"></a><span class="co">## {3}</span></span>
+<span id="cb28-9"><a href="#cb28-9"></a></span>
+<span id="cb28-10"><a href="#cb28-10"></a>s.difference(t)</span>
+<span id="cb28-11"><a href="#cb28-11"></a><span class="co">## {1,2}</span></span></code></pre></div>
 <p>Iterating through sets:</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1"></a>{x<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> x <span class="kw">in</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">3</span>]}</span>
-<span id="cb28-2"><a href="#cb28-2"></a><span class="co">## {1, 4, 9}</span></span></code></pre></div></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1"></a>{x<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> x <span class="kw">in</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">3</span>]}</span>
+<span id="cb29-2"><a href="#cb29-2"></a><span class="co">## {1, 4, 9}</span></span></code></pre></div></div>
             <div class="d-none d-xl-block col-xl-2 bd-toc">
                <ul class="section-nav">
                   <li class="toc-entry"><ul>
