@@ -291,36 +291,43 @@
 <li><code>str.replace(x,y)</code> replace character x with y</li>
 <li><code>str.split(x)</code> split an string to a list of strings based on the separator x (can be empty <code>''</code>)</li>
 <li><code>str.join(x)</code> join list of strings or string x to make an string by a separator - opposite of <code>.split()</code></li>
-<li><code>str.center('chr', num)</code> see an example in below</li>
+<li><code>str.startswith(x)</code> True if the string starts with x character</li>
+<li><code>str.endswith(x)</code> True if the string ends with x character</li>
+<li><code>str.strip()</code> removing whitespace from the beginning and ending</li>
+<li><code>str.center('chr', num)</code> see an example in the below</li>
 </ul>
 <p>For example:</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a>name <span class="op">=</span> <span class="st">&#39;python&#39;</span></span>
-<span id="cb10-2"><a href="#cb10-2"></a>name.capitalize()</span>
-<span id="cb10-3"><a href="#cb10-3"></a><span class="co">## &#39;Python&#39;</span></span>
-<span id="cb10-4"><a href="#cb10-4"></a></span>
-<span id="cb10-5"><a href="#cb10-5"></a>name.upper()</span>
-<span id="cb10-6"><a href="#cb10-6"></a><span class="co">## &#39;PYTHON&#39;</span></span>
-<span id="cb10-7"><a href="#cb10-7"></a></span>
-<span id="cb10-8"><a href="#cb10-8"></a>name.index(<span class="st">&#39;p&#39;</span>)</span>
-<span id="cb10-9"><a href="#cb10-9"></a><span class="co">## 0</span></span>
-<span id="cb10-10"><a href="#cb10-10"></a></span>
-<span id="cb10-11"><a href="#cb10-11"></a>name2 <span class="op">=</span> name.replace(<span class="st">&#39;n&#39;</span>, <span class="st">&#39;n3&#39;</span>).replace(<span class="st">&#39;p&#39;</span>, <span class="st">&#39;,p&#39;</span>)</span>
-<span id="cb10-12"><a href="#cb10-12"></a>name2</span>
-<span id="cb10-13"><a href="#cb10-13"></a><span class="co">## &#39;,python3&#39;</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a></span>
+<span id="cb10-3"><a href="#cb10-3"></a>name.startswith(<span class="st">&#39;p&#39;</span>)</span>
+<span id="cb10-4"><a href="#cb10-4"></a><span class="co">## True</span></span>
+<span id="cb10-5"><a href="#cb10-5"></a></span>
+<span id="cb10-6"><a href="#cb10-6"></a>name.capitalize()</span>
+<span id="cb10-7"><a href="#cb10-7"></a><span class="co">## &#39;Python&#39;</span></span>
+<span id="cb10-8"><a href="#cb10-8"></a></span>
+<span id="cb10-9"><a href="#cb10-9"></a>name.upper()</span>
+<span id="cb10-10"><a href="#cb10-10"></a><span class="co">## &#39;PYTHON&#39;</span></span>
+<span id="cb10-11"><a href="#cb10-11"></a></span>
+<span id="cb10-12"><a href="#cb10-12"></a>name.index(<span class="st">&#39;p&#39;</span>)</span>
+<span id="cb10-13"><a href="#cb10-13"></a><span class="co">## 0</span></span>
 <span id="cb10-14"><a href="#cb10-14"></a></span>
-<span id="cb10-15"><a href="#cb10-15"></a>nm <span class="op">=</span> name <span class="op">+</span> name2</span>
-<span id="cb10-16"><a href="#cb10-16"></a>nm</span>
-<span id="cb10-17"><a href="#cb10-17"></a><span class="co">## &#39;python,python3&#39;</span></span>
+<span id="cb10-15"><a href="#cb10-15"></a>name2 <span class="op">=</span> name.replace(<span class="st">&#39;n&#39;</span>, <span class="st">&#39;n3&#39;</span>).replace(<span class="st">&#39;p&#39;</span>, <span class="st">&#39;,p&#39;</span>)</span>
+<span id="cb10-16"><a href="#cb10-16"></a>name2</span>
+<span id="cb10-17"><a href="#cb10-17"></a><span class="co">## &#39;,python3&#39;</span></span>
 <span id="cb10-18"><a href="#cb10-18"></a></span>
-<span id="cb10-19"><a href="#cb10-19"></a>nm_split <span class="op">=</span> nm.split(<span class="st">&#39;,&#39;</span>)</span>
-<span id="cb10-20"><a href="#cb10-20"></a>nm_split</span>
-<span id="cb10-21"><a href="#cb10-21"></a><span class="co">## [&#39;python&#39;, &#39;python3&#39;]</span></span>
+<span id="cb10-19"><a href="#cb10-19"></a>nm <span class="op">=</span> name <span class="op">+</span> name2</span>
+<span id="cb10-20"><a href="#cb10-20"></a>nm</span>
+<span id="cb10-21"><a href="#cb10-21"></a><span class="co">## &#39;python,python3&#39;</span></span>
 <span id="cb10-22"><a href="#cb10-22"></a></span>
-<span id="cb10-23"><a href="#cb10-23"></a><span class="co">&#39;,&#39;</span>.join(nm_split)</span>
-<span id="cb10-24"><a href="#cb10-24"></a><span class="co">## &#39;python,python3&#39;</span></span>
-<span id="cb10-25"><a href="#cb10-25"></a></span>
-<span id="cb10-26"><a href="#cb10-26"></a><span class="co">&#39; This is a test &#39;</span>.center(<span class="dv">30</span>,<span class="st">&#39;=&#39;</span>)</span>
-<span id="cb10-27"><a href="#cb10-27"></a><span class="co">## &#39;======= This is a test =======&#39;</span></span></code></pre></div>
+<span id="cb10-23"><a href="#cb10-23"></a>nm_split <span class="op">=</span> nm.split(<span class="st">&#39;,&#39;</span>)</span>
+<span id="cb10-24"><a href="#cb10-24"></a>nm_split</span>
+<span id="cb10-25"><a href="#cb10-25"></a><span class="co">## [&#39;python&#39;, &#39;python3&#39;]</span></span>
+<span id="cb10-26"><a href="#cb10-26"></a></span>
+<span id="cb10-27"><a href="#cb10-27"></a><span class="co">&#39;,&#39;</span>.join(nm_split)</span>
+<span id="cb10-28"><a href="#cb10-28"></a><span class="co">## &#39;python,python3&#39;</span></span>
+<span id="cb10-29"><a href="#cb10-29"></a></span>
+<span id="cb10-30"><a href="#cb10-30"></a><span class="co">&#39; This is a test &#39;</span>.center(<span class="dv">30</span>,<span class="st">&#39;=&#39;</span>)</span>
+<span id="cb10-31"><a href="#cb10-31"></a><span class="co">## &#39;======= This is a test =======&#39;</span></span></code></pre></div>
 <h3 id="lists">Lists</h3>
 <p>A list is a set of objects enclosed by a set of square brackets (<code>[]</code>). Lists are <strong>mutable</strong>, and their elements are usually <strong>homogeneous</strong> and are accessed by iterating over the list.</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>ls <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">7</span>]</span>

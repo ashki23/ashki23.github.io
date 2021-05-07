@@ -214,7 +214,9 @@
 <span id="cb2-31"><a href="#cb2-31"></a></span>
 <span id="cb2-32"><a href="#cb2-32"></a><span class="co"># Env variables</span></span>
 <span id="cb2-33"><a href="#cb2-33"></a>os.getenv(<span class="st">&#39;HOME&#39;</span>)</span>
-<span id="cb2-34"><a href="#cb2-34"></a><span class="co">## &#39;/home/user&#39;</span></span></code></pre></div>
+<span id="cb2-34"><a href="#cb2-34"></a><span class="co">## &#39;/home/user&#39;</span></span>
+<span id="cb2-35"><a href="#cb2-35"></a></span>
+<span id="cb2-36"><a href="#cb2-36"></a>os.environ <span class="co">## returns all the envs as ENV:PATH </span></span></code></pre></div>
 <h3 id="unix-style-pathname-pattern-expansion-glob">Unix style pathname pattern expansion (<code>glob</code>)</h3>
 <p>The glob module finds all the pathnames matching a specified pattern according to the rules used by the Unix shell, although results are returned in arbitrary order.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="im">import</span> glob</span>
@@ -370,11 +372,54 @@
 <p>This module provides various time-related functions.</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a><span class="im">import</span> time</span>
 <span id="cb15-2"><a href="#cb15-2"></a></span>
-<span id="cb15-3"><a href="#cb15-3"></a>time.strftime(<span class="st">&quot;%Y-%m-</span><span class="sc">%d</span><span class="st"> %H:%M:%S&quot;</span>)</span>
-<span id="cb15-4"><a href="#cb15-4"></a><span class="co">## &#39;2020-08-11 18:17:52&#39;</span></span>
-<span id="cb15-5"><a href="#cb15-5"></a></span>
-<span id="cb15-6"><a href="#cb15-6"></a>time.strptime(<span class="st">&quot;30 Nov 20&quot;</span>, <span class="st">&quot;</span><span class="sc">%d</span><span class="st"> %b %y&quot;</span>)</span>
-<span id="cb15-7"><a href="#cb15-7"></a><span class="co">## time.struct_time(tm_year=2020, tm_mon=11, tm_mday=30, tm_hour=0, tm_min=0, tm_sec=0, tm_wday=0, tm_yday=335, tm_isdst=-1)</span></span></code></pre></div>
+<span id="cb15-3"><a href="#cb15-3"></a>local_time <span class="op">=</span> time.localtime() <span class="co"># a time tuple expressing local time</span></span>
+<span id="cb15-4"><a href="#cb15-4"></a>local_time</span>
+<span id="cb15-5"><a href="#cb15-5"></a><span class="co">## time.struct_time(tm_year=2021, tm_mon=5, tm_mday=6, tm_hour=22, tm_min=3, tm_sec=32, tm_wday=3, tm_yday=126, tm_isdst=1)</span></span>
+<span id="cb15-6"><a href="#cb15-6"></a></span>
+<span id="cb15-7"><a href="#cb15-7"></a>local_time.tm_year</span>
+<span id="cb15-8"><a href="#cb15-8"></a><span class="co">## 2021</span></span>
+<span id="cb15-9"><a href="#cb15-9"></a></span>
+<span id="cb15-10"><a href="#cb15-10"></a>time.strftime(<span class="st">&quot;</span><span class="sc">%X</span><span class="st">&quot;</span>, local_time) <span class="co"># convert a time tuple to a string according to a format specification</span></span>
+<span id="cb15-11"><a href="#cb15-11"></a><span class="co">## &#39;22:03:32&#39;</span></span>
+<span id="cb15-12"><a href="#cb15-12"></a></span>
+<span id="cb15-13"><a href="#cb15-13"></a>time.strftime(<span class="st">&quot;%Y-%m-</span><span class="sc">%d</span><span class="st"> %H:%M:%S&quot;</span>) <span class="co"># the default tuple is localtime()</span></span>
+<span id="cb15-14"><a href="#cb15-14"></a><span class="co">## &#39;2021-05-06 22:10:03&#39;</span></span>
+<span id="cb15-15"><a href="#cb15-15"></a></span>
+<span id="cb15-16"><a href="#cb15-16"></a>time.time() <span class="co"># return the current time in seconds since the Epoch</span></span>
+<span id="cb15-17"><a href="#cb15-17"></a><span class="co">## 1620356510.8557692</span></span>
+<span id="cb15-18"><a href="#cb15-18"></a></span>
+<span id="cb15-19"><a href="#cb15-19"></a>time.mktime(local_time) <span class="co"># convert a time tuple in local time to seconds since the Epoch</span></span>
+<span id="cb15-20"><a href="#cb15-20"></a><span class="co">## 1620356612.0</span></span>
+<span id="cb15-21"><a href="#cb15-21"></a></span>
+<span id="cb15-22"><a href="#cb15-22"></a>local_time2 <span class="op">=</span> time.localtime()</span>
+<span id="cb15-23"><a href="#cb15-23"></a>difference <span class="op">=</span> time.mktime(local_time2) <span class="op">-</span> time.mktime(local_time) <span class="co"># time difference in sec</span></span>
+<span id="cb15-24"><a href="#cb15-24"></a>difference</span>
+<span id="cb15-25"><a href="#cb15-25"></a><span class="co">## 452.0</span></span>
+<span id="cb15-26"><a href="#cb15-26"></a></span>
+<span id="cb15-27"><a href="#cb15-27"></a>time.gmtime(difference) <span class="co"># convert seconds since the Epoch to a time tuple</span></span>
+<span id="cb15-28"><a href="#cb15-28"></a><span class="co">## time.struct_time(tm_year=1970, tm_mon=1, tm_mday=1, tm_hour=0, tm_min=7, tm_sec=32, tm_wday=3, tm_yday=1, tm_isdst=0)</span></span>
+<span id="cb15-29"><a href="#cb15-29"></a></span>
+<span id="cb15-30"><a href="#cb15-30"></a>time.strptime(<span class="st">&quot;30 Nov 20&quot;</span>, <span class="st">&quot;</span><span class="sc">%d</span><span class="st"> %b %y&quot;</span>) <span class="co"># parse a string to a time tuple according to a format specification</span></span>
+<span id="cb15-31"><a href="#cb15-31"></a><span class="co">## time.struct_time(tm_year=2020, tm_mon=11, tm_mday=30, tm_hour=0, tm_min=0, tm_sec=0, tm_wday=0, tm_yday=335, tm_isdst=-1)</span></span></code></pre></div>
+<p>Commonly used time format codes:</p>
+<ul>
+<li><code>%Y</code> Year with century as a decimal number.</li>
+<li><code>%m</code> Month as a decimal number [01,12].</li>
+<li><code>%d</code> Day of the month as a decimal number [01,31].</li>
+<li><code>%H</code> Hour (24-hour clock) as a decimal number [00,23].</li>
+<li><code>%M</code> Minute as a decimal number [00,59].</li>
+<li><code>%S</code> Second as a decimal number [00,61].</li>
+<li><code>%z</code> Time zone offset from UTC.</li>
+<li><code>%a</code> Locale’s abbreviated weekday name.</li>
+<li><code>%A</code> Locale’s full weekday name.</li>
+<li><code>%b</code> Locale’s abbreviated month name.</li>
+<li><code>%B</code> Locale’s full month name.</li>
+<li><code>%c</code> Locale’s appropriate date and time representation.</li>
+<li><code>%x</code> Locale’s appropriate date representation.</li>
+<li><code>%X</code> Locale’s appropriate time representation.</li>
+<li><code>%p</code> Locale’s equivalent of either AM or PM.</li>
+<li><code>%I</code> Hour (12-hour clock) as a decimal number [01,12].</li>
+</ul>
 <h3 id="functions-creating-iterators-for-efficient-looping-itertools">Functions creating iterators for efficient looping (<code>itertools</code>)</h3>
 <p>This module implements a number of iterator building blocks.</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a><span class="im">import</span> itertools</span>
