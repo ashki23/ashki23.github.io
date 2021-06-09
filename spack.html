@@ -78,8 +78,8 @@
 <p>Spack has a very simple workflow. Basically, it is a Git repo of package files are written in pure Python including software build requirements and dependencies. We can Clone and setup Spack by:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">git</span> clone https://github.com/spack/spack.git</span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="bu">cd</span> spack</span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">git</span> checkout -b spack-latest <span class="co"># create a new branch</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="fu">git</span> pull origin releases/latest <span class="co"># pull the latest release</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">git</span> fetch origin releases/latest:latest</span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="fu">git</span> checkout latest</span>
 <span id="cb1-5"><a href="#cb1-5"></a><span class="bu">source</span> spack/share/spack/setup-env.sh <span class="co"># setup Spack</span></span></code></pre></div>
 <p>To list a specific software and it’s specifications we can use:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="ex">spack</span> list <span class="op">&lt;</span>software-name<span class="op">&gt;</span> <span class="co"># list a software</span></span>
