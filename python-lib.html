@@ -203,14 +203,14 @@ async      elif       if         or         yield</code></pre>
 <h2 id="library">Library</h2>
 <p>Python includes a very extensive standard library that offering a wide range of facilities. We can categorize the below modules as follows:</p>
 <ul>
-<li>Numeric and mathematical: <code>math</code>, <code>cmath</code>, <code>statistics</code>, <code>random</code>, <code>decimal</code></li>
+<li>Numeric and mathematical: <code>cmath</code>, <code>decimal</code>, <code>math</code>, <code>random</code>, <code>statistics</code></li>
 <li>File formats: <code>csv</code>, <code>json</code></li>
-<li>Generic operating system services: <code>os</code>, <code>ctypes</code>, <code>argparse</code>, <code>time</code></li>
+<li>Generic operating system services: <code>argparse</code>, <code>ctypes</code>, <code>os</code>, <code>time</code></li>
 <li>System-specific parameters and functions: <code>sys</code></li>
 <li>File and directory access: <code>glob</code>, <code>shutil</code></li>
-<li>Data persistence: <code>sqlite3</code>, <code>dbm</code>, <code>pickle</code></li>
-<li>Functional programming: <code>itertools</code>, <code>functools</code>, <code>operator</code></li>
-<li>Text processing services: <code>srting</code>, <code>re</code>, <code>readline</code></li>
+<li>Data persistence: <code>dbm</code>, <code>pickle</code>, <code>sqlite3</code></li>
+<li>Functional programming: <code>functools</code>, <code>itertools</code>, <code>operator</code></li>
+<li>Text processing services: <code>re</code>, <code>readline</code>, <code>srting</code></li>
 <li>Data types: <code>collections</code>, <code>datetime</code></li>
 <li>Software packaging and distribution: <code>venv</code></li>
 <li>Launching parallel tasks: <code>concurrent.futures</code></li>
@@ -245,21 +245,22 @@ async      elif       if         or         yield</code></pre>
 <span id="cb3-25"><a href="#cb3-25"></a><span class="co"># Make directory and navigation</span></span>
 <span id="cb3-26"><a href="#cb3-26"></a>os.getcwd()</span>
 <span id="cb3-27"><a href="#cb3-27"></a><span class="co">## &#39;/home/user&#39;</span></span>
-<span id="cb3-28"><a href="#cb3-28"></a>os.mkdir(<span class="st">&#39;new_directory&#39;</span>)</span>
-<span id="cb3-29"><a href="#cb3-29"></a>os.chdir(<span class="st">&#39;new_directory&#39;</span>)</span>
+<span id="cb3-28"><a href="#cb3-28"></a>os.mkdir(<span class="st">&#39;./new_directory&#39;</span>)</span>
+<span id="cb3-29"><a href="#cb3-29"></a>os.chdir(<span class="st">&#39;./new_directory&#39;</span>)</span>
 <span id="cb3-30"><a href="#cb3-30"></a>os.getcwd()</span>
 <span id="cb3-31"><a href="#cb3-31"></a><span class="co">## &#39;/home/user/new_directory&#39;</span></span>
 <span id="cb3-32"><a href="#cb3-32"></a></span>
-<span id="cb3-33"><a href="#cb3-33"></a><span class="co"># Rename and remove</span></span>
-<span id="cb3-34"><a href="#cb3-34"></a>os.rename(<span class="st">&#39;new_directory&#39;</span>, <span class="st">&#39;dir_new&#39;</span>)</span>
-<span id="cb3-35"><a href="#cb3-35"></a>os.removedirs(<span class="st">&#39;dir_new&#39;</span>)</span>
-<span id="cb3-36"><a href="#cb3-36"></a>os.remove(<span class="st">&#39;&lt;file_name&gt;&#39;</span>)</span>
-<span id="cb3-37"><a href="#cb3-37"></a></span>
-<span id="cb3-38"><a href="#cb3-38"></a><span class="co"># Env variables</span></span>
-<span id="cb3-39"><a href="#cb3-39"></a>os.getenv(<span class="st">&#39;HOME&#39;</span>)</span>
-<span id="cb3-40"><a href="#cb3-40"></a><span class="co">## &#39;/home/user&#39;</span></span>
-<span id="cb3-41"><a href="#cb3-41"></a></span>
-<span id="cb3-42"><a href="#cb3-42"></a>os.environ <span class="co">## returns all the envs as ENV:PATH </span></span></code></pre></div>
+<span id="cb3-33"><a href="#cb3-33"></a><span class="co"># Rename (mv) and remove</span></span>
+<span id="cb3-34"><a href="#cb3-34"></a>os.chdir(<span class="st">&#39;../&#39;</span>) <span class="co"># move one directory up</span></span>
+<span id="cb3-35"><a href="#cb3-35"></a>os.rename(<span class="st">&#39;./new_directory&#39;</span>, <span class="st">&#39;./renamed_dir&#39;</span>)</span>
+<span id="cb3-36"><a href="#cb3-36"></a>os.removedirs(<span class="st">&#39;./renamed_dir&#39;</span>)</span>
+<span id="cb3-37"><a href="#cb3-37"></a>os.remove(<span class="st">&#39;&lt;file_name&gt;&#39;</span>)</span>
+<span id="cb3-38"><a href="#cb3-38"></a></span>
+<span id="cb3-39"><a href="#cb3-39"></a><span class="co"># Env variables</span></span>
+<span id="cb3-40"><a href="#cb3-40"></a>os.getenv(<span class="st">&#39;HOME&#39;</span>)</span>
+<span id="cb3-41"><a href="#cb3-41"></a><span class="co">## &#39;/home/user&#39;</span></span>
+<span id="cb3-42"><a href="#cb3-42"></a></span>
+<span id="cb3-43"><a href="#cb3-43"></a>os.environ <span class="co">## returns all the envs as ENV:PATH </span></span></code></pre></div>
 <h3 id="glob">Glob</h3>
 <p>Unix style pathname pattern expansion (<code>glob</code>) module finds all the pathnames matching a specified pattern according to the rules used by the Unix shell, although results are returned in arbitrary order.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="im">import</span> glob</span>
@@ -609,7 +610,7 @@ optional arguments:
 <li><strong>Redis:</strong> is Python interface to the Redis key-value store</li>
 <li><strong>PySpark:</strong> is Python API for Apache Spark</li>
 </ul>
-<p><strong>Hint:</strong> <a href="https://ashki23.github.io/python-env.html#miniconda">Anaconda</a>, a package manager system for Python, can amazingly help you to add modules to your Python environment.</p></div>
+<p>Review <a href="python-env.html">here</a> to learn about virtual environments and package manager systems for Python.</p></div>
             <div class="d-none d-xl-block col-xl-2 bd-toc">
                <ul class="section-nav">
                   <li class="toc-entry"><ul>
