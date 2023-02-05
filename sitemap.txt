@@ -19,6 +19,10 @@ https://ashki23.github.io/co-firing.html
 https://ashki23.github.io/python-fun.html
 https://ashki23.github.io/python-str.html
 https://ashki23.github.io/python-env.html
+https://ashki23.github.io/python-lib.html
+https://ashki23.github.io/tensorflow.html
+https://ashki23.github.io/sqlite.html
+https://ashki23.github.io/python-vs-spark.html
 https://ashki23.github.io/r-plots.html
 https://ashki23.github.io/r-functions.html
 https://ashki23.github.io/r-intro.html
@@ -26,12 +30,10 @@ https://ashki23.github.io/shell.html
 https://ashki23.github.io/linux.html
 https://ashki23.github.io/hpc.html
 https://ashki23.github.io/gcloud.html
-https://ashki23.github.io/git.html
-https://ashki23.github.io/emacs.html
 https://ashki23.github.io/spack.html
 https://ashki23.github.io/cluster.html
-https://ashki23.github.io/python-lib.html
-https://ashki23.github.io/tensorflow.html
-https://ashki23.github.io/sqlite.html
 https://ashki23.github.io/vagrant.html
+https://ashki23.github.io/vertexai-workbench.html
+https://ashki23.github.io/git.html
+https://ashki23.github.io/emacs.html
 https://ashki23.github.io/markdown-latex.html
