@@ -5,7 +5,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <meta name="generator" content="pandoc">
       <meta name="author" content="Ashkan Mirzaee">
-      <meta name="description" content="A gentle introduction to use google cloud">
+      <meta name="description" content="A gentle introduction to use
+google cloud">
       <title>Introduction to cloud computing</title>
       <!-- Bootstrap -->
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -67,69 +68,178 @@
             <div class="container">
          <h1 class="title">Introduction to cloud computing</h1>
                   <div class="row">
-            <div class="col-xl-10"><p>Not many years ago around us was full of CDs, DVDs, Flash Drives and Hard Drives and it was hard to imagine life without them. But now it seems very hard to see any of those things around us, what happened then? The answer is Hard Drives moved to clouds! For free or for a small fee we had access to numerous storage somewhere outside our computers that pushed us to upload every thing that we used to download.</p>
-<p>But this is not end of the story and HDDs are not the last part of our computers that could fly! Now, CPUs start to move to clouds and this is beginning of the cloud computing journey. Following are some definitions of cloud computing:</p>
-<p>“Cloud computing is the delivery of computing services—including servers, storage, databases, networking, software, analytics, and intelligence—over the Internet (“the cloud”) to offer faster innovation, flexible resources, and economies of scale" (from <a href="https://azure.microsoft.com/en-us/overview/what-is-cloud-computing/">Azure</a> website).</p>
-<p>“Cloud computing is the on-demand delivery of IT resources over the Internet with pay-as-you-go pricing. Instead of buying, owning, and maintaining physical data centers and servers, you can access technology services, such as computing power, storage, and databases, on an as-needed basis from a cloud provider” (from <a href="https://aws.amazon.com/what-is-cloud-computing/">AWS</a> website).</p>
-<p>In this tutorial we will learn how to create and access to a compute engine on <a href="https://cloud.google.com">Google Cloud</a> and build a Virtual Machine (VM) that could be accessible from anywhere.</p>
+            <div class="col-xl-10"><p>Not many years ago around us was
+full of CDs, DVDs, Flash Drives and Hard Drives and it was hard to
+imagine life without them. But now it seems very hard to see any of
+those things around us, what happened then? The answer is Hard Drives
+moved to clouds! For free or for a small fee we had access to numerous
+storage somewhere outside our computers that pushed us to upload every
+thing that we used to download.</p>
+<p>But this is not end of the story and HDDs are not the last part of
+our computers that could fly! Now, CPUs start to move to clouds and this
+is beginning of the cloud computing journey. Following are some
+definitions of cloud computing:</p>
+<p>“Cloud computing is the delivery of computing services—including
+servers, storage, databases, networking, software, analytics, and
+intelligence—over the Internet (“the cloud”) to offer faster innovation,
+flexible resources, and economies of scale” (from <a
+href="https://azure.microsoft.com/en-us/overview/what-is-cloud-computing/">Azure</a>
+website).</p>
+<p>“Cloud computing is the on-demand delivery of IT resources over the
+Internet with pay-as-you-go pricing. Instead of buying, owning, and
+maintaining physical data centers and servers, you can access technology
+services, such as computing power, storage, and databases, on an
+as-needed basis from a cloud provider” (from <a
+href="https://aws.amazon.com/what-is-cloud-computing/">AWS</a>
+website).</p>
+<p>In this tutorial we will learn how to create and access to a compute
+engine on <a href="https://cloud.google.com">Google Cloud</a> and build
+a Virtual Machine (VM) that could be accessible from anywhere.</p>
 <hr />
 <h2 id="google-cloud">Google Cloud</h2>
-<p>To begin, we need a Google Cloud account. Note that Google Cloud basically is not a free service but you can access some services with no cost. Follow the instructions in <a href="https://cloud.google.com/compute/docs/quickstart-linux">here</a> to create a new compute engine (VM instance), for example <code>f1-micro (1 vCPU, 0.6 GB memory, 10GB size)</code> can be used with no cost. There are several OS options, but in tutorial we will use <a href="https://www.centos.org">CentOS</a>.</p>
-<p>After creating the virtual machine (VM), click on the instance name and press edit button on the top of the page and add your SSH public key to the instance. After adding the key, you will see the <code>username</code> in the first column. If you don’t have a public key, open a Linux terminal in your computer and run:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="bu">cd</span> ~</span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">ssh-keygen</span></span></code></pre></div>
-<p>Make sure to create a strong passphrase and remember it for the latter. To see the public key, use the following in the terminal prompt:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">cat</span> .ssh/id_rsa.pub</span></code></pre></div>
-<p>Copy the outputs and add it to the instance. Now to connect the VM instance, we only need to copy the external IP of the instance and run the following in a Linux terminal prompt and enter the public key passphrase (find more details <a href="https://cloud.google.com/compute/docs/instances/connecting-advanced#thirdpartytools">here</a>):</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">ssh</span> username@external-ip</span></code></pre></div>
-<p>After connecting to the instance, we can change the ssh configuration in a way that connecting to the VM without a public key. To connect to the instance with a root password, open the <code>/etc/ssh/sshd_config</code> config file with a text editor (e.g. <code>sudo emacs /etc/ssh/sshd_config</code>) and comment <code>#PasswordAuthentication no</code> and uncomment <code>PasswordAuthentication yes</code>. After save and exit, run the following to apply changes:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">sudo</span> systemctl restart sshd</span></code></pre></div>
-<p><strong>Note:</strong> in a Debian based Linux, use <code>sudo service ssh restart</code>.</p>
-<p>After these changes, we can connect to the instance by both public key passphrase (if a public key exist) or root password of the instance (if there is no public key). Note that the VM’s in cloud engine do not come with a root password setup by default, use the following to set it up:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">sudo</span> passwd user</span></code></pre></div>
-<p>To find the <code>user</code> name run <code>whoami</code> command (that should be same as the <code>username</code> pair to the public key).</p>
-<p>Also, we can use <em>Chrome Secure Shell App</em> by entering the username and external IP address of the instance such that:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1"></a><span class="ex">username@external-ip</span></span></code></pre></div>
-<p>We can use root password to connect (because of changes in the SSH config file) but if you want to use the public key, select the related <em>private SSH key</em> in the <strong>Identity</strong> field. If necessary, click Import to select a private key file from your local workstation (<code>~/.ssh/id_rsa</code>) - if using macOS, press <code>shift+command+.</code> to see hidden files.</p>
-<p>Here we go! now we can connect from a terminal prompt of a local computer that has the public key, or from a Chrome browser from any computer. Note that if multiple users are going to connect to the instance, it will be better to add a <a href="https://cloud.google.com/compute/docs/instances/managing-instance-access">OS login</a> to the instance by adding a metadata entry where the key is <code>enable-oslogin</code> and the value is <code>TRUE</code>.</p>
+<p>To begin, we need a Google Cloud account. Note that Google Cloud
+basically is not a free service but you can access some services with no
+cost. Follow the instructions in <a
+href="https://cloud.google.com/compute/docs/quickstart-linux">here</a>
+to create a new compute engine (VM instance), for example
+<code>f1-micro (1 vCPU, 0.6 GB memory, 10GB size)</code> can be used
+with no cost. There are several OS options, but in tutorial we will use
+<a href="https://www.centos.org">CentOS</a>.</p>
+<p>After creating the virtual machine (VM), click on the instance name
+and press edit button on the top of the page and add your SSH public key
+to the instance. After adding the key, you will see the
+<code>username</code> in the first column. If you don’t have a public
+key, open a Linux terminal in your computer and run:</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh-keygen</span></span></code></pre></div>
+<p>Make sure to create a strong passphrase and remember it for the
+latter. To see the public key, use the following in the terminal
+prompt:</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> .ssh/id_rsa.pub</span></code></pre></div>
+<p>Copy the outputs and add it to the instance. Now to connect the VM
+instance, we only need to copy the external IP of the instance and run
+the following in a Linux terminal prompt and enter the public key
+passphrase (find more details <a
+href="https://cloud.google.com/compute/docs/instances/connecting-advanced#thirdpartytools">here</a>):</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> username@external-ip</span></code></pre></div>
+<p>After connecting to the instance, we can change the ssh configuration
+in a way that connecting to the VM without a public key. To connect to
+the instance with a root password, open the
+<code>/etc/ssh/sshd_config</code> config file with a text editor
+(e.g. <code>sudo emacs /etc/ssh/sshd_config</code>) and comment
+<code>#PasswordAuthentication no</code> and uncomment
+<code>PasswordAuthentication yes</code>. After save and exit, run the
+following to apply changes:</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> systemctl restart sshd</span></code></pre></div>
+<p><strong>Note:</strong> in a Debian based Linux, use
+<code>sudo service ssh restart</code>.</p>
+<p>After these changes, we can connect to the instance by both public
+key passphrase (if a public key exist) or root password of the instance
+(if there is no public key). Note that the VM’s in cloud engine do not
+come with a root password setup by default, use the following to set it
+up:</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> passwd user</span></code></pre></div>
+<p>To find the <code>user</code> name run <code>whoami</code> command
+(that should be same as the <code>username</code> pair to the public
+key).</p>
+<p>Also, we can use <em>Chrome Secure Shell App</em> by entering the
+username and external IP address of the instance such that:</p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">username@external-ip</span></span></code></pre></div>
+<p>We can use root password to connect (because of changes in the SSH
+config file) but if you want to use the public key, select the related
+<em>private SSH key</em> in the <strong>Identity</strong> field. If
+necessary, click Import to select a private key file from your local
+workstation (<code>~/.ssh/id_rsa</code>) - if using macOS, press
+<code>shift+command+.</code> to see hidden files.</p>
+<p>Here we go! now we can connect from a terminal prompt of a local
+computer that has the public key, or from a Chrome browser from any
+computer. Note that if multiple users are going to connect to the
+instance, it will be better to add a <a
+href="https://cloud.google.com/compute/docs/instances/managing-instance-access">OS
+login</a> to the instance by adding a metadata entry where the key is
+<code>enable-oslogin</code> and the value is <code>TRUE</code>.</p>
 <h2 id="centos">CentOS</h2>
-<p>Connecting to the instance, connect us to a computer with CentOS operating system. In the following we will learn how to update CentOS and install required software.</p>
-<p>If you have some experiences with Linux, probably you are familiar with Debian package manger (<code>apt</code>). CentOS uses a different package manager called <code>yum</code> which is pretty similar to <code>apt</code>. We can check for the update by:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">sudo</span> yum check-update</span></code></pre></div>
+<p>Connecting to the instance, connect us to a computer with CentOS
+operating system. In the following we will learn how to update CentOS
+and install required software.</p>
+<p>If you have some experiences with Linux, probably you are familiar
+with Debian package manger (<code>apt</code>). CentOS uses a different
+package manager called <code>yum</code> which is pretty similar to
+<code>apt</code>. We can check for the update by:</p>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> yum check-update</span></code></pre></div>
 <p>And update OS by:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">sudo</span> yum update</span>
-<span id="cb8-2"><a href="#cb8-2"></a><span class="fu">sudo</span> yum clean all <span class="co"># clean all cache files</span></span></code></pre></div>
-<p><strong>Note:</strong> we can find OS version by <code>cat /etc/redhat-release</code>.</p>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> yum update</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> yum clean all <span class="co"># clean all cache files</span></span></code></pre></div>
+<p><strong>Note:</strong> we can find OS version by
+<code>cat /etc/redhat-release</code>.</p>
 <p>To install, update or remove packages use:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">sudo</span> yum install pkg</span>
-<span id="cb9-2"><a href="#cb9-2"></a><span class="fu">sudo</span> yum update pkg</span>
-<span id="cb9-3"><a href="#cb9-3"></a><span class="fu">sudo</span> yum remove pkg</span></code></pre></div>
-<p>Let’s install <code>wget</code>, <code>git</code> and <code>emacs</code> by:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">sudo</span> yum install wget <span class="co"># to download files from the Internet</span></span>
-<span id="cb10-2"><a href="#cb10-2"></a><span class="fu">sudo</span> yum install git <span class="co"># to access Git</span></span>
-<span id="cb10-3"><a href="#cb10-3"></a><span class="fu">sudo</span> yum install emacs <span class="co"># to have Emacs text editor</span></span></code></pre></div>
-<p>To install <a href="https://docs.conda.io/en/latest/miniconda.html">Miniconda3</a> run:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">wget</span> https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh</span>
-<span id="cb11-2"><a href="#cb11-2"></a><span class="fu">bash</span> Miniconda3-latest-Linux-x86_64.sh</span></code></pre></div>
-<p>Lets refresh the <code>.bashrc</code> file to add <code>conda</code> command to the current environment by:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1"></a><span class="bu">source</span> ~/.bashrc</span></code></pre></div>
-<p>If you’d prefer that conda’s <code>base</code> environment not be activated on startup, run:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1"></a><span class="ex">conda</span> config --set auto_activate_base false</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> yum install pkg</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> yum update pkg</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> yum remove pkg</span></code></pre></div>
+<p>Let’s install <code>wget</code>, <code>git</code> and
+<code>emacs</code> by:</p>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> yum install wget <span class="co"># to download files from the Internet</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> yum install git <span class="co"># to access Git</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> yum install emacs <span class="co"># to have Emacs text editor</span></span></code></pre></div>
+<p>To install <a
+href="https://docs.conda.io/en/latest/miniconda.html">Miniconda3</a>
+run:</p>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> Miniconda3-latest-Linux-x86_64.sh</span></code></pre></div>
+<p>Lets refresh the <code>.bashrc</code> file to add <code>conda</code>
+command to the current environment by:</p>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> ~/.bashrc</span></code></pre></div>
+<p>If you’d prefer that conda’s <code>base</code> environment not be
+activated on startup, run:</p>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> config <span class="at">--set</span> auto_activate_base false</span></code></pre></div>
 <p>And use the following to activate conda <code>base</code> later:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1"></a><span class="ex">conda</span> activate base</span></code></pre></div>
-<p>See <a href="https://conda.io/projects/conda/en/latest/user-guide/install/linux.html">here</a> for more details about installing Miniconda and learn more about using conda in <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/getting-started.html">here</a>. Also, review a tutorial about conda in <a href="https://ashki23.github.io/python_env.html#miniconda">here</a>.</p>
-<p><strong>Note:</strong> (optional) in CentOS <code>python</code> command refers to Python 2. To access <code>python3</code> command, we can add <code>alias python3=~/miniconda3/bin/python3</code> to <code>~\.bashrc</code> file. Use <code>source ~/.bashrc</code> to apply changes.</p>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate base</span></code></pre></div>
+<p>See <a
+href="https://conda.io/projects/conda/en/latest/user-guide/install/linux.html">here</a>
+for more details about installing Miniconda and learn more about using
+conda in <a
+href="https://docs.conda.io/projects/conda/en/latest/user-guide/getting-started.html">here</a>.
+Also, review a tutorial about conda in <a
+href="https://ashki23.github.io/python_env.html#miniconda">here</a>.</p>
+<p><strong>Note:</strong> (optional) in CentOS <code>python</code>
+command refers to Python 2. To access <code>python3</code> command, we
+can add <code>alias python3=~/miniconda3/bin/python3</code> to
+<code>~\.bashrc</code> file. Use <code>source ~/.bashrc</code> to apply
+changes.</p>
 <p>To install R, we can use conda to create an R environment:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1"></a><span class="ex">conda</span> create --prefix ./r_env r-base</span></code></pre></div>
-<p>To use R, first activate the <code>r_env</code> by <code>conda activate ./r_env</code> (when you are in the same directory as <code>r_env</code>) and run <code>R</code>.</p>
-<p>Now we can download and install other required software. <code>yum</code> and <code>conda</code> package managers can be used to install different software and packages same as what we did in above to install Emacs and R. Also, we can directly install software by downloading source files and install them such as installing Miniconda in above. After installation, we can reboot the engine by:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">sudo</span> reboot</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">--prefix</span> ./r_env r-base</span></code></pre></div>
+<p>To use R, first activate the <code>r_env</code> by
+<code>conda activate ./r_env</code> (when you are in the same directory
+as <code>r_env</code>) and run <code>R</code>.</p>
+<p>Now we can download and install other required software.
+<code>yum</code> and <code>conda</code> package managers can be used to
+install different software and packages same as what we did in above to
+install Emacs and R. Also, we can directly install software by
+downloading source files and install them such as installing Miniconda
+in above. After installation, we can reboot the engine by:</p>
+<div class="sourceCode" id="cb16"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> reboot</span></code></pre></div>
 <p>Now I think your VM is ready, enjoy it!</p></div>
             <div class="d-none d-xl-block col-xl-2 bd-toc">
                <ul class="section-nav">
                   <li class="toc-entry"><ul>
-<li><a href="#google-cloud">Google Cloud</a></li>
-<li><a href="#centos">CentOS</a></li>
+<li><a href="#google-cloud" id="toc-google-cloud">Google Cloud</a></li>
+<li><a href="#centos" id="toc-centos">CentOS</a></li>
 </ul></li>
                </ul>
             </div>
@@ -144,7 +254,7 @@
                   &nbsp;|&nbsp;
                   Built with <a href="https://github.com/ashki23/pandoc-bootstrap" target="_blank" rel="noopener">pandoc-bootstrap</a> theme
                   <br />
-                  Copyright 2018-2023, Ashkan Mirzaee
+                  Copyright 2018-2024, Ashkan Mirzaee
                </div>
             </footer>
             <!-- Global site tag (gtag.js) - Google Analytics -->

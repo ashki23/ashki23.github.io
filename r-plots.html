@@ -67,258 +67,302 @@
             <div class="container">
          <h1 class="title">Basic graphics in R</h1>
                   <div class="row">
-            <div class="col-xl-10"><p><a href="https://www.r-project.org/">R</a> is a great tool for creating plots, maps and graphics. R includes many built-in graphics functions that would help to draw plots easily. R is a very self explanatory environment in terms of documentation.</p>
+            <div class="col-xl-10"><p><a
+href="https://www.r-project.org/">R</a> is a great tool for creating
+plots, maps and graphics. R includes many built-in graphics functions
+that would help to draw plots easily. R is a very self explanatory
+environment in terms of documentation.</p>
 <p>You may find more about R programming in:</p>
 <ul>
 <li><a href="r-intro.html">A gentle introduction to R</a></li>
 <li><a href="r-functions.html">Helpful functions in R</a></li>
-<li><a href="http://swcarpentry.github.io/r-novice-inflammation/">Programming with R</a></li>
-<li><a href="http://swcarpentry.github.io/r-novice-gapminder/">R for Reproducible Scientific Analysis</a></li>
+<li><a
+href="http://swcarpentry.github.io/r-novice-inflammation/">Programming
+with R</a></li>
+<li><a href="http://swcarpentry.github.io/r-novice-gapminder/">R for
+Reproducible Scientific Analysis</a></li>
 </ul>
 <hr />
 <h2 id="functions">Functions</h2>
-<p>The following is a list of the most practical graphics functions in R:</p>
+<p>The following is a list of the most practical graphics functions in
+R:</p>
 <ul>
 <li><code>plot</code>: Generic function for plotting of R objects</li>
-<li><code>lines</code>: A generic function taking coordinates and joining the corresponding points with line segments</li>
-<li><code>ablines</code>: This function adds one or more straight lines through the current plot</li>
-<li><code>points</code>: A generic function to draw a sequence of points at the specified coordinates</li>
+<li><code>lines</code>: A generic function taking coordinates and
+joining the corresponding points with line segments</li>
+<li><code>ablines</code>: This function adds one or more straight lines
+through the current plot</li>
+<li><code>points</code>: A generic function to draw a sequence of points
+at the specified coordinates</li>
 <li><code>panel.smooth</code>: Simple panel plot</li>
-<li><code>smoothScatter</code>: Produce a smoothed color density representation of a scatterplot,</li>
+<li><code>smoothScatter</code>: Produce a smoothed color density
+representation of a scatterplot,</li>
 <li><code>pairs</code>: Produce a matrix of scatter plots</li>
-<li><code>hist</code>: Computes a histogram of the given data values</li>
-<li><code>acf</code>: Computes (and by default plots) estimates of the autocorrelation function</li>
-<li><code>boxplot</code>: Produce box-and-whisker plot(s) of the given (grouped) values</li>
-<li><code>barplot</code>: Creates a bar plot with vertical or horizontal bars</li>
+<li><code>hist</code>: Computes a histogram of the given data
+values</li>
+<li><code>acf</code>: Computes (and by default plots) estimates of the
+autocorrelation function</li>
+<li><code>boxplot</code>: Produce box-and-whisker plot(s) of the given
+(grouped) values</li>
+<li><code>barplot</code>: Creates a bar plot with vertical or horizontal
+bars</li>
 <li><code>dotchart</code>: Draw a Cleveland dot plot</li>
 <li><code>pie</code>: Draw a pie chart</li>
-<li><code>polygon</code>: Polygon draws the polygons whose vertices are given in x and y</li>
+<li><code>polygon</code>: Polygon draws the polygons whose vertices are
+given in x and y</li>
 <li><code>symbols</code>: This function draws symbols on a plot</li>
 <li><code>arrows</code>: Add arrows to a plot</li>
 <li><code>axis</code>: Add an axis to a plot</li>
-<li><code>stars</code>: Draw star (segment) plots and spider (radar) plots</li>
-<li><code>contour</code>: Create a contour plot, or add contour lines to an existing plot</li>
-<li><code>image</code>: Creates a grid of colored or gray-scale rectangles with colors corresponding to the values in z</li>
-<li><code>persp</code>: This function draws perspective plots of a surface over the x–y plane</li>
+<li><code>stars</code>: Draw star (segment) plots and spider (radar)
+plots</li>
+<li><code>contour</code>: Create a contour plot, or add contour lines to
+an existing plot</li>
+<li><code>image</code>: Creates a grid of colored or gray-scale
+rectangles with colors corresponding to the values in z</li>
+<li><code>persp</code>: This function draws perspective plots of a
+surface over the x–y plane</li>
 </ul>
-<p>There are several graphical parameters that can be specified in the graphics functions or through parameter function, <code>par()</code>, before the graphs. Most important graphical parameters:</p>
+<p>There are several graphical parameters that can be specified in the
+graphics functions or through parameter function, <code>par()</code>,
+before the graphs. Most important graphical parameters:</p>
 <ul>
-<li><code>ann</code>: Plots annotations which is axis titles and overall titles, <code>ann = FALSE</code> means no titles</li>
+<li><code>ann</code>: Plots annotations which is axis titles and overall
+titles, <code>ann = FALSE</code> means no titles</li>
 <li><code>bg</code>: Background color</li>
-<li><code>bty</code>: Border type, <code>bty = "n"</code> means border type is NULL</li>
-<li><code>cex</code>: A value giving the amount which plotting text and symbols should be magnified relative to the default</li>
+<li><code>bty</code>: Border type, <code>bty = "n"</code> means border
+type is NULL</li>
+<li><code>cex</code>: A value giving the amount which plotting text and
+symbols should be magnified relative to the default</li>
 <li><code>las</code>: Labels axis style</li>
 <li><code>lty</code>: Lines types</li>
 <li><code>lwd</code>: Lines width</li>
 <li><code>main</code>: Plot main title</li>
-<li><code>mfrow</code>: Multiple figures in rows, it is a vector of the form <code>c(nr,nc)</code></li>
+<li><code>mfrow</code>: Multiple figures in rows, it is a vector of the
+form <code>c(nr,nc)</code></li>
 <li><code>pch</code>: Points character</li>
-<li><code>xaxt/yaxt</code>: X-axis/y-axis style, <code>xaxt = "n"</code> means no scale on x-axis</li>
+<li><code>xaxt/yaxt</code>: X-axis/y-axis style, <code>xaxt = "n"</code>
+means no scale on x-axis</li>
 <li><code>xlab/ylab</code>: X-axis/y-axis label</li>
 <li><code>xlim/ylim</code>: X-axis/y-axis limit</li>
 </ul>
-<p>This tutorial shows how to apply above functions and parameters to draw graphs by R. We will also, briefly learn how to generate publication style tables and maps.</p>
+<p>This tutorial shows how to apply above functions and parameters to
+draw graphs by R. We will also, briefly learn how to generate
+publication style tables and maps.</p>
 <hr />
-<h2 id="scatter-plots-lines-and-points">Scatter plots, lines and points</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>x =<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">100</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a>y =<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">100</span>, <span class="dv">0</span>, <span class="dv">2</span>)</span>
-<span id="cb1-3"><a href="#cb1-3"></a></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="co">## Left plot</span></span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
-<span id="cb1-6"><a href="#cb1-6"></a><span class="kw">plot</span>(x, y, <span class="dt">las =</span> <span class="dv">1</span>, <span class="dt">xaxt =</span> <span class="st">&quot;n&quot;</span>)</span>
-<span id="cb1-7"><a href="#cb1-7"></a><span class="kw">axis</span>(<span class="dv">1</span>, <span class="dt">at =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">25</span>,<span class="dv">50</span>,<span class="dv">75</span>,<span class="dv">100</span>), <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&#39;O&#39;</span>,<span class="st">&#39;A&#39;</span>,<span class="st">&#39;B&#39;</span>,<span class="st">&#39;C&#39;</span>,<span class="st">&#39;D&#39;</span>))</span>
-<span id="cb1-8"><a href="#cb1-8"></a><span class="kw">panel.smooth</span>(x, y, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>)</span>
-<span id="cb1-9"><a href="#cb1-9"></a></span>
-<span id="cb1-10"><a href="#cb1-10"></a><span class="co">## Right plot</span></span>
-<span id="cb1-11"><a href="#cb1-11"></a><span class="kw">plot</span>(x, y, <span class="dt">type =</span> <span class="st">&quot;l&quot;</span>, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;&quot;</span>, <span class="dt">yaxt =</span> <span class="st">&quot;n&quot;</span>, <span class="dt">las =</span> <span class="dv">2</span>)</span>
-<span id="cb1-12"><a href="#cb1-12"></a><span class="kw">lines</span>(<span class="kw">smooth</span>(y), <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">lty =</span> <span class="dv">1</span>, <span class="dt">lwd =</span> <span class="fl">1.4</span>)</span>
-<span id="cb1-13"><a href="#cb1-13"></a><span class="kw">abline</span>(<span class="dt">h =</span> <span class="dv">3</span>, <span class="dt">v =</span> <span class="dv">80</span>, <span class="dt">col =</span> <span class="st">&quot;orange&quot;</span>, <span class="dt">lwd =</span> <span class="dv">3</span>)</span>
-<span id="cb1-14"><a href="#cb1-14"></a><span class="kw">abline</span>(<span class="dt">h =</span> <span class="dv">0</span>, <span class="dt">lty =</span> <span class="dv">2</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)</span>
-<span id="cb1-15"><a href="#cb1-15"></a><span class="kw">points</span>(<span class="kw">c</span>(<span class="dv">20</span>,<span class="dv">40</span>,<span class="dv">60</span>,<span class="dv">80</span>,<span class="dv">100</span>), <span class="kw">c</span>(<span class="dv">0</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">2</span>), <span class="dt">col =</span> <span class="st">&quot;black&quot;</span>, <span class="dt">bg =</span> <span class="st">&quot;green&quot;</span>, <span class="dt">pch =</span> <span class="dv">21</span>, <span class="dt">cex =</span> <span class="dv">2</span>)</span>
-<span id="cb1-16"><a href="#cb1-16"></a><span class="kw">text</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="dv">40</span>,<span class="dv">80</span>), <span class="dt">y =</span> <span class="kw">c</span>(<span class="op">-</span><span class="fl">1.2</span>,<span class="fl">3.2</span>), <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;MIN&quot;</span>,<span class="st">&quot;MAX&quot;</span>), <span class="dt">pos =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>), <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>,  <span class="dt">cex =</span> <span class="fl">0.9</span>)</span></code></pre></div>
+<h2 id="scatter-plots-lines-and-points">Scatter plots, lines and
+points</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">100</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="dv">0</span>, <span class="dv">2</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Left plot</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">las =</span> <span class="dv">1</span>, <span class="at">xaxt =</span> <span class="st">&quot;n&quot;</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">axis</span>(<span class="dv">1</span>, <span class="at">at =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">25</span>,<span class="dv">50</span>,<span class="dv">75</span>,<span class="dv">100</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&#39;O&#39;</span>,<span class="st">&#39;A&#39;</span>,<span class="st">&#39;B&#39;</span>,<span class="st">&#39;C&#39;</span>,<span class="st">&#39;D&#39;</span>))</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">panel.smooth</span>(x, y, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="do">## Right plot</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">type =</span> <span class="st">&quot;l&quot;</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;&quot;</span>, <span class="at">yaxt =</span> <span class="st">&quot;n&quot;</span>, <span class="at">las =</span> <span class="dv">2</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(<span class="fu">smooth</span>(y), <span class="at">col =</span> <span class="st">&quot;red&quot;</span>, <span class="at">lty =</span> <span class="dv">1</span>, <span class="at">lwd =</span> <span class="fl">1.4</span>)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">3</span>, <span class="at">v =</span> <span class="dv">80</span>, <span class="at">col =</span> <span class="st">&quot;orange&quot;</span>, <span class="at">lwd =</span> <span class="dv">3</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">0</span>, <span class="at">lty =</span> <span class="dv">2</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(<span class="fu">c</span>(<span class="dv">20</span>,<span class="dv">40</span>,<span class="dv">60</span>,<span class="dv">80</span>,<span class="dv">100</span>), <span class="fu">c</span>(<span class="dv">0</span>,<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">2</span>), <span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">bg =</span> <span class="st">&quot;green&quot;</span>, <span class="at">pch =</span> <span class="dv">21</span>, <span class="at">cex =</span> <span class="dv">2</span>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">40</span>,<span class="dv">80</span>), <span class="at">y =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">1.2</span>,<span class="fl">3.2</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;MIN&quot;</span>,<span class="st">&quot;MAX&quot;</span>), <span class="at">pos =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>), <span class="at">col =</span> <span class="st">&quot;red&quot;</span>,  <span class="at">cex =</span> <span class="fl">0.9</span>)</span></code></pre></div>
 <p align="center">
 <img src="images/r-plots/chunk-2-1.png" alt="Scatter plots" style="width: 75%; border: 0;">
 </p>
-<h2 id="probability-density-functions">Probability density functions</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
-<span id="cb2-2"><a href="#cb2-2"></a></span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="co">## Left plot</span></span>
-<span id="cb2-4"><a href="#cb2-4"></a><span class="kw">plot</span>(<span class="kw">density</span>(y, <span class="dt">bw =</span> <span class="dv">2</span>), <span class="dt">main =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb2-5"><a href="#cb2-5"></a></span>
-<span id="cb2-6"><a href="#cb2-6"></a><span class="co">## Right plot</span></span>
-<span id="cb2-7"><a href="#cb2-7"></a>y2 =<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">100</span>, <span class="dv">4</span>, <span class="dv">2</span>)</span>
-<span id="cb2-8"><a href="#cb2-8"></a><span class="kw">plot</span>(<span class="kw">density</span>(y, <span class="dt">bw =</span> <span class="dv">1</span>), <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb2-9"><a href="#cb2-9"></a><span class="kw">lines</span>(<span class="kw">density</span>(y2, <span class="dt">bw =</span> <span class="dv">1</span>), <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>)</span>
-<span id="cb2-10"><a href="#cb2-10"></a><span class="kw">legend</span>(<span class="st">&quot;topleft&quot;</span>, <span class="dt">legend =</span> <span class="kw">c</span>(<span class="st">&quot;Line 1&quot;</span>, <span class="st">&quot;Line 2&quot;</span>), <span class="dt">title =</span> <span class="st">&quot;Line types&quot;</span>, <span class="dt">lty =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">2</span>, <span class="dt">lwd =</span> <span class="dv">1</span>,  <span class="dt">col =</span> <span class="kw">c</span>(<span class="st">&quot;red&quot;</span>, <span class="st">&quot;blue&quot;</span>), <span class="dt">cex =</span> <span class="fl">0.7</span>, <span class="dt">box.lty =</span> <span class="dv">0</span>, <span class="dt">bg =</span> <span class="kw">rgb</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>))</span></code></pre></div>
+<h2 id="probability-density-functions">Probability density
+functions</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Left plot</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">density</span>(y, <span class="at">bw =</span> <span class="dv">2</span>), <span class="at">main =</span> <span class="st">&quot;&quot;</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="do">## Right plot</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>y2 <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="dv">4</span>, <span class="dv">2</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">density</span>(y, <span class="at">bw =</span> <span class="dv">1</span>), <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">main =</span> <span class="st">&quot;&quot;</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(<span class="fu">density</span>(y2, <span class="at">bw =</span> <span class="dv">1</span>), <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;topleft&quot;</span>, <span class="at">legend =</span> <span class="fu">c</span>(<span class="st">&quot;Line 1&quot;</span>, <span class="st">&quot;Line 2&quot;</span>), <span class="at">title =</span> <span class="st">&quot;Line types&quot;</span>, <span class="at">lty =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">lwd =</span> <span class="dv">1</span>,  <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;red&quot;</span>, <span class="st">&quot;blue&quot;</span>), <span class="at">cex =</span> <span class="fl">0.7</span>, <span class="at">box.lty =</span> <span class="dv">0</span>, <span class="at">bg =</span> <span class="fu">rgb</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>))</span></code></pre></div>
 <p align="center">
 <img src="images/r-plots/chunk-3-1.png" alt="Probability density functions" style="width: 75%; border: 0;">
 </p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co">## Left plot</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a>seq =<span class="st"> </span><span class="kw">seq</span>(<span class="op">-</span><span class="dv">10</span>, <span class="dv">10</span>, <span class="dt">length.out =</span> <span class="dv">100</span>)</span>
-<span id="cb3-3"><a href="#cb3-3"></a>f =<span class="st"> </span><span class="kw">dnorm</span>(seq, <span class="dv">0</span>, <span class="dv">2</span>)</span>
-<span id="cb3-4"><a href="#cb3-4"></a><span class="kw">plot</span>(seq, f, <span class="dt">col =</span> <span class="kw">colorRampPalette</span>(<span class="kw">c</span>(<span class="st">&quot;red&quot;</span>,<span class="st">&quot;yellow&quot;</span>,<span class="st">&quot;springgreen&quot;</span>,<span class="st">&quot;royalblue&quot;</span>))(<span class="dv">100</span>))</span>
-<span id="cb3-5"><a href="#cb3-5"></a><span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="dt">legend =</span> <span class="kw">c</span>(<span class="st">&quot;Point 1&quot;</span>, <span class="st">&quot;Point 2&quot;</span>), <span class="dt">title =</span> <span class="st">&quot;Point types&quot;</span>, <span class="dt">pch =</span> <span class="kw">c</span>(<span class="dv">22</span>,<span class="dv">21</span>),  <span class="dt">col =</span> <span class="kw">c</span>(<span class="st">&quot;red&quot;</span>, <span class="st">&quot;blue&quot;</span>), <span class="dt">pt.bg =</span> <span class="kw">c</span>(<span class="st">&quot;gold&quot;</span>, <span class="st">&quot;green&quot;</span>), <span class="dt">cex =</span> <span class="fl">0.75</span>, <span class="dt">pt.cex =</span> <span class="fl">1.2</span>, <span class="dt">box.col =</span> <span class="st">&quot;black&quot;</span>, <span class="dt">box.lty =</span> <span class="dv">1</span> , <span class="dt">box.lwd =</span> <span class="dv">1</span>, <span class="dt">inset =</span> <span class="kw">c</span>(<span class="fl">0.02</span>, <span class="fl">0.015</span>))</span>
-<span id="cb3-6"><a href="#cb3-6"></a><span class="kw">polygon</span>(seq, f, <span class="dt">density =</span> <span class="dv">10</span>, <span class="dt">col =</span> <span class="st">&quot;gray&quot;</span>, <span class="dt">border =</span> <span class="ot">NA</span>)</span>
-<span id="cb3-7"><a href="#cb3-7"></a></span>
-<span id="cb3-8"><a href="#cb3-8"></a><span class="co">## Right plot</span></span>
-<span id="cb3-9"><a href="#cb3-9"></a><span class="kw">plot</span>(seq, f, <span class="dt">type =</span> <span class="st">&quot;l&quot;</span>, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">lwd =</span> <span class="dv">3</span>)</span>
-<span id="cb3-10"><a href="#cb3-10"></a><span class="kw">polygon</span>(seq, f, <span class="dt">density =</span> <span class="ot">NA</span>, <span class="dt">col =</span> <span class="st">&quot;gold&quot;</span>, <span class="dt">border =</span> <span class="ot">NA</span>)</span>
-<span id="cb3-11"><a href="#cb3-11"></a><span class="kw">polygon</span>(<span class="kw">c</span>(<span class="dv">2</span>, seq[seq <span class="op">&gt;=</span><span class="st"> </span><span class="dv">2</span>]), <span class="kw">c</span>(<span class="dv">0</span>, f[seq <span class="op">&gt;=</span><span class="st"> </span><span class="dv">2</span>]), <span class="dt">density =</span> <span class="ot">NA</span>, <span class="dt">col=</span><span class="st">&quot;green&quot;</span>, <span class="dt">border =</span> <span class="ot">NA</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Left plot</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>seq <span class="ot">=</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">10</span>, <span class="dv">10</span>, <span class="at">length.out =</span> <span class="dv">100</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>f <span class="ot">=</span> <span class="fu">dnorm</span>(seq, <span class="dv">0</span>, <span class="dv">2</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(seq, f, <span class="at">col =</span> <span class="fu">colorRampPalette</span>(<span class="fu">c</span>(<span class="st">&quot;red&quot;</span>,<span class="st">&quot;yellow&quot;</span>,<span class="st">&quot;springgreen&quot;</span>,<span class="st">&quot;royalblue&quot;</span>))(<span class="dv">100</span>))</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="at">legend =</span> <span class="fu">c</span>(<span class="st">&quot;Point 1&quot;</span>, <span class="st">&quot;Point 2&quot;</span>), <span class="at">title =</span> <span class="st">&quot;Point types&quot;</span>, <span class="at">pch =</span> <span class="fu">c</span>(<span class="dv">22</span>,<span class="dv">21</span>),  <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;red&quot;</span>, <span class="st">&quot;blue&quot;</span>), <span class="at">pt.bg =</span> <span class="fu">c</span>(<span class="st">&quot;gold&quot;</span>, <span class="st">&quot;green&quot;</span>), <span class="at">cex =</span> <span class="fl">0.75</span>, <span class="at">pt.cex =</span> <span class="fl">1.2</span>, <span class="at">box.col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">box.lty =</span> <span class="dv">1</span> , <span class="at">box.lwd =</span> <span class="dv">1</span>, <span class="at">inset =</span> <span class="fu">c</span>(<span class="fl">0.02</span>, <span class="fl">0.015</span>))</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(seq, f, <span class="at">density =</span> <span class="dv">10</span>, <span class="at">col =</span> <span class="st">&quot;gray&quot;</span>, <span class="at">border =</span> <span class="cn">NA</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="do">## Right plot</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(seq, f, <span class="at">type =</span> <span class="st">&quot;l&quot;</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>, <span class="at">lwd =</span> <span class="dv">3</span>)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(seq, f, <span class="at">density =</span> <span class="cn">NA</span>, <span class="at">col =</span> <span class="st">&quot;gold&quot;</span>, <span class="at">border =</span> <span class="cn">NA</span>)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(<span class="fu">c</span>(<span class="dv">2</span>, seq[seq <span class="sc">&gt;=</span> <span class="dv">2</span>]), <span class="fu">c</span>(<span class="dv">0</span>, f[seq <span class="sc">&gt;=</span> <span class="dv">2</span>]), <span class="at">density =</span> <span class="cn">NA</span>, <span class="at">col=</span><span class="st">&quot;green&quot;</span>, <span class="at">border =</span> <span class="cn">NA</span>)</span></code></pre></div>
 <p align="center">
 <img src="images/r-plots/chunk-3-2.png" alt="Probability density functions" style="width: 75%; border: 0;">
 </p>
 <h2 id="histograms">Histograms</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
-<span id="cb4-2"><a href="#cb4-2"></a></span>
-<span id="cb4-3"><a href="#cb4-3"></a><span class="co">## Left plot</span></span>
-<span id="cb4-4"><a href="#cb4-4"></a><span class="kw">hist</span>(y, <span class="dt">col =</span> <span class="st">&quot;orange&quot;</span>, <span class="dt">density =</span> <span class="dv">10</span>, <span class="dt">main =</span> <span class="st">&quot;&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb4-5"><a href="#cb4-5"></a></span>
-<span id="cb4-6"><a href="#cb4-6"></a><span class="co">## Right plot</span></span>
-<span id="cb4-7"><a href="#cb4-7"></a><span class="kw">hist</span>(y, <span class="dt">col =</span> <span class="kw">cm.colors</span>(<span class="dv">10</span>), <span class="dt">probability =</span> <span class="ot">TRUE</span>, <span class="dt">main =</span> <span class="st">&quot;&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb4-8"><a href="#cb4-8"></a><span class="kw">lines</span>(seq, f, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="dt">lty =</span> <span class="dv">1</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Left plot</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(y, <span class="at">col =</span> <span class="st">&quot;orange&quot;</span>, <span class="at">density =</span> <span class="dv">10</span>, <span class="at">main =</span> <span class="st">&quot;&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;&quot;</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="do">## Right plot</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(y, <span class="at">col =</span> <span class="fu">cm.colors</span>(<span class="dv">10</span>), <span class="at">probability =</span> <span class="cn">TRUE</span>, <span class="at">main =</span> <span class="st">&quot;&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;&quot;</span>)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(seq, f, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">lty =</span> <span class="dv">1</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span></code></pre></div>
 <p align="center">
 <img src="images/r-plots/chunk-4-1.png" alt="Histograms" style="width: 75%; border: 0;">
 </p>
-<h2 id="box-plots-and-autocorrelations">Box plots and autocorrelations</h2>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
-<span id="cb5-2"><a href="#cb5-2"></a></span>
-<span id="cb5-3"><a href="#cb5-3"></a><span class="co">## Left plot</span></span>
-<span id="cb5-4"><a href="#cb5-4"></a><span class="kw">boxplot</span>(y, y2, <span class="dt">col =</span> <span class="kw">c</span>(<span class="st">&quot;orange&quot;</span>, <span class="st">&quot;gold&quot;</span>))</span>
-<span id="cb5-5"><a href="#cb5-5"></a><span class="kw">abline</span>(<span class="dt">h =</span> <span class="dv">0</span>)</span>
-<span id="cb5-6"><a href="#cb5-6"></a></span>
-<span id="cb5-7"><a href="#cb5-7"></a><span class="co">## Right plot</span></span>
-<span id="cb5-8"><a href="#cb5-8"></a><span class="kw">acf</span>(y, <span class="dt">main =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<h2 id="box-plots-and-autocorrelations">Box plots and
+autocorrelations</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Left plot</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(y, y2, <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;orange&quot;</span>, <span class="st">&quot;gold&quot;</span>))</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">0</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Right plot</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">acf</span>(y, <span class="at">main =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
 <p align="center">
 <img src="images/r-plots/chunk-5-1.png" alt="Box plots" style="width: 75%; border: 0;">
 </p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="kw">boxplot</span>(count <span class="op">~</span><span class="st"> </span>spray, <span class="dt">data =</span> InsectSprays, <span class="dt">ylab =</span> <span class="st">&quot;Number of var&quot;</span>, <span class="dt">col =</span> <span class="kw">cm.colors</span>(<span class="dv">6</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(count <span class="sc">~</span> spray, <span class="at">data =</span> InsectSprays, <span class="at">ylab =</span> <span class="st">&quot;Number of var&quot;</span>, <span class="at">col =</span> <span class="fu">cm.colors</span>(<span class="dv">6</span>))</span></code></pre></div>
 <p align="center">
 <img src="images/r-plots/chunk-6-1.png" alt="Box plots" style="width: 75%; border: 0;">
 </p>
 <h2 id="barplots-and-dotcharts">Barplots and dotcharts</h2>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">6</span>), <span class="dt">xpd =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb7-2"><a href="#cb7-2"></a><span class="kw">barplot</span>(VADeaths, <span class="dt">border =</span> <span class="st">&quot;dark blue&quot;</span>, <span class="dt">col =</span> <span class="kw">rainbow</span>(<span class="dv">20</span>), <span class="dt">cex.axis =</span>  <span class="fl">1.3</span>)</span>
-<span id="cb7-3"><a href="#cb7-3"></a><span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="dt">legend =</span> <span class="kw">c</span>(<span class="st">&quot;Group 1&quot;</span>, <span class="st">&quot;Group 2&quot;</span>, <span class="st">&quot;Group 3&quot;</span>, <span class="st">&quot;Group 4&quot;</span>, <span class="st">&quot;Group 5&quot;</span>),  <span class="dt">title =</span> <span class="st">&quot;Group types&quot;</span>, <span class="dt">fill =</span> <span class="kw">c</span>(<span class="kw">rainbow</span>(<span class="dv">20</span>)), <span class="dt">cex =</span> <span class="fl">0.8</span>,  <span class="dt">box.lty =</span> <span class="dv">0</span>, <span class="dt">inset =</span> <span class="kw">c</span>(<span class="op">-</span><span class="fl">0.2</span>,<span class="dv">0</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">6</span>), <span class="at">xpd =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(VADeaths, <span class="at">border =</span> <span class="st">&quot;dark blue&quot;</span>, <span class="at">col =</span> <span class="fu">rainbow</span>(<span class="dv">20</span>), <span class="at">cex.axis =</span>  <span class="fl">1.3</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="at">legend =</span> <span class="fu">c</span>(<span class="st">&quot;Group 1&quot;</span>, <span class="st">&quot;Group 2&quot;</span>, <span class="st">&quot;Group 3&quot;</span>, <span class="st">&quot;Group 4&quot;</span>, <span class="st">&quot;Group 5&quot;</span>),  <span class="at">title =</span> <span class="st">&quot;Group types&quot;</span>, <span class="at">fill =</span> <span class="fu">c</span>(<span class="fu">rainbow</span>(<span class="dv">20</span>)), <span class="at">cex =</span> <span class="fl">0.8</span>,  <span class="at">box.lty =</span> <span class="dv">0</span>, <span class="at">inset =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.2</span>,<span class="dv">0</span>))</span></code></pre></div>
 <p align="center">
 <img src="images/r-plots/chunk-7-1.png" alt="Barplots" style="width: 75%; border: 0;">
 </p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>eu_data =<span class="st"> </span><span class="kw">data.frame</span>(<span class="kw">c</span>(<span class="fl">1.75</span>,<span class="fl">4.5</span>), <span class="kw">c</span>(<span class="fl">2.8</span>,<span class="fl">6.3</span>), <span class="kw">c</span>(<span class="fl">3.9</span>,<span class="fl">6.8</span>), <span class="kw">c</span>(<span class="fl">4.35</span>,<span class="fl">7.2</span>), <span class="kw">c</span>(<span class="dv">5</span>,<span class="fl">8.25</span>),  <span class="kw">c</span>(<span class="fl">5.3</span>,<span class="fl">8.8</span>))</span>
-<span id="cb8-2"><a href="#cb8-2"></a><span class="kw">colnames</span>(eu_data) =<span class="st"> </span><span class="dv">2012</span><span class="op">:</span><span class="dv">2017</span></span>
-<span id="cb8-3"><a href="#cb8-3"></a><span class="kw">rownames</span>(eu_data) =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;US&quot;</span>,<span class="st">&quot;World&quot;</span>)</span>
-<span id="cb8-4"><a href="#cb8-4"></a></span>
-<span id="cb8-5"><a href="#cb8-5"></a><span class="kw">barplot</span>(<span class="kw">as.matrix</span>(eu_data), <span class="dt">beside =</span> <span class="ot">TRUE</span>, <span class="dt">ylab =</span> <span class="st">&quot;Million metric tons&quot;</span>, <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">10</span>), <span class="dt">las =</span> <span class="dv">1</span>, <span class="dt">col =</span> <span class="kw">gray.colors</span>(<span class="dv">2</span>))</span>
-<span id="cb8-6"><a href="#cb8-6"></a><span class="kw">legend</span>(<span class="st">&quot;top&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;US&quot;</span>,<span class="st">&quot;World&quot;</span>), <span class="dt">fill =</span> <span class="kw">gray.colors</span>(<span class="dv">2</span>), <span class="dt">horiz =</span> <span class="ot">TRUE</span>, <span class="dt">bty =</span> <span class="st">&quot;n&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>eu_data <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="fu">c</span>(<span class="fl">1.75</span>,<span class="fl">4.5</span>), <span class="fu">c</span>(<span class="fl">2.8</span>,<span class="fl">6.3</span>), <span class="fu">c</span>(<span class="fl">3.9</span>,<span class="fl">6.8</span>), <span class="fu">c</span>(<span class="fl">4.35</span>,<span class="fl">7.2</span>), <span class="fu">c</span>(<span class="dv">5</span>,<span class="fl">8.25</span>),  <span class="fu">c</span>(<span class="fl">5.3</span>,<span class="fl">8.8</span>))</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(eu_data) <span class="ot">=</span> <span class="dv">2012</span><span class="sc">:</span><span class="dv">2017</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(eu_data) <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;US&quot;</span>,<span class="st">&quot;World&quot;</span>)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(<span class="fu">as.matrix</span>(eu_data), <span class="at">beside =</span> <span class="cn">TRUE</span>, <span class="at">ylab =</span> <span class="st">&quot;Million metric tons&quot;</span>, <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">10</span>), <span class="at">las =</span> <span class="dv">1</span>, <span class="at">col =</span> <span class="fu">gray.colors</span>(<span class="dv">2</span>))</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;top&quot;</span>, <span class="fu">c</span>(<span class="st">&quot;US&quot;</span>,<span class="st">&quot;World&quot;</span>), <span class="at">fill =</span> <span class="fu">gray.colors</span>(<span class="dv">2</span>), <span class="at">horiz =</span> <span class="cn">TRUE</span>, <span class="at">bty =</span> <span class="st">&quot;n&quot;</span>)</span></code></pre></div>
 <p align="center">
 <img src="images/r-plots/chunk-8-1.png" alt="Barplots" style="width: 75%; border: 0;">
 </p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="kw">dotchart</span>(VADeaths, <span class="dt">main =</span> <span class="st">&quot;Death Rates in Virginia1940&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dotchart</span>(VADeaths, <span class="at">main =</span> <span class="st">&quot;Death Rates in Virginia1940&quot;</span>)</span></code></pre></div>
 <p align="center">
 <img src="images/r-plots/chunk-8-2.png" alt="Dotchart" style="width: 75%; border: 0;">
 </p>
 <h2 id="matrix-of-scatter-plots">Matrix of scatter plots</h2>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="kw">pairs</span>(iris[<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>], <span class="dt">lower.panel =</span> panel.smooth, <span class="dt">upper.panel =</span> <span class="ot">NULL</span>, <span class="dt">cex =</span> <span class="fl">0.75</span>, <span class="dt">cex.labels =</span> <span class="fl">1.5</span>, <span class="dt">col =</span> <span class="kw">c</span>(<span class="st">&quot;red&quot;</span>, <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;green&quot;</span>)[iris<span class="op">$</span>Species], <span class="dt">main =</span> <span class="st">&quot;Iris Data - 3 species&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pairs</span>(iris[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>], <span class="at">lower.panel =</span> panel.smooth, <span class="at">upper.panel =</span> <span class="cn">NULL</span>, <span class="at">cex =</span> <span class="fl">0.75</span>, <span class="at">cex.labels =</span> <span class="fl">1.5</span>, <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;red&quot;</span>, <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;green&quot;</span>)[iris<span class="sc">$</span>Species], <span class="at">main =</span> <span class="st">&quot;Iris Data - 3 species&quot;</span>)</span></code></pre></div>
 <p align="center">
 <img src="images/r-plots/chunk-9-1.png" alt="Matrix of scatter plots" style="width: 75%; border: 0;">
 </p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="kw">pairs</span>(<span class="op">~</span>Sepal.Length <span class="op">+</span><span class="st"> </span>Petal.Length <span class="op">+</span><span class="st"> </span>Species, <span class="dt">data =</span> iris, <span class="dt">subset =</span> iris<span class="op">$</span>Sepal.Length <span class="op">&lt;</span><span class="st"> </span><span class="dv">7</span> , <span class="dt">main =</span> <span class="st">&quot;Sepal Length &lt; 7&quot;</span>, <span class="dt">col =</span> <span class="kw">rainbow</span>(<span class="kw">length</span>(<span class="kw">levels</span>(iris<span class="op">$</span>Species)))[iris<span class="op">$</span>Species])</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pairs</span>(<span class="sc">~</span>Sepal.Length <span class="sc">+</span> Petal.Length <span class="sc">+</span> Species, <span class="at">data =</span> iris, <span class="at">subset =</span> iris<span class="sc">$</span>Sepal.Length <span class="sc">&lt;</span> <span class="dv">7</span> , <span class="at">main =</span> <span class="st">&quot;Sepal Length &lt; 7&quot;</span>, <span class="at">col =</span> <span class="fu">rainbow</span>(<span class="fu">length</span>(<span class="fu">levels</span>(iris<span class="sc">$</span>Species)))[iris<span class="sc">$</span>Species])</span></code></pre></div>
 <p align="center">
 <img src="images/r-plots/chunk-9-2.png" alt="Matrix of scatter plots" style="width: 75%; border: 0;">
 </p>
 <h2 id="hierarchical-clustering">Hierarchical clustering</h2>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>hca =<span class="st"> </span><span class="kw">hclust</span>(eurodist)</span>
-<span id="cb12-2"><a href="#cb12-2"></a><span class="kw">plot</span>(hca, <span class="dt">main =</span> <span class="st">&quot;Distance between European Cities&quot;</span>, <span class="dt">hang =</span> <span class="dv">-1</span>, <span class="dt">ylab =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>hca <span class="ot">=</span> <span class="fu">hclust</span>(eurodist)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(hca, <span class="at">main =</span> <span class="st">&quot;Distance between European Cities&quot;</span>, <span class="at">hang =</span> <span class="sc">-</span><span class="dv">1</span>, <span class="at">ylab =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
 <p align="center">
 <img src="images/r-plots/chunk-10-1.png" alt="Scatter plots" style="width: 75%; border: 0;">
 </p>
 <h2 id="time-series">Time series</h2>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>ts_data =<span class="st"> </span><span class="kw">ts</span>(<span class="kw">matrix</span>(<span class="kw">rt</span>(<span class="dv">300</span><span class="op">*</span><span class="dv">2</span>, <span class="dt">df =</span> <span class="dv">3</span>), <span class="dv">300</span>,<span class="dv">2</span>), <span class="dt">start =</span> <span class="kw">c</span>(<span class="dv">1961</span>, <span class="dv">1</span>), <span class="dt">frequency =</span> <span class="dv">12</span>)</span>
-<span id="cb13-2"><a href="#cb13-2"></a><span class="kw">plot</span>(ts_data, <span class="dt">main =</span> <span class="st">&quot;Time series&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>ts_data <span class="ot">=</span> <span class="fu">ts</span>(<span class="fu">matrix</span>(<span class="fu">rt</span>(<span class="dv">300</span><span class="sc">*</span><span class="dv">2</span>, <span class="at">df =</span> <span class="dv">3</span>), <span class="dv">300</span>,<span class="dv">2</span>), <span class="at">start =</span> <span class="fu">c</span>(<span class="dv">1961</span>, <span class="dv">1</span>), <span class="at">frequency =</span> <span class="dv">12</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(ts_data, <span class="at">main =</span> <span class="st">&quot;Time series&quot;</span>)</span></code></pre></div>
 <p align="center">
 <img src="images/r-plots/chunk-11-1.png" alt="Time series" style="width: 75%; border: 0;">
 </p>
 <h2 id="draw-functions">Draw functions</h2>
-<p>For instance we can draw <span class="math inline"><em>y</em> = 4<em>s</em><em>i</em><em>n</em>(<em>x</em>) + (1 − <em>c</em><em>o</em><em>s</em>(<em>x</em>))</span> by:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>f =<span class="st"> </span><span class="cf">function</span>(x) {</span>
-<span id="cb14-2"><a href="#cb14-2"></a>  <span class="kw">return</span>(<span class="dv">4</span> <span class="op">*</span><span class="st"> </span><span class="kw">sin</span>(x) <span class="op">+</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span><span class="kw">cos</span>(x)))</span>
-<span id="cb14-3"><a href="#cb14-3"></a>}</span>
-<span id="cb14-4"><a href="#cb14-4"></a></span>
-<span id="cb14-5"><a href="#cb14-5"></a>a =<span class="st"> </span><span class="kw">c</span>()</span>
-<span id="cb14-6"><a href="#cb14-6"></a>seq_ =<span class="st"> </span><span class="kw">seq</span>(<span class="op">-</span><span class="dv">2</span><span class="op">*</span>pi, <span class="dv">2</span><span class="op">*</span>pi, <span class="dt">len =</span> <span class="dv">1000</span>)</span>
-<span id="cb14-7"><a href="#cb14-7"></a><span class="cf">for</span> (x <span class="cf">in</span> seq_) {</span>
-<span id="cb14-8"><a href="#cb14-8"></a>  a =<span class="st"> </span><span class="kw">c</span>(a,<span class="kw">f</span>(x))</span>
-<span id="cb14-9"><a href="#cb14-9"></a>}</span>
-<span id="cb14-10"><a href="#cb14-10"></a></span>
-<span id="cb14-11"><a href="#cb14-11"></a><span class="kw">plot</span>(<span class="dt">x =</span> seq_, <span class="dt">y =</span> a, <span class="dt">type =</span> <span class="st">&quot;l&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;x&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;y&quot;</span>, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>)</span>
-<span id="cb14-12"><a href="#cb14-12"></a><span class="kw">lines</span>(<span class="dt">x =</span> seq_ <span class="op">+</span><span class="st"> </span><span class="fl">0.5</span>, <span class="dt">y =</span> a, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
+<p>For instance we can draw <span
+class="math inline"><em>y</em> = 4<em>s</em><em>i</em><em>n</em>(<em>x</em>) + (1 − <em>c</em><em>o</em><em>s</em>(<em>x</em>))</span>
+by:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>f <span class="ot">=</span> <span class="cf">function</span>(x) {</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="dv">4</span> <span class="sc">*</span> <span class="fu">sin</span>(x) <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">-</span> <span class="fu">cos</span>(x)))</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>a <span class="ot">=</span> <span class="fu">c</span>()</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>seq_ <span class="ot">=</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">2</span><span class="sc">*</span>pi, <span class="dv">2</span><span class="sc">*</span>pi, <span class="at">len =</span> <span class="dv">1000</span>)</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (x <span class="cf">in</span> seq_) {</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>  a <span class="ot">=</span> <span class="fu">c</span>(a,<span class="fu">f</span>(x))</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> seq_, <span class="at">y =</span> a, <span class="at">type =</span> <span class="st">&quot;l&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;x&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;y&quot;</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(<span class="at">x =</span> seq_ <span class="sc">+</span> <span class="fl">0.5</span>, <span class="at">y =</span> a, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
 <p align="center">
 <img src="images/r-plots/chunk-12-1.png" alt="Sin function" style="width: 75%; border: 0;">
 </p>
 <p>For another example let’s draw a Ergodic mean plots:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>))</span>
-<span id="cb15-2"><a href="#cb15-2"></a>ErgodicMean =<span class="st"> </span><span class="cf">function</span>(x, n) {</span>
-<span id="cb15-3"><a href="#cb15-3"></a>  quantile_ =<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">0</span>,n,<span class="dv">3</span>)</span>
-<span id="cb15-4"><a href="#cb15-4"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>n) {</span>
-<span id="cb15-5"><a href="#cb15-5"></a>    quantile_[i,] =<span class="st"> </span><span class="kw">quantile</span>(x[<span class="dv">1</span><span class="op">:</span>i], <span class="dt">probs =</span> <span class="kw">c</span>(<span class="fl">0.5</span>,<span class="fl">0.025</span>,<span class="fl">0.975</span>))</span>
-<span id="cb15-6"><a href="#cb15-6"></a>  }</span>
-<span id="cb15-7"><a href="#cb15-7"></a>  <span class="kw">plot</span>(quantile_[,<span class="dv">1</span>], <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="kw">min</span>(quantile_),<span class="kw">max</span>(quantile_)), <span class="dt">type =</span> <span class="st">&quot;l&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb15-8"><a href="#cb15-8"></a>  <span class="kw">lines</span>(quantile_[,<span class="dv">2</span>], <span class="dt">lty =</span> <span class="dv">2</span>, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>)</span>
-<span id="cb15-9"><a href="#cb15-9"></a>  <span class="kw">lines</span>(quantile_[,<span class="dv">3</span>], <span class="dt">lty =</span> <span class="dv">2</span>, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>) </span>
-<span id="cb15-10"><a href="#cb15-10"></a>}</span>
-<span id="cb15-11"><a href="#cb15-11"></a></span>
-<span id="cb15-12"><a href="#cb15-12"></a>y =<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">100</span>, <span class="dv">0</span>, <span class="dv">2</span>)</span>
-<span id="cb15-13"><a href="#cb15-13"></a><span class="kw">ErgodicMean</span>(y, <span class="dv">100</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>))</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>ErgodicMean <span class="ot">=</span> <span class="cf">function</span>(x, n) {</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  quantile_ <span class="ot">=</span> <span class="fu">matrix</span>(<span class="dv">0</span>,n,<span class="dv">3</span>)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n) {</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    quantile_[i,] <span class="ot">=</span> <span class="fu">quantile</span>(x[<span class="dv">1</span><span class="sc">:</span>i], <span class="at">probs =</span> <span class="fu">c</span>(<span class="fl">0.5</span>,<span class="fl">0.025</span>,<span class="fl">0.975</span>))</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot</span>(quantile_[,<span class="dv">1</span>], <span class="at">ylim =</span> <span class="fu">c</span>(<span class="fu">min</span>(quantile_),<span class="fu">max</span>(quantile_)), <span class="at">type =</span> <span class="st">&quot;l&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;&quot;</span>)</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lines</span>(quantile_[,<span class="dv">2</span>], <span class="at">lty =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lines</span>(quantile_[,<span class="dv">3</span>], <span class="at">lty =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>) </span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>y <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="dv">0</span>, <span class="dv">2</span>)</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a><span class="fu">ErgodicMean</span>(y, <span class="dv">100</span>)</span></code></pre></div>
 <p align="center">
 <img src="images/r-plots/chunk-13-1.png" alt="Ergodic plot" style="width: 75%; border: 0;">
 </p>
 <h2 id="symbols-and-stars">Symbols and stars</h2>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="kw">par</span>(<span class="dt">bty =</span> <span class="st">&quot;n&quot;</span>, <span class="dt">xaxt =</span> <span class="st">&quot;n&quot;</span>, <span class="dt">yaxt =</span> <span class="st">&quot;n&quot;</span>, <span class="dt">ann =</span> <span class="ot">FALSE</span>)</span>
-<span id="cb16-2"><a href="#cb16-2"></a><span class="kw">symbols</span>(<span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">6</span>), <span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">8</span>), <span class="dt">circles =</span> <span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>), <span class="dt">inches =</span> <span class="ot">FALSE</span>, <span class="dt">bg =</span> <span class="kw">c</span>(<span class="st">&quot;green&quot;</span>, <span class="st">&quot;green&quot;</span>), <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">2</span>,<span class="dv">8</span>), <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">10</span>), <span class="dt">asp =</span> <span class="dv">1</span>)</span>
-<span id="cb16-3"><a href="#cb16-3"></a><span class="kw">symbols</span>(<span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">6</span>), <span class="kw">c</span>(<span class="dv">8</span>,<span class="dv">2</span>), <span class="dt">squares =</span> <span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">4</span>), <span class="dt">inches =</span> <span class="ot">FALSE</span>, <span class="dt">bg =</span> <span class="kw">c</span>(<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;blue&quot;</span>), <span class="dt">add =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">bty =</span> <span class="st">&quot;n&quot;</span>, <span class="at">xaxt =</span> <span class="st">&quot;n&quot;</span>, <span class="at">yaxt =</span> <span class="st">&quot;n&quot;</span>, <span class="at">ann =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">symbols</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">6</span>), <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">8</span>), <span class="at">circles =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>), <span class="at">inches =</span> <span class="cn">FALSE</span>, <span class="at">bg =</span> <span class="fu">c</span>(<span class="st">&quot;green&quot;</span>, <span class="st">&quot;green&quot;</span>), <span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">8</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">10</span>), <span class="at">asp =</span> <span class="dv">1</span>)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="fu">symbols</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">6</span>), <span class="fu">c</span>(<span class="dv">8</span>,<span class="dv">2</span>), <span class="at">squares =</span> <span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">4</span>), <span class="at">inches =</span> <span class="cn">FALSE</span>, <span class="at">bg =</span> <span class="fu">c</span>(<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;blue&quot;</span>), <span class="at">add =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <p align="center">
 <img src="images/r-plots/chunk-14-1.png" alt="Symbols" style="width: 75%; border: 0;">
 </p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="kw">stars</span>(mtcars[, <span class="dv">1</span><span class="op">:</span><span class="dv">7</span>], <span class="dt">len =</span> <span class="fl">0.8</span>, <span class="dt">key.loc =</span> <span class="kw">c</span>(<span class="dv">12</span>, <span class="fl">1.5</span>), <span class="dt">main =</span> <span class="st">&quot;Motor Trend Cars&quot;</span>, <span class="dt">draw.segments =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">stars</span>(mtcars[, <span class="dv">1</span><span class="sc">:</span><span class="dv">7</span>], <span class="at">len =</span> <span class="fl">0.8</span>, <span class="at">key.loc =</span> <span class="fu">c</span>(<span class="dv">12</span>, <span class="fl">1.5</span>), <span class="at">main =</span> <span class="st">&quot;Motor Trend Cars&quot;</span>, <span class="at">draw.segments =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <p align="center">
 <img src="images/r-plots/chunk-15-1.png" alt="Stars" style="width: 75%; border: 0;">
 </p>
-<h2 id="contour-image-and-perspective">Contour, image and perspective</h2>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="co">## Persian Rug Art (R user manual example)</span></span>
-<span id="cb18-2"><a href="#cb18-2"></a>x =<span class="st"> </span>y =<span class="st"> </span><span class="kw">seq</span>(<span class="op">-</span><span class="dv">4</span><span class="op">*</span>pi, <span class="dv">4</span><span class="op">*</span>pi, <span class="dt">len =</span> <span class="dv">27</span>)</span>
-<span id="cb18-3"><a href="#cb18-3"></a>r =<span class="st"> </span><span class="kw">sqrt</span>(<span class="kw">outer</span>(x<span class="op">^</span><span class="dv">2</span>, y<span class="op">^</span><span class="dv">2</span>, <span class="st">&quot;+&quot;</span>))</span>
-<span id="cb18-4"><a href="#cb18-4"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>), <span class="dt">mar =</span> <span class="kw">rep</span>(<span class="dv">0</span>, <span class="dv">4</span>), <span class="dt">xpd =</span> <span class="ot">FALSE</span>)</span>
-<span id="cb18-5"><a href="#cb18-5"></a><span class="cf">for</span>(f <span class="cf">in</span> pi<span class="op">^</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">3</span>)){</span>
-<span id="cb18-6"><a href="#cb18-6"></a>  <span class="kw">contour</span>(<span class="kw">cos</span>(r<span class="op">^</span><span class="dv">2</span>)<span class="op">*</span><span class="kw">exp</span>(<span class="op">-</span>r<span class="op">/</span>f), <span class="dt">drawlabels =</span> <span class="ot">FALSE</span>, <span class="dt">axes =</span> <span class="ot">FALSE</span>, <span class="dt">frame =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb18-7"><a href="#cb18-7"></a>}</span></code></pre></div>
+<h2 id="contour-image-and-perspective">Contour, image and
+perspective</h2>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Persian Rug Art (R user manual example)</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> y <span class="ot">=</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">4</span><span class="sc">*</span>pi, <span class="dv">4</span><span class="sc">*</span>pi, <span class="at">len =</span> <span class="dv">27</span>)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>r <span class="ot">=</span> <span class="fu">sqrt</span>(<span class="fu">outer</span>(x<span class="sc">^</span><span class="dv">2</span>, y<span class="sc">^</span><span class="dv">2</span>, <span class="st">&quot;+&quot;</span>))</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>), <span class="at">mar =</span> <span class="fu">rep</span>(<span class="dv">0</span>, <span class="dv">4</span>), <span class="at">xpd =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(f <span class="cf">in</span> pi<span class="sc">^</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">3</span>)){</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">contour</span>(<span class="fu">cos</span>(r<span class="sc">^</span><span class="dv">2</span>)<span class="sc">*</span><span class="fu">exp</span>(<span class="sc">-</span>r<span class="sc">/</span>f), <span class="at">drawlabels =</span> <span class="cn">FALSE</span>, <span class="at">axes =</span> <span class="cn">FALSE</span>, <span class="at">frame =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p align="center">
 <img src="images/r-plots/chunk-16-1.png" alt="Conture" style="width: 75%; border: 0;">
 </p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>x =<span class="st"> </span>y =<span class="st"> </span><span class="dv">-6</span><span class="op">:</span><span class="dv">16</span></span>
-<span id="cb19-2"><a href="#cb19-2"></a>z =<span class="st"> </span><span class="kw">outer</span>(x, <span class="kw">sqrt</span>(<span class="kw">abs</span>(x)), <span class="dt">FUN =</span> <span class="st">&quot;/&quot;</span>)</span>
-<span id="cb19-3"><a href="#cb19-3"></a><span class="kw">image</span>(x, y, z)</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> y <span class="ot">=</span> <span class="sc">-</span><span class="dv">6</span><span class="sc">:</span><span class="dv">16</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>z <span class="ot">=</span> <span class="fu">outer</span>(x, <span class="fu">sqrt</span>(<span class="fu">abs</span>(x)), <span class="at">FUN =</span> <span class="st">&quot;/&quot;</span>)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="fu">image</span>(x, y, z)</span></code></pre></div>
 <p align="center">
 <img src="images/r-plots/chunk-17-1.png" alt="Image plot" style="width: 75%; border: 0;">
 </p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>x =<span class="st"> </span>y =<span class="st"> </span><span class="kw">seq</span>(<span class="op">-</span><span class="dv">10</span>, <span class="dv">10</span>, <span class="dt">length =</span> <span class="dv">30</span>)</span>
-<span id="cb20-2"><a href="#cb20-2"></a>f =<span class="st"> </span><span class="cf">function</span>(x, y) {r =<span class="st"> </span><span class="kw">sqrt</span>(x<span class="op">^</span><span class="dv">2</span> <span class="op">+</span><span class="st"> </span>y<span class="op">^</span><span class="dv">2</span>); <span class="dv">10</span> <span class="op">*</span><span class="st"> </span><span class="kw">sin</span>(r)<span class="op">/</span>r}</span>
-<span id="cb20-3"><a href="#cb20-3"></a>z =<span class="st"> </span><span class="kw">outer</span>(x, y, f)</span>
-<span id="cb20-4"><a href="#cb20-4"></a>z[<span class="kw">is.na</span>(z)] =<span class="st"> </span><span class="dv">1</span></span>
-<span id="cb20-5"><a href="#cb20-5"></a><span class="kw">persp</span>(x, y, z, <span class="dt">theta =</span> <span class="dv">30</span>, <span class="dt">phi =</span> <span class="dv">30</span>, <span class="dt">expand =</span> <span class="fl">0.5</span>, <span class="dt">col =</span> <span class="st">&quot;lightblue&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> y <span class="ot">=</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">10</span>, <span class="dv">10</span>, <span class="at">length =</span> <span class="dv">30</span>)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>f <span class="ot">=</span> <span class="cf">function</span>(x, y) {r <span class="ot">=</span> <span class="fu">sqrt</span>(x<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> y<span class="sc">^</span><span class="dv">2</span>); <span class="dv">10</span> <span class="sc">*</span> <span class="fu">sin</span>(r)<span class="sc">/</span>r}</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>z <span class="ot">=</span> <span class="fu">outer</span>(x, y, f)</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>z[<span class="fu">is.na</span>(z)] <span class="ot">=</span> <span class="dv">1</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="fu">persp</span>(x, y, z, <span class="at">theta =</span> <span class="dv">30</span>, <span class="at">phi =</span> <span class="dv">30</span>, <span class="at">expand =</span> <span class="fl">0.5</span>, <span class="at">col =</span> <span class="st">&quot;lightblue&quot;</span>)</span></code></pre></div>
 <p align="center">
 <img src="images/r-plots/chunk-17-2.png" alt="Perspective plot" style="width: 75%; border: 0;">
 </p>
 <h2 id="tables">Tables</h2>
-<p>In R we can use <code>kable</code> function from <code>knitr</code> library to print tables in HTML or LaTeX formats. <code>kable</code> is a great tool, but the generated outputs are usually not formatted for including in reports. While building Markdown or Latex reports it will be useful to use the following packages to make them more publication quality:</p>
+<p>In R we can use <code>kable</code> function from <code>knitr</code>
+library to print tables in HTML or LaTeX formats. <code>kable</code> is
+a great tool, but the generated outputs are usually not formatted for
+including in reports. While building Markdown or Latex reports it will
+be useful to use the following packages to make them more publication
+quality:</p>
 <ul>
-<li><a href="https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html">kableExtra</a></li>
-<li><a href="https://cran.r-project.org/web/packages/xtable/vignettes/xtableGallery.pdf">xtable</a></li>
-<li><a href="https://www.jakeruss.com/cheatsheets/stargazer/">stargazer</a></li>
+<li><a
+href="https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html">kableExtra</a></li>
+<li><a
+href="https://cran.r-project.org/web/packages/xtable/vignettes/xtableGallery.pdf">xtable</a></li>
+<li><a
+href="https://www.jakeruss.com/cheatsheets/stargazer/">stargazer</a></li>
 </ul>
 <p>For example:</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="kw">library</span>(knitr)</span>
-<span id="cb21-2"><a href="#cb21-2"></a><span class="kw">library</span>(kableExtra)</span>
-<span id="cb21-3"><a href="#cb21-3"></a>cardata =<span class="st"> </span>mtcars</span>
-<span id="cb21-4"><a href="#cb21-4"></a><span class="kw">kable</span>(<span class="kw">head</span>(cardata), <span class="dt">format =</span> <span class="st">&quot;html&quot;</span>, <span class="dt">caption =</span> <span class="st">&quot;Title of the table&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb21-5"><a href="#cb21-5"></a><span class="st">  </span><span class="kw">kable_styling</span>(<span class="dt">full_width =</span> <span class="ot">FALSE</span>, <span class="dt">font_size =</span> <span class="dv">16</span>, <span class="dt">position =</span> <span class="st">&quot;center&quot;</span>) <span class="co"># position: left, center, right, float_left and float_right</span></span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>cardata <span class="ot">=</span> mtcars</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">head</span>(cardata), <span class="at">format =</span> <span class="st">&quot;html&quot;</span>, <span class="at">caption =</span> <span class="st">&quot;Title of the table&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">full_width =</span> <span class="cn">FALSE</span>, <span class="at">font_size =</span> <span class="dv">16</span>, <span class="at">position =</span> <span class="st">&quot;center&quot;</span>) <span class="co"># position: left, center, right, float_left and float_right</span></span></code></pre></div>
 <div style="margin-bottom: 1rem; overflow-x: auto;">
 <table class="table">
 <thead>
@@ -592,15 +636,15 @@ Valiant
 </tbody>
 </table>
 </div>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a>fm =<span class="st"> </span><span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span>cyl <span class="op">+</span><span class="st"> </span>disp <span class="op">+</span><span class="st"> </span>hp, <span class="dt">data =</span> cardata)</span>
-<span id="cb22-2"><a href="#cb22-2"></a>sm =<span class="st"> </span><span class="kw">round</span>(<span class="kw">summary</span>(fm)<span class="op">$</span>coef,<span class="dv">3</span>)</span>
-<span id="cb22-3"><a href="#cb22-3"></a></span>
-<span id="cb22-4"><a href="#cb22-4"></a><span class="co"># Adding some cosmetic to columns that we want</span></span>
-<span id="cb22-5"><a href="#cb22-5"></a><span class="kw">row.names</span>(sm) =<span class="st">  </span><span class="kw">cell_spec</span>(<span class="kw">row.names</span>(sm), <span class="st">&quot;html&quot;</span>, <span class="dt">bold =</span> <span class="ot">TRUE</span>) </span>
-<span id="cb22-6"><a href="#cb22-6"></a>sm[,<span class="dv">4</span>] =<span class="st">  </span><span class="kw">cell_spec</span>(sm[,<span class="dv">4</span>], <span class="st">&quot;html&quot;</span>, <span class="dt">color =</span> <span class="kw">ifelse</span>(sm[,<span class="dv">4</span>] <span class="op">&lt;</span><span class="st"> </span><span class="fl">0.1</span>, <span class="st">&quot;red&quot;</span>, <span class="st">&quot;black&quot;</span>))</span>
-<span id="cb22-7"><a href="#cb22-7"></a></span>
-<span id="cb22-8"><a href="#cb22-8"></a><span class="kw">kable</span>(sm, <span class="st">&quot;html&quot;</span>, <span class="dt">escape =</span> F) <span class="op">%&gt;%</span></span>
-<span id="cb22-9"><a href="#cb22-9"></a><span class="st">  </span><span class="kw">kable_styling</span>(<span class="dt">bootstrap_options =</span> <span class="st">&quot;hover&quot;</span>, <span class="dt">full_width =</span> <span class="ot">FALSE</span>, <span class="dt">font_size =</span> <span class="dv">16</span>, <span class="dt">position =</span> <span class="st">&quot;center&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>fm <span class="ot">=</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> cyl <span class="sc">+</span> disp <span class="sc">+</span> hp, <span class="at">data =</span> cardata)</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>sm <span class="ot">=</span> <span class="fu">round</span>(<span class="fu">summary</span>(fm)<span class="sc">$</span>coef,<span class="dv">3</span>)</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Adding some cosmetic to columns that we want</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="fu">row.names</span>(sm) <span class="ot">=</span>  <span class="fu">cell_spec</span>(<span class="fu">row.names</span>(sm), <span class="st">&quot;html&quot;</span>, <span class="at">bold =</span> <span class="cn">TRUE</span>) </span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>sm[,<span class="dv">4</span>] <span class="ot">=</span>  <span class="fu">cell_spec</span>(sm[,<span class="dv">4</span>], <span class="st">&quot;html&quot;</span>, <span class="at">color =</span> <span class="fu">ifelse</span>(sm[,<span class="dv">4</span>] <span class="sc">&lt;</span> <span class="fl">0.1</span>, <span class="st">&quot;red&quot;</span>, <span class="st">&quot;black&quot;</span>))</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(sm, <span class="st">&quot;html&quot;</span>, <span class="at">escape =</span> F) <span class="sc">%&gt;%</span></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="st">&quot;hover&quot;</span>, <span class="at">full_width =</span> <span class="cn">FALSE</span>, <span class="at">font_size =</span> <span class="dv">16</span>, <span class="at">position =</span> <span class="st">&quot;center&quot;</span>)</span></code></pre></div>
 <div style="margin-bottom: 1rem; overflow-x: auto;">
 <table class="table table-hover">
 <thead>
@@ -694,44 +738,60 @@ Pr(&gt;|t|)
 </table>
 </div>
 <h2 id="maps">Maps</h2>
-<p>R does not have default functions for drawing maps and shapefiles. To generate maps, we can use the following packages:</p>
+<p>R does not have default functions for drawing maps and shapefiles. To
+generate maps, we can use the following packages:</p>
 <ul>
-<li><a href="https://cran.r-project.org/web/packages/maps/maps.pdf">maps</a>: draw lines and polygons as specified by a map database</li>
-<li><a href="https://r-spatial.github.io/sf/">sf</a>: provide <a href="https://r-spatial.github.io/sf/articles/sf1.html">Simple Features</a> for R. Find more details about <em>sf</em> in <a href="https://r-spatial.github.io/sf/articles/sf5.html">here</a> and in the <a href="https://github.com/rstudio/cheatsheets/blob/master/sf.pdf">cheetsheet</a></li>
-<li><a href="https://rstudio.github.io/leaflet/">leaflet</a>: create interactive maps. The widget can be rendered on HTML pages generated from R Markdown, Shiny, or other applications. You may learn more about <em>leaflet</em> in <a href="https://rpubs.com/mattdray/basic-leaflet-maps">here</a></li>
+<li><a
+href="https://cran.r-project.org/web/packages/maps/maps.pdf">maps</a>:
+draw lines and polygons as specified by a map database</li>
+<li><a href="https://r-spatial.github.io/sf/">sf</a>: provide <a
+href="https://r-spatial.github.io/sf/articles/sf1.html">Simple
+Features</a> for R. Find more details about <em>sf</em> in <a
+href="https://r-spatial.github.io/sf/articles/sf5.html">here</a> and in
+the <a
+href="https://github.com/rstudio/cheatsheets/blob/master/sf.pdf">cheetsheet</a></li>
+<li><a href="https://rstudio.github.io/leaflet/">leaflet</a>: create
+interactive maps. The widget can be rendered on HTML pages generated
+from R Markdown, Shiny, or other applications. You may learn more about
+<em>leaflet</em> in <a
+href="https://rpubs.com/mattdray/basic-leaflet-maps">here</a></li>
 </ul>
 <h2 id="layout">Layout</h2>
-<p><code>layout</code> creates a layout for putting multiple plots together. Number of rows and columns are specified in a matrix, with the column-widths and the row-heights specified in the respective arguments.</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>lay =<span class="st"> </span><span class="kw">layout</span>(<span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">0</span>),<span class="dv">3</span>,<span class="dv">2</span>,<span class="dt">byrow =</span> <span class="ot">TRUE</span>), <span class="dt">widths =</span> <span class="kw">c</span>(<span class="dv">4</span>,<span class="fl">1.5</span>), <span class="dt">heights =</span> <span class="kw">c</span>(<span class="fl">1.5</span>,<span class="dv">4</span>,<span class="dv">1</span>), <span class="dt">respect =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb23-2"><a href="#cb23-2"></a><span class="kw">layout.show</span>(lay)</span></code></pre></div>
+<p><code>layout</code> creates a layout for putting multiple plots
+together. Number of rows and columns are specified in a matrix, with the
+column-widths and the row-heights specified in the respective
+arguments.</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>lay <span class="ot">=</span> <span class="fu">layout</span>(<span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">0</span>),<span class="dv">3</span>,<span class="dv">2</span>,<span class="at">byrow =</span> <span class="cn">TRUE</span>), <span class="at">widths =</span> <span class="fu">c</span>(<span class="dv">4</span>,<span class="fl">1.5</span>), <span class="at">heights =</span> <span class="fu">c</span>(<span class="fl">1.5</span>,<span class="dv">4</span>,<span class="dv">1</span>), <span class="at">respect =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">layout.show</span>(lay)</span></code></pre></div>
 <p align="center">
 <img src="images/r-plots/chunk-19-1.png" alt="Layout" style="width: 75%; border: 0;">
 </p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a>x =<span class="st"> </span><span class="kw">pmin</span>(<span class="dv">3</span>, <span class="kw">pmax</span>(<span class="op">-</span><span class="dv">3</span>, <span class="kw">rnorm</span>(<span class="dv">100</span>)))</span>
-<span id="cb24-2"><a href="#cb24-2"></a>y =<span class="st"> </span><span class="kw">pmin</span>(<span class="dv">3</span>, <span class="kw">pmax</span>(<span class="op">-</span><span class="dv">3</span>, <span class="kw">rnorm</span>(<span class="dv">100</span>)))</span>
-<span id="cb24-3"><a href="#cb24-3"></a>xhist =<span class="st"> </span><span class="kw">hist</span>(x, <span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="op">-</span><span class="dv">3</span>,<span class="dv">3</span>,<span class="fl">0.5</span>), <span class="dt">plot =</span> <span class="ot">FALSE</span>)</span>
-<span id="cb24-4"><a href="#cb24-4"></a>yhist =<span class="st"> </span><span class="kw">hist</span>(y, <span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="op">-</span><span class="dv">3</span>,<span class="dv">3</span>,<span class="fl">0.5</span>), <span class="dt">plot =</span> <span class="ot">FALSE</span>)</span>
-<span id="cb24-5"><a href="#cb24-5"></a>top =<span class="st"> </span><span class="kw">max</span>(<span class="kw">c</span>(xhist<span class="op">$</span>counts, yhist<span class="op">$</span>counts))</span>
-<span id="cb24-6"><a href="#cb24-6"></a></span>
-<span id="cb24-7"><a href="#cb24-7"></a><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">1</span>))</span>
-<span id="cb24-8"><a href="#cb24-8"></a><span class="kw">plot</span>(xhist, <span class="dt">col =</span> <span class="st">&quot;gray&quot;</span>, <span class="dt">axes =</span> <span class="ot">FALSE</span>, <span class="dt">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb24-9"><a href="#cb24-9"></a><span class="kw">title</span>(<span class="dt">main =</span> <span class="st">&quot;Main Title&quot;</span>, <span class="dt">cex.main =</span> <span class="fl">1.5</span>)</span>
-<span id="cb24-10"><a href="#cb24-10"></a></span>
-<span id="cb24-11"><a href="#cb24-11"></a><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">1</span>))</span>
-<span id="cb24-12"><a href="#cb24-12"></a><span class="kw">plot</span>(x[<span class="dv">1</span><span class="op">:</span><span class="dv">15</span>], y[<span class="dv">1</span><span class="op">:</span><span class="dv">15</span>], <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">3</span>, <span class="dv">3</span>), <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">3</span>, <span class="dv">3</span>), <span class="dt">xlab =</span> <span class="st">&quot;x variable&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;&quot;</span>, <span class="dt">cex.lab =</span> <span class="fl">1.2</span>)</span>
-<span id="cb24-13"><a href="#cb24-13"></a><span class="kw">arrows</span>(x[<span class="dv">1</span><span class="op">:</span><span class="dv">15</span>], y[<span class="dv">1</span><span class="op">:</span><span class="dv">15</span>]<span class="op">-</span><span class="fl">0.5</span>, x[<span class="dv">1</span><span class="op">:</span><span class="dv">15</span>], y[<span class="dv">1</span><span class="op">:</span><span class="dv">15</span>]<span class="op">+</span><span class="fl">0.5</span>, <span class="dt">col =</span> <span class="dv">4</span>, <span class="dt">angle =</span> <span class="dv">90</span>, <span class="dt">length =</span> <span class="fl">0.05</span>, <span class="dt">code =</span> <span class="dv">3</span>)</span>
-<span id="cb24-14"><a href="#cb24-14"></a></span>
-<span id="cb24-15"><a href="#cb24-15"></a><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>))</span>
-<span id="cb24-16"><a href="#cb24-16"></a><span class="kw">barplot</span>(yhist<span class="op">$</span>counts, <span class="dt">axes =</span> <span class="ot">FALSE</span>, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">0</span>, top), <span class="dt">space =</span> <span class="dv">0</span>, <span class="dt">horiz =</span> <span class="ot">TRUE</span>, <span class="dt">col =</span> <span class="st">&quot;black&quot;</span>, <span class="dt">bg =</span> <span class="st">&quot;gray&quot;</span>, <span class="dt">density =</span> <span class="dv">20</span>)</span>
-<span id="cb24-17"><a href="#cb24-17"></a></span>
-<span id="cb24-18"><a href="#cb24-18"></a><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">3</span>,<span class="dv">0</span>,<span class="dv">0</span>))</span>
-<span id="cb24-19"><a href="#cb24-19"></a><span class="kw">plot.new</span>()</span>
-<span id="cb24-20"><a href="#cb24-20"></a><span class="kw">legend</span>(<span class="st">&quot;center&quot;</span>, <span class="dt">legend =</span> <span class="kw">c</span>(<span class="st">&quot;Top&quot;</span>, <span class="st">&quot;Middle&quot;</span>, <span class="st">&quot;Right&quot;</span>), <span class="dt">fill =</span> <span class="kw">c</span>(<span class="st">&quot;gray&quot;</span>, <span class="st">&quot;white&quot;</span>, <span class="st">&quot;black&quot;</span>), <span class="dt">density =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">40</span>), <span class="dt">bg =</span> <span class="st">&quot;gray90&quot;</span>, <span class="dt">horiz =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="fu">pmin</span>(<span class="dv">3</span>, <span class="fu">pmax</span>(<span class="sc">-</span><span class="dv">3</span>, <span class="fu">rnorm</span>(<span class="dv">100</span>)))</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">=</span> <span class="fu">pmin</span>(<span class="dv">3</span>, <span class="fu">pmax</span>(<span class="sc">-</span><span class="dv">3</span>, <span class="fu">rnorm</span>(<span class="dv">100</span>)))</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>xhist <span class="ot">=</span> <span class="fu">hist</span>(x, <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">3</span>,<span class="dv">3</span>,<span class="fl">0.5</span>), <span class="at">plot =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>yhist <span class="ot">=</span> <span class="fu">hist</span>(y, <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">3</span>,<span class="dv">3</span>,<span class="fl">0.5</span>), <span class="at">plot =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>top <span class="ot">=</span> <span class="fu">max</span>(<span class="fu">c</span>(xhist<span class="sc">$</span>counts, yhist<span class="sc">$</span>counts))</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">1</span>))</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(xhist, <span class="at">col =</span> <span class="st">&quot;gray&quot;</span>, <span class="at">axes =</span> <span class="cn">FALSE</span>, <span class="at">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;&quot;</span>, <span class="at">main =</span> <span class="st">&quot;&quot;</span>)</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span>(<span class="at">main =</span> <span class="st">&quot;Main Title&quot;</span>, <span class="at">cex.main =</span> <span class="fl">1.5</span>)</span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">1</span>))</span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x[<span class="dv">1</span><span class="sc">:</span><span class="dv">15</span>], y[<span class="dv">1</span><span class="sc">:</span><span class="dv">15</span>], <span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">3</span>, <span class="dv">3</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">3</span>, <span class="dv">3</span>), <span class="at">xlab =</span> <span class="st">&quot;x variable&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;&quot;</span>, <span class="at">cex.lab =</span> <span class="fl">1.2</span>)</span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a><span class="fu">arrows</span>(x[<span class="dv">1</span><span class="sc">:</span><span class="dv">15</span>], y[<span class="dv">1</span><span class="sc">:</span><span class="dv">15</span>]<span class="sc">-</span><span class="fl">0.5</span>, x[<span class="dv">1</span><span class="sc">:</span><span class="dv">15</span>], y[<span class="dv">1</span><span class="sc">:</span><span class="dv">15</span>]<span class="sc">+</span><span class="fl">0.5</span>, <span class="at">col =</span> <span class="dv">4</span>, <span class="at">angle =</span> <span class="dv">90</span>, <span class="at">length =</span> <span class="fl">0.05</span>, <span class="at">code =</span> <span class="dv">3</span>)</span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>))</span>
+<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(yhist<span class="sc">$</span>counts, <span class="at">axes =</span> <span class="cn">FALSE</span>, <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, top), <span class="at">space =</span> <span class="dv">0</span>, <span class="at">horiz =</span> <span class="cn">TRUE</span>, <span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">bg =</span> <span class="st">&quot;gray&quot;</span>, <span class="at">density =</span> <span class="dv">20</span>)</span>
+<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">3</span>,<span class="dv">0</span>,<span class="dv">0</span>))</span>
+<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a><span class="fu">plot.new</span>()</span>
+<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;center&quot;</span>, <span class="at">legend =</span> <span class="fu">c</span>(<span class="st">&quot;Top&quot;</span>, <span class="st">&quot;Middle&quot;</span>, <span class="st">&quot;Right&quot;</span>), <span class="at">fill =</span> <span class="fu">c</span>(<span class="st">&quot;gray&quot;</span>, <span class="st">&quot;white&quot;</span>, <span class="st">&quot;black&quot;</span>), <span class="at">density =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="sc">-</span><span class="dv">1</span>,<span class="dv">40</span>), <span class="at">bg =</span> <span class="st">&quot;gray90&quot;</span>, <span class="at">horiz =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <p align="center">
 <img src="images/r-plots/chunk-19-2.png" alt="Plot with a layout" style="width: 75%; border: 0;">
 </p>
 <h2 id="color-palettes">Color palettes</h2>
-<p>R also offers the following built in color palettes that help to generate color vectors of desired length quickly.</p>
+<p>R also offers the following built in color palettes that help to
+generate color vectors of desired length quickly.</p>
 <ul>
 <li><code>rainbow()</code></li>
 <li><code>colorRampPalette()</code></li>
@@ -741,41 +801,55 @@ Pr(&gt;|t|)
 <li><code>topo.colors()</code></li>
 <li><code>cm.colors()</code></li>
 </ul>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
-<span id="cb25-2"><a href="#cb25-2"></a><span class="kw">pie</span>(<span class="kw">rep</span>(<span class="dv">1</span>, <span class="dv">24</span>), <span class="dt">col =</span> <span class="kw">rainbow</span>(<span class="dv">24</span>), <span class="dt">radius =</span> <span class="dv">1</span>)</span>
-<span id="cb25-3"><a href="#cb25-3"></a><span class="kw">pie</span>(<span class="kw">rep</span>(<span class="dv">1</span>, <span class="dv">24</span>), <span class="dt">col =</span> <span class="kw">colorRampPalette</span>(<span class="kw">c</span>(<span class="st">&quot;red&quot;</span>,<span class="st">&quot;yellow&quot;</span>,<span class="st">&quot;springgreen&quot;</span>,<span class="st">&quot;royalblue&quot;</span>))(<span class="dv">24</span>), <span class="dt">radius =</span> <span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">pie</span>(<span class="fu">rep</span>(<span class="dv">1</span>, <span class="dv">24</span>), <span class="at">col =</span> <span class="fu">rainbow</span>(<span class="dv">24</span>), <span class="at">radius =</span> <span class="dv">1</span>)</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="fu">pie</span>(<span class="fu">rep</span>(<span class="dv">1</span>, <span class="dv">24</span>), <span class="at">col =</span> <span class="fu">colorRampPalette</span>(<span class="fu">c</span>(<span class="st">&quot;red&quot;</span>,<span class="st">&quot;yellow&quot;</span>,<span class="st">&quot;springgreen&quot;</span>,<span class="st">&quot;royalblue&quot;</span>))(<span class="dv">24</span>), <span class="at">radius =</span> <span class="dv">1</span>)</span></code></pre></div>
 <p align="center">
 <img src="images/r-plots/chunk-20-1.png" alt="Rainbow/colorRampPalette" style="width: 75%; border: 0;">
 </p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="kw">pie</span>(<span class="kw">rep</span>(<span class="dv">1</span>, <span class="dv">24</span>), <span class="dt">col =</span> <span class="kw">heat.colors</span>(<span class="dv">24</span>), <span class="dt">radius =</span> <span class="dv">1</span>)</span>
-<span id="cb26-2"><a href="#cb26-2"></a><span class="kw">pie</span>(<span class="kw">rep</span>(<span class="dv">1</span>, <span class="dv">24</span>), <span class="dt">col =</span> <span class="kw">terrain.colors</span>(<span class="dv">24</span>), <span class="dt">radius =</span> <span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pie</span>(<span class="fu">rep</span>(<span class="dv">1</span>, <span class="dv">24</span>), <span class="at">col =</span> <span class="fu">heat.colors</span>(<span class="dv">24</span>), <span class="at">radius =</span> <span class="dv">1</span>)</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">pie</span>(<span class="fu">rep</span>(<span class="dv">1</span>, <span class="dv">24</span>), <span class="at">col =</span> <span class="fu">terrain.colors</span>(<span class="dv">24</span>), <span class="at">radius =</span> <span class="dv">1</span>)</span></code></pre></div>
 <p align="center">
 <img src="images/r-plots/chunk-20-2.png" alt="Heat/terrain" style="width: 75%; border: 0;">
 </p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="kw">pie</span>(<span class="kw">rep</span>(<span class="dv">1</span>, <span class="dv">24</span>), <span class="dt">col =</span> <span class="kw">topo.colors</span>(<span class="dv">24</span>), <span class="dt">radius =</span> <span class="dv">1</span>)</span>
-<span id="cb27-2"><a href="#cb27-2"></a><span class="kw">pie</span>(<span class="kw">rep</span>(<span class="dv">1</span>, <span class="dv">24</span>), <span class="dt">col =</span> <span class="kw">cm.colors</span>(<span class="dv">24</span>), <span class="dt">radius =</span> <span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pie</span>(<span class="fu">rep</span>(<span class="dv">1</span>, <span class="dv">24</span>), <span class="at">col =</span> <span class="fu">topo.colors</span>(<span class="dv">24</span>), <span class="at">radius =</span> <span class="dv">1</span>)</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">pie</span>(<span class="fu">rep</span>(<span class="dv">1</span>, <span class="dv">24</span>), <span class="at">col =</span> <span class="fu">cm.colors</span>(<span class="dv">24</span>), <span class="at">radius =</span> <span class="dv">1</span>)</span></code></pre></div>
 <p align="center">
 <img src="images/r-plots/chunk-20-3.png" alt="Topo/cm" style="width: 75%; border: 0;">
 </p></div>
             <div class="d-none d-xl-block col-xl-2 bd-toc">
                <ul class="section-nav">
                   <li class="toc-entry"><ul>
-<li><a href="#functions">Functions</a></li>
-<li><a href="#scatter-plots-lines-and-points">Scatter plots, lines and points</a></li>
-<li><a href="#probability-density-functions">Probability density functions</a></li>
-<li><a href="#histograms">Histograms</a></li>
-<li><a href="#box-plots-and-autocorrelations">Box plots and autocorrelations</a></li>
-<li><a href="#barplots-and-dotcharts">Barplots and dotcharts</a></li>
-<li><a href="#matrix-of-scatter-plots">Matrix of scatter plots</a></li>
-<li><a href="#hierarchical-clustering">Hierarchical clustering</a></li>
-<li><a href="#time-series">Time series</a></li>
-<li><a href="#draw-functions">Draw functions</a></li>
-<li><a href="#symbols-and-stars">Symbols and stars</a></li>
-<li><a href="#contour-image-and-perspective">Contour, image and perspective</a></li>
-<li><a href="#tables">Tables</a></li>
-<li><a href="#maps">Maps</a></li>
-<li><a href="#layout">Layout</a></li>
-<li><a href="#color-palettes">Color palettes</a></li>
+<li><a href="#functions" id="toc-functions">Functions</a></li>
+<li><a href="#scatter-plots-lines-and-points"
+id="toc-scatter-plots-lines-and-points">Scatter plots, lines and
+points</a></li>
+<li><a href="#probability-density-functions"
+id="toc-probability-density-functions">Probability density
+functions</a></li>
+<li><a href="#histograms" id="toc-histograms">Histograms</a></li>
+<li><a href="#box-plots-and-autocorrelations"
+id="toc-box-plots-and-autocorrelations">Box plots and
+autocorrelations</a></li>
+<li><a href="#barplots-and-dotcharts"
+id="toc-barplots-and-dotcharts">Barplots and dotcharts</a></li>
+<li><a href="#matrix-of-scatter-plots"
+id="toc-matrix-of-scatter-plots">Matrix of scatter plots</a></li>
+<li><a href="#hierarchical-clustering"
+id="toc-hierarchical-clustering">Hierarchical clustering</a></li>
+<li><a href="#time-series" id="toc-time-series">Time series</a></li>
+<li><a href="#draw-functions" id="toc-draw-functions">Draw
+functions</a></li>
+<li><a href="#symbols-and-stars" id="toc-symbols-and-stars">Symbols and
+stars</a></li>
+<li><a href="#contour-image-and-perspective"
+id="toc-contour-image-and-perspective">Contour, image and
+perspective</a></li>
+<li><a href="#tables" id="toc-tables">Tables</a></li>
+<li><a href="#maps" id="toc-maps">Maps</a></li>
+<li><a href="#layout" id="toc-layout">Layout</a></li>
+<li><a href="#color-palettes" id="toc-color-palettes">Color
+palettes</a></li>
 </ul></li>
                </ul>
             </div>
@@ -790,7 +864,7 @@ Pr(&gt;|t|)
                   &nbsp;|&nbsp;
                   Built with <a href="https://github.com/ashki23/pandoc-bootstrap" target="_blank" rel="noopener">pandoc-bootstrap</a> theme
                   <br />
-                  Copyright 2018-2023, Ashkan Mirzaee
+                  Copyright 2018-2024, Ashkan Mirzaee
                </div>
             </footer>
             <!-- Global site tag (gtag.js) - Google Analytics -->

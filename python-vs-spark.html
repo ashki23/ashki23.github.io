@@ -5,7 +5,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <meta name="generator" content="pandoc">
       <meta name="author" content="Ashkan Mirzaee">
-      <meta name="description" content="Review Python and PySpark performances">
+      <meta name="description" content="Review Python and PySpark
+performances">
       <title>Python vs Spark</title>
       <!-- Bootstrap -->
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -67,89 +68,153 @@
             <div class="container">
          <h1 class="title">Python vs Spark</h1>
                   <div class="row">
-            <div class="col-xl-10"><p>There are many tools to handle structured and smi-structured data. Two of the most popular tools are Python and Spark. Python’s packages like Pandas are famous for ease of use and applying conventional dataframes, while Spark uses a more SQL type datafame on top of a Java engine and is well known for big data analysis. Spark has an interface for Python that is called PySpark. To compare Python and Spark, here we use Pyspark.</p>
+            <div class="col-xl-10"><p>There are many tools to handle
+structured and smi-structured data. Two of the most popular tools are
+Python and Spark. Python’s packages like Pandas are famous for ease of
+use and applying conventional dataframes, while Spark uses a more SQL
+type datafame on top of a Java engine and is well known for big data
+analysis. Spark has an interface for Python that is called PySpark. To
+compare Python and Spark, here we use Pyspark.</p>
 <hr />
 <h2 id="syntax">Syntax</h2>
-<p>Let’s first look at some syntax from each of Python and PySpark. The following shows some basic tasks using Pandas:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-2"><a href="#cb1-2"></a></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="co"># Read a CSV file</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a>df <span class="op">=</span> pd.read_csv(<span class="st">&#39;./file.csv&#39;</span>)</span>
-<span id="cb1-5"><a href="#cb1-5"></a>df</span>
-<span id="cb1-6"><a href="#cb1-6"></a><span class="co">#   brand  rank</span></span>
-<span id="cb1-7"><a href="#cb1-7"></a><span class="co"># 0  Ford     1</span></span>
-<span id="cb1-8"><a href="#cb1-8"></a><span class="co"># 1   GMC     2</span></span>
-<span id="cb1-9"><a href="#cb1-9"></a><span class="co"># 2   AMC     3</span></span>
-<span id="cb1-10"><a href="#cb1-10"></a></span>
-<span id="cb1-11"><a href="#cb1-11"></a><span class="co"># Ford&#39;s rank (we know that right! ;))</span></span>
-<span id="cb1-12"><a href="#cb1-12"></a>df[<span class="st">&#39;rank&#39;</span>][df[<span class="st">&#39;brand&#39;</span>] <span class="op">==</span> <span class="st">&#39;Ford&#39;</span>]</span>
-<span id="cb1-13"><a href="#cb1-13"></a><span class="co"># 1</span></span>
-<span id="cb1-14"><a href="#cb1-14"></a></span>
-<span id="cb1-15"><a href="#cb1-15"></a><span class="co"># Get a list of ranks</span></span>
-<span id="cb1-16"><a href="#cb1-16"></a>df[<span class="st">&#39;rank&#39;</span>].tolist()</span>
-<span id="cb1-17"><a href="#cb1-17"></a><span class="co"># [1, 2, 3]</span></span>
-<span id="cb1-18"><a href="#cb1-18"></a></span>
-<span id="cb1-19"><a href="#cb1-19"></a><span class="co"># Number of rows that has Ford&#39;s name (without specifying the column&#39;s name)</span></span>
-<span id="cb1-20"><a href="#cb1-20"></a><span class="bu">sum</span>(df.isin([<span class="st">&#39;Ford&#39;</span>]).<span class="bu">any</span>(axis <span class="op">=</span> <span class="dv">1</span>))</span>
-<span id="cb1-21"><a href="#cb1-21"></a><span class="co"># 1</span></span>
-<span id="cb1-22"><a href="#cb1-22"></a></span>
-<span id="cb1-23"><a href="#cb1-23"></a><span class="co"># Add a new column from a list </span></span>
-<span id="cb1-24"><a href="#cb1-24"></a>df[<span class="st">&#39;note&#39;</span>] <span class="op">=</span> [<span class="st">&#39;1st&#39;</span>, <span class="st">&#39;2nd&#39;</span>, <span class="st">&#39;3rd&#39;</span>]</span>
-<span id="cb1-25"><a href="#cb1-25"></a>df</span>
-<span id="cb1-26"><a href="#cb1-26"></a><span class="co">#   brand  rank  note</span></span>
-<span id="cb1-27"><a href="#cb1-27"></a><span class="co"># 0  Ford     1   1st</span></span>
-<span id="cb1-28"><a href="#cb1-28"></a><span class="co"># 1   GMC     2   2nd</span></span>
-<span id="cb1-29"><a href="#cb1-29"></a><span class="co"># 2   AMC     3   3rd</span></span></code></pre></div>
+<p>Let’s first look at some syntax from each of Python and PySpark. The
+following shows some basic tasks using Pandas:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Read a CSV file</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">&#39;./file.csv&#39;</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>df</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">#   brand  rank</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 0  Ford     1</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 1   GMC     2</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 2   AMC     3</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Ford&#39;s rank (we know that right! ;))</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>df[<span class="st">&#39;rank&#39;</span>][df[<span class="st">&#39;brand&#39;</span>] <span class="op">==</span> <span class="st">&#39;Ford&#39;</span>]</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># 1</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Get a list of ranks</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>df[<span class="st">&#39;rank&#39;</span>].tolist()</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co"># [1, 2, 3]</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Number of rows that has Ford&#39;s name (without specifying the column&#39;s name)</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="bu">sum</span>(df.isin([<span class="st">&#39;Ford&#39;</span>]).<span class="bu">any</span>(axis <span class="op">=</span> <span class="dv">1</span>))</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="co"># 1</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a new column from a list </span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>df[<span class="st">&#39;note&#39;</span>] <span class="op">=</span> [<span class="st">&#39;1st&#39;</span>, <span class="st">&#39;2nd&#39;</span>, <span class="st">&#39;3rd&#39;</span>]</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>df</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="co">#   brand  rank  note</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="co"># 0  Ford     1   1st</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="co"># 1   GMC     2   2nd</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="co"># 2   AMC     3   3rd</span></span></code></pre></div>
 <p>The following are very similar tasks using PySpark:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="im">from</span> pyspark.sql <span class="im">import</span> SparkSession</span>
-<span id="cb2-2"><a href="#cb2-2"></a>spark <span class="op">=</span> SparkSession.builder.appName(<span class="st">&#39;test_spark&#39;</span>).getOrCreate()</span>
-<span id="cb2-3"><a href="#cb2-3"></a></span>
-<span id="cb2-4"><a href="#cb2-4"></a><span class="co"># Read a CSV file</span></span>
-<span id="cb2-5"><a href="#cb2-5"></a>df <span class="op">=</span> spark.read.csv(<span class="st">&#39;./file.csv&#39;</span>, header <span class="op">=</span> <span class="va">True</span>)</span>
-<span id="cb2-6"><a href="#cb2-6"></a>df.show()</span>
-<span id="cb2-7"><a href="#cb2-7"></a><span class="co"># +-----+----+</span></span>
-<span id="cb2-8"><a href="#cb2-8"></a><span class="co"># |brand|rank|</span></span>
-<span id="cb2-9"><a href="#cb2-9"></a><span class="co"># +-----+----+</span></span>
-<span id="cb2-10"><a href="#cb2-10"></a><span class="co"># | Ford|   1|</span></span>
-<span id="cb2-11"><a href="#cb2-11"></a><span class="co"># |  GMC|   2|</span></span>
-<span id="cb2-12"><a href="#cb2-12"></a><span class="co"># |  AMC|   3|</span></span>
-<span id="cb2-13"><a href="#cb2-13"></a><span class="co"># +-----+----+</span></span>
-<span id="cb2-14"><a href="#cb2-14"></a></span>
-<span id="cb2-15"><a href="#cb2-15"></a><span class="co"># Ford&#39;s rank (again! :))</span></span>
-<span id="cb2-16"><a href="#cb2-16"></a>df.<span class="bu">filter</span>(df[<span class="st">&#39;brand&#39;</span>] <span class="op">==</span> <span class="st">&#39;Ford&#39;</span>).show()</span>
-<span id="cb2-17"><a href="#cb2-17"></a><span class="co"># +-----+----+</span></span>
-<span id="cb2-18"><a href="#cb2-18"></a><span class="co"># |brand|rank|</span></span>
-<span id="cb2-19"><a href="#cb2-19"></a><span class="co"># +-----+----+</span></span>
-<span id="cb2-20"><a href="#cb2-20"></a><span class="co"># | Ford|   1|</span></span>
-<span id="cb2-21"><a href="#cb2-21"></a><span class="co"># +-----+----+</span></span>
-<span id="cb2-22"><a href="#cb2-22"></a></span>
-<span id="cb2-23"><a href="#cb2-23"></a><span class="co"># Get a list of ranks</span></span>
-<span id="cb2-24"><a href="#cb2-24"></a>[<span class="bu">int</span>(x[<span class="dv">0</span>]) <span class="cf">for</span> x <span class="kw">in</span> df.select(<span class="st">&#39;rank&#39;</span>).collect()]</span>
-<span id="cb2-25"><a href="#cb2-25"></a><span class="co"># [1, 2, 3]</span></span>
-<span id="cb2-26"><a href="#cb2-26"></a></span>
-<span id="cb2-27"><a href="#cb2-27"></a><span class="co"># Number of rows that has Ford&#39;s name (I have to passed the column&#39;s name!)</span></span>
-<span id="cb2-28"><a href="#cb2-28"></a>df.<span class="bu">filter</span>(df[<span class="st">&#39;brand&#39;</span>] <span class="op">==</span> <span class="st">&#39;Ford&#39;</span>).count()</span>
-<span id="cb2-29"><a href="#cb2-29"></a><span class="co"># 1</span></span>
-<span id="cb2-30"><a href="#cb2-30"></a></span>
-<span id="cb2-31"><a href="#cb2-31"></a><span class="co"># Add a new column from a list </span></span>
-<span id="cb2-32"><a href="#cb2-32"></a><span class="co"># Amost not doable without a unique key!</span></span></code></pre></div>
-<p>In general, PySpark is not as user friendly as Pandas and it sometimes can be hard to write some simple tasks.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pyspark.sql <span class="im">import</span> SparkSession</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>spark <span class="op">=</span> SparkSession.builder.appName(<span class="st">&#39;test_spark&#39;</span>).getOrCreate()</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Read a CSV file</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> spark.read.csv(<span class="st">&#39;./file.csv&#39;</span>, header <span class="op">=</span> <span class="va">True</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>df.show()</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># +-----+----+</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># |brand|rank|</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># +-----+----+</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># | Ford|   1|</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># |  GMC|   2|</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co"># |  AMC|   3|</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co"># +-----+----+</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Ford&#39;s rank (again! :))</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>df.<span class="bu">filter</span>(df[<span class="st">&#39;brand&#39;</span>] <span class="op">==</span> <span class="st">&#39;Ford&#39;</span>).show()</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co"># +-----+----+</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="co"># |brand|rank|</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="co"># +-----+----+</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="co"># | Ford|   1|</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="co"># +-----+----+</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Get a list of ranks</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>[<span class="bu">int</span>(x[<span class="dv">0</span>]) <span class="cf">for</span> x <span class="kw">in</span> df.select(<span class="st">&#39;rank&#39;</span>).collect()]</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="co"># [1, 2, 3]</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Number of rows that has Ford&#39;s name (I have to passed the column&#39;s name!)</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>df.<span class="bu">filter</span>(df[<span class="st">&#39;brand&#39;</span>] <span class="op">==</span> <span class="st">&#39;Ford&#39;</span>).count()</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="co"># 1</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a new column from a list </span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="co"># Amost not doable without a unique key!</span></span></code></pre></div>
+<p>In general, PySpark is not as user friendly as Pandas and it
+sometimes can be hard to write some simple tasks.</p>
 <h2 id="when-using-spark">When using Spark</h2>
-<p>Despite the harder syntax, Spark has a great advantage that shines when the data is big (&gt; 1 TB)! Spark distributed processes by assigning a main controller node and several worker nodes (each note can be one or more cores) to split the tasks. That means Spark will parallelize the computational tasks out of the box. For example, if you want to count a string in a large database, Spark can split the data among the worker nodes. Each worker does the counting on a chunk of data and returns the result to the controller node. Eventually the controller node aggregates the results and tells us the total. So, if you have “big data” to analyze, then Spark could be a better tool than Python.</p>
-<p>Note that Spark is designed to work with large data and therefore it relies on both hard drives and RAMs (in many cases store the data on hard drives to prevent RAMs’ overflow). Using hard drives makes the read/write process much slower and can increase the time and this is the sacrifice that we need to make when the data is large!</p>
+<p>Despite the harder syntax, Spark has a great advantage that shines
+when the data is big (&gt; 1 TB)! Spark distributed processes by
+assigning a main controller node and several worker nodes (each note can
+be one or more cores) to split the tasks. That means Spark will
+parallelize the computational tasks out of the box. For example, if you
+want to count a string in a large database, Spark can split the data
+among the worker nodes. Each worker does the counting on a chunk of data
+and returns the result to the controller node. Eventually the controller
+node aggregates the results and tells us the total. So, if you have “big
+data” to analyze, then Spark could be a better tool than Python.</p>
+<p>Note that Spark is designed to work with large data and therefore it
+relies on both hard drives and RAMs (in many cases store the data on
+hard drives to prevent RAMs’ overflow). Using hard drives makes the
+read/write process much slower and can increase the time and this is the
+sacrifice that we need to make when the data is large!</p>
 <h2 id="when-using-python">When using Python</h2>
-<p>Python (and many of its packages like Pandas) does not distribute the processes in multiple cores and instead uses a single core - no matter how many free cores are available. Note that it does not mean that we cannot run parallel jobs in Python. We can always use some packages or create our own job submission method to run multiple parallel tasks at the same time. But in general we can say that Python can be very fast as long as the data can fit into the RAM and a single core can handle the process. With the new advances in CPUs and RAMs technologies, this type of processing has become more and more popular. So, if we have numerous tiny tasks, Python and its native packages can be a very helpful option to use. For instance, when you have a small dataset (&lt; 1 GB) but you want to run 100s of independent analysis on that data, Python can be a better solution than Spark.</p>
-<h2 id="a-real-use-case-do-an-hour-job-in-a-couple-of-minutes">A real use case: do an hour job in a couple of minutes!</h2>
-<p>In one of my projects, we are looking to forecast next month’s shipment for several commodity groups. We have a data that shows actual shipments of each commodity group in addition to the supplier promises for several months. We are using many heuristic methods and several regression analysis to find the best forecast with the least error. We developed this project for both Spark and Python and found interesting results when comparing these two! To run the workflows, we use a GCP instance with 64 cores and 160GB RAMs.</p>
-<p>First, we developed our workflow in PySpark with using Spark ML library for our regression analysis. We submit a single job for each commodity group to find the best forecast and start all jobs in parallel. For instance, when we have 20 commodity groups, we submit 20 jobs together with assigning 3 cores to each (using 60 cores out of 64 cores). Since each job has 3 cores, Spark uses 2 workers (with one core each) and keeps one core for the controller node. Even though our tasks are not CPU intensive, we found that in reality there were not enough resources for Spark to distribute the process and reduce the computational time practically. Note that by using Spark we are assigning one third of are resources just for the controller nodes for some simple processes. By using PySpark we were able to finish the computational tasks for all commodity groups in about an hour.</p>
-<p>After trying Spark, we decided to use Python to see if we can expedite the process. We developed a new workflow using Pandas and Scikit-learn instead of Spark. When we used the same job submission method, we realized that each job can be done much faster in Python (on one core only!). With Python we did not also need to assign several cores for the controller nodes, that let us to run more jobs at each time. By using Python we were able to finish the computational tasks for all commodity groups in a couple of minutes!</p></div>
+<p>Python (and many of its packages like Pandas) does not distribute the
+processes in multiple cores and instead uses a single core - no matter
+how many free cores are available. Note that it does not mean that we
+cannot run parallel jobs in Python. We can always use some packages or
+create our own job submission method to run multiple parallel tasks at
+the same time. But in general we can say that Python can be very fast as
+long as the data can fit into the RAM and a single core can handle the
+process. With the new advances in CPUs and RAMs technologies, this type
+of processing has become more and more popular. So, if we have numerous
+tiny tasks, Python and its native packages can be a very helpful option
+to use. For instance, when you have a small dataset (&lt; 1 GB) but you
+want to run 100s of independent analysis on that data, Python can be a
+better solution than Spark.</p>
+<h2 id="a-real-use-case-do-an-hour-job-in-a-couple-of-minutes">A real
+use case: do an hour job in a couple of minutes!</h2>
+<p>In one of my projects, we are looking to forecast next month’s
+shipment for several commodity groups. We have a data that shows actual
+shipments of each commodity group in addition to the supplier promises
+for several months. We are using many heuristic methods and several
+regression analysis to find the best forecast with the least error. We
+developed this project for both Spark and Python and found interesting
+results when comparing these two! To run the workflows, we use a GCP
+instance with 64 cores and 160GB RAMs.</p>
+<p>First, we developed our workflow in PySpark with using Spark ML
+library for our regression analysis. We submit a single job for each
+commodity group to find the best forecast and start all jobs in
+parallel. For instance, when we have 20 commodity groups, we submit 20
+jobs together with assigning 3 cores to each (using 60 cores out of 64
+cores). Since each job has 3 cores, Spark uses 2 workers (with one core
+each) and keeps one core for the controller node. Even though our tasks
+are not CPU intensive, we found that in reality there were not enough
+resources for Spark to distribute the process and reduce the
+computational time practically. Note that by using Spark we are
+assigning one third of are resources just for the controller nodes for
+some simple processes. By using PySpark we were able to finish the
+computational tasks for all commodity groups in about an hour.</p>
+<p>After trying Spark, we decided to use Python to see if we can
+expedite the process. We developed a new workflow using Pandas and
+Scikit-learn instead of Spark. When we used the same job submission
+method, we realized that each job can be done much faster in Python (on
+one core only!). With Python we did not also need to assign several
+cores for the controller nodes, that let us to run more jobs at each
+time. By using Python we were able to finish the computational tasks for
+all commodity groups in a couple of minutes!</p></div>
             <div class="d-none d-xl-block col-xl-2 bd-toc">
                <ul class="section-nav">
                   <li class="toc-entry"><ul>
-<li><a href="#syntax">Syntax</a></li>
-<li><a href="#when-using-spark">When using Spark</a></li>
-<li><a href="#when-using-python">When using Python</a></li>
-<li><a href="#a-real-use-case-do-an-hour-job-in-a-couple-of-minutes">A real use case: do an hour job in a couple of minutes!</a></li>
+<li><a href="#syntax" id="toc-syntax">Syntax</a></li>
+<li><a href="#when-using-spark" id="toc-when-using-spark">When using
+Spark</a></li>
+<li><a href="#when-using-python" id="toc-when-using-python">When using
+Python</a></li>
+<li><a href="#a-real-use-case-do-an-hour-job-in-a-couple-of-minutes"
+id="toc-a-real-use-case-do-an-hour-job-in-a-couple-of-minutes">A real
+use case: do an hour job in a couple of minutes!</a></li>
 </ul></li>
                </ul>
             </div>
@@ -164,7 +229,7 @@
                   &nbsp;|&nbsp;
                   Built with <a href="https://github.com/ashki23/pandoc-bootstrap" target="_blank" rel="noopener">pandoc-bootstrap</a> theme
                   <br />
-                  Copyright 2018-2023, Ashkan Mirzaee
+                  Copyright 2018-2024, Ashkan Mirzaee
                </div>
             </footer>
             <!-- Global site tag (gtag.js) - Google Analytics -->

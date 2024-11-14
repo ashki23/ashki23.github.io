@@ -5,7 +5,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <meta name="generator" content="pandoc">
       <meta name="author" content="Ashkan Mirzaee">
-      <meta name="description" content="An introduction to using clusters">
+      <meta name="description" content="An introduction to using
+clusters">
       <title>Introduction to using clusters</title>
       <!-- Bootstrap -->
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -67,30 +68,54 @@
             <div class="container">
          <h1 class="title">Introduction to using clusters</h1>
                   <div class="row">
-            <div class="col-xl-10"><p>This page describes several ways to manage resources and also submit and monitor jobs in a high performance computing (HPC) environment.</p>
+            <div class="col-xl-10"><p>This page describes several ways
+to manage resources and also submit and monitor jobs in a high
+performance computing (HPC) environment.</p>
 <ul>
-<li>Training presentation (<a href="http://docs.rnet.missouri.edu/files/hpc-intro.pdf">pdf</a>)</li>
+<li>Training presentation (<a
+href="http://docs.rnet.missouri.edu/files/hpc-intro.pdf">pdf</a>)</li>
 </ul>
-<p><strong>Prerequisite:</strong> for better understanding of this course, users are expected to know a basic knowledge about Linux (Unix Shell) and terminal text editors. You can review:</p>
+<p><strong>Prerequisite:</strong> for better understanding of this
+course, users are expected to know a basic knowledge about Linux (Unix
+Shell) and terminal text editors. You can review:</p>
 <ul>
-<li><a href="https://ashki23.github.io/shell.html">The Unix Shell</a></li>
-<li><a href="http://swcarpentry.github.io/shell-novice/">Software Carpentry workshop</a></li>
+<li><a href="https://ashki23.github.io/shell.html">The Unix
+Shell</a></li>
+<li><a href="http://swcarpentry.github.io/shell-novice/">Software
+Carpentry workshop</a></li>
 </ul>
 <hr />
 <h2 id="clusters">Clusters</h2>
-<p>A cluster or supercomputer is a computer with a high level of performance as compared to a general-purpose computer. They have built for the purpose of massive parallelization to decrease computation time and get results faster. Each cluster consists of several components. The smallest element in a cluster is Processing Element (PE) that can be compared with personal computers’ cores. Tens of PEs create a Computational Node and hundreds of Nodes create a Partition, and finally putting Partitions together will create a cluster. Following shows hierarchy of a cluster.</p>
+<p>A cluster or supercomputer is a computer with a high level of
+performance as compared to a general-purpose computer. They have built
+for the purpose of massive parallelization to decrease computation time
+and get results faster. Each cluster consists of several components. The
+smallest element in a cluster is Processing Element (PE) that can be
+compared with personal computers’ cores. Tens of PEs create a
+Computational Node and hundreds of Nodes create a Partition, and finally
+putting Partitions together will create a cluster. Following shows
+hierarchy of a cluster.</p>
 <p align="center">
 <img src="https://upload.wikimedia.org/wikipedia/commons/b/b4/LLNL_BGL_Diagram.png" alt="Super Computers" style="width: 60%; border: 0;">
 <div style="text-align: center; font-size: 85%;">
-From <a href="http://en.wikipedia.org/wiki/Image:LLNL_BGL_Diagram.png">wikipedia</a>
+From <a
+href="http://en.wikipedia.org/wiki/Image:LLNL_BGL_Diagram.png">wikipedia</a>
 </div>
 </p>
 <h2 id="slurm">Slurm</h2>
-<p><a href="https://slurm.schedmd.com">Slurm</a> is an open source and highly scalable cluster management and job scheduling system for large and small Linux clusters. As a cluster workload manager, Slurm has three key functions.</p>
+<p><a href="https://slurm.schedmd.com">Slurm</a> is an open source and
+highly scalable cluster management and job scheduling system for large
+and small Linux clusters. As a cluster workload manager, Slurm has three
+key functions.</p>
 <ul>
-<li>First, it allocates access to resources (compute nodes) to users for some duration of time so they can perform work</li>
-<li>Second, it provides a framework for starting, executing, and monitoring work (normally a parallel job) on the set of allocated nodes</li>
-<li>Finally, it arbitrates contention for resources by managing a queue of pending work (from <a href="https://slurm.schedmd.com/overview.html">Slurm overview</a>)</li>
+<li>First, it allocates access to resources (compute nodes) to users for
+some duration of time so they can perform work</li>
+<li>Second, it provides a framework for starting, executing, and
+monitoring work (normally a parallel job) on the set of allocated
+nodes</li>
+<li>Finally, it arbitrates contention for resources by managing a queue
+of pending work (from <a
+href="https://slurm.schedmd.com/overview.html">Slurm overview</a>)</li>
 </ul>
 <h2 id="login-node">Login node</h2>
 <p>Users connect to clusters through the login nodes.</p>
@@ -98,17 +123,22 @@ From <a href="http://en.wikipedia.org/wiki/Image:LLNL_BGL_Diagram.png">wikipedia
 <img src="images/cluster-login.png" alt="Login Node" style="width: 80%; border: 0;">
 </p>
 <p><br /></p>
-<p>All jobs must be run using Slurm submitting tools to prevent running on the login node.</p>
+<p>All jobs must be run using Slurm submitting tools to prevent running
+on the login node.</p>
 <h2 id="cluster-information">Cluster information</h2>
-<p>Slurm is a resource management system and has many tools to find available resources in the cluster. Following are set of Slurm commands for that purpose:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="ex">sinfo</span> –s <span class="co"># summary of cluster resources (-s --summarize)</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="ex">sinfo</span> -p <span class="op">&lt;</span>partition-name<span class="op">&gt;</span> -o %n,%C,%m,%z <span class="co"># compute info of nodes in a partition (-o --format)</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="ex">sinfo</span> -p Gpu -o %n,%C,%m,%G <span class="co"># GPUs information in Gpu partition (-p --partition)</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="ex">sjstat</span> –c <span class="co"># show computing resources per node</span></span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="ex">scontrol</span> show partition <span class="op">&lt;</span>partition-name<span class="op">&gt;</span> <span class="co"># partition information</span></span>
-<span id="cb1-6"><a href="#cb1-6"></a><span class="ex">scontrol</span> show node <span class="op">&lt;</span>node-name<span class="op">&gt;</span> <span class="co"># node information</span></span>
-<span id="cb1-7"><a href="#cb1-7"></a><span class="ex">sacctmgr</span> show qos format=name,maxwall,maxsubmit <span class="co"># show quality of services</span></span></code></pre></div>
-<p>For example the following shows output for <code>sinfo -s</code> and <code>sjstat -c</code> commands:</p>
+<p>Slurm is a resource management system and has many tools to find
+available resources in the cluster. Following are set of Slurm commands
+for that purpose:</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sinfo</span> –s <span class="co"># summary of cluster resources (-s --summarize)</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">sinfo</span> <span class="at">-p</span> <span class="op">&lt;</span>partition-name<span class="op">&gt;</span> -o %n,%C,%m,%z <span class="co"># compute info of nodes in a partition (-o --format)</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">sinfo</span> <span class="at">-p</span> Gpu <span class="at">-o</span> %n,%C,%m,%G <span class="co"># GPUs information in Gpu partition (-p --partition)</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">sjstat</span> –c <span class="co"># show computing resources per node</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ex">scontrol</span> show partition <span class="op">&lt;</span>partition-name<span class="op">&gt;</span> <span class="co"># partition information</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="ex">scontrol</span> show node <span class="op">&lt;</span>node-name<span class="op">&gt;</span> <span class="co"># node information</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="ex">sacctmgr</span> show qos format=name,maxwall,maxsubmit <span class="co"># show quality of services</span></span></code></pre></div>
+<p>For example the following shows output for <code>sinfo -s</code> and
+<code>sjstat -c</code> commands:</p>
 <pre><code>[user@cluster-login-node ~]$ sinfo -s 
 PARTITION AVAIL  TIMELIMIT   NODES(A/I/O/T)  NODELIST
 hpc          up 2-00:00:00          0/4/0/4  cluster-hpc1-node[908-911]
@@ -124,105 +154,150 @@ hpc        122534Mb    24      4      4      4
 Interact   122534Mb    24      4      4      4
 General*   122534Mb    24      4      4      4
 </code></pre>
-<p>For instance above <code>sinfo -s</code> shows partition hpc3 has 4 idle nodes (free) and users can run jobs up 2 days. And, <code>sjstat -c</code> shows that partition hpc3 has 4 nodes with 24 cpus and 122GB of memory on each node. In general, <code>CPUS/NODES(A/I/O/T)</code> count of CPUs/nodes in the form “available/idle/other/total” and <code>S:C:T</code> counts number of “sockets, cores, threads”.</p>
+<p>For instance above <code>sinfo -s</code> shows partition hpc3 has 4
+idle nodes (free) and users can run jobs up 2 days. And,
+<code>sjstat -c</code> shows that partition hpc3 has 4 nodes with 24
+cpus and 122GB of memory on each node. In general,
+<code>CPUS/NODES(A/I/O/T)</code> count of CPUs/nodes in the form
+“available/idle/other/total” and <code>S:C:T</code> counts number of
+“sockets, cores, threads”.</p>
 <h2 id="users-information">Users information</h2>
-<p>Users can use Slurm to find more information about their accounts, fairshare and quality of services (QOS) and several Unix commands to find their storage quotas.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="ex">sshare</span> -U <span class="co"># show your fairshare and accounts (-U --Users)</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="ex">sacctmgr</span> show assoc user=<span class="va">$USER</span> format=acc,user,share,qos,maxj <span class="co"># your QOS </span></span>
-<span id="cb3-3"><a href="#cb3-3"></a><span class="fu">groups</span> <span class="co"># show your groups</span></span>
-<span id="cb3-4"><a href="#cb3-4"></a><span class="fu">df</span> -h /home/<span class="va">$USER</span> home <span class="co"># storage quota (-h --human-readable)</span></span></code></pre></div>
+<p>Users can use Slurm to find more information about their accounts,
+fairshare and quality of services (QOS) and several Unix commands to
+find their storage quotas.</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sshare</span> <span class="at">-U</span> <span class="co"># show your fairshare and accounts (-U --Users)</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">sacctmgr</span> show assoc user=<span class="va">$USER</span> format=acc,user,share,qos,maxj <span class="co"># your QOS </span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">groups</span> <span class="co"># show your groups</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">df</span> <span class="at">-h</span> /home/<span class="va">$USER</span> home <span class="co"># storage quota (-h --human-readable)</span></span></code></pre></div>
 <h2 id="job-submission">Job submission</h2>
-<p>All jobs must be run using <code>srun</code> or <code>sbatch</code> to prevent running on the Cluster login node. In general, users can request resources and run tasks interactively or create a batch file and submit their jobs. The following graphs shows job submission workflow:</p>
+<p>All jobs must be run using <code>srun</code> or <code>sbatch</code>
+to prevent running on the Cluster login node. In general, users can
+request resources and run tasks interactively or create a batch file and
+submit their jobs. The following graphs shows job submission
+workflow:</p>
 <p align="center">
 <img src="images/cluster-submit.png" alt="Job Submission" style="width: 90%; border: 0;">
 </p>
-<p>For running jobs interactively, we can use <code>srun</code> to request required resources through Slurm and run jobs interactively. For instance:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1"></a><span class="ex">srun</span> <span class="op">&lt;</span>slurm-options<span class="op">&gt;</span> <span class="op">&lt;</span>software-name/path<span class="op">&gt;</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="ex">srun</span> --pty /bin/bash <span class="co"># requesting a pseudo terminal of bash shell to run jobs interactively</span></span>
-<span id="cb4-3"><a href="#cb4-3"></a><span class="ex">srun</span> -p Interactive --pty /bin/bash <span class="co"># requesting a p.t. of bash shell on partition called Interactive (-p --partition)</span></span>
-<span id="cb4-4"><a href="#cb4-4"></a><span class="ex">srun</span> -p <span class="op">&lt;</span>partition-name<span class="op">&gt;</span> -n 4 --mem 16G --pty /bin/bash <span class="co"># req. 4 tasks and 16G memory (-n --ntasks)</span></span>
-<span id="cb4-5"><a href="#cb4-5"></a><span class="ex">srun</span> -p Gpu --gres gpu:1 -N 1 --ntasks-per-node 8 --pty /bin/bash <span class="co"># req. 1 GPU and 1 node for running 8 tasks on Gpu partition (-N --nodes)</span></span></code></pre></div>
-<p>For submitting jobs, we can create a batch file, which is a shell script (<code>#!/bin/bash</code>) including Slurm options (<code>#SBATCH</code>) and computational tasks, and use:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1"></a><span class="ex">sbatch</span> <span class="op">&lt;</span>batch-file<span class="op">&gt;</span> </span></code></pre></div>
-<p>After job completion we will receive outputs i.e. <code>slurm-jobid.out</code>.</p>
-<p>Slurm has several options that help users manage their jobs requirement, such that:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1"></a><span class="ex">-p</span> --partition <span class="op">&lt;</span>partition-name<span class="op">&gt;</span>       --pty <span class="op">&lt;</span>software-name/path<span class="op">&gt;</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a><span class="ex">--mem</span> <span class="op">&lt;</span>memory<span class="op">&gt;</span>                        --gres <span class="op">&lt;</span>general-resources<span class="op">&gt;</span></span>
-<span id="cb6-3"><a href="#cb6-3"></a><span class="ex">-n</span> --ntasks <span class="op">&lt;</span>number of tasks<span class="op">&gt;</span>         -t --time <span class="op">&lt;</span>days-hours:minutes<span class="op">&gt;</span></span>
-<span id="cb6-4"><a href="#cb6-4"></a><span class="ex">-N</span> --nodes <span class="op">&lt;</span>number-of-nodes<span class="op">&gt;</span>          -A --account <span class="op">&lt;</span>account<span class="op">&gt;</span></span>
-<span id="cb6-5"><a href="#cb6-5"></a><span class="ex">-c</span> --cpus-per-task <span class="op">&lt;</span>number-of-cpus<span class="op">&gt;</span>   -L --licenses <span class="op">&lt;</span>license<span class="op">&gt;</span></span>
-<span id="cb6-6"><a href="#cb6-6"></a><span class="ex">-w</span> --nodelist <span class="op">&lt;</span>list-of-node-names<span class="op">&gt;</span>    -J --job-name <span class="op">&lt;</span>jobname<span class="op">&gt;</span></span></code></pre></div>
-<p>Also, Slurm has several environmental variables that contain details such as job id, job name, host name and more. For instance:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1"></a><span class="va">$SLURM_JOB_ID</span></span>
-<span id="cb7-2"><a href="#cb7-2"></a><span class="va">$SLURM_JOB_NAME</span></span>
-<span id="cb7-3"><a href="#cb7-3"></a><span class="va">$SLURM_JOB_NODELIST</span></span>
-<span id="cb7-4"><a href="#cb7-4"></a><span class="va">$SLURM_CPUS_ON_NODE</span></span>
-<span id="cb7-5"><a href="#cb7-5"></a><span class="va">$SLURM_SUBMIT_HOST</span></span>
-<span id="cb7-6"><a href="#cb7-6"></a><span class="va">$SLURM_SUBMIT_DIR</span></span></code></pre></div>
-<p>For example let’s consider the following Python code, called <code>test.py</code>:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="co">#!/usr/bin/env python3</span></span>
-<span id="cb8-2"><a href="#cb8-2"></a><span class="im">import</span> os</span>
-<span id="cb8-3"><a href="#cb8-3"></a></span>
-<span id="cb8-4"><a href="#cb8-4"></a>os.system(<span class="st">&quot;&quot;&quot;</span></span>
-<span id="cb8-5"><a href="#cb8-5"></a><span class="st">echo hostname: $(hostname)</span></span>
-<span id="cb8-6"><a href="#cb8-6"></a><span class="st">echo number of processors: $(nproc)</span></span>
-<span id="cb8-7"><a href="#cb8-7"></a><span class="st">echo data: $(date)</span></span>
-<span id="cb8-8"><a href="#cb8-8"></a><span class="st">echo job id: $SLURM_JOB_ID</span></span>
-<span id="cb8-9"><a href="#cb8-9"></a><span class="st">echo submit dir: $SLURM_SUBMIT_DIR</span></span>
-<span id="cb8-10"><a href="#cb8-10"></a><span class="st">&quot;&quot;&quot;</span>)</span>
-<span id="cb8-11"><a href="#cb8-11"></a></span>
-<span id="cb8-12"><a href="#cb8-12"></a><span class="bu">print</span>(<span class="st">&quot;Hello world”)</span></span></code></pre></div>
-<p>To run the above code, we can use <code>srun</code> to run <code>test.py</code> interactively on a partition called Interactive such that:</p>
+<p>For running jobs interactively, we can use <code>srun</code> to
+request required resources through Slurm and run jobs interactively. For
+instance:</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">srun</span> <span class="op">&lt;</span>slurm-options<span class="op">&gt;</span> <span class="op">&lt;</span>software-name/path<span class="op">&gt;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">srun</span> <span class="at">--pty</span> /bin/bash <span class="co"># requesting a pseudo terminal of bash shell to run jobs interactively</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">srun</span> <span class="at">-p</span> Interactive <span class="at">--pty</span> /bin/bash <span class="co"># requesting a p.t. of bash shell on partition called Interactive (-p --partition)</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="ex">srun</span> <span class="at">-p</span> <span class="op">&lt;</span>partition-name<span class="op">&gt;</span> -n 4 <span class="at">--mem</span> 16G <span class="at">--pty</span> /bin/bash <span class="co"># req. 4 tasks and 16G memory (-n --ntasks)</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="ex">srun</span> <span class="at">-p</span> Gpu <span class="at">--gres</span> gpu:1 <span class="at">-N</span> 1 <span class="at">--ntasks-per-node</span> 8 <span class="at">--pty</span> /bin/bash <span class="co"># req. 1 GPU and 1 node for running 8 tasks on Gpu partition (-N --nodes)</span></span></code></pre></div>
+<p>For submitting jobs, we can create a batch file, which is a shell
+script (<code>#!/bin/bash</code>) including Slurm options
+(<code>#SBATCH</code>) and computational tasks, and use:</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch</span> <span class="op">&lt;</span>batch-file<span class="op">&gt;</span> </span></code></pre></div>
+<p>After job completion we will receive outputs
+i.e. <code>slurm-jobid.out</code>.</p>
+<p>Slurm has several options that help users manage their jobs
+requirement, such that:</p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">-p</span> <span class="at">--partition</span> <span class="op">&lt;</span>partition-name<span class="op">&gt;</span>       --pty <span class="op">&lt;</span>software-name/path<span class="op">&gt;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">--mem</span> <span class="op">&lt;</span>memory<span class="op">&gt;</span>                        --gres <span class="op">&lt;</span>general-resources<span class="op">&gt;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ex">-n</span> <span class="at">--ntasks</span> <span class="op">&lt;</span>number of tasks<span class="op">&gt;</span>         -t <span class="at">--time</span> <span class="op">&lt;</span>days-hours:minutes<span class="op">&gt;</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="ex">-N</span> <span class="at">--nodes</span> <span class="op">&lt;</span>number-of-nodes<span class="op">&gt;</span>          -A <span class="at">--account</span> <span class="op">&lt;</span>account<span class="op">&gt;</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="ex">-c</span> <span class="at">--cpus-per-task</span> <span class="op">&lt;</span>number-of-cpus<span class="op">&gt;</span>   -L <span class="at">--licenses</span> <span class="op">&lt;</span>license<span class="op">&gt;</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="ex">-w</span> <span class="at">--nodelist</span> <span class="op">&lt;</span>list-of-node-names<span class="op">&gt;</span>    -J <span class="at">--job-name</span> <span class="op">&lt;</span>jobname<span class="op">&gt;</span></span></code></pre></div>
+<p>Also, Slurm has several environmental variables that contain details
+such as job id, job name, host name and more. For instance:</p>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="va">$SLURM_JOB_ID</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="va">$SLURM_JOB_NAME</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="va">$SLURM_JOB_NODELIST</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="va">$SLURM_CPUS_ON_NODE</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="va">$SLURM_SUBMIT_HOST</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="va">$SLURM_SUBMIT_DIR</span></span></code></pre></div>
+<p>For example let’s consider the following Python code, called
+<code>test.py</code>:</p>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/usr/bin/env python3</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>os.system(<span class="st">&quot;&quot;&quot;</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="st">echo hostname: $(hostname)</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="st">echo number of processors: $(nproc)</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="st">echo data: $(date)</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="st">echo job id: $SLURM_JOB_ID</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="st">echo submit dir: $SLURM_SUBMIT_DIR</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Hello world”)</span></span></code></pre></div>
+<p>To run the above code, we can use <code>srun</code> to run
+<code>test.py</code> interactively on a partition called Interactive
+such that:</p>
 <pre><code>srun -p Interactive -n 4 --mem 8G --pty bash
 
 python3 test.py</code></pre>
 <p>Or create a batch file, called <code>jobpy.sh</code>, such that:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1"></a><span class="co">#!/bin/bash</span></span>
-<span id="cb10-2"><a href="#cb10-2"></a></span>
-<span id="cb10-3"><a href="#cb10-3"></a><span class="co">#SBATCH -p Interactive</span></span>
-<span id="cb10-4"><a href="#cb10-4"></a><span class="co">#SBATCH -n 4</span></span>
-<span id="cb10-5"><a href="#cb10-5"></a><span class="co">#SBATCH --mem 8G</span></span>
-<span id="cb10-6"><a href="#cb10-6"></a></span>
-<span id="cb10-7"><a href="#cb10-7"></a><span class="ex">python3</span> test.py </span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH -p Interactive</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH -n 4</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --mem 8G</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> test.py </span></code></pre></div>
 <p>And use <code>sbatch</code> to submit the batch file:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1"></a><span class="ex">sbatch</span> jobpy.sh</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch</span> jobpy.sh</span></code></pre></div>
 <h2 id="job-arrays">Job Arrays</h2>
-<p>If you have a plan to submit large number of jobs at the same time in parallel, <a href="https://slurm.schedmd.com/job_array.html">Slurm job array</a> can be very helpful. Note that in most of the parallel programming methods we submit a single script to run but in a way that each iteration of running the same code return different results.</p>
+<p>If you have a plan to submit large number of jobs at the same time in
+parallel, <a href="https://slurm.schedmd.com/job_array.html">Slurm job
+array</a> can be very helpful. Note that in most of the parallel
+programming methods we submit a single script to run but in a way that
+each iteration of running the same code return different results.</p>
 <p>Job arrays use the following environment variables:</p>
 <ul>
-<li><code>SLURM_ARRAY_JOB_ID</code> keeps the first job ID of the array</li>
-<li><code>SLURM_ARRAY_TASK_ID</code> keeps the job array index value</li>
-<li><code>SLURM_ARRAY_TASK_COUNT</code> keeps the number of tasks in the job array</li>
-<li><code>SLURM_ARRAY_TASK_MAX</code> keeps the highest job array index value</li>
-<li><code>SLURM_ARRAY_TASK_MIN</code> keeps the lowest job array index value</li>
+<li><code>SLURM_ARRAY_JOB_ID</code> keeps the first job ID of the
+array</li>
+<li><code>SLURM_ARRAY_TASK_ID</code> keeps the job array index
+value</li>
+<li><code>SLURM_ARRAY_TASK_COUNT</code> keeps the number of tasks in the
+job array</li>
+<li><code>SLURM_ARRAY_TASK_MAX</code> keeps the highest job array index
+value</li>
+<li><code>SLURM_ARRAY_TASK_MIN</code> keeps the lowest job array index
+value</li>
 </ul>
 <h3 id="python-example">Python example</h3>
-<p>The following shows a simple example of using Slurm job array and Python to submit jobs in parallel. Each of these jobs get a seperate memory and CPU allocation to run tasks in parallel. Let’s create the following Python script called <code>array-test.py</code>:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a><span class="co">#!/usr/bin/env python3</span></span>
-<span id="cb12-2"><a href="#cb12-2"></a></span>
-<span id="cb12-3"><a href="#cb12-3"></a><span class="im">import</span> os</span>
-<span id="cb12-4"><a href="#cb12-4"></a></span>
-<span id="cb12-5"><a href="#cb12-5"></a><span class="co">## Computational function</span></span>
-<span id="cb12-6"><a href="#cb12-6"></a><span class="kw">def</span> comp_func(i):</span>
-<span id="cb12-7"><a href="#cb12-7"></a>    host <span class="op">=</span> os.popen(<span class="st">&quot;hostname&quot;</span>).read()[:<span class="op">-</span><span class="dv">1</span>] <span class="co"># find host&#39;s name</span></span>
-<span id="cb12-8"><a href="#cb12-8"></a>    ps <span class="op">=</span> os.popen(<span class="st">&quot;cat /proc/self/stat | awk &#39;{print $39}&#39;&quot;</span>).read()[:<span class="op">-</span><span class="dv">1</span>] <span class="co"># find cpu&#39;s id</span></span>
-<span id="cb12-9"><a href="#cb12-9"></a>    <span class="cf">return</span> <span class="st">&quot;Task ID: </span><span class="sc">%s</span><span class="st">, Hostname: </span><span class="sc">%s</span><span class="st">, CPU ID: </span><span class="sc">%s</span><span class="st">&quot;</span> <span class="op">%</span> (i, host, ps)</span>
-<span id="cb12-10"><a href="#cb12-10"></a></span>
-<span id="cb12-11"><a href="#cb12-11"></a><span class="co">## Iterate to run the computational function</span></span>
-<span id="cb12-12"><a href="#cb12-12"></a>task_id <span class="op">=</span> [<span class="bu">int</span>(os.getenv(<span class="st">&#39;SLURM_ARRAY_TASK_ID&#39;</span>))]</span>
-<span id="cb12-13"><a href="#cb12-13"></a><span class="cf">for</span> t <span class="kw">in</span> task_id:</span>
-<span id="cb12-14"><a href="#cb12-14"></a>    <span class="bu">print</span>(comp_func(t))</span></code></pre></div>
+<p>The following shows a simple example of using Slurm job array and
+Python to submit jobs in parallel. Each of these jobs get a seperate
+memory and CPU allocation to run tasks in parallel. Let’s create the
+following Python script called <code>array-test.py</code>:</p>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/usr/bin/env python3</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co">## Computational function</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> comp_func(i):</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    host <span class="op">=</span> os.popen(<span class="st">&quot;hostname&quot;</span>).read()[:<span class="op">-</span><span class="dv">1</span>] <span class="co"># find host&#39;s name</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    ps <span class="op">=</span> os.popen(<span class="st">&quot;cat /proc/self/stat | awk &#39;{print $39}&#39;&quot;</span>).read()[:<span class="op">-</span><span class="dv">1</span>] <span class="co"># find cpu&#39;s id</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">&quot;Task ID: </span><span class="sc">%s</span><span class="st">, Hostname: </span><span class="sc">%s</span><span class="st">, CPU ID: </span><span class="sc">%s</span><span class="st">&quot;</span> <span class="op">%</span> (i, host, ps)</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="co">## Iterate to run the computational function</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>task_id <span class="op">=</span> [<span class="bu">int</span>(os.getenv(<span class="st">&#39;SLURM_ARRAY_TASK_ID&#39;</span>))]</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> t <span class="kw">in</span> task_id:</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(comp_func(t))</span></code></pre></div>
 <p>The following is a batch file called <code>array-job.sh</code>:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1"></a><span class="co">#!/usr/bin/bash</span></span>
-<span id="cb13-2"><a href="#cb13-2"></a></span>
-<span id="cb13-3"><a href="#cb13-3"></a><span class="co">#SBATCH --partition hpc3</span></span>
-<span id="cb13-4"><a href="#cb13-4"></a><span class="co">#SBATCH --job-name array</span></span>
-<span id="cb13-5"><a href="#cb13-5"></a><span class="co">#SBATCH --array 1-9</span></span>
-<span id="cb13-6"><a href="#cb13-6"></a><span class="co">#SBATCH --output output-%A_%a.out</span></span>
-<span id="cb13-7"><a href="#cb13-7"></a></span>
-<span id="cb13-8"><a href="#cb13-8"></a><span class="ex">python3</span> ./array-test.py</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/usr/bin/bash</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --partition hpc3</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --job-name array</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --array 1-9</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --output output-%A_%a.out</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> ./array-test.py</span></code></pre></div>
 <p>You can submit the batch file by:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1"></a><span class="ex">sbatch</span> array-job.sh</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch</span> array-job.sh</span></code></pre></div>
 <p>The output is:</p>
 <pre><code>[user@clark-r630-login-node907 hpc-intro]$ cat output-*
 Task ID: 1, Hostname: clark-r630-hpc3-node908, CPU ID: 0
@@ -235,28 +310,32 @@ Task ID: 7, Hostname: clark-r630-hpc3-node908, CPU ID: 12
 Task ID: 8, Hostname: clark-r630-hpc3-node908, CPU ID: 14
 Task ID: 9, Hostname: clark-r630-hpc3-node908, CPU ID: 16</code></pre>
 <h3 id="r-example">R example</h3>
-<p>Let’s use job arrays to rerun the following R script (<code>array-test.R</code>) simultaneously with different seeds (starting point for random numbers):</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="co">#!/usr/bin/env R</span></span>
-<span id="cb16-2"><a href="#cb16-2"></a></span>
-<span id="cb16-3"><a href="#cb16-3"></a><span class="kw">system</span>(<span class="st">&quot;echo Date: $(date)&quot;</span>, <span class="dt">intern =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb16-4"><a href="#cb16-4"></a></span>
-<span id="cb16-5"><a href="#cb16-5"></a>args =<span class="st"> </span><span class="kw">commandArgs</span>(<span class="dt">trailingOnly =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb16-6"><a href="#cb16-6"></a>myseed =<span class="st"> </span><span class="kw">as.numeric</span>(args[<span class="dv">1</span>])</span>
-<span id="cb16-7"><a href="#cb16-7"></a></span>
-<span id="cb16-8"><a href="#cb16-8"></a><span class="kw">set.seed</span>(myseed)</span>
-<span id="cb16-9"><a href="#cb16-9"></a><span class="kw">print</span>(<span class="kw">runif</span>(<span class="dv">3</span>))</span></code></pre></div>
+<p>Let’s use job arrays to rerun the following R script
+(<code>array-test.R</code>) simultaneously with different seeds
+(starting point for random numbers):</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/usr/bin/env R</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="fu">system</span>(<span class="st">&quot;echo Date: $(date)&quot;</span>, <span class="at">intern =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>args <span class="ot">=</span> <span class="fu">commandArgs</span>(<span class="at">trailingOnly =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>myseed <span class="ot">=</span> <span class="fu">as.numeric</span>(args[<span class="dv">1</span>])</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(myseed)</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">runif</span>(<span class="dv">3</span>))</span></code></pre></div>
 <p>The following is a batch file called <code>array-job-r.sh</code>:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1"></a><span class="co">#!/usr/bin/bash</span></span>
-<span id="cb17-2"><a href="#cb17-2"></a></span>
-<span id="cb17-3"><a href="#cb17-3"></a><span class="co">#SBATCH --partition Lewis</span></span>
-<span id="cb17-4"><a href="#cb17-4"></a><span class="co">#SBATCH --job-name r-seed</span></span>
-<span id="cb17-5"><a href="#cb17-5"></a><span class="co">#SBATCH --array 1-12%4 # %4 will limit the number of simultaneously running tasks from this job array to 4</span></span>
-<span id="cb17-6"><a href="#cb17-6"></a><span class="co">#SBATCH --output Rout-%A_%a.out</span></span>
-<span id="cb17-7"><a href="#cb17-7"></a></span>
-<span id="cb17-8"><a href="#cb17-8"></a><span class="ex">module</span> load r</span>
-<span id="cb17-9"><a href="#cb17-9"></a><span class="ex">Rscript</span> array-test.R <span class="va">${SLURM_ARRAY_TASK_ID}</span></span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/usr/bin/bash</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --partition Lewis</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --job-name r-seed</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --array 1-12%4 # %4 will limit the number of simultaneously running tasks from this job array to 4</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --output Rout-%A_%a.out</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load r</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="ex">Rscript</span> array-test.R <span class="va">${SLURM_ARRAY_TASK_ID}</span></span></code></pre></div>
 <p>You can submit the batch file by:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1"></a><span class="ex">sbatch</span> array-job-r.sh</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch</span> array-job-r.sh</span></code></pre></div>
 <p>The output is:</p>
 <pre><code>[user@lewis4-r630-login-node675 test-array]$ cat Rout-*
 [1] &quot;Date: Tue Feb 16 18:21:15 CST 2021&quot;
@@ -272,94 +351,131 @@ Task ID: 9, Hostname: clark-r630-hpc3-node908, CPU ID: 16</code></pre>
 [1] 0.7103224 0.2461373 0.3896344</code></pre>
 <h2 id="monitoring-jobs">Monitoring jobs</h2>
 <p>The following Slurm commands can be used to monitor jobs:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1"></a><span class="ex">sacct</span> -X <span class="co"># show your jobs in the last 24 hours (-X --allocations)</span></span>
-<span id="cb20-2"><a href="#cb20-2"></a><span class="ex">sacct</span> -X -S <span class="op">&lt;</span>yyyy-mm-dd<span class="op">&gt;</span> <span class="co"># show your jobs since a date (-S --starttime)</span></span>
-<span id="cb20-3"><a href="#cb20-3"></a><span class="ex">sacct</span> -X -S <span class="op">&lt;</span>yyyy-mm-dd<span class="op">&gt;</span> -E <span class="op">&lt;</span>yyyy-mm-dd<span class="op">&gt;</span> -s <span class="op">&lt;</span>R/PD/F/CA/CG/CD<span class="op">&gt;</span> <span class="co"># show running/pending/failed/cancelled/completing/completed jobs in a preiod of time (-s --state)</span></span>
-<span id="cb20-4"><a href="#cb20-4"></a><span class="ex">sacct</span> -j <span class="op">&lt;</span>jobid<span class="op">&gt;</span> <span class="co"># show more details on selected jobs (-j --jobs)</span></span>
-<span id="cb20-5"><a href="#cb20-5"></a><span class="ex">squeue</span> -u <span class="op">&lt;</span>username<span class="op">&gt;</span> <span class="co"># show a user jobs (R/PD/CD) in the queue (-u --user)</span></span>
-<span id="cb20-6"><a href="#cb20-6"></a><span class="ex">squeue</span> -u <span class="op">&lt;</span>username<span class="op">&gt;</span> --start <span class="co"># show estimation time to start pending jobs</span></span>
-<span id="cb20-7"><a href="#cb20-7"></a><span class="ex">scancel</span> <span class="op">&lt;</span>jobid<span class="op">&gt;</span> <span class="co"># cancel jobs</span></span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sacct</span> <span class="at">-X</span> <span class="co"># show your jobs in the last 24 hours (-X --allocations)</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="ex">sacct</span> <span class="at">-X</span> <span class="at">-S</span> <span class="op">&lt;</span>yyyy-mm-dd<span class="op">&gt;</span> <span class="co"># show your jobs since a date (-S --starttime)</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="ex">sacct</span> <span class="at">-X</span> <span class="at">-S</span> <span class="op">&lt;</span>yyyy-mm-dd<span class="op">&gt;</span> -E <span class="op">&lt;</span>yyyy-mm-dd<span class="op">&gt;</span> -s <span class="op">&lt;</span>R/PD/F/CA/CG/CD<span class="op">&gt;</span> <span class="co"># show running/pending/failed/cancelled/completing/completed jobs in a preiod of time (-s --state)</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="ex">sacct</span> <span class="at">-j</span> <span class="op">&lt;</span>jobid<span class="op">&gt;</span> <span class="co"># show more details on selected jobs (-j --jobs)</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="ex">squeue</span> <span class="at">-u</span> <span class="op">&lt;</span>username<span class="op">&gt;</span> <span class="co"># show a user jobs (R/PD/CD) in the queue (-u --user)</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="ex">squeue</span> <span class="at">-u</span> <span class="op">&lt;</span>username<span class="op">&gt;</span> --start <span class="co"># show estimation time to start pending jobs</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="ex">scancel</span> <span class="op">&lt;</span>jobid<span class="op">&gt;</span> <span class="co"># cancel jobs</span></span></code></pre></div>
 <h2 id="monitor-cpu-and-memory">Monitor CPU and memory</h2>
 <p><strong>Completed jobs</strong></p>
-<p>We can use the following options to check how many resouces is consumed by a completed job.</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1"></a><span class="ex">sacct</span> -j <span class="op">&lt;</span>jobid<span class="op">&gt;</span> -o User,Acc,AllocCPUS,Elaps,CPUTime,TotalCPU,AveDiskRead,AveDiskWrite,ReqMem,MaxRSS <span class="co"># info about CPU and virtual memory for compeleted jobs (-j --jobs)</span></span>
-<span id="cb21-2"><a href="#cb21-2"></a><span class="ex">seff</span> <span class="op">&lt;</span>jobid<span class="op">&gt;</span> <span class="co"># show job CPU and memory efficiency </span></span></code></pre></div>
-<p>For more information on what fields to include see <code>man sacct</code>.</p>
+<p>We can use the following options to check how many resouces is
+consumed by a completed job.</p>
+<div class="sourceCode" id="cb21"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sacct</span> <span class="at">-j</span> <span class="op">&lt;</span>jobid<span class="op">&gt;</span> -o User,Acc,AllocCPUS,Elaps,CPUTime,TotalCPU,AveDiskRead,AveDiskWrite,ReqMem,MaxRSS <span class="co"># info about CPU and virtual memory for compeleted jobs (-j --jobs)</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="ex">seff</span> <span class="op">&lt;</span>jobid<span class="op">&gt;</span> <span class="co"># show job CPU and memory efficiency </span></span></code></pre></div>
+<p>For more information on what fields to include see
+<code>man sacct</code>.</p>
 <p>Example output:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1"></a>[<span class="ex">user@cluster-login-node675</span> ~]$ sacct -j 10785018 -o User,Acc,AllocCPUS,Elaps,CPUTime,TotalCPU,ReqMem,MaxRSS</span>
-<span id="cb22-2"><a href="#cb22-2"></a>     <span class="ex">User</span>    Account  AllocCPUS    Elapsed    CPUTime   TotalCPU     ReqMem     MaxRSS </span>
-<span id="cb22-3"><a href="#cb22-3"></a><span class="ex">---------</span> ---------- ---------- ---------- ---------- ---------- ---------- ---------- </span>
-<span id="cb22-4"><a href="#cb22-4"></a>     <span class="ex">user</span>    general         16   00:48:39   12:58:24  01:49.774       64Gn       216K </span>
-<span id="cb22-5"><a href="#cb22-5"></a></span>
-<span id="cb22-6"><a href="#cb22-6"></a>[<span class="ex">user@cluster-login-node</span> ~]$ seff 10785018</span>
-<span id="cb22-7"><a href="#cb22-7"></a><span class="ex">Job</span> ID: 10785018</span>
-<span id="cb22-8"><a href="#cb22-8"></a><span class="ex">Cluster</span>: cluster4</span>
-<span id="cb22-9"><a href="#cb22-9"></a><span class="ex">User</span>/Group: <span class="ex">user/rcss</span></span>
-<span id="cb22-10"><a href="#cb22-10"></a><span class="ex">State</span>: COMPLETED (exit code 0)</span>
-<span id="cb22-11"><a href="#cb22-11"></a><span class="ex">Nodes</span>: 1</span>
-<span id="cb22-12"><a href="#cb22-12"></a><span class="ex">Cores</span> per node: 16</span>
-<span id="cb22-13"><a href="#cb22-13"></a><span class="ex">CPU</span> Utilized: 00:01:50</span>
-<span id="cb22-14"><a href="#cb22-14"></a><span class="ex">CPU</span> Efficiency: 0.24% of 12:58:24 core-walltime</span>
-<span id="cb22-15"><a href="#cb22-15"></a><span class="ex">Memory</span> Utilized: 3.38 MB (estimated maximum)</span>
-<span id="cb22-16"><a href="#cb22-16"></a><span class="ex">Memory</span> Efficiency: 0.01% of 64.00 GB (64.00 GB/node)</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">[user@cluster-login-node675</span> ~]$ sacct <span class="at">-j</span> 10785018 <span class="at">-o</span> User,Acc,AllocCPUS,Elaps,CPUTime,TotalCPU,ReqMem,MaxRSS</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>     <span class="ex">User</span>    Account  AllocCPUS    Elapsed    CPUTime   TotalCPU     ReqMem     MaxRSS </span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="ex">---------</span> <span class="at">----------</span> <span class="at">----------</span> <span class="at">----------</span> <span class="at">----------</span> <span class="at">----------</span> <span class="at">----------</span> <span class="at">----------</span> </span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>     <span class="ex">user</span>    general         16   00:48:39   12:58:24  01:49.774       64Gn       216K </span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="ex">[user@cluster-login-node</span> ~]$ seff 10785018</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="ex">Job</span> ID: 10785018</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="ex">Cluster:</span> cluster4</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a><span class="ex">User/Group:</span> user/rcss</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a><span class="ex">State:</span> COMPLETED <span class="er">(</span><span class="bu">exit</span> code 0<span class="kw">)</span></span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a><span class="ex">Nodes:</span> 1</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a><span class="ex">Cores</span> per node: 16</span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a><span class="ex">CPU</span> Utilized: 00:01:50</span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a><span class="ex">CPU</span> Efficiency: 0.24% of 12:58:24 core-walltime</span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a><span class="ex">Memory</span> Utilized: 3.38 MB <span class="er">(</span><span class="ex">estimated</span> maximum<span class="kw">)</span></span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a><span class="ex">Memory</span> Efficiency: 0.01% of 64.00 GB <span class="er">(</span><span class="ex">64.00</span> GB/node<span class="kw">)</span></span></code></pre></div>
 <p><strong>Running jobs</strong></p>
-<p>Slurm provides a tool to monitor running jobs. In order for this to work jobs using SBATCH must utilize the <code>srun</code> command within the job file.</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1"></a><span class="ex">sstat</span> <span class="op">&lt;</span>jobid<span class="op">&gt;</span> -o AveCPU,AveDiskRead,AveDiskWrite,MaxRSS <span class="co"># info about CPU and memory for runing jobs (srun only)</span></span></code></pre></div>
-<p>Also, we can use <code>top</code> command to find how much CPU and memory are using by a submitted job. To do that, we need to attach to the nodes that our job is running and run <code>top</code> command.</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1"></a><span class="ex">srun</span> --jobid <span class="op">&lt;</span>jobid<span class="op">&gt;</span> --pty /bin/bash </span>
-<span id="cb24-2"><a href="#cb24-2"></a></span>
-<span id="cb24-3"><a href="#cb24-3"></a><span class="ex">top</span> -u <span class="va">$USER</span></span></code></pre></div>
-<p>For Memory usage, the number you are interested in is RES. In case below, python3 program is using about 5.6Mb memory and 0% of the requested CPUs.</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1"></a>  <span class="ex">PID</span> USER     PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND</span>
-<span id="cb25-2"><a href="#cb25-2"></a><span class="ex">14278</span> Buzz     20   0  124924   5612   2600 S   0.0  0.0   0:00.04 python3</span>
-<span id="cb25-3"><a href="#cb25-3"></a><span class="ex">14279</span> Buzz     20   0  124924   5612   2600 S   0.0  0.0   0:00.03 python3</span></code></pre></div>
+<p>Slurm provides a tool to monitor running jobs. In order for this to
+work jobs using SBATCH must utilize the <code>srun</code> command within
+the job file.</p>
+<div class="sourceCode" id="cb23"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sstat</span> <span class="op">&lt;</span>jobid<span class="op">&gt;</span> -o AveCPU,AveDiskRead,AveDiskWrite,MaxRSS <span class="co"># info about CPU and memory for runing jobs (srun only)</span></span></code></pre></div>
+<p>Also, we can use <code>top</code> command to find how much CPU and
+memory are using by a submitted job. To do that, we need to attach to
+the nodes that our job is running and run <code>top</code> command.</p>
+<div class="sourceCode" id="cb24"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">srun</span> <span class="at">--jobid</span> <span class="op">&lt;</span>jobid<span class="op">&gt;</span> --pty /bin/bash </span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="ex">top</span> <span class="at">-u</span> <span class="va">$USER</span></span></code></pre></div>
+<p>For Memory usage, the number you are interested in is RES. In case
+below, python3 program is using about 5.6Mb memory and 0% of the
+requested CPUs.</p>
+<div class="sourceCode" id="cb25"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>  <span class="ex">PID</span> USER     PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="ex">14278</span> Buzz     20   0  124924   5612   2600 S   0.0  0.0   0:00.04 python3</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="ex">14279</span> Buzz     20   0  124924   5612   2600 S   0.0  0.0   0:00.03 python3</span></code></pre></div>
 <h2 id="modules">Modules</h2>
-<p>In order to use a software, we need to load the corresponding module first. The following commands let us manage modules in our workflow:</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1"></a><span class="ex">module</span> avail <span class="co"># available modules</span></span>
-<span id="cb26-2"><a href="#cb26-2"></a><span class="ex">module</span> show <span class="co"># show modules info </span></span>
-<span id="cb26-3"><a href="#cb26-3"></a><span class="ex">module</span> list <span class="co"># list loaded modules</span></span>
-<span id="cb26-4"><a href="#cb26-4"></a><span class="ex">module</span> load <span class="co"># loaded modules</span></span>
-<span id="cb26-5"><a href="#cb26-5"></a><span class="ex">module</span> unload <span class="co"># unload loaded modules</span></span>
-<span id="cb26-6"><a href="#cb26-6"></a><span class="ex">module</span> purge <span class="co"># unload all loaded modules</span></span></code></pre></div>
-<p><strong>Never load modules in the login node</strong>. It makes login node slow for all users and many modules don’t work in the login node.</p>
-<p>For example to use R interactively, first need to request resources on a partition called Interactive by <code>srun</code> and then use <code>module load R</code>:</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1"></a><span class="ex">srun</span> -p Interactive --mem 4G --pty /bin/bash</span>
-<span id="cb27-2"><a href="#cb27-2"></a><span class="ex">module</span> load R</span>
-<span id="cb27-3"><a href="#cb27-3"></a><span class="ex">R</span></span></code></pre></div>
-<p>If you are looking for using a licensed software (available in cluster) make sure you call the license when requesting resources. For instance to use MATLAB:</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1"></a><span class="ex">srun</span> -p Interactive --mem 4G -L matlab --pty /bin/bash</span>
-<span id="cb28-2"><a href="#cb28-2"></a><span class="ex">module</span> load matlab</span>
-<span id="cb28-3"><a href="#cb28-3"></a><span class="ex">matlab</span> -nodisplay</span></code></pre></div>
+<p>In order to use a software, we need to load the corresponding module
+first. The following commands let us manage modules in our workflow:</p>
+<div class="sourceCode" id="cb26"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> avail <span class="co"># available modules</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> show <span class="co"># show modules info </span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> list <span class="co"># list loaded modules</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load <span class="co"># loaded modules</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> unload <span class="co"># unload loaded modules</span></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> purge <span class="co"># unload all loaded modules</span></span></code></pre></div>
+<p><strong>Never load modules in the login node</strong>. It makes login
+node slow for all users and many modules don’t work in the login
+node.</p>
+<p>For example to use R interactively, first need to request resources
+on a partition called Interactive by <code>srun</code> and then use
+<code>module load R</code>:</p>
+<div class="sourceCode" id="cb27"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="ex">srun</span> <span class="at">-p</span> Interactive <span class="at">--mem</span> 4G <span class="at">--pty</span> /bin/bash</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load R</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span></span></code></pre></div>
+<p>If you are looking for using a licensed software (available in
+cluster) make sure you call the license when requesting resources. For
+instance to use MATLAB:</p>
+<div class="sourceCode" id="cb28"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="ex">srun</span> <span class="at">-p</span> Interactive <span class="at">--mem</span> 4G <span class="at">-L</span> matlab <span class="at">--pty</span> /bin/bash</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load matlab</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="ex">matlab</span> <span class="at">-nodisplay</span></span></code></pre></div>
 <hr />
 <h2 id="more-resources">More resources</h2>
 <ul>
 <li><a href="http://docs.rnet.missouri.edu">RCSS Documentation</a></li>
-<li><a href="https://www.xsede.org/for-users/training">XSEDE Training</a></li>
-<li><a href="https://software-carpentry.org/lessons/">Software Carpentry</a></li>
+<li><a href="https://www.xsede.org/for-users/training">XSEDE
+Training</a></li>
+<li><a href="https://software-carpentry.org/lessons/">Software
+Carpentry</a></li>
 <li><a href="https://hpc-carpentry.github.io">HPC Carpentry</a></li>
 <li><a href="https://datacarpentry.org/lessons/">Data Carpentry</a></li>
-<li><a href="https://cvw.cac.cornell.edu/topics">Cornell Virtual Workshop</a></li>
-<li><a href="https://www.psc.edu/resources-for-users/training/">Pittsburgh Supercomputing Center (PSC)</a></li>
-<li><a href="https://learn.tacc.utexas.edu/course/">TACC Learning Portal</a></li>
+<li><a href="https://cvw.cac.cornell.edu/topics">Cornell Virtual
+Workshop</a></li>
+<li><a
+href="https://www.psc.edu/resources-for-users/training/">Pittsburgh
+Supercomputing Center (PSC)</a></li>
+<li><a href="https://learn.tacc.utexas.edu/course/">TACC Learning
+Portal</a></li>
 </ul></div>
             <div class="d-none d-xl-block col-xl-2 bd-toc">
                <ul class="section-nav">
                   <li class="toc-entry"><ul>
-<li><a href="#clusters">Clusters</a></li>
-<li><a href="#slurm">Slurm</a></li>
-<li><a href="#login-node">Login node</a></li>
-<li><a href="#cluster-information">Cluster information</a></li>
-<li><a href="#users-information">Users information</a></li>
-<li><a href="#job-submission">Job submission</a></li>
-<li><a href="#job-arrays">Job Arrays</a>
+<li><a href="#clusters" id="toc-clusters">Clusters</a></li>
+<li><a href="#slurm" id="toc-slurm">Slurm</a></li>
+<li><a href="#login-node" id="toc-login-node">Login node</a></li>
+<li><a href="#cluster-information" id="toc-cluster-information">Cluster
+information</a></li>
+<li><a href="#users-information" id="toc-users-information">Users
+information</a></li>
+<li><a href="#job-submission" id="toc-job-submission">Job
+submission</a></li>
+<li><a href="#job-arrays" id="toc-job-arrays">Job Arrays</a>
 <ul>
-<li><a href="#python-example">Python example</a></li>
-<li><a href="#r-example">R example</a></li>
+<li><a href="#python-example" id="toc-python-example">Python
+example</a></li>
+<li><a href="#r-example" id="toc-r-example">R example</a></li>
 </ul></li>
-<li><a href="#monitoring-jobs">Monitoring jobs</a></li>
-<li><a href="#monitor-cpu-and-memory">Monitor CPU and memory</a></li>
-<li><a href="#modules">Modules</a></li>
-<li><a href="#more-resources">More resources</a></li>
+<li><a href="#monitoring-jobs" id="toc-monitoring-jobs">Monitoring
+jobs</a></li>
+<li><a href="#monitor-cpu-and-memory"
+id="toc-monitor-cpu-and-memory">Monitor CPU and memory</a></li>
+<li><a href="#modules" id="toc-modules">Modules</a></li>
+<li><a href="#more-resources" id="toc-more-resources">More
+resources</a></li>
 </ul></li>
                </ul>
             </div>
@@ -374,7 +490,7 @@ Task ID: 9, Hostname: clark-r630-hpc3-node908, CPU ID: 16</code></pre>
                   &nbsp;|&nbsp;
                   Built with <a href="https://github.com/ashki23/pandoc-bootstrap" target="_blank" rel="noopener">pandoc-bootstrap</a> theme
                   <br />
-                  Copyright 2018-2023, Ashkan Mirzaee
+                  Copyright 2018-2024, Ashkan Mirzaee
                </div>
             </footer>
             <!-- Global site tag (gtag.js) - Google Analytics -->

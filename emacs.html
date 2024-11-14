@@ -67,16 +67,33 @@
             <div class="container">
          <h1 class="title">Emacs: a powerful text editor</h1>
                   <div class="row">
-            <div class="col-xl-10"><p>A text editor provides an environment to write and edit plain text files such as source codes. Many would like to use IDEs to write and run source codes. That might be very useful for small programs, but as long as your projects being larger, writing and editing codes with IDEs become a very tedious task. <a href="https://www.gnu.org/software/emacs/">Emacs</a> is one of the best text editors that let us edit and write source codes faster and easier. It might be very challenging to start using any editors like Emacs, but it is definitely worth to spend some time to learn the first steps. This tutorial provides a list of commands, configurations and features that we need to begin.</p>
+            <div class="col-xl-10"><p>A text editor provides an
+environment to write and edit plain text files such as source codes.
+Many would like to use IDEs to write and run source codes. That might be
+very useful for small programs, but as long as your projects being
+larger, writing and editing codes with IDEs become a very tedious task.
+<a href="https://www.gnu.org/software/emacs/">Emacs</a> is one of the
+best text editors that let us edit and write source codes faster and
+easier. It might be very challenging to start using any editors like
+Emacs, but it is definitely worth to spend some time to learn the first
+steps. This tutorial provides a list of commands, configurations and
+features that we need to begin.</p>
 <hr />
 <h2 id="installation">Installation</h2>
-<p>To start working Emacs you might need to install it first. To install Emacs follow the instruction at <a href="https://www.gnu.org/software/emacs/download.html">GNU Emacs</a>. Briefly for:</p>
+<p>To start working Emacs you might need to install it first. To install
+Emacs follow the instruction at <a
+href="https://www.gnu.org/software/emacs/download.html">GNU Emacs</a>.
+Briefly for:</p>
 <ul>
 <li>Linux (Debian) use <code>sudo apt install emacs</code></li>
-<li>Mac use <a href="https://emacsformacosx.com/">binaries</a> - see config <a href="https://github.com/ashki23/Linux-notes/blob/master/mac-terminal.md">here</a></li>
+<li>Mac use <a href="https://emacsformacosx.com/">binaries</a> - see
+config <a
+href="https://github.com/ashki23/Linux-notes/blob/master/mac-terminal.md">here</a></li>
 </ul>
 <h2 id="config-file">Config file</h2>
-<p>Use a text editor to create Emacs config file called <code>.emacs</code> in the home directory <code>cd ~</code> then insert the following to make our very preliminary configurations by:</p>
+<p>Use a text editor to create Emacs config file called
+<code>.emacs</code> in the home directory <code>cd ~</code> then insert
+the following to make our very preliminary configurations by:</p>
 <pre class="lips"><code>;; Add MELPA
 (package-initialize)
 (add-to-list &#39;package-archives &#39;(&quot;melpa&quot; . &quot;http://melpa.org/packages/&quot;) t)
@@ -93,9 +110,13 @@
 
 ;; Auto insert closing bracket
 (electric-pair-mode 1)</code></pre>
-<p>Note that we can use <code>(setq make-backup-files nil)</code> and <code>(electric-indent-mode -1)</code> to disable automatic backup and new lines auto-indentation.</p>
+<p>Note that we can use <code>(setq make-backup-files nil)</code> and
+<code>(electric-indent-mode -1)</code> to disable automatic backup and
+new lines auto-indentation.</p>
 <h2 id="commands">Commands</h2>
-<p>The following are some important commands in Emacs. Note that <code>C</code> and <code>M</code> stand for <code>Ctrl</code> and <code>Alt</code> respectively.</p>
+<p>The following are some important commands in Emacs. Note that
+<code>C</code> and <code>M</code> stand for <code>Ctrl</code> and
+<code>Alt</code> respectively.</p>
 <ul>
 <li><code>C-x C-c</code>: exit</li>
 <li><code>C-z</code>: suspend</li>
@@ -127,18 +148,30 @@
 <li><code>C-h d</code>: search help for a pattern</li>
 <li><code>C-h c</code>: show help for the command</li>
 <li><code>M-x &lt;command&gt;</code>: run commands</li>
-<li><code>M-x ispell</code>: spell check; enter the suggested <code>digit</code> or <code>a</code> to accept and <code>r</code> to rewrite</li>
+<li><code>M-x ispell</code>: spell check; enter the suggested
+<code>digit</code> or <code>a</code> to accept and <code>r</code> to
+rewrite</li>
 <li><code>M-x package-install</code>: install packages</li>
 <li><code>M-x package-list-packages</code>: list of packages</li>
 </ul>
 <p>You may find more details in:</p>
 <ul>
-<li><a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Basic.html#Basic">7 Basic Editing Commands</a></li>
-<li><a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/index.html">Emacs manual</a></li>
+<li><a
+href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Basic.html#Basic">7
+Basic Editing Commands</a></li>
+<li><a
+href="https://www.gnu.org/software/emacs/manual/html_node/emacs/index.html">Emacs
+manual</a></li>
 </ul>
 <h2 id="customize-faces">Customize faces</h2>
-<p>An easy way to change the appearance of Emacs is changing faces. <code>M-x list-faces-display</code> shows current faces that can be modified (use GUI Emacs to access them by clicking). To customize certain faces, use <code>M-x customize-face</code> and select the face that you want to change (press tab to see all options).</p>
-<p>Also, we are able to customize faces from Emacs config file. For instance, adding the following to the <code>.emacs</code> file will change some faces in the Emacs terminal mode:</p>
+<p>An easy way to change the appearance of Emacs is changing faces.
+<code>M-x list-faces-display</code> shows current faces that can be
+modified (use GUI Emacs to access them by clicking). To customize
+certain faces, use <code>M-x customize-face</code> and select the face
+that you want to change (press tab to see all options).</p>
+<p>Also, we are able to customize faces from Emacs config file. For
+instance, adding the following to the <code>.emacs</code> file will
+change some faces in the Emacs terminal mode:</p>
 <pre class="lips"><code>;; Customize faces
 (custom-set-faces
  &#39;(font-lock-builtin-face ((t (:foreground &quot;SkyBlue1&quot;))))
@@ -156,24 +189,47 @@
  &#39;(font-lock-variable-name-face ((t (:foreground &quot;lime green&quot;))))
  &#39;(font-lock-warning-face ((t (:foreground &quot;dark orange&quot; :weight bold))))
  &#39;(minibuffer-prompt ((t (:foreground &quot;lime green&quot; :weight bold)))))</code></pre>
-<p>To change the theme use <code>M-x load-theme</code>, then press <code>tab</code> to see list of the available themes. To unload the theme use, <code>M-x disable-theme</code>. Also, we can set a theme permanently, by adding <code>(load-theme '&lt;theme-name&gt;)</code> to the <code>.emacs</code> init file. For example:</p>
+<p>To change the theme use <code>M-x load-theme</code>, then press
+<code>tab</code> to see list of the available themes. To unload the
+theme use, <code>M-x disable-theme</code>. Also, we can set a theme
+permanently, by adding <code>(load-theme '&lt;theme-name&gt;)</code> to
+the <code>.emacs</code> init file. For example:</p>
 <pre class="lips"><code>;; Load tango-dark theme
 (load-theme &#39;tango-dark)</code></pre>
 <h2 id="install-packages">Install packages</h2>
-<p>In Emacs we can install extra packages based on our needs. To install a new package, press <code>M-x</code> and type <code>package-refresh-contents</code> to fetch all packages and then use <code>M-x package-install</code> and enter the new package’s name. For example we can install Markdown-mode, htmlize, ESS (R-mode), autocomplete-mode and <a href="https://tkf.github.io/emacs-jedi/latest/">Jedi</a> with:</p>
+<p>In Emacs we can install extra packages based on our needs. To install
+a new package, press <code>M-x</code> and type
+<code>package-refresh-contents</code> to fetch all packages and then use
+<code>M-x package-install</code> and enter the new package’s name. For
+example we can install Markdown-mode, htmlize, ESS (R-mode),
+autocomplete-mode and <a
+href="https://tkf.github.io/emacs-jedi/latest/">Jedi</a> with:</p>
 <pre class="lips"><code>M-x package-install markdown-mode
 M-x package-install htmlize
 M-x package-install ess
 M-x package-install auto-complete
 M-x package-install jedi</code></pre>
-<p>To see list of the available packages use <code>M-x package-list-packages</code>. And to delete packages, use <code>M-x package-delete</code> and enter the package’s name. Note that you may use <code>C-s / C-r</code> for searching and <code>C-g</code> to cancel any actions and <code>q</code> to close buffers in Emacs.</p>
+<p>To see list of the available packages use
+<code>M-x package-list-packages</code>. And to delete packages, use
+<code>M-x package-delete</code> and enter the package’s name. Note that
+you may use <code>C-s / C-r</code> for searching and <code>C-g</code> to
+cancel any actions and <code>q</code> to close buffers in Emacs.</p>
 <h2 id="org-mode">Org-mode</h2>
-<p><a href="https://orgmode.org">Org website</a> describes “Org mode is for keeping notes, maintaining TODO lists, planning projects, and authoring documents with a fast and effective plain-text system”. Org-mode in Emacs is very similar to Markdown. They let us combine text and codes and evaluate codes and generate PDF or HTML outputs. Following are great resources to learn Org:</p>
+<p><a href="https://orgmode.org">Org website</a> describes “Org mode is
+for keeping notes, maintaining TODO lists, planning projects, and
+authoring documents with a fast and effective plain-text system”.
+Org-mode in Emacs is very similar to Markdown. They let us combine text
+and codes and evaluate codes and generate PDF or HTML outputs. Following
+are great resources to learn Org:</p>
 <ul>
-<li><a href="https://orgmode.org/worg/org-tutorials/org4beginners.html">Org mode beginning at the basics</a></li>
-<li><a href="https://orgmode.org/worg/org-tutorials/index.html">Org tutorials</a></li>
+<li><a
+href="https://orgmode.org/worg/org-tutorials/org4beginners.html">Org
+mode beginning at the basics</a></li>
+<li><a href="https://orgmode.org/worg/org-tutorials/index.html">Org
+tutorials</a></li>
 </ul>
-<p>Recent Emacs includes Org mode, to begin, use <code>emacs test.org</code> to create an Org file by Emacs.</p>
+<p>Recent Emacs includes Org mode, to begin, use
+<code>emacs test.org</code> to create an Org file by Emacs.</p>
 <h3 id="introduction">Introduction</h3>
 <p>Let’s learn how use <em>org-mode</em> to:</p>
 <ul>
@@ -190,65 +246,74 @@ M-x package-install jedi</code></pre>
 </ul></li>
 <li>create tables</li>
 <li>create TODO items</li>
-<li>save <code>C-x C-s</code>, export <code>C-c C-e</code>, and exit <code>C-x C-c</code>
+<li>save <code>C-x C-s</code>, export <code>C-c C-e</code>, and exit
+<code>C-x C-c</code>
 <ul>
-<li>use <code>C-c C-e</code> and press <code>h</code> and then <code>o</code> to see HTML output</li>
+<li>use <code>C-c C-e</code> and press <code>h</code> and then
+<code>o</code> to see HTML output</li>
 </ul></li>
 </ul>
 <p>To create above list in Org use:</p>
-<pre class="org"><code> ** Introduction
- Let&#39;s learn how use *org-mode* to:
- - insert headlines (=M-enter=) - press =M-enter= to go to the next line
- - move headlines up and down (=M-up/down=)
- - fold/unfold (=tab/S-tab=)
- - insert blocks 
-   - example blocks (=&lt;e-tab=)
-   - source code blocks (=&lt;s-tab=) 
-     - for example org/bash/python
- - create tables
- - create TODO items
- - save (=C-x C-s=), export (=C-c C-e=), and exit (=C-x C-c=)
-   - use =C-c C-e= and press =h= and then =o= to see HTML output</code></pre>
-<p>Use <code>M-up/down</code> to see how easy we can move headlines and use <code>C-c C-e h o</code> to see the outputs in the browser.</p>
-<p><strong>Note:</strong> <em>unordered</em> lists in Org start with <strong>-</strong> or <strong>+</strong> and <em>ordered</em> lists start with <strong>a number and a dot</strong> and descriptions use <strong>::</strong>.</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode org"><code class="sourceCode orgmode"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a> ** Introduction</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a> Let&#39;s learn how use *org-mode* to:</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ss"> - </span>insert headlines (=M-enter=) - press =M-enter= to go to the next line</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="ss"> - </span>move headlines up and down (=M-up/down=)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="ss"> - </span>fold/unfold (=tab/S-tab=)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="ss"> - </span>insert blocks </span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>example blocks (=&lt;e-tab=)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>source code blocks (=&lt;s-tab=) </span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="ss">     - </span>for example org/bash/python</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="ss"> - </span>create tables</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="ss"> - </span>create TODO items</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="ss"> - </span>save (=C-x C-s=), export (=C-c C-e=), and exit (=C-x C-c=)</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>use =C-c C-e= and press =h= and then =o= to see HTML output</span></code></pre></div>
+<p>Use <code>M-up/down</code> to see how easy we can move headlines and
+use <code>C-c C-e h o</code> to see the outputs in the browser.</p>
+<p><strong>Note:</strong> <em>unordered</em> lists in Org start with
+<strong>-</strong> or <strong>+</strong> and <em>ordered</em> lists
+start with <strong>a number and a dot</strong> and descriptions use
+<strong>::</strong>.</p>
 <p><strong>For example</strong>, this is an <em>ordered</em> list:</p>
 <ol type="1">
 <li>First - press <code>M-enter</code></li>
 <li>Second - press <code>M-enter</code></li>
-<li>Third is a link to <a href="https://orgmode.org/">org-mode</a> website</li>
+<li>Third is a link to <a href="https://orgmode.org/">org-mode</a>
+website</li>
 </ol>
 <p>To create above list in Org use:</p>
-<pre class="org"><code>*For example*, this is an /orderd/ list:
- 1. First - press =M-enter=
- 2. Second - press =M-enter=
- 3. Third is a link to [[https://orgmode.org/][org-mode]] website</code></pre>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode org"><code class="sourceCode orgmode"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>*For example*, this is an /orderd/ list:</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ss"> 1. </span>First - press =M-enter=</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ss"> 2. </span>Second - press =M-enter=</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="ss"> 3. </span>Third is a link to [[https://orgmode.org/][org-mode]] website</span></code></pre></div>
 <h3 id="tables">Tables</h3>
 <p>The following is table of key abbreviations:</p>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>Name</th>
 <th>key</th>
 <th>Abbr.</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>Control</td>
 <td>Ctrl</td>
 <td>C</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Meta</td>
 <td>Alt</td>
 <td>M</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Shift</td>
 <td>Shift</td>
 <td>S</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Return</td>
 <td>Enter</td>
 <td>RET</td>
@@ -261,43 +326,54 @@ M-x package-install jedi</code></pre>
 | Meta    | Alt   | M     |
 | Shift   | Shift | S     |
 | Return  | Enter | RET   |</code></pre>
-<p>To create above table in org, we only need to insert <code>|Name|Key|Abbr.</code> and press <code>tab</code> to make new row and insert <code>-tab</code> (i.e. <code>dash tab</code>) to draw the hline and press <code>tab</code>. Also you can use (these might be different in different OS):</p>
+<p>To create above table in org, we only need to insert
+<code>|Name|Key|Abbr.</code> and press <code>tab</code> to make new row
+and insert <code>-tab</code> (i.e. <code>dash tab</code>) to draw the
+hline and press <code>tab</code>. Also you can use (these might be
+different in different OS):</p>
 <ul>
 <li><code>M-up/down</code> to move rows</li>
 <li><code>M-left/right</code> to move columns</li>
 <li><code>M-S-up/down</code> to add/remove rows</li>
 <li><code>M-S-left/right</code> to add/remove columns</li>
 </ul>
-<p>We can use <code>&lt;c&gt;</code>, <code>&lt;l&gt;</code> or <code>&lt;r&gt;</code> for center, left or right alignment.</p>
+<p>We can use <code>&lt;c&gt;</code>, <code>&lt;l&gt;</code> or
+<code>&lt;r&gt;</code> for center, left or right alignment.</p>
 <h3 id="basic-todo">Basic TODO</h3>
 <p>To create a TODO list you only need:</p>
-<pre class="org"><code> ** TODO learn org-mode
- ** DONE learn emacs
-    DEADLINE: &lt;2019-11-16 Sat&gt;</code></pre>
-<p>To change a TODO task to DONE or remove it use <code>S-left/right</code>. Use <code>C-c C-d</code> to add a deadline.</p>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode org"><code class="sourceCode orgmode"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a> ** TODO learn org-mode</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a> ** DONE learn emacs</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    DEADLINE: &lt;2019-11-16 Sat&gt;</span></code></pre></div>
+<p>To change a TODO task to DONE or remove it use
+<code>S-left/right</code>. Use <code>C-c C-d</code> to add a
+deadline.</p>
 <h3 id="latex">LaTeX</h3>
 <p>We can use LaTeX to write equations in Org. For example:</p>
-<pre class="org"><code>#+BEGIN_SRC latex
-\begin{equation}
-x=\sqrt{b}
-\end{equation}
-If $a^2=b$ and $b=2$, then the solution must be either $$a=+\sqrt{2}$$ or $$a=-\sqrt{2}$$
-#+END_SRC</code></pre>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode org"><code class="sourceCode orgmode"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="in">#+BEGIN_SRC latex</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="in">\begin{equation}</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="in">x=\sqrt{b}</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="in">\end{equation}</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="in">If $a^2=b$ and $b=2$, then the solution must be either $$a=+\sqrt{2}$$ or $$a=-\sqrt{2}$$</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="in">#+END_SRC</span></span></code></pre></div>
 <p>Org processes LaTeX codes in the HTML/PDF outputs.</p></div>
             <div class="d-none d-xl-block col-xl-2 bd-toc">
                <ul class="section-nav">
                   <li class="toc-entry"><ul>
-<li><a href="#installation">Installation</a></li>
-<li><a href="#config-file">Config file</a></li>
-<li><a href="#commands">Commands</a></li>
-<li><a href="#customize-faces">Customize faces</a></li>
-<li><a href="#install-packages">Install packages</a></li>
-<li><a href="#org-mode">Org-mode</a>
+<li><a href="#installation" id="toc-installation">Installation</a></li>
+<li><a href="#config-file" id="toc-config-file">Config file</a></li>
+<li><a href="#commands" id="toc-commands">Commands</a></li>
+<li><a href="#customize-faces" id="toc-customize-faces">Customize
+faces</a></li>
+<li><a href="#install-packages" id="toc-install-packages">Install
+packages</a></li>
+<li><a href="#org-mode" id="toc-org-mode">Org-mode</a>
 <ul>
-<li><a href="#introduction">Introduction</a></li>
-<li><a href="#tables">Tables</a></li>
-<li><a href="#basic-todo">Basic TODO</a></li>
-<li><a href="#latex">LaTeX</a></li>
+<li><a href="#introduction" id="toc-introduction">Introduction</a></li>
+<li><a href="#tables" id="toc-tables">Tables</a></li>
+<li><a href="#basic-todo" id="toc-basic-todo">Basic TODO</a></li>
+<li><a href="#latex" id="toc-latex">LaTeX</a></li>
 </ul></li>
 </ul></li>
                </ul>
@@ -313,7 +389,7 @@ If $a^2=b$ and $b=2$, then the solution must be either $$a=+\sqrt{2}$$ or $$a=-\
                   &nbsp;|&nbsp;
                   Built with <a href="https://github.com/ashki23/pandoc-bootstrap" target="_blank" rel="noopener">pandoc-bootstrap</a> theme
                   <br />
-                  Copyright 2018-2023, Ashkan Mirzaee
+                  Copyright 2018-2024, Ashkan Mirzaee
                </div>
             </footer>
             <!-- Global site tag (gtag.js) - Google Analytics -->

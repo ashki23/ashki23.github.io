@@ -5,7 +5,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <meta name="generator" content="pandoc">
       <meta name="author" content="Ashkan Mirzaee">
-      <meta name="description" content="How to use and manage VMs with Vagrant">
+      <meta name="description" content="How to use and manage VMs with
+Vagrant">
       <title>Create and manage virtual machines with Vagrant</title>
       <!-- Bootstrap -->
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -65,142 +66,199 @@
                </div>
             </nav>
             <div class="container">
-         <h1 class="title">Create and manage virtual machines with Vagrant</h1>
+         <h1 class="title">Create and manage virtual machines with
+Vagrant</h1>
                   <div class="row">
-            <div class="col-xl-10"><p><a href="https://www.vagrantup.com/intro">Vagrant</a> is a tool for building and managing virtual machine environments in a single workflow. With an easy-to-use workflow and focus on automation, Vagrant lowers development environment setup time, increases production parity, and provides an end-to-end VM management tool on your terminal.</p>
+            <div class="col-xl-10"><p><a
+href="https://www.vagrantup.com/intro">Vagrant</a> is a tool for
+building and managing virtual machine environments in a single workflow.
+With an easy-to-use workflow and focus on automation, Vagrant lowers
+development environment setup time, increases production parity, and
+provides an end-to-end VM management tool on your terminal.</p>
 <ul>
 <li><a href="https://www.vagrantup.com/docs">Documentation</a></li>
-<li><a href="https://learn.hashicorp.com/tutorials/vagrant/getting-started-index">Quick Start</a></li>
+<li><a
+href="https://learn.hashicorp.com/tutorials/vagrant/getting-started-index">Quick
+Start</a></li>
 </ul>
-<p>This document shows how to install Vagrant and create virtual machines (VM).</p>
+<p>This document shows how to install Vagrant and create virtual
+machines (VM).</p>
 <hr />
 <h2 id="install">Install</h2>
-<p><a href="https://www.vagrantup.com/downloads">Download</a> Vigrant and unzip the file in the location the you want i.e. <code>/home</code> or <code>/opt</code>. To use Vagrant, we need <a href="https://www.virtualbox.org/">VirtualBox</a> to be installed first. In Linux (Ubuntu) terminal we can use:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">sudo</span> apt install virtualbox</span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">wget</span> https://releases.hashicorp.com/vagrant/2.2.10/vagrant_2.2.10_linux_amd64.zip</span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">unzip</span> vagrant_*_linux_amd64.zip -d ~/vagrant <span class="co"># we used home directory here</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="bu">echo</span> <span class="st">&quot;alias vagrant=&#39;~/vagrant/vagrant&#39;&quot;</span> <span class="op">&gt;&gt;</span> ~/.bashrc <span class="co"># add vagrant command to terminal</span></span></code></pre></div>
-<p>Make sure to update 2.2.10 with the latest Vagrant version. Note that installing VirtualBox required root access but using it doesn’t need that privilege.</p>
+<p><a href="https://www.vagrantup.com/downloads">Download</a> Vigrant
+and unzip the file in the location the you want i.e. <code>/home</code>
+or <code>/opt</code>. To use Vagrant, we need <a
+href="https://www.virtualbox.org/">VirtualBox</a> to be installed first.
+In Linux (Ubuntu) terminal we can use:</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install virtualbox</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://releases.hashicorp.com/vagrant/2.2.10/vagrant_2.2.10_linux_amd64.zip</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">unzip</span> vagrant_<span class="pp">*</span>_linux_amd64.zip <span class="at">-d</span> ~/vagrant <span class="co"># we used home directory here</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&quot;alias vagrant=&#39;~/vagrant/vagrant&#39;&quot;</span> <span class="op">&gt;&gt;</span> ~/.bashrc <span class="co"># add vagrant command to terminal</span></span></code></pre></div>
+<p>Make sure to update 2.2.10 with the latest Vagrant version. Note that
+installing VirtualBox required root access but using it doesn’t need
+that privilege.</p>
 <h2 id="boxes">Boxes</h2>
-<p>Boxes are the package format for Vagrant environments. These are actually OS images that we need to create a VM. Vagrant boxes are available in <a href="https://app.vagrantup.com/boxes/search">Vagrant Cloud</a>. To create a VM, we need to know the box USER/NAME or URL. For instance, <code>hashicorp/bionic64</code> is a basic Ubuntu 18.04 64-bit box that published by HashiCorp (the makers of Vagrant).</p>
+<p>Boxes are the package format for Vagrant environments. These are
+actually OS images that we need to create a VM. Vagrant boxes are
+available in <a href="https://app.vagrantup.com/boxes/search">Vagrant
+Cloud</a>. To create a VM, we need to know the box USER/NAME or URL. For
+instance, <code>hashicorp/bionic64</code> is a basic Ubuntu 18.04 64-bit
+box that published by HashiCorp (the makers of Vagrant).</p>
 <h2 id="first-vm">First VM</h2>
-<p>To create your first VM, go to the directory that you want to create the VM and enter:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="bu">cd</span> ./path-to/my-first-vm</span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="ex">vagrant</span> init hashicorp/bionic64</span></code></pre></div>
-<p>To setup a basic Ubuntu 18.04 (Bionic) 64-bit VM. Start the VM by:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="ex">vagrant</span> up</span></code></pre></div>
+<p>To create your first VM, go to the directory that you want to create
+the VM and enter:</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ./path-to/my-first-vm</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">vagrant</span> init hashicorp/bionic64</span></code></pre></div>
+<p>To setup a basic Ubuntu 18.04 (Bionic) 64-bit VM. Start the VM
+by:</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">vagrant</span> up</span></code></pre></div>
 <p>And login to the VM by:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1"></a><span class="ex">vagrant</span> ssh</span></code></pre></div>
-<p>Note that <code>vagrant ssh</code> is the same as <code>ssh -p &lt;port&gt; vagrant@localhost</code>. Where port can be found by <code>vagrant port</code> command and the password is “vagrant”. By default, username and password are “vagrant” but we can add other users with new passwords after login to the VM by:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">sudo</span> adduser <span class="op">&lt;</span>new-username<span class="op">&gt;</span></span></code></pre></div>
-<p>We can logout by <code>logout</code> command or <code>Ctrl + D</code>. Also, we can suspend or resume a VM by <code>vagrant suspend</code> and <code>vagrand resume</code> commands. And we can stops and deletes all traces of the vagrant machine by <code>vagrant destroy</code> command. Finally, we can start the VM again by <code>vagrant up</code>.</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">vagrant</span> ssh</span></code></pre></div>
+<p>Note that <code>vagrant ssh</code> is the same as
+<code>ssh -p &lt;port&gt; vagrant@localhost</code>. Where port can be
+found by <code>vagrant port</code> command and the password is
+“vagrant”. By default, username and password are “vagrant” but we can
+add other users with new passwords after login to the VM by:</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> adduser <span class="op">&lt;</span>new-username<span class="op">&gt;</span></span></code></pre></div>
+<p>We can logout by <code>logout</code> command or
+<code>Ctrl + D</code>. Also, we can suspend or resume a VM by
+<code>vagrant suspend</code> and <code>vagrand resume</code> commands.
+And we can stops and deletes all traces of the vagrant machine by
+<code>vagrant destroy</code> command. Finally, we can start the VM again
+by <code>vagrant up</code>.</p>
 <h2 id="commands">Commands</h2>
-<p>Vagrant has set of commands to run and manage VMs. Use <code>vagrant --help</code> to see list of the common commands and their description. Each of these command has some subcommand that can be found by <code>vagrant --help &lt;command&gt;</code> for example <code>vagrant box --help</code> shows available subcommands and options for box command.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1"></a><span class="ex">vagrant</span> init USER/NMAE <span class="co"># initialize a new vagrant env by creating a Vagrantfile</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a><span class="ex">vagrant</span> up <span class="co"># start/restrat and provision the vm</span></span>
-<span id="cb6-3"><a href="#cb6-3"></a><span class="ex">vagrant</span> halt <span class="co"># stop the vm</span></span>
-<span id="cb6-4"><a href="#cb6-4"></a><span class="ex">vagrant</span> destroy <span class="co"># stop and delete the vm</span></span>
-<span id="cb6-5"><a href="#cb6-5"></a><span class="ex">vagrant</span> provision <span class="co"># provision the vm</span></span>
-<span id="cb6-6"><a href="#cb6-6"></a><span class="ex">vagrant</span> reload <span class="co"># restart the vm and load new Vagrantfile configuration</span></span>
-<span id="cb6-7"><a href="#cb6-7"></a><span class="ex">vagrant</span> suspend/resume <span class="co"># suspend/resume the vm</span></span>
-<span id="cb6-8"><a href="#cb6-8"></a><span class="ex">vagrant</span> status <span class="co"># status of the vm</span></span>
-<span id="cb6-9"><a href="#cb6-9"></a><span class="ex">vagrant</span> ssh <span class="co"># connect to the vm via ssh</span></span>
-<span id="cb6-10"><a href="#cb6-10"></a><span class="ex">vagrant</span> port <span class="co"># info about guest port mappings</span></span>
-<span id="cb6-11"><a href="#cb6-11"></a><span class="ex">vagrant</span> box add USER/NAME <span class="co"># add a box without initializing (without creating a Vagrantfile)</span></span>
-<span id="cb6-12"><a href="#cb6-12"></a><span class="ex">vagrant</span> box list <span class="co"># show list of boxes</span></span>
-<span id="cb6-13"><a href="#cb6-13"></a><span class="ex">vagrant</span> box outdated --global <span class="co"># check boxes are update</span></span>
-<span id="cb6-14"><a href="#cb6-14"></a><span class="ex">vagrant</span> box remove USER/NAME <span class="co"># remove a box</span></span></code></pre></div>
+<p>Vagrant has set of commands to run and manage VMs. Use
+<code>vagrant --help</code> to see list of the common commands and their
+description. Each of these command has some subcommand that can be found
+by <code>vagrant --help &lt;command&gt;</code> for example
+<code>vagrant box --help</code> shows available subcommands and options
+for box command.</p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">vagrant</span> init USER/NMAE <span class="co"># initialize a new vagrant env by creating a Vagrantfile</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">vagrant</span> up <span class="co"># start/restrat and provision the vm</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ex">vagrant</span> halt <span class="co"># stop the vm</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="ex">vagrant</span> destroy <span class="co"># stop and delete the vm</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="ex">vagrant</span> provision <span class="co"># provision the vm</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="ex">vagrant</span> reload <span class="co"># restart the vm and load new Vagrantfile configuration</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="ex">vagrant</span> suspend/resume <span class="co"># suspend/resume the vm</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="ex">vagrant</span> status <span class="co"># status of the vm</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="ex">vagrant</span> ssh <span class="co"># connect to the vm via ssh</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="ex">vagrant</span> port <span class="co"># info about guest port mappings</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="ex">vagrant</span> box add USER/NAME <span class="co"># add a box without initializing (without creating a Vagrantfile)</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="ex">vagrant</span> box list <span class="co"># show list of boxes</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="ex">vagrant</span> box outdated <span class="at">--global</span> <span class="co"># check boxes are update</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="ex">vagrant</span> box remove USER/NAME <span class="co"># remove a box</span></span></code></pre></div>
 <h2 id="vagrantfile">Vagrantfile</h2>
-<p><a href="https://www.vagrantup.com/docs/vagrantfile">Vagrantfile</a> is a text file with <a href="https://www.ruby-lang.org/en/">Ruby</a> syntax, which has all the information about configuring and provisioning a set of machines. When you initiate a VM by <code>vagrant init hashicorp/bionic64</code>, a Vagrantfile is creating by default such that:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># -*- mode: ruby -*-</span></span>
-<span id="cb7-2"><a href="#cb7-2"></a><span class="co"># vi: set ft=ruby :</span></span>
-<span id="cb7-3"><a href="#cb7-3"></a></span>
-<span id="cb7-4"><a href="#cb7-4"></a><span class="co"># All Vagrant configuration is done below. The &quot;2&quot; in Vagrant.configure</span></span>
-<span id="cb7-5"><a href="#cb7-5"></a><span class="co"># configures the configuration version (we support older styles for</span></span>
-<span id="cb7-6"><a href="#cb7-6"></a><span class="co"># backwards compatibility). Please don&#39;t change it unless you know what</span></span>
-<span id="cb7-7"><a href="#cb7-7"></a><span class="co"># you&#39;re doing.</span></span>
-<span id="cb7-8"><a href="#cb7-8"></a><span class="dt">Vagrant</span>.configure(<span class="st">&quot;2&quot;</span>) <span class="kw">do</span> |config|</span>
-<span id="cb7-9"><a href="#cb7-9"></a>  <span class="co"># The most common configuration options are documented and commented below.</span></span>
-<span id="cb7-10"><a href="#cb7-10"></a>  <span class="co"># For a complete reference, please see the online documentation at</span></span>
-<span id="cb7-11"><a href="#cb7-11"></a>  <span class="co"># https://docs.vagrantup.com.</span></span>
-<span id="cb7-12"><a href="#cb7-12"></a></span>
-<span id="cb7-13"><a href="#cb7-13"></a>  <span class="co"># Every Vagrant development environment requires a box. You can search for</span></span>
-<span id="cb7-14"><a href="#cb7-14"></a>  <span class="co"># boxes at https://vagrantcloud.com/search.</span></span>
-<span id="cb7-15"><a href="#cb7-15"></a>  config.vm.box = <span class="st">&quot;hashicorp/bionic64&quot;</span></span>
-<span id="cb7-16"><a href="#cb7-16"></a>  </span>
-<span id="cb7-17"><a href="#cb7-17"></a>  <span class="co"># Change the hostname from vagrant.</span></span>
-<span id="cb7-18"><a href="#cb7-18"></a>  <span class="co"># config.vm.hostname = &quot;new-hostname&quot;</span></span>
-<span id="cb7-19"><a href="#cb7-19"></a>  </span>
-<span id="cb7-20"><a href="#cb7-20"></a>  <span class="co"># Disable automatic box update checking. If you disable this, then</span></span>
-<span id="cb7-21"><a href="#cb7-21"></a>  <span class="co"># boxes will only be checked for updates when the user runs</span></span>
-<span id="cb7-22"><a href="#cb7-22"></a>  <span class="co"># `vagrant box outdated`. This is not recommended.</span></span>
-<span id="cb7-23"><a href="#cb7-23"></a>  <span class="co"># config.vm.box_check_update = false</span></span>
-<span id="cb7-24"><a href="#cb7-24"></a></span>
-<span id="cb7-25"><a href="#cb7-25"></a>  <span class="co"># Create a forwarded port mapping which allows access to a specific port</span></span>
-<span id="cb7-26"><a href="#cb7-26"></a>  <span class="co"># within the machine from a port on the host machine. In the example below,</span></span>
-<span id="cb7-27"><a href="#cb7-27"></a>  <span class="co"># accessing &quot;localhost:8080&quot; will access port 80 on the guest machine.</span></span>
-<span id="cb7-28"><a href="#cb7-28"></a>  <span class="co"># Note: This will enable public access to the opened port</span></span>
-<span id="cb7-29"><a href="#cb7-29"></a>  <span class="co"># config.vm.network &quot;forwarded_port&quot;, guest: 80, host: 8080</span></span>
-<span id="cb7-30"><a href="#cb7-30"></a></span>
-<span id="cb7-31"><a href="#cb7-31"></a>  <span class="co"># Create a forwarded port mapping which allows access to a specific port</span></span>
-<span id="cb7-32"><a href="#cb7-32"></a>  <span class="co"># within the machine from a port on the host machine and only allow access</span></span>
-<span id="cb7-33"><a href="#cb7-33"></a>  <span class="co"># via 127.0.0.1 to disable public access</span></span>
-<span id="cb7-34"><a href="#cb7-34"></a>  <span class="co"># config.vm.network &quot;forwarded_port&quot;, guest: 80, host: 8080, host_ip: &quot;127.0.0.1&quot;</span></span>
-<span id="cb7-35"><a href="#cb7-35"></a></span>
-<span id="cb7-36"><a href="#cb7-36"></a>  <span class="co"># Create a private network, which allows host-only access to the machine</span></span>
-<span id="cb7-37"><a href="#cb7-37"></a>  <span class="co"># using a specific IP.</span></span>
-<span id="cb7-38"><a href="#cb7-38"></a>  <span class="co"># config.vm.network &quot;private_network&quot;, ip: &quot;192.168.33.10&quot;</span></span>
-<span id="cb7-39"><a href="#cb7-39"></a></span>
-<span id="cb7-40"><a href="#cb7-40"></a>  <span class="co"># Create a public network, which generally matched to bridged network.</span></span>
-<span id="cb7-41"><a href="#cb7-41"></a>  <span class="co"># Bridged networks make the machine appear as another physical device on</span></span>
-<span id="cb7-42"><a href="#cb7-42"></a>  <span class="co"># your network.</span></span>
-<span id="cb7-43"><a href="#cb7-43"></a>  <span class="co"># config.vm.network &quot;public_network&quot;</span></span>
-<span id="cb7-44"><a href="#cb7-44"></a></span>
-<span id="cb7-45"><a href="#cb7-45"></a>  <span class="co"># Share an additional folder to the guest VM. The first argument is</span></span>
-<span id="cb7-46"><a href="#cb7-46"></a>  <span class="co"># the path on the host to the actual folder. The second argument is</span></span>
-<span id="cb7-47"><a href="#cb7-47"></a>  <span class="co"># the path on the guest to mount the folder. And the optional third</span></span>
-<span id="cb7-48"><a href="#cb7-48"></a>  <span class="co"># argument is a set of non-required options.</span></span>
-<span id="cb7-49"><a href="#cb7-49"></a>  <span class="co"># config.vm.synced_folder &quot;../data&quot;, &quot;/vagrant_data&quot;</span></span>
-<span id="cb7-50"><a href="#cb7-50"></a></span>
-<span id="cb7-51"><a href="#cb7-51"></a>  <span class="co"># Provider-specific configuration so you can fine-tune various</span></span>
-<span id="cb7-52"><a href="#cb7-52"></a>  <span class="co"># backing providers for Vagrant. These expose provider-specific options.</span></span>
-<span id="cb7-53"><a href="#cb7-53"></a>  <span class="co"># Example for VirtualBox:</span></span>
-<span id="cb7-54"><a href="#cb7-54"></a>  <span class="co">#</span></span>
-<span id="cb7-55"><a href="#cb7-55"></a>  <span class="co"># config.vm.provider &quot;virtualbox&quot; do |vb|</span></span>
-<span id="cb7-56"><a href="#cb7-56"></a>  <span class="co">#   # Display the VirtualBox GUI when booting the machine</span></span>
-<span id="cb7-57"><a href="#cb7-57"></a>  <span class="co">#   vb.gui = true</span></span>
-<span id="cb7-58"><a href="#cb7-58"></a>  <span class="co">#</span></span>
-<span id="cb7-59"><a href="#cb7-59"></a>  <span class="co">#   # Customize the amount of memory and cpu on the VM:</span></span>
-<span id="cb7-60"><a href="#cb7-60"></a>  <span class="co">#   vb.memory = &quot;1024&quot;</span></span>
-<span id="cb7-61"><a href="#cb7-61"></a>  <span class="co">#   vb.cpus = &quot;2&quot;</span></span>
-<span id="cb7-62"><a href="#cb7-62"></a>  <span class="co"># end</span></span>
-<span id="cb7-63"><a href="#cb7-63"></a>  <span class="co">#</span></span>
-<span id="cb7-64"><a href="#cb7-64"></a>  <span class="co"># View the documentation for the provider you are using for more</span></span>
-<span id="cb7-65"><a href="#cb7-65"></a>  <span class="co"># information on available options.</span></span>
-<span id="cb7-66"><a href="#cb7-66"></a></span>
-<span id="cb7-67"><a href="#cb7-67"></a>  <span class="co"># Enable provisioning with a shell script. Additional provisioners such as</span></span>
-<span id="cb7-68"><a href="#cb7-68"></a>  <span class="co"># Ansible, Chef, Docker, Puppet and Salt are also available. Please see the</span></span>
-<span id="cb7-69"><a href="#cb7-69"></a>  <span class="co"># documentation for more information about their specific syntax and use.</span></span>
-<span id="cb7-70"><a href="#cb7-70"></a>  <span class="co"># config.vm.provision &quot;shell&quot;, inline: &lt;&lt;-SHELL</span></span>
-<span id="cb7-71"><a href="#cb7-71"></a>  <span class="co">#   apt-get update</span></span>
-<span id="cb7-72"><a href="#cb7-72"></a>  <span class="co">#   apt-get install -y apache2</span></span>
-<span id="cb7-73"><a href="#cb7-73"></a>  <span class="co"># SHELL</span></span>
-<span id="cb7-74"><a href="#cb7-74"></a><span class="kw">end</span></span></code></pre></div>
-<p>We can modify the Vagaratfile and reload the VM by <code>vagrant reload</code> or create our template file including all configuration that are needed. If a Vagrantfile is available, We can start the VM by running <code>vagrant up</code> command.</p>
+<p><a href="https://www.vagrantup.com/docs/vagrantfile">Vagrantfile</a>
+is a text file with <a href="https://www.ruby-lang.org/en/">Ruby</a>
+syntax, which has all the information about configuring and provisioning
+a set of machines. When you initiate a VM by
+<code>vagrant init hashicorp/bionic64</code>, a Vagrantfile is creating
+by default such that:</p>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># -*- mode: ruby -*-</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># vi: set ft=ruby :</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># All Vagrant configuration is done below. The &quot;2&quot; in Vagrant.configure</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co"># configures the configuration version (we support older styles for</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># backwards compatibility). Please don&#39;t change it unless you know what</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co"># you&#39;re doing.</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="dt">Vagrant</span><span class="at">.configure</span>(<span class="st">&quot;2&quot;</span>) <span class="cf">do</span> <span class="kw">|</span>config<span class="kw">|</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># The most common configuration options are documented and commented below.</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># For a complete reference, please see the online documentation at</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># https://docs.vagrantup.com.</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Every Vagrant development environment requires a box. You can search for</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>  <span class="co"># boxes at https://vagrantcloud.com/search.</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>  config<span class="at">.vm.box</span> <span class="kw">=</span> <span class="st">&quot;hashicorp/bionic64&quot;</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Change the hostname from vagrant.</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>  <span class="co"># config.vm.hostname = &quot;new-hostname&quot;</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Disable automatic box update checking. If you disable this, then</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>  <span class="co"># boxes will only be checked for updates when the user runs</span></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>  <span class="co"># `vagrant box outdated`. This is not recommended.</span></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>  <span class="co"># config.vm.box_check_update = false</span></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Create a forwarded port mapping which allows access to a specific port</span></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>  <span class="co"># within the machine from a port on the host machine. In the example below,</span></span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>  <span class="co"># accessing &quot;localhost:8080&quot; will access port 80 on the guest machine.</span></span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Note: This will enable public access to the opened port</span></span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>  <span class="co"># config.vm.network &quot;forwarded_port&quot;, guest: 80, host: 8080</span></span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Create a forwarded port mapping which allows access to a specific port</span></span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>  <span class="co"># within the machine from a port on the host machine and only allow access</span></span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>  <span class="co"># via 127.0.0.1 to disable public access</span></span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>  <span class="co"># config.vm.network &quot;forwarded_port&quot;, guest: 80, host: 8080, host_ip: &quot;127.0.0.1&quot;</span></span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Create a private network, which allows host-only access to the machine</span></span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a>  <span class="co"># using a specific IP.</span></span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a>  <span class="co"># config.vm.network &quot;private_network&quot;, ip: &quot;192.168.33.10&quot;</span></span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Create a public network, which generally matched to bridged network.</span></span>
+<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Bridged networks make the machine appear as another physical device on</span></span>
+<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a>  <span class="co"># your network.</span></span>
+<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a>  <span class="co"># config.vm.network &quot;public_network&quot;</span></span>
+<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Share an additional folder to the guest VM. The first argument is</span></span>
+<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a>  <span class="co"># the path on the host to the actual folder. The second argument is</span></span>
+<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a>  <span class="co"># the path on the guest to mount the folder. And the optional third</span></span>
+<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a>  <span class="co"># argument is a set of non-required options.</span></span>
+<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a>  <span class="co"># config.vm.synced_folder &quot;../data&quot;, &quot;/vagrant_data&quot;</span></span>
+<span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Provider-specific configuration so you can fine-tune various</span></span>
+<span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a>  <span class="co"># backing providers for Vagrant. These expose provider-specific options.</span></span>
+<span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Example for VirtualBox:</span></span>
+<span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a>  <span class="co">#</span></span>
+<span id="cb7-55"><a href="#cb7-55" aria-hidden="true" tabindex="-1"></a>  <span class="co"># config.vm.provider &quot;virtualbox&quot; do |vb|</span></span>
+<span id="cb7-56"><a href="#cb7-56" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   # Display the VirtualBox GUI when booting the machine</span></span>
+<span id="cb7-57"><a href="#cb7-57" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   vb.gui = true</span></span>
+<span id="cb7-58"><a href="#cb7-58" aria-hidden="true" tabindex="-1"></a>  <span class="co">#</span></span>
+<span id="cb7-59"><a href="#cb7-59" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   # Customize the amount of memory and cpu on the VM:</span></span>
+<span id="cb7-60"><a href="#cb7-60" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   vb.memory = &quot;1024&quot;</span></span>
+<span id="cb7-61"><a href="#cb7-61" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   vb.cpus = &quot;2&quot;</span></span>
+<span id="cb7-62"><a href="#cb7-62" aria-hidden="true" tabindex="-1"></a>  <span class="co"># end</span></span>
+<span id="cb7-63"><a href="#cb7-63" aria-hidden="true" tabindex="-1"></a>  <span class="co">#</span></span>
+<span id="cb7-64"><a href="#cb7-64" aria-hidden="true" tabindex="-1"></a>  <span class="co"># View the documentation for the provider you are using for more</span></span>
+<span id="cb7-65"><a href="#cb7-65" aria-hidden="true" tabindex="-1"></a>  <span class="co"># information on available options.</span></span>
+<span id="cb7-66"><a href="#cb7-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-67"><a href="#cb7-67" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Enable provisioning with a shell script. Additional provisioners such as</span></span>
+<span id="cb7-68"><a href="#cb7-68" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Ansible, Chef, Docker, Puppet and Salt are also available. Please see the</span></span>
+<span id="cb7-69"><a href="#cb7-69" aria-hidden="true" tabindex="-1"></a>  <span class="co"># documentation for more information about their specific syntax and use.</span></span>
+<span id="cb7-70"><a href="#cb7-70" aria-hidden="true" tabindex="-1"></a>  <span class="co"># config.vm.provision &quot;shell&quot;, inline: &lt;&lt;-SHELL</span></span>
+<span id="cb7-71"><a href="#cb7-71" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   apt-get update</span></span>
+<span id="cb7-72"><a href="#cb7-72" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   apt-get install -y apache2</span></span>
+<span id="cb7-73"><a href="#cb7-73" aria-hidden="true" tabindex="-1"></a>  <span class="co"># SHELL</span></span>
+<span id="cb7-74"><a href="#cb7-74" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code></pre></div>
+<p>We can modify the Vagaratfile and reload the VM by
+<code>vagrant reload</code> or create our template file including all
+configuration that are needed. If a Vagrantfile is available, We can
+start the VM by running <code>vagrant up</code> command.</p>
 <p>In general there are three types of Vagrant configs:</p>
 <ul>
-<li><a href="https://www.vagrantup.com/docs/vagrantfile/machine_settings"><code>config.vm</code></a>: modify the configuration of the machine that Vagrant manages</li>
-<li><a href="https://www.vagrantup.com/docs/vagrantfile/ssh_settings"><code>config.ssh</code></a>: relate to configuring how Vagrant will access your machine over SSH</li>
-<li><a href="https://www.vagrantup.com/docs/vagrantfile/vagrant_settings"><code>config.vagrant</code></a>: modify the behavior of Vagrant itself</li>
+<li><a
+href="https://www.vagrantup.com/docs/vagrantfile/machine_settings"><code>config.vm</code></a>:
+modify the configuration of the machine that Vagrant manages</li>
+<li><a
+href="https://www.vagrantup.com/docs/vagrantfile/ssh_settings"><code>config.ssh</code></a>:
+relate to configuring how Vagrant will access your machine over SSH</li>
+<li><a
+href="https://www.vagrantup.com/docs/vagrantfile/vagrant_settings"><code>config.vagrant</code></a>:
+modify the behavior of Vagrant itself</li>
 </ul></div>
             <div class="d-none d-xl-block col-xl-2 bd-toc">
                <ul class="section-nav">
                   <li class="toc-entry"><ul>
-<li><a href="#install">Install</a></li>
-<li><a href="#boxes">Boxes</a></li>
-<li><a href="#first-vm">First VM</a></li>
-<li><a href="#commands">Commands</a></li>
-<li><a href="#vagrantfile">Vagrantfile</a></li>
+<li><a href="#install" id="toc-install">Install</a></li>
+<li><a href="#boxes" id="toc-boxes">Boxes</a></li>
+<li><a href="#first-vm" id="toc-first-vm">First VM</a></li>
+<li><a href="#commands" id="toc-commands">Commands</a></li>
+<li><a href="#vagrantfile" id="toc-vagrantfile">Vagrantfile</a></li>
 </ul></li>
                </ul>
             </div>
@@ -215,7 +273,7 @@
                   &nbsp;|&nbsp;
                   Built with <a href="https://github.com/ashki23/pandoc-bootstrap" target="_blank" rel="noopener">pandoc-bootstrap</a> theme
                   <br />
-                  Copyright 2018-2023, Ashkan Mirzaee
+                  Copyright 2018-2024, Ashkan Mirzaee
                </div>
             </footer>
             <!-- Global site tag (gtag.js) - Google Analytics -->

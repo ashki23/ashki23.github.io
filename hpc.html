@@ -5,7 +5,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <meta name="generator" content="pandoc">
       <meta name="author" content="Ashkan Mirzaee">
-      <meta name="description" content="An introduction to high-performance computing (HPC)">
+      <meta name="description" content="An introduction to
+high-performance computing (HPC)">
       <title>Introduction to high-performance computing (HPC)</title>
       <!-- Bootstrap -->
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -65,177 +66,326 @@
                </div>
             </nav>
             <div class="container">
-         <h1 class="title">Introduction to high-performance computing (HPC)</h1>
+         <h1 class="title">Introduction to high-performance computing
+(HPC)</h1>
                   <div class="row">
-            <div class="col-xl-10"><p>When dealing with computational problems, various resource and time limitations could arise difficulties and disrupt the solutions. If we have enough time and resources, we might find the answer. A supercomputer or cluster with high level of performance could help us tackle the problem. The followings are some great workshops about HPC:</p>
+            <div class="col-xl-10"><p>When dealing with computational
+problems, various resource and time limitations could arise difficulties
+and disrupt the solutions. If we have enough time and resources, we
+might find the answer. A supercomputer or cluster with high level of
+performance could help us tackle the problem. The followings are some
+great workshops about HPC:</p>
 <ul>
-<li><a href="https://hpc-carpentry.github.io/hpc-intro/">Introduction to High-Performance Computing</a></li>
-<li><a href="https://hpc-carpentry.github.io/hpc-shell/">Introduction to using the shell in a High-Performance Computing context</a></li>
+<li><a href="https://hpc-carpentry.github.io/hpc-intro/">Introduction to
+High-Performance Computing</a></li>
+<li><a href="https://hpc-carpentry.github.io/hpc-shell/">Introduction to
+using the shell in a High-Performance Computing context</a></li>
 </ul>
-<p>Using HPC systems often involves the use of a Shell through a command line interface which is necessary for this topic (see <a href="https://ashki23.github.io/shell.html">here</a>).</p>
-<p>This tutorial provides a list of basic scheduling commands, submitting jobs, methods of transferring files from local computers, and installing software on clusters.</p>
+<p>Using HPC systems often involves the use of a Shell through a command
+line interface which is necessary for this topic (see <a
+href="https://ashki23.github.io/shell.html">here</a>).</p>
+<p>This tutorial provides a list of basic scheduling commands,
+submitting jobs, methods of transferring files from local computers, and
+installing software on clusters.</p>
 <p>Related document:</p>
 <ul>
-<li><a href="https://ashki23.github.io/cluster.html">Introduction to using clusters</a></li>
+<li><a href="https://ashki23.github.io/cluster.html">Introduction to
+using clusters</a></li>
 </ul>
 <hr />
 <h2 id="scheduling-jobs">Scheduling jobs</h2>
-<p>On an HPC system, we need a scheduler to manage how jobs running on a cluster. One of the most common schedulers is <a href="https://slurm.schedmd.com/">SLURM</a>. The following are some practical SLURM commands (<a href="https://slurm.schedmd.com/quickstart.html">quick start user guide</a>):</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="ex">sinfo</span> -s <span class="co"># shows summary info about all patritions</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="ex">sjstat</span> -c <span class="co"># shows computing resources info</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="ex">srun</span> <span class="co"># run parallel jobs</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="ex">sbatch</span> <span class="co"># submit a job to the scheduler</span></span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="va">JOB_ID=$(</span><span class="ex">sbatch</span> --parsable file.sh<span class="va">)</span> <span class="co"># keep the JOB ID right after reading the command</span></span>
-<span id="cb1-6"><a href="#cb1-6"></a><span class="ex">sbatch</span> --dependency=afterok:JOB_ID file.sh <span class="co"># submit a job file after finishing other jobs</span></span>
-<span id="cb1-7"><a href="#cb1-7"></a><span class="ex">sbatch</span> --dependency=singleton <span class="co"># submit a job after ending a job with a same name </span></span>
-<span id="cb1-8"><a href="#cb1-8"></a><span class="ex">sacct</span> <span class="co"># displays accounting data for all jobs and job steps in the SLURM job accounting log</span></span>
-<span id="cb1-9"><a href="#cb1-9"></a><span class="ex">squeue</span> -u <span class="op">&lt;</span>userid<span class="op">&gt;</span> <span class="co"># check on a user&#39;s job status</span></span>
-<span id="cb1-10"><a href="#cb1-10"></a><span class="ex">squeue</span> -u <span class="op">&lt;</span>userid<span class="op">&gt;</span> --start <span class="co"># show estimation time to start pending jobs</span></span>
-<span id="cb1-11"><a href="#cb1-11"></a><span class="ex">scancel</span> JOBID <span class="co"># cancel the job with JOBID</span></span>
-<span id="cb1-12"><a href="#cb1-12"></a><span class="ex">scancel</span> -u <span class="op">&lt;</span>useride<span class="op">&gt;</span> <span class="co"># cancel all the user jobs</span></span></code></pre></div>
-<p>To see more details about these commands use <code>&lt;command&gt; --help</code>.</p>
-<p>Let’s connect to the cluster through <code>ssh user@server</code>, and do some practices. For example, use <code>nano example-job.sh</code> to make a job file including:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="co">#!/bin/bash</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="co">#SBATCH --nodes 1</span></span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="co">#SBATCH --mem 16G</span></span>
-<span id="cb2-4"><a href="#cb2-4"></a><span class="co">#SBATCH --ntasks 1</span></span>
-<span id="cb2-5"><a href="#cb2-5"></a><span class="co">#SBATCH --cpus-per-task 4</span></span>
-<span id="cb2-6"><a href="#cb2-6"></a><span class="co">#SBATCH --partition hpc0</span></span>
-<span id="cb2-7"><a href="#cb2-7"></a><span class="co">#SBATCH --account general</span></span>
-<span id="cb2-8"><a href="#cb2-8"></a><span class="co">#SBATCH --time 02-05:00</span></span>
-<span id="cb2-9"><a href="#cb2-9"></a><span class="co">#SBATCH --job-name NewJobName</span></span>
-<span id="cb2-10"><a href="#cb2-10"></a><span class="co">#SBATCH --mail-user your@email.com</span></span>
-<span id="cb2-11"><a href="#cb2-11"></a><span class="co">#SBATCH --mail-type </span><span class="re">END</span></span>
-<span id="cb2-12"><a href="#cb2-12"></a></span>
-<span id="cb2-13"><a href="#cb2-13"></a><span class="bu">echo</span> <span class="st">&#39;This script is running on:&#39;</span></span>
-<span id="cb2-14"><a href="#cb2-14"></a><span class="fu">hostname</span></span>
-<span id="cb2-15"><a href="#cb2-15"></a><span class="fu">sleep</span> 120</span></code></pre></div>
-<p>Special characters <code>#!</code> (shebang) at the beginning of scripts specifies what program should be used (i.e. <code>/bin/bash</code> or <code>/usr/bin/python3</code>). SLURM uses <code>#SBATCH</code> special comment to denote special scheduler-specific options. To see more options, use <code>sbatch --help</code>. For example, the above file uses 1 nodes, 16 gigabytes of memory, 1 taks and 4 CPUs per task, and using partition <code>hpc0</code> with a <code>general</code> account for 2 days and 5 hours of walltime, gives a new name to the job, and email you when the job is ended. Now we can submit the job file by <code>sbatch example-job.sh</code>. We can use <code>squeue -u USER</code> or <code>sacct</code> to check the job file status, and use <code>scancel JOBID</code> to cancel the job. You may find more sbatch options <a href="https://slurm.schedmd.com/sbatch.html">here</a>.</p>
-<p>To run a single command, we can use <code>srun</code>. For instance, <code>srun -c 2 echo "This job will use 2 CPUs."</code> submits a job and allocates 2 CPUs. Also, we can use <code>srun</code> to open a program in an interaction mode. For example, <code>srun --pty bash</code> will open a Bash shell in a computation node (not specified).</p>
-<p><strong>Note</strong>: in general, when we connect to a cluster we will go to a node, called <strong>login node</strong>, which is not meant to do heavy computational tasks. So, to do our computations in a proper way, we should always use either <strong><code>sbatch</code></strong> or <strong><code>srun</code></strong>.</p>
-<p>Usually there are many <strong>modules</strong> available on the clusters. To find and load these modules use:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="ex">module</span> avail <span class="co"># shows all avaliable madules (programs) in the cluster</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="ex">module</span> load <span class="op">&lt;</span>name<span class="op">&gt;</span> <span class="co"># to load a module ex. module load R or python</span></span>
-<span id="cb3-3"><a href="#cb3-3"></a><span class="ex">module</span> list <span class="co"># shows list of the loaded modules</span></span>
-<span id="cb3-4"><a href="#cb3-4"></a><span class="ex">module</span> unload <span class="op">&lt;</span>name<span class="op">&gt;</span> <span class="co"># to unload a module</span></span>
-<span id="cb3-5"><a href="#cb3-5"></a><span class="ex">module</span> purge <span class="co"># to unload all modules</span></span></code></pre></div>
-<p>To create a simple template <code>sbatch</code> job file, use the following steps:</p>
+<p>On an HPC system, we need a scheduler to manage how jobs running on a
+cluster. One of the most common schedulers is <a
+href="https://slurm.schedmd.com/">SLURM</a>. The following are some
+practical SLURM commands (<a
+href="https://slurm.schedmd.com/quickstart.html">quick start user
+guide</a>):</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sinfo</span> <span class="at">-s</span> <span class="co"># shows summary info about all patritions</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">sjstat</span> <span class="at">-c</span> <span class="co"># shows computing resources info</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">srun</span> <span class="co"># run parallel jobs</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch</span> <span class="co"># submit a job to the scheduler</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="va">JOB_ID</span><span class="op">=</span><span class="va">$(</span><span class="ex">sbatch</span> <span class="at">--parsable</span> file.sh<span class="va">)</span> <span class="co"># keep the JOB ID right after reading the command</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch</span> <span class="at">--dependency</span><span class="op">=</span>afterok:JOB_ID file.sh <span class="co"># submit a job file after finishing other jobs</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch</span> <span class="at">--dependency</span><span class="op">=</span>singleton <span class="co"># submit a job after ending a job with a same name </span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="ex">sacct</span> <span class="co"># displays accounting data for all jobs and job steps in the SLURM job accounting log</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="ex">squeue</span> <span class="at">-u</span> <span class="op">&lt;</span>userid<span class="op">&gt;</span> <span class="co"># check on a user&#39;s job status</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="ex">squeue</span> <span class="at">-u</span> <span class="op">&lt;</span>userid<span class="op">&gt;</span> --start <span class="co"># show estimation time to start pending jobs</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="ex">scancel</span> JOBID <span class="co"># cancel the job with JOBID</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="ex">scancel</span> <span class="at">-u</span> <span class="op">&lt;</span>useride<span class="op">&gt;</span> <span class="co"># cancel all the user jobs</span></span></code></pre></div>
+<p>To see more details about these commands use
+<code>&lt;command&gt; --help</code>.</p>
+<p>Let’s connect to the cluster through <code>ssh user@server</code>,
+and do some practices. For example, use <code>nano example-job.sh</code>
+to make a job file including:</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --nodes 1</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --mem 16G</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --ntasks 1</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --cpus-per-task 4</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --partition hpc0</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --account general</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --time 02-05:00</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --job-name NewJobName</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --mail-user your@email.com</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --mail-type </span><span class="re">END</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&#39;This script is running on:&#39;</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="fu">hostname</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="fu">sleep</span> 120</span></code></pre></div>
+<p>Special characters <code>#!</code> (shebang) at the beginning of
+scripts specifies what program should be used
+(i.e. <code>/bin/bash</code> or <code>/usr/bin/python3</code>). SLURM
+uses <code>#SBATCH</code> special comment to denote special
+scheduler-specific options. To see more options, use
+<code>sbatch --help</code>. For example, the above file uses 1 nodes, 16
+gigabytes of memory, 1 taks and 4 CPUs per task, and using partition
+<code>hpc0</code> with a <code>general</code> account for 2 days and 5
+hours of walltime, gives a new name to the job, and email you when the
+job is ended. Now we can submit the job file by
+<code>sbatch example-job.sh</code>. We can use
+<code>squeue -u USER</code> or <code>sacct</code> to check the job file
+status, and use <code>scancel JOBID</code> to cancel the job. You may
+find more sbatch options <a
+href="https://slurm.schedmd.com/sbatch.html">here</a>.</p>
+<p>To run a single command, we can use <code>srun</code>. For instance,
+<code>srun -c 2 echo "This job will use 2 CPUs."</code> submits a job
+and allocates 2 CPUs. Also, we can use <code>srun</code> to open a
+program in an interaction mode. For example,
+<code>srun --pty bash</code> will open a Bash shell in a computation
+node (not specified).</p>
+<p><strong>Note</strong>: in general, when we connect to a cluster we
+will go to a node, called <strong>login node</strong>, which is not
+meant to do heavy computational tasks. So, to do our computations in a
+proper way, we should always use either
+<strong><code>sbatch</code></strong> or
+<strong><code>srun</code></strong>.</p>
+<p>Usually there are many <strong>modules</strong> available on the
+clusters. To find and load these modules use:</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> avail <span class="co"># shows all avaliable madules (programs) in the cluster</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load <span class="op">&lt;</span>name<span class="op">&gt;</span> <span class="co"># to load a module ex. module load R or python</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> list <span class="co"># shows list of the loaded modules</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> unload <span class="op">&lt;</span>name<span class="op">&gt;</span> <span class="co"># to unload a module</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> purge <span class="co"># to unload all modules</span></span></code></pre></div>
+<p>To create a simple template <code>sbatch</code> job file, use the
+following steps:</p>
 <ol type="1">
-<li>generate any files including all codes that we want to run in the cluster (that could be several Python or R or other scripts)</li>
-<li>generate a Bash file including all modules that are required for the sending job (<code>environment.sh</code>)</li>
-<li>generate a Bash file to call steps 1 and 2 including all <code>#SBATCH</code> options (<code>job_file.sh</code>)</li>
+<li>generate any files including all codes that we want to run in the
+cluster (that could be several Python or R or other scripts)</li>
+<li>generate a Bash file including all modules that are required for the
+sending job (<code>environment.sh</code>)</li>
+<li>generate a Bash file to call steps 1 and 2 including all
+<code>#SBATCH</code> options (<code>job_file.sh</code>)</li>
 <li>use <code>sbatch</code>to run the file in step 3</li>
 </ol>
-<p>For example, let’s run the following Python code called <code>test.py</code>:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1"></a><span class="co">#!/usr/bin/python3</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a></span>
-<span id="cb4-3"><a href="#cb4-3"></a><span class="ex">print</span>(<span class="st">&quot;Hello world&quot;</span>)</span></code></pre></div>
-<p>Then use <code>nano environment.sh</code> to create the environment file including:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1"></a><span class="co">#!/bin/bash</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a></span>
-<span id="cb5-3"><a href="#cb5-3"></a><span class="ex">module</span> load miniconda3</span></code></pre></div>
+<p>For example, let’s run the following Python code called
+<code>test.py</code>:</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/usr/bin/python3</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">print</span><span class="er">(</span><span class="st">&quot;Hello world&quot;</span><span class="kw">)</span></span></code></pre></div>
+<p>Then use <code>nano environment.sh</code> to create the environment
+file including:</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load miniconda3</span></code></pre></div>
 <p>Then use <code>nano job-test.sh</code> to make the job file by:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1"></a><span class="co">#!/bin/bash</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a></span>
-<span id="cb6-3"><a href="#cb6-3"></a><span class="co">#SBATCH --mem 1G</span></span>
-<span id="cb6-4"><a href="#cb6-4"></a><span class="co">#SBATCH --job-name Test1</span></span>
-<span id="cb6-5"><a href="#cb6-5"></a></span>
-<span id="cb6-6"><a href="#cb6-6"></a><span class="bu">echo</span> === <span class="va">$(</span><span class="fu">date</span><span class="va">)</span></span>
-<span id="cb6-7"><a href="#cb6-7"></a><span class="bu">echo</span> <span class="va">$SLURM_JOB_ID</span></span>
-<span id="cb6-8"><a href="#cb6-8"></a></span>
-<span id="cb6-9"><a href="#cb6-9"></a><span class="bu">source</span> ./environment.sh</span>
-<span id="cb6-10"><a href="#cb6-10"></a><span class="ex">module</span> list</span>
-<span id="cb6-11"><a href="#cb6-11"></a></span>
-<span id="cb6-12"><a href="#cb6-12"></a><span class="ex">srun</span> python3 ./test.py</span>
-<span id="cb6-13"><a href="#cb6-13"></a></span>
-<span id="cb6-14"><a href="#cb6-14"></a><span class="bu">echo</span> === <span class="va">$(</span><span class="fu">date</span><span class="va">)</span> <span class="va">$(</span><span class="fu">hostname</span><span class="va">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --mem 1G</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --job-name Test1</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> === <span class="va">$(</span><span class="fu">date</span><span class="va">)</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">$SLURM_JOB_ID</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> ./environment.sh</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> list</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="ex">srun</span> python3 ./test.py</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> === <span class="va">$(</span><span class="fu">date</span><span class="va">)</span> <span class="va">$(</span><span class="fu">hostname</span><span class="va">)</span></span></code></pre></div>
 <p>Now we can use <code>sbach job-test.sh</code> to run this job.</p>
-<p>If there are some dependencies between jobs, <code>slurm</code> can defer the start of a job until the specified dependencies have been satisfied completed. For instance, let’s create another job called <code>job-test-2.sh</code>:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1"></a><span class="co">#!/bin/bash</span></span>
-<span id="cb7-2"><a href="#cb7-2"></a></span>
-<span id="cb7-3"><a href="#cb7-3"></a><span class="co">#SBATCH --mem 1G</span></span>
-<span id="cb7-4"><a href="#cb7-4"></a><span class="co">#SBATCH --job-name Test2</span></span>
-<span id="cb7-5"><a href="#cb7-5"></a></span>
-<span id="cb7-6"><a href="#cb7-6"></a><span class="bu">echo</span> === <span class="va">$(</span><span class="fu">date</span><span class="va">)</span></span>
-<span id="cb7-7"><a href="#cb7-7"></a><span class="bu">echo</span> <span class="va">$SLURM_JOB_ID</span></span>
-<span id="cb7-8"><a href="#cb7-8"></a><span class="bu">echo</span> === This is a new job</span>
-<span id="cb7-9"><a href="#cb7-9"></a><span class="bu">echo</span> === <span class="va">$(</span><span class="fu">date</span><span class="va">)</span> <span class="va">$(</span><span class="fu">hostname</span><span class="va">)</span></span></code></pre></div>
-<p>We need another job, called <code>job-test-3.sh</code>, to run both <code>job-test.sh</code> and <code>job-test-2.sh</code>:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1"></a><span class="co">#!/bin/bash</span></span>
-<span id="cb8-2"><a href="#cb8-2"></a></span>
-<span id="cb8-3"><a href="#cb8-3"></a><span class="co">#SBATCH --mem 1G</span></span>
-<span id="cb8-4"><a href="#cb8-4"></a><span class="co">#SBATCH --job-name Dependency</span></span>
-<span id="cb8-5"><a href="#cb8-5"></a></span>
-<span id="cb8-6"><a href="#cb8-6"></a><span class="bu">echo</span> === <span class="va">$(</span><span class="fu">date</span><span class="va">)</span></span>
-<span id="cb8-7"><a href="#cb8-7"></a><span class="va">JID=$(</span><span class="ex">sbatch</span> --parsable job-test.sh<span class="va">)</span></span>
-<span id="cb8-8"><a href="#cb8-8"></a><span class="bu">echo</span> <span class="va">$JID</span></span>
-<span id="cb8-9"><a href="#cb8-9"></a></span>
-<span id="cb8-10"><a href="#cb8-10"></a><span class="ex">sbatch</span> --dependency=afterok:<span class="va">$JID</span> job-test-2.sh</span>
-<span id="cb8-11"><a href="#cb8-11"></a><span class="bu">echo</span> === <span class="va">$(</span><span class="fu">date</span><span class="va">)</span> <span class="va">$(</span><span class="fu">hostname</span><span class="va">)</span></span></code></pre></div>
-<p>Where <code>JID</code> is the job ID for <code>sbatch job-test.sh</code> which is a dependency for <code>job-test-2.sh</code>. Now, by running <code>sbatch job-test-3.sh</code> we will make sure that <code>job-test-2.sh</code> will run after that <code>job-test.sh</code> is completed successfully.</p>
-<p>Note that there are some other tools, such as <a href="https://snakemake.readthedocs.io/en/stable/">Snakemake</a>, that could be used for workflow management.</p>
+<p>If there are some dependencies between jobs, <code>slurm</code> can
+defer the start of a job until the specified dependencies have been
+satisfied completed. For instance, let’s create another job called
+<code>job-test-2.sh</code>:</p>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --mem 1G</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --job-name Test2</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> === <span class="va">$(</span><span class="fu">date</span><span class="va">)</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">$SLURM_JOB_ID</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> === This is a new job</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> === <span class="va">$(</span><span class="fu">date</span><span class="va">)</span> <span class="va">$(</span><span class="fu">hostname</span><span class="va">)</span></span></code></pre></div>
+<p>We need another job, called <code>job-test-3.sh</code>, to run both
+<code>job-test.sh</code> and <code>job-test-2.sh</code>:</p>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --mem 1G</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --job-name Dependency</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> === <span class="va">$(</span><span class="fu">date</span><span class="va">)</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="va">JID</span><span class="op">=</span><span class="va">$(</span><span class="ex">sbatch</span> <span class="at">--parsable</span> job-test.sh<span class="va">)</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">$JID</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch</span> <span class="at">--dependency</span><span class="op">=</span>afterok:<span class="va">$JID</span> job-test-2.sh</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> === <span class="va">$(</span><span class="fu">date</span><span class="va">)</span> <span class="va">$(</span><span class="fu">hostname</span><span class="va">)</span></span></code></pre></div>
+<p>Where <code>JID</code> is the job ID for
+<code>sbatch job-test.sh</code> which is a dependency for
+<code>job-test-2.sh</code>. Now, by running
+<code>sbatch job-test-3.sh</code> we will make sure that
+<code>job-test-2.sh</code> will run after that <code>job-test.sh</code>
+is completed successfully.</p>
+<p>Note that there are some other tools, such as <a
+href="https://snakemake.readthedocs.io/en/stable/">Snakemake</a>, that
+could be used for workflow management.</p>
 <hr />
 <h2 id="transferring-files">Transferring files</h2>
 <h3 id="secure-copy-scp">Secure copy (scp)</h3>
-<p>We can use secure copy or <code>scp</code> to transfer files from a local computer to a cluster and vice versa. For example, let’s transfer <code>code_example.py</code> from <code>temp/</code> directory on the <code>remote.edu</code> cluster to <code>Documents/</code> directory in your local computer when we are using the local computer. For this we can use:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1"></a><span class="bu">cd</span> ~/Documents</span>
-<span id="cb9-2"><a href="#cb9-2"></a><span class="fu">scp</span> user@remote.edu:/temp/code_example.py .</span></code></pre></div>
-<p>The <code>.</code> at the end of the code says, paste with the same name of the source file. To do the reverse task with:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1"></a><span class="bu">cd</span> ~/Documents</span>
-<span id="cb10-2"><a href="#cb10-2"></a><span class="fu">scp</span> code_example.py user@remote.edu:/temp/.</span></code></pre></div>
-<p>To recursively copy a directory (with all files in the directory), we just need to add the -r (recursive) flag. For example to download temp folder use:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1"></a><span class="bu">cd</span> ~/Documents</span>
-<span id="cb11-2"><a href="#cb11-2"></a><span class="fu">scp</span> -r user@remote.edu:/temp .</span></code></pre></div>
+<p>We can use secure copy or <code>scp</code> to transfer files from a
+local computer to a cluster and vice versa. For example, let’s transfer
+<code>code_example.py</code> from <code>temp/</code> directory on the
+<code>remote.edu</code> cluster to <code>Documents/</code> directory in
+your local computer when we are using the local computer. For this we
+can use:</p>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/Documents</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> user@remote.edu:/temp/code_example.py .</span></code></pre></div>
+<p>The <code>.</code> at the end of the code says, paste with the same
+name of the source file. To do the reverse task with:</p>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/Documents</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> code_example.py user@remote.edu:/temp/.</span></code></pre></div>
+<p>To recursively copy a directory (with all files in the directory), we
+just need to add the -r (recursive) flag. For example to download temp
+folder use:</p>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/Documents</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> <span class="at">-r</span> user@remote.edu:/temp .</span></code></pre></div>
 <h3 id="rsync">Rsync</h3>
-<p>Rsync is a fast, versatile, remote (and local) file-copying tool. Rsync has two great features, first it always syncs your data (i.e. only transfer files that changed since last transfer) and second, the compress option that makes transferring large files easier. To use <code>rsync</code>, follow:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># From local to remote</span></span>
-<span id="cb12-2"><a href="#cb12-2"></a><span class="fu">rsync</span> local-directory user@remote.edu:remote-directory</span>
-<span id="cb12-3"><a href="#cb12-3"></a></span>
-<span id="cb12-4"><a href="#cb12-4"></a><span class="co"># From remote to local</span></span>
-<span id="cb12-5"><a href="#cb12-5"></a><span class="fu">rsync</span> user@remote.edu:remote-directory local-directory</span></code></pre></div>
-<p>That recursively transfer all files from the directory <code>local-directory</code> on the local machine into the <code>remote-directory</code> on the remote machine. Some important options for <code>rsync</code> are (use <code>rsync -help</code> to see all options):</p>
+<p>Rsync is a fast, versatile, remote (and local) file-copying tool.
+Rsync has two great features, first it always syncs your data (i.e. only
+transfer files that changed since last transfer) and second, the
+compress option that makes transferring large files easier. To use
+<code>rsync</code>, follow:</p>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># From local to remote</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rsync</span> local-directory user@remote.edu:remote-directory</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># From remote to local</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="fu">rsync</span> user@remote.edu:remote-directory local-directory</span></code></pre></div>
+<p>That recursively transfer all files from the directory
+<code>local-directory</code> on the local machine into the
+<code>remote-directory</code> on the remote machine. Some important
+options for <code>rsync</code> are (use <code>rsync -help</code> to see
+all options):</p>
 <ul>
 <li><code>-r, --recursive</code>: recurse into directories</li>
 <li><code>-v, --verbose</code>: increase verbosity</li>
 <li><code>-h, --human-readable</code>: human-readable format</li>
-<li><code>-z, --compress</code>: compress file data during the transfer</li>
-<li><code>-P, --partial --progress</code>: to keep partially transferred files which should make a subsequent transfer of the rest of the file much faster</li>
+<li><code>-z, --compress</code>: compress file data during the
+transfer</li>
+<li><code>-P, --partial --progress</code>: to keep partially transferred
+files which should make a subsequent transfer of the rest of the file
+much faster</li>
 </ul>
 <p>For example:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1"></a><span class="fu">rsync</span> -rPz ./home/myfiles user@remote.edu:./myproject</span></code></pre></div>
-<p>Will transfer files in “partial” mode from <code>./home/myfiles/</code> in the local machine to the remote <code>./myproject</code> directory. Additionally, compression will be used to reduce the size of data portions of the transfer.</p>
-<h3 id="ssh-file-transfer-protocol-sftp">SSH file transfer protocol (sftp)</h3>
-<p>The other method to transfer data between the local machine and a cluster is SSH file transfer protocol or <code>sftp</code>. The great advantage of this way is tab completion in both local and remote that makes finding origins and destinations much easier. We can connect to a cluster through <code>sftp</code> very similar to <code>ssh</code> by running <code>sftp username@server</code>.</p>
-<p>We can also use most of the Bash commands when using <code>sftp</code> and at the same time access to both cluster and local computer. Usually we can apply the bash commands in the local system by adding <code>l</code> to the beginning of the commands. For example:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1"></a><span class="bu">pwd</span> <span class="co"># print working directory on the cluster</span></span>
-<span id="cb14-2"><a href="#cb14-2"></a><span class="ex">lpwd</span> <span class="co"># print working directtory on the local computer</span></span>
-<span id="cb14-3"><a href="#cb14-3"></a><span class="bu">cd</span> <span class="co"># chnage directory on the cluster</span></span>
-<span id="cb14-4"><a href="#cb14-4"></a><span class="ex">lcd</span> <span class="co"># change directtory on the local computer</span></span></code></pre></div>
-<p>Use <code>put</code> to upload and <code>get</code> to download a file.</p>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rsync</span> <span class="at">-rPz</span> ./home/myfiles user@remote.edu:./myproject</span></code></pre></div>
+<p>Will transfer files in “partial” mode from
+<code>./home/myfiles/</code> in the local machine to the remote
+<code>./myproject</code> directory. Additionally, compression will be
+used to reduce the size of data portions of the transfer.</p>
+<h3 id="ssh-file-transfer-protocol-sftp">SSH file transfer protocol
+(sftp)</h3>
+<p>The other method to transfer data between the local machine and a
+cluster is SSH file transfer protocol or <code>sftp</code>. The great
+advantage of this way is tab completion in both local and remote that
+makes finding origins and destinations much easier. We can connect to a
+cluster through <code>sftp</code> very similar to <code>ssh</code> by
+running <code>sftp username@server</code>.</p>
+<p>We can also use most of the Bash commands when using
+<code>sftp</code> and at the same time access to both cluster and local
+computer. Usually we can apply the bash commands in the local system by
+adding <code>l</code> to the beginning of the commands. For example:</p>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span> <span class="co"># print working directory on the cluster</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="ex">lpwd</span> <span class="co"># print working directtory on the local computer</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> <span class="co"># chnage directory on the cluster</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="ex">lcd</span> <span class="co"># change directtory on the local computer</span></span></code></pre></div>
+<p>Use <code>put</code> to upload and <code>get</code> to download a
+file.</p>
 <h3 id="wget">Wget</h3>
-<p>To get data from web, also, we can use <code>wget</code> command to download files on the cluster.</p>
+<p>To get data from web, also, we can use <code>wget</code> command to
+download files on the cluster.</p>
 <hr />
 <h2 id="software-installation">Software installation</h2>
-<p>When we login to a cluster, as a user we only have permission to change user level files (home directory <code>cd ~</code> and higher). So, in this case, we never be able to install/update software that are located in the root directory (<code>cd /</code>). Note that we can find the location of software by <code>module show &lt;software-name&gt;</code> command.</p>
-<p>As a cluster user, we have several ways to build our own system and install and update our required software:</p>
+<p>When we login to a cluster, as a user we only have permission to
+change user level files (home directory <code>cd ~</code> and higher).
+So, in this case, we never be able to install/update software that are
+located in the root directory (<code>cd /</code>). Note that we can find
+the location of software by
+<code>module show &lt;software-name&gt;</code> command.</p>
+<p>As a cluster user, we have several ways to build our own system and
+install and update our required software:</p>
 <ol type="1">
-<li><p><strong>Python</strong>: If we only need several Python packages probably the easiest way is making a virtual environment by <code>venv</code> module in Python3. After that we will be able to use <code>pip</code> package manager to install packages.</p></li>
-<li><p><strong>Miniconda</strong>: It let us install many software including Python, R and their packages. We can try <code>module load anaconda3</code> to load the module and then use <code>conda</code> to create a virtual environment and install software and packages. Note that if the cluster does not include <code>miniconda3</code>, then you may use the third option to install it first. Review <a href="./python-env.html">Virtual environments in Python</a> to learn more.</p></li>
-<li><p><strong>Spack</strong>: it gives more variety of software and packages to install (see <a href="https://spack.readthedocs.io/en/latest/package_list.html#gurobi">here</a>). To use Spack, we need to install it on a local directory (which is <code>cd ~</code> and above) and then use <code>spack</code> to install and load packages. Note that this way might take more time to install Spack and required modules, so, first make sure the second option could not install your requirements. Review <a href="./spack.html">Install software with Spack</a> to learn more.</p></li>
-<li><p><strong>Manually</strong>: Still there are many software that are not available through Conda or Spack. We should follow the software instruction to install them. Make sure to review README or INSTALL file (if exist) and check configure options, <code>./configure --help</code>, in the installation directory. Since, we are not using root directory, make sure to use the right directory that all the dependencies already installed (i.e <code>./configure --prefix=${PWD}</code>). This method could be the hardest way, so, first make sure Conda and Spack could not help you. Note that software names might be slightly different in Conda or Spack, so have a look on all names that are close.</p></li>
+<li><p><strong>Python</strong>: If we only need several Python packages
+probably the easiest way is making a virtual environment by
+<code>venv</code> module in Python3. After that we will be able to use
+<code>pip</code> package manager to install packages.</p></li>
+<li><p><strong>Miniconda</strong>: It let us install many software
+including Python, R and their packages. We can try
+<code>module load anaconda3</code> to load the module and then use
+<code>conda</code> to create a virtual environment and install software
+and packages. Note that if the cluster does not include
+<code>miniconda3</code>, then you may use the third option to install it
+first. Review <a href="./python-env.html">Virtual environments in
+Python</a> to learn more.</p></li>
+<li><p><strong>Spack</strong>: it gives more variety of software and
+packages to install (see <a
+href="https://spack.readthedocs.io/en/latest/package_list.html#gurobi">here</a>).
+To use Spack, we need to install it on a local directory (which is
+<code>cd ~</code> and above) and then use <code>spack</code> to install
+and load packages. Note that this way might take more time to install
+Spack and required modules, so, first make sure the second option could
+not install your requirements. Review <a href="./spack.html">Install
+software with Spack</a> to learn more.</p></li>
+<li><p><strong>Manually</strong>: Still there are many software that are
+not available through Conda or Spack. We should follow the software
+instruction to install them. Make sure to review README or INSTALL file
+(if exist) and check configure options, <code>./configure --help</code>,
+in the installation directory. Since, we are not using root directory,
+make sure to use the right directory that all the dependencies already
+installed (i.e <code>./configure --prefix=${PWD}</code>). This method
+could be the hardest way, so, first make sure Conda and Spack could not
+help you. Note that software names might be slightly different in Conda
+or Spack, so have a look on all names that are close.</p></li>
 </ol></div>
             <div class="d-none d-xl-block col-xl-2 bd-toc">
                <ul class="section-nav">
                   <li class="toc-entry"><ul>
-<li><a href="#scheduling-jobs">Scheduling jobs</a></li>
-<li><a href="#transferring-files">Transferring files</a>
+<li><a href="#scheduling-jobs" id="toc-scheduling-jobs">Scheduling
+jobs</a></li>
+<li><a href="#transferring-files"
+id="toc-transferring-files">Transferring files</a>
 <ul>
-<li><a href="#secure-copy-scp">Secure copy (scp)</a></li>
-<li><a href="#rsync">Rsync</a></li>
-<li><a href="#ssh-file-transfer-protocol-sftp">SSH file transfer protocol (sftp)</a></li>
-<li><a href="#wget">Wget</a></li>
+<li><a href="#secure-copy-scp" id="toc-secure-copy-scp">Secure copy
+(scp)</a></li>
+<li><a href="#rsync" id="toc-rsync">Rsync</a></li>
+<li><a href="#ssh-file-transfer-protocol-sftp"
+id="toc-ssh-file-transfer-protocol-sftp">SSH file transfer protocol
+(sftp)</a></li>
+<li><a href="#wget" id="toc-wget">Wget</a></li>
 </ul></li>
-<li><a href="#software-installation">Software installation</a></li>
+<li><a href="#software-installation"
+id="toc-software-installation">Software installation</a></li>
 </ul></li>
                </ul>
             </div>
@@ -250,7 +400,7 @@
                   &nbsp;|&nbsp;
                   Built with <a href="https://github.com/ashki23/pandoc-bootstrap" target="_blank" rel="noopener">pandoc-bootstrap</a> theme
                   <br />
-                  Copyright 2018-2023, Ashkan Mirzaee
+                  Copyright 2018-2024, Ashkan Mirzaee
                </div>
             </footer>
             <!-- Global site tag (gtag.js) - Google Analytics -->
