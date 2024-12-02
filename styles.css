@@ -18,3 +18,7 @@ blockquote {
     border-left: 3px solid;
     border-color: var(--bs-secondary-border-subtle);
 }
+
+.bd-navbar::after {
+    background-image: linear-gradient(rgba(var(--bd-violet-rgb), 1), rgba(var(--bd-violet-rgb), 0.95));
+}
