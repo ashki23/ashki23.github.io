@@ -1,134 +1,217 @@
 <!doctype html>
-<html>
-   <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <meta name="generator" content="pandoc">
-      <meta name="author" content="Ashkan Mirzaee">
-      <meta name="description" content="Intoduction for Python function
+<html lang="en" class="h-100" data-bs-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="generator" content="pandoc">
+    <meta name="author" content="Ashkan Mirzaee">
+    <meta name="description" content="Intoduction for Python function
 programming">
-      <title>Function programming in Python</title>
-      <!-- Bootstrap -->
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-      <!-- Font-awesome -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-      <!-- Styles -->
-      <link rel="stylesheet" href="https://ashki23.github.io/styles.css">
-            <!-- Favicon -->
-            <link rel="icon" href="images/AM.jpg">
-            <!-- Google-site-verification -->
-            <meta name="google-site-verification" content="lD_nifpQ-CA6LaDwxYJbe5bq0oa6Ir0Ax-txvtdP51E">
-            <!-- Bing-site-verification -->
-            <meta name="msvalidate.01" content="89BCD3FF42B6E9FE48E0C8365767D11B">
-         </head>
-   <body>
-            <nav class="navbar fixed-top navbar-expand-lg navbar-dark bd-navbar">
-               <a class="navbar-brand" href="index.html">Ashkan Mirzaee</a>
-               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="border: none; outline: none; padding-right: 0; padding-left: 1rem;">
-               <span class="navbar-toggler-icon"></span>
-               </button>
-               <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav mr-auto">
-                     <li class="nav-item">
-                        <a class="nav-link" href="page1.html">Blog</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="tutorials.html">Tutorials</a>
-                     </li>
-            	 <li class="nav-item">
-                        <a class="nav-link" href="research.html">Research</a>
-                     </li>
-            	 <li class="nav-item">
-                        <a class="nav-link" href="applications.html">Applications</a>
-                     </li>
-            	 <li class="nav-item">
-                        <a class="nav-link" href="blogroll.html">Blogroll</a>
-                     </li>
+    <title>Function programming in Python</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!-- Bootstrap Icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous">
+    
+    <!-- Highlight.js Styles -->
+    <link rel="stylesheet" id="highlight-style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/stackoverflow-light.min.css">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="https://getbootstrap.com/docs/5.3/assets/css/docs.css">
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- After header contents -->
+        <!-- Favicon -->
+        <link rel="icon" href="images/AM.jpg">
+        <!-- Google-site-verification -->
+        <meta name="google-site-verification" content="lD_nifpQ-CA6LaDwxYJbe5bq0oa6Ir0Ax-txvtdP51E">
+        <!-- Bing-site-verification -->
+        <meta name="msvalidate.01" content="89BCD3FF42B6E9FE48E0C8365767D11B">
+      </head>
+  <body class="d-flex flex-column h-100" data-bs-spy="scroll" data-bs-target="#TableOfContents">
+    <!-- Before body contents -->
+        <nav class="navbar bd-navbar navbar-expand-lg fixed-top py-2">
+          <div class="container-xxl bd-gutter flex-wrap flex-lg-nowrap">
+            <!-- Brand -->
+            <a class="navbar-brand" href="index.html" style="transform: none;">Ashkan Mirzaee</a>
+
+            <!-- Toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Navbar Content -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <!-- Left Navigation -->
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link" href="page1.html">Blog</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="tutorials.html">Tutorials</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="research.html">Research</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="applications.html">Applications</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="blogroll.html">Blogroll</a>
+                </li>
+              </ul>
+              
+              <!-- Divider for smaller screens -->
+              <hr class="d-lg-none text-white-50">
+              
+              <!-- Social Media Icons -->
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html" aria-label="Contact">
+                    <i class="bi bi-envelope"></i>
+        	    <span class="d-lg-none ms-2">Contact</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://github.com/ashki23" target="_blank" rel="noopener" aria-label="GitHub">
+                    <i class="bi bi-github"></i>
+        	    <span class="d-lg-none ms-2">GitHub</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://gitlab.com/ashki23" target="_blank" rel="noopener" aria-label="GitLab">
+                    <i class="bi bi-gitlab"></i>
+        	    <span class="d-lg-none ms-2">GitLab</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://www.linkedin.com/in/ashkan-mirzaee/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <i class="bi bi-linkedin"></i>
+        	    <span class="d-lg-none ms-2">Linkedin</span>
+                  </a>
+                </li>
+              </ul>
+              
+              <!-- Divider for larger screens -->
+              <div class="vr d-none d-lg-flex mx-2 my-1 text-white"></div>
+              
+              <!-- Divider for smaller screens -->
+              <hr class="d-lg-none text-white-50">
+              
+              <!-- Theme Dropdown -->
+              <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                  <button class="btn btn-link nav-link dropdown-toggle" type="button" id="themeDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-circle-half"></i>
+        	    <span class="d-lg-none ms-2">Toggle theme</span>
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="themeDropdown">
+                    <li>
+                      <a class="dropdown-item align-items-center" data-theme="light">
+                        <i class="bi bi-sun-fill me-2 opacity-50"></i> Light
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item align-items-center" data-theme="dark">
+                        <i class="bi bi-moon-stars-fill me-2 opacity-50"></i> Dark
+                      </a>
+                    </li>
                   </ul>
-                  <ul class="navbar-nav ml-auto">
-            	<li class="nav-item">
-            	  <a class="nav-link" href="contact.html" aria-label="Contact">
-            	    <span class="fa fa-envelope fa-lg"></a>
-            	</li>
-            	<li class="nav-item">
-            	  <a class="nav-link" href="https://github.com/ashki23" target="_blank" rel="noopener" aria-label="GitHub">
-            	    <span class="fa fa-github fa-lg"></span></a>
-            	</li>
-            	<li class="nav-item">
-            	  <a class="nav-link" href="https://gitlab.com/ashki23" target="_blank" rel="noopener" aria-label="GitLab">
-            	    <span class="fa fa-gitlab fa-lg"></span></a>
-            	</li>
-            	<li class="nav-item">
-            	  <a class="nav-link" href="https://www.linkedin.com/in/ashkan-mirzaee/" target="_blank" rel="noopener" aria-label="Linkedin">
-            	    <span class="fa fa-linkedin fa-lg"></span></a>
-            	</li>
-                  </ul>
-               </div>
-            </nav>
-            <div class="container">
-         <h1 class="title">Function programming in Python</h1>
-                  <div class="row">
-            <div class="col-xl-10"><p>For efficiently programming with
-Python, we need to learn how to write functions. In this article we will
-be familiar with basic of function programming in Python 3 and learn
-about some Python’s built-in functions through several examples. As a
-prerequisite for this tutorial, it is better to learn the following
-first:</p>
-<ul>
-<li><a href="python-str.html">Python data structures</a></li>
-<li><a
-href="https://docs.python.org/3/tutorial/controlflow.html">Control flow
-tools in Python</a></li>
-</ul>
-<p>The following is a good resource to learn more about function
-programming subject:</p>
-<ul>
-<li><a
-href="https://docs.python.org/3.8/howto/functional.html">Functional
-Programming HOWTO</a></li>
-</ul>
-<hr />
-<h2 id="defining-functions">Defining functions</h2>
-<p>We can use Python to define any function that we want. A function
-should include:</p>
-<ul>
-<li><strong>name</strong>, to be able to refer it later</li>
-<li><strong>documentation</strong>, to explain the function
-(optional)</li>
-<li><strong>parameters</strong>, that could be zero or more</li>
-<li><strong>body</strong>, that contains all computations that the
-function is doing</li>
-</ul>
-<p>In general, we can use <code>def</code> command to define functions
-like:</p>
-<div class="sourceCode" id="cb1"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> name(par1, par2, par3, ...):</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        
+    <div class="container-xxl bd-gutter pb-5 mt-3 my-md-4 bd-layout" style="padding-top:60px;">
+      <main class="bd-main order-1">
+	
+	<!-- Tiltle -->
+	<h1 class="bd-intro pt-2 ps-lg-2" id="title">Function programming in
+Python</h1>
+	
+		<!-- Table of Contents -->
+	<div class="bd-toc mt-3 mb-5 my-lg-0 mb-lg-5 px-sm-1 text-body-secondary">
+	  <strong class="d-none d-md-block h6 my-2 ms-3">On this page</strong>
+	  <hr class="d-none d-md-block my-2 ms-3">
+	  <div class="collapse bd-toc-collapse" id="tocContents">
+	    <nav id="TableOfContents">
+	      <ul>
+      <li><a href="#defining-functions"
+      id="toc-defining-functions">Defining functions</a></li>
+      <li><a href="#lambda-function" id="toc-lambda-function">Lambda
+      function</a></li>
+      <li><a href="#map-and-filter" id="toc-map-and-filter">Map and
+      filter</a></li>
+      </ul>
+	    </nav>
+	  </div>
+	</div>
+		
+	<!-- Main Content -->
+	<div class="bd-content ps-lg-2">
+	  <p>For efficiently programming with Python, we need to learn how to
+  write functions. In this article we will be familiar with basic of
+  function programming in Python 3 and learn about some Python’s
+  built-in functions through several examples. As a prerequisite for
+  this tutorial, it is better to learn the following first:</p>
+  <ul>
+  <li><a href="python-str.html">Python data structures</a></li>
+  <li><a
+  href="https://docs.python.org/3/tutorial/controlflow.html">Control
+  flow tools in Python</a></li>
+  </ul>
+  <p>The following is a good resource to learn more about function
+  programming subject:</p>
+  <ul>
+  <li><a
+  href="https://docs.python.org/3.8/howto/functional.html">Functional
+  Programming HOWTO</a></li>
+  </ul>
+  <hr />
+  <h2 id="defining-functions">Defining functions</h2>
+  <p>We can use Python to define any function that we want. A function
+  should include:</p>
+  <ul>
+  <li><strong>name</strong>, to be able to refer it later</li>
+  <li><strong>documentation</strong>, to explain the function
+  (optional)</li>
+  <li><strong>parameters</strong>, that could be zero or more</li>
+  <li><strong>body</strong>, that contains all computations that the
+  function is doing</li>
+  </ul>
+  <p>In general, we can use <code>def</code> command to define functions
+  like:</p>
+  <div class="sourceCode" id="cb1"><pre
+  class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> name(par1, par2, par3, ...):</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">&quot;Documentation.&quot;</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  body</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> result</span></code></pre></div>
-<p>For example:</p>
-<div class="sourceCode" id="cb2"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> mult(a, b):</span>
+  <p>For example:</p>
+  <div class="sourceCode" id="cb2"><pre
+  class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> mult(a, b):</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">&quot;Two numbers multiplication.&quot;</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  m <span class="op">=</span> a <span class="op">*</span> b</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> m</span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>mult(<span class="dv">12</span>, <span class="dv">13</span>)</span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">## 156</span></span></code></pre></div>
-<p>In general, we can define three types of functions:</p>
-<ul>
-<li><strong>computative</strong>, find the results by substituting
-parameters and doing calculations</li>
-<li><strong>iterative</strong>, find the results by iteration (control
-flow tools)</li>
-<li><strong>recursive</strong>, find the results by recursion (function
-itself)</li>
-</ul>
-<p>In above example, we used a <strong>computative</strong> function to
-find <em>a * b</em>. Now let’s use <strong>iterative</strong>
-method:</p>
-<div class="sourceCode" id="cb3"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> mult_itr(a, b):</span>
+  <p>In general, we can define three types of functions:</p>
+  <ul>
+  <li><strong>computative</strong>, find the results by substituting
+  parameters and doing calculations</li>
+  <li><strong>iterative</strong>, find the results by iteration (control
+  flow tools)</li>
+  <li><strong>recursive</strong>, find the results by recursion
+  (function itself)</li>
+  </ul>
+  <p>In above example, we used a <strong>computative</strong> function
+  to find <em>a * b</em>. Now let’s use <strong>iterative</strong>
+  method:</p>
+  <div class="sourceCode" id="cb3"><pre
+  class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> mult_itr(a, b):</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">&quot;&quot;&quot;</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">  Two integers multiplication by iteration.</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">  Note that a * b is equal to a + a + ... + a; b times.</span></span>
@@ -141,9 +224,9 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a hr
 <span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a> </span>
 <span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>mult_itr(<span class="dv">12</span>, <span class="dv">13</span>)</span>
 <span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co">## 156</span></span></code></pre></div>
-<p>We can also use <strong>recursive</strong> method such that:</p>
-<div class="sourceCode" id="cb4"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> mult_rec(a, b):</span>
+  <p>We can also use <strong>recursive</strong> method such that:</p>
+  <div class="sourceCode" id="cb4"><pre
+  class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> mult_rec(a, b):</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">&quot;&quot;&quot;</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">  Two integers multiplication by recursion.</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">  Note that a * b is equal to a + a(b-1).</span></span>
@@ -155,18 +238,18 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a hr
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>mult_rec(<span class="dv">12</span>, <span class="dv">13</span>)</span>
 <span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="co">## 156</span></span></code></pre></div>
-<p>At each iteration, both iterative and recursive functions follow this
-pattern to find <em>12 * 13</em>:</p>
-<div class="sourceCode" id="cb5"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dv">12</span></span>
+  <p>At each iteration, both iterative and recursive functions follow
+  this pattern to find <em>12 * 13</em>:</p>
+  <div class="sourceCode" id="cb5"><pre
+  class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dv">12</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="dv">12</span> <span class="op">+</span> <span class="dv">12</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="dv">12</span> <span class="op">+</span> <span class="dv">12</span> <span class="op">+</span> <span class="dv">12</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>...</span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="dv">12</span> <span class="op">+</span> <span class="dv">12</span> <span class="op">+</span> ... <span class="op">+</span> <span class="dv">12</span> (<span class="dv">13</span> times)</span></code></pre></div>
-<p>For another example let’s compute an integer factorial with all
-mentioned methods:</p>
-<div class="sourceCode" id="cb6"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fact(n):</span>
+  <p>For another example let’s compute an integer factorial with all
+  mentioned methods:</p>
+  <div class="sourceCode" id="cb6"><pre
+  class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fact(n):</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">&quot;Compute n factorial by using Python math library&quot;</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="im">import</span> math</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> math.factorial(n)</span>
@@ -200,10 +283,10 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a hr
 <span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>fact_rec(<span class="dv">6</span>)</span>
 <span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a><span class="co">## 720</span></span></code></pre></div>
-<p>Each of the above method has their pros and cons. For instance, let’s
-try a function that returns numbers in Fibonacci series:</p>
-<div class="sourceCode" id="cb7"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fib(n):</span>
+  <p>Each of the above method has their pros and cons. For instance,
+  let’s try a function that returns numbers in Fibonacci series:</p>
+  <div class="sourceCode" id="cb7"><pre
+  class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fib(n):</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">&quot;&quot;&quot;</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">  Function to return nth Fibonacci number.</span></span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co">  By using Binet&#39;s Fibonacci number formula.</span></span>
@@ -244,13 +327,13 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a hr
 <span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a>[fib_rec(x) <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">12</span>)]</span>
 <span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a><span class="co">## [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]</span></span></code></pre></div>
-<p>Here, computative method provides an estimation (which is actually a
-very good estimation) of the Fibonacci number and recursive method
-requires a lot of time as <em>n</em> gets bigger since at each iteration
-it needs to compute two <code>fib_rec</code> such that (for <em>n =
-5</em>):</p>
-<div class="sourceCode" id="cb8"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>              fib_rec(<span class="dv">5</span>)</span>
+  <p>Here, computative method provides an estimation (which is actually
+  a very good estimation) of the Fibonacci number and recursive method
+  requires a lot of time as <em>n</em> gets bigger since at each
+  iteration it needs to compute two <code>fib_rec</code> such that (for
+  <em>n = 5</em>):</p>
+  <div class="sourceCode" id="cb8"><pre
+  class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>              fib_rec(<span class="dv">5</span>)</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>           _______<span class="op">|</span>________</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>          <span class="op">|</span>                <span class="op">|</span></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>      fib_rec(<span class="dv">4</span>)       fib_rec(<span class="dv">3</span>)</span>
@@ -263,33 +346,33 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a hr
 <span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a> __<span class="op">|</span>__</span>
 <span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="op">|</span>     <span class="op">|</span></span>
 <span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span>     <span class="dv">0</span></span></code></pre></div>
-<p>Therefore, it is very important to always choose the right approach
-based on the function context.</p>
-<p>Python provides another method that let us to write functions in a
-very compact way that called <strong>lambda</strong> function.</p>
-<h2 id="lambda-function">Lambda function</h2>
-<p>Python includes a quick one-line construction of functions that is
-often convenient to make your code compact. In general we can write
-lambda function such that:</p>
-<div class="sourceCode" id="cb9"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="kw">lambda</span> par1, par2, par3, ...: body</span></code></pre></div>
-<p>For example:</p>
-<div class="sourceCode" id="cb10"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>cube <span class="op">=</span> <span class="kw">lambda</span> x: x<span class="op">**</span><span class="dv">3</span></span>
+  <p>Therefore, it is very important to always choose the right approach
+  based on the function context.</p>
+  <p>Python provides another method that let us to write functions in a
+  very compact way that called <strong>lambda</strong> function.</p>
+  <h2 id="lambda-function">Lambda function</h2>
+  <p>Python includes a quick one-line construction of functions that is
+  often convenient to make your code compact. In general we can write
+  lambda function such that:</p>
+  <div class="sourceCode" id="cb9"><pre
+  class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="kw">lambda</span> par1, par2, par3, ...: body</span></code></pre></div>
+  <p>For example:</p>
+  <div class="sourceCode" id="cb10"><pre
+  class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>cube <span class="op">=</span> <span class="kw">lambda</span> x: x<span class="op">**</span><span class="dv">3</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>cube(<span class="dv">2</span>)</span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co">## 8</span></span></code></pre></div>
-<p>Which is same as:</p>
-<div class="sourceCode" id="cb11"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> cube(x):</span>
+  <p>Which is same as:</p>
+  <div class="sourceCode" id="cb11"><pre
+  class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> cube(x):</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> x<span class="op">**</span><span class="dv">3</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>cube(<span class="dv">2</span>)</span>
 <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co">## 8</span></span></code></pre></div>
-<p>For another example, let’s find Euclidean norm of a vector by a
-lambda function:</p>
-<div class="sourceCode" id="cb12"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>pnorm <span class="op">=</span> <span class="kw">lambda</span> v, p <span class="op">=</span> <span class="dv">2</span>: <span class="bu">sum</span>([<span class="bu">abs</span>(x)<span class="op">**</span>p <span class="cf">for</span> x <span class="kw">in</span> v])<span class="op">**</span>(<span class="dv">1</span><span class="op">/</span>p)</span>
+  <p>For another example, let’s find Euclidean norm of a vector by a
+  lambda function:</p>
+  <div class="sourceCode" id="cb12"><pre
+  class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>pnorm <span class="op">=</span> <span class="kw">lambda</span> v, p <span class="op">=</span> <span class="dv">2</span>: <span class="bu">sum</span>([<span class="bu">abs</span>(x)<span class="op">**</span>p <span class="cf">for</span> x <span class="kw">in</span> v])<span class="op">**</span>(<span class="dv">1</span><span class="op">/</span>p)</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a> </span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co">## Example</span></span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>v <span class="op">=</span> [<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>]</span>
@@ -298,32 +381,32 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a h
 <span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>pnorm(v,<span class="dv">1</span>)</span>
 <span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co">## 9.0</span></span></code></pre></div>
-<p>Or for instance, let’s replace an string in a mathematical formula
-with a number and find the answer:</p>
-<div class="sourceCode" id="cb13"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>re <span class="op">=</span> <span class="kw">lambda</span> f, x, z: <span class="bu">eval</span>(f.replace(<span class="bu">str</span>(x), <span class="bu">str</span>(z)))</span>
+  <p>Or for instance, let’s replace an string in a mathematical formula
+  with a number and find the answer:</p>
+  <div class="sourceCode" id="cb13"><pre
+  class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>re <span class="op">=</span> <span class="kw">lambda</span> f, x, z: <span class="bu">eval</span>(f.replace(<span class="bu">str</span>(x), <span class="bu">str</span>(z)))</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co">## Example</span></span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> <span class="st">&#39;2*x + 5&#39;</span></span>
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>re(f,<span class="st">&#39;x&#39;</span>,<span class="dv">2</span>)</span>
 <span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co">## 9</span></span></code></pre></div>
-<p>For last example in here, let’s define single limit formula to find
-the second derivative of <em>f(x) = x^3</em> for <em>x = 2</em> by using
-<strong>lambda</strong>:</p>
-<div class="sourceCode" id="cb14"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> deriv2nd(f, x, h <span class="op">=</span> <span class="fl">1E-6</span>):</span>
+  <p>For last example in here, let’s define single limit formula to find
+  the second derivative of <em>f(x) = x^3</em> for <em>x = 2</em> by
+  using <strong>lambda</strong>:</p>
+  <div class="sourceCode" id="cb14"><pre
+  class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> deriv2nd(f, x, h <span class="op">=</span> <span class="fl">1E-6</span>):</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">&quot;Single limit formula.&quot;</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> (f(x<span class="op">-</span>h) <span class="op">-</span> <span class="dv">2</span><span class="op">*</span>f(x) <span class="op">+</span> f(x<span class="op">+</span>h))<span class="op">/</span><span class="bu">float</span>(h<span class="op">**</span><span class="dv">2</span>) </span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> <span class="kw">lambda</span> x: x<span class="op">**</span><span class="dv">3</span></span>
 <span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>deriv2nd(f, <span class="dv">2</span>)</span>
 <span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="co">## 12.002843163827492</span></span></code></pre></div>
-<p>As we know, the second derivative of <em>f(x) = x^3</em> is equal to
-<em>6 * x</em> which is equal to <em>12</em> for <em>x = 2</em>. Note
-that we can find the derivative of functions by using <code>SymPy</code>
-package, for example:</p>
-<div class="sourceCode" id="cb15"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sympy</span>
+  <p>As we know, the second derivative of <em>f(x) = x^3</em> is equal
+  to <em>6 * x</em> which is equal to <em>12</em> for <em>x = 2</em>.
+  Note that we can find the derivative of functions by using
+  <code>SymPy</code> package, for example:</p>
+  <div class="sourceCode" id="cb15"><pre
+  class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sympy</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> sympy.symbols(<span class="st">&#39;x&#39;</span>)</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> x<span class="op">**</span><span class="dv">3</span></span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>ff <span class="op">=</span> f.diff(x,<span class="dv">2</span>)</span>
@@ -332,56 +415,56 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a h
 <span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>ff.subs({x:<span class="dv">2</span>})</span>
 <span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="co">## 12</span></span></code></pre></div>
-<h2 id="map-and-filter">Map and filter</h2>
-<p>Map and filter are two Python built-in functions that let us to
-expand our function programming tools. In general, <strong>map</strong>
-function is:</p>
-<div class="sourceCode" id="cb16"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">map</span>(function, iterable, ...)</span></code></pre></div>
-<p>When a <em>function</em>, that could be another built-in function or
-a created function by <strong>def</strong> or <strong>lambda</strong>,
-applies on each element of an <em>iterable</em> (i.e. lists, tuples or
-dictionaries - see <a
-href="https://docs.python.org/3.8/howto/functional.html#iterators">here</a>
-to learn more). For an example let’s assume we have sales rate for each
-month during each season of a year and are interested to know what is
-the total seasonal sales:</p>
-<div class="sourceCode" id="cb17"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>sale <span class="op">=</span> [(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>),(<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>),(<span class="dv">7</span>,<span class="dv">6</span>,<span class="dv">5</span>,<span class="dv">5</span>),(<span class="dv">8</span>,<span class="dv">6</span>,<span class="dv">9</span>,<span class="dv">1</span>)]</span>
+  <h2 id="map-and-filter">Map and filter</h2>
+  <p>Map and filter are two Python built-in functions that let us to
+  expand our function programming tools. In general,
+  <strong>map</strong> function is:</p>
+  <div class="sourceCode" id="cb16"><pre
+  class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">map</span>(function, iterable, ...)</span></code></pre></div>
+  <p>When a <em>function</em>, that could be another built-in function
+  or a created function by <strong>def</strong> or
+  <strong>lambda</strong>, applies on each element of an
+  <em>iterable</em> (i.e. lists, tuples or dictionaries - see <a
+  href="https://docs.python.org/3.8/howto/functional.html#iterators">here</a>
+  to learn more). For an example let’s assume we have sales rate for
+  each month during each season of a year and are interested to know
+  what is the total seasonal sales:</p>
+  <div class="sourceCode" id="cb17"><pre
+  class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>sale <span class="op">=</span> [(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>),(<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>),(<span class="dv">7</span>,<span class="dv">6</span>,<span class="dv">5</span>,<span class="dv">5</span>),(<span class="dv">8</span>,<span class="dv">6</span>,<span class="dv">9</span>,<span class="dv">1</span>)]</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>seasonal <span class="op">=</span> <span class="bu">list</span>(<span class="bu">map</span>(<span class="bu">sum</span>, sale))</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>seasonal</span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co">## [13, 18, 23, 24]</span></span></code></pre></div>
-<p>We can answer the above question without using <strong>map</strong>
-by:</p>
-<div class="sourceCode" id="cb18"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>sale <span class="op">=</span> [(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>),(<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>),(<span class="dv">7</span>,<span class="dv">6</span>,<span class="dv">5</span>,<span class="dv">5</span>),(<span class="dv">8</span>,<span class="dv">6</span>,<span class="dv">9</span>,<span class="dv">1</span>)]</span>
+  <p>We can answer the above question without using <strong>map</strong>
+  by:</p>
+  <div class="sourceCode" id="cb18"><pre
+  class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>sale <span class="op">=</span> [(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>),(<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>),(<span class="dv">7</span>,<span class="dv">6</span>,<span class="dv">5</span>,<span class="dv">5</span>),(<span class="dv">8</span>,<span class="dv">6</span>,<span class="dv">9</span>,<span class="dv">1</span>)]</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>seasonal <span class="op">=</span> []</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> sale:</span>
 <span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  seasonal.append(<span class="bu">sum</span>(i))</span>
 <span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>seasonal</span>
 <span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="co">## [13, 18, 23, 24]</span></span></code></pre></div>
-<p>As you can see, without <strong>map</strong> we need a loop to
-address each element of the <em>iterable</em>.</p>
-<p>For another example, let’s assume we have an <em>iterable</em> of
-strings (e.g. a list of names) and want them to be in lowercase:</p>
-<div class="sourceCode" id="cb19"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>fruit <span class="op">=</span> [<span class="st">&#39;APPLE&#39;</span>,<span class="st">&#39;ORANGE&#39;</span>,<span class="st">&#39;PEACH&#39;</span>,<span class="st">&#39;BANANA&#39;</span>]</span>
+  <p>As you can see, without <strong>map</strong> we need a loop to
+  address each element of the <em>iterable</em>.</p>
+  <p>For another example, let’s assume we have an <em>iterable</em> of
+  strings (e.g. a list of names) and want them to be in lowercase:</p>
+  <div class="sourceCode" id="cb19"><pre
+  class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>fruit <span class="op">=</span> [<span class="st">&#39;APPLE&#39;</span>,<span class="st">&#39;ORANGE&#39;</span>,<span class="st">&#39;PEACH&#39;</span>,<span class="st">&#39;BANANA&#39;</span>]</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="bu">list</span>(<span class="bu">map</span>(<span class="bu">str</span>.lower, fruit))</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="co">## [&#39;apple&#39;, &#39;orange&#39;, &#39;peach&#39;, &#39;banana&#39;]</span></span></code></pre></div>
-<p>Or we can use <strong>map</strong> to round a list of float
-numbers:</p>
-<div class="sourceCode" id="cb20"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>flt <span class="op">=</span> [<span class="fl">2.0678</span>,<span class="fl">3.9870</span>,<span class="fl">4.7869</span>,<span class="fl">5.3459</span>]</span>
+  <p>Or we can use <strong>map</strong> to round a list of float
+  numbers:</p>
+  <div class="sourceCode" id="cb20"><pre
+  class="sourceCode python"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>flt <span class="op">=</span> [<span class="fl">2.0678</span>,<span class="fl">3.9870</span>,<span class="fl">4.7869</span>,<span class="fl">5.3459</span>]</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="bu">list</span>(<span class="bu">map</span>(<span class="bu">round</span>, flt, [<span class="dv">2</span>]<span class="op">*</span><span class="bu">len</span>(flt)))</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="co">## [2.07, 3.99, 4.79, 5.35]</span></span></code></pre></div>
-<p>Note that the above function has two <em>iterables</em>
-(<code>flt</code> and <code>[2,2,2,2]</code>).</p>
-<p>We can also use <strong>map</strong> to create new functions. For
-instance, let’s define <code>zip_diy</code> function that do same
-operation as Python <code>zip</code> function:</p>
-<div class="sourceCode" id="cb21"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> zip_diy(x,y):</span>
+  <p>Note that the above function has two <em>iterables</em>
+  (<code>flt</code> and <code>[2,2,2,2]</code>).</p>
+  <p>We can also use <strong>map</strong> to create new functions. For
+  instance, let’s define <code>zip_diy</code> function that do same
+  operation as Python <code>zip</code> function:</p>
+  <div class="sourceCode" id="cb21"><pre
+  class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> zip_diy(x,y):</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="bu">map</span>(<span class="kw">lambda</span> a, b: (a,b), x, y)</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co">## Example</span></span>
@@ -392,28 +475,28 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a h
 <span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a><span class="bu">list</span>(<span class="bu">zip</span>(list_1, list_2))</span>
 <span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a><span class="co">## [(1, 3), (2, 2), (3, 1)]</span></span></code></pre></div>
-<p>As you noticed, <strong>map</strong> in <code>zip_diy</code> includes
-a <strong>lambda</strong> function that generates <code>(a,b)</code>
-tuple for each element in given <em>iterables</em>, <code>x</code> and
-<code>y</code>.</p>
-<p><strong>Filter</strong> is another important tool in function
-programming. As you probably guessed, <strong>filter</strong> lets us to
-filter an <em>iterable</em>. In general, <strong>filter</strong>
-function is:</p>
-<div class="sourceCode" id="cb22"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="bu">filter</span>(function, iterable)</span></code></pre></div>
-<p>When the <em>function</em> is required to return a boolean type
-(<code>True/False</code>) by testing each element of the
-<em>iterable</em>. For an example let’s select numbers greater than
-<em>22</em> in a list in below:</p>
-<div class="sourceCode" id="cb23"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>number <span class="op">=</span> [<span class="dv">88</span>,<span class="dv">22</span>,<span class="dv">11</span>,<span class="dv">33</span>,<span class="dv">2</span>,<span class="dv">99</span>]</span>
+  <p>As you noticed, <strong>map</strong> in <code>zip_diy</code>
+  includes a <strong>lambda</strong> function that generates
+  <code>(a,b)</code> tuple for each element in given <em>iterables</em>,
+  <code>x</code> and <code>y</code>.</p>
+  <p><strong>Filter</strong> is another important tool in function
+  programming. As you probably guessed, <strong>filter</strong> lets us
+  to filter an <em>iterable</em>. In general, <strong>filter</strong>
+  function is:</p>
+  <div class="sourceCode" id="cb22"><pre
+  class="sourceCode python"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="bu">filter</span>(function, iterable)</span></code></pre></div>
+  <p>When the <em>function</em> is required to return a boolean type
+  (<code>True/False</code>) by testing each element of the
+  <em>iterable</em>. For an example let’s select numbers greater than
+  <em>22</em> in a list in below:</p>
+  <div class="sourceCode" id="cb23"><pre
+  class="sourceCode python"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>number <span class="op">=</span> [<span class="dv">88</span>,<span class="dv">22</span>,<span class="dv">11</span>,<span class="dv">33</span>,<span class="dv">2</span>,<span class="dv">99</span>]</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="bu">list</span>(<span class="bu">filter</span>(<span class="kw">lambda</span> x: x <span class="op">&gt;</span> <span class="dv">22</span>, number))</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="co">## [88, 33, 99]</span></span></code></pre></div>
-<p>Traditionally we can use <code>for</code> loop and <code>if</code>
-condition to filter the list such that:</p>
-<div class="sourceCode" id="cb24"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>number <span class="op">=</span> [<span class="dv">88</span>,<span class="dv">22</span>,<span class="dv">11</span>,<span class="dv">33</span>,<span class="dv">2</span>,<span class="dv">99</span>]</span>
+  <p>Traditionally we can use <code>for</code> loop and <code>if</code>
+  condition to filter the list such that:</p>
+  <div class="sourceCode" id="cb24"><pre
+  class="sourceCode python"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>number <span class="op">=</span> [<span class="dv">88</span>,<span class="dv">22</span>,<span class="dv">11</span>,<span class="dv">33</span>,<span class="dv">2</span>,<span class="dv">99</span>]</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>select <span class="op">=</span> []</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> number:</span>
 <span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> i <span class="op">&gt;</span> <span class="dv">22</span>:</span>
@@ -425,65 +508,86 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb24-1"><a h
 <span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a><span class="co">## Or</span></span>
 <span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>[i <span class="cf">for</span> i <span class="kw">in</span> number <span class="cf">if</span> i <span class="op">&gt;</span> <span class="dv">22</span>]</span>
 <span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a><span class="co">## [88, 33, 99]</span></span></code></pre></div>
-<p>Now let’s define a function to return numbers (integer, float and
-complex) from a list of numbers and strings:</p>
-<div class="sourceCode" id="cb25"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> return_num(lis):</span>
+  <p>Now let’s define a function to return numbers (integer, float and
+  complex) from a list of numbers and strings:</p>
+  <div class="sourceCode" id="cb25"><pre
+  class="sourceCode python"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> return_num(lis):</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="bu">filter</span>(<span class="kw">lambda</span> x: <span class="bu">isinstance</span>(x, (<span class="bu">int</span>,<span class="bu">float</span>,<span class="bu">complex</span>)), lis) </span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="co">## Example</span></span>
 <span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>test <span class="op">=</span> [<span class="fl">2.05</span>, <span class="dv">3</span>, <span class="st">&#39;aaa&#39;</span>, <span class="fl">4.23</span>, <span class="st">&#39;bbb&#39;</span>, <span class="ot">7j</span>]</span>
 <span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="bu">list</span>(return_num(test))</span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="co">## [2.05, 3, 4.23, 7j]</span></span></code></pre></div></div>
-            <div class="d-none d-xl-block col-xl-2 bd-toc">
-               <ul class="section-nav">
-                  <li class="toc-entry"><ul>
-<li><a href="#defining-functions" id="toc-defining-functions">Defining
-functions</a></li>
-<li><a href="#lambda-function" id="toc-lambda-function">Lambda
-function</a></li>
-<li><a href="#map-and-filter" id="toc-map-and-filter">Map and
-filter</a></li>
-</ul></li>
-               </ul>
-            </div>
-         </div>
-               </div>
-            <!-- Footer -->
-            <footer class="footer text-muted">
-               <div align="center">
-                  Text is available under <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>
-                  &nbsp;|&nbsp;
-                  Code licensed under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank" rel="noopener">GPL-3.0</a>
-                  &nbsp;|&nbsp;
-                  Built with <a href="https://github.com/ashki23/pandoc-bootstrap" target="_blank" rel="noopener">pandoc-bootstrap</a> theme
-                  <br />
-                  Copyright 2018-2024, Ashkan Mirzaee
-               </div>
-            </footer>
-            <!-- Global site tag (gtag.js) - Google Analytics -->
-            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132464297-1"></script>
-            <script>
-               window.dataLayer = window.dataLayer || [];
-               function gtag(){dataLayer.push(arguments);}
-               gtag('js', new Date());
-               gtag('config', 'UA-132464297-1');
-            </script>
-            <!-- JS, Popper.js, and jQuery -->
-      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-      <!-- Mathjax -->
-      <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-      <script>
-         /* Bootstrap styles to tables */
-         function bootstrapStylePandocTables() {
-         $('tr.header').parent('thead').parent('table').addClass('table table-condensed'); }
-         $(document).ready(function () { bootstrapStylePandocTables(); });
-         /* Adjust the height when click the toc */
-         var shiftWindow = function() { scrollBy(0, -60) };
-         window.addEventListener("hashchange", shiftWindow);
-         function load() { if (window.location.hash) shiftWindow(); }
-      </script>
-   </body>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="co">## [2.05, 3, 4.23, 7j]</span></span></code></pre></div>
+	</div>
+      </main>
+    </div>
+    
+    <!-- After body contents -->
+        <!-- Footer -->
+        <footer class="bd-footer mt-auto py-3 py-md-3 bg-body-tertiary">
+          <div class="container py-md-3 px-4 px-md-3 text-body-secondary" align="center" style="font-size: .95rem;">
+            Text is available under <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>
+            &nbsp;|&nbsp;
+            Code licensed under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank" rel="noopener">GPL-3.0</a>
+            &nbsp;|&nbsp;
+            Built with <a href="https://github.com/ashki23/pandoc-bootstrap" target="_blank" rel="noopener">pandoc-bootstrap</a> theme
+            <br />
+            Copyright 2018-2024, Ashkan Mirzaee
+          </div>
+        </footer>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132464297-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'UA-132464297-1');
+        </script>
+        
+    <!-- Bootstrap Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+    <!-- Highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js" integrity="sha512-6yoqbrcLAHDWAdQmiRlHG4+m0g/CT/V9AGyxabG8j7Jk8j3r3K6due7oqpiRMZqcYe9WM2gPcaNNxnl2ux+3tA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+        
+    <!-- Custom Scripts -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+	  const htmlElement = document.documentElement;
+	  const highlightStyle = document.getElementById("highlight-style");
+	  
+	  // Function to update Highlight.js style based on theme
+	  const updateHighlightStyle = (theme) => {
+              const lightTheme = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/stackoverflow-light.min.css";
+              const darkTheme = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/github-dark.min.css";
+              highlightStyle.href = theme === "dark" ? darkTheme : lightTheme;
+	  };
+	  
+	  // Function to set the theme
+	  const setTheme = (theme) => {
+              htmlElement.setAttribute("data-bs-theme", theme);
+              localStorage.setItem("theme", theme); // Save the theme to localStorage
+              updateHighlightStyle(theme);
+	  };
+	  
+	  // Get saved theme from localStorage or fallback to default ("light")
+	  const savedTheme = localStorage.getItem("theme") || "light";
+	  setTheme(savedTheme);
+	  
+	  // Event listener for theme dropdown
+	  document.querySelectorAll(".dropdown-item").forEach((item) => {
+              item.addEventListener("click", (e) => {
+		  e.preventDefault();
+		  const selectedTheme = item.getAttribute("data-theme");
+		  setTheme(selectedTheme);
+              });
+	  });
+	  
+	  // Initialize Highlight.js
+	  hljs.highlightAll();
+      });
+    </script>
+  </body>
 </html>

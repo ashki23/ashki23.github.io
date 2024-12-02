@@ -1,108 +1,191 @@
 <!doctype html>
-<html>
-   <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <meta name="generator" content="pandoc">
-      <meta name="author" content="Ashkan Mirzaee">
-      <meta name="description" content="How to use SQLite in Python">
-      <title>Using SQLite in Python</title>
-      <!-- Bootstrap -->
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-      <!-- Font-awesome -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-      <!-- Styles -->
-      <link rel="stylesheet" href="https://ashki23.github.io/styles.css">
-            <!-- Favicon -->
-            <link rel="icon" href="images/AM.jpg">
-            <!-- Google-site-verification -->
-            <meta name="google-site-verification" content="lD_nifpQ-CA6LaDwxYJbe5bq0oa6Ir0Ax-txvtdP51E">
-            <!-- Bing-site-verification -->
-            <meta name="msvalidate.01" content="89BCD3FF42B6E9FE48E0C8365767D11B">
-         </head>
-   <body>
-            <nav class="navbar fixed-top navbar-expand-lg navbar-dark bd-navbar">
-               <a class="navbar-brand" href="index.html">Ashkan Mirzaee</a>
-               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="border: none; outline: none; padding-right: 0; padding-left: 1rem;">
-               <span class="navbar-toggler-icon"></span>
-               </button>
-               <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav mr-auto">
-                     <li class="nav-item">
-                        <a class="nav-link" href="page1.html">Blog</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="tutorials.html">Tutorials</a>
-                     </li>
-            	 <li class="nav-item">
-                        <a class="nav-link" href="research.html">Research</a>
-                     </li>
-            	 <li class="nav-item">
-                        <a class="nav-link" href="applications.html">Applications</a>
-                     </li>
-            	 <li class="nav-item">
-                        <a class="nav-link" href="blogroll.html">Blogroll</a>
-                     </li>
+<html lang="en" class="h-100" data-bs-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="generator" content="pandoc">
+    <meta name="author" content="Ashkan Mirzaee">
+    <meta name="description" content="How to use SQLite in Python">
+    <title>Using SQLite in Python</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!-- Bootstrap Icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous">
+    
+    <!-- Highlight.js Styles -->
+    <link rel="stylesheet" id="highlight-style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/stackoverflow-light.min.css">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="https://getbootstrap.com/docs/5.3/assets/css/docs.css">
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- After header contents -->
+        <!-- Favicon -->
+        <link rel="icon" href="images/AM.jpg">
+        <!-- Google-site-verification -->
+        <meta name="google-site-verification" content="lD_nifpQ-CA6LaDwxYJbe5bq0oa6Ir0Ax-txvtdP51E">
+        <!-- Bing-site-verification -->
+        <meta name="msvalidate.01" content="89BCD3FF42B6E9FE48E0C8365767D11B">
+      </head>
+  <body class="d-flex flex-column h-100" data-bs-spy="scroll" data-bs-target="#TableOfContents">
+    <!-- Before body contents -->
+        <nav class="navbar bd-navbar navbar-expand-lg fixed-top py-2">
+          <div class="container-xxl bd-gutter flex-wrap flex-lg-nowrap">
+            <!-- Brand -->
+            <a class="navbar-brand" href="index.html" style="transform: none;">Ashkan Mirzaee</a>
+
+            <!-- Toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Navbar Content -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <!-- Left Navigation -->
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link" href="page1.html">Blog</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="tutorials.html">Tutorials</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="research.html">Research</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="applications.html">Applications</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="blogroll.html">Blogroll</a>
+                </li>
+              </ul>
+              
+              <!-- Divider for smaller screens -->
+              <hr class="d-lg-none text-white-50">
+              
+              <!-- Social Media Icons -->
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html" aria-label="Contact">
+                    <i class="bi bi-envelope"></i>
+        	    <span class="d-lg-none ms-2">Contact</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://github.com/ashki23" target="_blank" rel="noopener" aria-label="GitHub">
+                    <i class="bi bi-github"></i>
+        	    <span class="d-lg-none ms-2">GitHub</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://gitlab.com/ashki23" target="_blank" rel="noopener" aria-label="GitLab">
+                    <i class="bi bi-gitlab"></i>
+        	    <span class="d-lg-none ms-2">GitLab</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://www.linkedin.com/in/ashkan-mirzaee/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <i class="bi bi-linkedin"></i>
+        	    <span class="d-lg-none ms-2">Linkedin</span>
+                  </a>
+                </li>
+              </ul>
+              
+              <!-- Divider for larger screens -->
+              <div class="vr d-none d-lg-flex mx-2 my-1 text-white"></div>
+              
+              <!-- Divider for smaller screens -->
+              <hr class="d-lg-none text-white-50">
+              
+              <!-- Theme Dropdown -->
+              <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                  <button class="btn btn-link nav-link dropdown-toggle" type="button" id="themeDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-circle-half"></i>
+        	    <span class="d-lg-none ms-2">Toggle theme</span>
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="themeDropdown">
+                    <li>
+                      <a class="dropdown-item align-items-center" data-theme="light">
+                        <i class="bi bi-sun-fill me-2 opacity-50"></i> Light
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item align-items-center" data-theme="dark">
+                        <i class="bi bi-moon-stars-fill me-2 opacity-50"></i> Dark
+                      </a>
+                    </li>
                   </ul>
-                  <ul class="navbar-nav ml-auto">
-            	<li class="nav-item">
-            	  <a class="nav-link" href="contact.html" aria-label="Contact">
-            	    <span class="fa fa-envelope fa-lg"></a>
-            	</li>
-            	<li class="nav-item">
-            	  <a class="nav-link" href="https://github.com/ashki23" target="_blank" rel="noopener" aria-label="GitHub">
-            	    <span class="fa fa-github fa-lg"></span></a>
-            	</li>
-            	<li class="nav-item">
-            	  <a class="nav-link" href="https://gitlab.com/ashki23" target="_blank" rel="noopener" aria-label="GitLab">
-            	    <span class="fa fa-gitlab fa-lg"></span></a>
-            	</li>
-            	<li class="nav-item">
-            	  <a class="nav-link" href="https://www.linkedin.com/in/ashkan-mirzaee/" target="_blank" rel="noopener" aria-label="Linkedin">
-            	    <span class="fa fa-linkedin fa-lg"></span></a>
-            	</li>
-                  </ul>
-               </div>
-            </nav>
-            <div class="container">
-         <h1 class="title">Using SQLite in Python</h1>
-                  <div class="row">
-            <div class="col-xl-10"><p><a
-href="https://www.sqlite.org/index.html">SQLite</a> is a C-language
-library that implements a small, fast, self-contained, high-reliability,
-full-featured, SQL database engine. SQLite is the most used database
-engine in the world.</p>
-<ul>
-<li><a href="https://www.sqlitetutorial.net/">SQLite tutorial</a></li>
-<li><a href="https://www.sqlitetutorial.net/sqlite-python/">SQLite
-Python</a></li>
-<li><a href="http://swcarpentry.github.io/sql-novice-survey/">Software
-Carpentry</a></li>
-<li><a
-href="http://web.csulb.edu/colleges/coe/cecs/dbdesign/dbdesign.php">Database
-design with UML and SQL</a></li>
-</ul>
-<p>In this tutorial, we will learn how to convert CSV files to database
-tables and run simple SQL queries in Python. We are using “surveys.csv”
-and “species.csv” files from <a
-href="https://figshare.com/articles/dataset/Portal_Project_Teaching_Database/1314459/10">here</a>
-to practice our learning.</p>
-<hr />
-<h2 id="usage">Usage</h2>
-<p>SQLite can be used in GUI software such as <a
-href="https://sqlitebrowser.org/">DB Browser for SQLite</a>. But there
-are a lot of advantages to get queries directly in Python. In this
-document we are going to use module <code>sqlite3</code> in Python to
-create a databases, import data and run queries.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sqlite3</span></code></pre></div>
-<p>To create a database (db) or connect to an existing one and to add a
-cursor use:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>con <span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="st">&#39;./mydb.db&#39;</span>)</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        
+    <div class="container-xxl bd-gutter pb-5 mt-3 my-md-4 bd-layout" style="padding-top:60px;">
+      <main class="bd-main order-1">
+	
+	<!-- Tiltle -->
+	<h1 class="bd-intro pt-2 ps-lg-2" id="title">Using SQLite in Python</h1>
+	
+		<!-- Table of Contents -->
+	<div class="bd-toc mt-3 mb-5 my-lg-0 mb-lg-5 px-sm-1 text-body-secondary">
+	  <strong class="d-none d-md-block h6 my-2 ms-3">On this page</strong>
+	  <hr class="d-none d-md-block my-2 ms-3">
+	  <div class="collapse bd-toc-collapse" id="tocContents">
+	    <nav id="TableOfContents">
+	      <ul>
+      <li><a href="#usage" id="toc-usage">Usage</a></li>
+      <li><a href="#importing-data-from-csv"
+      id="toc-importing-data-from-csv">Importing data from CSV</a></li>
+      <li><a href="#queries" id="toc-queries">Queries</a></li>
+      </ul>
+	    </nav>
+	  </div>
+	</div>
+		
+	<!-- Main Content -->
+	<div class="bd-content ps-lg-2">
+	  <p><a href="https://www.sqlite.org/index.html">SQLite</a> is a
+  C-language library that implements a small, fast, self-contained,
+  high-reliability, full-featured, SQL database engine. SQLite is the
+  most used database engine in the world.</p>
+  <ul>
+  <li><a href="https://www.sqlitetutorial.net/">SQLite tutorial</a></li>
+  <li><a href="https://www.sqlitetutorial.net/sqlite-python/">SQLite
+  Python</a></li>
+  <li><a href="http://swcarpentry.github.io/sql-novice-survey/">Software
+  Carpentry</a></li>
+  <li><a
+  href="http://web.csulb.edu/colleges/coe/cecs/dbdesign/dbdesign.php">Database
+  design with UML and SQL</a></li>
+  </ul>
+  <p>In this tutorial, we will learn how to convert CSV files to
+  database tables and run simple SQL queries in Python. We are using
+  “surveys.csv” and “species.csv” files from <a
+  href="https://figshare.com/articles/dataset/Portal_Project_Teaching_Database/1314459/10">here</a>
+  to practice our learning.</p>
+  <hr />
+  <h2 id="usage">Usage</h2>
+  <p>SQLite can be used in GUI software such as <a
+  href="https://sqlitebrowser.org/">DB Browser for SQLite</a>. But there
+  are a lot of advantages to get queries directly in Python. In this
+  document we are going to use module <code>sqlite3</code> in Python to
+  create a databases, import data and run queries.</p>
+  <div class="sourceCode" id="cb1"><pre
+  class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sqlite3</span></code></pre></div>
+  <p>To create a database (db) or connect to an existing one and to add
+  a cursor use:</p>
+  <div class="sourceCode" id="cb2"><pre
+  class="sourceCode py"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>con <span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="st">&#39;./mydb.db&#39;</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>cur <span class="op">=</span> con.cursor()</span></code></pre></div>
-<p>After setting “cur” pragma, we can start to execute SQL commands. For
-instance to create a table, called “survey”, with some fields we can
-run:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>cur.execute(<span class="st">&quot;&quot;&quot;</span></span>
+  <p>After setting “cur” pragma, we can start to execute SQL commands.
+  For instance to create a table, called “survey”, with some fields we
+  can run:</p>
+  <div class="sourceCode" id="cb3"><pre
+  class="sourceCode py"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>cur.execute(<span class="st">&quot;&quot;&quot;</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="st">CREATE TABLE IF NOT EXISTS survey (</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="st">    record_id integer PRIMARY KEY,</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="st">    month text,</span></span>
@@ -114,26 +197,29 @@ run:</p>
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="st">    hindfoot_length real,</span></span>
 <span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="st">    weight real</span></span>
 <span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="st">    );&quot;&quot;&quot;</span>)</span></code></pre></div>
-<p>As you noticed we simply ran the SQL command to create the table with
-<code>cur.execute</code>. Later we will use this method to run SQL
-queries.</p>
-<h2 id="importing-data-from-csv">Importing data from CSV</h2>
-<p>Since we have a table, we can insert the data from “surveys.csv” into
-“survey” table by:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&#39;./surveys.csv&#39;</span>, <span class="st">&#39;r&#39;</span>) <span class="im">as</span> fl:</span>
+  <p>As you noticed we simply ran the SQL command to create the table
+  with <code>cur.execute</code>. Later we will use this method to run
+  SQL queries.</p>
+  <h2 id="importing-data-from-csv">Importing data from CSV</h2>
+  <p>Since we have a table, we can insert the data from “surveys.csv”
+  into “survey” table by:</p>
+  <div class="sourceCode" id="cb4"><pre
+  class="sourceCode py"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&#39;./surveys.csv&#39;</span>, <span class="st">&#39;r&#39;</span>) <span class="im">as</span> fl:</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    hd <span class="op">=</span> fl.readline()[:<span class="op">-</span><span class="dv">1</span>].split(<span class="st">&#39;,&#39;</span>)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    ro <span class="op">=</span> fl.readlines()</span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    db <span class="op">=</span> [<span class="bu">tuple</span>(ro[i][:<span class="op">-</span><span class="dv">1</span>].split(<span class="st">&#39;,&#39;</span>)) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(ro))]</span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>cur.executemany(<span class="st">&quot;INSERT INTO survey (record_id,month,day,year,plot_id,species_id,sex,hindfoot_length,weight) VALUES (?,?,?,?,?,?,?,?,?);&quot;</span>, db)</span></code></pre></div>
-<p>We need to commit the changes and close the connection to store the
-data into “survey” table:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>con.commit()</span>
+  <p>We need to commit the changes and close the connection to store the
+  data into “survey” table:</p>
+  <div class="sourceCode" id="cb5"><pre
+  class="sourceCode py"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>con.commit()</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>con.close()</span></code></pre></div>
-<p>The following function can be used to insert CSV data to a database
-table. It adds fields’ name based on the CSV header and types from
-inputs:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/usr/bin/python3</span></span>
+  <p>The following function can be used to insert CSV data to a database
+  table. It adds fields’ name based on the CSV header and types from
+  inputs:</p>
+  <div class="sourceCode" id="cb6"><pre
+  class="sourceCode py"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/usr/bin/python3</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sqlite3</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -163,13 +249,13 @@ inputs:</p>
 <span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>    fields_type_2 <span class="op">=</span> [<span class="st">&#39;text PRIMARY KEY&#39;</span>] <span class="op">+</span> [<span class="st">&#39;text&#39;</span>]<span class="op">*</span><span class="dv">3</span></span>
 <span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>    csv_sql(<span class="st">&#39;./surveys.csv&#39;</span>,<span class="st">&#39;survey&#39;</span>,<span class="st">&#39;eco.db&#39;</span>,fields_type_1)</span>
 <span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>    csv_sql(<span class="st">&#39;./species.csv&#39;</span>,<span class="st">&#39;species&#39;</span>,<span class="st">&#39;eco.db&#39;</span>,fields_type_2)</span></code></pre></div>
-<h2 id="queries">Queries</h2>
-<p>Let’s use the above function to convert “survey.csv” and
-“species.csv” to tables in “eco.db”. Now, we can use
-<code>execute</code> command for running SQL commands in Python. For
-example:</p>
-<div class="sourceCode" id="cb7"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sqlite3</span>
+  <h2 id="queries">Queries</h2>
+  <p>Let’s use the above function to convert “survey.csv” and
+  “species.csv” to tables in “eco.db”. Now, we can use
+  <code>execute</code> command for running SQL commands in Python. For
+  example:</p>
+  <div class="sourceCode" id="cb7"><pre
+  class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sqlite3</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Connect and read the db</span></span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>con <span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="st">&#39;./eco.db&#39;</span>)</span>
@@ -192,10 +278,10 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a hr
 <span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lis)</span>
 <span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a><span class="co">## [&#39;1977&#39;, &#39;1978&#39;, &#39;1979&#39;, &#39;1980&#39;, &#39;1981&#39;, &#39;1982&#39;, &#39;1983&#39;, &#39;1984&#39;, &#39;1985&#39;, &#39;1986&#39;, &#39;1987&#39;, &#39;1988&#39;, &#39;1989&#39;, &#39;1990&#39;, &#39;1991&#39;, &#39;1992&#39;, &#39;1993&#39;, &#39;1994&#39;, &#39;1995&#39;, &#39;1996&#39;, &#39;1997&#39;, &#39;1998&#39;, &#39;1999&#39;, &#39;2000&#39;, &#39;2001&#39;, &#39;2002&#39;]</span></span></code></pre></div>
-<p>In the above example we stored the output as a Python list. We can
-also store the queries in Python dictionaries:</p>
-<div class="sourceCode" id="cb8"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sqlite3</span>
+  <p>In the above example we stored the output as a Python list. We can
+  also store the queries in Python dictionaries:</p>
+  <div class="sourceCode" id="cb8"><pre
+  class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sqlite3</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Connect and read the db</span></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>con <span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="st">&#39;./eco.db&#39;</span>)</span>
@@ -226,10 +312,10 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a hr
 <span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d)</span>
 <span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a><span class="co">## [{&#39;record_id&#39;: 1, &#39;month&#39;: &#39;7&#39;, &#39;day&#39;: &#39;16&#39;, &#39;year&#39;: &#39;1977&#39;, &#39;plot_id&#39;: &#39;2&#39;, &#39;species_id&#39;: &#39;NL&#39;, &#39;sex&#39;: &#39;M&#39;, &#39;hindfoot_length&#39;: 32.0, &#39;weight&#39;: &#39;&#39;}, {&#39;record_id&#39;: 2, &#39;month&#39;: &#39;7&#39;, &#39;day&#39;: &#39;16&#39;, &#39;year&#39;: &#39;1977&#39;, &#39;plot_id&#39;: &#39;3&#39;, &#39;species_id&#39;: &#39;NL&#39;, &#39;sex&#39;: &#39;M&#39;, &#39;hindfoot_length&#39;: 33.0, &#39;weight&#39;: &#39;&#39;}]</span></span></code></pre></div>
-<p>The following are more examples of different SQL queries in
-Python:</p>
-<div class="sourceCode" id="cb9"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sqlite3</span>
+  <p>The following are more examples of different SQL queries in
+  Python:</p>
+  <div class="sourceCode" id="cb9"><pre
+  class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sqlite3</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Connect and read the db</span></span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>con <span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="st">&#39;./eco.db&#39;</span>)</span>
@@ -285,73 +371,97 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a hr
 <span id="cb9-54"><a href="#cb9-54" aria-hidden="true" tabindex="-1"></a><span class="st">SELECT species_id ||&#39;-&#39;|| species FROM species;&quot;&quot;&quot;</span>)</span>
 <span id="cb9-55"><a href="#cb9-55" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cur.fetchone())</span>
 <span id="cb9-56"><a href="#cb9-56" aria-hidden="true" tabindex="-1"></a><span class="co">## (&#39;AB-bilineata&#39;,)</span></span></code></pre></div>
-<p>Note that:</p>
-<ul>
-<li>We can use <code>fetchall()</code> to fetch all outputs and
-<code>fetchone()</code> to get the first query</li>
-<li>In <code>LIKE</code> operator, the wildcard <code>%</code> matches
-zero or more characters, so that <code>%able%</code> matches
-<code>fixable</code> and <code>tablets</code></li>
-<li>And we can combine fields by
-<code>||'&lt;separator&gt;'||</code></li>
-</ul>
-<p>Also, we can use SQLite3 directly from command line for getting
-queries. For example, change the directory to your database location and
-enter <code>sqlite3 eco.db</code> to open the database and run:</p>
-<div class="sourceCode" id="cb10"><pre
-class="sourceCode sql"><code class="sourceCode sql"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>.<span class="kw">schema</span> <span class="co">-- to see the schema of the databse</span></span>
+  <p>Note that:</p>
+  <ul>
+  <li>We can use <code>fetchall()</code> to fetch all outputs and
+  <code>fetchone()</code> to get the first query</li>
+  <li>In <code>LIKE</code> operator, the wildcard <code>%</code> matches
+  zero or more characters, so that <code>%able%</code> matches
+  <code>fixable</code> and <code>tablets</code></li>
+  <li>And we can combine fields by
+  <code>||'&lt;separator&gt;'||</code></li>
+  </ul>
+  <p>Also, we can use SQLite3 directly from command line for getting
+  queries. For example, change the directory to your database location
+  and enter <code>sqlite3 eco.db</code> to open the database and
+  run:</p>
+  <div class="sourceCode" id="cb10"><pre
+  class="sourceCode sql"><code class="sourceCode sql"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>.<span class="kw">schema</span> <span class="co">-- to see the schema of the databse</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>.<span class="kw">tables</span> <span class="co">-- to list database tables</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>.<span class="kw">mode</span> <span class="kw">column</span> <span class="co">-- to see in column mode</span></span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>.<span class="kw">header</span> <span class="kw">on</span> <span class="co">-- to show headers</span></span>
 <span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>PRAGMA TABLE_INFO(species); <span class="co">-- to see tables info</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> survey <span class="kw">ORDER</span> <span class="kw">BY</span> <span class="dt">year</span> <span class="kw">ASC</span> <span class="kw">LIMIT</span> <span class="dv">10</span>;</span></code></pre></div></div>
-            <div class="d-none d-xl-block col-xl-2 bd-toc">
-               <ul class="section-nav">
-                  <li class="toc-entry"><ul>
-<li><a href="#usage" id="toc-usage">Usage</a></li>
-<li><a href="#importing-data-from-csv"
-id="toc-importing-data-from-csv">Importing data from CSV</a></li>
-<li><a href="#queries" id="toc-queries">Queries</a></li>
-</ul></li>
-               </ul>
-            </div>
-         </div>
-               </div>
-            <!-- Footer -->
-            <footer class="footer text-muted">
-               <div align="center">
-                  Text is available under <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>
-                  &nbsp;|&nbsp;
-                  Code licensed under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank" rel="noopener">GPL-3.0</a>
-                  &nbsp;|&nbsp;
-                  Built with <a href="https://github.com/ashki23/pandoc-bootstrap" target="_blank" rel="noopener">pandoc-bootstrap</a> theme
-                  <br />
-                  Copyright 2018-2024, Ashkan Mirzaee
-               </div>
-            </footer>
-            <!-- Global site tag (gtag.js) - Google Analytics -->
-            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132464297-1"></script>
-            <script>
-               window.dataLayer = window.dataLayer || [];
-               function gtag(){dataLayer.push(arguments);}
-               gtag('js', new Date());
-               gtag('config', 'UA-132464297-1');
-            </script>
-            <!-- JS, Popper.js, and jQuery -->
-      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-      <!-- Mathjax -->
-      <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-      <script>
-         /* Bootstrap styles to tables */
-         function bootstrapStylePandocTables() {
-         $('tr.header').parent('thead').parent('table').addClass('table table-condensed'); }
-         $(document).ready(function () { bootstrapStylePandocTables(); });
-         /* Adjust the height when click the toc */
-         var shiftWindow = function() { scrollBy(0, -60) };
-         window.addEventListener("hashchange", shiftWindow);
-         function load() { if (window.location.hash) shiftWindow(); }
-      </script>
-   </body>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> survey <span class="kw">ORDER</span> <span class="kw">BY</span> <span class="dt">year</span> <span class="kw">ASC</span> <span class="kw">LIMIT</span> <span class="dv">10</span>;</span></code></pre></div>
+	</div>
+      </main>
+    </div>
+    
+    <!-- After body contents -->
+        <!-- Footer -->
+        <footer class="bd-footer mt-auto py-3 py-md-3 bg-body-tertiary">
+          <div class="container py-md-3 px-4 px-md-3 text-body-secondary" align="center" style="font-size: .95rem;">
+            Text is available under <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>
+            &nbsp;|&nbsp;
+            Code licensed under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank" rel="noopener">GPL-3.0</a>
+            &nbsp;|&nbsp;
+            Built with <a href="https://github.com/ashki23/pandoc-bootstrap" target="_blank" rel="noopener">pandoc-bootstrap</a> theme
+            <br />
+            Copyright 2018-2024, Ashkan Mirzaee
+          </div>
+        </footer>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132464297-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'UA-132464297-1');
+        </script>
+        
+    <!-- Bootstrap Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+    <!-- Highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js" integrity="sha512-6yoqbrcLAHDWAdQmiRlHG4+m0g/CT/V9AGyxabG8j7Jk8j3r3K6due7oqpiRMZqcYe9WM2gPcaNNxnl2ux+3tA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+        
+    <!-- Custom Scripts -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+	  const htmlElement = document.documentElement;
+	  const highlightStyle = document.getElementById("highlight-style");
+	  
+	  // Function to update Highlight.js style based on theme
+	  const updateHighlightStyle = (theme) => {
+              const lightTheme = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/stackoverflow-light.min.css";
+              const darkTheme = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/github-dark.min.css";
+              highlightStyle.href = theme === "dark" ? darkTheme : lightTheme;
+	  };
+	  
+	  // Function to set the theme
+	  const setTheme = (theme) => {
+              htmlElement.setAttribute("data-bs-theme", theme);
+              localStorage.setItem("theme", theme); // Save the theme to localStorage
+              updateHighlightStyle(theme);
+	  };
+	  
+	  // Get saved theme from localStorage or fallback to default ("light")
+	  const savedTheme = localStorage.getItem("theme") || "light";
+	  setTheme(savedTheme);
+	  
+	  // Event listener for theme dropdown
+	  document.querySelectorAll(".dropdown-item").forEach((item) => {
+              item.addEventListener("click", (e) => {
+		  e.preventDefault();
+		  const selectedTheme = item.getAttribute("data-theme");
+		  setTheme(selectedTheme);
+              });
+	  });
+	  
+	  // Initialize Highlight.js
+	  hljs.highlightAll();
+      });
+    </script>
+  </body>
 </html>

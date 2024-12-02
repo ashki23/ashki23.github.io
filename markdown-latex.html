@@ -1,98 +1,207 @@
 <!doctype html>
-<html>
-   <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <meta name="generator" content="pandoc">
-      <meta name="author" content="Ashkan Mirzaee">
-      <meta name="description" content="An introduction for using
-Markdown and LaTeX">
-      <title>Markdown and LaTeX introduction</title>
-      <!-- Bootstrap -->
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-      <!-- Font-awesome -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-      <!-- Styles -->
-      <link rel="stylesheet" href="https://ashki23.github.io/styles.css">
-            <!-- Favicon -->
-            <link rel="icon" href="images/AM.jpg">
-            <!-- Google-site-verification -->
-            <meta name="google-site-verification" content="lD_nifpQ-CA6LaDwxYJbe5bq0oa6Ir0Ax-txvtdP51E">
-            <!-- Bing-site-verification -->
-            <meta name="msvalidate.01" content="89BCD3FF42B6E9FE48E0C8365767D11B">
-         </head>
-   <body>
-            <nav class="navbar fixed-top navbar-expand-lg navbar-dark bd-navbar">
-               <a class="navbar-brand" href="index.html">Ashkan Mirzaee</a>
-               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="border: none; outline: none; padding-right: 0; padding-left: 1rem;">
-               <span class="navbar-toggler-icon"></span>
-               </button>
-               <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav mr-auto">
-                     <li class="nav-item">
-                        <a class="nav-link" href="page1.html">Blog</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="tutorials.html">Tutorials</a>
-                     </li>
-            	 <li class="nav-item">
-                        <a class="nav-link" href="research.html">Research</a>
-                     </li>
-            	 <li class="nav-item">
-                        <a class="nav-link" href="applications.html">Applications</a>
-                     </li>
-            	 <li class="nav-item">
-                        <a class="nav-link" href="blogroll.html">Blogroll</a>
-                     </li>
+<html lang="en" class="h-100" data-bs-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="generator" content="pandoc">
+    <meta name="author" content="Ashkan Mirzaee">
+    <meta name="description" content="An introduction for using Markdown
+and LaTeX">
+    <title>Markdown and LaTeX introduction</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!-- Bootstrap Icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous">
+    
+    <!-- Highlight.js Styles -->
+    <link rel="stylesheet" id="highlight-style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/stackoverflow-light.min.css">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="https://getbootstrap.com/docs/5.3/assets/css/docs.css">
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- After header contents -->
+        <!-- Favicon -->
+        <link rel="icon" href="images/AM.jpg">
+        <!-- Google-site-verification -->
+        <meta name="google-site-verification" content="lD_nifpQ-CA6LaDwxYJbe5bq0oa6Ir0Ax-txvtdP51E">
+        <!-- Bing-site-verification -->
+        <meta name="msvalidate.01" content="89BCD3FF42B6E9FE48E0C8365767D11B">
+      </head>
+  <body class="d-flex flex-column h-100" data-bs-spy="scroll" data-bs-target="#TableOfContents">
+    <!-- Before body contents -->
+        <nav class="navbar bd-navbar navbar-expand-lg fixed-top py-2">
+          <div class="container-xxl bd-gutter flex-wrap flex-lg-nowrap">
+            <!-- Brand -->
+            <a class="navbar-brand" href="index.html" style="transform: none;">Ashkan Mirzaee</a>
+
+            <!-- Toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Navbar Content -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <!-- Left Navigation -->
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link" href="page1.html">Blog</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="tutorials.html">Tutorials</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="research.html">Research</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="applications.html">Applications</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="blogroll.html">Blogroll</a>
+                </li>
+              </ul>
+              
+              <!-- Divider for smaller screens -->
+              <hr class="d-lg-none text-white-50">
+              
+              <!-- Social Media Icons -->
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html" aria-label="Contact">
+                    <i class="bi bi-envelope"></i>
+        	    <span class="d-lg-none ms-2">Contact</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://github.com/ashki23" target="_blank" rel="noopener" aria-label="GitHub">
+                    <i class="bi bi-github"></i>
+        	    <span class="d-lg-none ms-2">GitHub</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://gitlab.com/ashki23" target="_blank" rel="noopener" aria-label="GitLab">
+                    <i class="bi bi-gitlab"></i>
+        	    <span class="d-lg-none ms-2">GitLab</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://www.linkedin.com/in/ashkan-mirzaee/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <i class="bi bi-linkedin"></i>
+        	    <span class="d-lg-none ms-2">Linkedin</span>
+                  </a>
+                </li>
+              </ul>
+              
+              <!-- Divider for larger screens -->
+              <div class="vr d-none d-lg-flex mx-2 my-1 text-white"></div>
+              
+              <!-- Divider for smaller screens -->
+              <hr class="d-lg-none text-white-50">
+              
+              <!-- Theme Dropdown -->
+              <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                  <button class="btn btn-link nav-link dropdown-toggle" type="button" id="themeDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-circle-half"></i>
+        	    <span class="d-lg-none ms-2">Toggle theme</span>
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="themeDropdown">
+                    <li>
+                      <a class="dropdown-item align-items-center" data-theme="light">
+                        <i class="bi bi-sun-fill me-2 opacity-50"></i> Light
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item align-items-center" data-theme="dark">
+                        <i class="bi bi-moon-stars-fill me-2 opacity-50"></i> Dark
+                      </a>
+                    </li>
                   </ul>
-                  <ul class="navbar-nav ml-auto">
-            	<li class="nav-item">
-            	  <a class="nav-link" href="contact.html" aria-label="Contact">
-            	    <span class="fa fa-envelope fa-lg"></a>
-            	</li>
-            	<li class="nav-item">
-            	  <a class="nav-link" href="https://github.com/ashki23" target="_blank" rel="noopener" aria-label="GitHub">
-            	    <span class="fa fa-github fa-lg"></span></a>
-            	</li>
-            	<li class="nav-item">
-            	  <a class="nav-link" href="https://gitlab.com/ashki23" target="_blank" rel="noopener" aria-label="GitLab">
-            	    <span class="fa fa-gitlab fa-lg"></span></a>
-            	</li>
-            	<li class="nav-item">
-            	  <a class="nav-link" href="https://www.linkedin.com/in/ashkan-mirzaee/" target="_blank" rel="noopener" aria-label="Linkedin">
-            	    <span class="fa fa-linkedin fa-lg"></span></a>
-            	</li>
-                  </ul>
-               </div>
-            </nav>
-            <div class="container">
-         <h1 class="title">Markdown and LaTeX introduction</h1>
-                  <div class="row">
-            <div class="col-xl-10"><p><a
-href="https://daringfireball.net/projects/markdown/">Markdown</a> is a
-text-to-HTML conversion tool for web writers. Markdown allows you to
-write using an easy-to-read, easy-to-write plain text format, then
-convert it to structurally valid XHTML (or HTML). A Markdown document
-could contain chunks of embedded graphics, source codes and LaTex
-formula. <a href="https://www.latex-project.org//">LaTeX</a> is a
-high-quality typesetting system; it includes features designed for the
-production of technical and scientific documentation. A basic knowledge
-about Markdown and LaTeX could let to create HTML documents such as
-weblogs or reports very easily. This tutorial provides a quick reference
-to use Markdown and LaTeX.</p>
-<hr />
-<h1 id="markdown">Markdown</h1>
-<p>The following provides a quick reference to the most commonly used
-Markdown syntax.</p>
-<h2 id="headers">Headers</h2>
-<h3>
-H3
-</h3>
-<h4 id="h4">H4</h4>
-<h5 id="h5">H5</h5>
-<h6 id="h6">H6</h6>
-<div class="sourceCode" id="cb1"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Markdown</span></span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        
+    <div class="container-xxl bd-gutter pb-5 mt-3 my-md-4 bd-layout" style="padding-top:60px;">
+      <main class="bd-main order-1">
+	
+	<!-- Tiltle -->
+	<h1 class="bd-intro pt-2 ps-lg-2" id="title">Markdown and LaTeX
+introduction</h1>
+	
+		<!-- Table of Contents -->
+	<div class="bd-toc mt-3 mb-5 my-lg-0 mb-lg-5 px-sm-1 text-body-secondary">
+	  <strong class="d-none d-md-block h6 my-2 ms-3">On this page</strong>
+	  <hr class="d-none d-md-block my-2 ms-3">
+	  <div class="collapse bd-toc-collapse" id="tocContents">
+	    <nav id="TableOfContents">
+	      <ul>
+      <li><a href="#markdown" id="toc-markdown">Markdown</a>
+      <ul>
+      <li><a href="#headers" id="toc-headers">Headers</a></li>
+      <li><a href="#emphasis" id="toc-emphasis">Emphasis</a></li>
+      <li><a href="#lists" id="toc-lists">Lists</a></li>
+      <li><a href="#links" id="toc-links">Links</a></li>
+      <li><a href="#images" id="toc-images">Images</a></li>
+      <li><a href="#quotes" id="toc-quotes">Quotes</a></li>
+      <li><a href="#hlines" id="toc-hlines">Hlines</a></li>
+      <li><a href="#tables" id="toc-tables">Tables</a></li>
+      <li><a href="#code-blocks" id="toc-code-blocks">Code
+      blocks</a></li>
+      <li><a href="#yaml-header" id="toc-yaml-header">YAML
+      header</a></li>
+      <li><a href="#mathematical-formula"
+      id="toc-mathematical-formula">Mathematical formula</a></li>
+      </ul></li>
+      <li><a href="#latex" id="toc-latex">LaTeX</a>
+      <ul>
+      <li><a href="#latex-equations" id="toc-latex-equations">LaTeX
+      equations</a></li>
+      <li><a href="#operators" id="toc-operators">Operators</a></li>
+      <li><a href="#symbols" id="toc-symbols">Symbols</a></li>
+      <li><a href="#space" id="toc-space">Space</a></li>
+      <li><a href="#greek-alphabets" id="toc-greek-alphabets">Greek
+      alphabets</a></li>
+      <li><a href="#equations" id="toc-equations">Equations</a></li>
+      <li><a href="#functions" id="toc-functions">Functions</a></li>
+      <li><a href="#matrices" id="toc-matrices">Matrices</a></li>
+      <li><a href="#font-sizes" id="toc-font-sizes">Font sizes</a></li>
+      </ul></li>
+      </ul>
+	    </nav>
+	  </div>
+	</div>
+		
+	<!-- Main Content -->
+	<div class="bd-content ps-lg-2">
+	  <p><a
+  href="https://daringfireball.net/projects/markdown/">Markdown</a> is a
+  text-to-HTML conversion tool for web writers. Markdown allows you to
+  write using an easy-to-read, easy-to-write plain text format, then
+  convert it to structurally valid XHTML (or HTML). A Markdown document
+  could contain chunks of embedded graphics, source codes and LaTex
+  formula. <a href="https://www.latex-project.org//">LaTeX</a> is a
+  high-quality typesetting system; it includes features designed for the
+  production of technical and scientific documentation. A basic
+  knowledge about Markdown and LaTeX could let to create HTML documents
+  such as weblogs or reports very easily. This tutorial provides a quick
+  reference to use Markdown and LaTeX.</p>
+  <hr />
+  <h1 id="markdown">Markdown</h1>
+  <p>The following provides a quick reference to the most commonly used
+  Markdown syntax.</p>
+  <h2 id="headers">Headers</h2>
+  <h3>
+  H3
+  </h3>
+  <h4 id="h4">H4</h4>
+  <h5 id="h5">H5</h5>
+  <h6 id="h6">H6</h6>
+  <div class="sourceCode" id="cb1"><pre
+  class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Markdown</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>The following provides a quick reference to the most commonly used Markdown syntax.</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">## Headers</span></span>
@@ -100,173 +209,174 @@ class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb1-1"><
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">#### H4</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">##### H5</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">###### H6</span></span></code></pre></div>
-<h2 id="emphasis">Emphasis</h2>
-<p><em>Italic</em> and <strong>Bold</strong></p>
-<div class="sourceCode" id="cb2"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>*Italic* and **Bold**</span></code></pre></div>
-<p><del>Scratched Text</del></p>
-<div class="sourceCode" id="cb3"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>~~Scratched Text~~</span></code></pre></div>
-<p>superscript<sup>2</sup></p>
-<div class="sourceCode" id="cb4"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>superscript^2^</span></code></pre></div>
-<p>Markdown doesn’t support underline, but we can use <u>HTML Text</u>
-instead. Also, <b>we</b> can <i>render</i> almost any <span
-style="color:red;">HTML</span> code that we   <kbd>like</kbd>   such as
-superscript<sup>2</sup>.</p>
-<div class="sourceCode" id="cb5"><pre
-class="sourceCode html"><code class="sourceCode html"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>Markdown doesn&#39;t support underline, but we can use <span class="dt">&lt;</span><span class="kw">u</span><span class="dt">&gt;</span>HTML Text<span class="dt">&lt;/</span><span class="kw">u</span><span class="dt">&gt;</span> instead. Also, <span class="dt">&lt;</span><span class="kw">b</span><span class="dt">&gt;</span>we<span class="dt">&lt;/</span><span class="kw">b</span><span class="dt">&gt;</span> can <span class="dt">&lt;</span><span class="kw">i</span><span class="dt">&gt;</span>render<span class="dt">&lt;/</span><span class="kw">i</span><span class="dt">&gt;</span> almost any <span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> style</span><span class="op">=</span><span class="st">&quot;color:red;&quot;</span><span class="dt">&gt;</span>HTML<span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span> code that we <span class="dv">&amp;nbsp;</span> <span class="dt">&lt;</span><span class="kw">kbd</span><span class="dt">&gt;</span>like<span class="dt">&lt;/</span><span class="kw">kbd</span><span class="dt">&gt;</span> <span class="dv">&amp;nbsp;</span> such as superscript<span class="dt">&lt;</span><span class="kw">sup</span><span class="dt">&gt;</span>2<span class="dt">&lt;/</span><span class="kw">sup</span><span class="dt">&gt;</span>.</span></code></pre></div>
-<p>For manual line or page breaks, we can use following HTML and CSS
-codes:</p>
-<ul>
-<li>Line breaks:</li>
-</ul>
-<div class="sourceCode" id="cb6"><pre
-class="sourceCode html"><code class="sourceCode html"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">br</span><span class="ot"> </span><span class="dt">/&gt;</span></span></code></pre></div>
-<ul>
-<li>Print breaks:</li>
-</ul>
-<div class="sourceCode" id="cb7"><pre
-class="sourceCode css"><code class="sourceCode css"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>&lt;p style=&quot;page-break-after<span class="in">:always</span>;&quot;<span class="op">&gt;</span>&lt;/p<span class="op">&gt;</span></span></code></pre></div>
-<h2 id="lists">Lists</h2>
-<ul>
-<li>Item 1</li>
-<li>Item 2
-<ul>
-<li>Item 2a</li>
-<li>Item 2b
-<ul>
-<li>Item 2b-1</li>
-<li>Item 2b-2</li>
-</ul></li>
-</ul></li>
-</ul>
-<div class="sourceCode" id="cb8"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Item 1</span>
+  <h2 id="emphasis">Emphasis</h2>
+  <p><em>Italic</em> and <strong>Bold</strong></p>
+  <div class="sourceCode" id="cb2"><pre
+  class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>*Italic* and **Bold**</span></code></pre></div>
+  <p><del>Scratched Text</del></p>
+  <div class="sourceCode" id="cb3"><pre
+  class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>~~Scratched Text~~</span></code></pre></div>
+  <p>superscript<sup>2</sup></p>
+  <div class="sourceCode" id="cb4"><pre
+  class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>superscript^2^</span></code></pre></div>
+  <p>Markdown doesn’t support underline, but we can use <u>HTML Text</u>
+  instead. Also, <b>we</b> can <i>render</i> almost any <span
+  style="color:red;">HTML</span> code that we   <kbd>like</kbd>   such
+  as superscript<sup>2</sup>.</p>
+  <div class="sourceCode" id="cb5"><pre
+  class="sourceCode html"><code class="sourceCode html"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>Markdown doesn&#39;t support underline, but we can use <span class="dt">&lt;</span><span class="kw">u</span><span class="dt">&gt;</span>HTML Text<span class="dt">&lt;/</span><span class="kw">u</span><span class="dt">&gt;</span> instead. Also, <span class="dt">&lt;</span><span class="kw">b</span><span class="dt">&gt;</span>we<span class="dt">&lt;/</span><span class="kw">b</span><span class="dt">&gt;</span> can <span class="dt">&lt;</span><span class="kw">i</span><span class="dt">&gt;</span>render<span class="dt">&lt;/</span><span class="kw">i</span><span class="dt">&gt;</span> almost any <span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> style</span><span class="op">=</span><span class="st">&quot;color:red;&quot;</span><span class="dt">&gt;</span>HTML<span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span> code that we <span class="dv">&amp;nbsp;</span> <span class="dt">&lt;</span><span class="kw">kbd</span><span class="dt">&gt;</span>like<span class="dt">&lt;/</span><span class="kw">kbd</span><span class="dt">&gt;</span> <span class="dv">&amp;nbsp;</span> such as superscript<span class="dt">&lt;</span><span class="kw">sup</span><span class="dt">&gt;</span>2<span class="dt">&lt;/</span><span class="kw">sup</span><span class="dt">&gt;</span>.</span></code></pre></div>
+  <p>For manual line or page breaks, we can use following HTML and CSS
+  codes:</p>
+  <ul>
+  <li>Line breaks:</li>
+  </ul>
+  <div class="sourceCode" id="cb6"><pre
+  class="sourceCode html"><code class="sourceCode html"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">br</span><span class="ot"> </span><span class="dt">/&gt;</span></span></code></pre></div>
+  <ul>
+  <li>Print breaks:</li>
+  </ul>
+  <div class="sourceCode" id="cb7"><pre
+  class="sourceCode css"><code class="sourceCode css"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>&lt;p style=&quot;page-break-after<span class="in">:always</span>;&quot;<span class="op">&gt;</span>&lt;/p<span class="op">&gt;</span></span></code></pre></div>
+  <h2 id="lists">Lists</h2>
+  <ul>
+  <li>Item 1</li>
+  <li>Item 2
+  <ul>
+  <li>Item 2a</li>
+  <li>Item 2b
+  <ul>
+  <li>Item 2b-1</li>
+  <li>Item 2b-2</li>
+  </ul></li>
+  </ul></li>
+  </ul>
+  <div class="sourceCode" id="cb8"><pre
+  class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Item 1</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Item 2</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>Item 2a (2 tabs)</span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>Item 2b</span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="ss">        - </span>Item 2b-1 (4 tabs)</span>
 <span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="ss">        - </span>Item 2b-2</span></code></pre></div>
-<ol type="1">
-<li>Item 1</li>
-<li>Item 2</li>
-<li>Item 3
-<ul>
-<li>Item 3a</li>
-<li>Item 3b</li>
-</ul></li>
-</ol>
-<div class="sourceCode" id="cb9"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Item 1</span>
+  <ol type="1">
+  <li>Item 1</li>
+  <li>Item 2</li>
+  <li>Item 3
+  <ul>
+  <li>Item 3a</li>
+  <li>Item 3b</li>
+  </ul></li>
+  </ol>
+  <div class="sourceCode" id="cb9"><pre
+  class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Item 1</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Item 2</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Item 3</span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>Item 3a</span>
 <span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>Item 3b</span></code></pre></div>
-<h2 id="links">Links</h2>
-<p><a href="http://www.github.com/">Github</a></p>
-<div class="sourceCode" id="cb10"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Github</span><span class="co">](http://www.github.com/)</span></span></code></pre></div>
-<h2 id="images">Images</h2>
-<p align="center">
-<figure>
-<img
-src="https://www.raspberrypi.org/app/uploads/2018/03/RPi-Logo-Reg-SCREEN-199x250.png"
-title="Raspberry pi" alt="logo" />
-<figcaption aria-hidden="true">logo</figcaption>
-</figure>
-</p>
-<div class="sourceCode" id="cb11"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> align</span><span class="op">=</span><span class="st">&quot;center&quot;</span><span class="dt">&gt;</span></span>
+  <h2 id="links">Links</h2>
+  <p><a href="http://www.github.com/">Github</a></p>
+  <div class="sourceCode" id="cb10"><pre
+  class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Github</span><span class="co">](http://www.github.com/)</span></span></code></pre></div>
+  <h2 id="images">Images</h2>
+  <p align="center">
+  <figure>
+  <img
+  src="https://www.raspberrypi.org/app/uploads/2018/03/RPi-Logo-Reg-SCREEN-199x250.png"
+  title="Raspberry pi" alt="logo" />
+  <figcaption aria-hidden="true">logo</figcaption>
+  </figure>
+  </p>
+  <div class="sourceCode" id="cb11"><pre
+  class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> align</span><span class="op">=</span><span class="st">&quot;center&quot;</span><span class="dt">&gt;</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="al">![logo](https://www.raspberrypi.org/app/uploads/2018/03/RPi-Logo-Reg-SCREEN-199x250.png &quot;Raspberry pi&quot;)</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span></code></pre></div>
-<p>Note that here we used an HTML code to align center the image. Also,
-we can use HTML to add more styles, for example:</p>
-<div class="sourceCode" id="cb12"><pre
-class="sourceCode html"><code class="sourceCode html"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> align</span><span class="op">=</span><span class="st">&quot;center&quot;</span><span class="dt">&gt;</span></span>
+  <p>Note that here we used an HTML code to align center the image.
+  Also, we can use HTML to add more styles, for example:</p>
+  <div class="sourceCode" id="cb12"><pre
+  class="sourceCode html"><code class="sourceCode html"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> align</span><span class="op">=</span><span class="st">&quot;center&quot;</span><span class="dt">&gt;</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> src</span><span class="op">=</span><span class="st">&quot;https://www.raspberrypi.org/app/uploads/2018/03/RPi-Logo-Reg-SCREEN-199x250.png&quot;</span><span class="ot"> alt</span><span class="op">=</span><span class="st">&quot;Raspberry pi&quot;</span><span class="ot"> style</span><span class="op">=</span><span class="st">&quot;width:20%; border:0;&quot;</span><span class="dt">&gt;</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span></code></pre></div>
-<h2 id="quotes">Quotes</h2>
-<blockquote>
-<p>Imagination is more important than knowledge.</p>
-<p>Albert Einstein</p>
-</blockquote>
-<div class="sourceCode" id="cb13"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Imagination is more important than knowledge.</span></span>
+  <h2 id="quotes">Quotes</h2>
+  <blockquote>
+  <p>Imagination is more important than knowledge.</p>
+  <p>Albert Einstein</p>
+  </blockquote>
+  <div class="sourceCode" id="cb13"><pre
+  class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Imagination is more important than knowledge.</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Albert Einstein</span></span></code></pre></div>
-<h2 id="hlines">Hlines</h2>
-<p>Use three dashes <code>---</code> to draw an horizontal line
-like:</p>
-<hr />
-<div class="sourceCode" id="cb14"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code></pre></div>
-<h2 id="tables">Tables</h2>
-<div style="margin-bottom: 1rem; overflow-x: auto;">
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">1st Header</th>
-<th style="text-align: center;">2nd Header</th>
-<th style="text-align: right;">3rd Header</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">col 1 is</td>
-<td style="text-align: center;">left-aligned</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr>
-<td style="text-align: left;">col 2 is</td>
-<td style="text-align: center;">center-aligned</td>
-<td style="text-align: right;">2</td>
-</tr>
-<tr>
-<td style="text-align: left;">col 3 is</td>
-<td style="text-align: center;">right-aligned</td>
-<td style="text-align: right;">3</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sourceCode" id="cb15"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>1st Header|2nd Header|3rd Header</span>
+  <h2 id="hlines">Hlines</h2>
+  <p>Use three dashes <code>---</code> to draw an horizontal line
+  like:</p>
+  <hr />
+  <div class="sourceCode" id="cb14"><pre
+  class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code></pre></div>
+  <h2 id="tables">Tables</h2>
+  <div style="margin-bottom: 1rem; overflow-x: auto;">
+  <table>
+  <thead>
+  <tr>
+  <th style="text-align: left;">1st Header</th>
+  <th style="text-align: center;">2nd Header</th>
+  <th style="text-align: right;">3rd Header</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td style="text-align: left;">col 1 is</td>
+  <td style="text-align: center;">left-aligned</td>
+  <td style="text-align: right;">1</td>
+  </tr>
+  <tr>
+  <td style="text-align: left;">col 2 is</td>
+  <td style="text-align: center;">center-aligned</td>
+  <td style="text-align: right;">2</td>
+  </tr>
+  <tr>
+  <td style="text-align: left;">col 3 is</td>
+  <td style="text-align: center;">right-aligned</td>
+  <td style="text-align: right;">3</td>
+  </tr>
+  </tbody>
+  </table>
+  </div>
+  <div class="sourceCode" id="cb15"><pre
+  class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>1st Header|2nd Header|3rd Header</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>---|:---:|---: </span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>col 1 is|left-aligned|1</span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>col 2 is|center-aligned|2</span>
 <span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>col 3 is|right-aligned|3</span></code></pre></div>
-<p>Note that we can use HTML styles to hide tables’ overflow by putting
-them in a division like:</p>
-<div class="sourceCode" id="cb16"><pre
-class="sourceCode html"><code class="sourceCode html"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> </span><span class="er">&quot;</span><span class="ot">margin-bottom: </span><span class="er">1rem;</span><span class="ot"> overflow-x: auto</span><span class="er">;&quot;</span><span class="dt">&gt;</span></span>
+  <p>Note that we can use HTML styles to hide tables’ overflow by
+  putting them in a division like:</p>
+  <div class="sourceCode" id="cb16"><pre
+  class="sourceCode html"><code class="sourceCode html"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> </span><span class="er">&quot;</span><span class="ot">margin-bottom: </span><span class="er">1rem;</span><span class="ot"> overflow-x: auto</span><span class="er">;&quot;</span><span class="dt">&gt;</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>...</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span></code></pre></div>
-<p>Also, we can use <code>overflow-x: scroll</code> to always scroll or
-<code>overflow-x: hidden</code> to hide them compeletely.</p>
-<h2 id="code-blocks">Code blocks</h2>
-<p>In Markdown, we can simply add plain code blocks to display (not
-evaluating) by inserting triple back quote i.e. <code>```</code>. For
-example:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>norm <span class="ot">=</span> <span class="cf">function</span>(x) {</span>
+  <p>Also, we can use <code>overflow-x: scroll</code> to always scroll
+  or <code>overflow-x: hidden</code> to hide them compeletely.</p>
+  <h2 id="code-blocks">Code blocks</h2>
+  <p>In Markdown, we can simply add plain code blocks to display (not
+  evaluating) by inserting triple back quote i.e. <code>```</code>. For
+  example:</p>
+  <div class="sourceCode" id="cb17"><pre
+  class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>norm <span class="ot">=</span> <span class="cf">function</span>(x) {</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sqrt</span>(x<span class="sc">%*%</span>x)</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="fu">norm</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb18"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>` ``r</span>
+  <div class="sourceCode" id="cb18"><pre
+  class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>` ``r</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>norm &lt;- function(x) {</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  sqrt(x%*%x)</span>
 <span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>norm(1:4)</span>
 <span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>` ``</span></code></pre></div>
-<p>For inline plain codes use single back quote before and after the
-code, for example we defined <code>this codes here</code> in this
-way.</p>
-<h2 id="yaml-header">YAML header</h2>
-<p>At the top of a Markdown document, we can insert the following meta
-data such that:</p>
-<div class="sourceCode" id="cb19"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+  <p>For inline plain codes use single back quote before and after the
+  code, for example we defined <code>this codes here</code> in this
+  way.</p>
+  <h2 id="yaml-header">YAML header</h2>
+  <p>At the top of a Markdown document, we can insert the following meta
+  data such that:</p>
+  <div class="sourceCode" id="cb19"><pre
+  class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;Page Title&quot;</span></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> &quot;Page sub-title&quot;</span></span>
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> &quot;Author name&quot;</span></span>
@@ -281,64 +391,67 @@ class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb19-1">
 <span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a><span class="co">  - tag1</span></span>
 <span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a><span class="co">  - tag2</span></span>
 <span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code></pre></div>
-<h2 id="mathematical-formula">Mathematical formula</h2>
-<p>We can use LaTeX to write mathematical equations in Markdown. To
-write inline LaTeX formula use a single <code>$</code> before and after
-the equation and use a double <code>$</code> to display equations.</p>
-<hr />
-<h1 id="latex">LaTeX</h1>
-<p>The following provides a quick reference of the most commonly used
-LaTeX syntax. You may find a more extensive references about
-mathematical formulas at <a
-href="https://en.wikibooks.org/wiki/LaTeX/Mathematics">LaTeX
-Wikibooks</a>.</p>
-<h2 id="latex-equations">LaTeX equations</h2>
-<p>Inline equation: <span class="math inline">\(equation\)</span></p>
-<div class="sourceCode" id="cb20"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="an">Inline equation:</span><span class="co"> $equation$</span></span></code></pre></div>
-<p>Display equation: <span class="math display">\[equation\]</span></p>
-<div class="sourceCode" id="cb21"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="an">Display equation:</span><span class="co"> $$equation$$</span></span></code></pre></div>
-<h2 id="operators">Operators</h2>
-<ul>
-<li><span class="math inline">\(x + y\)</span></li>
-<li><span class="math inline">\(x - y\)</span></li>
-<li><span class="math inline">\(x \times y\)</span></li>
-<li><span class="math inline">\(x \div y\)</span></li>
-<li><span class="math inline">\(\dfrac{x}{y}\)</span></li>
-<li><span class="math inline">\(\sqrt{x}\)</span></li>
-</ul>
-<div class="sourceCode" id="cb22"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$x + y$</span>
+  <h2 id="mathematical-formula">Mathematical formula</h2>
+  <p>We can use LaTeX to write mathematical equations in Markdown. To
+  write inline LaTeX formula use a single <code>$</code> before and
+  after the equation and use a double <code>$</code> to display
+  equations.</p>
+  <hr />
+  <h1 id="latex">LaTeX</h1>
+  <p>The following provides a quick reference of the most commonly used
+  LaTeX syntax. You may find a more extensive references about
+  mathematical formulas at <a
+  href="https://en.wikibooks.org/wiki/LaTeX/Mathematics">LaTeX
+  Wikibooks</a>.</p>
+  <h2 id="latex-equations">LaTeX equations</h2>
+  <p>Inline equation: <span class="math inline">\(equation\)</span></p>
+  <div class="sourceCode" id="cb20"><pre
+  class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="an">Inline equation:</span><span class="co"> $equation$</span></span></code></pre></div>
+  <p>Display equation: <span
+  class="math display">\[equation\]</span></p>
+  <div class="sourceCode" id="cb21"><pre
+  class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="an">Display equation:</span><span class="co"> $$equation$$</span></span></code></pre></div>
+  <h2 id="operators">Operators</h2>
+  <ul>
+  <li><span class="math inline">\(x + y\)</span></li>
+  <li><span class="math inline">\(x - y\)</span></li>
+  <li><span class="math inline">\(x \times y\)</span></li>
+  <li><span class="math inline">\(x \div y\)</span></li>
+  <li><span class="math inline">\(\dfrac{x}{y}\)</span></li>
+  <li><span class="math inline">\(\sqrt{x}\)</span></li>
+  </ul>
+  <div class="sourceCode" id="cb22"><pre
+  class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$x + y$</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$x - y$</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$x \times y$ </span>
 <span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$x \div y$</span>
 <span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$\dfrac{x}{y}$</span>
 <span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$\sqrt{x}$</span></code></pre></div>
-<h2 id="symbols">Symbols</h2>
-<ul>
-<li><span class="math inline">\(\pi \approx 3.14159\)</span></li>
-<li><span class="math inline">\(\pm \, 0.2\)</span></li>
-<li><span class="math inline">\(\dfrac{0}{1} \neq \infty\)</span></li>
-<li><span class="math inline">\(0 &lt; x &lt; 1\)</span></li>
-<li><span class="math inline">\(0 \leq x \leq 1\)</span></li>
-<li><span class="math inline">\(x \geq 10\)</span></li>
-<li><span class="math inline">\(\forall \, x \in (1,2)\)</span></li>
-<li><span class="math inline">\(\exists \, x \notin [0,1]\)</span></li>
-<li><span class="math inline">\(A \subset B\)</span></li>
-<li><span class="math inline">\(A \subseteq B\)</span></li>
-<li><span class="math inline">\(A \cup B\)</span></li>
-<li><span class="math inline">\(A \cap B\)</span></li>
-<li><span class="math inline">\(X \implies Y\)</span></li>
-<li><span class="math inline">\(X \impliedby Y\)</span></li>
-<li><span class="math inline">\(a \to b\)</span></li>
-<li><span class="math inline">\(a \longrightarrow b\)</span></li>
-<li><span class="math inline">\(a \Rightarrow b\)</span></li>
-<li><span class="math inline">\(a \Longrightarrow b\)</span></li>
-<li><span class="math inline">\(a \propto b\)</span></li>
-</ul>
-<div class="sourceCode" id="cb23"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$\pi \approx 3.14159$</span>
+  <h2 id="symbols">Symbols</h2>
+  <ul>
+  <li><span class="math inline">\(\pi \approx 3.14159\)</span></li>
+  <li><span class="math inline">\(\pm \, 0.2\)</span></li>
+  <li><span class="math inline">\(\dfrac{0}{1} \neq \infty\)</span></li>
+  <li><span class="math inline">\(0 &lt; x &lt; 1\)</span></li>
+  <li><span class="math inline">\(0 \leq x \leq 1\)</span></li>
+  <li><span class="math inline">\(x \geq 10\)</span></li>
+  <li><span class="math inline">\(\forall \, x \in (1,2)\)</span></li>
+  <li><span class="math inline">\(\exists \, x \notin
+  [0,1]\)</span></li>
+  <li><span class="math inline">\(A \subset B\)</span></li>
+  <li><span class="math inline">\(A \subseteq B\)</span></li>
+  <li><span class="math inline">\(A \cup B\)</span></li>
+  <li><span class="math inline">\(A \cap B\)</span></li>
+  <li><span class="math inline">\(X \implies Y\)</span></li>
+  <li><span class="math inline">\(X \impliedby Y\)</span></li>
+  <li><span class="math inline">\(a \to b\)</span></li>
+  <li><span class="math inline">\(a \longrightarrow b\)</span></li>
+  <li><span class="math inline">\(a \Rightarrow b\)</span></li>
+  <li><span class="math inline">\(a \Longrightarrow b\)</span></li>
+  <li><span class="math inline">\(a \propto b\)</span></li>
+  </ul>
+  <div class="sourceCode" id="cb23"><pre
+  class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$\pi \approx 3.14159$</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$\pm \, 0.2$</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$\dfrac{0}{1} \neq \infty$</span>
 <span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$0 &lt; x &lt; 1$</span>
@@ -357,28 +470,28 @@ class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb23-1">
 <span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$a \Rightarrow b$</span>
 <span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$a \Longrightarrow b$</span>
 <span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$a \propto b$</span></code></pre></div>
-<ul>
-<li><span class="math inline">\(\bar a\)</span></li>
-<li><span class="math inline">\(\tilde a\)</span></li>
-<li><span class="math inline">\(\breve a\)</span></li>
-<li><span class="math inline">\(\hat a\)</span></li>
-<li><span class="math inline">\(a^ \prime\)</span></li>
-<li><span class="math inline">\(a^ \dagger\)</span></li>
-<li><span class="math inline">\(a^ \ast\)</span></li>
-<li><span class="math inline">\(a^ \star\)</span></li>
-<li><span class="math inline">\(\mathcal A\)</span></li>
-<li><span class="math inline">\(\mathrm a\)</span></li>
-<li><span class="math inline">\(\cdots\)</span></li>
-<li><span class="math inline">\(\vdots\)</span></li>
-<li><span class="math inline">\(\#\)</span></li>
-<li><span class="math inline">\(\$\)</span></li>
-<li><span class="math inline">\(\%\)</span></li>
-<li><span class="math inline">\(\&amp;\)</span></li>
-<li><span class="math inline">\(\{ \}\)</span></li>
-<li><span class="math inline">\(\_\)</span></li>
-</ul>
-<div class="sourceCode" id="cb24"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$\bar a$</span>
+  <ul>
+  <li><span class="math inline">\(\bar a\)</span></li>
+  <li><span class="math inline">\(\tilde a\)</span></li>
+  <li><span class="math inline">\(\breve a\)</span></li>
+  <li><span class="math inline">\(\hat a\)</span></li>
+  <li><span class="math inline">\(a^ \prime\)</span></li>
+  <li><span class="math inline">\(a^ \dagger\)</span></li>
+  <li><span class="math inline">\(a^ \ast\)</span></li>
+  <li><span class="math inline">\(a^ \star\)</span></li>
+  <li><span class="math inline">\(\mathcal A\)</span></li>
+  <li><span class="math inline">\(\mathrm a\)</span></li>
+  <li><span class="math inline">\(\cdots\)</span></li>
+  <li><span class="math inline">\(\vdots\)</span></li>
+  <li><span class="math inline">\(\#\)</span></li>
+  <li><span class="math inline">\(\$\)</span></li>
+  <li><span class="math inline">\(\%\)</span></li>
+  <li><span class="math inline">\(\&amp;\)</span></li>
+  <li><span class="math inline">\(\{ \}\)</span></li>
+  <li><span class="math inline">\(\_\)</span></li>
+  </ul>
+  <div class="sourceCode" id="cb24"><pre
+  class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$\bar a$</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$\tilde a$</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$\breve a$</span>
 <span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$\hat a$</span>
@@ -396,265 +509,278 @@ class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb24-1">
 <span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$<span class="sc">\&amp;</span>$</span>
 <span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$<span class="sc">\{</span> <span class="sc">\}</span>$</span>
 <span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$<span class="sc">\_</span>$</span></code></pre></div>
-<h2 id="space">Space</h2>
-<ul>
-<li>Horizontal space: <code>\quad</code></li>
-<li>Large horizontal space: <code>\qquad</code></li>
-<li>Small space: <code>\,</code></li>
-<li>Medium space: <code>\:</code></li>
-<li>Large space: <code>\;</code></li>
-<li>Negative space: <code>\!</code></li>
-</ul>
-<h2 id="greek-alphabets">Greek alphabets</h2>
-<div style="margin-bottom: 1rem; overflow-x: auto;">
-<table>
-<colgroup>
-<col style="width: 30%" />
-<col style="width: 29%" />
-<col style="width: 39%" />
-</colgroup>
-<thead>
-<tr>
-<th>Small Letter</th>
-<th>Capital Letter</th>
-<th>Alternative</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><span class="math inline">\(\alpha\)</span> <code>\alpha</code></td>
-<td><span class="math inline">\(A\)</span> <code>A</code></td>
-<td></td>
-</tr>
-<tr>
-<td><span class="math inline">\(\beta\)</span> <code>\beta</code></td>
-<td><span class="math inline">\(B\)</span> <code>B</code></td>
-<td></td>
-</tr>
-<tr>
-<td><span class="math inline">\(\gamma\)</span> <code>\gamma</code></td>
-<td><span class="math inline">\(\Gamma\)</span> <code>\Gamma</code></td>
-<td></td>
-</tr>
-<tr>
-<td><span class="math inline">\(\delta\)</span> <code>\delta</code></td>
-<td><span class="math inline">\(\Delta\)</span> <code>\Delta</code></td>
-<td></td>
-</tr>
-<tr>
-<td><span class="math inline">\(\epsilon\)</span>
-<code>\epsilon</code></td>
-<td><span class="math inline">\(E\)</span> <code>E</code></td>
-<td><span class="math inline">\(\varepsilon\)</span>
-<code>\varepsilon</code></td>
-</tr>
-<tr>
-<td><span class="math inline">\(\zeta\)</span> <code>\zeta</code></td>
-<td><span class="math inline">\(Z\)</span> <code>Z</code></td>
-<td></td>
-</tr>
-<tr>
-<td><span class="math inline">\(\eta\)</span> <code>\eta</code></td>
-<td><span class="math inline">\(H\)</span> <code>H</code></td>
-<td></td>
-</tr>
-<tr>
-<td><span class="math inline">\(\theta\)</span> <code>\theta</code></td>
-<td><span class="math inline">\(\Theta\)</span> <code>\Theta</code></td>
-<td><span class="math inline">\(\vartheta\)</span>
-<code>\vartheta</code></td>
-</tr>
-<tr>
-<td><span class="math inline">\(\iota\)</span> <code>\zeta</code></td>
-<td><span class="math inline">\(I\)</span> <code>I</code></td>
-<td></td>
-</tr>
-<tr>
-<td><span class="math inline">\(\kappa\)</span> <code>\kappa</code></td>
-<td><span class="math inline">\(K\)</span> <code>K</code></td>
-<td><span class="math inline">\(\varkappa\)</span>
-<code>\varkappa</code></td>
-</tr>
-<tr>
-<td><span class="math inline">\(\lambda\)</span>
-<code>\lambda</code></td>
-<td><span class="math inline">\(\Lambda\)</span>
-<code>\Lambda</code></td>
-<td></td>
-</tr>
-<tr>
-<td><span class="math inline">\(\mu\)</span> <code>\mu</code></td>
-<td><span class="math inline">\(M\)</span> <code>M</code></td>
-<td></td>
-</tr>
-<tr>
-<td><span class="math inline">\(\nu\)</span> <code>\nu</code></td>
-<td><span class="math inline">\(N\)</span> <code>N</code></td>
-<td></td>
-</tr>
-<tr>
-<td><span class="math inline">\(\xi\)</span> <code>\xi</code></td>
-<td><span class="math inline">\(\Xi\)</span> <code>\Xi</code></td>
-<td></td>
-</tr>
-<tr>
-<td><span class="math inline">\(\omicron\)</span>
-<code>\omicron</code></td>
-<td><span class="math inline">\(O\)</span> <code>O</code></td>
-<td></td>
-</tr>
-<tr>
-<td><span class="math inline">\(\pi\)</span> <code>\pi</code></td>
-<td><span class="math inline">\(\Pi\)</span> <code>\Pi</code></td>
-<td><span class="math inline">\(\varpi\)</span> <code>\varpi</code></td>
-</tr>
-<tr>
-<td><span class="math inline">\(\rho\)</span> <code>\rho</code></td>
-<td><span class="math inline">\(P\)</span> <code>P</code></td>
-<td><span class="math inline">\(\varrho\)</span>
-<code>\varrho</code></td>
-</tr>
-<tr>
-<td><span class="math inline">\(\sigma\)</span> <code>\sigma</code></td>
-<td><span class="math inline">\(\Sigma\)</span> <code>\Sigma</code></td>
-<td><span class="math inline">\(\varsigma\)</span>
-<code>\varsigma</code></td>
-</tr>
-<tr>
-<td><span class="math inline">\(\tau\)</span> <code>\tau</code></td>
-<td><span class="math inline">\(T\)</span> <code>T</code></td>
-<td></td>
-</tr>
-<tr>
-<td><span class="math inline">\(\upsilon\)</span>
-<code>\upsilon</code></td>
-<td><span class="math inline">\(\Upsilon\)</span>
-<code>\Upsilon</code></td>
-<td></td>
-</tr>
-<tr>
-<td><span class="math inline">\(\phi\)</span> <code>\phi</code></td>
-<td><span class="math inline">\(\Phi\)</span> <code>\Phi</code></td>
-<td><span class="math inline">\(\varphi\)</span>
-<code>\varphi</code></td>
-</tr>
-<tr>
-<td><span class="math inline">\(\chi\)</span> <code>\chi</code></td>
-<td><span class="math inline">\(X\)</span> <code>X</code></td>
-<td></td>
-</tr>
-<tr>
-<td><span class="math inline">\(\psi\)</span> <code>\psi</code></td>
-<td><span class="math inline">\(\Psi\)</span> <code>\Psi</code></td>
-<td></td>
-</tr>
-<tr>
-<td><span class="math inline">\(\omega\)</span> <code>\omega</code></td>
-<td><span class="math inline">\(\Omega\)</span> <code>\Omega</code></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</div>
-<h2 id="equations">Equations</h2>
-<p><span class="math display">\[\mathbb{N} = \{ a \in \mathbb{Z} : a
-&gt; 0 \}\]</span></p>
-<div class="sourceCode" id="cb25"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>$$\mathbb{N} = <span class="sc">\{</span> a \in \mathbb{Z} : a &gt; 0 <span class="sc">\}</span>$$</span></code></pre></div>
-<p><span class="math display">\[\forall \; x \in X \quad \exists \; y
-\leq \epsilon\]</span></p>
-<div class="sourceCode" id="cb26"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>$$\forall \; x \in X \quad \exists \; y \leq \epsilon$$</span></code></pre></div>
-<p><span class="math display">\[\color{blue}{X \sim Normal \;
-(\mu,\sigma^2)}\]</span></p>
-<div class="sourceCode" id="cb27"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>$$\color{blue}{X \sim Normal \; (\mu,\sigma^2)}$$</span></code></pre></div>
-<p><span class="math display">\[P \left( A=2 \, \middle| \,
-\dfrac{A^2}{B}&gt;4 \right)\]</span></p>
-<div class="sourceCode" id="cb28"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>$$P \left( A=2 \, \middle| \, \dfrac{A^2}{B}&gt;4 \right)$$</span></code></pre></div>
-<p><span class="math display">\[f(x) = x^2 -
-x^\frac{1}{\pi}\]</span></p>
-<div class="sourceCode" id="cb29"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>$$f(x) = x^2 - x^\frac{1}{\pi}$$</span></code></pre></div>
-<p><span class="math display">\[f(X,n) = X_n + X_{n-1}\]</span></p>
-<div class="sourceCode" id="cb30"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>$$f(X,n) = X_n + X_{n-1}$$</span></code></pre></div>
-<p><span class="math display">\[f(x) = \sqrt[3]{2x} +
-\sqrt{x-2}\]</span></p>
-<div class="sourceCode" id="cb31"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>$$f(x) = \sqrt<span class="co">[</span><span class="ot">3</span><span class="co">]</span>{2x} + \sqrt{x-2}$$</span></code></pre></div>
-<p><span class="math display">\[\mathrm{e} = \sum_{n=0}^{\infty}
-\dfrac{1}{n!}\]</span></p>
-<div class="sourceCode" id="cb32"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>$$\mathrm{e} = \sum_{n=0}^{\infty} \dfrac{1}{n!}$$</span></code></pre></div>
-<p><span class="math display">\[\prod_{i=1}^{n} x_i - 1\]</span></p>
-<div class="sourceCode" id="cb33"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>$$\prod_{i=1}^{n} x_i - 1$$</span></code></pre></div>
-<p><span class="math display">\[\lim_{x \to 0^+} \dfrac{1}{x} =
-\infty\]</span></p>
-<div class="sourceCode" id="cb34"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>$$\lim_{x \to 0^+} \dfrac{1}{x} = \infty$$</span></code></pre></div>
-<p><span class="math display">\[\int_a^b y \: \mathrm{d}x\]</span></p>
-<div class="sourceCode" id="cb35"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>$$\int_a^b y \: \mathrm{d}x$$</span></code></pre></div>
-<p><span class="math display">\[\log_a b = 1\]</span></p>
-<div class="sourceCode" id="cb36"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>$$\log_a b = 1$$</span></code></pre></div>
-<p><span class="math display">\[\min(P) = \max_{i:S_i \in S}
-S_i\]</span></p>
-<div class="sourceCode" id="cb37"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>$$\max(S) = \max_{i:S_i \in S} S_i$$</span></code></pre></div>
-<p><span class="math display">\[\dfrac{n!}{k!(n-k)!} =
-\binom{n}{k}\]</span></p>
-<div class="sourceCode" id="cb38"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>$$\dfrac{n!}{k!(n-k)!} = \binom{n}{k}$$</span></code></pre></div>
-<p><span class="math display">\[\small \text{$\dfrac{b}{a+b}=3, \:$
-therefore we can set $\: a=6$}\]</span></p>
-<div class="sourceCode" id="cb39"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>$$\text{$\dfrac{b}{a+b}=3, \:$ therefore we can set $\: a=6$}$$</span></code></pre></div>
-<h2 id="functions">Functions</h2>
-<p><span class="math display">\[
-f(x)=
-\begin{cases}
-1/d_{ij} &amp; \quad \text{when $d_{ij} \leq 160$}\\
-0 &amp; \quad \text{otherwise}
-\end{cases}
-\]</span></p>
-<div class="sourceCode" id="cb40"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>$$</span>
+  <h2 id="space">Space</h2>
+  <ul>
+  <li>Horizontal space: <code>\quad</code></li>
+  <li>Large horizontal space: <code>\qquad</code></li>
+  <li>Small space: <code>\,</code></li>
+  <li>Medium space: <code>\:</code></li>
+  <li>Large space: <code>\;</code></li>
+  <li>Negative space: <code>\!</code></li>
+  </ul>
+  <h2 id="greek-alphabets">Greek alphabets</h2>
+  <div style="margin-bottom: 1rem; overflow-x: auto;">
+  <table>
+  <colgroup>
+  <col style="width: 30%" />
+  <col style="width: 29%" />
+  <col style="width: 39%" />
+  </colgroup>
+  <thead>
+  <tr>
+  <th>Small Letter</th>
+  <th>Capital Letter</th>
+  <th>Alternative</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td><span class="math inline">\(\alpha\)</span>
+  <code>\alpha</code></td>
+  <td><span class="math inline">\(A\)</span> <code>A</code></td>
+  <td></td>
+  </tr>
+  <tr>
+  <td><span class="math inline">\(\beta\)</span> <code>\beta</code></td>
+  <td><span class="math inline">\(B\)</span> <code>B</code></td>
+  <td></td>
+  </tr>
+  <tr>
+  <td><span class="math inline">\(\gamma\)</span>
+  <code>\gamma</code></td>
+  <td><span class="math inline">\(\Gamma\)</span>
+  <code>\Gamma</code></td>
+  <td></td>
+  </tr>
+  <tr>
+  <td><span class="math inline">\(\delta\)</span>
+  <code>\delta</code></td>
+  <td><span class="math inline">\(\Delta\)</span>
+  <code>\Delta</code></td>
+  <td></td>
+  </tr>
+  <tr>
+  <td><span class="math inline">\(\epsilon\)</span>
+  <code>\epsilon</code></td>
+  <td><span class="math inline">\(E\)</span> <code>E</code></td>
+  <td><span class="math inline">\(\varepsilon\)</span>
+  <code>\varepsilon</code></td>
+  </tr>
+  <tr>
+  <td><span class="math inline">\(\zeta\)</span> <code>\zeta</code></td>
+  <td><span class="math inline">\(Z\)</span> <code>Z</code></td>
+  <td></td>
+  </tr>
+  <tr>
+  <td><span class="math inline">\(\eta\)</span> <code>\eta</code></td>
+  <td><span class="math inline">\(H\)</span> <code>H</code></td>
+  <td></td>
+  </tr>
+  <tr>
+  <td><span class="math inline">\(\theta\)</span>
+  <code>\theta</code></td>
+  <td><span class="math inline">\(\Theta\)</span>
+  <code>\Theta</code></td>
+  <td><span class="math inline">\(\vartheta\)</span>
+  <code>\vartheta</code></td>
+  </tr>
+  <tr>
+  <td><span class="math inline">\(\iota\)</span> <code>\zeta</code></td>
+  <td><span class="math inline">\(I\)</span> <code>I</code></td>
+  <td></td>
+  </tr>
+  <tr>
+  <td><span class="math inline">\(\kappa\)</span>
+  <code>\kappa</code></td>
+  <td><span class="math inline">\(K\)</span> <code>K</code></td>
+  <td><span class="math inline">\(\varkappa\)</span>
+  <code>\varkappa</code></td>
+  </tr>
+  <tr>
+  <td><span class="math inline">\(\lambda\)</span>
+  <code>\lambda</code></td>
+  <td><span class="math inline">\(\Lambda\)</span>
+  <code>\Lambda</code></td>
+  <td></td>
+  </tr>
+  <tr>
+  <td><span class="math inline">\(\mu\)</span> <code>\mu</code></td>
+  <td><span class="math inline">\(M\)</span> <code>M</code></td>
+  <td></td>
+  </tr>
+  <tr>
+  <td><span class="math inline">\(\nu\)</span> <code>\nu</code></td>
+  <td><span class="math inline">\(N\)</span> <code>N</code></td>
+  <td></td>
+  </tr>
+  <tr>
+  <td><span class="math inline">\(\xi\)</span> <code>\xi</code></td>
+  <td><span class="math inline">\(\Xi\)</span> <code>\Xi</code></td>
+  <td></td>
+  </tr>
+  <tr>
+  <td><span class="math inline">\(\omicron\)</span>
+  <code>\omicron</code></td>
+  <td><span class="math inline">\(O\)</span> <code>O</code></td>
+  <td></td>
+  </tr>
+  <tr>
+  <td><span class="math inline">\(\pi\)</span> <code>\pi</code></td>
+  <td><span class="math inline">\(\Pi\)</span> <code>\Pi</code></td>
+  <td><span class="math inline">\(\varpi\)</span>
+  <code>\varpi</code></td>
+  </tr>
+  <tr>
+  <td><span class="math inline">\(\rho\)</span> <code>\rho</code></td>
+  <td><span class="math inline">\(P\)</span> <code>P</code></td>
+  <td><span class="math inline">\(\varrho\)</span>
+  <code>\varrho</code></td>
+  </tr>
+  <tr>
+  <td><span class="math inline">\(\sigma\)</span>
+  <code>\sigma</code></td>
+  <td><span class="math inline">\(\Sigma\)</span>
+  <code>\Sigma</code></td>
+  <td><span class="math inline">\(\varsigma\)</span>
+  <code>\varsigma</code></td>
+  </tr>
+  <tr>
+  <td><span class="math inline">\(\tau\)</span> <code>\tau</code></td>
+  <td><span class="math inline">\(T\)</span> <code>T</code></td>
+  <td></td>
+  </tr>
+  <tr>
+  <td><span class="math inline">\(\upsilon\)</span>
+  <code>\upsilon</code></td>
+  <td><span class="math inline">\(\Upsilon\)</span>
+  <code>\Upsilon</code></td>
+  <td></td>
+  </tr>
+  <tr>
+  <td><span class="math inline">\(\phi\)</span> <code>\phi</code></td>
+  <td><span class="math inline">\(\Phi\)</span> <code>\Phi</code></td>
+  <td><span class="math inline">\(\varphi\)</span>
+  <code>\varphi</code></td>
+  </tr>
+  <tr>
+  <td><span class="math inline">\(\chi\)</span> <code>\chi</code></td>
+  <td><span class="math inline">\(X\)</span> <code>X</code></td>
+  <td></td>
+  </tr>
+  <tr>
+  <td><span class="math inline">\(\psi\)</span> <code>\psi</code></td>
+  <td><span class="math inline">\(\Psi\)</span> <code>\Psi</code></td>
+  <td></td>
+  </tr>
+  <tr>
+  <td><span class="math inline">\(\omega\)</span>
+  <code>\omega</code></td>
+  <td><span class="math inline">\(\Omega\)</span>
+  <code>\Omega</code></td>
+  <td></td>
+  </tr>
+  </tbody>
+  </table>
+  </div>
+  <h2 id="equations">Equations</h2>
+  <p><span class="math display">\[\mathbb{N} = \{ a \in \mathbb{Z} : a
+  &gt; 0 \}\]</span></p>
+  <div class="sourceCode" id="cb25"><pre
+  class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>$$\mathbb{N} = <span class="sc">\{</span> a \in \mathbb{Z} : a &gt; 0 <span class="sc">\}</span>$$</span></code></pre></div>
+  <p><span class="math display">\[\forall \; x \in X \quad \exists \; y
+  \leq \epsilon\]</span></p>
+  <div class="sourceCode" id="cb26"><pre
+  class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>$$\forall \; x \in X \quad \exists \; y \leq \epsilon$$</span></code></pre></div>
+  <p><span class="math display">\[\color{blue}{X \sim Normal \;
+  (\mu,\sigma^2)}\]</span></p>
+  <div class="sourceCode" id="cb27"><pre
+  class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>$$\color{blue}{X \sim Normal \; (\mu,\sigma^2)}$$</span></code></pre></div>
+  <p><span class="math display">\[P \left( A=2 \, \middle| \,
+  \dfrac{A^2}{B}&gt;4 \right)\]</span></p>
+  <div class="sourceCode" id="cb28"><pre
+  class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>$$P \left( A=2 \, \middle| \, \dfrac{A^2}{B}&gt;4 \right)$$</span></code></pre></div>
+  <p><span class="math display">\[f(x) = x^2 -
+  x^\frac{1}{\pi}\]</span></p>
+  <div class="sourceCode" id="cb29"><pre
+  class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>$$f(x) = x^2 - x^\frac{1}{\pi}$$</span></code></pre></div>
+  <p><span class="math display">\[f(X,n) = X_n + X_{n-1}\]</span></p>
+  <div class="sourceCode" id="cb30"><pre
+  class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>$$f(X,n) = X_n + X_{n-1}$$</span></code></pre></div>
+  <p><span class="math display">\[f(x) = \sqrt[3]{2x} +
+  \sqrt{x-2}\]</span></p>
+  <div class="sourceCode" id="cb31"><pre
+  class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>$$f(x) = \sqrt<span class="co">[</span><span class="ot">3</span><span class="co">]</span>{2x} + \sqrt{x-2}$$</span></code></pre></div>
+  <p><span class="math display">\[\mathrm{e} = \sum_{n=0}^{\infty}
+  \dfrac{1}{n!}\]</span></p>
+  <div class="sourceCode" id="cb32"><pre
+  class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>$$\mathrm{e} = \sum_{n=0}^{\infty} \dfrac{1}{n!}$$</span></code></pre></div>
+  <p><span class="math display">\[\prod_{i=1}^{n} x_i - 1\]</span></p>
+  <div class="sourceCode" id="cb33"><pre
+  class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>$$\prod_{i=1}^{n} x_i - 1$$</span></code></pre></div>
+  <p><span class="math display">\[\lim_{x \to 0^+} \dfrac{1}{x} =
+  \infty\]</span></p>
+  <div class="sourceCode" id="cb34"><pre
+  class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>$$\lim_{x \to 0^+} \dfrac{1}{x} = \infty$$</span></code></pre></div>
+  <p><span class="math display">\[\int_a^b y \: \mathrm{d}x\]</span></p>
+  <div class="sourceCode" id="cb35"><pre
+  class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>$$\int_a^b y \: \mathrm{d}x$$</span></code></pre></div>
+  <p><span class="math display">\[\log_a b = 1\]</span></p>
+  <div class="sourceCode" id="cb36"><pre
+  class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>$$\log_a b = 1$$</span></code></pre></div>
+  <p><span class="math display">\[\min(P) = \max_{i:S_i \in S}
+  S_i\]</span></p>
+  <div class="sourceCode" id="cb37"><pre
+  class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>$$\max(S) = \max_{i:S_i \in S} S_i$$</span></code></pre></div>
+  <p><span class="math display">\[\dfrac{n!}{k!(n-k)!} =
+  \binom{n}{k}\]</span></p>
+  <div class="sourceCode" id="cb38"><pre
+  class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>$$\dfrac{n!}{k!(n-k)!} = \binom{n}{k}$$</span></code></pre></div>
+  <p><span class="math display">\[\small \text{$\dfrac{b}{a+b}=3, \:$
+  therefore we can set $\: a=6$}\]</span></p>
+  <div class="sourceCode" id="cb39"><pre
+  class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>$$\text{$\dfrac{b}{a+b}=3, \:$ therefore we can set $\: a=6$}$$</span></code></pre></div>
+  <h2 id="functions">Functions</h2>
+  <p><span class="math display">\[
+  f(x)=
+  \begin{cases}
+  1/d_{ij} &amp; \quad \text{when $d_{ij} \leq 160$}\\
+  0 &amp; \quad \text{otherwise}
+  \end{cases}
+  \]</span></p>
+  <div class="sourceCode" id="cb40"><pre
+  class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>f(x)=</span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>\begin{cases}</span>
 <span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>1/d_{ij} &amp; \quad \text{when $d_{ij} \leq 160$}<span class="sc">\\</span> </span>
 <span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>0 &amp; \quad \text{otherwise}</span>
 <span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>\end{cases}</span>
 <span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>$$</span></code></pre></div>
-<h2 id="matrices">Matrices</h2>
-<p><span class="math display">\[
-\begin{matrix}
-1 &amp; 2 &amp; 3 \\
-4 &amp; 5 &amp; 6 \\
-7 &amp; 8 &amp; 9
-\end{matrix}
-\]</span></p>
-<div class="sourceCode" id="cb41"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>$$</span>
+  <h2 id="matrices">Matrices</h2>
+  <p><span class="math display">\[
+  \begin{matrix}
+  1 &amp; 2 &amp; 3 \\
+  4 &amp; 5 &amp; 6 \\
+  7 &amp; 8 &amp; 9
+  \end{matrix}
+  \]</span></p>
+  <div class="sourceCode" id="cb41"><pre
+  class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>\begin{matrix}</span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>1 &amp; 2 &amp; 3 <span class="sc">\\</span></span>
 <span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>4 &amp; 5 &amp; 6 <span class="sc">\\</span></span>
 <span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>7 &amp; 8 &amp; 9</span>
 <span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>\end{matrix}</span>
 <span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>$$</span></code></pre></div>
-<p><span class="math display">\[
-M =
-\begin{bmatrix}
-\frac{5}{6} &amp; \frac{1}{6} &amp; 0 \\[0.3em]
-\frac{5}{6} &amp; 0 &amp; \frac{1}{6} \\[0.3em]
-0 &amp; \frac{5}{6} &amp; \frac{1}{6}
-\end{bmatrix}
-\]</span></p>
-<div class="sourceCode" id="cb42"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>$$</span>
+  <p><span class="math display">\[
+  M =
+  \begin{bmatrix}
+  \frac{5}{6} &amp; \frac{1}{6} &amp; 0 \\[0.3em]
+  \frac{5}{6} &amp; 0 &amp; \frac{1}{6} \\[0.3em]
+  0 &amp; \frac{5}{6} &amp; \frac{1}{6}
+  \end{bmatrix}
+  \]</span></p>
+  <div class="sourceCode" id="cb42"><pre
+  class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>M = </span>
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>\begin{bmatrix}</span>
 <span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>\frac{5}{6} &amp; \frac{1}{6} &amp; 0 <span class="sc">\\</span><span class="co">[</span><span class="ot">0.3em</span><span class="co">]</span></span>
@@ -662,19 +788,19 @@ class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb42-1">
 <span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>0 &amp; \frac{5}{6} &amp; \frac{1}{6}</span>
 <span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>\end{bmatrix}</span>
 <span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>$$</span></code></pre></div>
-<p><span class="math display">\[
-M =
-\begin{bmatrix}
-1 &amp; 0 \\
-0 &amp; 1
-\end{bmatrix}
-\begin{bmatrix}
-1 &amp; 0 \\
-0 &amp; 1
-\end{bmatrix}
-\]</span></p>
-<div class="sourceCode" id="cb43"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>$$ </span>
+  <p><span class="math display">\[
+  M =
+  \begin{bmatrix}
+  1 &amp; 0 \\
+  0 &amp; 1
+  \end{bmatrix}
+  \begin{bmatrix}
+  1 &amp; 0 \\
+  0 &amp; 1
+  \end{bmatrix}
+  \]</span></p>
+  <div class="sourceCode" id="cb43"><pre
+  class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>$$ </span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>M =</span>
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>\begin{bmatrix}</span>
 <span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>1 &amp; 0 <span class="sc">\\</span></span>
@@ -685,19 +811,19 @@ class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb43-1">
 <span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a>0 &amp; 1</span>
 <span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a>\end{bmatrix}</span>
 <span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a>$$</span></code></pre></div>
-<p><span class="math display">\[
-M =
-\begin{pmatrix}
-1 &amp; 0 \\
-0 &amp; 1
-\end{pmatrix}
-\begin{pmatrix}
-1 &amp; 0 \\
-0 &amp; 1
-\end{pmatrix}
-\]</span></p>
-<div class="sourceCode" id="cb44"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>$$ </span>
+  <p><span class="math display">\[
+  M =
+  \begin{pmatrix}
+  1 &amp; 0 \\
+  0 &amp; 1
+  \end{pmatrix}
+  \begin{pmatrix}
+  1 &amp; 0 \\
+  0 &amp; 1
+  \end{pmatrix}
+  \]</span></p>
+  <div class="sourceCode" id="cb44"><pre
+  class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>$$ </span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>M =</span>
 <span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>\begin{pmatrix}</span>
 <span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>1 &amp; 0 <span class="sc">\\</span></span>
@@ -708,17 +834,17 @@ class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb44-1">
 <span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a>0 &amp; 1</span>
 <span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a>\end{pmatrix}</span>
 <span id="cb44-11"><a href="#cb44-11" aria-hidden="true" tabindex="-1"></a>$$</span></code></pre></div>
-<p><span class="math display">\[
-A_{m,n} =
-\begin{pmatrix}
-a_{1,1} &amp; a_{1,2} &amp; \cdots &amp; a_{1,n} \\
-a_{2,1} &amp; a_{2,2} &amp; \cdots &amp; a_{2,n} \\
-\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
-a_{m,1} &amp; a_{m,2} &amp; \cdots &amp; a_{m,n}
-\end{pmatrix}
-\]</span></p>
-<div class="sourceCode" id="cb45"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>$$</span>
+  <p><span class="math display">\[
+  A_{m,n} =
+  \begin{pmatrix}
+  a_{1,1} &amp; a_{1,2} &amp; \cdots &amp; a_{1,n} \\
+  a_{2,1} &amp; a_{2,2} &amp; \cdots &amp; a_{2,n} \\
+  \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+  a_{m,1} &amp; a_{m,2} &amp; \cdots &amp; a_{m,n}
+  \end{pmatrix}
+  \]</span></p>
+  <div class="sourceCode" id="cb45"><pre
+  class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>A_{m,n} = </span>
 <span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>\begin{pmatrix}</span>
 <span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>a_{1,1} &amp; a_{1,2} &amp; \cdots &amp; a_{1,n} <span class="sc">\\</span></span>
@@ -727,18 +853,18 @@ class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb45-1">
 <span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>a_{m,1} &amp; a_{m,2} &amp; \cdots &amp; a_{m,n} </span>
 <span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a>\end{pmatrix}</span>
 <span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a>$$</span></code></pre></div>
-<h2 id="font-sizes">Font sizes</h2>
-<p><span class="math inline">\(\Huge Hello!\)</span> <br> <span
-class="math inline">\(\huge Hello!\)</span> <br> <span
-class="math inline">\(\LARGE Hello!\)</span> <br> <span
-class="math inline">\(\Large Hello!\)</span> <br> <span
-class="math inline">\(\large Hello!\)</span> <br> <span
-class="math inline">\(\normalsize Hello!\)</span> <br> <span
-class="math inline">\(\small Hello!\)</span> <br> <span
-class="math inline">\(\scriptsize Hello!\)</span> <br> <span
-class="math inline">\(\tiny Hello!\)</span> <br></p>
-<div class="sourceCode" id="cb46"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>$\Huge Hello!$</span>
+  <h2 id="font-sizes">Font sizes</h2>
+  <p><span class="math inline">\(\Huge Hello!\)</span> <br> <span
+  class="math inline">\(\huge Hello!\)</span> <br> <span
+  class="math inline">\(\LARGE Hello!\)</span> <br> <span
+  class="math inline">\(\Large Hello!\)</span> <br> <span
+  class="math inline">\(\large Hello!\)</span> <br> <span
+  class="math inline">\(\normalsize Hello!\)</span> <br> <span
+  class="math inline">\(\small Hello!\)</span> <br> <span
+  class="math inline">\(\scriptsize Hello!\)</span> <br> <span
+  class="math inline">\(\tiny Hello!\)</span> <br></p>
+  <div class="sourceCode" id="cb46"><pre
+  class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>$\Huge Hello!$</span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>$\huge Hello!$</span>
 <span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>$\LARGE Hello!$</span>
 <span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>$\Large Hello!$</span>
@@ -747,82 +873,82 @@ class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb46-1">
 <span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>$\small Hello!$</span>
 <span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a>$\scriptsize Hello!$</span>
 <span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a>$\tiny Hello!$</span></code></pre></div>
-<p>Example: <span class="math display">\[\small \text{Font size is
-small, eg. $\sum{x_i = 10}$}\]</span></p>
-<div class="sourceCode" id="cb47"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>$$\small \text{Font size is small, eg. $\sum{x_i = 10}$}$$</span></code></pre></div></div>
-            <div class="d-none d-xl-block col-xl-2 bd-toc">
-               <ul class="section-nav">
-                  <li class="toc-entry"><ul>
-<li><a href="#markdown" id="toc-markdown">Markdown</a>
-<ul>
-<li><a href="#headers" id="toc-headers">Headers</a></li>
-<li><a href="#emphasis" id="toc-emphasis">Emphasis</a></li>
-<li><a href="#lists" id="toc-lists">Lists</a></li>
-<li><a href="#links" id="toc-links">Links</a></li>
-<li><a href="#images" id="toc-images">Images</a></li>
-<li><a href="#quotes" id="toc-quotes">Quotes</a></li>
-<li><a href="#hlines" id="toc-hlines">Hlines</a></li>
-<li><a href="#tables" id="toc-tables">Tables</a></li>
-<li><a href="#code-blocks" id="toc-code-blocks">Code blocks</a></li>
-<li><a href="#yaml-header" id="toc-yaml-header">YAML header</a></li>
-<li><a href="#mathematical-formula"
-id="toc-mathematical-formula">Mathematical formula</a></li>
-</ul></li>
-<li><a href="#latex" id="toc-latex">LaTeX</a>
-<ul>
-<li><a href="#latex-equations" id="toc-latex-equations">LaTeX
-equations</a></li>
-<li><a href="#operators" id="toc-operators">Operators</a></li>
-<li><a href="#symbols" id="toc-symbols">Symbols</a></li>
-<li><a href="#space" id="toc-space">Space</a></li>
-<li><a href="#greek-alphabets" id="toc-greek-alphabets">Greek
-alphabets</a></li>
-<li><a href="#equations" id="toc-equations">Equations</a></li>
-<li><a href="#functions" id="toc-functions">Functions</a></li>
-<li><a href="#matrices" id="toc-matrices">Matrices</a></li>
-<li><a href="#font-sizes" id="toc-font-sizes">Font sizes</a></li>
-</ul></li>
-</ul></li>
-               </ul>
-            </div>
-         </div>
-               </div>
-            <!-- Footer -->
-            <footer class="footer text-muted">
-               <div align="center">
-                  Text is available under <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>
-                  &nbsp;|&nbsp;
-                  Code licensed under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank" rel="noopener">GPL-3.0</a>
-                  &nbsp;|&nbsp;
-                  Built with <a href="https://github.com/ashki23/pandoc-bootstrap" target="_blank" rel="noopener">pandoc-bootstrap</a> theme
-                  <br />
-                  Copyright 2018-2024, Ashkan Mirzaee
-               </div>
-            </footer>
-            <!-- Global site tag (gtag.js) - Google Analytics -->
-            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132464297-1"></script>
-            <script>
-               window.dataLayer = window.dataLayer || [];
-               function gtag(){dataLayer.push(arguments);}
-               gtag('js', new Date());
-               gtag('config', 'UA-132464297-1');
-            </script>
-            <!-- JS, Popper.js, and jQuery -->
-      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-      <!-- Mathjax -->
-      <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-      <script>
-         /* Bootstrap styles to tables */
-         function bootstrapStylePandocTables() {
-         $('tr.header').parent('thead').parent('table').addClass('table table-condensed'); }
-         $(document).ready(function () { bootstrapStylePandocTables(); });
-         /* Adjust the height when click the toc */
-         var shiftWindow = function() { scrollBy(0, -60) };
-         window.addEventListener("hashchange", shiftWindow);
-         function load() { if (window.location.hash) shiftWindow(); }
-      </script>
-   </body>
+  <p>Example: <span class="math display">\[\small \text{Font size is
+  small, eg. $\sum{x_i = 10}$}\]</span></p>
+  <div class="sourceCode" id="cb47"><pre
+  class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>$$\small \text{Font size is small, eg. $\sum{x_i = 10}$}$$</span></code></pre></div>
+	</div>
+      </main>
+    </div>
+    
+    <!-- After body contents -->
+        <!-- Footer -->
+        <footer class="bd-footer mt-auto py-3 py-md-3 bg-body-tertiary">
+          <div class="container py-md-3 px-4 px-md-3 text-body-secondary" align="center" style="font-size: .95rem;">
+            Text is available under <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>
+            &nbsp;|&nbsp;
+            Code licensed under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank" rel="noopener">GPL-3.0</a>
+            &nbsp;|&nbsp;
+            Built with <a href="https://github.com/ashki23/pandoc-bootstrap" target="_blank" rel="noopener">pandoc-bootstrap</a> theme
+            <br />
+            Copyright 2018-2024, Ashkan Mirzaee
+          </div>
+        </footer>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132464297-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'UA-132464297-1');
+        </script>
+        
+    <!-- Bootstrap Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+    <!-- Highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js" integrity="sha512-6yoqbrcLAHDWAdQmiRlHG4+m0g/CT/V9AGyxabG8j7Jk8j3r3K6due7oqpiRMZqcYe9WM2gPcaNNxnl2ux+3tA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+        <!-- Mathjax -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+    <!-- Custom Scripts -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+	  const htmlElement = document.documentElement;
+	  const highlightStyle = document.getElementById("highlight-style");
+	  
+	  // Function to update Highlight.js style based on theme
+	  const updateHighlightStyle = (theme) => {
+              const lightTheme = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/stackoverflow-light.min.css";
+              const darkTheme = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/github-dark.min.css";
+              highlightStyle.href = theme === "dark" ? darkTheme : lightTheme;
+	  };
+	  
+	  // Function to set the theme
+	  const setTheme = (theme) => {
+              htmlElement.setAttribute("data-bs-theme", theme);
+              localStorage.setItem("theme", theme); // Save the theme to localStorage
+              updateHighlightStyle(theme);
+	  };
+	  
+	  // Get saved theme from localStorage or fallback to default ("light")
+	  const savedTheme = localStorage.getItem("theme") || "light";
+	  setTheme(savedTheme);
+	  
+	  // Event listener for theme dropdown
+	  document.querySelectorAll(".dropdown-item").forEach((item) => {
+              item.addEventListener("click", (e) => {
+		  e.preventDefault();
+		  const selectedTheme = item.getAttribute("data-theme");
+		  setTheme(selectedTheme);
+              });
+	  });
+	  
+	  // Initialize Highlight.js
+	  hljs.highlightAll();
+      });
+    </script>
+  </body>
 </html>

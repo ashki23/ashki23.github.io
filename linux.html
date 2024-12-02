@@ -1,587 +1,705 @@
 <!doctype html>
-<html>
-   <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <meta name="generator" content="pandoc">
-      <meta name="author" content="Ashkan Mirzaee">
-      <meta name="description" content="An introduction for using
-Ubuntu">
-      <title>Linux: start from scratch</title>
-      <!-- Bootstrap -->
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-      <!-- Font-awesome -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-      <!-- Styles -->
-      <link rel="stylesheet" href="https://ashki23.github.io/styles.css">
-            <!-- Favicon -->
-            <link rel="icon" href="images/AM.jpg">
-            <!-- Google-site-verification -->
-            <meta name="google-site-verification" content="lD_nifpQ-CA6LaDwxYJbe5bq0oa6Ir0Ax-txvtdP51E">
-            <!-- Bing-site-verification -->
-            <meta name="msvalidate.01" content="89BCD3FF42B6E9FE48E0C8365767D11B">
-         </head>
-   <body>
-            <nav class="navbar fixed-top navbar-expand-lg navbar-dark bd-navbar">
-               <a class="navbar-brand" href="index.html">Ashkan Mirzaee</a>
-               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="border: none; outline: none; padding-right: 0; padding-left: 1rem;">
-               <span class="navbar-toggler-icon"></span>
-               </button>
-               <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav mr-auto">
-                     <li class="nav-item">
-                        <a class="nav-link" href="page1.html">Blog</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="tutorials.html">Tutorials</a>
-                     </li>
-            	 <li class="nav-item">
-                        <a class="nav-link" href="research.html">Research</a>
-                     </li>
-            	 <li class="nav-item">
-                        <a class="nav-link" href="applications.html">Applications</a>
-                     </li>
-            	 <li class="nav-item">
-                        <a class="nav-link" href="blogroll.html">Blogroll</a>
-                     </li>
+<html lang="en" class="h-100" data-bs-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="generator" content="pandoc">
+    <meta name="author" content="Ashkan Mirzaee">
+    <meta name="description" content="An introduction for using Ubuntu">
+    <title>Linux: start from scratch</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!-- Bootstrap Icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous">
+    
+    <!-- Highlight.js Styles -->
+    <link rel="stylesheet" id="highlight-style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/stackoverflow-light.min.css">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="https://getbootstrap.com/docs/5.3/assets/css/docs.css">
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- After header contents -->
+        <!-- Favicon -->
+        <link rel="icon" href="images/AM.jpg">
+        <!-- Google-site-verification -->
+        <meta name="google-site-verification" content="lD_nifpQ-CA6LaDwxYJbe5bq0oa6Ir0Ax-txvtdP51E">
+        <!-- Bing-site-verification -->
+        <meta name="msvalidate.01" content="89BCD3FF42B6E9FE48E0C8365767D11B">
+      </head>
+  <body class="d-flex flex-column h-100" data-bs-spy="scroll" data-bs-target="#TableOfContents">
+    <!-- Before body contents -->
+        <nav class="navbar bd-navbar navbar-expand-lg fixed-top py-2">
+          <div class="container-xxl bd-gutter flex-wrap flex-lg-nowrap">
+            <!-- Brand -->
+            <a class="navbar-brand" href="index.html" style="transform: none;">Ashkan Mirzaee</a>
+
+            <!-- Toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Navbar Content -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <!-- Left Navigation -->
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link" href="page1.html">Blog</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="tutorials.html">Tutorials</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="research.html">Research</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="applications.html">Applications</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="blogroll.html">Blogroll</a>
+                </li>
+              </ul>
+              
+              <!-- Divider for smaller screens -->
+              <hr class="d-lg-none text-white-50">
+              
+              <!-- Social Media Icons -->
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html" aria-label="Contact">
+                    <i class="bi bi-envelope"></i>
+        	    <span class="d-lg-none ms-2">Contact</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://github.com/ashki23" target="_blank" rel="noopener" aria-label="GitHub">
+                    <i class="bi bi-github"></i>
+        	    <span class="d-lg-none ms-2">GitHub</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://gitlab.com/ashki23" target="_blank" rel="noopener" aria-label="GitLab">
+                    <i class="bi bi-gitlab"></i>
+        	    <span class="d-lg-none ms-2">GitLab</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://www.linkedin.com/in/ashkan-mirzaee/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <i class="bi bi-linkedin"></i>
+        	    <span class="d-lg-none ms-2">Linkedin</span>
+                  </a>
+                </li>
+              </ul>
+              
+              <!-- Divider for larger screens -->
+              <div class="vr d-none d-lg-flex mx-2 my-1 text-white"></div>
+              
+              <!-- Divider for smaller screens -->
+              <hr class="d-lg-none text-white-50">
+              
+              <!-- Theme Dropdown -->
+              <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                  <button class="btn btn-link nav-link dropdown-toggle" type="button" id="themeDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-circle-half"></i>
+        	    <span class="d-lg-none ms-2">Toggle theme</span>
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="themeDropdown">
+                    <li>
+                      <a class="dropdown-item align-items-center" data-theme="light">
+                        <i class="bi bi-sun-fill me-2 opacity-50"></i> Light
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item align-items-center" data-theme="dark">
+                        <i class="bi bi-moon-stars-fill me-2 opacity-50"></i> Dark
+                      </a>
+                    </li>
                   </ul>
-                  <ul class="navbar-nav ml-auto">
-            	<li class="nav-item">
-            	  <a class="nav-link" href="contact.html" aria-label="Contact">
-            	    <span class="fa fa-envelope fa-lg"></a>
-            	</li>
-            	<li class="nav-item">
-            	  <a class="nav-link" href="https://github.com/ashki23" target="_blank" rel="noopener" aria-label="GitHub">
-            	    <span class="fa fa-github fa-lg"></span></a>
-            	</li>
-            	<li class="nav-item">
-            	  <a class="nav-link" href="https://gitlab.com/ashki23" target="_blank" rel="noopener" aria-label="GitLab">
-            	    <span class="fa fa-gitlab fa-lg"></span></a>
-            	</li>
-            	<li class="nav-item">
-            	  <a class="nav-link" href="https://www.linkedin.com/in/ashkan-mirzaee/" target="_blank" rel="noopener" aria-label="Linkedin">
-            	    <span class="fa fa-linkedin fa-lg"></span></a>
-            	</li>
-                  </ul>
-               </div>
-            </nav>
-            <div class="container">
-         <h1 class="title">Linux: start from scratch</h1>
-                  <div class="row">
-            <div class="col-xl-10"><p>Linux is a family of open source
-Unix-like operating systems based on the Linux kernel, an operating
-system kernel first released on September 17, 1991 by Linus Torvalds (<a
-href="https://en.wikipedia.org/wiki/Linux">Wikipedia</a>). Linux is
-typically packaged in Linux distributions (see <a
-href="https://en.wikipedia.org/wiki/Linux_distribution">here</a>) which
-include the Linux kernel and supporting system software and libraries.
-Ubuntu is an open source and popular Linux distribution based on Debian.
-This article shows how to install and update Ubuntu distribution and
-provides a quick reference of helpful shortcuts, applications, and tips
-for software installation.</p>
-<hr />
-<h2 id="running-ubuntu">Running Ubuntu</h2>
-<p>The <a href="https://www.ubuntu.com/desktop">Ubuntu desktop</a> is
-easy to use, easy to install and includes everything you need to run
-your organisation, school, home or enterprise. It’s also open source,
-secure and accessible Linux distribution.</p>
-<h3 id="create-a-bootable-usb-stick">Create a bootable USB stick</h3>
-<p>We can test Ubuntu desktop experience without installing it on a PC
-and only by installing Ubuntu on a 4 GB or larger flash drive. To create
-a bootable USB stick from Windows follow the instruction in <a
-href="https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-windows#0">here</a>
-and from Apple macOS follow the steps in <a
-href="https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-macos#0">here</a>.</p>
-<h3 id="install-ubuntu-desktop">Install Ubuntu desktop</h3>
-<p>We can install Ubuntu alongside your operating system or delete your
-existing operating system and replace it with Ubuntu. To install Ubuntu
-desktop follow the instruction <a
-href="https://tutorials.ubuntu.com/tutorial/tutorial-install-ubuntu-desktop#0">here</a>.
-After installation, use Software Updater application to update Ubuntu.
-Note that usually there are two versions of Ubuntu available, first a
-long-term support (LTS) version and second the latest version of the
-Ubuntu operating system. As a regular user it is better to download the
-latest version.</p>
-<h3 id="advanced-packaging-toolkit">Advanced Packaging Toolkit</h3>
-<p>Advanced Packaging Toolkit (APT) is Debian package manager. To update
-packages we can use the following commands at a terminal prompt:</p>
-<div class="sourceCode" id="cb1"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        
+    <div class="container-xxl bd-gutter pb-5 mt-3 my-md-4 bd-layout" style="padding-top:60px;">
+      <main class="bd-main order-1">
+	
+	<!-- Tiltle -->
+	<h1 class="bd-intro pt-2 ps-lg-2" id="title">Linux: start from
+scratch</h1>
+	
+		<!-- Table of Contents -->
+	<div class="bd-toc mt-3 mb-5 my-lg-0 mb-lg-5 px-sm-1 text-body-secondary">
+	  <strong class="d-none d-md-block h6 my-2 ms-3">On this page</strong>
+	  <hr class="d-none d-md-block my-2 ms-3">
+	  <div class="collapse bd-toc-collapse" id="tocContents">
+	    <nav id="TableOfContents">
+	      <ul>
+      <li><a href="#running-ubuntu" id="toc-running-ubuntu">Running
+      Ubuntu</a>
+      <ul>
+      <li><a href="#create-a-bootable-usb-stick"
+      id="toc-create-a-bootable-usb-stick">Create a bootable USB
+      stick</a></li>
+      <li><a href="#install-ubuntu-desktop"
+      id="toc-install-ubuntu-desktop">Install Ubuntu desktop</a></li>
+      <li><a href="#advanced-packaging-toolkit"
+      id="toc-advanced-packaging-toolkit">Advanced Packaging
+      Toolkit</a></li>
+      <li><a href="#useful-keyboard-shortcuts"
+      id="toc-useful-keyboard-shortcuts">Useful keyboard
+      shortcuts</a></li>
+      <li><a href="#ubuntu-software" id="toc-ubuntu-software">Ubuntu
+      Software</a></li>
+      <li><a href="#the-unix-shell" id="toc-the-unix-shell">The Unix
+      Shell</a></li>
+      <li><a href="#remote-connections"
+      id="toc-remote-connections">Remote connections</a></li>
+      <li><a href="#online-accounts" id="toc-online-accounts">Online
+      accounts</a></li>
+      <li><a href="#local-mirror" id="toc-local-mirror">Local
+      mirror</a></li>
+      <li><a href="#disable-screen-rotation"
+      id="toc-disable-screen-rotation">Disable screen rotation</a></li>
+      <li><a href="#hide-icons" id="toc-hide-icons">Hide icons</a></li>
+      <li><a href="#grub-menu" id="toc-grub-menu">GRUB menu</a></li>
+      </ul></li>
+      <li><a href="#software-installation"
+      id="toc-software-installation">Software installation</a>
+      <ul>
+      <li><a href="#chrome" id="toc-chrome">Chrome</a></li>
+      <li><a href="#git" id="toc-git">Git</a></li>
+      <li><a href="#emacs" id="toc-emacs">Emacs</a></li>
+      <li><a href="#python" id="toc-python">Python</a></li>
+      <li><a href="#conda" id="toc-conda">Conda</a></li>
+      <li><a href="#r" id="toc-r">R</a></li>
+      <li><a href="#octave" id="toc-octave">Octave</a></li>
+      <li><a href="#julia" id="toc-julia">Julia</a></li>
+      <li><a href="#ruby" id="toc-ruby">Ruby</a></li>
+      <li><a href="#gurobi" id="toc-gurobi">Gurobi</a></li>
+      </ul></li>
+      </ul>
+	    </nav>
+	  </div>
+	</div>
+		
+	<!-- Main Content -->
+	<div class="bd-content ps-lg-2">
+	  <p>Linux is a family of open source Unix-like operating systems based
+  on the Linux kernel, an operating system kernel first released on
+  September 17, 1991 by Linus Torvalds (<a
+  href="https://en.wikipedia.org/wiki/Linux">Wikipedia</a>). Linux is
+  typically packaged in Linux distributions (see <a
+  href="https://en.wikipedia.org/wiki/Linux_distribution">here</a>)
+  which include the Linux kernel and supporting system software and
+  libraries. Ubuntu is an open source and popular Linux distribution
+  based on Debian. This article shows how to install and update Ubuntu
+  distribution and provides a quick reference of helpful shortcuts,
+  applications, and tips for software installation.</p>
+  <hr />
+  <h2 id="running-ubuntu">Running Ubuntu</h2>
+  <p>The <a href="https://www.ubuntu.com/desktop">Ubuntu desktop</a> is
+  easy to use, easy to install and includes everything you need to run
+  your organisation, school, home or enterprise. It’s also open source,
+  secure and accessible Linux distribution.</p>
+  <h3 id="create-a-bootable-usb-stick">Create a bootable USB stick</h3>
+  <p>We can test Ubuntu desktop experience without installing it on a PC
+  and only by installing Ubuntu on a 4 GB or larger flash drive. To
+  create a bootable USB stick from Windows follow the instruction in <a
+  href="https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-windows#0">here</a>
+  and from Apple macOS follow the steps in <a
+  href="https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-macos#0">here</a>.</p>
+  <h3 id="install-ubuntu-desktop">Install Ubuntu desktop</h3>
+  <p>We can install Ubuntu alongside your operating system or delete
+  your existing operating system and replace it with Ubuntu. To install
+  Ubuntu desktop follow the instruction <a
+  href="https://tutorials.ubuntu.com/tutorial/tutorial-install-ubuntu-desktop#0">here</a>.
+  After installation, use Software Updater application to update Ubuntu.
+  Note that usually there are two versions of Ubuntu available, first a
+  long-term support (LTS) version and second the latest version of the
+  Ubuntu operating system. As a regular user it is better to download
+  the latest version.</p>
+  <h3 id="advanced-packaging-toolkit">Advanced Packaging Toolkit</h3>
+  <p>Advanced Packaging Toolkit (APT) is Debian package manager. To
+  update packages we can use the following commands at a terminal
+  prompt:</p>
+  <div class="sourceCode" id="cb1"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt upgrade</span></code></pre></div>
-<p>To remove cache files:</p>
-<div class="sourceCode" id="cb2"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt autoremove</span>
+  <p>To remove cache files:</p>
+  <div class="sourceCode" id="cb2"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt autoremove</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt autoclean</span></code></pre></div>
-<p>To install and remove a package:</p>
-<div class="sourceCode" id="cb3"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install PackageName</span>
+  <p>To install and remove a package:</p>
+  <div class="sourceCode" id="cb3"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install PackageName</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt remove PackageName</span></code></pre></div>
-<p>If some Ubuntu desktop packages were accidentally removed, you may
-try installing them by:</p>
-<div class="sourceCode" id="cb4"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install ubuntu-desktop</span></code></pre></div>
-<p>The following is the list of options:</p>
-<ul>
-<li><code>-h, --help</code>: show a short help</li>
-<li><code>-v, --version</code>: show the program version</li>
-<li><code>-c, --config-file</code>: configuration file; specify a
-configuration file to use</li>
-<li><code>-o, --option</code>: set a configuration option; this will set
-an arbitrary configuration option</li>
-</ul>
-<p>For more help, use <code>apt -h</code>.</p>
-<h3 id="useful-keyboard-shortcuts">Useful keyboard shortcuts</h3>
-<p>The following keyboard shortcuts can be very helpful to use your
-desktop and applications more efficiently.</p>
-<ul>
-<li>Activities: <code>super</code> (windows/command key)</li>
-<li>Change tabs: <code>super + tab</code></li>
-<li>Change tab’s positions: <code>super + arrow keys</code></li>
-<li>Switch between workspaces: <code>super + pg dn/pg up</code></li>
-<li>Change keyboard language: <code>super + space</code></li>
-<li>Minimize: <code>super + h</code></li>
-<li>Desktop: <code>super + d</code></li>
-<li>Lock screen: <code>super + l</code></li>
-<li>Applications: <code>super + a</code></li>
-<li>Messages: <code>super + m</code></li>
-<li>Favorites app number: <code>super + q</code></li>
-<li>Open the favorite app: <code>super + 1/2/3/...</code></li>
-<li>Close the window: <code>alt + f4</code>
-<!-- - unmaximize the window: `alt + f5` -->
-<!-- - maximize the window: `alt + f10` --></li>
-<li>Terminal prompt: <code>ctrl + alt + t</code></li>
-<li>Top bar: <code>ctrl + alt + tab</code></li>
-<li>Screenshot: <code>prt sc</code></li>
-</ul>
-<h3 id="ubuntu-software">Ubuntu Software</h3>
-<p>Ubuntu Software is an small App Store including many useful software
-and packages. Following are some popular software available in Ubuntu
-Software:</p>
-<ul>
-<li>Slack</li>
-<li>Skype</li>
-<li>Tweaks</li>
-<li>GParted</li>
-<li>GNU Octave</li>
-<li>Sublime Text</li>
-<li>Synaptic Package Manager</li>
-</ul>
-<h3 id="the-unix-shell">The Unix Shell</h3>
-<p>The Shell is a program which uses command-line interface, instead of
-graphical user interfaces (GUI), to run other programs rather than doing
-calculations itself. The most popular Unix Shell is Bash which is
-accessible by <code>ctrl+alt+t</code> keyboard shortcut in Ubuntu. You
-may find more information <a href="shell.html">here</a>.</p>
-<h3 id="remote-connections">Remote connections</h3>
-<p>Remmina is the default remote desktop client in Ubuntu that supports
-Remote Desktop Protocol (RDP) and Virtual Network Computing (VNC) to
-access other Windows and Linux computers with graphical interfaces. <a
-href="https://www.realvnc.com/en/connect/">RealVNC</a> also is a good
-alternative for VNC remote access that you might look.</p>
-<p>For a SSH connection we can easily use this command at a terminal
-prompt (use your own user name and remote host address):</p>
-<div class="sourceCode" id="cb5"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> username@remotehost</span></code></pre></div>
-<p>We can also use an IP address instead of the remote host address in
-the above command. To find the host IP address, use
-<code>ip a | grep inet</code> at a terminal prompt of the host
-computer.</p>
-<p>If you are going to connect to another Linux computer through SSH,
-make sure OpenSSH Server client is installed on the host computer. To
-install the OpenSSH client, use this command at a terminal prompt of the
-host computer:</p>
-<div class="sourceCode" id="cb6"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install openssh-server</span></code></pre></div>
-<p>We can use X server for remotely displaying applications through SSH.
-Use this command at a terminal prompt:</p>
-<div class="sourceCode" id="cb7"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> <span class="at">-X</span> username@remotehost</span></code></pre></div>
-<p>To display the application simply run it at the terminal prompt. For
-example:</p>
-<div class="sourceCode" id="cb8"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">xclock</span> <span class="co"># Display the server clock</span></span>
+  <p>If some Ubuntu desktop packages were accidentally removed, you may
+  try installing them by:</p>
+  <div class="sourceCode" id="cb4"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install ubuntu-desktop</span></code></pre></div>
+  <p>The following is the list of options:</p>
+  <ul>
+  <li><code>-h, --help</code>: show a short help</li>
+  <li><code>-v, --version</code>: show the program version</li>
+  <li><code>-c, --config-file</code>: configuration file; specify a
+  configuration file to use</li>
+  <li><code>-o, --option</code>: set a configuration option; this will
+  set an arbitrary configuration option</li>
+  </ul>
+  <p>For more help, use <code>apt -h</code>.</p>
+  <h3 id="useful-keyboard-shortcuts">Useful keyboard shortcuts</h3>
+  <p>The following keyboard shortcuts can be very helpful to use your
+  desktop and applications more efficiently.</p>
+  <ul>
+  <li>Activities: <code>super</code> (windows/command key)</li>
+  <li>Change tabs: <code>super + tab</code></li>
+  <li>Change tab’s positions: <code>super + arrow keys</code></li>
+  <li>Switch between workspaces: <code>super + pg dn/pg up</code></li>
+  <li>Change keyboard language: <code>super + space</code></li>
+  <li>Minimize: <code>super + h</code></li>
+  <li>Desktop: <code>super + d</code></li>
+  <li>Lock screen: <code>super + l</code></li>
+  <li>Applications: <code>super + a</code></li>
+  <li>Messages: <code>super + m</code></li>
+  <li>Favorites app number: <code>super + q</code></li>
+  <li>Open the favorite app: <code>super + 1/2/3/...</code></li>
+  <li>Close the window: <code>alt + f4</code>
+  <!-- - unmaximize the window: `alt + f5` -->
+  <!-- - maximize the window: `alt + f10` --></li>
+  <li>Terminal prompt: <code>ctrl + alt + t</code></li>
+  <li>Top bar: <code>ctrl + alt + tab</code></li>
+  <li>Screenshot: <code>prt sc</code></li>
+  </ul>
+  <h3 id="ubuntu-software">Ubuntu Software</h3>
+  <p>Ubuntu Software is an small App Store including many useful
+  software and packages. Following are some popular software available
+  in Ubuntu Software:</p>
+  <ul>
+  <li>Slack</li>
+  <li>Skype</li>
+  <li>Tweaks</li>
+  <li>GParted</li>
+  <li>GNU Octave</li>
+  <li>Sublime Text</li>
+  <li>Synaptic Package Manager</li>
+  </ul>
+  <h3 id="the-unix-shell">The Unix Shell</h3>
+  <p>The Shell is a program which uses command-line interface, instead
+  of graphical user interfaces (GUI), to run other programs rather than
+  doing calculations itself. The most popular Unix Shell is Bash which
+  is accessible by <code>ctrl+alt+t</code> keyboard shortcut in Ubuntu.
+  You may find more information <a href="shell.html">here</a>.</p>
+  <h3 id="remote-connections">Remote connections</h3>
+  <p>Remmina is the default remote desktop client in Ubuntu that
+  supports Remote Desktop Protocol (RDP) and Virtual Network Computing
+  (VNC) to access other Windows and Linux computers with graphical
+  interfaces. <a href="https://www.realvnc.com/en/connect/">RealVNC</a>
+  also is a good alternative for VNC remote access that you might
+  look.</p>
+  <p>For a SSH connection we can easily use this command at a terminal
+  prompt (use your own user name and remote host address):</p>
+  <div class="sourceCode" id="cb5"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> username@remotehost</span></code></pre></div>
+  <p>We can also use an IP address instead of the remote host address in
+  the above command. To find the host IP address, use
+  <code>ip a | grep inet</code> at a terminal prompt of the host
+  computer.</p>
+  <p>If you are going to connect to another Linux computer through SSH,
+  make sure OpenSSH Server client is installed on the host computer. To
+  install the OpenSSH client, use this command at a terminal prompt of
+  the host computer:</p>
+  <div class="sourceCode" id="cb6"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install openssh-server</span></code></pre></div>
+  <p>We can use X server for remotely displaying applications through
+  SSH. Use this command at a terminal prompt:</p>
+  <div class="sourceCode" id="cb7"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> <span class="at">-X</span> username@remotehost</span></code></pre></div>
+  <p>To display the application simply run it at the terminal prompt.
+  For example:</p>
+  <div class="sourceCode" id="cb8"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">xclock</span> <span class="co"># Display the server clock</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ex">xeyes</span> <span class="co"># Display a pair of eyes!</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="ex">nautilus</span> <span class="co"># Display Files</span></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="ex">google-chrome</span> <span class="co"># Display Chrome browser (if installed)</span></span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="ex">rstudio</span> <span class="co"># Display RStudio (if installed)</span></span>
 <span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="ex">spyder</span> <span class="co"># Display Spyder (if installed)</span></span></code></pre></div>
-<p>When using slower links the data can be compressed using the -C
-flag:</p>
-<div class="sourceCode" id="cb9"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> <span class="at">-XC</span> username@remotehost</span></code></pre></div>
-<h3 id="online-accounts">Online accounts</h3>
-<p>We can add online accounts such as Google, Microsoft, and MS Exchange
-accounts to <code>Settings &gt; Online Account</code>. For Microsoft
-Exchange account we need the following information:</p>
-<ul>
-<li>Email: user@mail.missouri.edu</li>
-<li>Password: user password</li>
-<li>Username: user@mail.missouri.edu</li>
-<li>Server: <strong>outlook.office365.com</strong></li>
-</ul>
-<p>To be able to see MS Exchange calender and emails, you may install
-Evolution which is an integrated mail, calendar, tasks and contact
-management application for Ubuntu. Use this command at a terminal
-prompt:</p>
-<div class="sourceCode" id="cb10"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install evolution-ews</span></code></pre></div>
-<p>If you already have Evolution installed, you might need to kill and
-restart Evolution to see MS exchange mails and calender. Use these
-commands at a terminal prompt:</p>
-<div class="sourceCode" id="cb11"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-rf</span> .config/evolution/ .cache/evolution/ .local/share/evolution/</span>
+  <p>When using slower links the data can be compressed using the -C
+  flag:</p>
+  <div class="sourceCode" id="cb9"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> <span class="at">-XC</span> username@remotehost</span></code></pre></div>
+  <h3 id="online-accounts">Online accounts</h3>
+  <p>We can add online accounts such as Google, Microsoft, and MS
+  Exchange accounts to <code>Settings &gt; Online Account</code>. For
+  Microsoft Exchange account we need the following information:</p>
+  <ul>
+  <li>Email: user@mail.missouri.edu</li>
+  <li>Password: user password</li>
+  <li>Username: user@mail.missouri.edu</li>
+  <li>Server: <strong>outlook.office365.com</strong></li>
+  </ul>
+  <p>To be able to see MS Exchange calender and emails, you may install
+  Evolution which is an integrated mail, calendar, tasks and contact
+  management application for Ubuntu. Use this command at a terminal
+  prompt:</p>
+  <div class="sourceCode" id="cb10"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install evolution-ews</span></code></pre></div>
+  <p>If you already have Evolution installed, you might need to kill and
+  restart Evolution to see MS exchange mails and calender. Use these
+  commands at a terminal prompt:</p>
+  <div class="sourceCode" id="cb11"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-rf</span> .config/evolution/ .cache/evolution/ .local/share/evolution/</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pkill</span> evolution</span></code></pre></div>
-<h3 id="local-mirror">Local mirror</h3>
-<p>To get the best download speed when updating software, we can use the
-closest mirror to our location. To change mirror settings, go to
-<code>Software &amp; Updates</code>, click <code>Ubuntu Software</code>
-tab and click <code>Download from</code> and choose <code>Other</code>
-and then choose <code>Selsect Best Server</code> option to find the best
-available server.</p>
-<h3 id="disable-screen-rotation">Disable screen rotation</h3>
-<p>We can disable screen rotation by using:</p>
-<div class="sourceCode" id="cb12"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt remove iio-sensor-proxy</span></code></pre></div>
-<p>To re-enable the feature, simply run:</p>
-<div class="sourceCode" id="cb13"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install iio-sensor-proxy</span></code></pre></div>
-<h3 id="hide-icons">Hide icons</h3>
-<p>To hide an icon from the application menu, go to
-<code>/usr/share/applications/</code> and add the following line to
-<code>app_name.desktop</code>:</p>
-<pre class="text"><code>NoDisplay=true</code></pre>
-<p>For example use
-<code>sudo nano /usr/share/applications/R.desktop</code> to open the
-desktop file and add the above line to hide R icon from the menu.</p>
-<p>To hide Trash or Home from Desktop use:</p>
-<div class="sourceCode" id="cb15"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gsettings</span> set org.gnome.nautilus.desktop trash-icon-visible false</span>
+  <h3 id="local-mirror">Local mirror</h3>
+  <p>To get the best download speed when updating software, we can use
+  the closest mirror to our location. To change mirror settings, go to
+  <code>Software &amp; Updates</code>, click
+  <code>Ubuntu Software</code> tab and click <code>Download from</code>
+  and choose <code>Other</code> and then choose
+  <code>Selsect Best Server</code> option to find the best available
+  server.</p>
+  <h3 id="disable-screen-rotation">Disable screen rotation</h3>
+  <p>We can disable screen rotation by using:</p>
+  <div class="sourceCode" id="cb12"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt remove iio-sensor-proxy</span></code></pre></div>
+  <p>To re-enable the feature, simply run:</p>
+  <div class="sourceCode" id="cb13"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install iio-sensor-proxy</span></code></pre></div>
+  <h3 id="hide-icons">Hide icons</h3>
+  <p>To hide an icon from the application menu, go to
+  <code>/usr/share/applications/</code> and add the following line to
+  <code>app_name.desktop</code>:</p>
+  <pre class="text"><code>NoDisplay=true</code></pre>
+  <p>For example use
+  <code>sudo nano /usr/share/applications/R.desktop</code> to open the
+  desktop file and add the above line to hide R icon from the menu.</p>
+  <p>To hide Trash or Home from Desktop use:</p>
+  <div class="sourceCode" id="cb15"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gsettings</span> set org.gnome.nautilus.desktop trash-icon-visible false</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co"># In Ubuntu 19.04</span></span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="ex">gsettings</span> set org.gnome.shell.extensions.desktop-icons show-trash false</span>
 <span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="ex">gsettings</span> set org.gnome.shell.extensions.desktop-icons show-home false</span></code></pre></div>
-<p>We can return Trash and Home back to Desktop by setting
-<code>true</code> for the above commands.</p>
-<h3 id="grub-menu">GRUB menu</h3>
-<p>To see GRUB menu at boot-time, open <code>/etc/default/grub</code>
-file and change <code>GRUB_TIMEOUT</code> from 0 seconds to 5 seconds.
-Save changes and run <code>sudo update-grub</code> to apply changes.</p>
-<hr />
-<h2 id="software-installation">Software installation</h2>
-<p>Most of the software that are available for Windows and macOS are
-available for Linux. Also, usually there is a great alternative for
-software that are not available. For example, sf package in R is a great
-alternative for ArcGIS Desktop that is not available for Linux. The
-following provides helpful tips to install some software in Ubuntu.</p>
-<h3 id="chrome">Chrome</h3>
-<p>Chrome is available <a href="https://www.google.com/chrome/">here</a>
-to download. Useful Chrome keyboard shortcuts are listed in below.</p>
-<ul>
-<li>New tab: <code>ctrl + t</code></li>
-<li>Close tab: <code>ctrl + w</code></li>
-<li>Change tab: <code>ctrl + tab</code></li>
-<li>New window: <code>ctrl + n</code></li>
-<li>History: <code>ctrl + h</code></li>
-<li>Add to favorites: <code>ctrl + d</code></li>
-</ul>
-<h3 id="git">Git</h3>
-<p>To install Git, use:</p>
-<div class="sourceCode" id="cb16"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install git</span></code></pre></div>
-<p>You may learn more about Git <a href="git.html">here</a>.</p>
-<h3 id="emacs">Emacs</h3>
-<p>Emacs is a powerful text editor. Use the following to install
-Emacs:</p>
-<div class="sourceCode" id="cb17"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install emacs</span></code></pre></div>
-<p>You may learn more about Emacs <a href="emacs.html">here</a>.</p>
-<h3 id="python">Python</h3>
-<p>Python should be installed on your system. Enter <code>python3</code>
-in the terminal to open Python.</p>
-<h3 id="conda">Conda</h3>
-<p><a href="https://docs.conda.io/projects/conda/en/latest/">Conda</a>
-is an open source package management system and environment management
-system. Conda quickly installs, runs and updates packages and their
-dependencies. Conda easily creates, saves, loads, and switches between
-environments on your local computer. It was created for Python programs
-but it can package and distribute software for any language.</p>
-<p>Download Miniconda from <a
-href="https://docs.conda.io/en/latest/miniconda.html">here</a> for using
-Conda. After downloading the installer, enter the following command at a
-terminal prompt to install Miniconda.</p>
-<div class="sourceCode" id="cb18"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> ~/Downloads/Miniconda3-latest-Linux-x86_64.sh</span></code></pre></div>
-<p>Follow the instruction to complete the installation. Run the
-following to prevent Conda to activate as base by default:</p>
-<div class="sourceCode" id="cb19"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> config <span class="at">--set</span> auto_activate_base false<span class="kw">`</span></span></code></pre></div>
-<p>To update Conda and update/install/remove other packages use:</p>
-<div class="sourceCode" id="cb20"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> update conda</span>
+  <p>We can return Trash and Home back to Desktop by setting
+  <code>true</code> for the above commands.</p>
+  <h3 id="grub-menu">GRUB menu</h3>
+  <p>To see GRUB menu at boot-time, open <code>/etc/default/grub</code>
+  file and change <code>GRUB_TIMEOUT</code> from 0 seconds to 5 seconds.
+  Save changes and run <code>sudo update-grub</code> to apply
+  changes.</p>
+  <hr />
+  <h2 id="software-installation">Software installation</h2>
+  <p>Most of the software that are available for Windows and macOS are
+  available for Linux. Also, usually there is a great alternative for
+  software that are not available. For example, sf package in R is a
+  great alternative for ArcGIS Desktop that is not available for Linux.
+  The following provides helpful tips to install some software in
+  Ubuntu.</p>
+  <h3 id="chrome">Chrome</h3>
+  <p>Chrome is available <a
+  href="https://www.google.com/chrome/">here</a> to download. Useful
+  Chrome keyboard shortcuts are listed in below.</p>
+  <ul>
+  <li>New tab: <code>ctrl + t</code></li>
+  <li>Close tab: <code>ctrl + w</code></li>
+  <li>Change tab: <code>ctrl + tab</code></li>
+  <li>New window: <code>ctrl + n</code></li>
+  <li>History: <code>ctrl + h</code></li>
+  <li>Add to favorites: <code>ctrl + d</code></li>
+  </ul>
+  <h3 id="git">Git</h3>
+  <p>To install Git, use:</p>
+  <div class="sourceCode" id="cb16"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install git</span></code></pre></div>
+  <p>You may learn more about Git <a href="git.html">here</a>.</p>
+  <h3 id="emacs">Emacs</h3>
+  <p>Emacs is a powerful text editor. Use the following to install
+  Emacs:</p>
+  <div class="sourceCode" id="cb17"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install emacs</span></code></pre></div>
+  <p>You may learn more about Emacs <a href="emacs.html">here</a>.</p>
+  <h3 id="python">Python</h3>
+  <p>Python should be installed on your system. Enter
+  <code>python3</code> in the terminal to open Python.</p>
+  <h3 id="conda">Conda</h3>
+  <p><a href="https://docs.conda.io/projects/conda/en/latest/">Conda</a>
+  is an open source package management system and environment management
+  system. Conda quickly installs, runs and updates packages and their
+  dependencies. Conda easily creates, saves, loads, and switches between
+  environments on your local computer. It was created for Python
+  programs but it can package and distribute software for any
+  language.</p>
+  <p>Download Miniconda from <a
+  href="https://docs.conda.io/en/latest/miniconda.html">here</a> for
+  using Conda. After downloading the installer, enter the following
+  command at a terminal prompt to install Miniconda.</p>
+  <div class="sourceCode" id="cb18"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> ~/Downloads/Miniconda3-latest-Linux-x86_64.sh</span></code></pre></div>
+  <p>Follow the instruction to complete the installation. Run the
+  following to prevent Conda to activate as base by default:</p>
+  <div class="sourceCode" id="cb19"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> config <span class="at">--set</span> auto_activate_base false<span class="kw">`</span></span></code></pre></div>
+  <p>To update Conda and update/install/remove other packages use:</p>
+  <div class="sourceCode" id="cb20"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> update conda</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> update/install/remove <span class="op">&lt;</span>pkg_name<span class="op">&gt;</span> </span></code></pre></div>
-<p>To remove Miniconda, use:</p>
-<div class="sourceCode" id="cb21"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-rf</span> ~/miniconda3</span>
+  <p>To remove Miniconda, use:</p>
+  <div class="sourceCode" id="cb21"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-rf</span> ~/miniconda3</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-rf</span> ~/.condarc ~/.conda ~/.continuum</span></code></pre></div>
-<p>Anaconda, the heavier version of Miniconda which includes Conda and
-many other Python/R data science packages, is available <a
-href="https://www.anaconda.com/distribution/#linux">here</a>. After
-download, install Anaconda by:</p>
-<div class="sourceCode" id="cb22"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> ~/Downloads/Anaconda3-x.x.x-Linux-x86_64.sh</span></code></pre></div>
-<p>To update Anaconda use:</p>
-<div class="sourceCode" id="cb23"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> update conda</span>
+  <p>Anaconda, the heavier version of Miniconda which includes Conda and
+  many other Python/R data science packages, is available <a
+  href="https://www.anaconda.com/distribution/#linux">here</a>. After
+  download, install Anaconda by:</p>
+  <div class="sourceCode" id="cb22"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> ~/Downloads/Anaconda3-x.x.x-Linux-x86_64.sh</span></code></pre></div>
+  <p>To update Anaconda use:</p>
+  <div class="sourceCode" id="cb23"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> update conda</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> update anaconda </span></code></pre></div>
-<p>And to remove Anaconda run:</p>
-<div class="sourceCode" id="cb24"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install anaconda-clean</span>
+  <p>And to remove Anaconda run:</p>
+  <div class="sourceCode" id="cb24"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install anaconda-clean</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="ex">anaconda-clean</span> <span class="at">--yes</span></span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-rf</span> ~/anaconda3</span></code></pre></div>
-<p>To learn more about managing environments by Conda see the
-instruction in <a href="python_env.html#miniconda">here</a>.</p>
-<h3 id="r">R</h3>
-<p>We can use APT package manger to download R by:</p>
-<div class="sourceCode" id="cb25"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="ex">apt</span> install r-base-core</span></code></pre></div>
-<p>Note that APT might has an old version of R. It is better to check R
-version before installing by <code>apt-cache policy r-base-core</code>.
-If R version is very outdated, then to obtain the latest R, follow the
-instruction at <a href="https://cran.r-project.org/bin/linux/ubuntu/">R
-website</a> or use Conda to create an R environment including latest R
-by:</p>
-<div class="sourceCode" id="cb26"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">--name</span> r_env r-base</span>
+  <p>To learn more about managing environments by Conda see the
+  instruction in <a href="python_env.html#miniconda">here</a>.</p>
+  <h3 id="r">R</h3>
+  <p>We can use APT package manger to download R by:</p>
+  <div class="sourceCode" id="cb25"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="ex">apt</span> install r-base-core</span></code></pre></div>
+  <p>Note that APT might has an old version of R. It is better to check
+  R version before installing by
+  <code>apt-cache policy r-base-core</code>. If R version is very
+  outdated, then to obtain the latest R, follow the instruction at <a
+  href="https://cran.r-project.org/bin/linux/ubuntu/">R website</a> or
+  use Conda to create an R environment including latest R by:</p>
+  <div class="sourceCode" id="cb26"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">--name</span> r_env r-base</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate r_env <span class="co"># Activate env</span></span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> update r-base <span class="co"># To update R</span></span>
 <span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span> <span class="co"># To open R</span></span></code></pre></div>
-<p>In order to install GEO packages (i.e. <code>sf</code>), you might
-need to install GDAL on your system. Use the following to download
-GADL:</p>
-<div class="sourceCode" id="cb27"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update</span>
+  <p>In order to install GEO packages (i.e. <code>sf</code>), you might
+  need to install GDAL on your system. Use the following to download
+  GADL:</p>
+  <div class="sourceCode" id="cb27"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install libudunits2-dev</span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install libgdal-dev</span>
 <span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install gdal-bin</span>
 <span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="ex">gdalinfo</span> <span class="at">--version</span></span></code></pre></div>
-<p>Note that if you are a Conda user, you can use Conda to install your
-GEO packages. Conda will install all dependencies.</p>
-<p>We can also download <strong>RStudio</strong> from <a
-href="https://www.rstudio.com/products/rstudio/download/">here</a>. To
-uninstall RStudio, use:</p>
-<div class="sourceCode" id="cb28"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt remove rstudio</span></code></pre></div>
-<h3 id="octave">Octave</h3>
-<p>We can install GNU Octave from the Ubuntu Software or use the
-following command at a terminal prompt.</p>
-<div class="sourceCode" id="cb29"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install octave</span></code></pre></div>
-<p>To open Octave run <code>octave</code> in a terminal prompt or click
-on GNU Octave in the Application Overview. To use Octave in Jupyter
-Notebook, we need to add Octave kernel to Jupyter Notebook. We can run
-the following commands at a terminal prompt to add the kernel.</p>
-<div class="sourceCode" id="cb30"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> config <span class="at">--add</span> channels conda-forge</span>
+  <p>Note that if you are a Conda user, you can use Conda to install
+  your GEO packages. Conda will install all dependencies.</p>
+  <p>We can also download <strong>RStudio</strong> from <a
+  href="https://www.rstudio.com/products/rstudio/download/">here</a>. To
+  uninstall RStudio, use:</p>
+  <div class="sourceCode" id="cb28"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt remove rstudio</span></code></pre></div>
+  <h3 id="octave">Octave</h3>
+  <p>We can install GNU Octave from the Ubuntu Software or use the
+  following command at a terminal prompt.</p>
+  <div class="sourceCode" id="cb29"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install octave</span></code></pre></div>
+  <p>To open Octave run <code>octave</code> in a terminal prompt or
+  click on GNU Octave in the Application Overview. To use Octave in
+  Jupyter Notebook, we need to add Octave kernel to Jupyter Notebook. We
+  can run the following commands at a terminal prompt to add the
+  kernel.</p>
+  <div class="sourceCode" id="cb30"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> config <span class="at">--add</span> channels conda-forge</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install octave_kernel</span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install texinfo <span class="co"># For using inline documentation (shift-tab)</span></span></code></pre></div>
-<h3 id="julia">Julia</h3>
-<p>Download Julia Generic Linux Binaries for x86 from <a
-href="https://julialang.org/downloads/index.html">Julia</a> download
-page. Then, extract the downloaded <code>.tar.gz</code> file to a folder
-on your computer (for e.g. <code>/home</code>). To make things easier
-lets rename the extracted folder to Julia. To run Julia, we can create a
-symbolic link (<code>ln -s</code>) from Julia located in
-<code>/home/Julia/julia-1.1.0/bin/julia</code> to a folder that is on
-the system PATH (for e.g. <code>/usr/local/bin/</code>). To do that run
-the following command at a terminal prompt.</p>
-<div class="sourceCode" id="cb31"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> ln <span class="at">-s</span> /home/Julia/julia-1.1.0/bin/julia /usr/local/bin/julia</span></code></pre></div>
-<p>To open Julia, run <code>julia</code> in a terminal prompt. To
-update, run the following in Julia.</p>
-<div class="sourceCode" id="cb32"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="ex">using</span> Pkg</span>
+  <h3 id="julia">Julia</h3>
+  <p>Download Julia Generic Linux Binaries for x86 from <a
+  href="https://julialang.org/downloads/index.html">Julia</a> download
+  page. Then, extract the downloaded <code>.tar.gz</code> file to a
+  folder on your computer (for e.g. <code>/home</code>). To make things
+  easier lets rename the extracted folder to Julia. To run Julia, we can
+  create a symbolic link (<code>ln -s</code>) from Julia located in
+  <code>/home/Julia/julia-1.1.0/bin/julia</code> to a folder that is on
+  the system PATH (for e.g. <code>/usr/local/bin/</code>). To do that
+  run the following command at a terminal prompt.</p>
+  <div class="sourceCode" id="cb31"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> ln <span class="at">-s</span> /home/Julia/julia-1.1.0/bin/julia /usr/local/bin/julia</span></code></pre></div>
+  <p>To open Julia, run <code>julia</code> in a terminal prompt. To
+  update, run the following in Julia.</p>
+  <div class="sourceCode" id="cb32"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="ex">using</span> Pkg</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Pkg.update()</span></span></code></pre></div>
-<p>We can add the Julia kernel to Jupyter Notebook by adding
-<code>IJulia</code> by running the following in Julia.</p>
-<div class="sourceCode" id="cb33"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="ex">using</span> Pkg</span>
+  <p>We can add the Julia kernel to Jupyter Notebook by adding
+  <code>IJulia</code> by running the following in Julia.</p>
+  <div class="sourceCode" id="cb33"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="ex">using</span> Pkg</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Pkg.add</span><span class="er">(</span><span class="st">&quot;IJulia&quot;</span><span class="kw">)</span></span></code></pre></div>
-<p>You can use <code>exit()</code> command to exit from Julia. To
-uninstall Julia, directly use:</p>
-<div class="sourceCode" id="cb34"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt remove julia</span></code></pre></div>
-<h3 id="ruby">Ruby</h3>
-<p>To install Ruby, run the following:</p>
-<div class="sourceCode" id="cb35"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install ruby</span></code></pre></div>
-<p><code>gem</code> is the package manger for Ruby. To update packages
-and remove old versions use the following commands at a terminal
-prompt.</p>
-<div class="sourceCode" id="cb36"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> gem update <span class="at">--system</span> <span class="co"># Update the RubyGems system software</span></span>
+  <p>You can use <code>exit()</code> command to exit from Julia. To
+  uninstall Julia, directly use:</p>
+  <div class="sourceCode" id="cb34"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt remove julia</span></code></pre></div>
+  <h3 id="ruby">Ruby</h3>
+  <p>To install Ruby, run the following:</p>
+  <div class="sourceCode" id="cb35"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install ruby</span></code></pre></div>
+  <p><code>gem</code> is the package manger for Ruby. To update packages
+  and remove old versions use the following commands at a terminal
+  prompt.</p>
+  <div class="sourceCode" id="cb36"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> gem update <span class="at">--system</span> <span class="co"># Update the RubyGems system software</span></span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> gem update</span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> gem cleanup</span></code></pre></div>
-<p>To install/uninstall packages use:</p>
-<div class="sourceCode" id="cb37"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> gem install pkg name</span>
+  <p>To install/uninstall packages use:</p>
+  <div class="sourceCode" id="cb37"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> gem install pkg name</span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> gem uninstall pkg name</span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="ex">gem</span> list <span class="co"># List of the installed packages</span></span></code></pre></div>
-<p>To use Ruby, run <code>irb</code> in a terminal prompt. We can use
-<code>exit()</code> command to exit from Ruby. To write a long Ruby
-code, use a text editor and use terminal prompt to run your code. For
-example, let assume we are going to run <code>test.rb</code> in the
-Documents folder:</p>
-<div class="sourceCode" id="cb38"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ruby</span> ~/Documents/test.rb</span></code></pre></div>
-<p>To uninstall Ruby, directly use:</p>
-<div class="sourceCode" id="cb39"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt remove ruby</span></code></pre></div>
-<h3 id="gurobi">Gurobi</h3>
-<p>To install Gurobi Optimizer download the installer for 64-bit Linux
-from <a href="http://www.gurobi.com/downloads/gurobi-optimizer">Gurobi
-download center</a>. Gurobi recommend <code>/opt</code> directory to
-install the software. To install the <code>tar.gz</code> file in
-<code>/opt</code>, open the terminal and run the following commands one
-by one (assume the <code>tar.gz</code> file is in the
-<code>Downloads/</code>):</p>
-<div class="sourceCode" id="cb40"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> Downloads/</span>
+  <p>To use Ruby, run <code>irb</code> in a terminal prompt. We can use
+  <code>exit()</code> command to exit from Ruby. To write a long Ruby
+  code, use a text editor and use terminal prompt to run your code. For
+  example, let assume we are going to run <code>test.rb</code> in the
+  Documents folder:</p>
+  <div class="sourceCode" id="cb38"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ruby</span> ~/Documents/test.rb</span></code></pre></div>
+  <p>To uninstall Ruby, directly use:</p>
+  <div class="sourceCode" id="cb39"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt remove ruby</span></code></pre></div>
+  <h3 id="gurobi">Gurobi</h3>
+  <p>To install Gurobi Optimizer download the installer for 64-bit Linux
+  from <a href="http://www.gurobi.com/downloads/gurobi-optimizer">Gurobi
+  download center</a>. Gurobi recommend <code>/opt</code> directory to
+  install the software. To install the <code>tar.gz</code> file in
+  <code>/opt</code>, open the terminal and run the following commands
+  one by one (assume the <code>tar.gz</code> file is in the
+  <code>Downloads/</code>):</p>
+  <div class="sourceCode" id="cb40"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> Downloads/</span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> mv gurobi8.1.0_linux64.tar.gz /opt</span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /opt/</span>
 <span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> tar xvfz gurobi8.1.0_linux64.tar.gz</span>
 <span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> rm gurobi8.1.0_linux64.tar.gz</span></code></pre></div>
-<p>We have to modify a few environment variables to allow Gurobi’s
-executable files to be found when needed. Use
-<code>nano ~/.bashrc</code> to open<code>.bashrc</code> file by nano
-text editor and add the following lines to the file:</p>
-<div class="sourceCode" id="cb41"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">GUROBI_HOME</span><span class="op">=</span><span class="st">&quot;/opt/gurobi810/linux64&quot;</span></span>
+  <p>We have to modify a few environment variables to allow Gurobi’s
+  executable files to be found when needed. Use
+  <code>nano ~/.bashrc</code> to open<code>.bashrc</code> file by nano
+  text editor and add the following lines to the file:</p>
+  <div class="sourceCode" id="cb41"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">GUROBI_HOME</span><span class="op">=</span><span class="st">&quot;/opt/gurobi810/linux64&quot;</span></span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">PATH</span><span class="op">=</span><span class="st">&quot;</span><span class="va">${PATH}</span><span class="st">:</span><span class="va">${GUROBI_HOME}</span><span class="st">/bin&quot;</span></span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">LD_LIBRARY_PATH</span><span class="op">=</span><span class="st">&quot;</span><span class="va">${LD_LIBRARY_PATH}</span><span class="st">:</span><span class="va">${GUROBI_HOME}</span><span class="st">/lib&quot;</span></span></code></pre></div>
-<p>Press <code>ctrl+o</code> to save changes and <code>ctrl+x</code> to
-exit from nano and then close the terminal to set up the changes.</p>
-<p>The next step is to install Gurobi license. To get an academic
-licence, we need to register in Gurobi website and request for a free
-academic licence. To obtain a Gurobi license key you will need to run
-the <code>grbgetkey</code> command to retrieve your Gurobi license key.
-By default your key will be stored in <code>/home/user</code> directory,
-we can move the key to <code>/opt/gurobi/</code> if by:</p>
-<div class="sourceCode" id="cb42"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /opt/</span>
+  <p>Press <code>ctrl+o</code> to save changes and <code>ctrl+x</code>
+  to exit from nano and then close the terminal to set up the
+  changes.</p>
+  <p>The next step is to install Gurobi license. To get an academic
+  licence, we need to register in Gurobi website and request for a free
+  academic licence. To obtain a Gurobi license key you will need to run
+  the <code>grbgetkey</code> command to retrieve your Gurobi license
+  key. By default your key will be stored in <code>/home/user</code>
+  directory, we can move the key to <code>/opt/gurobi/</code> if by:</p>
+  <div class="sourceCode" id="cb42"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /opt/</span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> gurobi</span>
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~</span>
 <span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> mv gurobi.lic /opt/gurobi</span></code></pre></div>
-<p>To get help, version information and the location of the current
-Gurobi license file use:</p>
-<div class="sourceCode" id="cb43"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gurobi_cl</span> <span class="at">--help</span></span>
+  <p>To get help, version information and the location of the current
+  Gurobi license file use:</p>
+  <div class="sourceCode" id="cb43"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gurobi_cl</span> <span class="at">--help</span></span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="ex">gurobi_cl</span> <span class="at">--version</span></span>
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="ex">gurobi_cl</span> <span class="at">--license</span></span></code></pre></div>
-<p><strong>For Python (Conda)</strong></p>
-<p>From a terminal prompt issue the following commands to add the Gurobi
-channel to your default search list and install the Gurobi package:</p>
-<div class="sourceCode" id="cb44"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> config <span class="at">--add</span> channels http://conda.anaconda.org/gurobi</span>
+  <p><strong>For Python (Conda)</strong></p>
+  <p>From a terminal prompt issue the following commands to add the
+  Gurobi channel to your default search list and install the Gurobi
+  package:</p>
+  <div class="sourceCode" id="cb44"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> config <span class="at">--add</span> channels http://conda.anaconda.org/gurobi</span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install gurobi</span></code></pre></div>
-<p>We can remove the Gurobi package at any time by:</p>
-<div class="sourceCode" id="cb45"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> remove gurobi</span></code></pre></div>
-<p>You may find more details <a
-href="http://www.gurobi.com/documentation/8.1/quickstart_windows/installing_the_anaconda_py.html#section:Anaconda">here</a>.</p>
-<p><strong>For R</strong></p>
-<p>The R package file can be found in the <code>installerdir/R</code>
-directory of your Gurobi installation. For a default installation of
-Gurobi 8.1.0, use the following command in R:</p>
-<div class="sourceCode" id="cb46"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="ex">install.packages</span><span class="er">(</span><span class="st">&#39;/opt/gurobi810/linux64/R/gurobi_8.1-0_R_ver.tar.gz&#39;</span><span class="ex">,</span> repos=NULL<span class="kw">)</span></span></code></pre></div>
-<p>We need to adjust the path to match your install directory and
-version. You may find more details <a
-href="http://www.gurobi.com/documentation/8.1/quickstart_linux/r_installing_the_r_package.html">here</a>.</p>
-<p><strong>Examples</strong></p>
-<p>There are several samples for R and Python in
-<code>/opt/gurobi810/linux64/examples</code>.</p></div>
-            <div class="d-none d-xl-block col-xl-2 bd-toc">
-               <ul class="section-nav">
-                  <li class="toc-entry"><ul>
-<li><a href="#running-ubuntu" id="toc-running-ubuntu">Running Ubuntu</a>
-<ul>
-<li><a href="#create-a-bootable-usb-stick"
-id="toc-create-a-bootable-usb-stick">Create a bootable USB
-stick</a></li>
-<li><a href="#install-ubuntu-desktop"
-id="toc-install-ubuntu-desktop">Install Ubuntu desktop</a></li>
-<li><a href="#advanced-packaging-toolkit"
-id="toc-advanced-packaging-toolkit">Advanced Packaging Toolkit</a></li>
-<li><a href="#useful-keyboard-shortcuts"
-id="toc-useful-keyboard-shortcuts">Useful keyboard shortcuts</a></li>
-<li><a href="#ubuntu-software" id="toc-ubuntu-software">Ubuntu
-Software</a></li>
-<li><a href="#the-unix-shell" id="toc-the-unix-shell">The Unix
-Shell</a></li>
-<li><a href="#remote-connections" id="toc-remote-connections">Remote
-connections</a></li>
-<li><a href="#online-accounts" id="toc-online-accounts">Online
-accounts</a></li>
-<li><a href="#local-mirror" id="toc-local-mirror">Local mirror</a></li>
-<li><a href="#disable-screen-rotation"
-id="toc-disable-screen-rotation">Disable screen rotation</a></li>
-<li><a href="#hide-icons" id="toc-hide-icons">Hide icons</a></li>
-<li><a href="#grub-menu" id="toc-grub-menu">GRUB menu</a></li>
-</ul></li>
-<li><a href="#software-installation"
-id="toc-software-installation">Software installation</a>
-<ul>
-<li><a href="#chrome" id="toc-chrome">Chrome</a></li>
-<li><a href="#git" id="toc-git">Git</a></li>
-<li><a href="#emacs" id="toc-emacs">Emacs</a></li>
-<li><a href="#python" id="toc-python">Python</a></li>
-<li><a href="#conda" id="toc-conda">Conda</a></li>
-<li><a href="#r" id="toc-r">R</a></li>
-<li><a href="#octave" id="toc-octave">Octave</a></li>
-<li><a href="#julia" id="toc-julia">Julia</a></li>
-<li><a href="#ruby" id="toc-ruby">Ruby</a></li>
-<li><a href="#gurobi" id="toc-gurobi">Gurobi</a></li>
-</ul></li>
-</ul></li>
-               </ul>
-            </div>
-         </div>
-               </div>
-            <!-- Footer -->
-            <footer class="footer text-muted">
-               <div align="center">
-                  Text is available under <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>
-                  &nbsp;|&nbsp;
-                  Code licensed under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank" rel="noopener">GPL-3.0</a>
-                  &nbsp;|&nbsp;
-                  Built with <a href="https://github.com/ashki23/pandoc-bootstrap" target="_blank" rel="noopener">pandoc-bootstrap</a> theme
-                  <br />
-                  Copyright 2018-2024, Ashkan Mirzaee
-               </div>
-            </footer>
-            <!-- Global site tag (gtag.js) - Google Analytics -->
-            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132464297-1"></script>
-            <script>
-               window.dataLayer = window.dataLayer || [];
-               function gtag(){dataLayer.push(arguments);}
-               gtag('js', new Date());
-               gtag('config', 'UA-132464297-1');
-            </script>
-            <!-- JS, Popper.js, and jQuery -->
-      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-      <!-- Mathjax -->
-      <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-      <script>
-         /* Bootstrap styles to tables */
-         function bootstrapStylePandocTables() {
-         $('tr.header').parent('thead').parent('table').addClass('table table-condensed'); }
-         $(document).ready(function () { bootstrapStylePandocTables(); });
-         /* Adjust the height when click the toc */
-         var shiftWindow = function() { scrollBy(0, -60) };
-         window.addEventListener("hashchange", shiftWindow);
-         function load() { if (window.location.hash) shiftWindow(); }
-      </script>
-   </body>
+  <p>We can remove the Gurobi package at any time by:</p>
+  <div class="sourceCode" id="cb45"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> remove gurobi</span></code></pre></div>
+  <p>You may find more details <a
+  href="http://www.gurobi.com/documentation/8.1/quickstart_windows/installing_the_anaconda_py.html#section:Anaconda">here</a>.</p>
+  <p><strong>For R</strong></p>
+  <p>The R package file can be found in the <code>installerdir/R</code>
+  directory of your Gurobi installation. For a default installation of
+  Gurobi 8.1.0, use the following command in R:</p>
+  <div class="sourceCode" id="cb46"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="ex">install.packages</span><span class="er">(</span><span class="st">&#39;/opt/gurobi810/linux64/R/gurobi_8.1-0_R_ver.tar.gz&#39;</span><span class="ex">,</span> repos=NULL<span class="kw">)</span></span></code></pre></div>
+  <p>We need to adjust the path to match your install directory and
+  version. You may find more details <a
+  href="http://www.gurobi.com/documentation/8.1/quickstart_linux/r_installing_the_r_package.html">here</a>.</p>
+  <p><strong>Examples</strong></p>
+  <p>There are several samples for R and Python in
+  <code>/opt/gurobi810/linux64/examples</code>.</p>
+	</div>
+      </main>
+    </div>
+    
+    <!-- After body contents -->
+        <!-- Footer -->
+        <footer class="bd-footer mt-auto py-3 py-md-3 bg-body-tertiary">
+          <div class="container py-md-3 px-4 px-md-3 text-body-secondary" align="center" style="font-size: .95rem;">
+            Text is available under <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>
+            &nbsp;|&nbsp;
+            Code licensed under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank" rel="noopener">GPL-3.0</a>
+            &nbsp;|&nbsp;
+            Built with <a href="https://github.com/ashki23/pandoc-bootstrap" target="_blank" rel="noopener">pandoc-bootstrap</a> theme
+            <br />
+            Copyright 2018-2024, Ashkan Mirzaee
+          </div>
+        </footer>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132464297-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'UA-132464297-1');
+        </script>
+        
+    <!-- Bootstrap Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+    <!-- Highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js" integrity="sha512-6yoqbrcLAHDWAdQmiRlHG4+m0g/CT/V9AGyxabG8j7Jk8j3r3K6due7oqpiRMZqcYe9WM2gPcaNNxnl2ux+3tA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+        
+    <!-- Custom Scripts -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+	  const htmlElement = document.documentElement;
+	  const highlightStyle = document.getElementById("highlight-style");
+	  
+	  // Function to update Highlight.js style based on theme
+	  const updateHighlightStyle = (theme) => {
+              const lightTheme = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/stackoverflow-light.min.css";
+              const darkTheme = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/github-dark.min.css";
+              highlightStyle.href = theme === "dark" ? darkTheme : lightTheme;
+	  };
+	  
+	  // Function to set the theme
+	  const setTheme = (theme) => {
+              htmlElement.setAttribute("data-bs-theme", theme);
+              localStorage.setItem("theme", theme); // Save the theme to localStorage
+              updateHighlightStyle(theme);
+	  };
+	  
+	  // Get saved theme from localStorage or fallback to default ("light")
+	  const savedTheme = localStorage.getItem("theme") || "light";
+	  setTheme(savedTheme);
+	  
+	  // Event listener for theme dropdown
+	  document.querySelectorAll(".dropdown-item").forEach((item) => {
+              item.addEventListener("click", (e) => {
+		  e.preventDefault();
+		  const selectedTheme = item.getAttribute("data-theme");
+		  setTheme(selectedTheme);
+              });
+	  });
+	  
+	  // Initialize Highlight.js
+	  hljs.highlightAll();
+      });
+    </script>
+  </body>
 </html>

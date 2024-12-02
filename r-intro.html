@@ -1,121 +1,213 @@
 <!doctype html>
-<html>
-   <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <meta name="generator" content="pandoc">
-      <meta name="author" content="Ashkan Mirzaee">
-      <meta name="description" content="An Introduction for using R and
-R packages">
-      <title>A gentle introduction to R</title>
-      <!-- Bootstrap -->
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-      <!-- Font-awesome -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-      <!-- Styles -->
-      <link rel="stylesheet" href="https://ashki23.github.io/styles.css">
-            <!-- Favicon -->
-            <link rel="icon" href="images/AM.jpg">
-            <!-- Google-site-verification -->
-            <meta name="google-site-verification" content="lD_nifpQ-CA6LaDwxYJbe5bq0oa6Ir0Ax-txvtdP51E">
-            <!-- Bing-site-verification -->
-            <meta name="msvalidate.01" content="89BCD3FF42B6E9FE48E0C8365767D11B">
-         </head>
-   <body>
-            <nav class="navbar fixed-top navbar-expand-lg navbar-dark bd-navbar">
-               <a class="navbar-brand" href="index.html">Ashkan Mirzaee</a>
-               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="border: none; outline: none; padding-right: 0; padding-left: 1rem;">
-               <span class="navbar-toggler-icon"></span>
-               </button>
-               <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav mr-auto">
-                     <li class="nav-item">
-                        <a class="nav-link" href="page1.html">Blog</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="tutorials.html">Tutorials</a>
-                     </li>
-            	 <li class="nav-item">
-                        <a class="nav-link" href="research.html">Research</a>
-                     </li>
-            	 <li class="nav-item">
-                        <a class="nav-link" href="applications.html">Applications</a>
-                     </li>
-            	 <li class="nav-item">
-                        <a class="nav-link" href="blogroll.html">Blogroll</a>
-                     </li>
+<html lang="en" class="h-100" data-bs-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="generator" content="pandoc">
+    <meta name="author" content="Ashkan Mirzaee">
+    <meta name="description" content="An Introduction for using R and R
+packages">
+    <title>A gentle introduction to R</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!-- Bootstrap Icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous">
+    
+    <!-- Highlight.js Styles -->
+    <link rel="stylesheet" id="highlight-style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/stackoverflow-light.min.css">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="https://getbootstrap.com/docs/5.3/assets/css/docs.css">
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- After header contents -->
+        <!-- Favicon -->
+        <link rel="icon" href="images/AM.jpg">
+        <!-- Google-site-verification -->
+        <meta name="google-site-verification" content="lD_nifpQ-CA6LaDwxYJbe5bq0oa6Ir0Ax-txvtdP51E">
+        <!-- Bing-site-verification -->
+        <meta name="msvalidate.01" content="89BCD3FF42B6E9FE48E0C8365767D11B">
+      </head>
+  <body class="d-flex flex-column h-100" data-bs-spy="scroll" data-bs-target="#TableOfContents">
+    <!-- Before body contents -->
+        <nav class="navbar bd-navbar navbar-expand-lg fixed-top py-2">
+          <div class="container-xxl bd-gutter flex-wrap flex-lg-nowrap">
+            <!-- Brand -->
+            <a class="navbar-brand" href="index.html" style="transform: none;">Ashkan Mirzaee</a>
+
+            <!-- Toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Navbar Content -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <!-- Left Navigation -->
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link" href="page1.html">Blog</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="tutorials.html">Tutorials</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="research.html">Research</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="applications.html">Applications</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="blogroll.html">Blogroll</a>
+                </li>
+              </ul>
+              
+              <!-- Divider for smaller screens -->
+              <hr class="d-lg-none text-white-50">
+              
+              <!-- Social Media Icons -->
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html" aria-label="Contact">
+                    <i class="bi bi-envelope"></i>
+        	    <span class="d-lg-none ms-2">Contact</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://github.com/ashki23" target="_blank" rel="noopener" aria-label="GitHub">
+                    <i class="bi bi-github"></i>
+        	    <span class="d-lg-none ms-2">GitHub</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://gitlab.com/ashki23" target="_blank" rel="noopener" aria-label="GitLab">
+                    <i class="bi bi-gitlab"></i>
+        	    <span class="d-lg-none ms-2">GitLab</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://www.linkedin.com/in/ashkan-mirzaee/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <i class="bi bi-linkedin"></i>
+        	    <span class="d-lg-none ms-2">Linkedin</span>
+                  </a>
+                </li>
+              </ul>
+              
+              <!-- Divider for larger screens -->
+              <div class="vr d-none d-lg-flex mx-2 my-1 text-white"></div>
+              
+              <!-- Divider for smaller screens -->
+              <hr class="d-lg-none text-white-50">
+              
+              <!-- Theme Dropdown -->
+              <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                  <button class="btn btn-link nav-link dropdown-toggle" type="button" id="themeDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-circle-half"></i>
+        	    <span class="d-lg-none ms-2">Toggle theme</span>
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="themeDropdown">
+                    <li>
+                      <a class="dropdown-item align-items-center" data-theme="light">
+                        <i class="bi bi-sun-fill me-2 opacity-50"></i> Light
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item align-items-center" data-theme="dark">
+                        <i class="bi bi-moon-stars-fill me-2 opacity-50"></i> Dark
+                      </a>
+                    </li>
                   </ul>
-                  <ul class="navbar-nav ml-auto">
-            	<li class="nav-item">
-            	  <a class="nav-link" href="contact.html" aria-label="Contact">
-            	    <span class="fa fa-envelope fa-lg"></a>
-            	</li>
-            	<li class="nav-item">
-            	  <a class="nav-link" href="https://github.com/ashki23" target="_blank" rel="noopener" aria-label="GitHub">
-            	    <span class="fa fa-github fa-lg"></span></a>
-            	</li>
-            	<li class="nav-item">
-            	  <a class="nav-link" href="https://gitlab.com/ashki23" target="_blank" rel="noopener" aria-label="GitLab">
-            	    <span class="fa fa-gitlab fa-lg"></span></a>
-            	</li>
-            	<li class="nav-item">
-            	  <a class="nav-link" href="https://www.linkedin.com/in/ashkan-mirzaee/" target="_blank" rel="noopener" aria-label="Linkedin">
-            	    <span class="fa fa-linkedin fa-lg"></span></a>
-            	</li>
-                  </ul>
-               </div>
-            </nav>
-            <div class="container">
-         <h1 class="title">A gentle introduction to R</h1>
-                  <div class="row">
-            <div class="col-xl-10"><p><a
-href="https://www.r-project.org/">R</a> is a free software environment
-for statistical computing and graphics. To use R we might use <a
-href="https://www.rstudio.com/">RStudio</a>, the most popular R IDE, or
-directly use R in a terminal. In both cases, we need to first download
-and install R. To install R we can create a virtual environment by <a
-href="python-env.html#miniconda">conda</a> or directly download R <a
-href="https://mirror.las.iastate.edu/CRAN/">source code</a> or use a
-Linux package manager (<code>apt</code>, <code>yum</code>, and etc.). In
-this article we will learn some fundamental syntax in R including data
-structures and operators, control flows, functions, and an overview of R
-packages.</p>
-<p>You may find more about plotting and programming in R at:</p>
-<ul>
-<li><a href="r-plots.html">Basic graphics in R</a></li>
-<li><a href="r-functions.html">Helpful functions in R</a></li>
-<li><a href="http://www.cyclismo.org/tutorial/R/index.html">R
-Tutorial</a></li>
-<li><a href="https://cran.r-project.org/doc/manuals/R-lang.html">R
-Language Definition</a></li>
-<li><a
-href="http://swcarpentry.github.io/r-novice-inflammation/">Programming
-with R</a></li>
-<li><a href="http://swcarpentry.github.io/r-novice-gapminder/">R for
-Reproducible Scientific Analysis</a></li>
-</ul>
-<hr />
-<h2 id="operators">Operators</h2>
-<p>R operators include:</p>
-<ul>
-<li>Arithmetic: <code>+</code>, <code>-</code>, <code>*</code>,
-<code>/</code>, <code>^</code>,
-<code>% any arithmetic operarors %</code></li>
-<li>Negation: <code>!</code></li>
-<li>Indexing: <code>[</code>, <code>[[</code></li>
-<li>Sequence operator: <code>:</code></li>
-<li>Component/slot extraction: <code>$</code>, <code>@</code></li>
-<li>Logical (and/or): <code>&amp;</code>, <code>&amp;&amp;</code>,
-<code>|</code>, <code>||</code></li>
-<li>Membership: <code>%in%</code></li>
-<li>Assignment: <code>=</code>, <code>&lt;-</code>,
-<code>-&gt;</code></li>
-<li>Ordering and comparison: <code>&lt;</code>, <code>&gt;</code>,
-<code>&lt;=</code>, <code>&gt;=</code>, <code>==</code>,
-<code>!=</code></li>
-</ul>
-<p>For example:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">=</span> <span class="dv">8</span></span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        
+    <div class="container-xxl bd-gutter pb-5 mt-3 my-md-4 bd-layout" style="padding-top:60px;">
+      <main class="bd-main order-1">
+	
+	<!-- Tiltle -->
+	<h1 class="bd-intro pt-2 ps-lg-2" id="title">A gentle introduction to
+R</h1>
+	
+		<!-- Table of Contents -->
+	<div class="bd-toc mt-3 mb-5 my-lg-0 mb-lg-5 px-sm-1 text-body-secondary">
+	  <strong class="d-none d-md-block h6 my-2 ms-3">On this page</strong>
+	  <hr class="d-none d-md-block my-2 ms-3">
+	  <div class="collapse bd-toc-collapse" id="tocContents">
+	    <nav id="TableOfContents">
+	      <ul>
+      <li><a href="#operators" id="toc-operators">Operators</a></li>
+      <li><a href="#data-structures" id="toc-data-structures">Data
+      structures</a>
+      <ul>
+      <li><a href="#conversion" id="toc-conversion">Conversion</a></li>
+      </ul></li>
+      <li><a href="#control-flow-tools"
+      id="toc-control-flow-tools">Control flow tools</a></li>
+      <li><a href="#defining-functions"
+      id="toc-defining-functions">Defining functions</a></li>
+      <li><a href="#reading-and-writing"
+      id="toc-reading-and-writing">Reading and writing</a></li>
+      <li><a href="#packages" id="toc-packages">Packages</a></li>
+      </ul>
+	    </nav>
+	  </div>
+	</div>
+		
+	<!-- Main Content -->
+	<div class="bd-content ps-lg-2">
+	  <p><a href="https://www.r-project.org/">R</a> is a free software
+  environment for statistical computing and graphics. To use R we might
+  use <a href="https://www.rstudio.com/">RStudio</a>, the most popular R
+  IDE, or directly use R in a terminal. In both cases, we need to first
+  download and install R. To install R we can create a virtual
+  environment by <a href="python-env.html#miniconda">conda</a> or
+  directly download R <a
+  href="https://mirror.las.iastate.edu/CRAN/">source code</a> or use a
+  Linux package manager (<code>apt</code>, <code>yum</code>, and etc.).
+  In this article we will learn some fundamental syntax in R including
+  data structures and operators, control flows, functions, and an
+  overview of R packages.</p>
+  <p>You may find more about plotting and programming in R at:</p>
+  <ul>
+  <li><a href="r-plots.html">Basic graphics in R</a></li>
+  <li><a href="r-functions.html">Helpful functions in R</a></li>
+  <li><a href="http://www.cyclismo.org/tutorial/R/index.html">R
+  Tutorial</a></li>
+  <li><a href="https://cran.r-project.org/doc/manuals/R-lang.html">R
+  Language Definition</a></li>
+  <li><a
+  href="http://swcarpentry.github.io/r-novice-inflammation/">Programming
+  with R</a></li>
+  <li><a href="http://swcarpentry.github.io/r-novice-gapminder/">R for
+  Reproducible Scientific Analysis</a></li>
+  </ul>
+  <hr />
+  <h2 id="operators">Operators</h2>
+  <p>R operators include:</p>
+  <ul>
+  <li>Arithmetic: <code>+</code>, <code>-</code>, <code>*</code>,
+  <code>/</code>, <code>^</code>,
+  <code>% any arithmetic operarors %</code></li>
+  <li>Negation: <code>!</code></li>
+  <li>Indexing: <code>[</code>, <code>[[</code></li>
+  <li>Sequence operator: <code>:</code></li>
+  <li>Component/slot extraction: <code>$</code>, <code>@</code></li>
+  <li>Logical (and/or): <code>&amp;</code>, <code>&amp;&amp;</code>,
+  <code>|</code>, <code>||</code></li>
+  <li>Membership: <code>%in%</code></li>
+  <li>Assignment: <code>=</code>, <code>&lt;-</code>,
+  <code>-&gt;</code></li>
+  <li>Ordering and comparison: <code>&lt;</code>, <code>&gt;</code>,
+  <code>&lt;=</code>, <code>&gt;=</code>, <code>==</code>,
+  <code>!=</code></li>
+  </ul>
+  <p>For example:</p>
+  <div class="sourceCode" id="cb1"><pre
+  class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">=</span> <span class="dv">8</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>b <span class="ot">=</span> <span class="dv">3</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>n <span class="ot">=</span> <span class="dv">2</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>a <span class="sc">%/%</span> b  <span class="co"># Intiger division</span></span>
@@ -140,44 +232,45 @@ Reproducible Scientific Analysis</a></li>
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="do">##      [,1] [,2]</span></span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="do">## [1,]    7   15</span></span>
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="do">## [2,]   10   22</span></span></code></pre></div>
-<h2 id="data-structures">Data structures</h2>
-<p>There are four major data structures in R:</p>
-<ul>
-<li>Vectors: <code>c</code></li>
-<li>Matrices: <code>matrix</code></li>
-<li>Data frames: <code>data.frame</code></li>
-<li>Lists: <code>list</code></li>
-</ul>
-<p><strong>Vectors</strong> are generating by <code>c</code> command
-which combines values into a vector. Vectors are
-<strong>subscriptable</strong> and <strong>mutable</strong> objects that
-can be <strong>concatenated</strong>. We can call them by using
-<code>vector[index]</code>. Vectors keeps all array with a same
-type.</p>
-<p><code>matrix</code> creates a <strong>matrix</strong> from the given
-set of values. Matrices are <strong>subscriptable</strong> and
-<strong>mutable</strong> objects and we can use
-<code>matrix[row,col]</code> to call columns and rows. Matrices keeps
-all array with a same type and they cannot be concatenated.</p>
-<p><code>data.frame</code> creates <strong>data frames</strong>, store
-each column separately as a different variable with different
-observations (n obs. of m variables). When we read a csv file it saves
-as a dataframe. Data frames are <strong>subscriptable</strong> objects
-and we can use <code>data.frame[row,col]</code> or
-<code>data.frame[col]</code> to call columns and rows and
-<code>data.frame$col_name</code> can be used to call certain column by
-their names. They also can <strong>concatenate</strong>.</p>
-<p>R <strong>list</strong> is the object which contains elements of
-different types – like strings, numbers, vectors, matrices, functions
-and another list inside it. It also could contains different number of
-objects at each row. For example if we have a loop that do not generate
-same amount of results at each iteration then we can store them in a
-list format. Lists are <strong>subscriptable</strong> and we can use
-<code>list$name</code> or <code>list[index]</code> to call components
-(rows) and <code>list$name[index_2]</code> or
-<code>list[[index]][index_2]</code> to call members of each component
-(row). They also can <strong>concatenate</strong>.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Vectors</span></span>
+  <h2 id="data-structures">Data structures</h2>
+  <p>There are four major data structures in R:</p>
+  <ul>
+  <li>Vectors: <code>c</code></li>
+  <li>Matrices: <code>matrix</code></li>
+  <li>Data frames: <code>data.frame</code></li>
+  <li>Lists: <code>list</code></li>
+  </ul>
+  <p><strong>Vectors</strong> are generating by <code>c</code> command
+  which combines values into a vector. Vectors are
+  <strong>subscriptable</strong> and <strong>mutable</strong> objects
+  that can be <strong>concatenated</strong>. We can call them by using
+  <code>vector[index]</code>. Vectors keeps all array with a same
+  type.</p>
+  <p><code>matrix</code> creates a <strong>matrix</strong> from the
+  given set of values. Matrices are <strong>subscriptable</strong> and
+  <strong>mutable</strong> objects and we can use
+  <code>matrix[row,col]</code> to call columns and rows. Matrices keeps
+  all array with a same type and they cannot be concatenated.</p>
+  <p><code>data.frame</code> creates <strong>data frames</strong>, store
+  each column separately as a different variable with different
+  observations (n obs. of m variables). When we read a csv file it saves
+  as a dataframe. Data frames are <strong>subscriptable</strong> objects
+  and we can use <code>data.frame[row,col]</code> or
+  <code>data.frame[col]</code> to call columns and rows and
+  <code>data.frame$col_name</code> can be used to call certain column by
+  their names. They also can <strong>concatenate</strong>.</p>
+  <p>R <strong>list</strong> is the object which contains elements of
+  different types – like strings, numbers, vectors, matrices, functions
+  and another list inside it. It also could contains different number of
+  objects at each row. For example if we have a loop that do not
+  generate same amount of results at each iteration then we can store
+  them in a list format. Lists are <strong>subscriptable</strong> and we
+  can use <code>list$name</code> or <code>list[index]</code> to call
+  components (rows) and <code>list$name[index_2]</code> or
+  <code>list[[index]][index_2]</code> to call members of each component
+  (row). They also can <strong>concatenate</strong>.</p>
+  <div class="sourceCode" id="cb2"><pre
+  class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Vectors</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>c1 <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,<span class="dv">7</span>) <span class="co"># all int </span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(c1)</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;double&quot;</span></span>
@@ -300,9 +393,10 @@ list format. Lists are <strong>subscriptable</strong> and we can use
 <span id="cb2-121"><a href="#cb2-121" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-122"><a href="#cb2-122" aria-hidden="true" tabindex="-1"></a>mpty_list <span class="ot">=</span> <span class="fu">vector</span>(<span class="st">&quot;list&quot;</span>, <span class="dv">2</span>) <span class="co"># make an empty list</span></span>
 <span id="cb2-123"><a href="#cb2-123" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(empty_list) <span class="ot">=</span> <span class="fu">paste</span>(<span class="st">&quot;list&quot;</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">sep =</span> <span class="st">&quot;_&quot;</span>) <span class="co"># rename the list</span></span></code></pre></div>
-<p>Note that not only we can select by indexing the objects, but also we
-can <strong>remove</strong> entries. For instance:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>letter[<span class="sc">-</span><span class="dv">4</span>] <span class="co"># remove 4th element </span></span>
+  <p>Note that not only we can select by indexing the objects, but also
+  we can <strong>remove</strong> entries. For instance:</p>
+  <div class="sourceCode" id="cb3"><pre
+  class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>letter[<span class="sc">-</span><span class="dv">4</span>] <span class="co"># remove 4th element </span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot;</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>mm[,<span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="sc">-</span><span class="dv">3</span>)] <span class="co"># remove column 2,3</span></span>
@@ -316,10 +410,11 @@ can <strong>remove</strong> entries. For instance:</p>
 <span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="do">## 1  100    a   31</span></span>
 <span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="do">## 2    2    b   32</span></span>
 <span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="do">## 3    3    c  500</span></span></code></pre></div>
-<p>And since most of R data structures are
-<strong>subscriptable</strong>, we can easily <strong>filter</strong>
-them as well. For example:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Let&#39;s select rows when:</span></span>
+  <p>And since most of R data structures are
+  <strong>subscriptable</strong>, we can easily <strong>filter</strong>
+  them as well. For example:</p>
+  <div class="sourceCode" id="cb4"><pre
+  class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Let&#39;s select rows when:</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>df[df<span class="sc">$</span>col1 <span class="sc">&lt;</span> <span class="dv">100</span>,] <span class="co"># col1 &lt; 100</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="do">##   col1 col2 col3</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="do">## 2    2    b   32</span></span>
@@ -366,33 +461,34 @@ them as well. For example:</p>
 <span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a><span class="do">## 1    1    a   31</span></span>
 <span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a><span class="do">## 2    0    b   32</span></span>
 <span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a><span class="do">## 3    0    c  500</span></span></code></pre></div>
-<h3 id="conversion">Conversion</h3>
-<p>We can use the following commands to convert main R objects to other
-types:</p>
-<ul>
-<li><code>as.numeric</code></li>
-<li><code>as.integer</code></li>
-<li><code>as.character</code></li>
-<li><code>as.matrix</code></li>
-<li><code>as.data.frame</code></li>
-<li><code>as.list</code></li>
-<li><code>as.Date</code></li>
-<li><code>as.factor</code></li>
-</ul>
-<h2 id="control-flow-tools">Control flow tools</h2>
-<p>These statements allow us to control flow of the R script. The most
-common control statements include:</p>
-<ul>
-<li>if, else</li>
-<li>for</li>
-<li>while</li>
-<li>break</li>
-<li>return</li>
-<li>repeat</li>
-</ul>
-<p>The following are some simple examples of using these statements in
-R.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">=</span> <span class="dv">10</span></span>
+  <h3 id="conversion">Conversion</h3>
+  <p>We can use the following commands to convert main R objects to
+  other types:</p>
+  <ul>
+  <li><code>as.numeric</code></li>
+  <li><code>as.integer</code></li>
+  <li><code>as.character</code></li>
+  <li><code>as.matrix</code></li>
+  <li><code>as.data.frame</code></li>
+  <li><code>as.list</code></li>
+  <li><code>as.Date</code></li>
+  <li><code>as.factor</code></li>
+  </ul>
+  <h2 id="control-flow-tools">Control flow tools</h2>
+  <p>These statements allow us to control flow of the R script. The most
+  common control statements include:</p>
+  <ul>
+  <li>if, else</li>
+  <li>for</li>
+  <li>while</li>
+  <li>break</li>
+  <li>return</li>
+  <li>repeat</li>
+  </ul>
+  <p>The following are some simple examples of using these statements in
+  R.</p>
+  <div class="sourceCode" id="cb5"><pre
+  class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">=</span> <span class="dv">10</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (n <span class="sc">==</span> <span class="dv">7</span>) {</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;n is equal 7&quot;</span>)</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span> (n <span class="sc">&gt;</span> <span class="dv">7</span>) {</span>
@@ -436,22 +532,24 @@ R.</p>
 <span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a><span class="do">## &#39;a&#39; and &#39;b&#39; both are equal to:  1 </span></span>
 <span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a><span class="do">## &#39;a&#39; and &#39;b&#39; both are equal to:  2</span></span></code></pre></div>
-<h2 id="defining-functions">Defining functions</h2>
-<p>By using <code>function</code> command we can define our own
-functions in R. For instance, lets define function <span
-class="math inline"><em>Δ</em> = <em>b</em><sup>2</sup> − 4<em>a</em><em>c</em></span>
-and find the solution for <span
-class="math inline"><em>a</em> = 2</span>, <span
-class="math inline"><em>b</em> = 3</span> and <span
-class="math inline"><em>c</em> = 4</span>:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Delta</span></span>
+  <h2 id="defining-functions">Defining functions</h2>
+  <p>By using <code>function</code> command we can define our own
+  functions in R. For instance, lets define function <span
+  class="math inline"><em>Δ</em> = <em>b</em><sup>2</sup> − 4<em>a</em><em>c</em></span>
+  and find the solution for <span
+  class="math inline"><em>a</em> = 2</span>, <span
+  class="math inline"><em>b</em> = 3</span> and <span
+  class="math inline"><em>c</em> = 4</span>:</p>
+  <div class="sourceCode" id="cb6"><pre
+  class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Delta</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>delta <span class="ot">=</span> <span class="cf">function</span>(a, b, c) {</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  b<span class="sc">^</span><span class="dv">2</span> <span class="sc">-</span> <span class="dv">4</span><span class="sc">*</span>a<span class="sc">*</span>c</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">delta</span>(<span class="at">a =</span> <span class="dv">2</span>, <span class="at">b =</span> <span class="dv">3</span>, <span class="at">c =</span> <span class="dv">4</span>)</span>
 <span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] -23</span></span></code></pre></div>
-<p>Some other examples:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Norm</span></span>
+  <p>Some other examples:</p>
+  <div class="sourceCode" id="cb7"><pre
+  class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Norm</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>norm <span class="ot">=</span> <span class="cf">function</span>(x) <span class="fu">sqrt</span>(x <span class="sc">%*%</span> x)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">norm</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>)</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="do">##          [,1]</span></span>
@@ -516,10 +614,11 @@ class="math inline"><em>c</em> = 4</span>:</p>
 <span id="cb7-63"><a href="#cb7-63" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb7-64"><a href="#cb7-64" aria-hidden="true" tabindex="-1"></a><span class="fu">sym</span>(<span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">4</span>), <span class="dv">2</span>, <span class="dv">2</span>))</span>
 <span id="cb7-65"><a href="#cb7-65" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;Matrix is symmetric&quot;</span></span></code></pre></div>
-<h2 id="reading-and-writing">Reading and writing</h2>
-<p>In R we can use <code>read.</code> and <code>write.</code> to read
-and write the file types that we want.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>gpa <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="at">name =</span> <span class="fu">c</span>(<span class="st">&quot;Ashki&quot;</span>, <span class="st">&quot;Ari&quot;</span>, <span class="st">&quot;Dori&quot;</span>, <span class="st">&quot;Pishi&quot;</span>), <span class="at">gpa =</span> <span class="fu">c</span>(<span class="fl">3.4</span>,<span class="fl">3.7</span>,<span class="fl">3.9</span>,<span class="fl">3.5</span>))</span>
+  <h2 id="reading-and-writing">Reading and writing</h2>
+  <p>In R we can use <code>read.</code> and <code>write.</code> to read
+  and write the file types that we want.</p>
+  <div class="sourceCode" id="cb8"><pre
+  class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>gpa <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="at">name =</span> <span class="fu">c</span>(<span class="st">&quot;Ashki&quot;</span>, <span class="st">&quot;Ari&quot;</span>, <span class="st">&quot;Dori&quot;</span>, <span class="st">&quot;Pishi&quot;</span>), <span class="at">gpa =</span> <span class="fu">c</span>(<span class="fl">3.4</span>,<span class="fl">3.7</span>,<span class="fl">3.9</span>,<span class="fl">3.5</span>))</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># write</span></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">write.table</span>(gpa, <span class="at">file =</span> <span class="st">&quot;~/Documents/gpa.txt&quot;</span>, <span class="at">sep =</span> <span class="st">&quot; &quot;</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>, <span class="at">col.names =</span> <span class="cn">TRUE</span>)</span>
@@ -533,101 +632,115 @@ and write the file types that we want.</p>
 <span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="co"># csv</span></span>
 <span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(gpa, <span class="at">file =</span> <span class="st">&quot;~/Documents/gpa.csv&quot;</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="fu">read.csv</span>(<span class="st">&quot;~/Documents/gpa.csv&quot;</span>) <span class="co"># header is TRUE by default</span></span></code></pre></div>
-<h2 id="packages">Packages</h2>
-<p>Packages are very important component of R. RStudio is a great IDE
-for R that provides some basic libraries. But based on your requirements
-you may need to install and import other packages. We can use
-<code>install.packages("package name")</code> and
-<code>library("package name")</code> functions to install and import
-packages in RStudio. Knowing packages in R is a very important topic,
-some of packages that I am using are include:</p>
-<ul>
-<li>Documentation: <code>rmarkdown</code>, <code>kintr</code>,
-<code>kableExtra</code></li>
-<li>Web application: <code>shiny</code></li>
-<li>Plot: <code>lattice</code>, <code>ggplot2</code></li>
-<li>GIS: <code>sf</code>, <code>maps</code>, <code>leaflet</code></li>
-<li>Bayesian analysis: <code>R2OpenBUGS</code>, <code>RStan</code> (need
-openBUGS and Stan)</li>
-<li>Interface to Python: <code>reticulate</code></li>
-<li>JSON objects: <code>rjson</code></li>
-<li>Statistical learning:
-<ul>
-<li>Linear/quadratic discriminant analysis (LDA/QDA):
-<code>MASS</code></li>
-<li>k-nearest neighbors (KNN): <code>class</code></li>
-<li>Bootstrapping: <code>boot</code></li>
-<li>Ridge and LASSO: <code>glmnet</code></li>
-<li>Principal components regression (PCR) and Partial Least Squares
-(PLS): <code>pls</code></li>
-<li>Spline: <code>splines</code></li>
-<li>Generalized additive models (GAM): <code>gam</code></li>
-<li>Gradient Boosting Machines (GBM): <code>gbm</code></li>
-<li>tree, Random forest and bagging: <code>tree</code>,
-<code>randomForest</code></li>
-<li>Support Vector Machine (SVM): <code>e1071</code></li>
-<li>Linear, non-Linear and generalized mixed-effects models:
-<code>lme4</code>, <code>nlme</code>, <code>MASS</code></li>
-<li>Profile analysis of multivariate data: <code>profileR</code></li>
-<li>Panel regression: <code>plm</code>, <code>splm</code></li>
-</ul></li>
-</ul></div>
-            <div class="d-none d-xl-block col-xl-2 bd-toc">
-               <ul class="section-nav">
-                  <li class="toc-entry"><ul>
-<li><a href="#operators" id="toc-operators">Operators</a></li>
-<li><a href="#data-structures" id="toc-data-structures">Data
-structures</a>
-<ul>
-<li><a href="#conversion" id="toc-conversion">Conversion</a></li>
-</ul></li>
-<li><a href="#control-flow-tools" id="toc-control-flow-tools">Control
-flow tools</a></li>
-<li><a href="#defining-functions" id="toc-defining-functions">Defining
-functions</a></li>
-<li><a href="#reading-and-writing" id="toc-reading-and-writing">Reading
-and writing</a></li>
-<li><a href="#packages" id="toc-packages">Packages</a></li>
-</ul></li>
-               </ul>
-            </div>
-         </div>
-               </div>
-            <!-- Footer -->
-            <footer class="footer text-muted">
-               <div align="center">
-                  Text is available under <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>
-                  &nbsp;|&nbsp;
-                  Code licensed under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank" rel="noopener">GPL-3.0</a>
-                  &nbsp;|&nbsp;
-                  Built with <a href="https://github.com/ashki23/pandoc-bootstrap" target="_blank" rel="noopener">pandoc-bootstrap</a> theme
-                  <br />
-                  Copyright 2018-2024, Ashkan Mirzaee
-               </div>
-            </footer>
-            <!-- Global site tag (gtag.js) - Google Analytics -->
-            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132464297-1"></script>
-            <script>
-               window.dataLayer = window.dataLayer || [];
-               function gtag(){dataLayer.push(arguments);}
-               gtag('js', new Date());
-               gtag('config', 'UA-132464297-1');
-            </script>
-            <!-- JS, Popper.js, and jQuery -->
-      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-      <!-- Mathjax -->
-      <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-      <script>
-         /* Bootstrap styles to tables */
-         function bootstrapStylePandocTables() {
-         $('tr.header').parent('thead').parent('table').addClass('table table-condensed'); }
-         $(document).ready(function () { bootstrapStylePandocTables(); });
-         /* Adjust the height when click the toc */
-         var shiftWindow = function() { scrollBy(0, -60) };
-         window.addEventListener("hashchange", shiftWindow);
-         function load() { if (window.location.hash) shiftWindow(); }
-      </script>
-   </body>
+  <h2 id="packages">Packages</h2>
+  <p>Packages are very important component of R. RStudio is a great IDE
+  for R that provides some basic libraries. But based on your
+  requirements you may need to install and import other packages. We can
+  use <code>install.packages("package name")</code> and
+  <code>library("package name")</code> functions to install and import
+  packages in RStudio. Knowing packages in R is a very important topic,
+  some of packages that I am using are include:</p>
+  <ul>
+  <li>Documentation: <code>rmarkdown</code>, <code>kintr</code>,
+  <code>kableExtra</code></li>
+  <li>Web application: <code>shiny</code></li>
+  <li>Plot: <code>lattice</code>, <code>ggplot2</code></li>
+  <li>GIS: <code>sf</code>, <code>maps</code>, <code>leaflet</code></li>
+  <li>Bayesian analysis: <code>R2OpenBUGS</code>, <code>RStan</code>
+  (need openBUGS and Stan)</li>
+  <li>Interface to Python: <code>reticulate</code></li>
+  <li>JSON objects: <code>rjson</code></li>
+  <li>Statistical learning:
+  <ul>
+  <li>Linear/quadratic discriminant analysis (LDA/QDA):
+  <code>MASS</code></li>
+  <li>k-nearest neighbors (KNN): <code>class</code></li>
+  <li>Bootstrapping: <code>boot</code></li>
+  <li>Ridge and LASSO: <code>glmnet</code></li>
+  <li>Principal components regression (PCR) and Partial Least Squares
+  (PLS): <code>pls</code></li>
+  <li>Spline: <code>splines</code></li>
+  <li>Generalized additive models (GAM): <code>gam</code></li>
+  <li>Gradient Boosting Machines (GBM): <code>gbm</code></li>
+  <li>tree, Random forest and bagging: <code>tree</code>,
+  <code>randomForest</code></li>
+  <li>Support Vector Machine (SVM): <code>e1071</code></li>
+  <li>Linear, non-Linear and generalized mixed-effects models:
+  <code>lme4</code>, <code>nlme</code>, <code>MASS</code></li>
+  <li>Profile analysis of multivariate data: <code>profileR</code></li>
+  <li>Panel regression: <code>plm</code>, <code>splm</code></li>
+  </ul></li>
+  </ul>
+	</div>
+      </main>
+    </div>
+    
+    <!-- After body contents -->
+        <!-- Footer -->
+        <footer class="bd-footer mt-auto py-3 py-md-3 bg-body-tertiary">
+          <div class="container py-md-3 px-4 px-md-3 text-body-secondary" align="center" style="font-size: .95rem;">
+            Text is available under <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>
+            &nbsp;|&nbsp;
+            Code licensed under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank" rel="noopener">GPL-3.0</a>
+            &nbsp;|&nbsp;
+            Built with <a href="https://github.com/ashki23/pandoc-bootstrap" target="_blank" rel="noopener">pandoc-bootstrap</a> theme
+            <br />
+            Copyright 2018-2024, Ashkan Mirzaee
+          </div>
+        </footer>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132464297-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'UA-132464297-1');
+        </script>
+        
+    <!-- Bootstrap Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+    <!-- Highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js" integrity="sha512-6yoqbrcLAHDWAdQmiRlHG4+m0g/CT/V9AGyxabG8j7Jk8j3r3K6due7oqpiRMZqcYe9WM2gPcaNNxnl2ux+3tA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+        
+    <!-- Custom Scripts -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+	  const htmlElement = document.documentElement;
+	  const highlightStyle = document.getElementById("highlight-style");
+	  
+	  // Function to update Highlight.js style based on theme
+	  const updateHighlightStyle = (theme) => {
+              const lightTheme = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/stackoverflow-light.min.css";
+              const darkTheme = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/github-dark.min.css";
+              highlightStyle.href = theme === "dark" ? darkTheme : lightTheme;
+	  };
+	  
+	  // Function to set the theme
+	  const setTheme = (theme) => {
+              htmlElement.setAttribute("data-bs-theme", theme);
+              localStorage.setItem("theme", theme); // Save the theme to localStorage
+              updateHighlightStyle(theme);
+	  };
+	  
+	  // Get saved theme from localStorage or fallback to default ("light")
+	  const savedTheme = localStorage.getItem("theme") || "light";
+	  setTheme(savedTheme);
+	  
+	  // Event listener for theme dropdown
+	  document.querySelectorAll(".dropdown-item").forEach((item) => {
+              item.addEventListener("click", (e) => {
+		  e.preventDefault();
+		  const selectedTheme = item.getAttribute("data-theme");
+		  setTheme(selectedTheme);
+              });
+	  });
+	  
+	  // Initialize Highlight.js
+	  hljs.highlightAll();
+      });
+    </script>
+  </body>
 </html>

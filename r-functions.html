@@ -1,160 +1,256 @@
 <!doctype html>
-<html>
-   <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <meta name="generator" content="pandoc">
-      <meta name="author" content="Ashkan Mirzaee">
-      <meta name="description" content="Review on some basic R
-fuctions">
-      <title>Helpful functions in R</title>
-      <!-- Bootstrap -->
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-      <!-- Font-awesome -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-      <!-- Styles -->
-      <link rel="stylesheet" href="https://ashki23.github.io/styles.css">
-            <!-- Favicon -->
-            <link rel="icon" href="images/AM.jpg">
-            <!-- Google-site-verification -->
-            <meta name="google-site-verification" content="lD_nifpQ-CA6LaDwxYJbe5bq0oa6Ir0Ax-txvtdP51E">
-            <!-- Bing-site-verification -->
-            <meta name="msvalidate.01" content="89BCD3FF42B6E9FE48E0C8365767D11B">
-         </head>
-   <body>
-            <nav class="navbar fixed-top navbar-expand-lg navbar-dark bd-navbar">
-               <a class="navbar-brand" href="index.html">Ashkan Mirzaee</a>
-               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="border: none; outline: none; padding-right: 0; padding-left: 1rem;">
-               <span class="navbar-toggler-icon"></span>
-               </button>
-               <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav mr-auto">
-                     <li class="nav-item">
-                        <a class="nav-link" href="page1.html">Blog</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="tutorials.html">Tutorials</a>
-                     </li>
-            	 <li class="nav-item">
-                        <a class="nav-link" href="research.html">Research</a>
-                     </li>
-            	 <li class="nav-item">
-                        <a class="nav-link" href="applications.html">Applications</a>
-                     </li>
-            	 <li class="nav-item">
-                        <a class="nav-link" href="blogroll.html">Blogroll</a>
-                     </li>
+<html lang="en" class="h-100" data-bs-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="generator" content="pandoc">
+    <meta name="author" content="Ashkan Mirzaee">
+    <meta name="description" content="Review on some basic R fuctions">
+    <title>Helpful functions in R</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!-- Bootstrap Icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous">
+    
+    <!-- Highlight.js Styles -->
+    <link rel="stylesheet" id="highlight-style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/stackoverflow-light.min.css">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="https://getbootstrap.com/docs/5.3/assets/css/docs.css">
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- After header contents -->
+        <!-- Favicon -->
+        <link rel="icon" href="images/AM.jpg">
+        <!-- Google-site-verification -->
+        <meta name="google-site-verification" content="lD_nifpQ-CA6LaDwxYJbe5bq0oa6Ir0Ax-txvtdP51E">
+        <!-- Bing-site-verification -->
+        <meta name="msvalidate.01" content="89BCD3FF42B6E9FE48E0C8365767D11B">
+      </head>
+  <body class="d-flex flex-column h-100" data-bs-spy="scroll" data-bs-target="#TableOfContents">
+    <!-- Before body contents -->
+        <nav class="navbar bd-navbar navbar-expand-lg fixed-top py-2">
+          <div class="container-xxl bd-gutter flex-wrap flex-lg-nowrap">
+            <!-- Brand -->
+            <a class="navbar-brand" href="index.html" style="transform: none;">Ashkan Mirzaee</a>
+
+            <!-- Toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Navbar Content -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <!-- Left Navigation -->
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link" href="page1.html">Blog</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="tutorials.html">Tutorials</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="research.html">Research</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="applications.html">Applications</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="blogroll.html">Blogroll</a>
+                </li>
+              </ul>
+              
+              <!-- Divider for smaller screens -->
+              <hr class="d-lg-none text-white-50">
+              
+              <!-- Social Media Icons -->
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html" aria-label="Contact">
+                    <i class="bi bi-envelope"></i>
+        	    <span class="d-lg-none ms-2">Contact</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://github.com/ashki23" target="_blank" rel="noopener" aria-label="GitHub">
+                    <i class="bi bi-github"></i>
+        	    <span class="d-lg-none ms-2">GitHub</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://gitlab.com/ashki23" target="_blank" rel="noopener" aria-label="GitLab">
+                    <i class="bi bi-gitlab"></i>
+        	    <span class="d-lg-none ms-2">GitLab</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://www.linkedin.com/in/ashkan-mirzaee/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <i class="bi bi-linkedin"></i>
+        	    <span class="d-lg-none ms-2">Linkedin</span>
+                  </a>
+                </li>
+              </ul>
+              
+              <!-- Divider for larger screens -->
+              <div class="vr d-none d-lg-flex mx-2 my-1 text-white"></div>
+              
+              <!-- Divider for smaller screens -->
+              <hr class="d-lg-none text-white-50">
+              
+              <!-- Theme Dropdown -->
+              <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                  <button class="btn btn-link nav-link dropdown-toggle" type="button" id="themeDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-circle-half"></i>
+        	    <span class="d-lg-none ms-2">Toggle theme</span>
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="themeDropdown">
+                    <li>
+                      <a class="dropdown-item align-items-center" data-theme="light">
+                        <i class="bi bi-sun-fill me-2 opacity-50"></i> Light
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item align-items-center" data-theme="dark">
+                        <i class="bi bi-moon-stars-fill me-2 opacity-50"></i> Dark
+                      </a>
+                    </li>
                   </ul>
-                  <ul class="navbar-nav ml-auto">
-            	<li class="nav-item">
-            	  <a class="nav-link" href="contact.html" aria-label="Contact">
-            	    <span class="fa fa-envelope fa-lg"></a>
-            	</li>
-            	<li class="nav-item">
-            	  <a class="nav-link" href="https://github.com/ashki23" target="_blank" rel="noopener" aria-label="GitHub">
-            	    <span class="fa fa-github fa-lg"></span></a>
-            	</li>
-            	<li class="nav-item">
-            	  <a class="nav-link" href="https://gitlab.com/ashki23" target="_blank" rel="noopener" aria-label="GitLab">
-            	    <span class="fa fa-gitlab fa-lg"></span></a>
-            	</li>
-            	<li class="nav-item">
-            	  <a class="nav-link" href="https://www.linkedin.com/in/ashkan-mirzaee/" target="_blank" rel="noopener" aria-label="Linkedin">
-            	    <span class="fa fa-linkedin fa-lg"></span></a>
-            	</li>
-                  </ul>
-               </div>
-            </nav>
-            <div class="container">
-         <h1 class="title">Helpful functions in R</h1>
-                  <div class="row">
-            <div class="col-xl-10"><p><a
-href="https://www.r-project.org/">R</a> is a powerful tool for
-statistical learning, data analysis and graphics that includes numerous
-built-in functions. R is a very self explanatory software in terms of
-documentation. We can learn about any R commands only by using
-<code>help(command)</code> in R. In this article, generally we will
-learn more about R built-in functions related to calculus, matrix
-operations, summary statistics and regular expressions.</p>
-<p>As a prerequisite, first review the following article:</p>
-<ul>
-<li><a href="r-intro.html">A gentle introduction to R</a></li>
-</ul>
-<p>The following are also more resources to learn R programming:</p>
-<ul>
-<li><a href="http://www.cyclismo.org/tutorial/R/index.html">R
-Tutorial</a></li>
-<li><a
-href="http://swcarpentry.github.io/r-novice-inflammation/">Programming
-with R</a></li>
-<li><a href="http://swcarpentry.github.io/r-novice-gapminder/">R for
-Reproducible Scientific Analysis</a></li>
-<li><a href="r-intro.html">A gentle introduction to R</a></li>
-<li><a href="r-plots.html">Basic graphics in R</a></li>
-</ul>
-<hr />
-<h2 id="shell-like-commands">Shell-like commands</h2>
-<ul>
-<li>List of objects: <code>ls()</code></li>
-<li>Remove an object: <code>rm(object)</code></li>
-<li>Remove all objects: <code>rm(list = ls())</code></li>
-<li>List the files in a directory: <code>dir()</code>,
-<code>dir(path, pattern)</code></li>
-<li>Get working directory: <code>getwd()</code></li>
-<li>Set working directory: <code>setwd("path")</code></li>
-<li>Get environmental variables: <code>Sys.getenv("ENV")</code></li>
-<li>Set environmental variables:
-<code>Sys.setenv(ENV = "path")</code></li>
-<li>Running shell commands:
-<code>system("command", intern = TRUE)</code></li>
-</ul>
-<h2 id="statistical-functions">Statistical functions</h2>
-<p>R is one of the best application statistical analysis and natively
-supports many advanced statistical methods. The following show some of
-these functions:</p>
-<ul>
-<li>Basic stats: <code>mean</code>, <code>median</code>,
-<code>sd</code>, <code>var</code>, <code>cov</code>, <code>cor</code>,
-<code>quantile</code></li>
-<li>Probability functions
-<ul>
-<li>Density functions (ddist): <code>dnorm</code>, <code>dchisq</code>,
-<code>dt</code>, <code>df</code></li>
-<li>Cumulative distribution functions (pdist): <code>pgamma</code>,
-<code>pbeta</code>, <code>pexp</code></li>
-<li>Quantile functions (qdist): <code>qpois</code>, <code>qunif</code>,
-<code>qbinom</code></li>
-<li>Random numbers (rdist) : <code>runif</code>, <code>rlogis</code>,
-<code>rlnorm</code></li>
-</ul></li>
-<li>Regression analysis
-<ul>
-<li>Linear models: <code>lm</code></li>
-<li>Generalized linear models: <code>glm</code></li>
-<li>Nonlinear models: <code>nls</code></li>
-</ul></li>
-<li>Analysis of varience: <code>anova</code></li>
-<li>Multivariate aalysis of varience: <code>manova</code></li>
-<li>Confidence intervals: <code>confint</code></li>
-<li>t-test: <code>t.test</code></li>
-<li>principal components: <code>prcomp</code></li>
-</ul>
-<h2 id="computational-functions">Computational functions</h2>
-<p>R provides an abundance of computational functions, such as:</p>
-<ul>
-<li>Counting: <code>nrow</code>, <code>ncol</code>,
-<code>length</code></li>
-<li>Ordinal and sequential: <code>sort</code>, <code>order</code>,
-<code>seq</code></li>
-<li>Cumulative: <code>cumsum</code>, <code>cumprod</code>,
-<code>colSums</code>, <code>rowSums</code></li>
-<li>Finding min/mix: <code>which.min</code>, <code>which.max</code></li>
-<li>Mapping: <code>apply</code></li>
-<li>Normalizing: <code>scale</code></li>
-<li>Sampling: <code>sample</code></li>
-</ul>
-<p>The following are some examples of these functions:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cumulative sums, products</span></span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        
+    <div class="container-xxl bd-gutter pb-5 mt-3 my-md-4 bd-layout" style="padding-top:60px;">
+      <main class="bd-main order-1">
+	
+	<!-- Tiltle -->
+	<h1 class="bd-intro pt-2 ps-lg-2" id="title">Helpful functions in R</h1>
+	
+		<!-- Table of Contents -->
+	<div class="bd-toc mt-3 mb-5 my-lg-0 mb-lg-5 px-sm-1 text-body-secondary">
+	  <strong class="d-none d-md-block h6 my-2 ms-3">On this page</strong>
+	  <hr class="d-none d-md-block my-2 ms-3">
+	  <div class="collapse bd-toc-collapse" id="tocContents">
+	    <nav id="TableOfContents">
+	      <ul>
+      <li><a href="#shell-like-commands"
+      id="toc-shell-like-commands">Shell-like commands</a></li>
+      <li><a href="#statistical-functions"
+      id="toc-statistical-functions">Statistical functions</a></li>
+      <li><a href="#computational-functions"
+      id="toc-computational-functions">Computational functions</a></li>
+      <li><a href="#matrix-operations" id="toc-matrix-operations">Matrix
+      operations</a></li>
+      <li><a href="#differentiation-and-integration"
+      id="toc-differentiation-and-integration">Differentiation and
+      integration</a></li>
+      <li><a href="#date-and-time" id="toc-date-and-time">Date and
+      time</a></li>
+      <li><a href="#summary-statistics"
+      id="toc-summary-statistics">Summary statistics</a></li>
+      <li><a href="#split-and-merge-data"
+      id="toc-split-and-merge-data">Split and merge data</a></li>
+      <li><a href="#regular-expressions"
+      id="toc-regular-expressions">Regular expressions</a></li>
+      </ul>
+	    </nav>
+	  </div>
+	</div>
+		
+	<!-- Main Content -->
+	<div class="bd-content ps-lg-2">
+	  <p><a href="https://www.r-project.org/">R</a> is a powerful tool for
+  statistical learning, data analysis and graphics that includes
+  numerous built-in functions. R is a very self explanatory software in
+  terms of documentation. We can learn about any R commands only by
+  using <code>help(command)</code> in R. In this article, generally we
+  will learn more about R built-in functions related to calculus, matrix
+  operations, summary statistics and regular expressions.</p>
+  <p>As a prerequisite, first review the following article:</p>
+  <ul>
+  <li><a href="r-intro.html">A gentle introduction to R</a></li>
+  </ul>
+  <p>The following are also more resources to learn R programming:</p>
+  <ul>
+  <li><a href="http://www.cyclismo.org/tutorial/R/index.html">R
+  Tutorial</a></li>
+  <li><a
+  href="http://swcarpentry.github.io/r-novice-inflammation/">Programming
+  with R</a></li>
+  <li><a href="http://swcarpentry.github.io/r-novice-gapminder/">R for
+  Reproducible Scientific Analysis</a></li>
+  <li><a href="r-intro.html">A gentle introduction to R</a></li>
+  <li><a href="r-plots.html">Basic graphics in R</a></li>
+  </ul>
+  <hr />
+  <h2 id="shell-like-commands">Shell-like commands</h2>
+  <ul>
+  <li>List of objects: <code>ls()</code></li>
+  <li>Remove an object: <code>rm(object)</code></li>
+  <li>Remove all objects: <code>rm(list = ls())</code></li>
+  <li>List the files in a directory: <code>dir()</code>,
+  <code>dir(path, pattern)</code></li>
+  <li>Get working directory: <code>getwd()</code></li>
+  <li>Set working directory: <code>setwd("path")</code></li>
+  <li>Get environmental variables: <code>Sys.getenv("ENV")</code></li>
+  <li>Set environmental variables:
+  <code>Sys.setenv(ENV = "path")</code></li>
+  <li>Running shell commands:
+  <code>system("command", intern = TRUE)</code></li>
+  </ul>
+  <h2 id="statistical-functions">Statistical functions</h2>
+  <p>R is one of the best application statistical analysis and natively
+  supports many advanced statistical methods. The following show some of
+  these functions:</p>
+  <ul>
+  <li>Basic stats: <code>mean</code>, <code>median</code>,
+  <code>sd</code>, <code>var</code>, <code>cov</code>, <code>cor</code>,
+  <code>quantile</code></li>
+  <li>Probability functions
+  <ul>
+  <li>Density functions (ddist): <code>dnorm</code>,
+  <code>dchisq</code>, <code>dt</code>, <code>df</code></li>
+  <li>Cumulative distribution functions (pdist): <code>pgamma</code>,
+  <code>pbeta</code>, <code>pexp</code></li>
+  <li>Quantile functions (qdist): <code>qpois</code>,
+  <code>qunif</code>, <code>qbinom</code></li>
+  <li>Random numbers (rdist) : <code>runif</code>, <code>rlogis</code>,
+  <code>rlnorm</code></li>
+  </ul></li>
+  <li>Regression analysis
+  <ul>
+  <li>Linear models: <code>lm</code></li>
+  <li>Generalized linear models: <code>glm</code></li>
+  <li>Nonlinear models: <code>nls</code></li>
+  </ul></li>
+  <li>Analysis of varience: <code>anova</code></li>
+  <li>Multivariate aalysis of varience: <code>manova</code></li>
+  <li>Confidence intervals: <code>confint</code></li>
+  <li>t-test: <code>t.test</code></li>
+  <li>principal components: <code>prcomp</code></li>
+  </ul>
+  <h2 id="computational-functions">Computational functions</h2>
+  <p>R provides an abundance of computational functions, such as:</p>
+  <ul>
+  <li>Counting: <code>nrow</code>, <code>ncol</code>,
+  <code>length</code></li>
+  <li>Ordinal and sequential: <code>sort</code>, <code>order</code>,
+  <code>seq</code></li>
+  <li>Cumulative: <code>cumsum</code>, <code>cumprod</code>,
+  <code>colSums</code>, <code>rowSums</code></li>
+  <li>Finding min/mix: <code>which.min</code>,
+  <code>which.max</code></li>
+  <li>Mapping: <code>apply</code></li>
+  <li>Normalizing: <code>scale</code></li>
+  <li>Sampling: <code>sample</code></li>
+  </ul>
+  <p>The following are some examples of these functions:</p>
+  <div class="sourceCode" id="cb1"><pre
+  class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cumulative sums, products</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cumsum</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="do">## [1]  1  3  6 10 15</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -196,25 +292,26 @@ these functions:</p>
 <span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="do">## 43.4000000  0.3813646</span></span>
 <span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="fu">scale</span>(mydata) <span class="co"># scale(x) = (x - mean(x)) / sd(x)</span></span></code></pre></div>
-<h2 id="matrix-operations">Matrix operations</h2>
-<p>The most common matrix operations include:</p>
-<ul>
-<li>Dimensions of a matrix: <code>dim</code></li>
-<li>Diagonal of a matrix: <code>diag</code></li>
-<li>Identity matrix: <code>diag(number)</code></li>
-<li>Matrix diagonal: <code>Diagonal</code></li>
-<li>Matrix symmetric test: <code>isSymmetric</code></li>
-<li>Matrix multiplication: <code>%*%</code></li>
-<li>Test matrices for exact equality: <code>identical</code></li>
-<li>Matrix transpose: <code>t</code></li>
-<li>Determinant of a matrix: <code>det</code></li>
-<li>Inverse of a matrix: <code>solve</code></li>
-<li>Solve a system of equations: <code>solve</code></li>
-<li>QR Decomposition of a Matrix: <code>qr</code></li>
-<li>Spectral Decomposition of a Matrix: <code>eigen</code></li>
-</ul>
-<p>The following are some examples of above functions.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>M <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">4</span>,<span class="sc">-</span><span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">6</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">8</span>,<span class="dv">4</span>), <span class="dv">3</span>, <span class="dv">3</span>)</span>
+  <h2 id="matrix-operations">Matrix operations</h2>
+  <p>The most common matrix operations include:</p>
+  <ul>
+  <li>Dimensions of a matrix: <code>dim</code></li>
+  <li>Diagonal of a matrix: <code>diag</code></li>
+  <li>Identity matrix: <code>diag(number)</code></li>
+  <li>Matrix diagonal: <code>Diagonal</code></li>
+  <li>Matrix symmetric test: <code>isSymmetric</code></li>
+  <li>Matrix multiplication: <code>%*%</code></li>
+  <li>Test matrices for exact equality: <code>identical</code></li>
+  <li>Matrix transpose: <code>t</code></li>
+  <li>Determinant of a matrix: <code>det</code></li>
+  <li>Inverse of a matrix: <code>solve</code></li>
+  <li>Solve a system of equations: <code>solve</code></li>
+  <li>QR Decomposition of a Matrix: <code>qr</code></li>
+  <li>Spectral Decomposition of a Matrix: <code>eigen</code></li>
+  </ul>
+  <p>The following are some examples of above functions.</p>
+  <div class="sourceCode" id="cb2"><pre
+  class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>M <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">4</span>,<span class="sc">-</span><span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">6</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">8</span>,<span class="dv">4</span>), <span class="dv">3</span>, <span class="dv">3</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>N <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="sc">-</span><span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>), <span class="dv">3</span>, <span class="dv">3</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>b <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>))</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -298,15 +395,17 @@ these functions:</p>
 <span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a><span class="do">## [1,] 0.3994272 -0.6725085  0.1632537</span></span>
 <span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a><span class="do">## [2,] 0.8980978 -0.5844552 -0.8354557</span></span>
 <span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a><span class="do">## [3,] 0.1840605  0.4540313  0.5247494</span></span></code></pre></div>
-<h2 id="differentiation-and-integration">Differentiation and
-integration</h2>
-<p>R base system supports both differentiation and integration with:</p>
-<ul>
-<li>Derivative: <code>D(function, "wrt")</code></li>
-<li>Integrate: <code>integrate(function, lower, upper)</code></li>
-</ul>
-<p>For instance:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Derivative</span></span>
+  <h2 id="differentiation-and-integration">Differentiation and
+  integration</h2>
+  <p>R base system supports both differentiation and integration
+  with:</p>
+  <ul>
+  <li>Derivative: <code>D(function, "wrt")</code></li>
+  <li>Integrate: <code>integrate(function, lower, upper)</code></li>
+  </ul>
+  <p>For instance:</p>
+  <div class="sourceCode" id="cb3"><pre
+  class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Derivative</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>f <span class="ot">=</span> <span class="fu">expression</span>(x<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span><span class="dv">3</span><span class="sc">*</span>x)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>ff <span class="ot">=</span> <span class="fu">D</span>(f, <span class="st">&quot;x&quot;</span>)</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>ff</span>
@@ -323,23 +422,24 @@ integration</h2>
 <span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>f <span class="ot">=</span> <span class="cf">function</span>(x) x<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span><span class="dv">3</span><span class="sc">*</span>x</span>
 <span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="fu">integrate</span>(f, <span class="at">lower =</span> <span class="dv">0</span>, <span class="at">upper =</span> <span class="dv">1</span>)</span>
 <span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="do">## 1.833333 with absolute error &lt; 2e-14</span></span></code></pre></div>
-<h2 id="date-and-time">Date and time</h2>
-<p>There are several functions to work with date and time classes such
-as:</p>
-<ul>
-<li>Current time and data: <code>Sys.time</code>, <code>Sys.Date</code>,
-<code>timestamp</code></li>
-<li>Date information: <code>weekdays</code>, <code>month</code>,
-<code>quarters</code></li>
-<li>Time formats: <code>%a %b %d %Y %X %H %M %S</code>. Use
-<code>help(strftime)</code> to see all formats</li>
-<li>Time difference: <code>difftime</code></li>
-<li>Time sequences: <code>seq</code></li>
-<li>Date-time conversion: <code>strftime</code></li>
-<li>Time-series: <code>ts</code></li>
-</ul>
-<p>For example:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">timestamp</span>()</span>
+  <h2 id="date-and-time">Date and time</h2>
+  <p>There are several functions to work with date and time classes such
+  as:</p>
+  <ul>
+  <li>Current time and data: <code>Sys.time</code>,
+  <code>Sys.Date</code>, <code>timestamp</code></li>
+  <li>Date information: <code>weekdays</code>, <code>month</code>,
+  <code>quarters</code></li>
+  <li>Time formats: <code>%a %b %d %Y %X %H %M %S</code>. Use
+  <code>help(strftime)</code> to see all formats</li>
+  <li>Time difference: <code>difftime</code></li>
+  <li>Time sequences: <code>seq</code></li>
+  <li>Date-time conversion: <code>strftime</code></li>
+  <li>Time-series: <code>ts</code></li>
+  </ul>
+  <p>For example:</p>
+  <div class="sourceCode" id="cb4"><pre
+  class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">timestamp</span>()</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="do">##------ Wed Feb 12 21:47:43 2020 ------##</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.time</span>()</span>
@@ -369,19 +469,21 @@ as:</p>
 <span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Date-time conversion</span></span>
 <span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a><span class="fu">strptime</span>(<span class="st">&quot;20/2/06 11:16:16.683&quot;</span>, <span class="at">format =</span> <span class="st">&quot;%d/%m/%y %H:%M:%OS&quot;</span>) <span class="co"># convert character to time-date objects</span></span>
 <span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;2006-02-20 11:16:16 CST&quot;</span></span></code></pre></div>
-<p><code>ts</code> function can be used to create a vector or matrix of
-<strong>time-series</strong> objects.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ts</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>, <span class="at">start =</span> <span class="fu">c</span>(<span class="dv">1956</span>, <span class="dv">3</span>), <span class="at">frequency =</span> <span class="dv">12</span>) <span class="co"># for season: frequency = 4</span></span>
+  <p><code>ts</code> function can be used to create a vector or matrix
+  of <strong>time-series</strong> objects.</p>
+  <div class="sourceCode" id="cb5"><pre
+  class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ts</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>, <span class="at">start =</span> <span class="fu">c</span>(<span class="dv">1956</span>, <span class="dv">3</span>), <span class="at">frequency =</span> <span class="dv">12</span>) <span class="co"># for season: frequency = 4</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="do">##      Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="do">## 1956           1   2   3   4   5   6   7   8   9  10</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="do">## 1957  11  12</span></span></code></pre></div>
-<h2 id="summary-statistics">Summary statistics</h2>
-<p><code>aggregate</code> function splits the data into subsets,
-computes summary statistics for each, and returns the result in a
-convenient form. <code>table</code> uses the cross-classifying factors
-to build a contingency table of the counts at each combination of factor
-levels.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(warpbreaks)</span>
+  <h2 id="summary-statistics">Summary statistics</h2>
+  <p><code>aggregate</code> function splits the data into subsets,
+  computes summary statistics for each, and returns the result in a
+  convenient form. <code>table</code> uses the cross-classifying factors
+  to build a contingency table of the counts at each combination of
+  factor levels.</p>
+  <div class="sourceCode" id="cb6"><pre
+  class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(warpbreaks)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="do">##   breaks wool tension</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="do">## 1     26    A       L</span></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="do">## 2     30    A       L</span></span>
@@ -449,18 +551,19 @@ levels.</p>
 <span id="cb6-66"><a href="#cb6-66" aria-hidden="true" tabindex="-1"></a><span class="do">## carb . .  .  ,    . , .     1 </span></span>
 <span id="cb6-67"><a href="#cb6-67" aria-hidden="true" tabindex="-1"></a><span class="do">## attr(,&quot;legend&quot;)</span></span>
 <span id="cb6-68"><a href="#cb6-68" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0 &#39; &#39; 0.3 &#39;.&#39; 0.6 &#39;,&#39; 0.8 &#39;+&#39; 0.9 &#39;*&#39; 0.95 &#39;B&#39; 1</span></span></code></pre></div>
-<h2 id="split-and-merge-data">Split and merge data</h2>
-<p><code>split</code> function divides the data into a list of defined
-groups. <code>merge</code> function merge two data frames by common
-columns or row names. <code>merge</code> is similar to <code>JOIN</code>
-in SQL:</p>
-<ul>
-<li>Inner join: <code>merge(x, y, by)</code></li>
-<li>Left join: <code>merge(x, y, by, all.x = T)</code></li>
-<li>Right join: <code>merge(x, y, by, all.y = T)</code></li>
-<li>Outer join: <code>merge(x, y, by, all = T)</code></li>
-</ul>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">=</span> <span class="fu">expand.grid</span>(<span class="at">meat =</span> <span class="fu">c</span>(<span class="st">&quot;grade-1&quot;</span>,<span class="st">&quot;grade-2&quot;</span>,<span class="st">&quot;grade-3&quot;</span>), <span class="at">food =</span> <span class="fu">c</span>(<span class="st">&quot;burger&quot;</span>, <span class="st">&quot;steak&quot;</span>, <span class="st">&quot;pizza&quot;</span>))</span>
+  <h2 id="split-and-merge-data">Split and merge data</h2>
+  <p><code>split</code> function divides the data into a list of defined
+  groups. <code>merge</code> function merge two data frames by common
+  columns or row names. <code>merge</code> is similar to
+  <code>JOIN</code> in SQL:</p>
+  <ul>
+  <li>Inner join: <code>merge(x, y, by)</code></li>
+  <li>Left join: <code>merge(x, y, by, all.x = T)</code></li>
+  <li>Right join: <code>merge(x, y, by, all.y = T)</code></li>
+  <li>Outer join: <code>merge(x, y, by, all = T)</code></li>
+  </ul>
+  <div class="sourceCode" id="cb7"><pre
+  class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">=</span> <span class="fu">expand.grid</span>(<span class="at">meat =</span> <span class="fu">c</span>(<span class="st">&quot;grade-1&quot;</span>,<span class="st">&quot;grade-2&quot;</span>,<span class="st">&quot;grade-3&quot;</span>), <span class="at">food =</span> <span class="fu">c</span>(<span class="st">&quot;burger&quot;</span>, <span class="st">&quot;steak&quot;</span>, <span class="st">&quot;pizza&quot;</span>))</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>value <span class="ot">=</span> <span class="fu">round</span>(<span class="fu">rnorm</span>(<span class="fu">nrow</span>(data)), <span class="dv">2</span>)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>data</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="do">##      meat   food value</span></span>
@@ -528,17 +631,17 @@ in SQL:</p>
 <span id="cb7-66"><a href="#cb7-66" aria-hidden="true" tabindex="-1"></a><span class="do">## 4  4  Mobile   Japan</span></span>
 <span id="cb7-67"><a href="#cb7-67" aria-hidden="true" tabindex="-1"></a><span class="do">## 5  5  Mobile    &lt;NA&gt;</span></span>
 <span id="cb7-68"><a href="#cb7-68" aria-hidden="true" tabindex="-1"></a><span class="do">## 6  6  Mobile   China</span></span></code></pre></div>
-<h2 id="regular-expressions">Regular expressions</h2>
-<p><a href="https://en.wikipedia.org/wiki/Regular_expression">Regular
-expressions</a> (regex) are a simple way to find patterns in text. The
-most common functions implementing regex in R are in the <strong>global
-regular expression print</strong> (<code>grep</code>) family. For more
-information see <code>help("regex")</code> and <code>help(grep)</code>.
-Learn more about regex functions in R at <a
-href="https://d-rug.github.io/blog/2015/regex.fick">D-RUG</a>. Following
-are some simple examples.</p>
-<div class="sourceCode" id="cb8"><pre
-class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sub</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;#&quot;</span>, <span class="st">&quot;abcdfa&quot;</span>) <span class="co"># Substitution: substitue first &quot;a&quot; in the expression &quot;abcdfa&quot; with &quot;#&quot; </span></span>
+  <h2 id="regular-expressions">Regular expressions</h2>
+  <p><a href="https://en.wikipedia.org/wiki/Regular_expression">Regular
+  expressions</a> (regex) are a simple way to find patterns in text. The
+  most common functions implementing regex in R are in the
+  <strong>global regular expression print</strong> (<code>grep</code>)
+  family. For more information see <code>help("regex")</code> and
+  <code>help(grep)</code>. Learn more about regex functions in R at <a
+  href="https://d-rug.github.io/blog/2015/regex.fick">D-RUG</a>.
+  Following are some simple examples.</p>
+  <div class="sourceCode" id="cb8"><pre
+  class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sub</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;#&quot;</span>, <span class="st">&quot;abcdfa&quot;</span>) <span class="co"># Substitution: substitue first &quot;a&quot; in the expression &quot;abcdfa&quot; with &quot;#&quot; </span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;#bcdfa&quot;</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">gsub</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;#&quot;</span>, <span class="st">&quot;abcdfa&quot;</span>) <span class="co"># General substitution: substitue all &quot;a&quot; in the expression &quot;abcdfa&quot; with &quot;#&quot;  </span></span>
@@ -581,69 +684,77 @@ class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1
 <span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;888-555-7766&quot; &quot;888&quot;          &quot;555&quot;          &quot;7766&quot;</span></span>
 <span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a><span class="fu">list.files</span>(<span class="at">path =</span> <span class="st">&quot;./doc&quot;</span>, <span class="at">pattern =</span> <span class="st">&quot;*.pdf$&quot;</span>) <span class="co"># List of &quot;pdf&quot; files in &quot;doc&quot; directory</span></span>
-<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;file1.pdf&quot;   &quot;file2.pdf&quot;</span></span></code></pre></div></div>
-            <div class="d-none d-xl-block col-xl-2 bd-toc">
-               <ul class="section-nav">
-                  <li class="toc-entry"><ul>
-<li><a href="#shell-like-commands"
-id="toc-shell-like-commands">Shell-like commands</a></li>
-<li><a href="#statistical-functions"
-id="toc-statistical-functions">Statistical functions</a></li>
-<li><a href="#computational-functions"
-id="toc-computational-functions">Computational functions</a></li>
-<li><a href="#matrix-operations" id="toc-matrix-operations">Matrix
-operations</a></li>
-<li><a href="#differentiation-and-integration"
-id="toc-differentiation-and-integration">Differentiation and
-integration</a></li>
-<li><a href="#date-and-time" id="toc-date-and-time">Date and
-time</a></li>
-<li><a href="#summary-statistics" id="toc-summary-statistics">Summary
-statistics</a></li>
-<li><a href="#split-and-merge-data" id="toc-split-and-merge-data">Split
-and merge data</a></li>
-<li><a href="#regular-expressions" id="toc-regular-expressions">Regular
-expressions</a></li>
-</ul></li>
-               </ul>
-            </div>
-         </div>
-               </div>
-            <!-- Footer -->
-            <footer class="footer text-muted">
-               <div align="center">
-                  Text is available under <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>
-                  &nbsp;|&nbsp;
-                  Code licensed under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank" rel="noopener">GPL-3.0</a>
-                  &nbsp;|&nbsp;
-                  Built with <a href="https://github.com/ashki23/pandoc-bootstrap" target="_blank" rel="noopener">pandoc-bootstrap</a> theme
-                  <br />
-                  Copyright 2018-2024, Ashkan Mirzaee
-               </div>
-            </footer>
-            <!-- Global site tag (gtag.js) - Google Analytics -->
-            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132464297-1"></script>
-            <script>
-               window.dataLayer = window.dataLayer || [];
-               function gtag(){dataLayer.push(arguments);}
-               gtag('js', new Date());
-               gtag('config', 'UA-132464297-1');
-            </script>
-            <!-- JS, Popper.js, and jQuery -->
-      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-      <!-- Mathjax -->
-      <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-      <script>
-         /* Bootstrap styles to tables */
-         function bootstrapStylePandocTables() {
-         $('tr.header').parent('thead').parent('table').addClass('table table-condensed'); }
-         $(document).ready(function () { bootstrapStylePandocTables(); });
-         /* Adjust the height when click the toc */
-         var shiftWindow = function() { scrollBy(0, -60) };
-         window.addEventListener("hashchange", shiftWindow);
-         function load() { if (window.location.hash) shiftWindow(); }
-      </script>
-   </body>
+<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;file1.pdf&quot;   &quot;file2.pdf&quot;</span></span></code></pre></div>
+	</div>
+      </main>
+    </div>
+    
+    <!-- After body contents -->
+        <!-- Footer -->
+        <footer class="bd-footer mt-auto py-3 py-md-3 bg-body-tertiary">
+          <div class="container py-md-3 px-4 px-md-3 text-body-secondary" align="center" style="font-size: .95rem;">
+            Text is available under <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>
+            &nbsp;|&nbsp;
+            Code licensed under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank" rel="noopener">GPL-3.0</a>
+            &nbsp;|&nbsp;
+            Built with <a href="https://github.com/ashki23/pandoc-bootstrap" target="_blank" rel="noopener">pandoc-bootstrap</a> theme
+            <br />
+            Copyright 2018-2024, Ashkan Mirzaee
+          </div>
+        </footer>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132464297-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'UA-132464297-1');
+        </script>
+        
+    <!-- Bootstrap Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+    <!-- Highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js" integrity="sha512-6yoqbrcLAHDWAdQmiRlHG4+m0g/CT/V9AGyxabG8j7Jk8j3r3K6due7oqpiRMZqcYe9WM2gPcaNNxnl2ux+3tA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+        
+    <!-- Custom Scripts -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+	  const htmlElement = document.documentElement;
+	  const highlightStyle = document.getElementById("highlight-style");
+	  
+	  // Function to update Highlight.js style based on theme
+	  const updateHighlightStyle = (theme) => {
+              const lightTheme = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/stackoverflow-light.min.css";
+              const darkTheme = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/github-dark.min.css";
+              highlightStyle.href = theme === "dark" ? darkTheme : lightTheme;
+	  };
+	  
+	  // Function to set the theme
+	  const setTheme = (theme) => {
+              htmlElement.setAttribute("data-bs-theme", theme);
+              localStorage.setItem("theme", theme); // Save the theme to localStorage
+              updateHighlightStyle(theme);
+	  };
+	  
+	  // Get saved theme from localStorage or fallback to default ("light")
+	  const savedTheme = localStorage.getItem("theme") || "light";
+	  setTheme(savedTheme);
+	  
+	  // Event listener for theme dropdown
+	  document.querySelectorAll(".dropdown-item").forEach((item) => {
+              item.addEventListener("click", (e) => {
+		  e.preventDefault();
+		  const selectedTheme = item.getAttribute("data-theme");
+		  setTheme(selectedTheme);
+              });
+	  });
+	  
+	  // Initialize Highlight.js
+	  hljs.highlightAll();
+      });
+    </script>
+  </body>
 </html>

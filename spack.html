@@ -1,218 +1,309 @@
 <!doctype html>
-<html>
-   <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <meta name="generator" content="pandoc">
-      <meta name="author" content="Ashkan Mirzaee">
-      <meta name="description" content="An introduction to install
+<html lang="en" class="h-100" data-bs-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="generator" content="pandoc">
+    <meta name="author" content="Ashkan Mirzaee">
+    <meta name="description" content="An introduction to install
 software with Spack">
-      <title>Install software with Spack</title>
-      <!-- Bootstrap -->
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-      <!-- Font-awesome -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-      <!-- Styles -->
-      <link rel="stylesheet" href="https://ashki23.github.io/styles.css">
-            <!-- Favicon -->
-            <link rel="icon" href="images/AM.jpg">
-            <!-- Google-site-verification -->
-            <meta name="google-site-verification" content="lD_nifpQ-CA6LaDwxYJbe5bq0oa6Ir0Ax-txvtdP51E">
-            <!-- Bing-site-verification -->
-            <meta name="msvalidate.01" content="89BCD3FF42B6E9FE48E0C8365767D11B">
-         </head>
-   <body>
-            <nav class="navbar fixed-top navbar-expand-lg navbar-dark bd-navbar">
-               <a class="navbar-brand" href="index.html">Ashkan Mirzaee</a>
-               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="border: none; outline: none; padding-right: 0; padding-left: 1rem;">
-               <span class="navbar-toggler-icon"></span>
-               </button>
-               <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav mr-auto">
-                     <li class="nav-item">
-                        <a class="nav-link" href="page1.html">Blog</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="tutorials.html">Tutorials</a>
-                     </li>
-            	 <li class="nav-item">
-                        <a class="nav-link" href="research.html">Research</a>
-                     </li>
-            	 <li class="nav-item">
-                        <a class="nav-link" href="applications.html">Applications</a>
-                     </li>
-            	 <li class="nav-item">
-                        <a class="nav-link" href="blogroll.html">Blogroll</a>
-                     </li>
+    <title>Install software with Spack</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!-- Bootstrap Icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous">
+    
+    <!-- Highlight.js Styles -->
+    <link rel="stylesheet" id="highlight-style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/stackoverflow-light.min.css">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="https://getbootstrap.com/docs/5.3/assets/css/docs.css">
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- After header contents -->
+        <!-- Favicon -->
+        <link rel="icon" href="images/AM.jpg">
+        <!-- Google-site-verification -->
+        <meta name="google-site-verification" content="lD_nifpQ-CA6LaDwxYJbe5bq0oa6Ir0Ax-txvtdP51E">
+        <!-- Bing-site-verification -->
+        <meta name="msvalidate.01" content="89BCD3FF42B6E9FE48E0C8365767D11B">
+      </head>
+  <body class="d-flex flex-column h-100" data-bs-spy="scroll" data-bs-target="#TableOfContents">
+    <!-- Before body contents -->
+        <nav class="navbar bd-navbar navbar-expand-lg fixed-top py-2">
+          <div class="container-xxl bd-gutter flex-wrap flex-lg-nowrap">
+            <!-- Brand -->
+            <a class="navbar-brand" href="index.html" style="transform: none;">Ashkan Mirzaee</a>
+
+            <!-- Toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Navbar Content -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <!-- Left Navigation -->
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link" href="page1.html">Blog</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="tutorials.html">Tutorials</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="research.html">Research</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="applications.html">Applications</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="blogroll.html">Blogroll</a>
+                </li>
+              </ul>
+              
+              <!-- Divider for smaller screens -->
+              <hr class="d-lg-none text-white-50">
+              
+              <!-- Social Media Icons -->
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html" aria-label="Contact">
+                    <i class="bi bi-envelope"></i>
+        	    <span class="d-lg-none ms-2">Contact</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://github.com/ashki23" target="_blank" rel="noopener" aria-label="GitHub">
+                    <i class="bi bi-github"></i>
+        	    <span class="d-lg-none ms-2">GitHub</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://gitlab.com/ashki23" target="_blank" rel="noopener" aria-label="GitLab">
+                    <i class="bi bi-gitlab"></i>
+        	    <span class="d-lg-none ms-2">GitLab</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://www.linkedin.com/in/ashkan-mirzaee/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <i class="bi bi-linkedin"></i>
+        	    <span class="d-lg-none ms-2">Linkedin</span>
+                  </a>
+                </li>
+              </ul>
+              
+              <!-- Divider for larger screens -->
+              <div class="vr d-none d-lg-flex mx-2 my-1 text-white"></div>
+              
+              <!-- Divider for smaller screens -->
+              <hr class="d-lg-none text-white-50">
+              
+              <!-- Theme Dropdown -->
+              <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                  <button class="btn btn-link nav-link dropdown-toggle" type="button" id="themeDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-circle-half"></i>
+        	    <span class="d-lg-none ms-2">Toggle theme</span>
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="themeDropdown">
+                    <li>
+                      <a class="dropdown-item align-items-center" data-theme="light">
+                        <i class="bi bi-sun-fill me-2 opacity-50"></i> Light
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item align-items-center" data-theme="dark">
+                        <i class="bi bi-moon-stars-fill me-2 opacity-50"></i> Dark
+                      </a>
+                    </li>
                   </ul>
-                  <ul class="navbar-nav ml-auto">
-            	<li class="nav-item">
-            	  <a class="nav-link" href="contact.html" aria-label="Contact">
-            	    <span class="fa fa-envelope fa-lg"></a>
-            	</li>
-            	<li class="nav-item">
-            	  <a class="nav-link" href="https://github.com/ashki23" target="_blank" rel="noopener" aria-label="GitHub">
-            	    <span class="fa fa-github fa-lg"></span></a>
-            	</li>
-            	<li class="nav-item">
-            	  <a class="nav-link" href="https://gitlab.com/ashki23" target="_blank" rel="noopener" aria-label="GitLab">
-            	    <span class="fa fa-gitlab fa-lg"></span></a>
-            	</li>
-            	<li class="nav-item">
-            	  <a class="nav-link" href="https://www.linkedin.com/in/ashkan-mirzaee/" target="_blank" rel="noopener" aria-label="Linkedin">
-            	    <span class="fa fa-linkedin fa-lg"></span></a>
-            	</li>
-                  </ul>
-               </div>
-            </nav>
-            <div class="container">
-         <h1 class="title">Install software with Spack</h1>
-                  <div class="row">
-            <div class="col-xl-10"><p><a
-href="https://spack.readthedocs.io/en/latest/">Spack</a> is an open
-source package manager that simplifies building, installing,
-customizing, and sharing HPC software stacks. Spack helps installing
-software with much less efforts. It is a very simple and efficient way
-for installing packages with cumbersome structures and lots of
-dependencies. Spack is an open source package manger and developing and
-maintaining by community of HPC developers.</p>
-<p>To learn more about Sapck review:</p>
-<ul>
-<li><a href="https://spack-tutorial.readthedocs.io/en/latest/">Tutorial:
-Spack 101</a></li>
-<li><a
-href="https://spack.readthedocs.io/en/latest/basic_usage.html">Spack
-Basic Usage</a></li>
-</ul>
-<hr />
-<h2 id="usage">Usage</h2>
-<p>Spack has a very simple workflow. Basically, it is a Git repo of
-package files are written in pure Python including software build
-requirements and dependencies. We can Clone and setup Spack by:</p>
-<div class="sourceCode" id="cb1"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/spack/spack.git</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        
+    <div class="container-xxl bd-gutter pb-5 mt-3 my-md-4 bd-layout" style="padding-top:60px;">
+      <main class="bd-main order-1">
+	
+	<!-- Tiltle -->
+	<h1 class="bd-intro pt-2 ps-lg-2" id="title">Install software with
+Spack</h1>
+	
+		<!-- Table of Contents -->
+	<div class="bd-toc mt-3 mb-5 my-lg-0 mb-lg-5 px-sm-1 text-body-secondary">
+	  <strong class="d-none d-md-block h6 my-2 ms-3">On this page</strong>
+	  <hr class="d-none d-md-block my-2 ms-3">
+	  <div class="collapse bd-toc-collapse" id="tocContents">
+	    <nav id="TableOfContents">
+	      <ul>
+      <li><a href="#usage" id="toc-usage">Usage</a></li>
+      <li><a href="#specs-dependencies"
+      id="toc-specs-dependencies">Specs &amp; dependencies</a></li>
+      <li><a href="#compilers" id="toc-compilers">Compilers</a></li>
+      <li><a href="#architecture-specifiers"
+      id="toc-architecture-specifiers">Architecture specifiers</a></li>
+      <li><a href="#create-and-edit-package-files"
+      id="toc-create-and-edit-package-files">Create and edit package
+      files</a></li>
+      <li><a href="#environment-modules"
+      id="toc-environment-modules">Environment modules</a></li>
+      </ul>
+	    </nav>
+	  </div>
+	</div>
+		
+	<!-- Main Content -->
+	<div class="bd-content ps-lg-2">
+	  <p><a href="https://spack.readthedocs.io/en/latest/">Spack</a> is an
+  open source package manager that simplifies building, installing,
+  customizing, and sharing HPC software stacks. Spack helps installing
+  software with much less efforts. It is a very simple and efficient way
+  for installing packages with cumbersome structures and lots of
+  dependencies. Spack is an open source package manger and developing
+  and maintaining by community of HPC developers.</p>
+  <p>To learn more about Sapck review:</p>
+  <ul>
+  <li><a
+  href="https://spack-tutorial.readthedocs.io/en/latest/">Tutorial:
+  Spack 101</a></li>
+  <li><a
+  href="https://spack.readthedocs.io/en/latest/basic_usage.html">Spack
+  Basic Usage</a></li>
+  </ul>
+  <hr />
+  <h2 id="usage">Usage</h2>
+  <p>Spack has a very simple workflow. Basically, it is a Git repo of
+  package files are written in pure Python including software build
+  requirements and dependencies. We can Clone and setup Spack by:</p>
+  <div class="sourceCode" id="cb1"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/spack/spack.git</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> spack</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> fetch origin releases/latest:latest</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout latest</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> spack/share/spack/setup-env.sh <span class="co"># setup Spack</span></span></code></pre></div>
-<p>To list a specific software and it’s specifications we can use:</p>
-<div class="sourceCode" id="cb2"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">spack</span> list <span class="op">&lt;</span>software-name<span class="op">&gt;</span> <span class="co"># list a software</span></span>
+  <p>To list a specific software and it’s specifications we can use:</p>
+  <div class="sourceCode" id="cb2"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">spack</span> list <span class="op">&lt;</span>software-name<span class="op">&gt;</span> <span class="co"># list a software</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">spack</span> info <span class="op">&lt;</span>software-name<span class="op">&gt;</span> <span class="co"># show information and variants of a software</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">spack</span> spec <span class="at">-I</span> <span class="op">&lt;</span>software-name<span class="op">&gt;</span> <span class="co"># show specifications (dependencies)</span></span></code></pre></div>
-<p>Option <code>-I</code> or <code>--install-status</code> shows status
-of the software dependencies i.e. installed (<code>+</code>) or will be
-installed during the installation (<code>-</code>).</p>
-<p>Now let’s install a new software’s from Spack:</p>
-<div class="sourceCode" id="cb3"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">spack</span> install <span class="op">&lt;</span>software_name<span class="op">&gt;</span> or <span class="op">&lt;</span>software_name@version<span class="op">&gt;</span> or <span class="op">&lt;</span>software_name@version %compiler@version<span class="op">&gt;</span> </span></code></pre></div>
-<p>In general, <code>@version</code> for both software and compiler
-could be removed. Spack installs the most stable version by default (see
-<code>spack versions -s &lt;software-name&gt;</code>). You may find
-complete list of software that you can install by using
-<code>spack list</code> or in Spack online <a
-href="https://spack.readthedocs.io/en/latest/package_list.html">package
-list</a>. Also. we can use <code>--verbose</code> option to see more
-details during the installation, <code>--no-cache</code> to install a
-package directly from the source, and <code>--overwrite</code> to
-overwrite an installed package.</p>
-<p>After installation, we can find the software by:</p>
-<div class="sourceCode" id="cb4"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">spack</span> find <span class="co"># to see all installed software</span></span>
+  <p>Option <code>-I</code> or <code>--install-status</code> shows
+  status of the software dependencies i.e. installed (<code>+</code>) or
+  will be installed during the installation (<code>-</code>).</p>
+  <p>Now let’s install a new software’s from Spack:</p>
+  <div class="sourceCode" id="cb3"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">spack</span> install <span class="op">&lt;</span>software_name<span class="op">&gt;</span> or <span class="op">&lt;</span>software_name@version<span class="op">&gt;</span> or <span class="op">&lt;</span>software_name@version %compiler@version<span class="op">&gt;</span> </span></code></pre></div>
+  <p>In general, <code>@version</code> for both software and compiler
+  could be removed. Spack installs the most stable version by default
+  (see <code>spack versions -s &lt;software-name&gt;</code>). You may
+  find complete list of software that you can install by using
+  <code>spack list</code> or in Spack online <a
+  href="https://spack.readthedocs.io/en/latest/package_list.html">package
+  list</a>. Also. we can use <code>--verbose</code> option to see more
+  details during the installation, <code>--no-cache</code> to install a
+  package directly from the source, and <code>--overwrite</code> to
+  overwrite an installed package.</p>
+  <p>After installation, we can find the software by:</p>
+  <div class="sourceCode" id="cb4"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">spack</span> find <span class="co"># to see all installed software</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">spack</span> find <span class="op">&lt;</span>software-name<span class="op">&gt;</span> <span class="co"># to find a software (use -lfvp to see hashes, flags, variants and pathes)</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">spack</span> location <span class="at">-i</span> <span class="op">&lt;</span>software-name<span class="op">&gt;</span> <span class="co"># to find location of a software </span></span></code></pre></div>
-<p>And we can load the software:</p>
-<div class="sourceCode" id="cb5"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">spack</span> load <span class="op">&lt;</span>software_name<span class="op">&gt;</span></span>
+  <p>And we can load the software:</p>
+  <div class="sourceCode" id="cb5"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">spack</span> load <span class="op">&lt;</span>software_name<span class="op">&gt;</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">spack</span> find <span class="at">--loaded</span> <span class="co"># see what is loaded</span></span></code></pre></div>
-<p>To uninstall a software we can use:</p>
-<div class="sourceCode" id="cb6"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">spack</span> uninstall <span class="op">&lt;</span>software_name@version<span class="op">&gt;</span> or <span class="op">&lt;</span>software_name/hash<span class="op">&gt;</span></span>
+  <p>To uninstall a software we can use:</p>
+  <div class="sourceCode" id="cb6"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">spack</span> uninstall <span class="op">&lt;</span>software_name@version<span class="op">&gt;</span> or <span class="op">&lt;</span>software_name/hash<span class="op">&gt;</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">spack</span> uninstall <span class="at">--all</span> arch=<span class="op">&lt;</span>arch-name<span class="op">&gt;</span> <span class="co"># uninstall by architecture</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ex">spack</span> uninstall <span class="at">--all</span> %<span class="op">&lt;</span>compiler@version<span class="op">&gt;</span> <span class="co"># uninstall by compiler</span></span></code></pre></div>
-<p>We can use <code>-R</code> or <code>--dependents</code> option to
-uninstall any packages that depend on that package and <code>-f</code>
-or <code>--force</code> to force to remove. Note that after uninstalling
-a software, using <code>spack gc</code> will uninstall dependencies of
-the software.</p>
-<p>More details about Spack commands can be found by:</p>
-<ul>
-<li><code>spack --help</code> or <code>spack -h</code> getting help</li>
-<li><code>spack command -h</code> print information for a particular
-command (eg. <code>spack view -h</code>)</li>
-<li><code>spack command subcommand -h</code> print information for a
-particular subcommand (eg. <code>spack view add -h</code>)</li>
-</ul>
-<p>To see full list of commands visit Spack <a
-href="https://spack.readthedocs.io/en/latest/command_index.html">Command
-Reference</a>.</p>
-<h2 id="specs-dependencies">Specs &amp; dependencies</h2>
-<p>In general, we can specify versions by <code>@</code>, compilers by
-<code>%</code>, dependencies by <code>^</code> and hashes by
-<code>/</code> for install/uninstall commands. The following example
-from <a
-href="https://spack.readthedocs.io/en/latest/basic_usage.html?highlight=cflags#specs-dependencies">Spack
-Basic Usage</a> show these specs:</p>
-<div class="sourceCode" id="cb7"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mpileaks@1.2:1.4</span> %gcc@4.7.5 +debug ~qt arch=bgq_os ^callpath@1.1 %gcc@4.7.2</span></code></pre></div>
-<p>If provided to <code>spack install</code>, this will install the
-<code>mpileaks</code> library at some version between 1.2 and 1.4
-(inclusive), built using <code>gcc</code> at version 4.7.5 for the
-<code>Blue Gene/Q</code> architecture, with <code>debug</code> options
-enabled, and without <code>Qt</code> support. Additionally, it says to
-link it with the <code>callpath</code> library (which it depends on),
-and to build <code>callpath</code> with <code>gcc</code> 4.7.2.</p>
-<h2 id="compilers">Compilers</h2>
-<p>We can select compiler version and settings. To find and list
-compilers, use:</p>
-<div class="sourceCode" id="cb8"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">spack</span> compiler list</span>
+  <p>We can use <code>-R</code> or <code>--dependents</code> option to
+  uninstall any packages that depend on that package and <code>-f</code>
+  or <code>--force</code> to force to remove. Note that after
+  uninstalling a software, using <code>spack gc</code> will uninstall
+  dependencies of the software.</p>
+  <p>More details about Spack commands can be found by:</p>
+  <ul>
+  <li><code>spack --help</code> or <code>spack -h</code> getting
+  help</li>
+  <li><code>spack command -h</code> print information for a particular
+  command (eg. <code>spack view -h</code>)</li>
+  <li><code>spack command subcommand -h</code> print information for a
+  particular subcommand (eg. <code>spack view add -h</code>)</li>
+  </ul>
+  <p>To see full list of commands visit Spack <a
+  href="https://spack.readthedocs.io/en/latest/command_index.html">Command
+  Reference</a>.</p>
+  <h2 id="specs-dependencies">Specs &amp; dependencies</h2>
+  <p>In general, we can specify versions by <code>@</code>, compilers by
+  <code>%</code>, dependencies by <code>^</code> and hashes by
+  <code>/</code> for install/uninstall commands. The following example
+  from <a
+  href="https://spack.readthedocs.io/en/latest/basic_usage.html?highlight=cflags#specs-dependencies">Spack
+  Basic Usage</a> show these specs:</p>
+  <div class="sourceCode" id="cb7"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mpileaks@1.2:1.4</span> %gcc@4.7.5 +debug ~qt arch=bgq_os ^callpath@1.1 %gcc@4.7.2</span></code></pre></div>
+  <p>If provided to <code>spack install</code>, this will install the
+  <code>mpileaks</code> library at some version between 1.2 and 1.4
+  (inclusive), built using <code>gcc</code> at version 4.7.5 for the
+  <code>Blue Gene/Q</code> architecture, with <code>debug</code> options
+  enabled, and without <code>Qt</code> support. Additionally, it says to
+  link it with the <code>callpath</code> library (which it depends on),
+  and to build <code>callpath</code> with <code>gcc</code> 4.7.2.</p>
+  <h2 id="compilers">Compilers</h2>
+  <p>We can select compiler version and settings. To find and list
+  compilers, use:</p>
+  <div class="sourceCode" id="cb8"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">spack</span> compiler list</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ex">spack</span> compiler find</span></code></pre></div>
-<p>Compilers can be added to the Spack compilers list or removed from
-the list by:</p>
-<div class="sourceCode" id="cb9"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">spack</span> compiler add <span class="op">&lt;</span>compiler-name@ver<span class="op">&gt;</span> <span class="co"># for example $(spack location -i gcc@10.1.0) add gcc 10 compiler that already is installed by Spack</span></span>
+  <p>Compilers can be added to the Spack compilers list or removed from
+  the list by:</p>
+  <div class="sourceCode" id="cb9"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">spack</span> compiler add <span class="op">&lt;</span>compiler-name@ver<span class="op">&gt;</span> <span class="co"># for example $(spack location -i gcc@10.1.0) add gcc 10 compiler that already is installed by Spack</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="ex">spack</span> compiler remove <span class="op">&lt;</span>compiler-name@ver<span class="op">&gt;</span></span></code></pre></div>
-<p>Also, we can directly modify <code>compilers.yaml</code> file by:</p>
-<div class="sourceCode" id="cb10"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">spack</span> config edit compilers</span></code></pre></div>
-<p>Moreover, we can add specific compiler’s options during the
-installation. Valid flag names are <code>cflags</code>,
-<code>cxxflags</code>, <code>fflags</code>, <code>cppflags</code>,
-<code>ldflags</code>, and <code>ldlibs</code>. For instance,
-<code>spack install libdwarf cppflags="-g"</code> will install
-<code>libdwarf</code> with the <code>-g</code> flag injected into their
-compile line.</p>
-<h2 id="architecture-specifiers">Architecture specifiers</h2>
-<p>Also, we can specify architecture of a machine by <code>arch</code>.
-For example, the following will unistall all software installed with
-<code>gcc</code> 4.8.5 in <code>linux-centos7-haswell</code>
-machine:</p>
-<div class="sourceCode" id="cb11"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">spack</span> uninstall <span class="at">--all</span> %gcc@4.8.5 arch=linux-centos7-haswell</span></code></pre></div>
-<p>We can specify these values separately by
-<code>platform=linux</code>, <code>os=centos7</code> and
-<code>target=haswell</code>.</p>
-<h2 id="create-and-edit-package-files">Create and edit package
-files</h2>
-<p>If the package that you are looking for is not among Spack repo list,
-you can create a package file in Python by
-<code>spack create &lt;tarball link&gt;</code> and <a
-href="https://spack.readthedocs.io/en/latest/contribution_guide.html">add
-to the Spack reop</a>. Review <a
-href="https://spack-tutorial.readthedocs.io/en/latest/tutorial_packaging.html">Package
-Creation Tutorial</a> to learn how to build and debug a package.</p>
-<p>If the package that you are looking for is outdated or has wrong
-dependencies, you can modify the package Python file by:</p>
-<div class="sourceCode" id="cb12"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">spack</span> edit <span class="op">&lt;</span>software-name<span class="op">&gt;</span></span></code></pre></div>
-<p>To update version of the package, install the package tar file from
-the developer web-page or GitHub and extract the related hash number by
-<code>md5sum</code> or <code>shasum -a 256</code> command and add
-version and hash number to the package file. For example,
-<code>spack edit octopus</code>:</p>
-<div class="sourceCode" id="cb13"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">class</span> Octopus<span class="er">(</span><span class="ex">Package</span><span class="kw">)</span><span class="bu">:</span></span>
+  <p>Also, we can directly modify <code>compilers.yaml</code> file
+  by:</p>
+  <div class="sourceCode" id="cb10"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">spack</span> config edit compilers</span></code></pre></div>
+  <p>Moreover, we can add specific compiler’s options during the
+  installation. Valid flag names are <code>cflags</code>,
+  <code>cxxflags</code>, <code>fflags</code>, <code>cppflags</code>,
+  <code>ldflags</code>, and <code>ldlibs</code>. For instance,
+  <code>spack install libdwarf cppflags="-g"</code> will install
+  <code>libdwarf</code> with the <code>-g</code> flag injected into
+  their compile line.</p>
+  <h2 id="architecture-specifiers">Architecture specifiers</h2>
+  <p>Also, we can specify architecture of a machine by
+  <code>arch</code>. For example, the following will unistall all
+  software installed with <code>gcc</code> 4.8.5 in
+  <code>linux-centos7-haswell</code> machine:</p>
+  <div class="sourceCode" id="cb11"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">spack</span> uninstall <span class="at">--all</span> %gcc@4.8.5 arch=linux-centos7-haswell</span></code></pre></div>
+  <p>We can specify these values separately by
+  <code>platform=linux</code>, <code>os=centos7</code> and
+  <code>target=haswell</code>.</p>
+  <h2 id="create-and-edit-package-files">Create and edit package
+  files</h2>
+  <p>If the package that you are looking for is not among Spack repo
+  list, you can create a package file in Python by
+  <code>spack create &lt;tarball link&gt;</code> and <a
+  href="https://spack.readthedocs.io/en/latest/contribution_guide.html">add
+  to the Spack reop</a>. Review <a
+  href="https://spack-tutorial.readthedocs.io/en/latest/tutorial_packaging.html">Package
+  Creation Tutorial</a> to learn how to build and debug a package.</p>
+  <p>If the package that you are looking for is outdated or has wrong
+  dependencies, you can modify the package Python file by:</p>
+  <div class="sourceCode" id="cb12"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">spack</span> edit <span class="op">&lt;</span>software-name<span class="op">&gt;</span></span></code></pre></div>
+  <p>To update version of the package, install the package tar file from
+  the developer web-page or GitHub and extract the related hash number
+  by <code>md5sum</code> or <code>shasum -a 256</code> command and add
+  version and hash number to the package file. For example,
+  <code>spack edit octopus</code>:</p>
+  <div class="sourceCode" id="cb13"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">class</span> Octopus<span class="er">(</span><span class="ex">Package</span><span class="kw">)</span><span class="bu">:</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;&quot;&quot;A real-space finite-difference (time-dependent) density-functional</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="st">    theory code.&quot;&quot;&quot;</span></span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -220,44 +311,44 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb13-1"><a href=
 <span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    <span class="ex">url</span>      = <span class="st">&quot;http://octopus-code.org/down.php?file=10.0/octopus-10.0.tar.gz&quot;</span></span>
 <span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    <span class="ex">version</span><span class="er">(</span><span class="st">&#39;10.0&#39;</span><span class="ex">,</span>   sha256=<span class="st">&#39;ccf62200e3f37911bfff6d127ebe74220996e9c09383a10b1420c81d931dcf23&#39;</span><span class="kw">)</span></span></code></pre></div>
-<p>In the above example, we have added Octopus version 10 to the package
-file.</p>
-<p>Also, we can open the packages configuration file and update
-preferences by:</p>
-<div class="sourceCode" id="cb14"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">spack</span> config edit packages</span></code></pre></div>
-<p><strong>Note:</strong> if you prefer to use Emacs to edit Spack
-config files, use <code>export EDITOR=emacs</code> to make Emacs the
-default text editor.</p>
-<h2 id="environment-modules">Environment modules</h2>
-<p><a
-href="https://www.tacc.utexas.edu/research-development/tacc-projects/lmod">Lmod</a>
-is a Lua-based module system that easily handles the
-<code>MODULEPATH</code> Hierarchical problem. To install Lmode, use the
-following (note this may take a while):</p>
-<div class="sourceCode" id="cb15"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> spack/share/spack/setup-env.sh</span>
+  <p>In the above example, we have added Octopus version 10 to the
+  package file.</p>
+  <p>Also, we can open the packages configuration file and update
+  preferences by:</p>
+  <div class="sourceCode" id="cb14"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">spack</span> config edit packages</span></code></pre></div>
+  <p><strong>Note:</strong> if you prefer to use Emacs to edit Spack
+  config files, use <code>export EDITOR=emacs</code> to make Emacs the
+  default text editor.</p>
+  <h2 id="environment-modules">Environment modules</h2>
+  <p><a
+  href="https://www.tacc.utexas.edu/research-development/tacc-projects/lmod">Lmod</a>
+  is a Lua-based module system that easily handles the
+  <code>MODULEPATH</code> Hierarchical problem. To install Lmode, use
+  the following (note this may take a while):</p>
+  <div class="sourceCode" id="cb15"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> spack/share/spack/setup-env.sh</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="ex">spack</span> install lmod</span></code></pre></div>
-<p>To use Lmode for installing and loading new packages use:</p>
-<div class="sourceCode" id="cb16"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">unset</span> <span class="va">MODULEPATH</span></span>
+  <p>To use Lmode for installing and loading new packages use:</p>
+  <div class="sourceCode" id="cb16"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">unset</span> <span class="va">MODULEPATH</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="bu">unset</span> <span class="va">MODULESHOME</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> <span class="va">$(</span><span class="ex">spack</span> location <span class="at">-i</span> lmod<span class="va">)</span>/lmod/lmod/init/bash</span>
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> spack/share/spack/setup-env.sh</span>
 <span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="ex">spack</span> install <span class="op">&lt;</span>software-name<span class="op">&gt;</span></span>
 <span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load <span class="op">&lt;</span>software-name<span class="op">&gt;</span></span></code></pre></div>
-<p>Now we can use <code>module avail</code> to see list of the available
-(installed) modules.</p>
-<p>We can also, use <code>lomd</code> to manage modules by editing the
-module configuration file. Let’s open the file:</p>
-<div class="sourceCode" id="cb17"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">spack</span> config edit modules </span></code></pre></div>
-<p>And add the following configuration from <a
-href="https://spack-tutorial.readthedocs.io/en/latest/tutorial_modules.html#modules-tutorial">Spack
-tutorial</a> to the config file:</p>
-<div class="sourceCode" id="cb18"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">modules:</span></span>
+  <p>Now we can use <code>module avail</code> to see list of the
+  available (installed) modules.</p>
+  <p>We can also, use <code>lomd</code> to manage modules by editing the
+  module configuration file. Let’s open the file:</p>
+  <div class="sourceCode" id="cb17"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">spack</span> config edit modules </span></code></pre></div>
+  <p>And add the following configuration from <a
+  href="https://spack-tutorial.readthedocs.io/en/latest/tutorial_modules.html#modules-tutorial">Spack
+  tutorial</a> to the config file:</p>
+  <div class="sourceCode" id="cb18"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">modules:</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="ex">enable:</span></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">-</span> lmod</span>
 <span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="ex">lmod:</span></span>
@@ -288,86 +379,103 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb18-1"><a href=
 <span id="cb18-29"><a href="#cb18-29" aria-hidden="true" tabindex="-1"></a>          <span class="ex">OMPI_MCA_btl_openib_warn_default_gid_prefix:</span> <span class="st">&#39;0&#39;</span></span>
 <span id="cb18-30"><a href="#cb18-30" aria-hidden="true" tabindex="-1"></a>    <span class="ex">netlib-scalapack:</span></span>
 <span id="cb18-31"><a href="#cb18-31" aria-hidden="true" tabindex="-1"></a>      <span class="ex">template:</span> <span class="st">&#39;group-restricted.lua&#39;</span></span></code></pre></div>
-<p>Note that in the above example, we seleceted <code>gcc@7.5.0</code>
-as core compiler and hided <code>gcc@3.8.0</code> from the tree. Also,
-we supposed the hierarchy of installed modules are depends on
-<code>mpi</code> and <code>lapack</code>.</p>
-<p>To apply these changes, we need to refresh the modules tree and
-update <code>MODULEPATH</code> by:</p>
-<div class="sourceCode" id="cb19"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> purge</span>
+  <p>Note that in the above example, we seleceted <code>gcc@7.5.0</code>
+  as core compiler and hided <code>gcc@3.8.0</code> from the tree. Also,
+  we supposed the hierarchy of installed modules are depends on
+  <code>mpi</code> and <code>lapack</code>.</p>
+  <p>To apply these changes, we need to refresh the modules tree and
+  update <code>MODULEPATH</code> by:</p>
+  <div class="sourceCode" id="cb19"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> purge</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="ex">spack</span> module lmod refresh <span class="at">--delete-tree</span> <span class="at">-y</span></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> unuse <span class="va">$HOME</span>/spack/share/spack/modules/<span class="op">&lt;</span>os-arch<span class="op">&gt;</span></span>
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> use <span class="va">$HOME</span>/spack/share/spack/lmod/<span class="op">&lt;</span>os-arch<span class="op">&gt;</span>/Core</span></code></pre></div>
-<p>Note that in above commands, I assumed that Spack directory is
-located on <code>$HOME</code>. You need to update path and
-<code>&lt;os-arch&gt;</code> based on the Sapck directory and, the
-operating system and architecture of your machine (for example
-<code>linux-ubuntu18.04-x86_64</code>). To keep the new module path for
-latter, you can add the following to the <code>.bashrc</code> file.</p>
-<div class="sourceCode" id="cb20"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">MODULEPATH</span><span class="op">=</span><span class="va">$HOME</span>/spack/share/spack/lmod/<span class="op">&lt;</span>os-arch<span class="op">&gt;</span>/Core</span></code></pre></div>
-<p>Now use <code>module avail</code> to see changes. You can learn more
-about modules and Lmod in <a
-href="https://spack-tutorial.readthedocs.io/en/latest/tutorial_modules.html">here</a>.</p>
-<p>To learn more about management and projection of modulefile, review
-<a
-href="https://github.com/ashki23/module-projection">module-projection</a>
-repository.</p></div>
-            <div class="d-none d-xl-block col-xl-2 bd-toc">
-               <ul class="section-nav">
-                  <li class="toc-entry"><ul>
-<li><a href="#usage" id="toc-usage">Usage</a></li>
-<li><a href="#specs-dependencies" id="toc-specs-dependencies">Specs
-&amp; dependencies</a></li>
-<li><a href="#compilers" id="toc-compilers">Compilers</a></li>
-<li><a href="#architecture-specifiers"
-id="toc-architecture-specifiers">Architecture specifiers</a></li>
-<li><a href="#create-and-edit-package-files"
-id="toc-create-and-edit-package-files">Create and edit package
-files</a></li>
-<li><a href="#environment-modules"
-id="toc-environment-modules">Environment modules</a></li>
-</ul></li>
-               </ul>
-            </div>
-         </div>
-               </div>
-            <!-- Footer -->
-            <footer class="footer text-muted">
-               <div align="center">
-                  Text is available under <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>
-                  &nbsp;|&nbsp;
-                  Code licensed under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank" rel="noopener">GPL-3.0</a>
-                  &nbsp;|&nbsp;
-                  Built with <a href="https://github.com/ashki23/pandoc-bootstrap" target="_blank" rel="noopener">pandoc-bootstrap</a> theme
-                  <br />
-                  Copyright 2018-2024, Ashkan Mirzaee
-               </div>
-            </footer>
-            <!-- Global site tag (gtag.js) - Google Analytics -->
-            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132464297-1"></script>
-            <script>
-               window.dataLayer = window.dataLayer || [];
-               function gtag(){dataLayer.push(arguments);}
-               gtag('js', new Date());
-               gtag('config', 'UA-132464297-1');
-            </script>
-            <!-- JS, Popper.js, and jQuery -->
-      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-      <!-- Mathjax -->
-      <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-      <script>
-         /* Bootstrap styles to tables */
-         function bootstrapStylePandocTables() {
-         $('tr.header').parent('thead').parent('table').addClass('table table-condensed'); }
-         $(document).ready(function () { bootstrapStylePandocTables(); });
-         /* Adjust the height when click the toc */
-         var shiftWindow = function() { scrollBy(0, -60) };
-         window.addEventListener("hashchange", shiftWindow);
-         function load() { if (window.location.hash) shiftWindow(); }
-      </script>
-   </body>
+  <p>Note that in above commands, I assumed that Spack directory is
+  located on <code>$HOME</code>. You need to update path and
+  <code>&lt;os-arch&gt;</code> based on the Sapck directory and, the
+  operating system and architecture of your machine (for example
+  <code>linux-ubuntu18.04-x86_64</code>). To keep the new module path
+  for latter, you can add the following to the <code>.bashrc</code>
+  file.</p>
+  <div class="sourceCode" id="cb20"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">MODULEPATH</span><span class="op">=</span><span class="va">$HOME</span>/spack/share/spack/lmod/<span class="op">&lt;</span>os-arch<span class="op">&gt;</span>/Core</span></code></pre></div>
+  <p>Now use <code>module avail</code> to see changes. You can learn
+  more about modules and Lmod in <a
+  href="https://spack-tutorial.readthedocs.io/en/latest/tutorial_modules.html">here</a>.</p>
+  <p>To learn more about management and projection of modulefile, review
+  <a
+  href="https://github.com/ashki23/module-projection">module-projection</a>
+  repository.</p>
+	</div>
+      </main>
+    </div>
+    
+    <!-- After body contents -->
+        <!-- Footer -->
+        <footer class="bd-footer mt-auto py-3 py-md-3 bg-body-tertiary">
+          <div class="container py-md-3 px-4 px-md-3 text-body-secondary" align="center" style="font-size: .95rem;">
+            Text is available under <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>
+            &nbsp;|&nbsp;
+            Code licensed under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank" rel="noopener">GPL-3.0</a>
+            &nbsp;|&nbsp;
+            Built with <a href="https://github.com/ashki23/pandoc-bootstrap" target="_blank" rel="noopener">pandoc-bootstrap</a> theme
+            <br />
+            Copyright 2018-2024, Ashkan Mirzaee
+          </div>
+        </footer>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132464297-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'UA-132464297-1');
+        </script>
+        
+    <!-- Bootstrap Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+    <!-- Highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js" integrity="sha512-6yoqbrcLAHDWAdQmiRlHG4+m0g/CT/V9AGyxabG8j7Jk8j3r3K6due7oqpiRMZqcYe9WM2gPcaNNxnl2ux+3tA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+        
+    <!-- Custom Scripts -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+	  const htmlElement = document.documentElement;
+	  const highlightStyle = document.getElementById("highlight-style");
+	  
+	  // Function to update Highlight.js style based on theme
+	  const updateHighlightStyle = (theme) => {
+              const lightTheme = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/stackoverflow-light.min.css";
+              const darkTheme = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/github-dark.min.css";
+              highlightStyle.href = theme === "dark" ? darkTheme : lightTheme;
+	  };
+	  
+	  // Function to set the theme
+	  const setTheme = (theme) => {
+              htmlElement.setAttribute("data-bs-theme", theme);
+              localStorage.setItem("theme", theme); // Save the theme to localStorage
+              updateHighlightStyle(theme);
+	  };
+	  
+	  // Get saved theme from localStorage or fallback to default ("light")
+	  const savedTheme = localStorage.getItem("theme") || "light";
+	  setTheme(savedTheme);
+	  
+	  // Event listener for theme dropdown
+	  document.querySelectorAll(".dropdown-item").forEach((item) => {
+              item.addEventListener("click", (e) => {
+		  e.preventDefault();
+		  const selectedTheme = item.getAttribute("data-theme");
+		  setTheme(selectedTheme);
+              });
+	  });
+	  
+	  // Initialize Highlight.js
+	  hljs.highlightAll();
+      });
+    </script>
+  </body>
 </html>

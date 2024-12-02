@@ -1,145 +1,246 @@
 <!doctype html>
-<html>
-   <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <meta name="generator" content="pandoc">
-      <meta name="author" content="Ashkan Mirzaee">
-      <meta name="description" content="An introduction to using
+<html lang="en" class="h-100" data-bs-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="generator" content="pandoc">
+    <meta name="author" content="Ashkan Mirzaee">
+    <meta name="description" content="An introduction to using
 clusters">
-      <title>Introduction to using clusters</title>
-      <!-- Bootstrap -->
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-      <!-- Font-awesome -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-      <!-- Styles -->
-      <link rel="stylesheet" href="https://ashki23.github.io/styles.css">
-            <!-- Favicon -->
-            <link rel="icon" href="images/AM.jpg">
-            <!-- Google-site-verification -->
-            <meta name="google-site-verification" content="lD_nifpQ-CA6LaDwxYJbe5bq0oa6Ir0Ax-txvtdP51E">
-            <!-- Bing-site-verification -->
-            <meta name="msvalidate.01" content="89BCD3FF42B6E9FE48E0C8365767D11B">
-         </head>
-   <body>
-            <nav class="navbar fixed-top navbar-expand-lg navbar-dark bd-navbar">
-               <a class="navbar-brand" href="index.html">Ashkan Mirzaee</a>
-               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="border: none; outline: none; padding-right: 0; padding-left: 1rem;">
-               <span class="navbar-toggler-icon"></span>
-               </button>
-               <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav mr-auto">
-                     <li class="nav-item">
-                        <a class="nav-link" href="page1.html">Blog</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="tutorials.html">Tutorials</a>
-                     </li>
-            	 <li class="nav-item">
-                        <a class="nav-link" href="research.html">Research</a>
-                     </li>
-            	 <li class="nav-item">
-                        <a class="nav-link" href="applications.html">Applications</a>
-                     </li>
-            	 <li class="nav-item">
-                        <a class="nav-link" href="blogroll.html">Blogroll</a>
-                     </li>
+    <title>Introduction to using clusters</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!-- Bootstrap Icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous">
+    
+    <!-- Highlight.js Styles -->
+    <link rel="stylesheet" id="highlight-style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/stackoverflow-light.min.css">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="https://getbootstrap.com/docs/5.3/assets/css/docs.css">
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- After header contents -->
+        <!-- Favicon -->
+        <link rel="icon" href="images/AM.jpg">
+        <!-- Google-site-verification -->
+        <meta name="google-site-verification" content="lD_nifpQ-CA6LaDwxYJbe5bq0oa6Ir0Ax-txvtdP51E">
+        <!-- Bing-site-verification -->
+        <meta name="msvalidate.01" content="89BCD3FF42B6E9FE48E0C8365767D11B">
+      </head>
+  <body class="d-flex flex-column h-100" data-bs-spy="scroll" data-bs-target="#TableOfContents">
+    <!-- Before body contents -->
+        <nav class="navbar bd-navbar navbar-expand-lg fixed-top py-2">
+          <div class="container-xxl bd-gutter flex-wrap flex-lg-nowrap">
+            <!-- Brand -->
+            <a class="navbar-brand" href="index.html" style="transform: none;">Ashkan Mirzaee</a>
+
+            <!-- Toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Navbar Content -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <!-- Left Navigation -->
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link" href="page1.html">Blog</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="tutorials.html">Tutorials</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="research.html">Research</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="applications.html">Applications</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="blogroll.html">Blogroll</a>
+                </li>
+              </ul>
+              
+              <!-- Divider for smaller screens -->
+              <hr class="d-lg-none text-white-50">
+              
+              <!-- Social Media Icons -->
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html" aria-label="Contact">
+                    <i class="bi bi-envelope"></i>
+        	    <span class="d-lg-none ms-2">Contact</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://github.com/ashki23" target="_blank" rel="noopener" aria-label="GitHub">
+                    <i class="bi bi-github"></i>
+        	    <span class="d-lg-none ms-2">GitHub</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://gitlab.com/ashki23" target="_blank" rel="noopener" aria-label="GitLab">
+                    <i class="bi bi-gitlab"></i>
+        	    <span class="d-lg-none ms-2">GitLab</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://www.linkedin.com/in/ashkan-mirzaee/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <i class="bi bi-linkedin"></i>
+        	    <span class="d-lg-none ms-2">Linkedin</span>
+                  </a>
+                </li>
+              </ul>
+              
+              <!-- Divider for larger screens -->
+              <div class="vr d-none d-lg-flex mx-2 my-1 text-white"></div>
+              
+              <!-- Divider for smaller screens -->
+              <hr class="d-lg-none text-white-50">
+              
+              <!-- Theme Dropdown -->
+              <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                  <button class="btn btn-link nav-link dropdown-toggle" type="button" id="themeDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-circle-half"></i>
+        	    <span class="d-lg-none ms-2">Toggle theme</span>
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="themeDropdown">
+                    <li>
+                      <a class="dropdown-item align-items-center" data-theme="light">
+                        <i class="bi bi-sun-fill me-2 opacity-50"></i> Light
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item align-items-center" data-theme="dark">
+                        <i class="bi bi-moon-stars-fill me-2 opacity-50"></i> Dark
+                      </a>
+                    </li>
                   </ul>
-                  <ul class="navbar-nav ml-auto">
-            	<li class="nav-item">
-            	  <a class="nav-link" href="contact.html" aria-label="Contact">
-            	    <span class="fa fa-envelope fa-lg"></a>
-            	</li>
-            	<li class="nav-item">
-            	  <a class="nav-link" href="https://github.com/ashki23" target="_blank" rel="noopener" aria-label="GitHub">
-            	    <span class="fa fa-github fa-lg"></span></a>
-            	</li>
-            	<li class="nav-item">
-            	  <a class="nav-link" href="https://gitlab.com/ashki23" target="_blank" rel="noopener" aria-label="GitLab">
-            	    <span class="fa fa-gitlab fa-lg"></span></a>
-            	</li>
-            	<li class="nav-item">
-            	  <a class="nav-link" href="https://www.linkedin.com/in/ashkan-mirzaee/" target="_blank" rel="noopener" aria-label="Linkedin">
-            	    <span class="fa fa-linkedin fa-lg"></span></a>
-            	</li>
-                  </ul>
-               </div>
-            </nav>
-            <div class="container">
-         <h1 class="title">Introduction to using clusters</h1>
-                  <div class="row">
-            <div class="col-xl-10"><p>This page describes several ways
-to manage resources and also submit and monitor jobs in a high
-performance computing (HPC) environment.</p>
-<ul>
-<li>Training presentation (<a
-href="http://docs.rnet.missouri.edu/files/hpc-intro.pdf">pdf</a>)</li>
-</ul>
-<p><strong>Prerequisite:</strong> for better understanding of this
-course, users are expected to know a basic knowledge about Linux (Unix
-Shell) and terminal text editors. You can review:</p>
-<ul>
-<li><a href="https://ashki23.github.io/shell.html">The Unix
-Shell</a></li>
-<li><a href="http://swcarpentry.github.io/shell-novice/">Software
-Carpentry workshop</a></li>
-</ul>
-<hr />
-<h2 id="clusters">Clusters</h2>
-<p>A cluster or supercomputer is a computer with a high level of
-performance as compared to a general-purpose computer. They have built
-for the purpose of massive parallelization to decrease computation time
-and get results faster. Each cluster consists of several components. The
-smallest element in a cluster is Processing Element (PE) that can be
-compared with personal computers’ cores. Tens of PEs create a
-Computational Node and hundreds of Nodes create a Partition, and finally
-putting Partitions together will create a cluster. Following shows
-hierarchy of a cluster.</p>
-<p align="center">
-<img src="https://upload.wikimedia.org/wikipedia/commons/b/b4/LLNL_BGL_Diagram.png" alt="Super Computers" style="width: 60%; border: 0;">
-<div style="text-align: center; font-size: 85%;">
-From <a
-href="http://en.wikipedia.org/wiki/Image:LLNL_BGL_Diagram.png">wikipedia</a>
-</div>
-</p>
-<h2 id="slurm">Slurm</h2>
-<p><a href="https://slurm.schedmd.com">Slurm</a> is an open source and
-highly scalable cluster management and job scheduling system for large
-and small Linux clusters. As a cluster workload manager, Slurm has three
-key functions.</p>
-<ul>
-<li>First, it allocates access to resources (compute nodes) to users for
-some duration of time so they can perform work</li>
-<li>Second, it provides a framework for starting, executing, and
-monitoring work (normally a parallel job) on the set of allocated
-nodes</li>
-<li>Finally, it arbitrates contention for resources by managing a queue
-of pending work (from <a
-href="https://slurm.schedmd.com/overview.html">Slurm overview</a>)</li>
-</ul>
-<h2 id="login-node">Login node</h2>
-<p>Users connect to clusters through the login nodes.</p>
-<p align="center">
-<img src="images/cluster-login.png" alt="Login Node" style="width: 80%; border: 0;">
-</p>
-<p><br /></p>
-<p>All jobs must be run using Slurm submitting tools to prevent running
-on the login node.</p>
-<h2 id="cluster-information">Cluster information</h2>
-<p>Slurm is a resource management system and has many tools to find
-available resources in the cluster. Following are set of Slurm commands
-for that purpose:</p>
-<div class="sourceCode" id="cb1"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sinfo</span> –s <span class="co"># summary of cluster resources (-s --summarize)</span></span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        
+    <div class="container-xxl bd-gutter pb-5 mt-3 my-md-4 bd-layout" style="padding-top:60px;">
+      <main class="bd-main order-1">
+	
+	<!-- Tiltle -->
+	<h1 class="bd-intro pt-2 ps-lg-2" id="title">Introduction to using
+clusters</h1>
+	
+		<!-- Table of Contents -->
+	<div class="bd-toc mt-3 mb-5 my-lg-0 mb-lg-5 px-sm-1 text-body-secondary">
+	  <strong class="d-none d-md-block h6 my-2 ms-3">On this page</strong>
+	  <hr class="d-none d-md-block my-2 ms-3">
+	  <div class="collapse bd-toc-collapse" id="tocContents">
+	    <nav id="TableOfContents">
+	      <ul>
+      <li><a href="#clusters" id="toc-clusters">Clusters</a></li>
+      <li><a href="#slurm" id="toc-slurm">Slurm</a></li>
+      <li><a href="#login-node" id="toc-login-node">Login node</a></li>
+      <li><a href="#cluster-information"
+      id="toc-cluster-information">Cluster information</a></li>
+      <li><a href="#users-information" id="toc-users-information">Users
+      information</a></li>
+      <li><a href="#job-submission" id="toc-job-submission">Job
+      submission</a></li>
+      <li><a href="#job-arrays" id="toc-job-arrays">Job Arrays</a>
+      <ul>
+      <li><a href="#python-example" id="toc-python-example">Python
+      example</a></li>
+      <li><a href="#r-example" id="toc-r-example">R example</a></li>
+      </ul></li>
+      <li><a href="#monitoring-jobs" id="toc-monitoring-jobs">Monitoring
+      jobs</a></li>
+      <li><a href="#monitor-cpu-and-memory"
+      id="toc-monitor-cpu-and-memory">Monitor CPU and memory</a></li>
+      <li><a href="#modules" id="toc-modules">Modules</a></li>
+      <li><a href="#more-resources" id="toc-more-resources">More
+      resources</a></li>
+      </ul>
+	    </nav>
+	  </div>
+	</div>
+		
+	<!-- Main Content -->
+	<div class="bd-content ps-lg-2">
+	  <p>This page describes several ways to manage resources and also
+  submit and monitor jobs in a high performance computing (HPC)
+  environment.</p>
+  <ul>
+  <li>Training presentation (<a
+  href="http://docs.rnet.missouri.edu/files/hpc-intro.pdf">pdf</a>)</li>
+  </ul>
+  <p><strong>Prerequisite:</strong> for better understanding of this
+  course, users are expected to know a basic knowledge about Linux (Unix
+  Shell) and terminal text editors. You can review:</p>
+  <ul>
+  <li><a href="https://ashki23.github.io/shell.html">The Unix
+  Shell</a></li>
+  <li><a href="http://swcarpentry.github.io/shell-novice/">Software
+  Carpentry workshop</a></li>
+  </ul>
+  <hr />
+  <h2 id="clusters">Clusters</h2>
+  <p>A cluster or supercomputer is a computer with a high level of
+  performance as compared to a general-purpose computer. They have built
+  for the purpose of massive parallelization to decrease computation
+  time and get results faster. Each cluster consists of several
+  components. The smallest element in a cluster is Processing Element
+  (PE) that can be compared with personal computers’ cores. Tens of PEs
+  create a Computational Node and hundreds of Nodes create a Partition,
+  and finally putting Partitions together will create a cluster.
+  Following shows hierarchy of a cluster.</p>
+  <p align="center">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/b/b4/LLNL_BGL_Diagram.png" alt="Super Computers" style="width: 60%; border: 0;">
+  <div style="text-align: center; font-size: 85%;">
+  From <a
+  href="http://en.wikipedia.org/wiki/Image:LLNL_BGL_Diagram.png">wikipedia</a>
+  </div>
+  </p>
+  <h2 id="slurm">Slurm</h2>
+  <p><a href="https://slurm.schedmd.com">Slurm</a> is an open source and
+  highly scalable cluster management and job scheduling system for large
+  and small Linux clusters. As a cluster workload manager, Slurm has
+  three key functions.</p>
+  <ul>
+  <li>First, it allocates access to resources (compute nodes) to users
+  for some duration of time so they can perform work</li>
+  <li>Second, it provides a framework for starting, executing, and
+  monitoring work (normally a parallel job) on the set of allocated
+  nodes</li>
+  <li>Finally, it arbitrates contention for resources by managing a
+  queue of pending work (from <a
+  href="https://slurm.schedmd.com/overview.html">Slurm
+  overview</a>)</li>
+  </ul>
+  <h2 id="login-node">Login node</h2>
+  <p>Users connect to clusters through the login nodes.</p>
+  <p align="center">
+  <img src="images/cluster-login.png" alt="Login Node" style="width: 80%; border: 0;">
+  </p>
+  <p><br /></p>
+  <p>All jobs must be run using Slurm submitting tools to prevent
+  running on the login node.</p>
+  <h2 id="cluster-information">Cluster information</h2>
+  <p>Slurm is a resource management system and has many tools to find
+  available resources in the cluster. Following are set of Slurm
+  commands for that purpose:</p>
+  <div class="sourceCode" id="cb1"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sinfo</span> –s <span class="co"># summary of cluster resources (-s --summarize)</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">sinfo</span> <span class="at">-p</span> <span class="op">&lt;</span>partition-name<span class="op">&gt;</span> -o %n,%C,%m,%z <span class="co"># compute info of nodes in a partition (-o --format)</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">sinfo</span> <span class="at">-p</span> Gpu <span class="at">-o</span> %n,%C,%m,%G <span class="co"># GPUs information in Gpu partition (-p --partition)</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">sjstat</span> –c <span class="co"># show computing resources per node</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ex">scontrol</span> show partition <span class="op">&lt;</span>partition-name<span class="op">&gt;</span> <span class="co"># partition information</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="ex">scontrol</span> show node <span class="op">&lt;</span>node-name<span class="op">&gt;</span> <span class="co"># node information</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="ex">sacctmgr</span> show qos format=name,maxwall,maxsubmit <span class="co"># show quality of services</span></span></code></pre></div>
-<p>For example the following shows output for <code>sinfo -s</code> and
-<code>sjstat -c</code> commands:</p>
-<pre><code>[user@cluster-login-node ~]$ sinfo -s 
+  <p>For example the following shows output for <code>sinfo -s</code>
+  and <code>sjstat -c</code> commands:</p>
+  <pre><code>[user@cluster-login-node ~]$ sinfo -s 
 PARTITION AVAIL  TIMELIMIT   NODES(A/I/O/T)  NODELIST
 hpc          up 2-00:00:00          0/4/0/4  cluster-hpc1-node[908-911]
 Interact     up 2-00:00:00          0/4/0/4  cluster-hpc2-node[908-911]
@@ -154,69 +255,70 @@ hpc        122534Mb    24      4      4      4
 Interact   122534Mb    24      4      4      4
 General*   122534Mb    24      4      4      4
 </code></pre>
-<p>For instance above <code>sinfo -s</code> shows partition hpc3 has 4
-idle nodes (free) and users can run jobs up 2 days. And,
-<code>sjstat -c</code> shows that partition hpc3 has 4 nodes with 24
-cpus and 122GB of memory on each node. In general,
-<code>CPUS/NODES(A/I/O/T)</code> count of CPUs/nodes in the form
-“available/idle/other/total” and <code>S:C:T</code> counts number of
-“sockets, cores, threads”.</p>
-<h2 id="users-information">Users information</h2>
-<p>Users can use Slurm to find more information about their accounts,
-fairshare and quality of services (QOS) and several Unix commands to
-find their storage quotas.</p>
-<div class="sourceCode" id="cb3"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sshare</span> <span class="at">-U</span> <span class="co"># show your fairshare and accounts (-U --Users)</span></span>
+  <p>For instance above <code>sinfo -s</code> shows partition hpc3 has 4
+  idle nodes (free) and users can run jobs up 2 days. And,
+  <code>sjstat -c</code> shows that partition hpc3 has 4 nodes with 24
+  cpus and 122GB of memory on each node. In general,
+  <code>CPUS/NODES(A/I/O/T)</code> count of CPUs/nodes in the form
+  “available/idle/other/total” and <code>S:C:T</code> counts number of
+  “sockets, cores, threads”.</p>
+  <h2 id="users-information">Users information</h2>
+  <p>Users can use Slurm to find more information about their accounts,
+  fairshare and quality of services (QOS) and several Unix commands to
+  find their storage quotas.</p>
+  <div class="sourceCode" id="cb3"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sshare</span> <span class="at">-U</span> <span class="co"># show your fairshare and accounts (-U --Users)</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">sacctmgr</span> show assoc user=<span class="va">$USER</span> format=acc,user,share,qos,maxj <span class="co"># your QOS </span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">groups</span> <span class="co"># show your groups</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">df</span> <span class="at">-h</span> /home/<span class="va">$USER</span> home <span class="co"># storage quota (-h --human-readable)</span></span></code></pre></div>
-<h2 id="job-submission">Job submission</h2>
-<p>All jobs must be run using <code>srun</code> or <code>sbatch</code>
-to prevent running on the Cluster login node. In general, users can
-request resources and run tasks interactively or create a batch file and
-submit their jobs. The following graphs shows job submission
-workflow:</p>
-<p align="center">
-<img src="images/cluster-submit.png" alt="Job Submission" style="width: 90%; border: 0;">
-</p>
-<p>For running jobs interactively, we can use <code>srun</code> to
-request required resources through Slurm and run jobs interactively. For
-instance:</p>
-<div class="sourceCode" id="cb4"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">srun</span> <span class="op">&lt;</span>slurm-options<span class="op">&gt;</span> <span class="op">&lt;</span>software-name/path<span class="op">&gt;</span></span>
+  <h2 id="job-submission">Job submission</h2>
+  <p>All jobs must be run using <code>srun</code> or <code>sbatch</code>
+  to prevent running on the Cluster login node. In general, users can
+  request resources and run tasks interactively or create a batch file
+  and submit their jobs. The following graphs shows job submission
+  workflow:</p>
+  <p align="center">
+  <img src="images/cluster-submit.png" alt="Job Submission" style="width: 90%; border: 0;">
+  </p>
+  <p>For running jobs interactively, we can use <code>srun</code> to
+  request required resources through Slurm and run jobs interactively.
+  For instance:</p>
+  <div class="sourceCode" id="cb4"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">srun</span> <span class="op">&lt;</span>slurm-options<span class="op">&gt;</span> <span class="op">&lt;</span>software-name/path<span class="op">&gt;</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">srun</span> <span class="at">--pty</span> /bin/bash <span class="co"># requesting a pseudo terminal of bash shell to run jobs interactively</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">srun</span> <span class="at">-p</span> Interactive <span class="at">--pty</span> /bin/bash <span class="co"># requesting a p.t. of bash shell on partition called Interactive (-p --partition)</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="ex">srun</span> <span class="at">-p</span> <span class="op">&lt;</span>partition-name<span class="op">&gt;</span> -n 4 <span class="at">--mem</span> 16G <span class="at">--pty</span> /bin/bash <span class="co"># req. 4 tasks and 16G memory (-n --ntasks)</span></span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="ex">srun</span> <span class="at">-p</span> Gpu <span class="at">--gres</span> gpu:1 <span class="at">-N</span> 1 <span class="at">--ntasks-per-node</span> 8 <span class="at">--pty</span> /bin/bash <span class="co"># req. 1 GPU and 1 node for running 8 tasks on Gpu partition (-N --nodes)</span></span></code></pre></div>
-<p>For submitting jobs, we can create a batch file, which is a shell
-script (<code>#!/bin/bash</code>) including Slurm options
-(<code>#SBATCH</code>) and computational tasks, and use:</p>
-<div class="sourceCode" id="cb5"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch</span> <span class="op">&lt;</span>batch-file<span class="op">&gt;</span> </span></code></pre></div>
-<p>After job completion we will receive outputs
-i.e. <code>slurm-jobid.out</code>.</p>
-<p>Slurm has several options that help users manage their jobs
-requirement, such that:</p>
-<div class="sourceCode" id="cb6"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">-p</span> <span class="at">--partition</span> <span class="op">&lt;</span>partition-name<span class="op">&gt;</span>       --pty <span class="op">&lt;</span>software-name/path<span class="op">&gt;</span></span>
+  <p>For submitting jobs, we can create a batch file, which is a shell
+  script (<code>#!/bin/bash</code>) including Slurm options
+  (<code>#SBATCH</code>) and computational tasks, and use:</p>
+  <div class="sourceCode" id="cb5"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch</span> <span class="op">&lt;</span>batch-file<span class="op">&gt;</span> </span></code></pre></div>
+  <p>After job completion we will receive outputs
+  i.e. <code>slurm-jobid.out</code>.</p>
+  <p>Slurm has several options that help users manage their jobs
+  requirement, such that:</p>
+  <div class="sourceCode" id="cb6"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">-p</span> <span class="at">--partition</span> <span class="op">&lt;</span>partition-name<span class="op">&gt;</span>       --pty <span class="op">&lt;</span>software-name/path<span class="op">&gt;</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">--mem</span> <span class="op">&lt;</span>memory<span class="op">&gt;</span>                        --gres <span class="op">&lt;</span>general-resources<span class="op">&gt;</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ex">-n</span> <span class="at">--ntasks</span> <span class="op">&lt;</span>number of tasks<span class="op">&gt;</span>         -t <span class="at">--time</span> <span class="op">&lt;</span>days-hours:minutes<span class="op">&gt;</span></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="ex">-N</span> <span class="at">--nodes</span> <span class="op">&lt;</span>number-of-nodes<span class="op">&gt;</span>          -A <span class="at">--account</span> <span class="op">&lt;</span>account<span class="op">&gt;</span></span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="ex">-c</span> <span class="at">--cpus-per-task</span> <span class="op">&lt;</span>number-of-cpus<span class="op">&gt;</span>   -L <span class="at">--licenses</span> <span class="op">&lt;</span>license<span class="op">&gt;</span></span>
 <span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="ex">-w</span> <span class="at">--nodelist</span> <span class="op">&lt;</span>list-of-node-names<span class="op">&gt;</span>    -J <span class="at">--job-name</span> <span class="op">&lt;</span>jobname<span class="op">&gt;</span></span></code></pre></div>
-<p>Also, Slurm has several environmental variables that contain details
-such as job id, job name, host name and more. For instance:</p>
-<div class="sourceCode" id="cb7"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="va">$SLURM_JOB_ID</span></span>
+  <p>Also, Slurm has several environmental variables that contain
+  details such as job id, job name, host name and more. For
+  instance:</p>
+  <div class="sourceCode" id="cb7"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="va">$SLURM_JOB_ID</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="va">$SLURM_JOB_NAME</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="va">$SLURM_JOB_NODELIST</span></span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="va">$SLURM_CPUS_ON_NODE</span></span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="va">$SLURM_SUBMIT_HOST</span></span>
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="va">$SLURM_SUBMIT_DIR</span></span></code></pre></div>
-<p>For example let’s consider the following Python code, called
-<code>test.py</code>:</p>
-<div class="sourceCode" id="cb8"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/usr/bin/env python3</span></span>
+  <p>For example let’s consider the following Python code, called
+  <code>test.py</code>:</p>
+  <div class="sourceCode" id="cb8"><pre
+  class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/usr/bin/env python3</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>os.system(<span class="st">&quot;&quot;&quot;</span></span>
@@ -228,50 +330,51 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a hr
 <span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span>
 <span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Hello world”)</span></span></code></pre></div>
-<p>To run the above code, we can use <code>srun</code> to run
-<code>test.py</code> interactively on a partition called Interactive
-such that:</p>
-<pre><code>srun -p Interactive -n 4 --mem 8G --pty bash
+  <p>To run the above code, we can use <code>srun</code> to run
+  <code>test.py</code> interactively on a partition called Interactive
+  such that:</p>
+  <pre><code>srun -p Interactive -n 4 --mem 8G --pty bash
 
 python3 test.py</code></pre>
-<p>Or create a batch file, called <code>jobpy.sh</code>, such that:</p>
-<div class="sourceCode" id="cb10"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+  <p>Or create a batch file, called <code>jobpy.sh</code>, such
+  that:</p>
+  <div class="sourceCode" id="cb10"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH -p Interactive</span></span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH -n 4</span></span>
 <span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --mem 8G</span></span>
 <span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> test.py </span></code></pre></div>
-<p>And use <code>sbatch</code> to submit the batch file:</p>
-<div class="sourceCode" id="cb11"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch</span> jobpy.sh</span></code></pre></div>
-<h2 id="job-arrays">Job Arrays</h2>
-<p>If you have a plan to submit large number of jobs at the same time in
-parallel, <a href="https://slurm.schedmd.com/job_array.html">Slurm job
-array</a> can be very helpful. Note that in most of the parallel
-programming methods we submit a single script to run but in a way that
-each iteration of running the same code return different results.</p>
-<p>Job arrays use the following environment variables:</p>
-<ul>
-<li><code>SLURM_ARRAY_JOB_ID</code> keeps the first job ID of the
-array</li>
-<li><code>SLURM_ARRAY_TASK_ID</code> keeps the job array index
-value</li>
-<li><code>SLURM_ARRAY_TASK_COUNT</code> keeps the number of tasks in the
-job array</li>
-<li><code>SLURM_ARRAY_TASK_MAX</code> keeps the highest job array index
-value</li>
-<li><code>SLURM_ARRAY_TASK_MIN</code> keeps the lowest job array index
-value</li>
-</ul>
-<h3 id="python-example">Python example</h3>
-<p>The following shows a simple example of using Slurm job array and
-Python to submit jobs in parallel. Each of these jobs get a seperate
-memory and CPU allocation to run tasks in parallel. Let’s create the
-following Python script called <code>array-test.py</code>:</p>
-<div class="sourceCode" id="cb12"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/usr/bin/env python3</span></span>
+  <p>And use <code>sbatch</code> to submit the batch file:</p>
+  <div class="sourceCode" id="cb11"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch</span> jobpy.sh</span></code></pre></div>
+  <h2 id="job-arrays">Job Arrays</h2>
+  <p>If you have a plan to submit large number of jobs at the same time
+  in parallel, <a href="https://slurm.schedmd.com/job_array.html">Slurm
+  job array</a> can be very helpful. Note that in most of the parallel
+  programming methods we submit a single script to run but in a way that
+  each iteration of running the same code return different results.</p>
+  <p>Job arrays use the following environment variables:</p>
+  <ul>
+  <li><code>SLURM_ARRAY_JOB_ID</code> keeps the first job ID of the
+  array</li>
+  <li><code>SLURM_ARRAY_TASK_ID</code> keeps the job array index
+  value</li>
+  <li><code>SLURM_ARRAY_TASK_COUNT</code> keeps the number of tasks in
+  the job array</li>
+  <li><code>SLURM_ARRAY_TASK_MAX</code> keeps the highest job array
+  index value</li>
+  <li><code>SLURM_ARRAY_TASK_MIN</code> keeps the lowest job array index
+  value</li>
+  </ul>
+  <h3 id="python-example">Python example</h3>
+  <p>The following shows a simple example of using Slurm job array and
+  Python to submit jobs in parallel. Each of these jobs get a seperate
+  memory and CPU allocation to run tasks in parallel. Let’s create the
+  following Python script called <code>array-test.py</code>:</p>
+  <div class="sourceCode" id="cb12"><pre
+  class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/usr/bin/env python3</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -285,9 +388,9 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a h
 <span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>task_id <span class="op">=</span> [<span class="bu">int</span>(os.getenv(<span class="st">&#39;SLURM_ARRAY_TASK_ID&#39;</span>))]</span>
 <span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> t <span class="kw">in</span> task_id:</span>
 <span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(comp_func(t))</span></code></pre></div>
-<p>The following is a batch file called <code>array-job.sh</code>:</p>
-<div class="sourceCode" id="cb13"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/usr/bin/bash</span></span>
+  <p>The following is a batch file called <code>array-job.sh</code>:</p>
+  <div class="sourceCode" id="cb13"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/usr/bin/bash</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --partition hpc3</span></span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --job-name array</span></span>
@@ -295,11 +398,11 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb13-1"><a href=
 <span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --output output-%A_%a.out</span></span>
 <span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> ./array-test.py</span></code></pre></div>
-<p>You can submit the batch file by:</p>
-<div class="sourceCode" id="cb14"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch</span> array-job.sh</span></code></pre></div>
-<p>The output is:</p>
-<pre><code>[user@clark-r630-login-node907 hpc-intro]$ cat output-*
+  <p>You can submit the batch file by:</p>
+  <div class="sourceCode" id="cb14"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch</span> array-job.sh</span></code></pre></div>
+  <p>The output is:</p>
+  <pre><code>[user@clark-r630-login-node907 hpc-intro]$ cat output-*
 Task ID: 1, Hostname: clark-r630-hpc3-node908, CPU ID: 0
 Task ID: 2, Hostname: clark-r630-hpc3-node908, CPU ID: 2
 Task ID: 3, Hostname: clark-r630-hpc3-node908, CPU ID: 4
@@ -309,11 +412,12 @@ Task ID: 6, Hostname: clark-r630-hpc3-node908, CPU ID: 10
 Task ID: 7, Hostname: clark-r630-hpc3-node908, CPU ID: 12
 Task ID: 8, Hostname: clark-r630-hpc3-node908, CPU ID: 14
 Task ID: 9, Hostname: clark-r630-hpc3-node908, CPU ID: 16</code></pre>
-<h3 id="r-example">R example</h3>
-<p>Let’s use job arrays to rerun the following R script
-(<code>array-test.R</code>) simultaneously with different seeds
-(starting point for random numbers):</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/usr/bin/env R</span></span>
+  <h3 id="r-example">R example</h3>
+  <p>Let’s use job arrays to rerun the following R script
+  (<code>array-test.R</code>) simultaneously with different seeds
+  (starting point for random numbers):</p>
+  <div class="sourceCode" id="cb16"><pre
+  class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/usr/bin/env R</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="fu">system</span>(<span class="st">&quot;echo Date: $(date)&quot;</span>, <span class="at">intern =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -322,9 +426,10 @@ Task ID: 9, Hostname: clark-r630-hpc3-node908, CPU ID: 16</code></pre>
 <span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(myseed)</span>
 <span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">runif</span>(<span class="dv">3</span>))</span></code></pre></div>
-<p>The following is a batch file called <code>array-job-r.sh</code>:</p>
-<div class="sourceCode" id="cb17"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/usr/bin/bash</span></span>
+  <p>The following is a batch file called
+  <code>array-job-r.sh</code>:</p>
+  <div class="sourceCode" id="cb17"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/usr/bin/bash</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --partition Lewis</span></span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --job-name r-seed</span></span>
@@ -333,11 +438,11 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb17-1"><a href=
 <span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load r</span>
 <span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="ex">Rscript</span> array-test.R <span class="va">${SLURM_ARRAY_TASK_ID}</span></span></code></pre></div>
-<p>You can submit the batch file by:</p>
-<div class="sourceCode" id="cb18"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch</span> array-job-r.sh</span></code></pre></div>
-<p>The output is:</p>
-<pre><code>[user@lewis4-r630-login-node675 test-array]$ cat Rout-*
+  <p>You can submit the batch file by:</p>
+  <div class="sourceCode" id="cb18"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch</span> array-job-r.sh</span></code></pre></div>
+  <p>The output is:</p>
+  <pre><code>[user@lewis4-r630-login-node675 test-array]$ cat Rout-*
 [1] &quot;Date: Tue Feb 16 18:21:15 CST 2021&quot;
 [1] 0.5074782 0.3067685 0.4269077
 
@@ -349,28 +454,28 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb18-1"><a href=
 
 [1] &quot;Date: Tue Feb 16 18:21:15 CST 2021&quot;
 [1] 0.7103224 0.2461373 0.3896344</code></pre>
-<h2 id="monitoring-jobs">Monitoring jobs</h2>
-<p>The following Slurm commands can be used to monitor jobs:</p>
-<div class="sourceCode" id="cb20"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sacct</span> <span class="at">-X</span> <span class="co"># show your jobs in the last 24 hours (-X --allocations)</span></span>
+  <h2 id="monitoring-jobs">Monitoring jobs</h2>
+  <p>The following Slurm commands can be used to monitor jobs:</p>
+  <div class="sourceCode" id="cb20"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sacct</span> <span class="at">-X</span> <span class="co"># show your jobs in the last 24 hours (-X --allocations)</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="ex">sacct</span> <span class="at">-X</span> <span class="at">-S</span> <span class="op">&lt;</span>yyyy-mm-dd<span class="op">&gt;</span> <span class="co"># show your jobs since a date (-S --starttime)</span></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="ex">sacct</span> <span class="at">-X</span> <span class="at">-S</span> <span class="op">&lt;</span>yyyy-mm-dd<span class="op">&gt;</span> -E <span class="op">&lt;</span>yyyy-mm-dd<span class="op">&gt;</span> -s <span class="op">&lt;</span>R/PD/F/CA/CG/CD<span class="op">&gt;</span> <span class="co"># show running/pending/failed/cancelled/completing/completed jobs in a preiod of time (-s --state)</span></span>
 <span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="ex">sacct</span> <span class="at">-j</span> <span class="op">&lt;</span>jobid<span class="op">&gt;</span> <span class="co"># show more details on selected jobs (-j --jobs)</span></span>
 <span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="ex">squeue</span> <span class="at">-u</span> <span class="op">&lt;</span>username<span class="op">&gt;</span> <span class="co"># show a user jobs (R/PD/CD) in the queue (-u --user)</span></span>
 <span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="ex">squeue</span> <span class="at">-u</span> <span class="op">&lt;</span>username<span class="op">&gt;</span> --start <span class="co"># show estimation time to start pending jobs</span></span>
 <span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="ex">scancel</span> <span class="op">&lt;</span>jobid<span class="op">&gt;</span> <span class="co"># cancel jobs</span></span></code></pre></div>
-<h2 id="monitor-cpu-and-memory">Monitor CPU and memory</h2>
-<p><strong>Completed jobs</strong></p>
-<p>We can use the following options to check how many resouces is
-consumed by a completed job.</p>
-<div class="sourceCode" id="cb21"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sacct</span> <span class="at">-j</span> <span class="op">&lt;</span>jobid<span class="op">&gt;</span> -o User,Acc,AllocCPUS,Elaps,CPUTime,TotalCPU,AveDiskRead,AveDiskWrite,ReqMem,MaxRSS <span class="co"># info about CPU and virtual memory for compeleted jobs (-j --jobs)</span></span>
+  <h2 id="monitor-cpu-and-memory">Monitor CPU and memory</h2>
+  <p><strong>Completed jobs</strong></p>
+  <p>We can use the following options to check how many resouces is
+  consumed by a completed job.</p>
+  <div class="sourceCode" id="cb21"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sacct</span> <span class="at">-j</span> <span class="op">&lt;</span>jobid<span class="op">&gt;</span> -o User,Acc,AllocCPUS,Elaps,CPUTime,TotalCPU,AveDiskRead,AveDiskWrite,ReqMem,MaxRSS <span class="co"># info about CPU and virtual memory for compeleted jobs (-j --jobs)</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="ex">seff</span> <span class="op">&lt;</span>jobid<span class="op">&gt;</span> <span class="co"># show job CPU and memory efficiency </span></span></code></pre></div>
-<p>For more information on what fields to include see
-<code>man sacct</code>.</p>
-<p>Example output:</p>
-<div class="sourceCode" id="cb22"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">[user@cluster-login-node675</span> ~]$ sacct <span class="at">-j</span> 10785018 <span class="at">-o</span> User,Acc,AllocCPUS,Elaps,CPUTime,TotalCPU,ReqMem,MaxRSS</span>
+  <p>For more information on what fields to include see
+  <code>man sacct</code>.</p>
+  <p>Example output:</p>
+  <div class="sourceCode" id="cb22"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">[user@cluster-login-node675</span> ~]$ sacct <span class="at">-j</span> 10785018 <span class="at">-o</span> User,Acc,AllocCPUS,Elaps,CPUTime,TotalCPU,ReqMem,MaxRSS</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>     <span class="ex">User</span>    Account  AllocCPUS    Elapsed    CPUTime   TotalCPU     ReqMem     MaxRSS </span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="ex">---------</span> <span class="at">----------</span> <span class="at">----------</span> <span class="at">----------</span> <span class="at">----------</span> <span class="at">----------</span> <span class="at">----------</span> <span class="at">----------</span> </span>
 <span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>     <span class="ex">user</span>    general         16   00:48:39   12:58:24  01:49.774       64Gn       216K </span>
@@ -386,136 +491,145 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb22-1"><a href=
 <span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a><span class="ex">CPU</span> Efficiency: 0.24% of 12:58:24 core-walltime</span>
 <span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a><span class="ex">Memory</span> Utilized: 3.38 MB <span class="er">(</span><span class="ex">estimated</span> maximum<span class="kw">)</span></span>
 <span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a><span class="ex">Memory</span> Efficiency: 0.01% of 64.00 GB <span class="er">(</span><span class="ex">64.00</span> GB/node<span class="kw">)</span></span></code></pre></div>
-<p><strong>Running jobs</strong></p>
-<p>Slurm provides a tool to monitor running jobs. In order for this to
-work jobs using SBATCH must utilize the <code>srun</code> command within
-the job file.</p>
-<div class="sourceCode" id="cb23"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sstat</span> <span class="op">&lt;</span>jobid<span class="op">&gt;</span> -o AveCPU,AveDiskRead,AveDiskWrite,MaxRSS <span class="co"># info about CPU and memory for runing jobs (srun only)</span></span></code></pre></div>
-<p>Also, we can use <code>top</code> command to find how much CPU and
-memory are using by a submitted job. To do that, we need to attach to
-the nodes that our job is running and run <code>top</code> command.</p>
-<div class="sourceCode" id="cb24"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">srun</span> <span class="at">--jobid</span> <span class="op">&lt;</span>jobid<span class="op">&gt;</span> --pty /bin/bash </span>
+  <p><strong>Running jobs</strong></p>
+  <p>Slurm provides a tool to monitor running jobs. In order for this to
+  work jobs using SBATCH must utilize the <code>srun</code> command
+  within the job file.</p>
+  <div class="sourceCode" id="cb23"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sstat</span> <span class="op">&lt;</span>jobid<span class="op">&gt;</span> -o AveCPU,AveDiskRead,AveDiskWrite,MaxRSS <span class="co"># info about CPU and memory for runing jobs (srun only)</span></span></code></pre></div>
+  <p>Also, we can use <code>top</code> command to find how much CPU and
+  memory are using by a submitted job. To do that, we need to attach to
+  the nodes that our job is running and run <code>top</code>
+  command.</p>
+  <div class="sourceCode" id="cb24"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">srun</span> <span class="at">--jobid</span> <span class="op">&lt;</span>jobid<span class="op">&gt;</span> --pty /bin/bash </span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="ex">top</span> <span class="at">-u</span> <span class="va">$USER</span></span></code></pre></div>
-<p>For Memory usage, the number you are interested in is RES. In case
-below, python3 program is using about 5.6Mb memory and 0% of the
-requested CPUs.</p>
-<div class="sourceCode" id="cb25"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>  <span class="ex">PID</span> USER     PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND</span>
+  <p>For Memory usage, the number you are interested in is RES. In case
+  below, python3 program is using about 5.6Mb memory and 0% of the
+  requested CPUs.</p>
+  <div class="sourceCode" id="cb25"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>  <span class="ex">PID</span> USER     PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="ex">14278</span> Buzz     20   0  124924   5612   2600 S   0.0  0.0   0:00.04 python3</span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="ex">14279</span> Buzz     20   0  124924   5612   2600 S   0.0  0.0   0:00.03 python3</span></code></pre></div>
-<h2 id="modules">Modules</h2>
-<p>In order to use a software, we need to load the corresponding module
-first. The following commands let us manage modules in our workflow:</p>
-<div class="sourceCode" id="cb26"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> avail <span class="co"># available modules</span></span>
+  <h2 id="modules">Modules</h2>
+  <p>In order to use a software, we need to load the corresponding
+  module first. The following commands let us manage modules in our
+  workflow:</p>
+  <div class="sourceCode" id="cb26"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> avail <span class="co"># available modules</span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> show <span class="co"># show modules info </span></span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> list <span class="co"># list loaded modules</span></span>
 <span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load <span class="co"># loaded modules</span></span>
 <span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> unload <span class="co"># unload loaded modules</span></span>
 <span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> purge <span class="co"># unload all loaded modules</span></span></code></pre></div>
-<p><strong>Never load modules in the login node</strong>. It makes login
-node slow for all users and many modules don’t work in the login
-node.</p>
-<p>For example to use R interactively, first need to request resources
-on a partition called Interactive by <code>srun</code> and then use
-<code>module load R</code>:</p>
-<div class="sourceCode" id="cb27"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="ex">srun</span> <span class="at">-p</span> Interactive <span class="at">--mem</span> 4G <span class="at">--pty</span> /bin/bash</span>
+  <p><strong>Never load modules in the login node</strong>. It makes
+  login node slow for all users and many modules don’t work in the login
+  node.</p>
+  <p>For example to use R interactively, first need to request resources
+  on a partition called Interactive by <code>srun</code> and then use
+  <code>module load R</code>:</p>
+  <div class="sourceCode" id="cb27"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="ex">srun</span> <span class="at">-p</span> Interactive <span class="at">--mem</span> 4G <span class="at">--pty</span> /bin/bash</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load R</span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span></span></code></pre></div>
-<p>If you are looking for using a licensed software (available in
-cluster) make sure you call the license when requesting resources. For
-instance to use MATLAB:</p>
-<div class="sourceCode" id="cb28"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="ex">srun</span> <span class="at">-p</span> Interactive <span class="at">--mem</span> 4G <span class="at">-L</span> matlab <span class="at">--pty</span> /bin/bash</span>
+  <p>If you are looking for using a licensed software (available in
+  cluster) make sure you call the license when requesting resources. For
+  instance to use MATLAB:</p>
+  <div class="sourceCode" id="cb28"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="ex">srun</span> <span class="at">-p</span> Interactive <span class="at">--mem</span> 4G <span class="at">-L</span> matlab <span class="at">--pty</span> /bin/bash</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load matlab</span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="ex">matlab</span> <span class="at">-nodisplay</span></span></code></pre></div>
-<hr />
-<h2 id="more-resources">More resources</h2>
-<ul>
-<li><a href="http://docs.rnet.missouri.edu">RCSS Documentation</a></li>
-<li><a href="https://www.xsede.org/for-users/training">XSEDE
-Training</a></li>
-<li><a href="https://software-carpentry.org/lessons/">Software
-Carpentry</a></li>
-<li><a href="https://hpc-carpentry.github.io">HPC Carpentry</a></li>
-<li><a href="https://datacarpentry.org/lessons/">Data Carpentry</a></li>
-<li><a href="https://cvw.cac.cornell.edu/topics">Cornell Virtual
-Workshop</a></li>
-<li><a
-href="https://www.psc.edu/resources-for-users/training/">Pittsburgh
-Supercomputing Center (PSC)</a></li>
-<li><a href="https://learn.tacc.utexas.edu/course/">TACC Learning
-Portal</a></li>
-</ul></div>
-            <div class="d-none d-xl-block col-xl-2 bd-toc">
-               <ul class="section-nav">
-                  <li class="toc-entry"><ul>
-<li><a href="#clusters" id="toc-clusters">Clusters</a></li>
-<li><a href="#slurm" id="toc-slurm">Slurm</a></li>
-<li><a href="#login-node" id="toc-login-node">Login node</a></li>
-<li><a href="#cluster-information" id="toc-cluster-information">Cluster
-information</a></li>
-<li><a href="#users-information" id="toc-users-information">Users
-information</a></li>
-<li><a href="#job-submission" id="toc-job-submission">Job
-submission</a></li>
-<li><a href="#job-arrays" id="toc-job-arrays">Job Arrays</a>
-<ul>
-<li><a href="#python-example" id="toc-python-example">Python
-example</a></li>
-<li><a href="#r-example" id="toc-r-example">R example</a></li>
-</ul></li>
-<li><a href="#monitoring-jobs" id="toc-monitoring-jobs">Monitoring
-jobs</a></li>
-<li><a href="#monitor-cpu-and-memory"
-id="toc-monitor-cpu-and-memory">Monitor CPU and memory</a></li>
-<li><a href="#modules" id="toc-modules">Modules</a></li>
-<li><a href="#more-resources" id="toc-more-resources">More
-resources</a></li>
-</ul></li>
-               </ul>
-            </div>
-         </div>
-               </div>
-            <!-- Footer -->
-            <footer class="footer text-muted">
-               <div align="center">
-                  Text is available under <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>
-                  &nbsp;|&nbsp;
-                  Code licensed under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank" rel="noopener">GPL-3.0</a>
-                  &nbsp;|&nbsp;
-                  Built with <a href="https://github.com/ashki23/pandoc-bootstrap" target="_blank" rel="noopener">pandoc-bootstrap</a> theme
-                  <br />
-                  Copyright 2018-2024, Ashkan Mirzaee
-               </div>
-            </footer>
-            <!-- Global site tag (gtag.js) - Google Analytics -->
-            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132464297-1"></script>
-            <script>
-               window.dataLayer = window.dataLayer || [];
-               function gtag(){dataLayer.push(arguments);}
-               gtag('js', new Date());
-               gtag('config', 'UA-132464297-1');
-            </script>
-            <!-- JS, Popper.js, and jQuery -->
-      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-      <!-- Mathjax -->
-      <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-      <script>
-         /* Bootstrap styles to tables */
-         function bootstrapStylePandocTables() {
-         $('tr.header').parent('thead').parent('table').addClass('table table-condensed'); }
-         $(document).ready(function () { bootstrapStylePandocTables(); });
-         /* Adjust the height when click the toc */
-         var shiftWindow = function() { scrollBy(0, -60) };
-         window.addEventListener("hashchange", shiftWindow);
-         function load() { if (window.location.hash) shiftWindow(); }
-      </script>
-   </body>
+  <hr />
+  <h2 id="more-resources">More resources</h2>
+  <ul>
+  <li><a href="http://docs.rnet.missouri.edu">RCSS
+  Documentation</a></li>
+  <li><a href="https://www.xsede.org/for-users/training">XSEDE
+  Training</a></li>
+  <li><a href="https://software-carpentry.org/lessons/">Software
+  Carpentry</a></li>
+  <li><a href="https://hpc-carpentry.github.io">HPC Carpentry</a></li>
+  <li><a href="https://datacarpentry.org/lessons/">Data
+  Carpentry</a></li>
+  <li><a href="https://cvw.cac.cornell.edu/topics">Cornell Virtual
+  Workshop</a></li>
+  <li><a
+  href="https://www.psc.edu/resources-for-users/training/">Pittsburgh
+  Supercomputing Center (PSC)</a></li>
+  <li><a href="https://learn.tacc.utexas.edu/course/">TACC Learning
+  Portal</a></li>
+  </ul>
+	</div>
+      </main>
+    </div>
+    
+    <!-- After body contents -->
+        <!-- Footer -->
+        <footer class="bd-footer mt-auto py-3 py-md-3 bg-body-tertiary">
+          <div class="container py-md-3 px-4 px-md-3 text-body-secondary" align="center" style="font-size: .95rem;">
+            Text is available under <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>
+            &nbsp;|&nbsp;
+            Code licensed under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank" rel="noopener">GPL-3.0</a>
+            &nbsp;|&nbsp;
+            Built with <a href="https://github.com/ashki23/pandoc-bootstrap" target="_blank" rel="noopener">pandoc-bootstrap</a> theme
+            <br />
+            Copyright 2018-2024, Ashkan Mirzaee
+          </div>
+        </footer>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132464297-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'UA-132464297-1');
+        </script>
+        
+    <!-- Bootstrap Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+    <!-- Highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js" integrity="sha512-6yoqbrcLAHDWAdQmiRlHG4+m0g/CT/V9AGyxabG8j7Jk8j3r3K6due7oqpiRMZqcYe9WM2gPcaNNxnl2ux+3tA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+        
+    <!-- Custom Scripts -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+	  const htmlElement = document.documentElement;
+	  const highlightStyle = document.getElementById("highlight-style");
+	  
+	  // Function to update Highlight.js style based on theme
+	  const updateHighlightStyle = (theme) => {
+              const lightTheme = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/stackoverflow-light.min.css";
+              const darkTheme = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/github-dark.min.css";
+              highlightStyle.href = theme === "dark" ? darkTheme : lightTheme;
+	  };
+	  
+	  // Function to set the theme
+	  const setTheme = (theme) => {
+              htmlElement.setAttribute("data-bs-theme", theme);
+              localStorage.setItem("theme", theme); // Save the theme to localStorage
+              updateHighlightStyle(theme);
+	  };
+	  
+	  // Get saved theme from localStorage or fallback to default ("light")
+	  const savedTheme = localStorage.getItem("theme") || "light";
+	  setTheme(savedTheme);
+	  
+	  // Event listener for theme dropdown
+	  document.querySelectorAll(".dropdown-item").forEach((item) => {
+              item.addEventListener("click", (e) => {
+		  e.preventDefault();
+		  const selectedTheme = item.getAttribute("data-theme");
+		  setTheme(selectedTheme);
+              });
+	  });
+	  
+	  // Initialize Highlight.js
+	  hljs.highlightAll();
+      });
+    </script>
+  </body>
 </html>

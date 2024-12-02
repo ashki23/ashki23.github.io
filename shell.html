@@ -1,145 +1,239 @@
 <!doctype html>
-<html>
-   <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <meta name="generator" content="pandoc">
-      <meta name="author" content="Ashkan Mirzaee">
-      <meta name="description" content="An introduction tutorial for
-using Unix shell">
-      <title>The Unix Shell</title>
-      <!-- Bootstrap -->
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-      <!-- Font-awesome -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-      <!-- Styles -->
-      <link rel="stylesheet" href="https://ashki23.github.io/styles.css">
-            <!-- Favicon -->
-            <link rel="icon" href="images/AM.jpg">
-            <!-- Google-site-verification -->
-            <meta name="google-site-verification" content="lD_nifpQ-CA6LaDwxYJbe5bq0oa6Ir0Ax-txvtdP51E">
-            <!-- Bing-site-verification -->
-            <meta name="msvalidate.01" content="89BCD3FF42B6E9FE48E0C8365767D11B">
-         </head>
-   <body>
-            <nav class="navbar fixed-top navbar-expand-lg navbar-dark bd-navbar">
-               <a class="navbar-brand" href="index.html">Ashkan Mirzaee</a>
-               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="border: none; outline: none; padding-right: 0; padding-left: 1rem;">
-               <span class="navbar-toggler-icon"></span>
-               </button>
-               <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav mr-auto">
-                     <li class="nav-item">
-                        <a class="nav-link" href="page1.html">Blog</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="tutorials.html">Tutorials</a>
-                     </li>
-            	 <li class="nav-item">
-                        <a class="nav-link" href="research.html">Research</a>
-                     </li>
-            	 <li class="nav-item">
-                        <a class="nav-link" href="applications.html">Applications</a>
-                     </li>
-            	 <li class="nav-item">
-                        <a class="nav-link" href="blogroll.html">Blogroll</a>
-                     </li>
+<html lang="en" class="h-100" data-bs-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="generator" content="pandoc">
+    <meta name="author" content="Ashkan Mirzaee">
+    <meta name="description" content="An introduction tutorial for using
+Unix shell">
+    <title>The Unix Shell</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!-- Bootstrap Icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous">
+    
+    <!-- Highlight.js Styles -->
+    <link rel="stylesheet" id="highlight-style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/stackoverflow-light.min.css">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="https://getbootstrap.com/docs/5.3/assets/css/docs.css">
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- After header contents -->
+        <!-- Favicon -->
+        <link rel="icon" href="images/AM.jpg">
+        <!-- Google-site-verification -->
+        <meta name="google-site-verification" content="lD_nifpQ-CA6LaDwxYJbe5bq0oa6Ir0Ax-txvtdP51E">
+        <!-- Bing-site-verification -->
+        <meta name="msvalidate.01" content="89BCD3FF42B6E9FE48E0C8365767D11B">
+      </head>
+  <body class="d-flex flex-column h-100" data-bs-spy="scroll" data-bs-target="#TableOfContents">
+    <!-- Before body contents -->
+        <nav class="navbar bd-navbar navbar-expand-lg fixed-top py-2">
+          <div class="container-xxl bd-gutter flex-wrap flex-lg-nowrap">
+            <!-- Brand -->
+            <a class="navbar-brand" href="index.html" style="transform: none;">Ashkan Mirzaee</a>
+
+            <!-- Toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Navbar Content -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <!-- Left Navigation -->
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link" href="page1.html">Blog</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="tutorials.html">Tutorials</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="research.html">Research</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="applications.html">Applications</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="blogroll.html">Blogroll</a>
+                </li>
+              </ul>
+              
+              <!-- Divider for smaller screens -->
+              <hr class="d-lg-none text-white-50">
+              
+              <!-- Social Media Icons -->
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html" aria-label="Contact">
+                    <i class="bi bi-envelope"></i>
+        	    <span class="d-lg-none ms-2">Contact</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://github.com/ashki23" target="_blank" rel="noopener" aria-label="GitHub">
+                    <i class="bi bi-github"></i>
+        	    <span class="d-lg-none ms-2">GitHub</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://gitlab.com/ashki23" target="_blank" rel="noopener" aria-label="GitLab">
+                    <i class="bi bi-gitlab"></i>
+        	    <span class="d-lg-none ms-2">GitLab</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://www.linkedin.com/in/ashkan-mirzaee/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <i class="bi bi-linkedin"></i>
+        	    <span class="d-lg-none ms-2">Linkedin</span>
+                  </a>
+                </li>
+              </ul>
+              
+              <!-- Divider for larger screens -->
+              <div class="vr d-none d-lg-flex mx-2 my-1 text-white"></div>
+              
+              <!-- Divider for smaller screens -->
+              <hr class="d-lg-none text-white-50">
+              
+              <!-- Theme Dropdown -->
+              <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                  <button class="btn btn-link nav-link dropdown-toggle" type="button" id="themeDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-circle-half"></i>
+        	    <span class="d-lg-none ms-2">Toggle theme</span>
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="themeDropdown">
+                    <li>
+                      <a class="dropdown-item align-items-center" data-theme="light">
+                        <i class="bi bi-sun-fill me-2 opacity-50"></i> Light
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item align-items-center" data-theme="dark">
+                        <i class="bi bi-moon-stars-fill me-2 opacity-50"></i> Dark
+                      </a>
+                    </li>
                   </ul>
-                  <ul class="navbar-nav ml-auto">
-            	<li class="nav-item">
-            	  <a class="nav-link" href="contact.html" aria-label="Contact">
-            	    <span class="fa fa-envelope fa-lg"></a>
-            	</li>
-            	<li class="nav-item">
-            	  <a class="nav-link" href="https://github.com/ashki23" target="_blank" rel="noopener" aria-label="GitHub">
-            	    <span class="fa fa-github fa-lg"></span></a>
-            	</li>
-            	<li class="nav-item">
-            	  <a class="nav-link" href="https://gitlab.com/ashki23" target="_blank" rel="noopener" aria-label="GitLab">
-            	    <span class="fa fa-gitlab fa-lg"></span></a>
-            	</li>
-            	<li class="nav-item">
-            	  <a class="nav-link" href="https://www.linkedin.com/in/ashkan-mirzaee/" target="_blank" rel="noopener" aria-label="Linkedin">
-            	    <span class="fa fa-linkedin fa-lg"></span></a>
-            	</li>
-                  </ul>
-               </div>
-            </nav>
-            <div class="container">
-         <h1 class="title">The Unix Shell</h1>
-                  <div class="row">
-            <div class="col-xl-10"><p>The Shell is a program which uses
-command-line interface, instead of graphical user interfaces (GUI), to
-run other programs rather than doing calculations itself. The most
-popular Unix Shell is Bash which is accessible by
-<code>ctrl+alt+t</code> keyboard shortcut in Linux computers. The
-following are some great Shell tutorials:</p>
-<ul>
-<li><a href="http://swcarpentry.github.io/shell-novice/">The Unix
-Shell</a></li>
-<li><a href="http://swcarpentry.github.io/shell-extras/">Extra Unix
-Shell Material</a></li>
-<li><a href="https://hpc-carpentry.github.io/hpc-shell/">Introduction to
-using the shell in a High-Performance Computing context</a></li>
-</ul>
-<p>This tutorial provides a reference of some practical commands in the
-Unix Shell and important text editors in Bash.</p>
-<hr />
-<h2 id="tab-completion">Tab completion</h2>
-<p>In the Unix Shell we can use <strong>tab completion</strong> to type
-commands faster and easier. To do that press <code>tab</code> after
-typing the beginning of your command and let Bash complete the command.
-If there are more than one function or directory corresponded to the
-beginning that you typed, Bash will not return anything if your press
-<code>tab</code> once. In this case, if you press <code>tab</code> for
-the second time Bash will show all the options.</p>
-<h2 id="wildcards">Wildcards</h2>
-<p>A string is a wildcard pattern if it contains one of the characters
-<code>?</code>, <code>*</code> or <code>[</code>. Globbing is the
-operation that expands a wildcard pattern into the list of pathnames
-matching the pattern. For more information on globbing pathnames typing
-<code>man 7 glob</code>.</p>
-<p><strong>Matching:</strong></p>
-<ul>
-<li>A <code>?</code> matches any single character. For example,
-<code>hd?</code> would look for <code>hda</code>, <code>hdb</code>,
-<code>hdc</code> and every other letter/number between <code>a-z</code>,
-<code>0-9</code></li>
-<li>A <code>*</code> matches any string, including the empty string. For
-example, <code>hd*</code> would look for <code>hd</code>,
-<code>hdf</code>, <code>hd-full</code>, and anything that starts with
-<code>hd</code> also including <code>hd</code> itself. And
-<code>m*l</code> could by <code>mail</code>, <code>mall</code>,
-<code>ml</code>, and anything that starts with an <code>m</code> and
-ends with an <code>l</code></li>
-</ul>
-<p><strong>Character classes:</strong></p>
-<ul>
-<li>An expression <code>[  ]</code>, where the first character after the
-leading <code>[</code> is not an <code>!</code>, matches any of the
-characters enclosed by the brackets. For example, <code>m[a-d]m</code>
-can become anything that starts and ends with <code>m</code> and has any
-character <code>a</code> to <code>d</code> in between.</li>
-<li>An expression <code>[! ]</code>, where the first character after the
-leading <code>[</code> is an <code>!</code>, matches any character that
-is not enclosed by the brackets.</li>
-</ul>
-<h2 id="shell-expansions">Shell Expansions</h2>
-<ul>
-<li>Brace expansion: is a mechanism by which arbitrary strings may be
-generated for example <code>echo 1{2,3}4</code> returns 124 and 134 or
-<code>echo {1..3}</code> returns 1,2, and 3</li>
-<li>Command substitution: it allows the output of a command to replace
-the command itself for example, <code>echo $(date)</code> returns the
-actual date. Note that for the environmental variables you cannot use
-<code>()</code>, for example <code>echo $HOME</code> or
-<code>echo ${HOME}</code> is the correct way</li>
-</ul>
-<h2 id="basic-commands">Basic commands</h2>
-<p>The following is a list of basic Bash commands. You may find a short
-explanation next to each command.</p>
-<div class="sourceCode" id="cb1"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">man</span> <span class="op">&lt;</span>command<span class="op">&gt;</span> <span class="co"># user manual of the command (enter q to exit)</span></span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        
+    <div class="container-xxl bd-gutter pb-5 mt-3 my-md-4 bd-layout" style="padding-top:60px;">
+      <main class="bd-main order-1">
+	
+	<!-- Tiltle -->
+	<h1 class="bd-intro pt-2 ps-lg-2" id="title">The Unix Shell</h1>
+	
+		<!-- Table of Contents -->
+	<div class="bd-toc mt-3 mb-5 my-lg-0 mb-lg-5 px-sm-1 text-body-secondary">
+	  <strong class="d-none d-md-block h6 my-2 ms-3">On this page</strong>
+	  <hr class="d-none d-md-block my-2 ms-3">
+	  <div class="collapse bd-toc-collapse" id="tocContents">
+	    <nav id="TableOfContents">
+	      <ul>
+      <li><a href="#tab-completion" id="toc-tab-completion">Tab
+      completion</a></li>
+      <li><a href="#wildcards" id="toc-wildcards">Wildcards</a></li>
+      <li><a href="#shell-expansions" id="toc-shell-expansions">Shell
+      Expansions</a></li>
+      <li><a href="#basic-commands" id="toc-basic-commands">Basic
+      commands</a></li>
+      <li><a href="#pipes-and-filters" id="toc-pipes-and-filters">Pipes
+      and Filters</a></li>
+      <li><a href="#loops-and-conditional-constructs"
+      id="toc-loops-and-conditional-constructs">Loops and conditional
+      constructs</a></li>
+      <li><a href="#text-editors" id="toc-text-editors">Text
+      editors</a></li>
+      <li><a href="#shell-script" id="toc-shell-script">Shell
+      script</a></li>
+      </ul>
+	    </nav>
+	  </div>
+	</div>
+		
+	<!-- Main Content -->
+	<div class="bd-content ps-lg-2">
+	  <p>The Shell is a program which uses command-line interface, instead
+  of graphical user interfaces (GUI), to run other programs rather than
+  doing calculations itself. The most popular Unix Shell is Bash which
+  is accessible by <code>ctrl+alt+t</code> keyboard shortcut in Linux
+  computers. The following are some great Shell tutorials:</p>
+  <ul>
+  <li><a href="http://swcarpentry.github.io/shell-novice/">The Unix
+  Shell</a></li>
+  <li><a href="http://swcarpentry.github.io/shell-extras/">Extra Unix
+  Shell Material</a></li>
+  <li><a href="https://hpc-carpentry.github.io/hpc-shell/">Introduction
+  to using the shell in a High-Performance Computing context</a></li>
+  </ul>
+  <p>This tutorial provides a reference of some practical commands in
+  the Unix Shell and important text editors in Bash.</p>
+  <hr />
+  <h2 id="tab-completion">Tab completion</h2>
+  <p>In the Unix Shell we can use <strong>tab completion</strong> to
+  type commands faster and easier. To do that press <code>tab</code>
+  after typing the beginning of your command and let Bash complete the
+  command. If there are more than one function or directory corresponded
+  to the beginning that you typed, Bash will not return anything if your
+  press <code>tab</code> once. In this case, if you press
+  <code>tab</code> for the second time Bash will show all the
+  options.</p>
+  <h2 id="wildcards">Wildcards</h2>
+  <p>A string is a wildcard pattern if it contains one of the characters
+  <code>?</code>, <code>*</code> or <code>[</code>. Globbing is the
+  operation that expands a wildcard pattern into the list of pathnames
+  matching the pattern. For more information on globbing pathnames
+  typing <code>man 7 glob</code>.</p>
+  <p><strong>Matching:</strong></p>
+  <ul>
+  <li>A <code>?</code> matches any single character. For example,
+  <code>hd?</code> would look for <code>hda</code>, <code>hdb</code>,
+  <code>hdc</code> and every other letter/number between
+  <code>a-z</code>, <code>0-9</code></li>
+  <li>A <code>*</code> matches any string, including the empty string.
+  For example, <code>hd*</code> would look for <code>hd</code>,
+  <code>hdf</code>, <code>hd-full</code>, and anything that starts with
+  <code>hd</code> also including <code>hd</code> itself. And
+  <code>m*l</code> could by <code>mail</code>, <code>mall</code>,
+  <code>ml</code>, and anything that starts with an <code>m</code> and
+  ends with an <code>l</code></li>
+  </ul>
+  <p><strong>Character classes:</strong></p>
+  <ul>
+  <li>An expression <code>[  ]</code>, where the first character after
+  the leading <code>[</code> is not an <code>!</code>, matches any of
+  the characters enclosed by the brackets. For example,
+  <code>m[a-d]m</code> can become anything that starts and ends with
+  <code>m</code> and has any character <code>a</code> to <code>d</code>
+  in between.</li>
+  <li>An expression <code>[! ]</code>, where the first character after
+  the leading <code>[</code> is an <code>!</code>, matches any character
+  that is not enclosed by the brackets.</li>
+  </ul>
+  <h2 id="shell-expansions">Shell Expansions</h2>
+  <ul>
+  <li>Brace expansion: is a mechanism by which arbitrary strings may be
+  generated for example <code>echo 1{2,3}4</code> returns 124 and 134 or
+  <code>echo {1..3}</code> returns 1,2, and 3</li>
+  <li>Command substitution: it allows the output of a command to replace
+  the command itself for example, <code>echo $(date)</code> returns the
+  actual date. Note that for the environmental variables you cannot use
+  <code>()</code>, for example <code>echo $HOME</code> or
+  <code>echo ${HOME}</code> is the correct way</li>
+  </ul>
+  <h2 id="basic-commands">Basic commands</h2>
+  <p>The following is a list of basic Bash commands. You may find a
+  short explanation next to each command.</p>
+  <div class="sourceCode" id="cb1"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">man</span> <span class="op">&lt;</span>command<span class="op">&gt;</span> <span class="co"># user manual of the command (enter q to exit)</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>command<span class="op">&gt;</span> --help <span class="co"># display brief help</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">uname</span> <span class="co"># print operating system name</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="bu">alias</span> <span class="co"># show alias </span></span>
@@ -197,11 +291,11 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="
 <span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a><span class="fu">bc</span> <span class="co"># Bash calculator language ex. echo &#39;3 + 4&#39; | bc</span></span>
 <span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a><span class="fu">clear</span> <span class="er">(</span><span class="ex">ctrl+l</span><span class="kw">)</span> <span class="co"># clear terminal</span></span>
 <span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a><span class="bu">exit</span> <span class="er">(</span><span class="ex">ctrl+d</span><span class="kw">)</span> <span class="co"># to exit</span></span></code></pre></div>
-<p>For practice, let’s create two text files including some names and
-grades by <code>cat</code> command in <code>bash_test</code>
-directory:</p>
-<div class="sourceCode" id="cb2"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> bash_test</span>
+  <p>For practice, let’s create two text files including some names and
+  grades by <code>cat</code> command in <code>bash_test</code>
+  directory:</p>
+  <div class="sourceCode" id="cb2"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> bash_test</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> bash_text</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> <span class="op">&gt;</span> names.txt</span>
@@ -221,11 +315,11 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="
 <span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="co"># press `ctrl+d` to exit</span></span>
 <span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span></code></pre></div>
-<p><code>ls</code> command returns <code>grade.txt  names.txt</code>
-that shows we already made the files. Now, let’s see head, tail and
-number of lines in both files:</p>
-<div class="sourceCode" id="cb3"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span> <span class="at">-n</span> 3 n<span class="pp">*</span>.txt</span>
+  <p><code>ls</code> command returns <code>grade.txt  names.txt</code>
+  that shows we already made the files. Now, let’s see head, tail and
+  number of lines in both files:</p>
+  <div class="sourceCode" id="cb3"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span> <span class="at">-n</span> 3 n<span class="pp">*</span>.txt</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="at">---</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span> <span class="at">-n</span> 3 g<span class="pp">*</span>.txt</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="at">---</span></span>
@@ -242,62 +336,62 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="
 <span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co">##  5 grade.txt</span></span>
 <span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co">##  5 names.txt</span></span>
 <span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="co">## 10 total</span></span></code></pre></div>
-<p>For finding things we can use <code>grep</code> or “global/regular
-expression/print” command. For example, let’s find lines that contain
-the letter “D”:</p>
-<div class="sourceCode" id="cb4"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> D names.txt</span>
+  <p>For finding things we can use <code>grep</code> or “global/regular
+  expression/print” command. For example, let’s find lines that contain
+  the letter “D”:</p>
+  <div class="sourceCode" id="cb4"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> D names.txt</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">## Dori</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">## Dori</span></span></code></pre></div>
-<p>There are several options that we can use for <code>grep</code>
-command. For example, <code>grep -w</code> is searching for the exact
-word, <code>-n</code> option shows numbers the lines that match,
-<code>-i</code> flag makes our search case-insensitive, or
-<code>-v</code> inverts our search to the lines that do not contain the
-pattern, or <code>-o</code> print only the matched parts, and
-<code>-P</code> flag for using Perl-compatible <a
-href="https://docs.python.org/3/library/re.html#re-syntax">regular
-expression</a>. To see all the option use <code>man grep</code>. Lets’
-try to find lines which do not contain letter “d” or “D”:</p>
-<div class="sourceCode" id="cb5"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="at">-inv</span> d names.txt</span>
+  <p>There are several options that we can use for <code>grep</code>
+  command. For example, <code>grep -w</code> is searching for the exact
+  word, <code>-n</code> option shows numbers the lines that match,
+  <code>-i</code> flag makes our search case-insensitive, or
+  <code>-v</code> inverts our search to the lines that do not contain
+  the pattern, or <code>-o</code> print only the matched parts, and
+  <code>-P</code> flag for using Perl-compatible <a
+  href="https://docs.python.org/3/library/re.html#re-syntax">regular
+  expression</a>. To see all the option use <code>man grep</code>. Lets’
+  try to find lines which do not contain letter “d” or “D”:</p>
+  <div class="sourceCode" id="cb5"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="at">-inv</span> d names.txt</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">## 2:Ari</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">## 3:Ashi</span></span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">## 4:Jackie</span></span></code></pre></div>
-<p>While <code>grep</code> finds lines in files, the <code>find</code>
-command finds files themselves. For instance, in directory
-<code>bash_test</code> command <code>find .</code> will shows all files
-and directories within the current directory. The following command will
-return number of lines in <code>names.txt</code> and
-<code>grade.txt</code> files in the directory:</p>
-<div class="sourceCode" id="cb6"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wc</span> <span class="at">-l</span> <span class="va">$(</span><span class="fu">find</span> . <span class="at">-name</span> <span class="st">&#39;[n,g]*.txt&#39;</span><span class="va">)</span></span>
+  <p>While <code>grep</code> finds lines in files, the <code>find</code>
+  command finds files themselves. For instance, in directory
+  <code>bash_test</code> command <code>find .</code> will shows all
+  files and directories within the current directory. The following
+  command will return number of lines in <code>names.txt</code> and
+  <code>grade.txt</code> files in the directory:</p>
+  <div class="sourceCode" id="cb6"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wc</span> <span class="at">-l</span> <span class="va">$(</span><span class="fu">find</span> . <span class="at">-name</span> <span class="st">&#39;[n,g]*.txt&#39;</span><span class="va">)</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">##  5 ./grade.txt</span></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co">##  5 ./names.txt</span></span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co">## 10 total</span></span></code></pre></div>
-<p>For another example, you may use the command in below to print a
-divider, like <code>===</code>, followed by date and hostname:</p>
-<div class="sourceCode" id="cb7"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> === <span class="va">$(</span><span class="fu">hostname</span><span class="va">)</span> <span class="va">$(</span><span class="fu">date</span><span class="va">)</span></span>
+  <p>For another example, you may use the command in below to print a
+  divider, like <code>===</code>, followed by date and hostname:</p>
+  <div class="sourceCode" id="cb7"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> === <span class="va">$(</span><span class="fu">hostname</span><span class="va">)</span> <span class="va">$(</span><span class="fu">date</span><span class="va">)</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Or</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> === <span class="va">$(</span><span class="fu">hostname</span><span class="va">)</span> <span class="st">&quot;date: </span><span class="va">$(</span><span class="fu">date</span><span class="va">)</span><span class="st">&quot;</span></span></code></pre></div>
-<h2 id="pipes-and-filters">Pipes and Filters</h2>
-<p>Now that we know a few basic commands, we can combine the programs
-and commands in new ways. The following commands let us to use output of
-a command as an input for another command or store the outputs of
-commands in a separate file.</p>
-<div class="sourceCode" id="cb8"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">first</span> <span class="kw">|</span> <span class="ex">second</span> <span class="co"># is a pipeline; the output of the first command is used as the input to the second </span></span>
+  <h2 id="pipes-and-filters">Pipes and Filters</h2>
+  <p>Now that we know a few basic commands, we can combine the programs
+  and commands in new ways. The following commands let us to use output
+  of a command as an input for another command or store the outputs of
+  commands in a separate file.</p>
+  <div class="sourceCode" id="cb8"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">first</span> <span class="kw">|</span> <span class="ex">second</span> <span class="co"># is a pipeline; the output of the first command is used as the input to the second </span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">command</span> <span class="op">&gt;</span> file <span class="co"># redirects a command’s output to a file (overwriting any existing content)</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="bu">command</span> <span class="op">&gt;&gt;</span> file <span class="co"># appends a command’s output to a file</span></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span> <span class="co"># operator redirects input to a command</span></span></code></pre></div>
-<p>For example let’s remove the duplicated names in the
-<code>names.txt</code>:</p>
-<div class="sourceCode" id="cb9"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span> names.txt <span class="kw">|</span> <span class="fu">uniq</span> </span>
+  <p>For example let’s remove the duplicated names in the
+  <code>names.txt</code>:</p>
+  <div class="sourceCode" id="cb9"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span> names.txt <span class="kw">|</span> <span class="fu">uniq</span> </span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="at">---</span> To count number of occurrences <span class="at">---</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span> names.txt <span class="kw">|</span> <span class="fu">uniq</span> <span class="at">-c</span></span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -310,44 +404,44 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="
 <span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="co">##       1 Ashi</span></span>
 <span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="co">##       2 Dori</span></span>
 <span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="co">##       1 Jackie</span></span></code></pre></div>
-<p>Or make a new file, <code>count.txt</code>, including number of
-lines, words, and characters in the text files:</p>
-<div class="sourceCode" id="cb10"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wc</span> <span class="pp">[</span><span class="ss">n,g</span><span class="pp">]*</span>.txt <span class="op">&gt;</span> count.txt</span></code></pre></div>
-<p>Use <code>cat count.txt</code> to see the file content. Also, you may
-use:</p>
-<div class="sourceCode" id="cb11"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> count.txt</span>
+  <p>Or make a new file, <code>count.txt</code>, including number of
+  lines, words, and characters in the text files:</p>
+  <div class="sourceCode" id="cb10"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wc</span> <span class="pp">[</span><span class="ss">n,g</span><span class="pp">]*</span>.txt <span class="op">&gt;</span> count.txt</span></code></pre></div>
+  <p>Use <code>cat count.txt</code> to see the file content. Also, you
+  may use:</p>
+  <div class="sourceCode" id="cb11"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> count.txt</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">wc</span> <span class="at">-l</span> <span class="op">&lt;</span> count.txt</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co">##  5  5 12 grade.txt</span></span>
 <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co">##  5  5 26 names.txt</span></span>
 <span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co">## 10 10 38 total</span></span>
 <span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co">## 3</span></span></code></pre></div>
-<p>To find number of lines in the <code>count.txt</code>. Note that you
-also can use <code>wc -l count.txt</code> to find the number of
-lines.</p>
-<h2 id="loops-and-conditional-constructs">Loops and conditional
-constructs</h2>
-<p>Loops are key to productivity improvements through automation as they
-allow us to execute commands repeatedly. Similar to wildcards and tab
-completion, using loops also reduces the amount of typing and mistakes.
-The syntax is:</p>
-<div class="sourceCode" id="cb12"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> variable <span class="kw">in</span> file1 file2 ...<span class="kw">;</span> <span class="cf">do</span> <span class="ex">command_1</span> <span class="va">$variable</span><span class="kw">;</span> <span class="ex">command_2</span><span class="kw">;</span> <span class="ex">...</span><span class="kw">;</span> <span class="cf">done</span></span>
+  <p>To find number of lines in the <code>count.txt</code>. Note that
+  you also can use <code>wc -l count.txt</code> to find the number of
+  lines.</p>
+  <h2 id="loops-and-conditional-constructs">Loops and conditional
+  constructs</h2>
+  <p>Loops are key to productivity improvements through automation as
+  they allow us to execute commands repeatedly. Similar to wildcards and
+  tab completion, using loops also reduces the amount of typing and
+  mistakes. The syntax is:</p>
+  <div class="sourceCode" id="cb12"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> variable <span class="kw">in</span> file1 file2 ...<span class="kw">;</span> <span class="cf">do</span> <span class="ex">command_1</span> <span class="va">$variable</span><span class="kw">;</span> <span class="ex">command_2</span><span class="kw">;</span> <span class="ex">...</span><span class="kw">;</span> <span class="cf">done</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Or</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> output <span class="kw">in</span> <span class="va">$(</span><span class="bu">command</span><span class="va">)</span><span class="kw">;</span>  <span class="cf">do</span> <span class="ex">command_1</span> <span class="va">$output</span><span class="kw">;</span> <span class="ex">command_2</span><span class="kw">;</span> <span class="ex">...</span><span class="kw">;</span> <span class="cf">done</span></span></code></pre></div>
-<p>For instance, let’s make a copy of <code>grade.txt</code> and
-<code>names.txt</code>:</p>
-<div class="sourceCode" id="cb13"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> x <span class="kw">in</span> <span class="pp">[</span><span class="ss">g,n</span><span class="pp">]*</span>.txt<span class="kw">;</span> <span class="cf">do</span> <span class="fu">cp</span> <span class="va">$x</span> copy-<span class="va">$x</span><span class="kw">;</span> <span class="bu">echo</span> copy-<span class="va">$x</span><span class="kw">;</span> <span class="cf">done</span></span>
+  <p>For instance, let’s make a copy of <code>grade.txt</code> and
+  <code>names.txt</code>:</p>
+  <div class="sourceCode" id="cb13"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> x <span class="kw">in</span> <span class="pp">[</span><span class="ss">g,n</span><span class="pp">]*</span>.txt<span class="kw">;</span> <span class="cf">do</span> <span class="fu">cp</span> <span class="va">$x</span> copy-<span class="va">$x</span><span class="kw">;</span> <span class="bu">echo</span> copy-<span class="va">$x</span><span class="kw">;</span> <span class="cf">done</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co">## copy-grade.txt</span></span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co">## copy-names.txt</span></span></code></pre></div>
-<p>Use <code>ls</code> to see new files that start with
-<code>copy-</code> in your directory. Another example,</p>
-<div class="sourceCode" id="cb14"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> y <span class="kw">in</span> <span class="va">$(</span><span class="fu">seq</span> 1 3<span class="va">)</span><span class="kw">;</span> <span class="cf">do</span> <span class="bu">echo</span> <span class="st">&quot;The number is </span><span class="va">$y</span><span class="st">&quot;</span><span class="kw">;</span> <span class="cf">done</span></span>
+  <p>Use <code>ls</code> to see new files that start with
+  <code>copy-</code> in your directory. Another example,</p>
+  <div class="sourceCode" id="cb14"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> y <span class="kw">in</span> <span class="va">$(</span><span class="fu">seq</span> 1 3<span class="va">)</span><span class="kw">;</span> <span class="cf">do</span> <span class="bu">echo</span> <span class="st">&quot;The number is </span><span class="va">$y</span><span class="st">&quot;</span><span class="kw">;</span> <span class="cf">done</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="at">---</span> Same as <span class="at">---</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> y <span class="kw">in</span> <span class="dt">{</span><span class="dv">1</span><span class="dt">..</span><span class="dv">3</span><span class="dt">}</span><span class="kw">;</span> <span class="cf">do</span> <span class="bu">echo</span> <span class="st">&quot;The number is </span><span class="va">$y</span><span class="st">&quot;</span><span class="kw">;</span> <span class="cf">done</span></span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -358,16 +452,16 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href=
 <span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="co">## The number is 1</span></span>
 <span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="co">## The number is 2</span></span>
 <span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="co">## The number is 3</span></span></code></pre></div>
-<p>Conditional statements help us to write an <code>if</code>
-construction. In general we can write the test statement by
-<code>[ Expression ]</code>. The syntax is:</p>
-<div class="sourceCode" id="cb15"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">[</span> Expression <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span> <span class="bu">command</span><span class="kw">;</span> <span class="cf">elif</span> <span class="bu">[</span> Expression <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span> <span class="bu">command</span><span class="kw">;</span> <span class="ex">...</span><span class="kw">;</span> <span class="cf">else</span> <span class="bu">command</span><span class="kw">;</span> <span class="cf">fi</span></span></code></pre></div>
-<p>For example, let’s print “File exist” if <code>count.txt</code> is
-exist (note that there is a space after <code>[</code> and before
-<code>]</code>):</p>
-<div class="sourceCode" id="cb16"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">[</span> <span class="ot">-e</span> count.txt <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span> <span class="bu">echo</span> <span class="st">&quot;File exist&quot;</span><span class="kw">;</span> <span class="cf">else</span> <span class="bu">echo</span> <span class="st">&quot;File does not exist&quot;</span><span class="kw">;</span> <span class="cf">fi</span></span>
+  <p>Conditional statements help us to write an <code>if</code>
+  construction. In general we can write the test statement by
+  <code>[ Expression ]</code>. The syntax is:</p>
+  <div class="sourceCode" id="cb15"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">[</span> Expression <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span> <span class="bu">command</span><span class="kw">;</span> <span class="cf">elif</span> <span class="bu">[</span> Expression <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span> <span class="bu">command</span><span class="kw">;</span> <span class="ex">...</span><span class="kw">;</span> <span class="cf">else</span> <span class="bu">command</span><span class="kw">;</span> <span class="cf">fi</span></span></code></pre></div>
+  <p>For example, let’s print “File exist” if <code>count.txt</code> is
+  exist (note that there is a space after <code>[</code> and before
+  <code>]</code>):</p>
+  <div class="sourceCode" id="cb16"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">[</span> <span class="ot">-e</span> count.txt <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span> <span class="bu">echo</span> <span class="st">&quot;File exist&quot;</span><span class="kw">;</span> <span class="cf">else</span> <span class="bu">echo</span> <span class="st">&quot;File does not exist&quot;</span><span class="kw">;</span> <span class="cf">fi</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="at">---</span> Or <span class="at">---</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">[</span> <span class="ot">!</span> <span class="ot">-e</span> count.txt <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span> <span class="bu">echo</span> <span class="st">&quot;File does not exist&quot;</span><span class="kw">;</span> <span class="cf">else</span> <span class="bu">echo</span> <span class="st">&quot;File exist&quot;</span><span class="kw">;</span> <span class="cf">fi</span></span>
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="at">---</span> Or <span class="at">---</span></span>
@@ -378,116 +472,116 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb16-1"><a href=
 <span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="co">## File exist</span></span>
 <span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="co">## --- Or ---</span></span>
 <span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="co">## File exist</span></span></code></pre></div>
-<p>To see all the test expressions see <code>man test</code>.</p>
-<h2 id="text-editors">Text editors</h2>
-<p>Most popular text editors in Bash:</p>
-<ul>
-<li>Vi</li>
-<li>Nano</li>
-<li>Emacs</li>
-</ul>
-<p>To open the text editors simply run <code>vi</code>,
-<code>nano</code> or <code>emacs -nw</code>. You may use
-<code>ctrl+z</code> to suspend the editor and return to the Bash
-terminal and enter <code>fg</code> in the Bash terminal to return the
-editor. To exit, in Vi first press <code>esc</code> and then enter
-<code>:q!</code>, in Nano you may use <code>ctrl+x</code>, and in Emacs
-<code>ctrl+x ctrl+c</code>. Vi and Emacs have more futures in comparison
-to Nano but they are more difficult as well.</p>
-<p>The following are some important commands in Nano. Note that
-<code>^</code> is <code>ctrl</code> and <code>M-</code> is
-<code>alt</code>.</p>
-<ul>
-<li><code>^s</code>: save</li>
-<li><code>^o</code>: write out (save with a new name)</li>
-<li><code>^x</code>: exit</li>
-<li><code>^z</code>: suspend nano (if activated)</li>
-<li><code>^k</code>: cut the line</li>
-<li><code>M-6</code>: copy the line</li>
-<li><code>^u</code>: uncut/paste the line</li>
-<li><code>^w</code>: where is (search)</li>
-<li><code>^\</code>: search and replace</li>
-<li><code>M-g</code>: go to line</li>
-<li><code>M-a</code>: select text</li>
-<li><code>M-u</code>: undo</li>
-<li><code>M-e</code>: redo</li>
-<li><code>^t</code>: spelling check (need to install <code>spell</code>
-package)</li>
-<li><code>^j</code>: justify text</li>
-<li><code>^g</code>: help (<code>F2</code>)</li>
-</ul>
-<p>The following are some important commands in Emacs. Note that
-<code>C-</code> is <code>ctrl</code> and <code>M-</code> is
-<code>alt</code>.</p>
-<ul>
-<li><code>C-x C-c</code>: exit</li>
-<li><code>C-z</code>: suspend</li>
-<li><code>C-k</code>: kill the line</li>
-<li><code>C-w</code>: cut the line/text</li>
-<li><code>M-w</code>: copy the line/text</li>
-<li><code>C-y</code>: uncut/paste the line/text (yank)</li>
-<li><code>C-space arrow keys</code>: select text</li>
-<li><code>C-shift arrow keys</code>: select paragraphs</li>
-<li><code>C-x u</code>: undo</li>
-<li><code>C-a</code>: move to the beginning of the line</li>
-<li><code>C-e</code>: move to the end of the line</li>
-<li><code>C-home</code>: move to the beginning of the buffer</li>
-<li><code>C-end</code>: move to the end of the buffer</li>
-<li><code>M-g g</code>: go to line</li>
-<li><code>C-s</code>/<code>C-r</code>: search</li>
-<li><code>M-%</code>: replace (<code>y</code> yes, <code>n</code> no,
-<code>!</code> all)</li>
-<li><code>C-g</code>: stop a command</li>
-<li><code>C-x C-f</code>: make/open a file as a new buffer</li>
-<li><code>C-x b</code>: change the buffer</li>
-<li><code>C-x k</code>: kill the buffer</li>
-<li><code>C-x 1</code>: close other windows</li>
-<li><code>C-x 0</code>/<code>q</code>: close/quit windows</li>
-<li><code>C-x o</code>: switch to other windows</li>
-<li><code>C-h ?</code>: help list</li>
-<li><code>C-h t</code>: tutorial</li>
-<li><code>C-h d</code>: search help for a pattern</li>
-<li><code>C-h c</code>: show help for the command</li>
-<li><code>M-x &lt;command&gt;</code>: run commands</li>
-<li><code>M-x ispell</code>: spell check; enter the suggested
-<code>digit</code> or <code>a</code> to accept or <code>r</code> to
-rewrite</li>
-<li><code>M-x package-install</code>: install packages</li>
-<li><code>M-x package-list-packages</code>: list of packages</li>
-</ul>
-<p>You may find more about Emacs in <a href="emacs.html">here</a>.</p>
-<h2 id="shell-script">Shell script</h2>
-<p>Now, we can make Shell script to crate a small program including Bash
-commands and other programs that we want. Let’s make a program to shows
-rows 3 to 5 of a file in Shell scripts. Use <code>nano script.sh</code>
-to open <code>nano</code> text editor to make <code>script.sh</code> and
-insert the following lines:</p>
-<div class="sourceCode" id="cb17"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+  <p>To see all the test expressions see <code>man test</code>.</p>
+  <h2 id="text-editors">Text editors</h2>
+  <p>Most popular text editors in Bash:</p>
+  <ul>
+  <li>Vi</li>
+  <li>Nano</li>
+  <li>Emacs</li>
+  </ul>
+  <p>To open the text editors simply run <code>vi</code>,
+  <code>nano</code> or <code>emacs -nw</code>. You may use
+  <code>ctrl+z</code> to suspend the editor and return to the Bash
+  terminal and enter <code>fg</code> in the Bash terminal to return the
+  editor. To exit, in Vi first press <code>esc</code> and then enter
+  <code>:q!</code>, in Nano you may use <code>ctrl+x</code>, and in
+  Emacs <code>ctrl+x ctrl+c</code>. Vi and Emacs have more futures in
+  comparison to Nano but they are more difficult as well.</p>
+  <p>The following are some important commands in Nano. Note that
+  <code>^</code> is <code>ctrl</code> and <code>M-</code> is
+  <code>alt</code>.</p>
+  <ul>
+  <li><code>^s</code>: save</li>
+  <li><code>^o</code>: write out (save with a new name)</li>
+  <li><code>^x</code>: exit</li>
+  <li><code>^z</code>: suspend nano (if activated)</li>
+  <li><code>^k</code>: cut the line</li>
+  <li><code>M-6</code>: copy the line</li>
+  <li><code>^u</code>: uncut/paste the line</li>
+  <li><code>^w</code>: where is (search)</li>
+  <li><code>^\</code>: search and replace</li>
+  <li><code>M-g</code>: go to line</li>
+  <li><code>M-a</code>: select text</li>
+  <li><code>M-u</code>: undo</li>
+  <li><code>M-e</code>: redo</li>
+  <li><code>^t</code>: spelling check (need to install
+  <code>spell</code> package)</li>
+  <li><code>^j</code>: justify text</li>
+  <li><code>^g</code>: help (<code>F2</code>)</li>
+  </ul>
+  <p>The following are some important commands in Emacs. Note that
+  <code>C-</code> is <code>ctrl</code> and <code>M-</code> is
+  <code>alt</code>.</p>
+  <ul>
+  <li><code>C-x C-c</code>: exit</li>
+  <li><code>C-z</code>: suspend</li>
+  <li><code>C-k</code>: kill the line</li>
+  <li><code>C-w</code>: cut the line/text</li>
+  <li><code>M-w</code>: copy the line/text</li>
+  <li><code>C-y</code>: uncut/paste the line/text (yank)</li>
+  <li><code>C-space arrow keys</code>: select text</li>
+  <li><code>C-shift arrow keys</code>: select paragraphs</li>
+  <li><code>C-x u</code>: undo</li>
+  <li><code>C-a</code>: move to the beginning of the line</li>
+  <li><code>C-e</code>: move to the end of the line</li>
+  <li><code>C-home</code>: move to the beginning of the buffer</li>
+  <li><code>C-end</code>: move to the end of the buffer</li>
+  <li><code>M-g g</code>: go to line</li>
+  <li><code>C-s</code>/<code>C-r</code>: search</li>
+  <li><code>M-%</code>: replace (<code>y</code> yes, <code>n</code> no,
+  <code>!</code> all)</li>
+  <li><code>C-g</code>: stop a command</li>
+  <li><code>C-x C-f</code>: make/open a file as a new buffer</li>
+  <li><code>C-x b</code>: change the buffer</li>
+  <li><code>C-x k</code>: kill the buffer</li>
+  <li><code>C-x 1</code>: close other windows</li>
+  <li><code>C-x 0</code>/<code>q</code>: close/quit windows</li>
+  <li><code>C-x o</code>: switch to other windows</li>
+  <li><code>C-h ?</code>: help list</li>
+  <li><code>C-h t</code>: tutorial</li>
+  <li><code>C-h d</code>: search help for a pattern</li>
+  <li><code>C-h c</code>: show help for the command</li>
+  <li><code>M-x &lt;command&gt;</code>: run commands</li>
+  <li><code>M-x ispell</code>: spell check; enter the suggested
+  <code>digit</code> or <code>a</code> to accept or <code>r</code> to
+  rewrite</li>
+  <li><code>M-x package-install</code>: install packages</li>
+  <li><code>M-x package-list-packages</code>: list of packages</li>
+  </ul>
+  <p>You may find more about Emacs in <a href="emacs.html">here</a>.</p>
+  <h2 id="shell-script">Shell script</h2>
+  <p>Now, we can make Shell script to crate a small program including
+  Bash commands and other programs that we want. Let’s make a program to
+  shows rows 3 to 5 of a file in Shell scripts. Use
+  <code>nano script.sh</code> to open <code>nano</code> text editor to
+  make <code>script.sh</code> and insert the following lines:</p>
+  <div class="sourceCode" id="cb17"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span> names.txt <span class="kw">|</span> <span class="fu">head</span> <span class="at">-n</span> 5 <span class="kw">|</span> <span class="fu">tail</span> <span class="at">-n</span> 3</span></code></pre></div>
-<p>The first line shows the language of the program which is Bash in
-here. To run the program use: <code>{bash}  bash script.sh</code></p>
-<p>You may use the following program to show rows 3 to 5 of a given
-file. Use <code>nano script_1.sh</code> and insert the following
-lines:</p>
-<div class="sourceCode" id="cb18"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+  <p>The first line shows the language of the program which is Bash in
+  here. To run the program use: <code>{bash}  bash script.sh</code></p>
+  <p>You may use the following program to show rows 3 to 5 of a given
+  file. Use <code>nano script_1.sh</code> and insert the following
+  lines:</p>
+  <div class="sourceCode" id="cb18"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span> <span class="st">&quot;</span><span class="va">$1</span><span class="st">&quot;</span> <span class="kw">|</span> <span class="fu">head</span> <span class="at">-n</span> 5 <span class="kw">|</span> <span class="fu">tail</span> <span class="at">-n</span> 3</span></code></pre></div>
-<p>To run the code use:</p>
-<div class="sourceCode" id="cb19"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> script_1.sh names.txt</span>
+  <p>To run the code use:</p>
+  <div class="sourceCode" id="cb19"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> script_1.sh names.txt</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="co">## Dori</span></span>
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co">## Dori</span></span>
 <span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="co">## Jackie</span></span></code></pre></div>
-<p>Also we can write a program that works for any given files. Use
-<code>nano script_all.sh</code> and insert the following lines:</p>
-<div class="sourceCode" id="cb20"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+  <p>Also we can write a program that works for any given files. Use
+  <code>nano script_all.sh</code> and insert the following lines:</p>
+  <div class="sourceCode" id="cb20"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> line <span class="kw">in</span> <span class="st">&quot;</span><span class="va">$@</span><span class="st">&quot;</span><span class="kw">;</span> <span class="cf">do</span> <span class="fu">sort</span> <span class="va">$line</span> <span class="kw">|</span> <span class="fu">head</span> <span class="at">-n</span> 5 <span class="kw">|</span> <span class="fu">tail</span> <span class="at">-n</span> 3<span class="kw">;</span> <span class="cf">done</span></span></code></pre></div>
-<p>To run the code use:</p>
-<div class="sourceCode" id="cb21"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> script_all.sh names.txt grade.txt</span>
+  <p>To run the code use:</p>
+  <div class="sourceCode" id="cb21"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> script_all.sh names.txt grade.txt</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="co">## Dori</span></span>
 <span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co">## Dori</span></span>
@@ -495,74 +589,87 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb21-1"><a href=
 <span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="co">## A-</span></span>
 <span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="co">## B</span></span>
 <span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="co">## B+</span></span></code></pre></div>
-<p>For another example let write a program to find a certain pattern
-within some files in <code>bash_test</code> directory. Use
-<code>nano name_select.sh</code> and insert:</p>
-<div class="sourceCode" id="cb22"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+  <p>For another example let write a program to find a certain pattern
+  within some files in <code>bash_test</code> directory. Use
+  <code>nano name_select.sh</code> and insert:</p>
+  <div class="sourceCode" id="cb22"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="at">-w</span> <span class="va">$1</span> <span class="at">-r</span> <span class="va">$2</span> <span class="kw">|</span> <span class="fu">cut</span> <span class="at">-d</span> : <span class="at">-f</span> 2 <span class="op">&gt;</span> <span class="va">$1</span>.txt</span></code></pre></div>
-<p>To find name <code>Dori</code> among all files in the current
-directory (<code>.</code>) use:</p>
-<div class="sourceCode" id="cb23"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> name_select.sh Dori .</span></code></pre></div>
-<p>To see the output run <code>cat Dori.txt</code>.</p></div>
-            <div class="d-none d-xl-block col-xl-2 bd-toc">
-               <ul class="section-nav">
-                  <li class="toc-entry"><ul>
-<li><a href="#tab-completion" id="toc-tab-completion">Tab
-completion</a></li>
-<li><a href="#wildcards" id="toc-wildcards">Wildcards</a></li>
-<li><a href="#shell-expansions" id="toc-shell-expansions">Shell
-Expansions</a></li>
-<li><a href="#basic-commands" id="toc-basic-commands">Basic
-commands</a></li>
-<li><a href="#pipes-and-filters" id="toc-pipes-and-filters">Pipes and
-Filters</a></li>
-<li><a href="#loops-and-conditional-constructs"
-id="toc-loops-and-conditional-constructs">Loops and conditional
-constructs</a></li>
-<li><a href="#text-editors" id="toc-text-editors">Text editors</a></li>
-<li><a href="#shell-script" id="toc-shell-script">Shell script</a></li>
-</ul></li>
-               </ul>
-            </div>
-         </div>
-               </div>
-            <!-- Footer -->
-            <footer class="footer text-muted">
-               <div align="center">
-                  Text is available under <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>
-                  &nbsp;|&nbsp;
-                  Code licensed under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank" rel="noopener">GPL-3.0</a>
-                  &nbsp;|&nbsp;
-                  Built with <a href="https://github.com/ashki23/pandoc-bootstrap" target="_blank" rel="noopener">pandoc-bootstrap</a> theme
-                  <br />
-                  Copyright 2018-2024, Ashkan Mirzaee
-               </div>
-            </footer>
-            <!-- Global site tag (gtag.js) - Google Analytics -->
-            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132464297-1"></script>
-            <script>
-               window.dataLayer = window.dataLayer || [];
-               function gtag(){dataLayer.push(arguments);}
-               gtag('js', new Date());
-               gtag('config', 'UA-132464297-1');
-            </script>
-            <!-- JS, Popper.js, and jQuery -->
-      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-      <!-- Mathjax -->
-      <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-      <script>
-         /* Bootstrap styles to tables */
-         function bootstrapStylePandocTables() {
-         $('tr.header').parent('thead').parent('table').addClass('table table-condensed'); }
-         $(document).ready(function () { bootstrapStylePandocTables(); });
-         /* Adjust the height when click the toc */
-         var shiftWindow = function() { scrollBy(0, -60) };
-         window.addEventListener("hashchange", shiftWindow);
-         function load() { if (window.location.hash) shiftWindow(); }
-      </script>
-   </body>
+  <p>To find name <code>Dori</code> among all files in the current
+  directory (<code>.</code>) use:</p>
+  <div class="sourceCode" id="cb23"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> name_select.sh Dori .</span></code></pre></div>
+  <p>To see the output run <code>cat Dori.txt</code>.</p>
+	</div>
+      </main>
+    </div>
+    
+    <!-- After body contents -->
+        <!-- Footer -->
+        <footer class="bd-footer mt-auto py-3 py-md-3 bg-body-tertiary">
+          <div class="container py-md-3 px-4 px-md-3 text-body-secondary" align="center" style="font-size: .95rem;">
+            Text is available under <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>
+            &nbsp;|&nbsp;
+            Code licensed under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank" rel="noopener">GPL-3.0</a>
+            &nbsp;|&nbsp;
+            Built with <a href="https://github.com/ashki23/pandoc-bootstrap" target="_blank" rel="noopener">pandoc-bootstrap</a> theme
+            <br />
+            Copyright 2018-2024, Ashkan Mirzaee
+          </div>
+        </footer>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132464297-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'UA-132464297-1');
+        </script>
+        
+    <!-- Bootstrap Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+    <!-- Highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js" integrity="sha512-6yoqbrcLAHDWAdQmiRlHG4+m0g/CT/V9AGyxabG8j7Jk8j3r3K6due7oqpiRMZqcYe9WM2gPcaNNxnl2ux+3tA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+        
+    <!-- Custom Scripts -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+	  const htmlElement = document.documentElement;
+	  const highlightStyle = document.getElementById("highlight-style");
+	  
+	  // Function to update Highlight.js style based on theme
+	  const updateHighlightStyle = (theme) => {
+              const lightTheme = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/stackoverflow-light.min.css";
+              const darkTheme = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/github-dark.min.css";
+              highlightStyle.href = theme === "dark" ? darkTheme : lightTheme;
+	  };
+	  
+	  // Function to set the theme
+	  const setTheme = (theme) => {
+              htmlElement.setAttribute("data-bs-theme", theme);
+              localStorage.setItem("theme", theme); // Save the theme to localStorage
+              updateHighlightStyle(theme);
+	  };
+	  
+	  // Get saved theme from localStorage or fallback to default ("light")
+	  const savedTheme = localStorage.getItem("theme") || "light";
+	  setTheme(savedTheme);
+	  
+	  // Event listener for theme dropdown
+	  document.querySelectorAll(".dropdown-item").forEach((item) => {
+              item.addEventListener("click", (e) => {
+		  e.preventDefault();
+		  const selectedTheme = item.getAttribute("data-theme");
+		  setTheme(selectedTheme);
+              });
+	  });
+	  
+	  // Initialize Highlight.js
+	  hljs.highlightAll();
+      });
+    </script>
+  </body>
 </html>

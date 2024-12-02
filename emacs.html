@@ -1,100 +1,196 @@
 <!doctype html>
-<html>
-   <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <meta name="generator" content="pandoc">
-      <meta name="author" content="Ashkan Mirzaee">
-      <meta name="description" content="An introduction to Emacs">
-      <title>Emacs: a powerful text editor</title>
-      <!-- Bootstrap -->
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-      <!-- Font-awesome -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-      <!-- Styles -->
-      <link rel="stylesheet" href="https://ashki23.github.io/styles.css">
-            <!-- Favicon -->
-            <link rel="icon" href="images/AM.jpg">
-            <!-- Google-site-verification -->
-            <meta name="google-site-verification" content="lD_nifpQ-CA6LaDwxYJbe5bq0oa6Ir0Ax-txvtdP51E">
-            <!-- Bing-site-verification -->
-            <meta name="msvalidate.01" content="89BCD3FF42B6E9FE48E0C8365767D11B">
-         </head>
-   <body>
-            <nav class="navbar fixed-top navbar-expand-lg navbar-dark bd-navbar">
-               <a class="navbar-brand" href="index.html">Ashkan Mirzaee</a>
-               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="border: none; outline: none; padding-right: 0; padding-left: 1rem;">
-               <span class="navbar-toggler-icon"></span>
-               </button>
-               <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav mr-auto">
-                     <li class="nav-item">
-                        <a class="nav-link" href="page1.html">Blog</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="tutorials.html">Tutorials</a>
-                     </li>
-            	 <li class="nav-item">
-                        <a class="nav-link" href="research.html">Research</a>
-                     </li>
-            	 <li class="nav-item">
-                        <a class="nav-link" href="applications.html">Applications</a>
-                     </li>
-            	 <li class="nav-item">
-                        <a class="nav-link" href="blogroll.html">Blogroll</a>
-                     </li>
+<html lang="en" class="h-100" data-bs-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="generator" content="pandoc">
+    <meta name="author" content="Ashkan Mirzaee">
+    <meta name="description" content="An introduction to Emacs">
+    <title>Emacs: a powerful text editor</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!-- Bootstrap Icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous">
+    
+    <!-- Highlight.js Styles -->
+    <link rel="stylesheet" id="highlight-style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/stackoverflow-light.min.css">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="https://getbootstrap.com/docs/5.3/assets/css/docs.css">
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- After header contents -->
+        <!-- Favicon -->
+        <link rel="icon" href="images/AM.jpg">
+        <!-- Google-site-verification -->
+        <meta name="google-site-verification" content="lD_nifpQ-CA6LaDwxYJbe5bq0oa6Ir0Ax-txvtdP51E">
+        <!-- Bing-site-verification -->
+        <meta name="msvalidate.01" content="89BCD3FF42B6E9FE48E0C8365767D11B">
+      </head>
+  <body class="d-flex flex-column h-100" data-bs-spy="scroll" data-bs-target="#TableOfContents">
+    <!-- Before body contents -->
+        <nav class="navbar bd-navbar navbar-expand-lg fixed-top py-2">
+          <div class="container-xxl bd-gutter flex-wrap flex-lg-nowrap">
+            <!-- Brand -->
+            <a class="navbar-brand" href="index.html" style="transform: none;">Ashkan Mirzaee</a>
+
+            <!-- Toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Navbar Content -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <!-- Left Navigation -->
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link" href="page1.html">Blog</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="tutorials.html">Tutorials</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="research.html">Research</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="applications.html">Applications</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="blogroll.html">Blogroll</a>
+                </li>
+              </ul>
+              
+              <!-- Divider for smaller screens -->
+              <hr class="d-lg-none text-white-50">
+              
+              <!-- Social Media Icons -->
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html" aria-label="Contact">
+                    <i class="bi bi-envelope"></i>
+        	    <span class="d-lg-none ms-2">Contact</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://github.com/ashki23" target="_blank" rel="noopener" aria-label="GitHub">
+                    <i class="bi bi-github"></i>
+        	    <span class="d-lg-none ms-2">GitHub</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://gitlab.com/ashki23" target="_blank" rel="noopener" aria-label="GitLab">
+                    <i class="bi bi-gitlab"></i>
+        	    <span class="d-lg-none ms-2">GitLab</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://www.linkedin.com/in/ashkan-mirzaee/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <i class="bi bi-linkedin"></i>
+        	    <span class="d-lg-none ms-2">Linkedin</span>
+                  </a>
+                </li>
+              </ul>
+              
+              <!-- Divider for larger screens -->
+              <div class="vr d-none d-lg-flex mx-2 my-1 text-white"></div>
+              
+              <!-- Divider for smaller screens -->
+              <hr class="d-lg-none text-white-50">
+              
+              <!-- Theme Dropdown -->
+              <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                  <button class="btn btn-link nav-link dropdown-toggle" type="button" id="themeDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-circle-half"></i>
+        	    <span class="d-lg-none ms-2">Toggle theme</span>
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="themeDropdown">
+                    <li>
+                      <a class="dropdown-item align-items-center" data-theme="light">
+                        <i class="bi bi-sun-fill me-2 opacity-50"></i> Light
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item align-items-center" data-theme="dark">
+                        <i class="bi bi-moon-stars-fill me-2 opacity-50"></i> Dark
+                      </a>
+                    </li>
                   </ul>
-                  <ul class="navbar-nav ml-auto">
-            	<li class="nav-item">
-            	  <a class="nav-link" href="contact.html" aria-label="Contact">
-            	    <span class="fa fa-envelope fa-lg"></a>
-            	</li>
-            	<li class="nav-item">
-            	  <a class="nav-link" href="https://github.com/ashki23" target="_blank" rel="noopener" aria-label="GitHub">
-            	    <span class="fa fa-github fa-lg"></span></a>
-            	</li>
-            	<li class="nav-item">
-            	  <a class="nav-link" href="https://gitlab.com/ashki23" target="_blank" rel="noopener" aria-label="GitLab">
-            	    <span class="fa fa-gitlab fa-lg"></span></a>
-            	</li>
-            	<li class="nav-item">
-            	  <a class="nav-link" href="https://www.linkedin.com/in/ashkan-mirzaee/" target="_blank" rel="noopener" aria-label="Linkedin">
-            	    <span class="fa fa-linkedin fa-lg"></span></a>
-            	</li>
-                  </ul>
-               </div>
-            </nav>
-            <div class="container">
-         <h1 class="title">Emacs: a powerful text editor</h1>
-                  <div class="row">
-            <div class="col-xl-10"><p>A text editor provides an
-environment to write and edit plain text files such as source codes.
-Many would like to use IDEs to write and run source codes. That might be
-very useful for small programs, but as long as your projects being
-larger, writing and editing codes with IDEs become a very tedious task.
-<a href="https://www.gnu.org/software/emacs/">Emacs</a> is one of the
-best text editors that let us edit and write source codes faster and
-easier. It might be very challenging to start using any editors like
-Emacs, but it is definitely worth to spend some time to learn the first
-steps. This tutorial provides a list of commands, configurations and
-features that we need to begin.</p>
-<hr />
-<h2 id="installation">Installation</h2>
-<p>To start working Emacs you might need to install it first. To install
-Emacs follow the instruction at <a
-href="https://www.gnu.org/software/emacs/download.html">GNU Emacs</a>.
-Briefly for:</p>
-<ul>
-<li>Linux (Debian) use <code>sudo apt install emacs</code></li>
-<li>Mac use <a href="https://emacsformacosx.com/">binaries</a> - see
-config <a
-href="https://github.com/ashki23/Linux-notes/blob/master/mac-terminal.md">here</a></li>
-</ul>
-<h2 id="config-file">Config file</h2>
-<p>Use a text editor to create Emacs config file called
-<code>.emacs</code> in the home directory <code>cd ~</code> then insert
-the following to make our very preliminary configurations by:</p>
-<pre class="lips"><code>;; Add MELPA
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        
+    <div class="container-xxl bd-gutter pb-5 mt-3 my-md-4 bd-layout" style="padding-top:60px;">
+      <main class="bd-main order-1">
+	
+	<!-- Tiltle -->
+	<h1 class="bd-intro pt-2 ps-lg-2" id="title">Emacs: a powerful text
+editor</h1>
+	
+		<!-- Table of Contents -->
+	<div class="bd-toc mt-3 mb-5 my-lg-0 mb-lg-5 px-sm-1 text-body-secondary">
+	  <strong class="d-none d-md-block h6 my-2 ms-3">On this page</strong>
+	  <hr class="d-none d-md-block my-2 ms-3">
+	  <div class="collapse bd-toc-collapse" id="tocContents">
+	    <nav id="TableOfContents">
+	      <ul>
+      <li><a href="#installation"
+      id="toc-installation">Installation</a></li>
+      <li><a href="#config-file" id="toc-config-file">Config
+      file</a></li>
+      <li><a href="#commands" id="toc-commands">Commands</a></li>
+      <li><a href="#customize-faces" id="toc-customize-faces">Customize
+      faces</a></li>
+      <li><a href="#install-packages" id="toc-install-packages">Install
+      packages</a></li>
+      <li><a href="#org-mode" id="toc-org-mode">Org-mode</a>
+      <ul>
+      <li><a href="#introduction"
+      id="toc-introduction">Introduction</a></li>
+      <li><a href="#tables" id="toc-tables">Tables</a></li>
+      <li><a href="#basic-todo" id="toc-basic-todo">Basic TODO</a></li>
+      <li><a href="#latex" id="toc-latex">LaTeX</a></li>
+      </ul></li>
+      </ul>
+	    </nav>
+	  </div>
+	</div>
+		
+	<!-- Main Content -->
+	<div class="bd-content ps-lg-2">
+	  <p>A text editor provides an environment to write and edit plain text
+  files such as source codes. Many would like to use IDEs to write and
+  run source codes. That might be very useful for small programs, but as
+  long as your projects being larger, writing and editing codes with
+  IDEs become a very tedious task. <a
+  href="https://www.gnu.org/software/emacs/">Emacs</a> is one of the
+  best text editors that let us edit and write source codes faster and
+  easier. It might be very challenging to start using any editors like
+  Emacs, but it is definitely worth to spend some time to learn the
+  first steps. This tutorial provides a list of commands, configurations
+  and features that we need to begin.</p>
+  <hr />
+  <h2 id="installation">Installation</h2>
+  <p>To start working Emacs you might need to install it first. To
+  install Emacs follow the instruction at <a
+  href="https://www.gnu.org/software/emacs/download.html">GNU Emacs</a>.
+  Briefly for:</p>
+  <ul>
+  <li>Linux (Debian) use <code>sudo apt install emacs</code></li>
+  <li>Mac use <a href="https://emacsformacosx.com/">binaries</a> - see
+  config <a
+  href="https://github.com/ashki23/Linux-notes/blob/master/mac-terminal.md">here</a></li>
+  </ul>
+  <h2 id="config-file">Config file</h2>
+  <p>Use a text editor to create Emacs config file called
+  <code>.emacs</code> in the home directory <code>cd ~</code> then
+  insert the following to make our very preliminary configurations
+  by:</p>
+  <pre class="lips"><code>;; Add MELPA
 (package-initialize)
 (add-to-list &#39;package-archives &#39;(&quot;melpa&quot; . &quot;http://melpa.org/packages/&quot;) t)
 
@@ -110,69 +206,70 @@ the following to make our very preliminary configurations by:</p>
 
 ;; Auto insert closing bracket
 (electric-pair-mode 1)</code></pre>
-<p>Note that we can use <code>(setq make-backup-files nil)</code> and
-<code>(electric-indent-mode -1)</code> to disable automatic backup and
-new lines auto-indentation.</p>
-<h2 id="commands">Commands</h2>
-<p>The following are some important commands in Emacs. Note that
-<code>C</code> and <code>M</code> stand for <code>Ctrl</code> and
-<code>Alt</code> respectively.</p>
-<ul>
-<li><code>C-x C-c</code>: exit</li>
-<li><code>C-z</code>: suspend</li>
-<li><code>C-k</code>: kill the line</li>
-<li><code>C-w</code>: cut the line/text</li>
-<li><code>M-w</code>: copy the line/text</li>
-<li><code>C-y</code>: uncut/paste the line/text (yank)</li>
-<li><code>C-space arrow keys</code>: select text</li>
-<li><code>C-shift arrow keys</code>: select paragraphs</li>
-<li><code>C-x u</code>: undo</li>
-<li><code>C-a</code>: move to the beginning of the line</li>
-<li><code>C-e</code>: move to the end of the line</li>
-<li><code>M-left</code>: one word left</li>
-<li><code>M-right</code>: one word right</li>
-<li><code>C-home/M-&lt;</code>: move to the beginning of the buffer</li>
-<li><code>C-end/M-&gt;</code>: move to the end of the buffer</li>
-<li><code>M-g g</code>: go to line</li>
-<li><code>C-s/C-r</code>: search/reverse search</li>
-<li><code>M-%</code>: replace</li>
-<li><code>C-g</code>: stop a command</li>
-<li><code>C-x C-f</code>: make/open a file as a new buffer</li>
-<li><code>C-x b</code>: change the buffer</li>
-<li><code>C-x k</code>: kill the buffer</li>
-<li><code>C-x 1</code>: close other windows</li>
-<li><code>C-x 0/q</code>: close/quit windows</li>
-<li><code>C-x o</code>: switch to other windows</li>
-<li><code>C-h ?</code>: help list</li>
-<li><code>C-h t</code>: tutorial</li>
-<li><code>C-h d</code>: search help for a pattern</li>
-<li><code>C-h c</code>: show help for the command</li>
-<li><code>M-x &lt;command&gt;</code>: run commands</li>
-<li><code>M-x ispell</code>: spell check; enter the suggested
-<code>digit</code> or <code>a</code> to accept and <code>r</code> to
-rewrite</li>
-<li><code>M-x package-install</code>: install packages</li>
-<li><code>M-x package-list-packages</code>: list of packages</li>
-</ul>
-<p>You may find more details in:</p>
-<ul>
-<li><a
-href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Basic.html#Basic">7
-Basic Editing Commands</a></li>
-<li><a
-href="https://www.gnu.org/software/emacs/manual/html_node/emacs/index.html">Emacs
-manual</a></li>
-</ul>
-<h2 id="customize-faces">Customize faces</h2>
-<p>An easy way to change the appearance of Emacs is changing faces.
-<code>M-x list-faces-display</code> shows current faces that can be
-modified (use GUI Emacs to access them by clicking). To customize
-certain faces, use <code>M-x customize-face</code> and select the face
-that you want to change (press tab to see all options).</p>
-<p>Also, we are able to customize faces from Emacs config file. For
-instance, adding the following to the <code>.emacs</code> file will
-change some faces in the Emacs terminal mode:</p>
-<pre class="lips"><code>;; Customize faces
+  <p>Note that we can use <code>(setq make-backup-files nil)</code> and
+  <code>(electric-indent-mode -1)</code> to disable automatic backup and
+  new lines auto-indentation.</p>
+  <h2 id="commands">Commands</h2>
+  <p>The following are some important commands in Emacs. Note that
+  <code>C</code> and <code>M</code> stand for <code>Ctrl</code> and
+  <code>Alt</code> respectively.</p>
+  <ul>
+  <li><code>C-x C-c</code>: exit</li>
+  <li><code>C-z</code>: suspend</li>
+  <li><code>C-k</code>: kill the line</li>
+  <li><code>C-w</code>: cut the line/text</li>
+  <li><code>M-w</code>: copy the line/text</li>
+  <li><code>C-y</code>: uncut/paste the line/text (yank)</li>
+  <li><code>C-space arrow keys</code>: select text</li>
+  <li><code>C-shift arrow keys</code>: select paragraphs</li>
+  <li><code>C-x u</code>: undo</li>
+  <li><code>C-a</code>: move to the beginning of the line</li>
+  <li><code>C-e</code>: move to the end of the line</li>
+  <li><code>M-left</code>: one word left</li>
+  <li><code>M-right</code>: one word right</li>
+  <li><code>C-home/M-&lt;</code>: move to the beginning of the
+  buffer</li>
+  <li><code>C-end/M-&gt;</code>: move to the end of the buffer</li>
+  <li><code>M-g g</code>: go to line</li>
+  <li><code>C-s/C-r</code>: search/reverse search</li>
+  <li><code>M-%</code>: replace</li>
+  <li><code>C-g</code>: stop a command</li>
+  <li><code>C-x C-f</code>: make/open a file as a new buffer</li>
+  <li><code>C-x b</code>: change the buffer</li>
+  <li><code>C-x k</code>: kill the buffer</li>
+  <li><code>C-x 1</code>: close other windows</li>
+  <li><code>C-x 0/q</code>: close/quit windows</li>
+  <li><code>C-x o</code>: switch to other windows</li>
+  <li><code>C-h ?</code>: help list</li>
+  <li><code>C-h t</code>: tutorial</li>
+  <li><code>C-h d</code>: search help for a pattern</li>
+  <li><code>C-h c</code>: show help for the command</li>
+  <li><code>M-x &lt;command&gt;</code>: run commands</li>
+  <li><code>M-x ispell</code>: spell check; enter the suggested
+  <code>digit</code> or <code>a</code> to accept and <code>r</code> to
+  rewrite</li>
+  <li><code>M-x package-install</code>: install packages</li>
+  <li><code>M-x package-list-packages</code>: list of packages</li>
+  </ul>
+  <p>You may find more details in:</p>
+  <ul>
+  <li><a
+  href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Basic.html#Basic">7
+  Basic Editing Commands</a></li>
+  <li><a
+  href="https://www.gnu.org/software/emacs/manual/html_node/emacs/index.html">Emacs
+  manual</a></li>
+  </ul>
+  <h2 id="customize-faces">Customize faces</h2>
+  <p>An easy way to change the appearance of Emacs is changing faces.
+  <code>M-x list-faces-display</code> shows current faces that can be
+  modified (use GUI Emacs to access them by clicking). To customize
+  certain faces, use <code>M-x customize-face</code> and select the face
+  that you want to change (press tab to see all options).</p>
+  <p>Also, we are able to customize faces from Emacs config file. For
+  instance, adding the following to the <code>.emacs</code> file will
+  change some faces in the Emacs terminal mode:</p>
+  <pre class="lips"><code>;; Customize faces
 (custom-set-faces
  &#39;(font-lock-builtin-face ((t (:foreground &quot;SkyBlue1&quot;))))
  &#39;(font-lock-comment-delimiter-face ((t (:foreground &quot;salmon&quot;))))
@@ -189,73 +286,74 @@ change some faces in the Emacs terminal mode:</p>
  &#39;(font-lock-variable-name-face ((t (:foreground &quot;lime green&quot;))))
  &#39;(font-lock-warning-face ((t (:foreground &quot;dark orange&quot; :weight bold))))
  &#39;(minibuffer-prompt ((t (:foreground &quot;lime green&quot; :weight bold)))))</code></pre>
-<p>To change the theme use <code>M-x load-theme</code>, then press
-<code>tab</code> to see list of the available themes. To unload the
-theme use, <code>M-x disable-theme</code>. Also, we can set a theme
-permanently, by adding <code>(load-theme '&lt;theme-name&gt;)</code> to
-the <code>.emacs</code> init file. For example:</p>
-<pre class="lips"><code>;; Load tango-dark theme
+  <p>To change the theme use <code>M-x load-theme</code>, then press
+  <code>tab</code> to see list of the available themes. To unload the
+  theme use, <code>M-x disable-theme</code>. Also, we can set a theme
+  permanently, by adding <code>(load-theme '&lt;theme-name&gt;)</code>
+  to the <code>.emacs</code> init file. For example:</p>
+  <pre class="lips"><code>;; Load tango-dark theme
 (load-theme &#39;tango-dark)</code></pre>
-<h2 id="install-packages">Install packages</h2>
-<p>In Emacs we can install extra packages based on our needs. To install
-a new package, press <code>M-x</code> and type
-<code>package-refresh-contents</code> to fetch all packages and then use
-<code>M-x package-install</code> and enter the new package’s name. For
-example we can install Markdown-mode, htmlize, ESS (R-mode),
-autocomplete-mode and <a
-href="https://tkf.github.io/emacs-jedi/latest/">Jedi</a> with:</p>
-<pre class="lips"><code>M-x package-install markdown-mode
+  <h2 id="install-packages">Install packages</h2>
+  <p>In Emacs we can install extra packages based on our needs. To
+  install a new package, press <code>M-x</code> and type
+  <code>package-refresh-contents</code> to fetch all packages and then
+  use <code>M-x package-install</code> and enter the new package’s name.
+  For example we can install Markdown-mode, htmlize, ESS (R-mode),
+  autocomplete-mode and <a
+  href="https://tkf.github.io/emacs-jedi/latest/">Jedi</a> with:</p>
+  <pre class="lips"><code>M-x package-install markdown-mode
 M-x package-install htmlize
 M-x package-install ess
 M-x package-install auto-complete
 M-x package-install jedi</code></pre>
-<p>To see list of the available packages use
-<code>M-x package-list-packages</code>. And to delete packages, use
-<code>M-x package-delete</code> and enter the package’s name. Note that
-you may use <code>C-s / C-r</code> for searching and <code>C-g</code> to
-cancel any actions and <code>q</code> to close buffers in Emacs.</p>
-<h2 id="org-mode">Org-mode</h2>
-<p><a href="https://orgmode.org">Org website</a> describes “Org mode is
-for keeping notes, maintaining TODO lists, planning projects, and
-authoring documents with a fast and effective plain-text system”.
-Org-mode in Emacs is very similar to Markdown. They let us combine text
-and codes and evaluate codes and generate PDF or HTML outputs. Following
-are great resources to learn Org:</p>
-<ul>
-<li><a
-href="https://orgmode.org/worg/org-tutorials/org4beginners.html">Org
-mode beginning at the basics</a></li>
-<li><a href="https://orgmode.org/worg/org-tutorials/index.html">Org
-tutorials</a></li>
-</ul>
-<p>Recent Emacs includes Org mode, to begin, use
-<code>emacs test.org</code> to create an Org file by Emacs.</p>
-<h3 id="introduction">Introduction</h3>
-<p>Let’s learn how use <em>org-mode</em> to:</p>
-<ul>
-<li>insert headlines <code>M-enter</code></li>
-<li>move headlines up and down <code>M-up/down</code></li>
-<li>fold/unfold <code>tab/shift-tab</code></li>
-<li>insert blocks
-<ul>
-<li>example blocks <code>&lt;e-tab</code></li>
-<li>source code blocks <code>&lt;s-tab</code>
-<ul>
-<li>for example org/bash/python</li>
-</ul></li>
-</ul></li>
-<li>create tables</li>
-<li>create TODO items</li>
-<li>save <code>C-x C-s</code>, export <code>C-c C-e</code>, and exit
-<code>C-x C-c</code>
-<ul>
-<li>use <code>C-c C-e</code> and press <code>h</code> and then
-<code>o</code> to see HTML output</li>
-</ul></li>
-</ul>
-<p>To create above list in Org use:</p>
-<div class="sourceCode" id="cb5"><pre
-class="sourceCode org"><code class="sourceCode orgmode"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a> ** Introduction</span>
+  <p>To see list of the available packages use
+  <code>M-x package-list-packages</code>. And to delete packages, use
+  <code>M-x package-delete</code> and enter the package’s name. Note
+  that you may use <code>C-s / C-r</code> for searching and
+  <code>C-g</code> to cancel any actions and <code>q</code> to close
+  buffers in Emacs.</p>
+  <h2 id="org-mode">Org-mode</h2>
+  <p><a href="https://orgmode.org">Org website</a> describes “Org mode
+  is for keeping notes, maintaining TODO lists, planning projects, and
+  authoring documents with a fast and effective plain-text system”.
+  Org-mode in Emacs is very similar to Markdown. They let us combine
+  text and codes and evaluate codes and generate PDF or HTML outputs.
+  Following are great resources to learn Org:</p>
+  <ul>
+  <li><a
+  href="https://orgmode.org/worg/org-tutorials/org4beginners.html">Org
+  mode beginning at the basics</a></li>
+  <li><a href="https://orgmode.org/worg/org-tutorials/index.html">Org
+  tutorials</a></li>
+  </ul>
+  <p>Recent Emacs includes Org mode, to begin, use
+  <code>emacs test.org</code> to create an Org file by Emacs.</p>
+  <h3 id="introduction">Introduction</h3>
+  <p>Let’s learn how use <em>org-mode</em> to:</p>
+  <ul>
+  <li>insert headlines <code>M-enter</code></li>
+  <li>move headlines up and down <code>M-up/down</code></li>
+  <li>fold/unfold <code>tab/shift-tab</code></li>
+  <li>insert blocks
+  <ul>
+  <li>example blocks <code>&lt;e-tab</code></li>
+  <li>source code blocks <code>&lt;s-tab</code>
+  <ul>
+  <li>for example org/bash/python</li>
+  </ul></li>
+  </ul></li>
+  <li>create tables</li>
+  <li>create TODO items</li>
+  <li>save <code>C-x C-s</code>, export <code>C-c C-e</code>, and exit
+  <code>C-x C-c</code>
+  <ul>
+  <li>use <code>C-c C-e</code> and press <code>h</code> and then
+  <code>o</code> to see HTML output</li>
+  </ul></li>
+  </ul>
+  <p>To create above list in Org use:</p>
+  <div class="sourceCode" id="cb5"><pre
+  class="sourceCode org"><code class="sourceCode orgmode"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a> ** Introduction</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a> Let&#39;s learn how use *org-mode* to:</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ss"> - </span>insert headlines (=M-enter=) - press =M-enter= to go to the next line</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="ss"> - </span>move headlines up and down (=M-up/down=)</span>
@@ -268,153 +366,167 @@ class="sourceCode org"><code class="sourceCode orgmode"><span id="cb5-1"><a href
 <span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="ss"> - </span>create TODO items</span>
 <span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="ss"> - </span>save (=C-x C-s=), export (=C-c C-e=), and exit (=C-x C-c=)</span>
 <span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>use =C-c C-e= and press =h= and then =o= to see HTML output</span></code></pre></div>
-<p>Use <code>M-up/down</code> to see how easy we can move headlines and
-use <code>C-c C-e h o</code> to see the outputs in the browser.</p>
-<p><strong>Note:</strong> <em>unordered</em> lists in Org start with
-<strong>-</strong> or <strong>+</strong> and <em>ordered</em> lists
-start with <strong>a number and a dot</strong> and descriptions use
-<strong>::</strong>.</p>
-<p><strong>For example</strong>, this is an <em>ordered</em> list:</p>
-<ol type="1">
-<li>First - press <code>M-enter</code></li>
-<li>Second - press <code>M-enter</code></li>
-<li>Third is a link to <a href="https://orgmode.org/">org-mode</a>
-website</li>
-</ol>
-<p>To create above list in Org use:</p>
-<div class="sourceCode" id="cb6"><pre
-class="sourceCode org"><code class="sourceCode orgmode"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>*For example*, this is an /orderd/ list:</span>
+  <p>Use <code>M-up/down</code> to see how easy we can move headlines
+  and use <code>C-c C-e h o</code> to see the outputs in the
+  browser.</p>
+  <p><strong>Note:</strong> <em>unordered</em> lists in Org start with
+  <strong>-</strong> or <strong>+</strong> and <em>ordered</em> lists
+  start with <strong>a number and a dot</strong> and descriptions use
+  <strong>::</strong>.</p>
+  <p><strong>For example</strong>, this is an <em>ordered</em> list:</p>
+  <ol type="1">
+  <li>First - press <code>M-enter</code></li>
+  <li>Second - press <code>M-enter</code></li>
+  <li>Third is a link to <a href="https://orgmode.org/">org-mode</a>
+  website</li>
+  </ol>
+  <p>To create above list in Org use:</p>
+  <div class="sourceCode" id="cb6"><pre
+  class="sourceCode org"><code class="sourceCode orgmode"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>*For example*, this is an /orderd/ list:</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ss"> 1. </span>First - press =M-enter=</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ss"> 2. </span>Second - press =M-enter=</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="ss"> 3. </span>Third is a link to [[https://orgmode.org/][org-mode]] website</span></code></pre></div>
-<h3 id="tables">Tables</h3>
-<p>The following is table of key abbreviations:</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>key</th>
-<th>Abbr.</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Control</td>
-<td>Ctrl</td>
-<td>C</td>
-</tr>
-<tr>
-<td>Meta</td>
-<td>Alt</td>
-<td>M</td>
-</tr>
-<tr>
-<td>Shift</td>
-<td>Shift</td>
-<td>S</td>
-</tr>
-<tr>
-<td>Return</td>
-<td>Enter</td>
-<td>RET</td>
-</tr>
-</tbody>
-</table>
-<pre><code>| Name    | key   | Abbr. |
+  <h3 id="tables">Tables</h3>
+  <p>The following is table of key abbreviations:</p>
+  <table>
+  <thead>
+  <tr>
+  <th>Name</th>
+  <th>key</th>
+  <th>Abbr.</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td>Control</td>
+  <td>Ctrl</td>
+  <td>C</td>
+  </tr>
+  <tr>
+  <td>Meta</td>
+  <td>Alt</td>
+  <td>M</td>
+  </tr>
+  <tr>
+  <td>Shift</td>
+  <td>Shift</td>
+  <td>S</td>
+  </tr>
+  <tr>
+  <td>Return</td>
+  <td>Enter</td>
+  <td>RET</td>
+  </tr>
+  </tbody>
+  </table>
+  <pre><code>| Name    | key   | Abbr. |
 |---------+-------+-------|
 | Control | Ctrl  | C     |
 | Meta    | Alt   | M     |
 | Shift   | Shift | S     |
 | Return  | Enter | RET   |</code></pre>
-<p>To create above table in org, we only need to insert
-<code>|Name|Key|Abbr.</code> and press <code>tab</code> to make new row
-and insert <code>-tab</code> (i.e. <code>dash tab</code>) to draw the
-hline and press <code>tab</code>. Also you can use (these might be
-different in different OS):</p>
-<ul>
-<li><code>M-up/down</code> to move rows</li>
-<li><code>M-left/right</code> to move columns</li>
-<li><code>M-S-up/down</code> to add/remove rows</li>
-<li><code>M-S-left/right</code> to add/remove columns</li>
-</ul>
-<p>We can use <code>&lt;c&gt;</code>, <code>&lt;l&gt;</code> or
-<code>&lt;r&gt;</code> for center, left or right alignment.</p>
-<h3 id="basic-todo">Basic TODO</h3>
-<p>To create a TODO list you only need:</p>
-<div class="sourceCode" id="cb8"><pre
-class="sourceCode org"><code class="sourceCode orgmode"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a> ** TODO learn org-mode</span>
+  <p>To create above table in org, we only need to insert
+  <code>|Name|Key|Abbr.</code> and press <code>tab</code> to make new
+  row and insert <code>-tab</code> (i.e. <code>dash tab</code>) to draw
+  the hline and press <code>tab</code>. Also you can use (these might be
+  different in different OS):</p>
+  <ul>
+  <li><code>M-up/down</code> to move rows</li>
+  <li><code>M-left/right</code> to move columns</li>
+  <li><code>M-S-up/down</code> to add/remove rows</li>
+  <li><code>M-S-left/right</code> to add/remove columns</li>
+  </ul>
+  <p>We can use <code>&lt;c&gt;</code>, <code>&lt;l&gt;</code> or
+  <code>&lt;r&gt;</code> for center, left or right alignment.</p>
+  <h3 id="basic-todo">Basic TODO</h3>
+  <p>To create a TODO list you only need:</p>
+  <div class="sourceCode" id="cb8"><pre
+  class="sourceCode org"><code class="sourceCode orgmode"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a> ** TODO learn org-mode</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a> ** DONE learn emacs</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    DEADLINE: &lt;2019-11-16 Sat&gt;</span></code></pre></div>
-<p>To change a TODO task to DONE or remove it use
-<code>S-left/right</code>. Use <code>C-c C-d</code> to add a
-deadline.</p>
-<h3 id="latex">LaTeX</h3>
-<p>We can use LaTeX to write equations in Org. For example:</p>
-<div class="sourceCode" id="cb9"><pre
-class="sourceCode org"><code class="sourceCode orgmode"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="in">#+BEGIN_SRC latex</span></span>
+  <p>To change a TODO task to DONE or remove it use
+  <code>S-left/right</code>. Use <code>C-c C-d</code> to add a
+  deadline.</p>
+  <h3 id="latex">LaTeX</h3>
+  <p>We can use LaTeX to write equations in Org. For example:</p>
+  <div class="sourceCode" id="cb9"><pre
+  class="sourceCode org"><code class="sourceCode orgmode"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="in">#+BEGIN_SRC latex</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="in">\begin{equation}</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="in">x=\sqrt{b}</span></span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="in">\end{equation}</span></span>
 <span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="in">If $a^2=b$ and $b=2$, then the solution must be either $$a=+\sqrt{2}$$ or $$a=-\sqrt{2}$$</span></span>
 <span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="in">#+END_SRC</span></span></code></pre></div>
-<p>Org processes LaTeX codes in the HTML/PDF outputs.</p></div>
-            <div class="d-none d-xl-block col-xl-2 bd-toc">
-               <ul class="section-nav">
-                  <li class="toc-entry"><ul>
-<li><a href="#installation" id="toc-installation">Installation</a></li>
-<li><a href="#config-file" id="toc-config-file">Config file</a></li>
-<li><a href="#commands" id="toc-commands">Commands</a></li>
-<li><a href="#customize-faces" id="toc-customize-faces">Customize
-faces</a></li>
-<li><a href="#install-packages" id="toc-install-packages">Install
-packages</a></li>
-<li><a href="#org-mode" id="toc-org-mode">Org-mode</a>
-<ul>
-<li><a href="#introduction" id="toc-introduction">Introduction</a></li>
-<li><a href="#tables" id="toc-tables">Tables</a></li>
-<li><a href="#basic-todo" id="toc-basic-todo">Basic TODO</a></li>
-<li><a href="#latex" id="toc-latex">LaTeX</a></li>
-</ul></li>
-</ul></li>
-               </ul>
-            </div>
-         </div>
-               </div>
-            <!-- Footer -->
-            <footer class="footer text-muted">
-               <div align="center">
-                  Text is available under <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>
-                  &nbsp;|&nbsp;
-                  Code licensed under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank" rel="noopener">GPL-3.0</a>
-                  &nbsp;|&nbsp;
-                  Built with <a href="https://github.com/ashki23/pandoc-bootstrap" target="_blank" rel="noopener">pandoc-bootstrap</a> theme
-                  <br />
-                  Copyright 2018-2024, Ashkan Mirzaee
-               </div>
-            </footer>
-            <!-- Global site tag (gtag.js) - Google Analytics -->
-            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132464297-1"></script>
-            <script>
-               window.dataLayer = window.dataLayer || [];
-               function gtag(){dataLayer.push(arguments);}
-               gtag('js', new Date());
-               gtag('config', 'UA-132464297-1');
-            </script>
-            <!-- JS, Popper.js, and jQuery -->
-      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-      <!-- Mathjax -->
-      <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-      <script>
-         /* Bootstrap styles to tables */
-         function bootstrapStylePandocTables() {
-         $('tr.header').parent('thead').parent('table').addClass('table table-condensed'); }
-         $(document).ready(function () { bootstrapStylePandocTables(); });
-         /* Adjust the height when click the toc */
-         var shiftWindow = function() { scrollBy(0, -60) };
-         window.addEventListener("hashchange", shiftWindow);
-         function load() { if (window.location.hash) shiftWindow(); }
-      </script>
-   </body>
+  <p>Org processes LaTeX codes in the HTML/PDF outputs.</p>
+	</div>
+      </main>
+    </div>
+    
+    <!-- After body contents -->
+        <!-- Footer -->
+        <footer class="bd-footer mt-auto py-3 py-md-3 bg-body-tertiary">
+          <div class="container py-md-3 px-4 px-md-3 text-body-secondary" align="center" style="font-size: .95rem;">
+            Text is available under <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>
+            &nbsp;|&nbsp;
+            Code licensed under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank" rel="noopener">GPL-3.0</a>
+            &nbsp;|&nbsp;
+            Built with <a href="https://github.com/ashki23/pandoc-bootstrap" target="_blank" rel="noopener">pandoc-bootstrap</a> theme
+            <br />
+            Copyright 2018-2024, Ashkan Mirzaee
+          </div>
+        </footer>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132464297-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'UA-132464297-1');
+        </script>
+        
+    <!-- Bootstrap Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+    <!-- Highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js" integrity="sha512-6yoqbrcLAHDWAdQmiRlHG4+m0g/CT/V9AGyxabG8j7Jk8j3r3K6due7oqpiRMZqcYe9WM2gPcaNNxnl2ux+3tA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+        
+    <!-- Custom Scripts -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+	  const htmlElement = document.documentElement;
+	  const highlightStyle = document.getElementById("highlight-style");
+	  
+	  // Function to update Highlight.js style based on theme
+	  const updateHighlightStyle = (theme) => {
+              const lightTheme = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/stackoverflow-light.min.css";
+              const darkTheme = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/github-dark.min.css";
+              highlightStyle.href = theme === "dark" ? darkTheme : lightTheme;
+	  };
+	  
+	  // Function to set the theme
+	  const setTheme = (theme) => {
+              htmlElement.setAttribute("data-bs-theme", theme);
+              localStorage.setItem("theme", theme); // Save the theme to localStorage
+              updateHighlightStyle(theme);
+	  };
+	  
+	  // Get saved theme from localStorage or fallback to default ("light")
+	  const savedTheme = localStorage.getItem("theme") || "light";
+	  setTheme(savedTheme);
+	  
+	  // Event listener for theme dropdown
+	  document.querySelectorAll(".dropdown-item").forEach((item) => {
+              item.addEventListener("click", (e) => {
+		  e.preventDefault();
+		  const selectedTheme = item.getAttribute("data-theme");
+		  setTheme(selectedTheme);
+              });
+	  });
+	  
+	  // Initialize Highlight.js
+	  hljs.highlightAll();
+      });
+    </script>
+  </body>
 </html>
