@@ -22,3 +22,11 @@ blockquote {
 .bd-navbar::after {
     background-image: linear-gradient(rgba(var(--bd-violet-rgb), 1), rgba(var(--bd-violet-rgb), 0.95));
 }
+
+/* Scrollable navbar for small screens only */
+@media (max-width: 992px) {
+    .scrollable-navbar {
+	max-height: calc(100vh - var(--bs-navbar-height, 60px));
+	overflow-y: auto;
+    }
+}
