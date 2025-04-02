@@ -35,6 +35,7 @@ https://ashki23.github.io/spack.html
 https://ashki23.github.io/cluster.html
 https://ashki23.github.io/vagrant.html
 https://ashki23.github.io/vertexai-workbench.html
+https://ashki23.github.io/cloudrun.html
 https://ashki23.github.io/git.html
 https://ashki23.github.io/emacs.html
 https://ashki23.github.io/dataform-template.html

@@ -195,6 +195,9 @@ workflow">
   <li><a
   href="https://cloud.google.com/dataform/docs/overview#sqlx_file_body">SQLX
   file body</a></li>
+  <li><a
+  href="https://cloud.google.com/dataform/docs/connect-repository#github">Connect
+  to a third-party Git repository</a></li>
   </ul>
   <hr />
   <h2 id="the-template-repository-structure">The template repository
@@ -214,8 +217,8 @@ workflow">
   format. The following code shows a sample
   <code>workflow_settings.yaml</code> file:</p>
   <div class="sourceCode" id="cb2"><pre
-  class="sourceCode yml"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">defaultProject</span><span class="kw">:</span><span class="at"> my-gcp-project-id</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">defaultDataset</span><span class="kw">:</span><span class="at"> dataform</span></span>
+  class="sourceCode yml"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">defaultProject</span><span class="kw">:</span><span class="at"> &lt;gcp-project-id&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">defaultDataset</span><span class="kw">:</span><span class="at"> &lt;dataset-name&gt;</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">defaultLocation</span><span class="kw">:</span><span class="at"> US</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">defaultAssertionDataset</span><span class="kw">:</span><span class="at"> dataform_assertions</span></span></code></pre></div>
   <p>In the preceding code sample, the key-value pairs are described as
@@ -298,8 +301,8 @@ workflow">
   <li><code>schema</code>: the BigQuery dataset in which the data source
   exists.</li>
   <li><code>name</code>: the name of the table or view that you want to
-  use as the data source. You can later use that name to reference the
-  data source in Dataform.</li>
+  use as the data source. <strong>You can later use that name to
+  reference the data source in Dataform</strong>.</li>
   </ul></li>
   <li><p><a
   href="https://cloud.google.com/dataform/docs/create-tables">Create
