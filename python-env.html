@@ -139,16 +139,20 @@ Python</h1>
 	  <div class="collapse bd-toc-collapse" id="tocContents">
 	    <nav id="TableOfContents">
 	      <ul>
-      <li><a href="#venv" id="toc-venv">Venv</a></li>
-      <li><a href="#miniconda" id="toc-miniconda">Miniconda</a>
+      <li><a href="#venv" id="toc-venv">Venv</a>
       <ul>
       <li><a href="#usage" id="toc-usage">Usage</a></li>
+      <li><a href="#local-functions-optional"
+      id="toc-local-functions-optional">Local functions
+      (optional)</a></li>
+      </ul></li>
+      <li><a href="#miniconda" id="toc-miniconda">Miniconda</a>
+      <ul>
+      <li><a href="#usage-1" id="toc-usage-1">Usage</a></li>
       <li><a href="#conda-channels" id="toc-conda-channels">Conda
       channels</a></li>
       <li><a href="#conda-packages" id="toc-conda-packages">Conda
       packages</a></li>
-      <li><a href="#hpc-workflow" id="toc-hpc-workflow">HPC
-      workflow</a></li>
       </ul></li>
       </ul>
 	    </nav>
@@ -176,6 +180,13 @@ Python</h1>
   and manage virtual environments in Python.</p>
   <hr />
   <h2 id="venv">Venv</h2>
+  <p><code>venv</code> is a built-in Python module used to create
+  isolated environments for your Python projects. Each environment has
+  its own Python interpreter and libraries, allowing you to manage
+  dependencies separately for different projects. This prevents
+  conflicts between packages and helps maintain a clean and controlled
+  development setup.</p>
+  <h3 id="usage">Usage</h3>
   <p>To create a virtual environment, run the venv module as a script
   with the directory path. For example the following code uses the venv
   module, <code>-m venv</code>, to create <code>tutorial-env</code> in
@@ -221,6 +232,82 @@ Python</h1>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> cache purge</span></code></pre></div>
   <p>We can use <code>deactivate</code> command to deactivate and env
   and use <code>rm -rf &lt;env_path&gt;</code> to remove th env.</p>
+  <h3 id="local-functions-optional">Local functions (optional)</h3>
+  <p>We can set up a few functions to handle creating and managing
+  <code>venv</code> environments in a specified base directory
+  (<code>PYENV_DIR</code>).</p>
+  <ol type="1">
+  <li><p>Open your <strong><code>.bashrc</code></strong> file in a text
+  editor:</p>
+  <div class="sourceCode" id="cb9"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nano</span> ~/.bashrc</span></code></pre></div>
+  <p>If you’re using Zsh, edit <strong><code>~/.zshrc</code></strong>
+  instead.</p></li>
+  <li><p>Scroll to the bottom of the file and paste the functions:</p>
+  <div class="sourceCode" id="cb10"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Python virtual environment helpers</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="va">PYENV_DIR</span><span class="op">=</span>~/python-envs</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="fu">pyenvcreate()</span> <span class="kw">{</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">[</span> <span class="ot">-z</span> <span class="st">&quot;</span><span class="va">$1</span><span class="st">&quot;</span> <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">echo</span> <span class="st">&quot;Please provide the name of the environment to create.&quot;</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">1</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">fi</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mkdir</span> <span class="at">-p</span> <span class="st">&quot;</span><span class="va">$PYENV_DIR</span><span class="st">&quot;</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>    <span class="va">ENV_PATH</span><span class="op">=</span><span class="st">&quot;</span><span class="va">$PYENV_DIR</span><span class="st">/</span><span class="va">$1</span><span class="st">&quot;</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">[</span> <span class="ot">-d</span> <span class="st">&quot;</span><span class="va">$ENV_PATH</span><span class="st">&quot;</span> <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>        <span class="bu">echo</span> <span class="st">&quot;Environment &#39;</span><span class="va">$1</span><span class="st">&#39; already exists.&quot;</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">1</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">fi</span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>    <span class="ex">python3</span> <span class="at">-m</span> venv <span class="st">&quot;</span><span class="va">$ENV_PATH</span><span class="st">&quot;</span></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">&quot;Environment created at </span><span class="va">$ENV_PATH</span><span class="st">&quot;</span></span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a><span class="kw">}</span></span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a><span class="fu">pyenvlist()</span> <span class="kw">{</span></span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">[</span> <span class="ot">!</span> <span class="ot">-d</span> <span class="st">&quot;</span><span class="va">$PYENV_DIR</span><span class="st">&quot;</span> <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>        <span class="bu">echo</span> <span class="st">&quot;No environments found.&quot;</span></span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span></span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">fi</span></span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> dir <span class="kw">in</span> <span class="st">&quot;</span><span class="va">$PYENV_DIR</span><span class="st">&quot;</span>/<span class="pp">*</span><span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a>        <span class="bu">[</span> <span class="ot">-d</span> <span class="st">&quot;</span><span class="va">$dir</span><span class="st">&quot;</span> <span class="bu">]</span> <span class="kw">&amp;&amp;</span> <span class="bu">echo</span> <span class="st">&quot;</span><span class="va">$(</span><span class="fu">basename</span> <span class="st">&quot;</span><span class="va">$dir</span><span class="st">&quot;</span><span class="va">)</span><span class="st">&quot;</span></span>
+<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a>    <span class="cf">done</span></span>
+<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a><span class="kw">}</span></span>
+<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a><span class="fu">pyenvactivate()</span> <span class="kw">{</span></span>
+<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">[</span> <span class="ot">-z</span> <span class="st">&quot;</span><span class="va">$1</span><span class="st">&quot;</span> <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
+<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a>        <span class="bu">echo</span> <span class="st">&quot;Please provide the name of the environment to activate.&quot;</span></span>
+<span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">1</span></span>
+<span id="cb10-37"><a href="#cb10-37" aria-hidden="true" tabindex="-1"></a>    <span class="cf">fi</span></span>
+<span id="cb10-38"><a href="#cb10-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-39"><a href="#cb10-39" aria-hidden="true" tabindex="-1"></a>    <span class="va">ENV_PATH</span><span class="op">=</span><span class="st">&quot;</span><span class="va">$PYENV_DIR</span><span class="st">/</span><span class="va">$1</span><span class="st">/bin/activate&quot;</span></span>
+<span id="cb10-40"><a href="#cb10-40" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">[</span> <span class="ot">-f</span> <span class="st">&quot;</span><span class="va">$ENV_PATH</span><span class="st">&quot;</span> <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
+<span id="cb10-41"><a href="#cb10-41" aria-hidden="true" tabindex="-1"></a>        <span class="bu">source</span> <span class="st">&quot;</span><span class="va">$ENV_PATH</span><span class="st">&quot;</span></span>
+<span id="cb10-42"><a href="#cb10-42" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span></span>
+<span id="cb10-43"><a href="#cb10-43" aria-hidden="true" tabindex="-1"></a>        <span class="bu">echo</span> <span class="st">&quot;Environment &#39;</span><span class="va">$1</span><span class="st">&#39; not found.&quot;</span></span>
+<span id="cb10-44"><a href="#cb10-44" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">1</span></span>
+<span id="cb10-45"><a href="#cb10-45" aria-hidden="true" tabindex="-1"></a>    <span class="cf">fi</span></span>
+<span id="cb10-46"><a href="#cb10-46" aria-hidden="true" tabindex="-1"></a><span class="kw">}</span></span></code></pre></div></li>
+  <li><p>Save and exit:</p>
+  <ul>
+  <li>In <strong><code>nano</code></strong>: Press
+  <code>Ctrl + O</code>, then <code>Enter</code>, then
+  <code>Ctrl + X</code></li>
+  </ul></li>
+  <li><p>Reload your <strong><code>.bashrc</code></strong> so the
+  functions are available in your shell:</p>
+  <div class="sourceCode" id="cb11"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> ~/.bashrc</span></code></pre></div></li>
+  </ol>
+  <p>You can now use:</p>
+  <ul>
+  <li><code>pyenvcreate myenv</code> — to create an environment</li>
+  <li><code>pyenvlist</code> — to list available environments</li>
+  <li><code>pyenvactivate myenv</code> — to activate one</li>
+  </ul>
   <hr />
   <h2 id="miniconda">Miniconda</h2>
   <p>To create virtual environments, <a
@@ -244,54 +331,54 @@ Python</h1>
   href="https://github.com/esc/conda-zsh-completion/blob/master/_conda">conda-zsh-completion</a>
   in <code>~/miniconda3/zsh-completion/_conda</code> and add the
   following to the <code>~/.zshrc</code> file:</p>
-  <div class="sourceCode" id="cb9"><pre
-  class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="va">fpath</span><span class="op">+=</span><span class="st">&quot;/Users/</span><span class="va">${USER}</span><span class="st">/miniconda3/zsh-completion&quot;</span> <span class="kw">&amp;&amp;</span> <span class="ex">compinit</span></span></code></pre></div>
-  <h3 id="usage">Usage</h3>
+  <div class="sourceCode" id="cb12"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="va">fpath</span><span class="op">+=</span><span class="st">&quot;/Users/</span><span class="va">${USER}</span><span class="st">/miniconda3/zsh-completion&quot;</span> <span class="kw">&amp;&amp;</span> <span class="ex">compinit</span></span></code></pre></div>
+  <h3 id="usage-1">Usage</h3>
   <p>To create a new environment, use <code>conda create</code> command
   including names of the environment and required packages:</p>
-  <div class="sourceCode" id="cb10"><pre
-  class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">--name</span> <span class="op">&lt;</span>env_name<span class="op">&gt;</span> <span class="op">&lt;</span>package1<span class="op">&gt;</span> <span class="op">&lt;</span>package2=version<span class="op">&gt;</span> ...</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># or</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">--prefix</span> <span class="op">&lt;</span>env_path<span class="op">&gt;</span> <span class="op">&lt;</span>package1<span class="op">&gt;</span> <span class="op">&lt;</span>package2=version<span class="op">&gt;</span> ...</span></code></pre></div>
+  <div class="sourceCode" id="cb13"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">--name</span> <span class="op">&lt;</span>env_name<span class="op">&gt;</span> <span class="op">&lt;</span>package1<span class="op">&gt;</span> <span class="op">&lt;</span>package2=version<span class="op">&gt;</span> ...</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># or</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">--prefix</span> <span class="op">&lt;</span>env_path<span class="op">&gt;</span> <span class="op">&lt;</span>package1<span class="op">&gt;</span> <span class="op">&lt;</span>package2=version<span class="op">&gt;</span> ...</span></code></pre></div>
   <p>We also can use <code>--yes</code> flag to set up the environment
   without a question. We use <code>--prefix &lt;env_path&gt;</code> to
   setup the environment in a certain path. Note that we can not use
   <code>--prefix</code> and <code>--name</code> at the same time.</p>
   <p>To see list of environments, use the following:</p>
-  <div class="sourceCode" id="cb11"><pre
-  class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> env list</span></code></pre></div>
+  <div class="sourceCode" id="cb14"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> env list</span></code></pre></div>
   <p>To activate an environment type:</p>
-  <div class="sourceCode" id="cb12"><pre
-  class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate <span class="op">&lt;</span>env_name<span class="op">&gt;</span> or <span class="op">&lt;</span>env_path<span class="op">&gt;</span></span></code></pre></div>
+  <div class="sourceCode" id="cb15"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate <span class="op">&lt;</span>env_name<span class="op">&gt;</span> or <span class="op">&lt;</span>env_path<span class="op">&gt;</span></span></code></pre></div>
   <p>Note that, for Conda versions prior to 4.6 we need to use
   <code>source</code> instead of <code>conda</code> to activate an env.
   Now, use the following to install new packages in the activated
   env:</p>
-  <div class="sourceCode" id="cb13"><pre
-  class="sourceCode bash"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="op">&lt;</span>package1<span class="op">&gt;</span> <span class="op">&lt;</span>package2=version<span class="op">&gt;</span> ...</span></code></pre></div>
+  <div class="sourceCode" id="cb16"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="op">&lt;</span>package1<span class="op">&gt;</span> <span class="op">&lt;</span>package2=version<span class="op">&gt;</span> ...</span></code></pre></div>
   <p>To uninstall packages use:</p>
-  <div class="sourceCode" id="cb14"><pre
-  class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> uninstall <span class="op">&lt;</span>package1<span class="op">&gt;</span> <span class="op">&lt;</span>package2=version<span class="op">&gt;</span> ...</span></code></pre></div>
+  <div class="sourceCode" id="cb17"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> uninstall <span class="op">&lt;</span>package1<span class="op">&gt;</span> <span class="op">&lt;</span>package2=version<span class="op">&gt;</span> ...</span></code></pre></div>
   <p>To see list of the installed packages within the env, use:</p>
-  <div class="sourceCode" id="cb15"><pre
-  class="sourceCode bash"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> list</span></code></pre></div>
+  <div class="sourceCode" id="cb18"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> list</span></code></pre></div>
   <p>To keep a list of the packages (commonly called
   <code>requirements.txt</code>) that are installed in the env, use:</p>
-  <div class="sourceCode" id="cb16"><pre
-  class="sourceCode bash"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> list <span class="at">--export</span> <span class="op">&gt;</span> requirements.txt</span></code></pre></div>
-  <p>We can deactivate the env by:</p>
-  <div class="sourceCode" id="cb17"><pre
-  class="sourceCode bash"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> deactivate</span></code></pre></div>
-  <p>And remove the deactivated virtual environment by:</p>
-  <div class="sourceCode" id="cb18"><pre
-  class="sourceCode bash"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> env remove <span class="at">--name</span> <span class="op">&lt;</span>env_name<span class="op">&gt;</span> or <span class="at">--prefix</span> <span class="op">&lt;</span>env_path<span class="op">&gt;</span></span></code></pre></div>
-  <p>To remove cache files we can use:</p>
   <div class="sourceCode" id="cb19"><pre
-  class="sourceCode bash"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> clean <span class="at">--all</span></span></code></pre></div>
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> list <span class="at">--export</span> <span class="op">&gt;</span> requirements.txt</span></code></pre></div>
+  <p>We can deactivate the env by:</p>
+  <div class="sourceCode" id="cb20"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> deactivate</span></code></pre></div>
+  <p>And remove the deactivated virtual environment by:</p>
+  <div class="sourceCode" id="cb21"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> env remove <span class="at">--name</span> <span class="op">&lt;</span>env_name<span class="op">&gt;</span> or <span class="at">--prefix</span> <span class="op">&lt;</span>env_path<span class="op">&gt;</span></span></code></pre></div>
+  <p>To remove cache files we can use:</p>
+  <div class="sourceCode" id="cb22"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> clean <span class="at">--all</span></span></code></pre></div>
   <p>We can regenerate an env from a <code>requirements.txt</code>
   file:</p>
-  <div class="sourceCode" id="cb20"><pre
-  class="sourceCode bash"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">--name</span> <span class="op">&lt;</span>env_name<span class="op">&gt;</span> --file requirments.txt</span></code></pre></div>
+  <div class="sourceCode" id="cb23"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">--name</span> <span class="op">&lt;</span>env_name<span class="op">&gt;</span> --file requirments.txt</span></code></pre></div>
   <p>Note that there is a short form for most of the Conda options that
   can be used instead of the long form. For instance, <code>-n</code>,
   <code>-p</code>, <code>-c</code>, <code>-y</code>, and <code>-e</code>
@@ -305,13 +392,13 @@ Python</h1>
   package manager search its default channels to install the packages.
   If you are looking for specific packages that are not in the default
   channels you have to mention them by using:</p>
-  <div class="sourceCode" id="cb21"><pre
-  class="sourceCode bash"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">codna</span> create <span class="at">--name</span> <span class="op">&lt;</span>env_name<span class="op">&gt;</span> --channel <span class="op">&lt;</span>channel1<span class="op">&gt;</span> --channel <span class="op">&lt;</span>channel2<span class="op">&gt;</span> ... <span class="op">&lt;</span>package1<span class="op">&gt;</span> <span class="op">&lt;</span>package2<span class="op">&gt;</span> ...</span></code></pre></div>
+  <div class="sourceCode" id="cb24"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">codna</span> create <span class="at">--name</span> <span class="op">&lt;</span>env_name<span class="op">&gt;</span> --channel <span class="op">&lt;</span>channel1<span class="op">&gt;</span> --channel <span class="op">&lt;</span>channel2<span class="op">&gt;</span> ... <span class="op">&lt;</span>package1<span class="op">&gt;</span> <span class="op">&lt;</span>package2<span class="op">&gt;</span> ...</span></code></pre></div>
   <p>For example the following creates <code>new_env</code> and installs
   r-sf, shapely and bioconductor-biobase from <code>r</code>,
   <code>conda-forge</code> and <code>bioconda</code> channels:</p>
-  <div class="sourceCode" id="cb22"><pre
-  class="sourceCode bash"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">codna</span> create <span class="at">--name</span> new_env <span class="at">--channel</span> r <span class="at">--channel</span> conda-forge <span class="at">--channel</span> bioconda r-sf shapely bioconductor-biobase</span></code></pre></div>
+  <div class="sourceCode" id="cb25"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="ex">codna</span> create <span class="at">--name</span> new_env <span class="at">--channel</span> r <span class="at">--channel</span> conda-forge <span class="at">--channel</span> bioconda r-sf shapely bioconductor-biobase</span></code></pre></div>
   <p>Ideally, you should create one environment per project and include
   all the required packages when you create the environment and try to
   use a single channel as much as possible. It is important using the
@@ -323,26 +410,8 @@ Python</h1>
   is using <code>conda search</code> command. Note that we need to
   search the right channel to find pakages that are not in the default
   channels. For example:</p>
-  <div class="sourceCode" id="cb23"><pre
-  class="sourceCode bash"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> search <span class="at">--channel</span> bioconda biobase</span></code></pre></div>
-  <h3 id="hpc-workflow">HPC workflow</h3>
-  <p>In a HPC cluster system, first we need to load
-  <code>miniconda3</code> module to be able to use <code>conda</code>.
-  We can use the following as a template for building a new
-  environment:</p>
-  <div class="sourceCode" id="cb24"><pre
-  class="sourceCode bash"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load miniconda3</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">[</span> <span class="ot">!</span> <span class="ot">-d</span> <span class="er">&lt;</span>env_path<span class="er">&gt;</span> <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">--yes</span> <span class="at">--prefix</span> <span class="op">&lt;</span>env_path<span class="op">&gt;</span> <span class="op">&lt;</span>package1<span class="op">&gt;</span> <span class="op">&lt;</span>package2<span class="op">&gt;</span> ...</span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span></span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> activate <span class="op">&lt;</span>env_path<span class="op">&gt;</span></span></code></pre></div>
-  <p>To keep Conda packages and caches somewhere except the home
-  directory, we can update conda pathes by exporting new
-  <code>CONDA_PKGS_DIRS</code> and <code>CONDA_ENVS_DIRS</code> or
-  creating/updating <code>~/.condarc</code> file. Review <a
-  href="https://docs.conda.io/projects/conda/en/latest/user-guide/configuration/use-condarc.html#specify-environment-directories-envs-dirs">here</a>
-  to learn more.</p>
+  <div class="sourceCode" id="cb26"><pre
+  class="sourceCode bash"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> search <span class="at">--channel</span> bioconda biobase</span></code></pre></div>
 	</div>
       </main>
     </div>
